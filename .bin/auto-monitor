@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+MONITOR="eDP1"
+MONITORS=$(xrandr | grep -E ' connected' | awk '{print $1}' | grep -v $MONITOR)
+if [ ! -z "$MONITORS" ]; then
+  MONITOR_POS=0
+  MONITOR_NUM=0
+  COMMAND="/usr/bin/xrandr"
+  for selected_monitor in $MONITORS; do
+    COMMAND="$COMMAND --output $selected_monitor --mode 1920x1080 --pos $((1920*$MONITOR_NUM))x0 --rotate normal"
+    MONITOR_NUM=$(($MONITOR_NUM + 1))
+  done
+  COMMAND="$COMMAND --output $MONITOR --primary --mode 1920x1080 --pos $((1920*$MONITOR_NUM))x0 --rotate normal"
+  eval "$COMMAND"
+  next-bg
+fi
