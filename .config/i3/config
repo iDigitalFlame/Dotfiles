@@ -1,0 +1,151 @@
+# i3 config file (v4)
+################################
+# iDigitalFlame
+
+################################
+# Startup
+exec --no-startup-id setxkbmap -option ctrl:swap_lwin_lctl
+
+################################
+# Key Variables
+set $alt Mod1
+set $win Control
+set $control Mod4
+
+################################
+# Window Rules
+for_window [class="Firefox"] border pixel 0
+for_window [class="Chromium"] border pixel 0
+for_window [class="Google-chrome"] border pixel 0
+for_window [class="Google-chrome" window_role="pop-up"] border normal, floating enable
+
+################################
+# Genertal Settings
+gaps outer 0
+gaps inner 8
+#smart_gaps on
+new_window pixel 0
+smart_borders on
+floating_modifier $alt
+default_orientation auto 
+bindsym $alt+Shift+m reload
+bindsym $alt+Shift+n restart
+bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to Log Off?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+################################
+# Theme Settings
+font pango:Sans 8
+client.background #282A36
+client.urgent #FFB86C #FFB86C #282A36 #6272A4 #FFB86C
+client.focused #282A36 #282A36 #F8F8F2 #6272A4 #282A36
+client.unfocused #666666 #666666 #FFFFFF #6272A4 #666666
+client.placeholder #282A36 #282A36 #F8F8F2 #6722A4 #282A36
+client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
+
+################################
+# Application Keybindings
+bindsym $win+Return exec /usr/bin/pcmanfm
+bindsym $alt+Delete exec /usr/bin/leafpad
+bindsym $alt+Return exec /usr/bin/xfce4-terminal
+bindsym $control+Tab exec --no-startup-id "~/.bin/next-bg"
+bindsym $alt+P exec --no-startup-id "~/.bin/auto-monitor"
+bindsym $alt+Shift+P exec --no-startup-id "/usr/bin/arandr"
+bindsym Print exec --no-startup-id "~/.bin/screenshot-copy 0"
+bindsym $win+Shift+2 exec --no-startup-id "~/.bin/screenclip"
+bindsym $win+Shift+1 exec --no-startup-id "~/.bin/screenshot 0"
+bindsym $win+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
+bindsym $win+Shift+$control+2 exec --no-startup-id "~/.bin/screenclip-copy"
+bindsym $win+Shift+$control+1 exec --no-startup-id "~/.bin/screenshot-copy 0"
+bindsym $win+Tab exec --no-startup-id "/usr/bin/rofi -show window -mode window"
+bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
+bindsym $alt+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
+bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
+bindsym $win+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
+bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
+bindsym $alt+XF86MonBrightnessUp exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
+bindsym $alt+XF86MonBrightnessDown exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
+bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
+bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
+bindsym $alt+XF86AudioLowerVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
+bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
+bindsym $alt+space exec --no-startup-id "/usr/bin/rofi -combi-modi window,drun,run,ssh -show combi"
+
+################################
+# Workspace Keybindings
+bindsym $alt+1 workspace 1
+bindsym $alt+2 workspace 2
+bindsym $alt+3 workspace 3
+bindsym $alt+4 workspace 4
+bindsym $alt+5 workspace 5
+bindsym $alt+6 workspace 6
+bindsym $alt+7 workspace 7
+bindsym $alt+8 workspace 8
+bindsym $alt+9 workspace 9
+bindsym $alt+0 workspace 10
+bindsym $alt+m scratchpad show
+bindsym $win+$alt+Left workspace prev_on_output
+bindsym $win+$alt+Right workspace next_on_output
+
+################################
+# Layout Keybindings
+bindsym $alt+Up move up
+bindsym $alt+Left move left
+bindsym $alt+Down move down
+bindsym $alt+Right move right
+bindsym $alt+Shift+h split h
+bindsym $alt+Shift+v split v
+bindsym $alt+d layout tabbed
+bindsym $alt+s layout stacking
+bindsym $alt+a layout toggle split
+bindsym $alt+Shift+s focus child
+bindsym $alt+Shift+a focus parent
+bindsym $alt+grave focus mode_toggle
+bindsym $alt+Shift+Up focus up
+bindsym $alt+Shift+Left focus left
+bindsym $alt+Shift+Down focus down
+bindsym $alt+Shift+Right focus right
+bindsym $alt+$win+$control+Up focus up
+bindsym $alt+$win+$control+Left focus left
+bindsym $alt+$win+$control+Down focus down
+bindsym $alt+$win+$control+Right focus right
+
+################################
+# Window Keybindings
+bindsym $win+q kill
+bindsym $win+r sticky toggle
+bindsym $win+m move scratchpad
+bindsym $win+e floating toggle
+bindsym $alt+f fullscreen toggle
+bindsym $alt+Shift+1 move container to workspace 1
+bindsym $alt+Shift+2 move container to workspace 2
+bindsym $alt+Shift+3 move container to workspace 3
+bindsym $alt+Shift+4 move container to workspace 4
+bindsym $alt+Shift+5 move container to workspace 5
+bindsym $alt+Shift+6 move container to workspace 6
+bindsym $alt+Shift+7 move container to workspace 7
+bindsym $alt+Shift+8 move container to workspace 8
+bindsym $alt+Shift+9 move container to workspace 9
+bindsym $alt+Shift+0 move container to workspace 10
+bindsym $alt+Shift+l resize grow width 10px or 10 ppt
+bindsym $alt+Shift+k resize grow height 10px or 10 ppt
+bindsym $alt+Shift+j resize shrink width 10px or 10 ppt
+bindsym $alt+Shift+i resize shrink height 10px or 10 ppt
+bindsym $control+Up resize shrink height 10px or 10 ppt
+bindsym $control+Down resize grow height 10px or 10 ppt
+bindsym $control+Left resize grow width 10 px or 10 ppt
+bindsym $control+Right resize shrink width 10 px or 10 ppt
+bindsym $win+1 move container to workspace 1, workspace 1
+bindsym $win+2 move container to workspace 2, workspace 2
+bindsym $win+3 move container to workspace 3, workspace 3
+bindsym $win+4 move container to workspace 4, workspace 4
+bindsym $win+5 move container to workspace 5, workspace 5
+bindsym $win+6 move container to workspace 6, workspace 6
+bindsym $win+7 move container to workspace 7, workspace 7
+bindsym $win+8 move container to workspace 8, workspace 8
+bindsym $win+9 move container to workspace 9, workspace 9
+bindsym $win+0 move container to workspace 10, workspace 10
+bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_output
+bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
+bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
+bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
