@@ -1,0 +1,207 @@
+# Polybar config file
+################################
+# iDigitalFlame
+
+################################
+# Global Polybar settings
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+screenchange-reload = true
+
+################################
+# Theme Settings
+[theme]
+include-file = /home/iDigitalFlame/.config/theme/current/polybar-theme.conf
+
+################################
+# Modules
+[module/xwindow]
+label = %title%
+label-maxlen = 60
+type = internal/xwindow
+label-overline = ${theme.clear}
+[module/filesystem]
+interval = 120
+mount-0 = /home
+type = internal/fs
+fixed-values = true
+format-mounted = <label-mounted>
+label-mounted = " %used%/%free%"
+format-mounted-overline = #FF00D8F1
+[module/i3]
+index-sort = true
+type = internal/i3
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+pin-workspaces = false
+format = <label-state> <label-mode>
+label-mode-padding = 2
+label-mode-font = 0
+label-mode-foreground = ${theme.foreground}
+label-mode-background = ${root.background}
+label-unfocused-padding = ${self.label-mode-padding}
+label-visible = %index%
+label-focused = %index%
+label-urgent = %index%
+label-unfocused = %index%
+label-urgent-underline = ${theme.clear}
+label-focused-underline = ${theme.clear}
+label-visible-underline = ${theme.clear}
+label-urgent-font = ${self.label-mode-font}
+label-visable-font = ${self.label-mode-font}
+label-focused-font = ${self.label-mode-font}
+label-urgent-padding = ${self.label-mode-padding}
+label-visible-padding = ${self.label-mode-padding}
+label-focused-padding = ${self.label-mode-padding}
+label-focused-overline = ${theme.workspace_underline}
+label-urgent-background = ${self.label-mode-background}
+label-visible-overline = ${self.label-focused-underline}
+label-focused-background = ${self.label-mode-background}
+label-visible-background = ${self.label-focused-background}
+label-urgent-overline = ${theme.workspace_underline_urgent}
+[module/cpu]
+interval = 1
+type = internal/cpu
+label = " %percentage%%"
+format-overline = #FFEF3100
+format-underline = ${theme.clear}
+format-prefix-foreground = ${theme.foreground-alt}
+[module/memory]
+interval = 5
+type = internal/memory
+format-overline = #FFFEB523
+label = " %gb_used%/%gb_free%"
+format-underline = ${theme.clear}
+format-prefix-foreground = ${theme.foreground-alt}
+[module/date]
+date = %a
+interval = 10
+time = %I:%M %p
+date-alt = %A %D
+time-alt = %I:%M %p
+type = internal/date
+label = %date% %time%
+format-overline = #FFFFFFFF
+format-underline = ${theme.clear}
+[module/volume]
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+master-mixer = Master
+type = internal/volume
+label-muted = "Mute "
+master-soundcard = default
+label-volume = "%percentage%%"
+format-muted-overline = #FFE57FCB
+format-volume-overline = #FFE57FCB
+format-muted-underline = ${theme.clear}
+format-volume-underline = ${theme.clear}
+format-volume = <label-volume> <ramp-volume>
+format-muted-foreground = ${theme.foreground}
+[module/battery]
+adapter = AC
+full-at = 100
+battery = BAT0
+time-format = "%H:%M"
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+type = internal/battery
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+format-charging-prefix = " "
+label-full = "%percentage%% "
+format-full-overline = #FF17FF0F
+animation-charging-framerate = 750
+format-charging-overline = #FFF6FE38
+format-full-underline = ${theme.clear}
+format-discharging-overline = #FFC738FF
+label-discharging = "%time% %percentage%%"
+format-charging-underline = ${theme.clear}
+format-discharging-underline = ${theme.clear}
+format-charging = "<label-charging> <animation-charging>"
+format-discharging = "<label-discharging> <ramp-capacity>"
+[module/powermenu]
+type = custom/menu
+label-open = ""
+label-close = ""
+format-spacing = 1
+label-separator = |
+menu-0-0 = ""
+menu-0-1 = ""
+menu-0-2 = ""
+menu-0-3 = ""
+menu-0-2-exec = menu-open-1
+menu-0-3-exec = menu-open-2
+menu-0-1-exec = "/usr/bin/systemctl hibernate"
+menu-0-0-exec = "/opt/spaceport/bin/powerctl lock -f"
+menu-1-0 = " Cancel"
+menu-1-1 = " Reboot"
+menu-1-0-exec = "/usr/bin/false"
+menu-1-1-exec = "/usr/bin/reboot"
+menu-2-0 = " Cancel"
+menu-2-1 = " Power Off"
+menu-2-0-exec = "/usr/bin/false"
+menu-2-1-exec = "/usr/bin/poweroff"
+[module/mpd]
+icon-prev = ""
+icon-stop = ""
+icon-next = ""
+icon-play = ""
+label-offline =
+icon-pause = ""
+type = internal/mpd
+label-song-maxlen = 40
+label-song-ellipsis = true
+format-online =  <icon-prev> <icon-stop> <label-song> <toggle> <icon-next>
+[module/bluetooth]
+type = custom/script
+interval = 30
+format = <label>
+exec = "[ $(ls -l /sys/class/bluetooth | wc -l) -gt 1 ] && echo 'BE' || echo 'BD'"
+[module/rotate]
+type = custom/script
+interval = 5
+format = <label>
+label-overline = #FFFFF914
+click-left = "/opt/spaceport/bin/powerctl rotate -t"
+click-right = "/opt/spaceport/bin/powerctl rotate -t"
+click-middle = "/opt/spaceport/bin/powerctl rotate -t"
+exec = "[[ -z $(/opt/spaceport/bin/powerctl rotate | grep "disabled") ]] && echo '' || echo ''"
+
+################################
+# Bars
+[bar/laptop]
+include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-laptop.conf
+fixed-center = true
+modules-center = mpd
+tray-detached = false
+module-margin-left = 1
+module-margin-right = 1
+scroll-up = i3wm-wsnext
+monitor = ${env:MONITOR}
+scroll-down = i3wm-wsprev
+modules-left = powermenu i3 xwindow
+modules-right = volume rotate filesystem memory cpu battery date
+
+[bar/tablet]
+include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-tablet.conf
+monitor = eDP1
+modules-center =
+fixed-center = true
+tray-detached = false
+module-margin-left = 1
+module-margin-right = 1
+scroll-up = i3wm-wsnext
+#monitor = ${env:MONITOR}
+scroll-down = i3wm-wsprev
+modules-left = powermenu i3
+modules-right = volume rotate filesystem memory cpu battery date
