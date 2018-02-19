@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+_args="$@"
+/usr/bin/leafpad $_args

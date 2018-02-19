@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+/usr/bin/maim -u -o -s ~/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg
