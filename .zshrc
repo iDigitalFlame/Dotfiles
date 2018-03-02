@@ -4,20 +4,33 @@
 
 ################################
 export VISUAL="nano"
-export ZSH=/home/iDigitalFlame/.oh-my-zsh
-ZSH_THEME="muse"
-DISABLE_AUTO_UPDATE="false"
+export ZSH_THEME="muse"
 export UPDATE_ZSH_DAYS=14
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
+export ZSH="$HOME/.oh-my-zsh"
+export AURDEST="$HOME/.pacaur"
+export ENABLE_CORRECTION="true"
+export DISABLE_AUTO_UPDATE="false"
+export PKGDEST="/var/cache/makepkg"
+export COMPLETION_WAITING_DOTS="true"
+export SRCDEST="/tmp/.$USER-pacaur-src"
+export BUILDDIR="/tmp/.$USER-pacaur-build"
 plugins=(git encode64 screen sudo)
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 PROMPT="%n $PROMPT"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ################################
 # Startups
 motivate | cowsay -W 75 -f small | lolcat
+if [ ! -d "$HOME/.pacaur" ]; then
+  mkdir -p "$HOME/.pacaur"
+fi
+if [ ! -d "/tmp/.$USER-pacaur-src" ]; then
+  mkdir -p "/tmp/.$USER-pacaur-src"
+fi
+if [ ! -d "/tmp/.$USER-pacaur-build" ]; then
+  mkdir -p "/tmp/.$USER-pacaur-build"
+fi
 if [ ! -d "$HOME/Pictures/Screenshots" ]; then 
   mkdir -p "$HOME/Pictures/Screenshots"
 fi
@@ -51,10 +64,12 @@ mo() {
 alias pip="sudo -H pip"
 alias pip2="sudo -H pip2"
 alias ssh="__sg_cmd iptables-ssh /usr/bin/ssh"
+alias scp="__sg_cmd iptables-ssh /usr/bin/scp"
 alias git="__sg_cmd iptables-web /usr/bin/git"
 alias wget="__sg_cmd iptables-web /usr/bin/wget"
 alias curl="__sg_cmd iptables-web /usr/bin/curl"
 alias ping="__sg_cmd iptables-ping /usr/bin/ping"
+alias rsync="__sg_cmd iptables-ssh /usr/bin/rsync"
 alias pacman="__sg_cmd iptables-web /usr/bin/pacman"
 alias pacaur="__sg_cmd iptables-web /usr/bin/pacaur"
 alias wython="__sg_cmd iptables-web /usr/bin/python3"
@@ -101,6 +116,11 @@ alias chill="powerctl locker -ks false -kb false -kl false"
 
 ################################
 # System Power Aliases
+alias cpu="powerctl cpu"
+alias blueon="powerctl blue -e"
+alias blueoff="powerctl blue -d"
+alias blue-on="powerctl blue -e"
+alias blue-off="powerctl blue -d"
 alias power0="powerctl cpu -x 800 -m 400 -t 0 -tx 20 -tm 10"
 alias power1="powerctl cpu -x 1Ghz -m 400 -t 0 -tx 35 -tm 10"
 alias power2="powerctl cpu -x 1.5Ghz -m 400 -t 1 -tx 50 -tm 10"
@@ -115,7 +135,6 @@ alias lsal="ls -alp"
 
 ################################
 # Utility Aliases
-alias vi3="nano ~/.config/i3/config"
 alias vihosts="nano ~/.ssh/known_hosts"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias public-ip="wget -q -O - https://ifconfig.co"
@@ -125,6 +144,7 @@ alias ssc="/usr/bin/maim -u -o | xclip -selection clipboard -t image/png"
 alias sselc="/usr/bin/maim -u -o -s | xclip -selection clipboard -t image/png"
 alias ss="/usr/bin/maim -u -o ~/Pictures/Screenshots/\$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg"
 alias ssel="/usr/bin/maim -u -o -s ~/Pictures/Screenshots/\$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg"
+alias vi3="chmod 660 ~/.config/i3/config; nano ~/.config/i3/config; chmod 440 ~/.config/i3/config"
 alias updatehosts="sg iptables-web -c \"/usr/bin/python3 ~/.apps/updateHosts/updateHostsFile.py --auto\";sudo sh -c \"cp ~/.apps/updateHosts/hosts /etc/hosts;systemctl restart systemd-resolved\""
 
 ################################
@@ -139,4 +159,3 @@ alias sedit="sudo /usr/bin/rnano"
 alias suedit="sudo /usr/bin/rnano"
 alias diff="/usr/bin/diff --color=auto"
 alias clip="/usr/bin/xclip -selection clipboard"
-alias spaceport-repo-sync="/usr/bin/sg git -c \"cd /opt/spaceport; git add -A .; git commit;\"; /usr/bin/sg iptables-web -c \"cd /opt/spaceport; git push\""
