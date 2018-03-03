@@ -17,9 +17,8 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Leafpad Handler
-# Adds a easy function for accessing leafpad
+## Theme
+# Changes the theme
 
-_args="$@"
-/usr/bin/leafpad $_args
+echo "I'll finish this when I'm not busy..."
 # <<EOF>> #

@@ -1,4 +1,24 @@
 #!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## SMB Connect
+# Connects a SMB folder and uses the keyring
 
 if [ $# -lt 2 ]; then
   printf "smb-connect [-f] <username> <share_path>\n"
@@ -57,3 +77,4 @@ SMB_USER=""
 unset SMB_PASSWORD
 unset SMB_DOMAIN
 unset SMB_USER
+# <<EOF>> #

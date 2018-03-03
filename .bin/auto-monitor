@@ -1,4 +1,24 @@
 #!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Auto Monitor
+# Automatically chooses and sets up the extended display
 
 MONITOR="eDP1"
 MONITORS=$(xrandr | grep -E ' connected' | awk '{print $1}' | grep -v $MONITOR)
@@ -14,3 +34,4 @@ if [ ! -z "$MONITORS" ]; then
   eval "$COMMAND"
   next-bg
 fi
+# <<EOF>> #

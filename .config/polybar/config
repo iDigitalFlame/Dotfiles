@@ -1,9 +1,24 @@
-# Polybar config file
 ################################
-# iDigitalFlame
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Polybar Configuration
 
-################################
-# Global Polybar settings
+# Global settings
 [global/wm]
 margin-top = 0
 margin-bottom = 0
@@ -11,13 +26,9 @@ margin-bottom = 0
 throttle-output = 5
 throttle-output-for = 10
 screenchange-reload = true
-
-################################
 # Theme Settings
 [theme]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-theme.conf
-
-################################
 # Modules
 [module/xwindow]
 label = %title%
@@ -176,8 +187,6 @@ click-left = "/opt/spaceport/bin/powerctl rotate -t"
 click-right = "/opt/spaceport/bin/powerctl rotate -t"
 click-middle = "/opt/spaceport/bin/powerctl rotate -t"
 exec = "[[ -z $(/opt/spaceport/bin/powerctl rotate | grep "disabled") ]] && echo '' || echo ''"
-
-################################
 # Bars
 [bar/laptop]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-laptop.conf
@@ -191,7 +200,6 @@ monitor = ${env:MONITOR}
 scroll-down = i3wm-wsprev
 modules-left = powermenu i3 xwindow
 modules-right = volume rotate filesystem memory cpu battery date
-
 [bar/tablet]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-tablet.conf
 monitor = eDP1
@@ -205,3 +213,4 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 modules-left = powermenu i3
 modules-right = volume rotate filesystem memory cpu battery date
+# <<EOF>> #

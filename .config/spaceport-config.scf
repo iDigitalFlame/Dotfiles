@@ -2,7 +2,7 @@
     "background": "/usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*",
     "blank_time": 60,
     "lock_parameters": "--force-clock --ignore-empty-password --radius=60 --ring-width=10 --insidecolor=00000000 --insidevercolor=00000000 --insidewrongcolor=00000000 --linecolor=00000000 --separatorcolor=00000000 --textcolor=F8F8F2FF --datecolor=F8F8F2FF --timecolor=F8F8F2FF --ringcolor=F8F8F28C --keyhlcolor=282A36E6 --bshlcolor=FFB86CE6 --ringvercolor=E6DB74D9 --ringwrongcolor=FF5555D9 --indpos=\"x+(w/2):y+180\" --time-align=0 --date-align=0 --timepos=\"ix-200:iy-220\" --datestr=\"%A %B %d\" --timestr=\"%I:%M %p\" --timesize=36 --datesize=18 --textsize=1 --screen=eDP1 --wrongtext=\"\" --veriftext=\"\" --pointer=default --color=000000 --image=\"/home/iDigitalFlame/.config/lockscreen.png\" --tiling --modsize=1",
-    "composer": "/home/iDigitalFlame/.bin/compton/compton -cd :1 --config /home/iDigitalFlame/.config/compton.conf --blur-method kawase --blur-strength 3",
+    "composer": "/home/iDigitalFlame/.bin/compton -cd :1 --config /home/iDigitalFlame/.config/compton.conf --blur-method kawase --blur-strength 3",
     "hibernate_time": 120,
     "lock_time": 120,
     "polybar": {

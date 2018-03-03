@@ -1,26 +1,36 @@
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## i3 Configuration
+
 # i3 config file (v4)
-################################
-# iDigitalFlame
-
-################################
-# Startup
+# Startup (Mostly handled by SMD-Client)
 exec --no-startup-id setxkbmap -option ctrl:swap_lwin_lctl
-
-################################
-# Key Variables
+# Variables
 set $alt Mod1
 set $win Control
 set $control Mod4
-
-################################
 # Window Rules
 for_window [class="Firefox"] border pixel 0
 for_window [class="Chromium"] border pixel 0
 for_window [class="Google-chrome"] border pixel 0
 for_window [class="Google-chrome" window_role="pop-up"] border normal, floating enable
-
-################################
-# Genertal Settings
+# General
 gaps outer 0
 gaps inner 8
 #smart_gaps on
@@ -28,12 +38,11 @@ new_window pixel 0
 smart_borders on
 floating_modifier $alt
 default_orientation auto 
+# Reload Control
 bindsym $alt+Shift+m reload
 bindsym $alt+Shift+n restart
 bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to Log Off?' -b 'Yes, exit i3' 'i3-msg exit'"
-
-################################
-# Theme Settings
+# Theme (Colors)
 font pango:Sans 8
 client.background #282A36
 client.urgent #FFB86C #FFB86C #282A36 #6272A4 #FFB86C
@@ -41,12 +50,11 @@ client.focused #282A36 #282A36 #F8F8F2 #6272A4 #282A36
 client.unfocused #666666 #666666 #FFFFFF #6272A4 #666666
 client.placeholder #282A36 #282A36 #F8F8F2 #6722A4 #282A36
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
-
-################################
 # Application Keybindings
 bindsym $win+Return exec /usr/bin/pcmanfm
 bindsym $alt+Delete exec /usr/bin/leafpad
 bindsym $alt+Return exec /usr/bin/xfce4-terminal
+bindsym $alt+space exec --no-startup-id "~/.bin/searchbar"
 bindsym $control+Tab exec --no-startup-id "~/.bin/next-bg"
 bindsym $alt+P exec --no-startup-id "~/.bin/auto-monitor"
 bindsym $alt+Shift+P exec --no-startup-id "/usr/bin/arandr"
@@ -70,9 +78,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl br
 bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
 bindsym $alt+XF86AudioLowerVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
 bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
-bindsym $alt+space exec --no-startup-id "/usr/bin/rofi -combi-modi window,drun,run,ssh -show combi"
-
-################################
 # Workspace Keybindings
 bindsym $alt+1 workspace 1
 bindsym $alt+2 workspace 2
@@ -87,8 +92,6 @@ bindsym $alt+0 workspace 10
 bindsym $alt+m scratchpad show
 bindsym $win+$alt+Left workspace prev_on_output
 bindsym $win+$alt+Right workspace next_on_output
-
-################################
 # Layout Keybindings
 bindsym $alt+Up move up
 bindsym $alt+Left move left
@@ -110,8 +113,6 @@ bindsym $alt+$win+$control+Up focus up
 bindsym $alt+$win+$control+Left focus left
 bindsym $alt+$win+$control+Down focus down
 bindsym $alt+$win+$control+Right focus right
-
-################################
 # Window Keybindings
 bindsym $win+q kill
 bindsym $win+r sticky toggle
@@ -150,3 +151,4 @@ bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_
 bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
 bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
+# <<EOF>> #
