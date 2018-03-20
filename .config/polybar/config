@@ -92,7 +92,7 @@ format-prefix-foreground = ${theme.foreground-alt}
 [module/date]
 date = %a
 interval = 10
-time = %I:%M %p
+time = %H:%M
 date-alt = %A %D
 time-alt = %I:%M %p
 type = internal/date
