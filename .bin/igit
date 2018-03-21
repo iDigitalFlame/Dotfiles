@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+_parms="$@"
+sg iptables-web -c "/usr/bin/git $@"
+# <<EOF>> #
