@@ -20,6 +20,7 @@
 
 # i3 config file (v4)
 # Startup (Mostly handled by SMD-Client)
+exec --no-startup-id sg iptables-mail -c "trojita"
 exec --no-startup-id setxkbmap -option ctrl:swap_lwin_lctl
 # Variables
 set $alt Mod1
@@ -29,6 +30,7 @@ set $control Mod4
 for_window [class="Firefox"] border pixel 0
 for_window [class="Chromium"] border pixel 0
 for_window [class="Google-chrome"] border pixel 0
+for_window [class="trojita" title="Compose Mail"] border normal, floating enable
 for_window [class="Google-chrome" window_role="pop-up"] border normal, floating enable
 # General
 gaps outer 0
@@ -151,4 +153,4 @@ bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_
 bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
 bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
-# <<EOF>> #
+# EOF
