@@ -187,6 +187,13 @@ click-left = "/opt/spaceport/bin/powerctl rotate -t"
 click-right = "/opt/spaceport/bin/powerctl rotate -t"
 click-middle = "/opt/spaceport/bin/powerctl rotate -t"
 exec = "[[ -z $(/opt/spaceport/bin/powerctl rotate | grep "disabled") ]] && echo '' || echo ''"
+[module/weather]
+interval = 600
+label-font = 3
+format = <label>
+type = custom/script
+label-overline = #FFFFF914
+exec = "$HOME/.bin/.polybar-weather"
 # Bars
 [bar/laptop]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-laptop.conf
@@ -199,7 +206,7 @@ scroll-up = i3wm-wsnext
 monitor = ${env:MONITOR}
 scroll-down = i3wm-wsprev
 modules-left = powermenu i3 xwindow
-modules-right = volume rotate filesystem memory cpu battery date
+modules-right = weather volume rotate filesystem memory cpu battery date
 [bar/tablet]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-tablet.conf
 monitor = eDP1
@@ -212,5 +219,6 @@ scroll-up = i3wm-wsnext
 #monitor = ${env:MONITOR}
 scroll-down = i3wm-wsprev
 modules-left = powermenu i3
-modules-right = volume rotate filesystem memory cpu battery date
-# <<EOF>> #
+modules-right = weather volume rotate filesystem memory cpu battery date
+
+# EOF

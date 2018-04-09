@@ -1,0 +1,38 @@
+#!/usr/bin/sh
+
+STATUS_FILE="$HOME/.xonline"
+
+if [ ! -e $STATUS_FILE ]; then
+  echo 1 > $STATUS_FILE
+fi
+
+print_help() {
+  cat <<EOF
+online <status|on|off>
+
+on      - Set the status to "online".
+off     - Set the status to "offline".
+status  - Check the online status.
+EOF
+}
+
+if [ $# -eq 0 ]; then
+  print_help
+  exit 0
+fi
+
+if [ $# -eq 1 ]; then
+  case $1 in
+    on)
+    echo 1 > $STATUS_FILE;;
+    off)
+    echo 0 > $STATUS_FILE;;
+    status)
+    cat $STATUS_FILE;;
+    *)
+    print_help
+  esac
+  exit 0
+fi
+
+# EOF

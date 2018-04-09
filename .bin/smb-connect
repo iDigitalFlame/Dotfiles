@@ -65,7 +65,7 @@ fi
 if [ ! -d "$SMB_MOUNT" ]; then
   mkdir -p "$SMB_MOUNT"
 fi
-sudo /opt/spaceport/bin/smb-mount "$SMB_SHARE" "$SMB_MOUNT" "vers=3.0,username=\"$SMB_USER\",domain=\"$SMB_DOMAIN\",workgroup=\"$SMB_WORKGROUP\",password=\"$SMB_PASSWORD\",uid=$USER,gid=$USER,file_mode=0750,dir_mode=0750"
+sudo /opt/spaceport/bin/msmb "$SMB_SHARE" "$SMB_MOUNT" "vers=3.0,username=\"$SMB_USER\",domain=\"$SMB_DOMAIN\",workgroup=\"$SMB_WORKGROUP\",password=\"$SMB_PASSWORD\",uid=$USER,gid=$USER,file_mode=0750,dir_mode=0750"
 if [ $? -ne 0 ]; then
   printf "There was a problem mounting \"$SMB_SHARE\"!\n"
 else

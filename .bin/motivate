@@ -20,7 +20,10 @@
 ## Easy Motovation
 # Start your day right!
 
-import random
+import sys
+
+from random import choices
+from os.path import realpath
 
 MESSAGES = [
  'The only thing stopping you from sucess, is yourself!',
@@ -120,7 +123,42 @@ MESSAGES = [
  'Your speed dosen\'t matter, foward is forward.',
  'Never wish them pain. That\'s not who you are. If they caused you pain, they must have pain inside. Wish them healing.',
  'If you haven\'t the strength to impose your own terms upon life, you must accept the terms it offers you.',
+ 'After all these years I\'ve started to feel better about myself, and so can you.',
+ 'Start with what you have till you get what you want.',
+ 'One day you\'ll wake up and there won\'t be any more time to do the things you\'ve always wanted. Do it now.',
+ 'I see all the efforts you make and I am proud.',
+ 'Conquer the unknown.',
+ 'It\'s easy to do permanent damage, when y\'re temporarily upset.',
+ 'The lesson is that you can still make mistakes and be forgiven.',
+ 'Life is under no obligation to give us what we expect.',
+ 'I???m not afraid of death, but I???m in no hurry to die. I have so much I want to do first.',
+ 'Life turns on a dime, don\'t get too comfortable.',
+ 'Live the life YOU wanna live, not the life other people want you to live.',
+ 'Don\'t make your career be your life. Let it be your passion, but don\'t let it become your identity. You are so much more valuable that that.',
+ 'Show up, finish your projects, then brag about it. No one wants to read the first third of a book.',
+ 'You dont have to burn yourself to warm others',
+ 'The hardest battles are fought in the mind',
+ 'You can have results or excuses, but not both.',
 ]
 
-print(random.choices(MESSAGES)[0])
-# <<EOF>> #
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        quote = str(sys.argv[1]).replace('\'', '\\\'')
+        if quote not in MESSAGES:
+            handle = open(realpath(__file__), 'r+')
+            data = handle.read()
+            handle.seek(0)
+            data = data.replace(',\n]', ',\n \'%s\',\n]' % quote)
+            handle.write(data)
+            handle.truncate()
+            handle.flush()
+            handle.close()
+            del data
+            del handle
+        del quote
+    else:
+        print(choices(MESSAGES)[0])
+    sys.exit(0)
+
+# EOF
