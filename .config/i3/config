@@ -153,4 +153,5 @@ bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_
 bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
 bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
+
 # EOF
