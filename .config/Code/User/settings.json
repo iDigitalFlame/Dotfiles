@@ -1,5 +1,24 @@
+// ################################
+// ###### iDigitalFlame 2018 ######
+// #                              #
+// #            -/`               #
+// #            -yy-   :/`        #
+// #         ./-shho`:so`         #
+// #    .:- /syhhhh//hhs` `-`     #
+// #   :ys-:shhhhhhshhhh.:o- `    #
+// #   /yhsoshhhhhhhhhhhyho`:/.   #
+// #   `:yhyshhhhhhhhhhhhhh+hd:   #
+// #     :yssyhhhhhyhhhhhhhhdd:   #
+// #    .:.oyshhhyyyhhhhhhddd:    #
+// #    :o+hhhhhyssyhhdddmmd-     #
+// #     .+yhhhhyssshdmmddo.      #
+// #       `///yyysshd++`         #
+// #                              #
+// ########## SPACEPORT ###########
+// ################################
+// ## VCSode Configuration
 {
-    "files.autoSave": "onWindowChange",
+    "files.autoSave": "off",
     "editor.fontSize": 12,
     "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 4,
@@ -72,7 +91,9 @@
     "editor.suggestOnTriggerCharacters": true,
     "editor.suggestSelection": "recentlyUsed",
     "editor.tabCompletion": false,
-    "editor.tokenColorCustomizations": {},
+    "editor.tokenColorCustomizations": {
+        "comments": "#FFFFFF"
+    },
     "editor.trimAutoWhitespace": true,
     "editor.useTabStops": true,
     "editor.wordBasedSuggestions": true,
@@ -82,7 +103,6 @@
     "scm.alwaysShowProviders": false,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {},
-    "workbench.colorTheme": "Brackets Light Pro",
     "workbench.commandPalette.history": 50,
     "workbench.commandPalette.preserveInput": false,
     "workbench.editor.closeOnFileDelete": false,
@@ -540,5 +560,7 @@
     "git.inputValidation": "warn",
     "git.path": null,
     "git.promptToSaveFilesBeforeCommit": true,
-    "git.showInlineOpenFileAction": true
+    "git.showInlineOpenFileAction": true,
+    "workbench.colorTheme": "Calamity"
 }
+// # EOF

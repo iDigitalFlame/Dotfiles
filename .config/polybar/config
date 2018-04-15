@@ -205,7 +205,7 @@ module-margin-right = 1
 scroll-up = i3wm-wsnext
 monitor = ${env:MONITOR}
 scroll-down = i3wm-wsprev
-modules-left = powermenu i3 xwindow
+modules-left = i3 xwindow
 modules-right = weather volume rotate filesystem memory cpu battery date
 [bar/tablet]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-tablet.conf
@@ -218,7 +218,7 @@ module-margin-right = 1
 scroll-up = i3wm-wsnext
 #monitor = ${env:MONITOR}
 scroll-down = i3wm-wsprev
-modules-left = powermenu i3
+modules-left = i3
 modules-right = weather volume rotate filesystem memory cpu battery date
 
 # EOF
