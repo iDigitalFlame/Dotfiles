@@ -20,7 +20,9 @@
 
 export VISUAL="nano"
 export ZSH_THEME="muse"
+export GOPATH="$HOME/.go"
 export UPDATE_ZSH_DAYS=14
+export GOROOT="/usr/lib/go"
 export ZSH="$HOME/.oh-my-zsh"
 export AURDEST="$HOME/.pacaur"
 export ENABLE_CORRECTION="true"
@@ -46,7 +48,7 @@ fi
 if [ ! -d "/tmp/.$USER-pacaur-build" ]; then
   mkdir -p "/tmp/.$USER-pacaur-build"
 fi
-if [ ! -d "$HOME/Pictures/Screenshots" ]; then 
+if [ ! -d "$HOME/Pictures/Screenshots" ]; then
   mkdir -p "$HOME/Pictures/Screenshots"
 fi
 
@@ -133,6 +135,8 @@ alias chill="powerctl locker -ks false -kb false -kl false"
 
 # System Power Aliases
 alias cpu="powerctl cpu"
+alias bton="powerctl blue -e"
+alias btoff="powerctl blue -d"
 alias blueon="powerctl blue -e"
 alias blueoff="powerctl blue -d"
 alias blue-on="powerctl blue -e"
@@ -147,6 +151,7 @@ alias power4="powerctl cpu -x 3.0Ghz -m 400 -t 1 -tx 70 -tm 10"
 alias lsl="ls -alp --group-directories-first --color=auto"
 alias lsh="ls -alph --group-directories-first --color=auto"
 alias lsal="ls -alp --group-directories-first --color=auto"
+alias lsd="find \"\$(pwd)\" -maxdepth 1 -type d -name .\* -ls"
 
 # Utility Aliases
 alias ss="~/.bin/screenshot"
@@ -159,18 +164,24 @@ alias public-ip="wget -q -O - https://ifconfig.co"
 alias public-ip4="wget -4 -q -O - https://ifconfig.co"
 alias sync-hosts="sg iptables-web -c \"/usr/bin/python3 ~/.apps/updateHosts/updateHostsFile.py --auto\"; sudo sh -c \"cp ~/.apps/updateHosts/hosts /etc/hosts; systemctl restart systemd-resolved\""
 
+# WIne Aliases
+alias wine-exit="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --kill &> /dev/null\""
+alias wine-restart="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --restart &> /dev/null\""
+
 # General Aliases
 alias xx="exit"
 alias edit="ed"
 alias exx="exit"
 alias cls="clear"
 alias less="less -R"
+alias vsc="code -r - &"
 alias lp="/usr/bin/leafpad"
 alias se="sudo /usr/bin/rnano"
 alias nano="/usr/bin/nano -Ll"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
+alias wineboot="echo Use a dam prefix\!"
 alias clip="/usr/bin/xclip -selection clipboard"
 
 source "$HOME/.zshrc.inc"

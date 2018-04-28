@@ -1,4 +1,24 @@
 #!/usr/bin/sh
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Polybar Weather Widget
+# Gets the weather, duh.
 
 get_icon() {
     case $1 in
@@ -29,6 +49,11 @@ if [ $($HOME/.bin/online status) -eq 0 ]; then
 fi
 
 source "$HOME/.config/weather.conf"
+
+if [ $# -eq 1 ] && [ "$1" == "go" ]; then
+  xdg-open "https://openweathermap.org/city/$CITY"
+  exit 0
+fi
 
 _tmp_indicator="°"
 _tmp_output=$(sg iptables-web -c "curl -sf \"http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&zip=$ZIP,us&units=imperial\"")

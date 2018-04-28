@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+_args="$@"
+/usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
+
+# EOF

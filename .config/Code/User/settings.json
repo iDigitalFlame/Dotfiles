@@ -20,7 +20,7 @@
 {
     "files.autoSave": "off",
     "editor.fontSize": 12,
-    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.cursorStyle": "line",
@@ -136,7 +136,6 @@
     "window.openFoldersInNewWindow": "default",
     "window.restoreFullscreen": false,
     "window.restoreWindows": "one",
-    //?
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
     "files.associations": {},
@@ -144,8 +143,7 @@
     "files.autoSaveDelay": 1000,
     "files.defaultLanguage": "en",
     "files.encoding": "utf8",
-    // ?
-    "files.eol": "\r\n",
+    "files.eol": "\n",
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -172,7 +170,7 @@
     "zenMode.hideTabs": false,
     "zenMode.restore": false,
     "explorer.autoReveal": true,
-    "explorer.confirmDelete": true,
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": true,
     "explorer.decorations.badges": true,
     "explorer.decorations.colors": true,
@@ -367,7 +365,9 @@
     "python.disableInstallationCheck": false,
     "python.disablePromptForFeatures": [],
     "python.envFile": "${workspaceFolder}/.pyenv",
-    "python.formatting.autopep8Args": [],
+    "python.formatting.autopep8Args": [
+        "--max-line-length 128"
+    ],
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.provider": "autopep8",
     "python.formatting.yapfArgs": [],
@@ -386,7 +386,7 @@
         ".vscode/*.py",
         "**/site-packages/**/*.py"
     ],
-    "python.linting.lintOnSave": true,
+    "python.linting.lintOnSave": false,
     "python.linting.maxNumberOfProblems": 250,
     "python.linting.mypyArgs": [
         "--ignore-missing-imports",
@@ -425,7 +425,7 @@
     "python.terminal.activateEnvironment": true,
     "python.terminal.executeInFileDir": false,
     "python.terminal.launchArgs": [],
-    "python.unitTest.cwd": null,
+    "python.unitTest.cwd": "",
     "python.unitTest.debugHost": "localhost",
     "python.unitTest.debugPort": 9090,
     "python.unitTest.nosetestArgs": [],
@@ -498,11 +498,11 @@
         "runtest": true
     },
     "go.formatFlags": [],
-    "go.formatTool": "goreturns",
+    "go.formatTool": "returns",
     "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
-    "go.gopath": null,
-    "go.goroot": null,
+    "go.gopath": "~/.go",
+    "go.goroot": "/usr/lib/go",
     "go.gotoSymbol.ignoreFolders": [],
     "go.gotoSymbol.includeImports": false,
     "go.inferGopath": true,
@@ -519,12 +519,8 @@
         "share": false,
         "run": true
     },
-    "go.removeTags": {
-        "tags": "",
-        "options": "",
-        "promptForTags": false
-    },
-    "go.testEnvFile": null,
+    "go.removeTags": {},
+    "go.testEnvFile": "",
     "go.testEnvVars": {},
     "go.testFlags": null,
     "go.testOnSave": false,
@@ -535,7 +531,7 @@
     "go.useCodeSnippetsOnFunctionSuggestWithoutType": false,
     "go.useLanguageServer": false,
     "go.vetFlags": [],
-    "go.vetOnSave": "package",
+    "go.vetOnSave": "off",
     "npm.autoDetect": "off",
     "npm.exclude": "",
     "npm.packageManager": "npm",
@@ -548,7 +544,7 @@
     "git.confirmSync": true,
     "git.countBadge": "all",
     "git.decorations.enabled": true,
-    "git.defaultCloneDirectory": null,
+    "git.defaultCloneDirectory": "~/",
     "git.detectSubmodules": true,
     // Eventually enable
     "git.enableCommitSigning": false,

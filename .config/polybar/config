@@ -41,7 +41,7 @@ mount-0 = /home
 type = internal/fs
 fixed-values = true
 format-mounted = <label-mounted>
-label-mounted = " %used%/%free%"
+label-mounted = " %used% (%percentage_used%%)"
 format-mounted-overline = #FF00D8F1
 [module/i3]
 index-sort = true
@@ -86,7 +86,7 @@ format-prefix-foreground = ${theme.foreground-alt}
 interval = 5
 type = internal/memory
 format-overline = #FFFEB523
-label = " %gb_used%/%gb_free%"
+label = " %gb_used%"
 format-underline = ${theme.clear}
 format-prefix-foreground = ${theme.foreground-alt}
 [module/date]
@@ -174,14 +174,14 @@ label-song-maxlen = 40
 label-song-ellipsis = true
 format-online =  <icon-prev> <icon-stop> <label-song> <toggle> <icon-next>
 [module/bluetooth]
-type = custom/script
 interval = 30
 format = <label>
+type = custom/script
 exec = "[ $(ls -l /sys/class/bluetooth | wc -l) -gt 1 ] && echo 'BE' || echo 'BD'"
 [module/rotate]
-type = custom/script
 interval = 5
 format = <label>
+type = custom/script
 label-overline = #FFFFF914
 click-left = "/opt/spaceport/bin/powerctl rotate -t"
 click-right = "/opt/spaceport/bin/powerctl rotate -t"
@@ -194,6 +194,9 @@ format = <label>
 type = custom/script
 label-overline = #FFFFF914
 exec = "$HOME/.bin/.polybar-weather"
+click-left = "$HOME/.bin/.polybar-weather go"
+click-right = "$HOME/.bin/.polybar-weather go"
+click-middle = "$HOME/.bin/.polybar-weather go"
 # Bars
 [bar/laptop]
 include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-laptop.conf

@@ -20,7 +20,7 @@
 
 # i3 config file (v4)
 # Startup (Mostly handled by SMD-Client)
-exec --no-startup-id sg iptables-mail -c "trojita"
+#exec --no-startup-id sg iptables-mail -c "trojita"
 exec --no-startup-id setxkbmap -option ctrl:swap_lwin_lctl
 # Variables
 set $alt Mod1
@@ -34,7 +34,7 @@ for_window [class="trojita" title="Compose Mail"] border normal, floating enable
 for_window [class="Google-chrome" window_role="pop-up"] border normal, floating enable
 # General
 gaps outer 0
-gaps inner 8
+gaps inner 5
 #smart_gaps on
 new_window pixel 0
 smart_borders on
@@ -80,6 +80,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl br
 bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
 bindsym $alt+XF86AudioLowerVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
 bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
+bindsym $alt+B exec --no-startup-id /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome"
 # Workspace Keybindings
 bindsym $alt+1 workspace 1
 bindsym $alt+2 workspace 2

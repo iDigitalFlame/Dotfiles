@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+
+_URL="$1"
+_BROWSER=""
+
+if [ -e "$HOME/.config/browser.conf" ]; then
+    _BROWSER=$(cat "$HOME/.config/browser.conf")
+    if [ ! -z "$_BROWSER" ]; then
+        /usr/bin/sg iptables-web -c "$_BROWSER $_URL"
+        exit 0
+    fi
+fi
+exit 1
+
+# EOF
