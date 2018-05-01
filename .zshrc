@@ -38,7 +38,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 PROMPT="%n $PROMPT"
 
 # Startups
-motivate | cowsay -W 75 -f small | lolcat
+echo "$(tput setab 0)$(motivate | cowsay -W 75 -f small | lolcat)$(tput sgr 0)"
+#motivate | cowsay -W 75 -f small | lolcat
 if [ ! -d "$HOME/.pacaur" ]; then
   mkdir -p "$HOME/.pacaur"
 fi

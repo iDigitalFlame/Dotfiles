@@ -498,7 +498,7 @@
         "runtest": true
     },
     "go.formatFlags": [],
-    "go.formatTool": "returns",
+    "go.formatTool": "goreturns",
     "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
     "go.gopath": "~/.go",
