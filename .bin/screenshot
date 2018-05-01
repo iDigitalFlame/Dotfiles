@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -25,4 +25,5 @@ if [ $# -ge 1 ]; then
   DELAY=0
 fi
 /usr/bin/maim -d $DELAY -u -o ~/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg
-# <<EOF>> #
+
+# EOF

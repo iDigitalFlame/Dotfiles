@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -21,13 +21,14 @@
 # Windows PFX to Linux PEM files
 
 if [ $# -ne 1 ]; then
-  echo "Usage\npfx2pem <pfx>"
+  printf "Usage\npfx2pem <pfx>\n"
   exit 1
 fi
 
-cert=$1
-openssl pkcs12 -in "$cert" -nocerts -out "/tmp/$cert.pem" -nodes
-openssl pkcs12 -in "$cert" -nokeys -out "$cert-pem.pem"
-openssl rsa -in "/tmp/$cert.pem" -out "$cert-key.key"
-rm "/tmp/$cert.pem"
-# <<EOF>> #
+cert_file=$1
+/usr/bin/openssl pkcs12 -in "$cert_file" -nocerts -out "/tmp/$cert_file.pem" -nodes
+/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file-pem.pem"
+/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file-key.key"
+/usr/bin/rm "/tmp/$cert.pem"
+
+# EOF

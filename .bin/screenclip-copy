@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -21,4 +21,5 @@
 # Throws a screenclip to the clipboard
 
 /usr/bin/maim -u -o -s | xclip -selection clipboard -t image/png
-# <<EOF>> #
+
+# EOF

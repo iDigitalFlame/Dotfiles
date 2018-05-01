@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -21,4 +21,5 @@
 # A cool app launcher
 
 /usr/bin/rofi -sidebar-mode -combi-modi drun,window,run -lines 12 -padding 18 -width 60 -location 0 -show combi -columns 3 -font "Sans 10"
-# <<EOF>> #
+
+# EOF

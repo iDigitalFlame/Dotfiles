@@ -21,4 +21,5 @@
 # Change up the style a little bit
 
 /usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*
-# <<EOF>> #
+
+# EOF
