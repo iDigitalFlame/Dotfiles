@@ -98,10 +98,10 @@ alias wython="__sg_cmd iptables-web /usr/bin/python3"
 alias wython2="__sg_cmd iptables-web /usr/bin/python2"
 alias firefox="__sg_cmd iptables-web /usr/bin/firefox"
 alias rdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
+alias quote="sg iptables-web -c \"~/.bin/motivate -get\""
 alias python-web="__sg_cmd iptables-web /usr/bin/python3"
 alias python2-web="__sg_cmd iptables-web /usr/bin/python2"
 alias xfreerdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
-alias quote="sg iptables-web -c \"/usr/bin/python3 ~/.bin/quote\""
 alias chrome="__sg_cmd iptables-web /usr/bin/google-chrome-stable"
 
 # Python Aliases
