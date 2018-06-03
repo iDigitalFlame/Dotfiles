@@ -137,7 +137,7 @@
     "window.restoreFullscreen": false,
     "window.restoreWindows": "one",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "files.associations": {},
     "files.autoGuessEncoding": true,
     "files.autoSaveDelay": 1000,
@@ -204,7 +204,7 @@
         "compounds": []
     },
     "html.autoClosingTags": true,
-    "html.experimental.syntaxFolding": true,
+    // "html.experimental.syntaxFolding": true,
     "html.format.contentUnformatted": "pre,code,textarea",
     "html.format.enable": true,
     "html.format.endWithNewline": false,
@@ -222,7 +222,7 @@
     "html.trace.server": "off",
     "html.validate.scripts": true,
     "html.validate.styles": true,
-    "json.experimental.syntaxFolding": true,
+    // "json.experimental.syntaxFolding": true,
     "json.format.enable": true,
     "json.schemas": [],
     "json.trace.server": "off",
@@ -366,9 +366,9 @@
     "python.disablePromptForFeatures": [],
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.formatting.autopep8Args": [
-        "--max-line-length 128"
+        "--max-line-length 120"
     ],
-    "python.formatting.autopep8Path": "autopep8",
+    "python.formatting.autopep8Path": "/usr/bin/autopep8",
     "python.formatting.provider": "autopep8",
     "python.formatting.yapfArgs": [],
     "python.formatting.yapfPath": "yapf",
@@ -376,17 +376,19 @@
     "python.jediMemoryLimit": 2048,
     "python.jediPath": "",
     "python.linting.enabled": true,
-    "python.linting.flake8Args": [],
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
     "python.linting.flake8CategorySeverity.E": "Error",
     "python.linting.flake8CategorySeverity.F": "Error",
     "python.linting.flake8CategorySeverity.W": "Warning",
-    "python.linting.flake8Enabled": false,
-    "python.linting.flake8Path": "flake8",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/usr/bin/flake8",
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
         "**/site-packages/**/*.py"
     ],
-    "python.linting.lintOnSave": false,
+    "python.linting.lintOnSave": true,
     "python.linting.maxNumberOfProblems": 250,
     "python.linting.mypyArgs": [
         "--ignore-missing-imports",
@@ -396,11 +398,13 @@
     "python.linting.mypyCategorySeverity.note": "Information",
     "python.linting.mypyEnabled": false,
     "python.linting.mypyPath": "mypy",
-    "python.linting.pep8Args": [],
+    "python.linting.pep8Args": [
+        "--max-line-length=120"
+    ],
     "python.linting.pep8CategorySeverity.E": "Error",
     "python.linting.pep8CategorySeverity.W": "Warning",
-    "python.linting.pep8Enabled": false,
-    "python.linting.pep8Path": "pep8",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Path": "/usr/bin/pep8",
     "python.linting.prospectorArgs": [],
     "python.linting.prospectorEnabled": false,
     "python.linting.prospectorPath": "prospector",
@@ -416,7 +420,7 @@
     "python.linting.pylintCategorySeverity.fatal": "Error",
     "python.linting.pylintCategorySeverity.refactor": "Hint",
     "python.linting.pylintCategorySeverity.warning": "Warning",
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.pylintPath": "pylint",
     "python.linting.pylintUseMinimalCheckers": true,
     "python.pythonPath": "python3",
@@ -426,7 +430,7 @@
     "python.terminal.executeInFileDir": false,
     "python.terminal.launchArgs": [],
     "python.unitTest.cwd": "",
-    "python.unitTest.debugHost": "localhost",
+    "python.unitTest.debugHost": 0,
     "python.unitTest.debugPort": 9090,
     "python.unitTest.nosetestArgs": [],
     "python.unitTest.nosetestPath": "nosetests",

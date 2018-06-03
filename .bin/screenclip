@@ -20,6 +20,6 @@
 ## Screenclip
 # Get a screenclip, duh
 
-/usr/bin/maim -u -o -s ~/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg
+/usr/bin/maim -u -c 0,0,0,0 -o -s ~/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg
 
 # EOF

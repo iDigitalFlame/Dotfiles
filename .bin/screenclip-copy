@@ -20,6 +20,6 @@
 ## Screenclip Copy
 # Throws a screenclip to the clipboard
 
-/usr/bin/maim -u -o -s | xclip -selection clipboard -t image/png
+/usr/bin/maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
 
 # EOF

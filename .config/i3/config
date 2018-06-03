@@ -29,9 +29,11 @@ set $control Mod4
 # Window Rules
 for_window [class="Firefox"] border pixel 0
 for_window [class="Chromium"] border pixel 0
+for_window [class="termianlservices"] fullscreen
 for_window [class="Google-chrome"] border pixel 0
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="trojita" title="Compose Mail"] border normal, floating enable
-for_window [class="Google-chrome" window_role="pop-up"] border normal, floating enable
+for_window [class="Inox" window_role="pop-up"] border normal, floating enable
 # General
 gaps outer 0
 gaps inner 5
@@ -39,7 +41,7 @@ gaps inner 5
 new_window pixel 0
 smart_borders on
 floating_modifier $alt
-default_orientation auto 
+default_orientation auto
 # Reload Control
 bindsym $alt+Shift+m reload
 bindsym $alt+Shift+n restart
@@ -56,13 +58,15 @@ client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
 bindsym $win+Return exec /usr/bin/pcmanfm
 bindsym $alt+Delete exec /usr/bin/leafpad
 bindsym $alt+Return exec /usr/bin/xfce4-terminal
-bindsym $alt+space exec --no-startup-id "~/.bin/searchbar"
-bindsym $control+Tab exec --no-startup-id "~/.bin/next-bg"
 bindsym $alt+P exec --no-startup-id "~/.bin/auto-monitor"
+bindsym $alt+space exec --no-startup-id "~/.bin/searchbar"
+bindsym XF86LaunchA exec --no-startup-id "~/.bin/searchbar"
+bindsym $control+Tab exec --no-startup-id "~/.bin/next-bg"
 bindsym $alt+Shift+P exec --no-startup-id "/usr/bin/arandr"
 bindsym Print exec --no-startup-id "~/.bin/screenshot-copy 0"
 bindsym $win+Shift+2 exec --no-startup-id "~/.bin/screenclip"
 bindsym $win+Shift+1 exec --no-startup-id "~/.bin/screenshot 0"
+bindsym $win+H exec --no-startup-id "~/.bin/new-workspace"
 bindsym $win+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
 bindsym $win+$control+L exec --no-startup-id "/usr/bin/systemctl hibernate"
 bindsym $win+Shift+$control+2 exec --no-startup-id "~/.bin/screenclip-copy"
@@ -72,8 +76,8 @@ bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
 bindsym $alt+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
 bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
 bindsym $win+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
-bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
+bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
 bindsym $alt+XF86MonBrightnessUp exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
 bindsym $alt+XF86MonBrightnessDown exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
 bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
@@ -81,6 +85,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl 
 bindsym $alt+XF86AudioLowerVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
 bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
 bindsym $alt+B exec --no-startup-id /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome"
+bindsym XF86LaunchB exec --no-startup-id /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome"
 # Workspace Keybindings
 bindsym $alt+1 workspace 1
 bindsym $alt+2 workspace 2
@@ -95,6 +100,8 @@ bindsym $alt+0 workspace 10
 bindsym $alt+m scratchpad show
 bindsym $win+$alt+Left workspace prev_on_output
 bindsym $win+$alt+Right workspace next_on_output
+bindsym XF86KbdBrightnessUp workspace next_on_output
+bindsym XF86KbdBrightnessDown workspace prev_on_output
 # Layout Keybindings
 bindsym $alt+Up move up
 bindsym $alt+Left move left
@@ -152,6 +159,8 @@ bindsym $win+9 move container to workspace 9, workspace 9
 bindsym $win+0 move container to workspace 10, workspace 10
 bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
+bindsym $win+XF86KbdBrightnessUp move container to workspace next_on_output, workspace next_on_output
+bindsym $win+XF86KbdBrightnessDown move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
 bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
 

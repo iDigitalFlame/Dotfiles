@@ -1,9 +1,10 @@
 {
     "background": "/usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*",
+    "background_timer": 600,
     "blank_time": 60,
-    "lock_parameters": "--force-clock --ignore-empty-password --radius=60 --ring-width=10 --insidecolor=00000000 --insidevercolor=00000000 --insidewrongcolor=00000000 --linecolor=00000000 --separatorcolor=00000000 --datecolor=FFFFFFFF --timecolor=FFFFFFFF --ringcolor=F8F8F28C --keyhlcolor=E11EFFE6 --bshlcolor=FFB86CE6 --ringvercolor=E6DB74D9 --ringwrongcolor=FF5555D9 --indpos=\"x+120:h-200\" --time-align=1 --date-align=1 --timepos=\"x+60:h-90\" --datestr=\"%A %B %d\" --timestr=\"%H:%M\" --timesize=30 --datesize=20 --screen=eDP1 --wrongtext=\"\" --veriftext=\"\" --pointer=default --color=000000 --image=\"/home/iDigitalFlame/.config/lockscreen.png\" --tiling --modsize=1",
     "composer": "/home/iDigitalFlame/.bin/compton -cd :1 --config /home/iDigitalFlame/.config/compton.conf --blur-method kawase --blur-strength 2",
     "hibernate_time": 120,
+    "lock_parameters": "--force-clock --ignore-empty-password --radius=60 --ring-width=10 --insidecolor=00000000 --insidevercolor=00000000 --insidewrongcolor=00000000 --linecolor=00000000 --separatorcolor=00000000 --datecolor=000000FF --timecolor=000000FF --ringcolor=000000E6 --keyhlcolor=E11EFFE6 --bshlcolor=FFB86CE6 --ringvercolor=E6DB74D9 --ringwrongcolor=FF5555D9 --indpos=\"x+120:h-200\" --time-align=1 --date-align=1 --timepos=\"x+60:h-90\" --datestr=\"%A %B %d\" --timestr=\"%H:%M\" --timesize=30 --datesize=20 --screen=eDP1 --wrongtext=\"\" --noinputt=\"\" --veriftext=\"\" --pointer=default --color=000000 --image=\"/home/iDigitalFlame/.config/lockscreen.png\" --tiling --modsize=1",
     "lock_time": 120,
     "polybar": {
         "laptop_mode": "laptop",

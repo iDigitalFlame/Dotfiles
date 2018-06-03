@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+from json import loads
+from subprocess import check_output, call
+
+if __name__ == '__main__':
+    try:
+        a = check_output(['/usr/bin/i3-msg', '-t', 'get_workspaces'])
+        b = loads(a)
+        d = next(i for i in range(1, 100) if not [c for c in b if c['num'] == i])
+        call(['i3-msg', 'workspace number %i' % d])
+    except OSError:
+        pass
+
+# EOF

@@ -102,7 +102,6 @@ alias quote="sg iptables-web -c \"~/.bin/motivate -get\""
 alias python-web="__sg_cmd iptables-web /usr/bin/python3"
 alias python2-web="__sg_cmd iptables-web /usr/bin/python2"
 alias xfreerdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
-alias chrome="__sg_cmd iptables-web /usr/bin/google-chrome-stable"
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -165,7 +164,7 @@ alias public-ip="wget -q -O - https://ifconfig.co"
 alias public-ip4="wget -4 -q -O - https://ifconfig.co"
 alias sync-hosts="sg iptables-web -c \"/usr/bin/python3 ~/.apps/updateHosts/updateHostsFile.py --auto\"; sudo sh -c \"cp ~/.apps/updateHosts/hosts /etc/hosts; systemctl restart systemd-resolved\""
 
-# WIne Aliases
+# Wine Aliases
 alias wine-exit="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --kill &> /dev/null\""
 alias wine-restart="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --restart &> /dev/null\""
 
@@ -177,8 +176,8 @@ alias cls="clear"
 alias less="less -R"
 alias vsc="code -r - &"
 alias lp="/usr/bin/leafpad"
-alias se="sudo /usr/bin/rnano"
 alias nano="/usr/bin/nano -Ll"
+alias se="sudo /usr/bin/rnano -Ll"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
