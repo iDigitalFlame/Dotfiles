@@ -19,6 +19,7 @@
 ################################
 ## Online/Offline Setter
 # Enables/Disables some of my scripts and prevents them from reaching to the 'net.
+# Updated 06/05/2018
 
 STATUS_FILE="$HOME/.xonline"
 

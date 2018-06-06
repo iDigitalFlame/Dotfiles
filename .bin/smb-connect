@@ -19,6 +19,7 @@
 ################################
 ## SMB Connect
 # Connects a SMB folder and uses the keyring
+# Updated 06/05/2018
 
 if [ $# -lt 2 ]; then
   printf "smb-connect [-f] <username> <share_path>\n"

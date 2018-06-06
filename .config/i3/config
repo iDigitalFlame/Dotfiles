@@ -17,36 +17,123 @@
 ########## SPACEPORT ###########
 ################################
 ## i3 Configuration
-
+# Updated 06/06/2018
 # i3 config file (v4)
-# Startup (Mostly handled by SMD-Client)
-#exec --no-startup-id sg iptables-mail -c "trojita"
-exec --no-startup-id setxkbmap -option ctrl:swap_lwin_lctl
-# Variables
-set $alt Mod1
-set $win Control
-set $control Mod4
-# Window Rules
+
+####
+# Bindings
+# Legand:
+#  PWIN - Physical Windows Key
+#  PALT - Physical Alt Key
+#  PCTL - Physical Control Key
+#  LWIN - Logical Windows Key (Control)
+#  LALT - Logical ALt Key (Windows)
+#  LCTL - Logical Control Key (Alt)
+#  MOUS - Mouse (Trackpad)
+#
+# General Bindings:
+#  MOUS + Left Swipe -> Switch to Previous Open Workspace
+#  MOUS + Right Swipe -> Switch to Next Open Workspace
+#  PWIN + MOUS + Left Swipe -> Move Focused Window to and Switch to Previous Open Workspace
+#  PWIN + MOUS + Right Swipe -> Move Focused Window to and Switch to Next Open Workspace
+#  PWIN + Enter -> Open File Manager
+#  PWIN + B -> Open Default Browser
+#  PWIN + Shift + 1 -> Full Screen Screenshot Saved to ~/Pictures/Screenshots
+#  PWIN + Shift + 2 -> Area Selection Screenshot Saved to ~/Pictures/Screenshots
+#  PWIN + TAB -> Window Selection Menu (Window Switcher)
+#  PWIN + L -> Lock Screen with 5 min Hibernate Timer
+#  PWIN + Shift + L -> Lock Screen and Disable Hibernate Timer
+#  PCTL + Space -> Switch to a New Empty Workspace
+#  PCTL + Tab -> Change the Current Background
+#  PCTL + P -> Auto Detect Displays
+#  PCTL + Shift + P -> Open Display Manager
+#  PALT + Enter -> Open the Terminal
+#  PALT + Space -> Open the Searchbar
+#  PALT + Shift + 1 -> Full Screen Screenshot Saved to Clipboard
+#  PALT + Shift + 2 -> Area Selection Screenshot Saved to Clipboard
+#  PALT + Shift + P -> Hibernate System
+#  PALT + L -> Lock System
+# Window Bindings:
+#  PALT + Q -> Close the Focused Window
+#  PWIN + Q -> Close the Focused Window
+#  PWIN + W -> Make the Focused Floating Window Stick to the Screen
+#  PWIN + M -> Reopen a Hidden Window
+#  PWIN + N -> Hide the Focused Window
+#  PWIN + E -> Toggle Floating for the Focused Window
+#  PWIN + F -> Toggle Fullscreen for the Focused Window
+# Workspace Bindings:
+#  PALT + [0 - 9] -> Switch to Chosen Workspace
+#  PWIN + [0 - 9] -> Move Focused Window to Workspace and Switch to it
+#  PWIN + ` -> Move Focused Window to Next Empty Workspace and Switch to it
+#  PWIN + Shift + Space -> Display Workspace Selection Menu, Switch to Workspace on Select
+#  PCTL + [0 - 9] -> Move Focused Window to Workspace
+#  PCTL + ` -> Move Focused Window to Next Empty Workspace
+#  PCTL + Shift + Space -> Display Workspace Selection Menu
+# Layout Bindings:
+#  PALT + Shift + H -> Split Horozontoaly
+#  PALT + Shift + J -> Split Vertically
+#  PWIN + Up -> Move Focused Window Up
+#  PWIN + Left -> Move Focused Window Left
+#  PWIN + Down -> Move Focused Window Down
+#  PWIN + Right -> Move Focused Window Right
+#  PWIN + Shift + H -> Split Horozontoaly
+#  PWIN + Shift + V -> Split Vertically
+#  PWIN + Shift + J -> Split Vertically
+#  PWIN + D -> Switch to Tabbed Layout
+#  PWIN + S -> Switch to Stacked Layout
+#  PWIN + A -> Toggle Split Layout
+# Focus Bindings
+#  PWIN + Shift + Z -> Focus on Child Container
+#  PWIN + Shift + A -> Focus on Parent Container
+#  PCTL + Shift + Up -> Move Focus Up
+#  PCTL + Shift + Left -> Move Focus Left
+#  PCTL + Shift + Down -> Move Focus Down
+#  PCTL + Shift + Right -> Move Focus Right
+#  PCTL + MOUS + Swipe Up -> Move Focus Up
+#  PCTL + MOUS + Swipe Left -> Move Focus Left
+#  PCTL + MOUS + Swipe Down -> Move Focus Down
+#  PCTL + MOUS + Swipe Right -> Move Focus Right
+# Resize Bindings
+#  PCTL + Up -> Resize Focused Window Up
+#  PCTL + Left -> Resize Focused Window Left
+#  PCTL + Down -> Resize Focused Window Down
+#  PCTL + Right -> Resize Focused Window Right
+####
+
+## Keyboard Vars
+# Logical Alt -> Physical Left-Windows
+set $KEY_PHY_WIN Mod1
+set $KEY_LOG_ALT Mod1
+# Logical Windows (Super) -> Physical Left-Control
+set $KEY_PHY_CTL Mod4
+set $KEY_LOG_WIN Mod4
+# Logical Control -> Physical Left-Alt
+set $KEY_PHY_ALT Control
+set $KEY_LOG_CTL Control
+
+## Window Specific Rules
 for_window [class="Firefox"] border pixel 0
 for_window [class="Chromium"] border pixel 0
 for_window [class="termianlservices"] fullscreen
 for_window [class="Google-chrome"] border pixel 0
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
-for_window [class="trojita" title="Compose Mail"] border normal, floating enable
 for_window [class="Inox" window_role="pop-up"] border normal, floating enable
-# General
+for_window [class="trojita" title="Compose Mail"] border normal, floating enable
+
+## General
 gaps outer 0
 gaps inner 5
-#smart_gaps on
-new_window pixel 0
 smart_borders on
-floating_modifier $alt
+new_window pixel 0
 default_orientation auto
-# Reload Control
-bindsym $alt+Shift+m reload
-bindsym $alt+Shift+n restart
-bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to Log Off?' -b 'Yes, exit i3' 'i3-msg exit'"
-# Theme (Colors)
+floating_modifier $KEY_LOG_ALT
+
+## i3 Application Control
+bindsym $KEY_PHY_CTL+Shift+R reload
+bindsym $KEY_PHY_CTL+Shift+T restart
+bindsym $KEY_PHY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
+
+## Theme
 font pango:Sans 8
 client.background #282A36
 client.urgent #FFB86C #FFB86C #282A36 #6272A4 #FFB86C
@@ -54,114 +141,142 @@ client.focused #282A36 #282A36 #F8F8F2 #6272A4 #282A36
 client.unfocused #666666 #666666 #FFFFFF #6272A4 #666666
 client.placeholder #282A36 #282A36 #F8F8F2 #6722A4 #282A36
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
-# Application Keybindings
-bindsym $win+Return exec /usr/bin/pcmanfm
-bindsym $alt+Delete exec /usr/bin/leafpad
-bindsym $alt+Return exec /usr/bin/xfce4-terminal
-bindsym $alt+P exec --no-startup-id "~/.bin/auto-monitor"
-bindsym $alt+space exec --no-startup-id "~/.bin/searchbar"
-bindsym XF86LaunchA exec --no-startup-id "~/.bin/searchbar"
-bindsym $control+Tab exec --no-startup-id "~/.bin/next-bg"
-bindsym $alt+Shift+P exec --no-startup-id "/usr/bin/arandr"
-bindsym Print exec --no-startup-id "~/.bin/screenshot-copy 0"
-bindsym $win+Shift+2 exec --no-startup-id "~/.bin/screenclip"
-bindsym $win+Shift+1 exec --no-startup-id "~/.bin/screenshot 0"
-bindsym $win+H exec --no-startup-id "~/.bin/new-workspace"
-bindsym $win+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
-bindsym $win+$control+L exec --no-startup-id "/usr/bin/systemctl hibernate"
-bindsym $win+Shift+$control+2 exec --no-startup-id "~/.bin/screenclip-copy"
-bindsym $win+Shift+$control+1 exec --no-startup-id "~/.bin/screenshot-copy 0"
-bindsym $win+Tab exec --no-startup-id "/usr/bin/rofi -show window -mode window"
-bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
-bindsym $alt+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
-bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
-bindsym $win+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
-bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
-bindsym $alt+XF86MonBrightnessUp exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
-bindsym $alt+XF86MonBrightnessDown exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
-bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
-bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
-bindsym $alt+XF86AudioLowerVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
-bindsym $alt+XF86AudioRaiseVolume exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
-bindsym $alt+B exec --no-startup-id /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome"
-bindsym XF86LaunchB exec --no-startup-id /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome"
-# Workspace Keybindings
-bindsym $alt+1 workspace 1
-bindsym $alt+2 workspace 2
-bindsym $alt+3 workspace 3
-bindsym $alt+4 workspace 4
-bindsym $alt+5 workspace 5
-bindsym $alt+6 workspace 6
-bindsym $alt+7 workspace 7
-bindsym $alt+8 workspace 8
-bindsym $alt+9 workspace 9
-bindsym $alt+0 workspace 10
-bindsym $alt+m scratchpad show
-bindsym $win+$alt+Left workspace prev_on_output
-bindsym $win+$alt+Right workspace next_on_output
+
+## Special Keyboard Keybingings
+bindsym XF86Launch5 workspace next_on_output
+bindsym XF86Launch6 workspace prev_on_output
 bindsym XF86KbdBrightnessUp workspace next_on_output
 bindsym XF86KbdBrightnessDown workspace prev_on_output
-# Layout Keybindings
-bindsym $alt+Up move up
-bindsym $alt+Left move left
-bindsym $alt+Down move down
-bindsym $alt+Right move right
-bindsym $alt+Shift+h split h
-bindsym $alt+Shift+v split v
-bindsym $alt+d layout tabbed
-bindsym $alt+s layout stacking
-bindsym $alt+a layout toggle split
-bindsym $alt+Shift+s focus child
-bindsym $alt+Shift+a focus parent
-bindsym $alt+grave focus mode_toggle
-bindsym $alt+Shift+Up focus up
-bindsym $alt+Shift+Left focus left
-bindsym $alt+Shift+Down focus down
-bindsym $alt+Shift+Right focus right
-bindsym $alt+$win+$control+Up focus up
-bindsym $alt+$win+$control+Left focus left
-bindsym $alt+$win+$control+Down focus down
-bindsym $alt+$win+$control+Right focus right
-# Window Keybindings
-bindsym $win+q kill
-bindsym $win+r sticky toggle
-bindsym $win+m move scratchpad
-bindsym $win+e floating toggle
-bindsym $alt+f fullscreen toggle
-bindsym $alt+Shift+1 move container to workspace 1
-bindsym $alt+Shift+2 move container to workspace 2
-bindsym $alt+Shift+3 move container to workspace 3
-bindsym $alt+Shift+4 move container to workspace 4
-bindsym $alt+Shift+5 move container to workspace 5
-bindsym $alt+Shift+6 move container to workspace 6
-bindsym $alt+Shift+7 move container to workspace 7
-bindsym $alt+Shift+8 move container to workspace 8
-bindsym $alt+Shift+9 move container to workspace 9
-bindsym $alt+Shift+0 move container to workspace 10
-bindsym $alt+Shift+l resize grow width 10px or 10 ppt
-bindsym $alt+Shift+k resize grow height 10px or 10 ppt
-bindsym $alt+Shift+j resize shrink width 10px or 10 ppt
-bindsym $alt+Shift+i resize shrink height 10px or 10 ppt
-bindsym $control+Up resize shrink height 10px or 10 ppt
-bindsym $control+Down resize grow height 10px or 10 ppt
-bindsym $control+Left resize grow width 10 px or 10 ppt
-bindsym $control+Right resize shrink width 10 px or 10 ppt
-bindsym $win+1 move container to workspace 1, workspace 1
-bindsym $win+2 move container to workspace 2, workspace 2
-bindsym $win+3 move container to workspace 3, workspace 3
-bindsym $win+4 move container to workspace 4, workspace 4
-bindsym $win+5 move container to workspace 5, workspace 5
-bindsym $win+6 move container to workspace 6, workspace 6
-bindsym $win+7 move container to workspace 7, workspace 7
-bindsym $win+8 move container to workspace 8, workspace 8
-bindsym $win+9 move container to workspace 9, workspace 9
-bindsym $win+0 move container to workspace 10, workspace 10
-bindsym $win+Left move container to workspace prev_on_output, workspace prev_on_output
-bindsym $win+Right move container to workspace next_on_output, workspace next_on_output
-bindsym $win+XF86KbdBrightnessUp move container to workspace next_on_output, workspace next_on_output
-bindsym $win+XF86KbdBrightnessDown move container to workspace prev_on_output, workspace prev_on_output
-bindsym $win+$alt+Shift+Left move container to workspace prev_on_output, workspace prev_on_output
-bindsym $win+$alt+Shift+Right move container to workspace next_on_output, workspace next_on_output
+bindsym XF86LaunchB exec --no-startup-id "~/.bin/browser"
+bindsym XF86LaunchA exec --no-startup-id "~/.bin/i3/search"
+bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
+bindsym $KEY_PHY_WIN+XF86Launch5 move container to workspace next_on_output, workspace next_on_output
+bindsym $KEY_PHY_WIN+XF86Launch6 move container to workspace prev_on_output, workspace prev_on_output
+
+## Application Keybindings
+# Function Keybindings
+bindsym Print exec --no-startup-id "~/.bin/i3/shot-copy 0"
+bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
+bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
+bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
+bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
+
+# Standard Keys
+# Alt (Physical Windows) Key Bindings
+bindsym $KEY_PHY_WIN+Return exec "/usr/bin/pcmanfm"
+bindsym $KEY_PHY_WIN+B exec --no-startup-id "~/.bin/browser"
+bindsym $KEY_PHY_WIN+Shift+2 exec --no-startup-id "~/.bin/i3/clip"
+bindsym $KEY_PHY_WIN+Shift+1 exec --no-startup-id "~/.bin/i3/shot 0"
+bindsym $KEY_PHY_WIN+Tab exec --no-startup-id "~/.bin/i3/search window"
+bindsym $KEY_PHY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
+bindsym $KEY_PHY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
+
+# Windows (Physical Control) Key Beindings
+bindsym $KEY_PHY_CTL+space exec --no-startup-id "~/.bin/i3/new"
+bindsym $KEY_PHY_CTL+Tab exec --no-startup-id "~/.bin/switchbg"
+bindsym $KEY_PHY_CTL+P exec --no-startup-id "~/.bin/auto-monitor"
+bindsym $KEY_PHY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
+
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_ALT+Return exec "/usr/bin/xfce4-terminal"
+bindsym $KEY_PHY_ALT+space exec --no-startup-id "~/.bin/i3/search"
+bindsym $KEY_PHY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
+bindsym $KEY_PHY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
+bindsym $KEY_PHY_ALT+Shift+P exec --no-startup-id "/usr/bin/systemctl hibernate"
+bindsym $KEY_PHY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
+
+## Window Keybindings
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_ALT+Q kill
+
+# Alt (Physical Windows) Key Bindings
+bindsym $KEY_PHY_WIN+Q kill
+bindsym $KEY_PHY_WIN+W sticky toggle
+bindsym $KEY_PHY_WIN+M scratchpad show
+bindsym $KEY_PHY_WIN+N move scratchpad
+bindsym $KEY_PHY_WIN+E floating toggle
+bindsym $KEY_PHY_WIN+F fullscreen toggle
+
+## Workspace Keybindings
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_ALT+1 workspace 1
+bindsym $KEY_PHY_ALT+2 workspace 2
+bindsym $KEY_PHY_ALT+3 workspace 3
+bindsym $KEY_PHY_ALT+4 workspace 4
+bindsym $KEY_PHY_ALT+5 workspace 5
+bindsym $KEY_PHY_ALT+6 workspace 6
+bindsym $KEY_PHY_ALT+7 workspace 7
+bindsym $KEY_PHY_ALT+8 workspace 8
+bindsym $KEY_PHY_ALT+9 workspace 9
+bindsym $KEY_PHY_ALT+0 workspace 10
+
+# Alt (Physical Windows) Key Bindings
+bindsym $KEY_PHY_WIN+1 move container to workspace 1, workspace 1
+bindsym $KEY_PHY_WIN+2 move container to workspace 2, workspace 2
+bindsym $KEY_PHY_WIN+3 move container to workspace 3, workspace 3
+bindsym $KEY_PHY_WIN+4 move container to workspace 4, workspace 4
+bindsym $KEY_PHY_WIN+5 move container to workspace 5, workspace 5
+bindsym $KEY_PHY_WIN+6 move container to workspace 6, workspace 6
+bindsym $KEY_PHY_WIN+7 move container to workspace 7, workspace 7
+bindsym $KEY_PHY_WIN+8 move container to workspace 8, workspace 8
+bindsym $KEY_PHY_WIN+9 move container to workspace 9, workspace 9
+bindsym $KEY_PHY_WIN+0 move container to workspace 10, workspace 10
+bindsym $KEY_PHY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move with"
+bindsym $KEY_PHY_WIN+Shift+space exec --no-startup-id "~/.bin/i3/select with"
+
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_CTL+1 move container to workspace 1
+bindsym $KEY_PHY_CTL+2 move container to workspace 2
+bindsym $KEY_PHY_CTL+3 move container to workspace 3
+bindsym $KEY_PHY_CTL+4 move container to workspace 4
+bindsym $KEY_PHY_CTL+5 move container to workspace 5
+bindsym $KEY_PHY_CTL+6 move container to workspace 6
+bindsym $KEY_PHY_CTL+7 move container to workspace 7
+bindsym $KEY_PHY_CTL+8 move container to workspace 8
+bindsym $KEY_PHY_CTL+9 move container to workspace 9
+bindsym $KEY_PHY_CTL+0 move container to workspace 10
+bindsym $KEY_PHY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move"
+bindsym $KEY_PHY_CTL+Shift+space exec --no-startup-id "~/.bin/i3/select"
+
+## Layout Keybindings
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_ALT+Shift+H split h
+bindsym $KEY_PHY_ALT+Shift+J split v
+
+# Alt (Physical Windows) Key Bindings
+bindsym $KEY_PHY_WIN+Up move up
+bindsym $KEY_PHY_WIN+Left move left
+bindsym $KEY_PHY_WIN+Down move down
+bindsym $KEY_PHY_WIN+Shift+H split h
+bindsym $KEY_PHY_WIN+Shift+V split v
+bindsym $KEY_PHY_WIN+Shift+J split v
+bindsym $KEY_PHY_WIN+D layout tabbed
+bindsym $KEY_PHY_WIN+Right move right
+bindsym $KEY_PHY_WIN+S layout stacking
+bindsym $KEY_PHY_WIN+A layout toggle split
+
+## Focus Keybindings
+# Alt (Physical Windows) Key Bindings
+bindsym $KEY_PHY_WIN+Shift+Z focus child
+bindsym $KEY_PHY_WIN+Shift+A focus parent
+
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_CTL+Shift+Up focus up
+bindsym $KEY_PHY_CTL+C focus mode_toggle
+bindsym $KEY_PHY_CTL+XF86Launch7 focus up
+bindsym $KEY_PHY_CTL+Shift+Left focus left
+bindsym $KEY_PHY_CTL+Shift+Down focus down
+bindsym $KEY_PHY_CTL+XF86Launch8 focus down
+bindsym $KEY_PHY_CTL+XF86Launch6 focus left
+bindsym $KEY_PHY_CTL+Shift+Right focus right
+bindsym $KEY_PHY_CTL+XF86Launch5 focus right
+
+## Resize Keybindings
+# Control (Physical Alt) Key Bindings
+bindsym $KEY_PHY_CTL+Up resize shrink height 10px or 10 ppt
+bindsym $KEY_PHY_CTL+Down resize grow height 10px or 10 ppt
+bindsym $KEY_PHY_CTL+Left resize grow width 10 px or 10 ppt
+bindsym $KEY_PHY_CTL+Right resize shrink width 10 px or 10 ppt
 
 # EOF

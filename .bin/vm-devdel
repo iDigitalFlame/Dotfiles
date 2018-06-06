@@ -1,4 +1,25 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Dev Del
+# Hotfix to remove an USB device to a running Hydra VM.
+# Updated 06/05/2018
 
 if [ $UID -ne 0 ]; then
   printf "[!] Only root can do this!\n"
@@ -13,5 +34,7 @@ fi
 vmid=$1
 usbid=$2
 chown kvm -R /dev/bus/usb/
-printf "device_del usb$usbid\n" | netcat -U /var/run/hydra/$vmid.mon
+printf "device_del usb$usbid\nquit\n" | netcat -U /var/run/hydra/$vmid.mon
 exit 0
+
+# EOF

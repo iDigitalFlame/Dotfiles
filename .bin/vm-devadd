@@ -1,4 +1,25 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Dev Add
+# Hotfix to add an USB device to a running Hydra VM.
+# Updated 06/05/2018
 
 if [ $# -ne 4 ]; then
   printf "$0 <vm_id> <id> <vendorid> <productid>\n"
@@ -10,5 +31,7 @@ usbid=$2
 vendor=$3
 product=$4
 sudo chown kvm -R /dev/bus/usb/
-sudo sh -c "printf \"device_add usb-host,vendorid=0x$vendor,productid=0x$product,id=usb$usbid\n\" | netcat -U /var/run/hydra/$vmid.mon"
+sudo sh -c "printf \"device_add usb-host,vendorid=0x$vendor,productid=0x$product,id=usb$usbid\nquit\n\" | netcat -U /var/run/hydra/$vmid.mon"
 exit 0
+
+# EOF

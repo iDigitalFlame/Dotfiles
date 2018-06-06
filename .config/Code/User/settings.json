@@ -137,7 +137,7 @@
     "window.restoreFullscreen": false,
     "window.restoreWindows": "one",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "files.associations": {},
     "files.autoGuessEncoding": true,
     "files.autoSaveDelay": 1000,
@@ -561,6 +561,6 @@
     "git.path": null,
     "git.promptToSaveFilesBeforeCommit": true,
     "git.showInlineOpenFileAction": true,
-    "workbench.colorTheme": "Calamity"
+    "workbench.colorTheme": "Monokai"
 }
 // # EOF

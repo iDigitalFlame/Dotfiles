@@ -18,7 +18,8 @@
 ########## SPACEPORT ###########
 ################################
 ## Screenshot Clip
-# Throws a screenshot to the clipboard
+# Throws a screenshot to the clipboard]
+# Updated 06/05/2018
 
 DELAY=1
 if [ $# -ge 1 ]; then

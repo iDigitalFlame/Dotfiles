@@ -17,19 +17,10 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## PFX2PEM
-# Windows PFX to Linux PEM files
+## Screenclip Copy
+# Throws a screenclip to the clipboard
 # Updated 06/05/2018
 
-if [ $# -ne 1 ]; then
-  printf "Usage\npfx2pem <pfx>\n"
-  exit 1
-fi
-
-cert_file=$1
-/usr/bin/openssl pkcs12 -in "$cert_file" -nocerts -out "/tmp/$cert_file.pem" -nodes
-/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file-pem.pem"
-/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file-key.key"
-/usr/bin/rm "/tmp/$cert.pem"
+/usr/bin/maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
 
 # EOF

@@ -19,6 +19,7 @@
 ################################
 ## Polybar Weather Widget
 # Gets the weather, duh.
+# Updated 06/05/2018
 
 get_icon() {
     case $1 in

@@ -17,6 +17,7 @@
 ########## SPACEPORT ###########
 ################################
 ## Polybar Configuration
+# Updated 06/05/2018
 
 # Global settings
 [global/wm]
@@ -28,7 +29,7 @@ throttle-output-for = 10
 screenchange-reload = true
 # Theme Settings
 [theme]
-include-file = /home/iDigitalFlame/.config/theme/current/polybar-theme.conf
+include-file = $HOME/.config/theme/current/polybar-theme.conf
 # Modules
 [module/xwindow]
 label = %title%
@@ -193,13 +194,13 @@ label-font = 3
 format = <label>
 type = custom/script
 label-overline = #FFFFF914
-exec = "$HOME/.bin/.polybar-weather"
-click-left = "$HOME/.bin/.polybar-weather go"
-click-right = "$HOME/.bin/.polybar-weather go"
-click-middle = "$HOME/.bin/.polybar-weather go"
+exec = "$HOME/.bin/i3/weather"
+click-left = "$HOME/.bin/i3/weather go"
+click-right = "$HOME/.bin/i3/weather go"
+click-middle = "$HOME/.bin/i3/weather go"
 # Bars
 [bar/laptop]
-include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-laptop.conf
+include-file = $HOME/.config/theme/current/polybar-bar-laptop.conf
 fixed-center = true
 modules-center = mpd
 tray-detached = false
@@ -211,7 +212,7 @@ scroll-down = i3wm-wsprev
 modules-left = i3 xwindow
 modules-right = weather volume rotate filesystem memory cpu battery date
 [bar/tablet]
-include-file = /home/iDigitalFlame/.config/theme/current/polybar-bar-tablet.conf
+include-file = $HOME/.config/theme/current/polybar-bar-tablet.conf
 monitor = eDP1
 modules-center =
 fixed-center = true

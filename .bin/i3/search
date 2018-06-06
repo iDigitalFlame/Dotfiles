@@ -17,10 +17,16 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Inox Wrapper
-# Fixes the stupid way that xorg-xdefults handles .desktop files with paramaters.
+## Searchbar
+# A cool app launcher
+# Updated 06/05/2018
 
-_args="$@"
-/usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
+MODE="combi"
+
+if [ $# -eq 1 ]; then
+  MODE="$1"
+fi
+
+/usr/bin/rofi -sidebar-mode -combi-modi drun,window,run -lines 12 -padding 18 -width 50 -location 2 -yoffset 100 -show $MODE -columns 3 -font "Sans 10"
 
 # EOF

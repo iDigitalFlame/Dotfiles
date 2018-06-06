@@ -17,19 +17,26 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## PFX2PEM
-# Windows PFX to Linux PEM files
+## Power
+# Power menu using Rofi
 # Updated 06/05/2018
 
-if [ $# -ne 1 ]; then
-  printf "Usage\npfx2pem <pfx>\n"
-  exit 1
-fi
-
-cert_file=$1
-/usr/bin/openssl pkcs12 -in "$cert_file" -nocerts -out "/tmp/$cert_file.pem" -nodes
-/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file-pem.pem"
-/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file-key.key"
-/usr/bin/rm "/tmp/$cert.pem"
+case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -lines 5 -padding 18 -width 50 -location 2 -yoffset 100) in
+    "Lock")
+    /opt/spaceport/bin/powerctl lock -f
+    ;;
+    "Hibernate")
+    /usr/bin/systemctl hibernate
+    ;;
+    "Logoff")
+    /usr/bin/i3-msg exit
+    ;;
+    "Reboot")
+    /usr/bin/reboot
+    ;;
+    "Poweroff")
+    /usr/bin/poweroff
+    ;;
+esac
 
 # EOF

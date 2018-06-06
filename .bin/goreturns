@@ -19,6 +19,7 @@
 ################################
 ## Goreturns wrapper
 # Removes the EOF newline from Golang scripts.  Used by VSCode.
+# Updated 06/05/2018
 
 from os import environ
 from os.path import join

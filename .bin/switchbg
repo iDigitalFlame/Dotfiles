@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,9 +17,10 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Screenclip Copy
-# Throws a screenclip to the clipboard
+## Next Background
+# Change up the style a little bit
+# Updated 06/05/2018
 
-/usr/bin/maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
+/usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*
 
 # EOF

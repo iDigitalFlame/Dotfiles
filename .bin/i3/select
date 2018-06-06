@@ -17,19 +17,18 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## PFX2PEM
-# Windows PFX to Linux PEM files
+## Select
+# Window workspace selector usign Rofi
 # Updated 06/05/2018
 
-if [ $# -ne 1 ]; then
-  printf "Usage\npfx2pem <pfx>\n"
-  exit 1
-fi
+WS=$(printf "Workspace #1\nWorkspace #2\nWorkspace #3\nWorkspace #4\nWorkspace #5\nWorkspace #6\nWorkspace #7\nWorkspace #8\nWorkspace #9\nWorkspace #10" | rofi -dmenu -padding 18 -width 50 -location 2 -yoffset 100)
 
-cert_file=$1
-/usr/bin/openssl pkcs12 -in "$cert_file" -nocerts -out "/tmp/$cert_file.pem" -nodes
-/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file-pem.pem"
-/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file-key.key"
-/usr/bin/rm "/tmp/$cert.pem"
+if [ ! -z "$WS" ]; then
+    WS_NUM=$(echo $WS | sed 's/Workspace #//g')
+    i3-msg "move container to workspace $WS_NUM" > /dev/null
+    if [ $# -eq 1 ]; then
+        i3-msg "workspace $WS_NUM" > /dev/null
+    fi
+fi
 
 # EOF
