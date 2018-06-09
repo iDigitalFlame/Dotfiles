@@ -21,6 +21,11 @@
 # Get a screenclip, duh
 # Updated 06/05/2018
 
-/usr/bin/maim -u -c 0,0,0,0 -o -s ~/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg
+PICTURE_PATH="$HOME/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg"
+/usr/bin/maim -u -c 0,0,0,0 -o -s "$PICTURE_PATH"
+if [ $? -eq 0 ]; then
+    /usr/bin/notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$PICTURE_PATH\"."
+fi
+exit 0
 
 # EOF

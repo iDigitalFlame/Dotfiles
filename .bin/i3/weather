@@ -69,5 +69,6 @@ if [ ! -z "$_tmp_output" ]; then
     echo "$(get_icon "$_tmp_icon")" "$_tmp_temp$_tmp_indicator"
   fi
 fi
+exit 0
 
 # EOF

@@ -26,5 +26,6 @@ if [ $# -ge 1 ]; then
   DELAY=0
 fi
 /usr/bin/maim -d $DELAY -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
+exit 0
 
 # EOF

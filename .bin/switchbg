@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -22,5 +22,6 @@
 # Updated 06/05/2018
 
 /usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*
+exit 0
 
 # EOF

@@ -22,5 +22,6 @@
 
 _args="$@"
 /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
+exit 0
 
 # EOF

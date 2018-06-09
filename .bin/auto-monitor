@@ -58,5 +58,6 @@ if [ ! -z "$MONITORS" ]; then
   eval "$COMMAND"
   next-bg
 fi
+exit 0
 
 # EOF

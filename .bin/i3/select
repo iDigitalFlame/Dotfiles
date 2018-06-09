@@ -22,7 +22,6 @@
 # Updated 06/05/2018
 
 WS=$(printf "Workspace #1\nWorkspace #2\nWorkspace #3\nWorkspace #4\nWorkspace #5\nWorkspace #6\nWorkspace #7\nWorkspace #8\nWorkspace #9\nWorkspace #10" | rofi -dmenu -padding 18 -width 50 -location 2 -yoffset 100)
-
 if [ ! -z "$WS" ]; then
     WS_NUM=$(echo $WS | sed 's/Workspace #//g')
     i3-msg "move container to workspace $WS_NUM" > /dev/null
@@ -30,5 +29,6 @@ if [ ! -z "$WS" ]; then
         i3-msg "workspace $WS_NUM" > /dev/null
     fi
 fi
+exit 0
 
 # EOF

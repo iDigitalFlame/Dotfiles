@@ -21,7 +21,6 @@
 # Commands i3 to find the next empy workspace and move the focused window to it.
 # Updated 06/05/2018
 
-
 import sys
 
 from json import loads, JSONDecodeError

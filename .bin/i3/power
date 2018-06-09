@@ -38,5 +38,6 @@ case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -lines 5
     /usr/bin/poweroff
     ;;
 esac
+exit 0
 
 # EOF
