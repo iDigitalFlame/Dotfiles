@@ -101,15 +101,10 @@
 ####
 
 ## Keyboard Vars
-# Logical Alt -> Physical Left-Windows
-set $KEY_PHY_WIN Mod1
-set $KEY_LOG_ALT Mod1
-# Logical Windows (Super) -> Physical Left-Control
-set $KEY_PHY_CTL Mod4
-set $KEY_LOG_WIN Mod4
-# Logical Control -> Physical Left-Alt
-set $KEY_PHY_ALT Control
-set $KEY_LOG_CTL Control
+set $KEY_WIN Mod1
+set $KEY_ALT Mod4
+set $KEY_CTL Control
+
 
 ## Window Specific Rules
 for_window [class="Firefox"] border pixel 0
@@ -126,12 +121,12 @@ gaps inner 5
 smart_borders on
 new_window pixel 0
 default_orientation auto
-floating_modifier $KEY_LOG_ALT
+floating_modifier $KEY_WIN
 
 ## i3 Application Control
-bindsym $KEY_PHY_CTL+Shift+R reload
-bindsym $KEY_PHY_CTL+Shift+T restart
-bindsym $KEY_PHY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
+bindsym $KEY_CTL+Shift+R reload
+bindsym $KEY_CTL+Shift+T restart
+bindsym $KEY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
 
 ## Theme
 font pango:Sans 8
@@ -150,8 +145,8 @@ bindsym XF86KbdBrightnessDown workspace prev_on_output
 bindsym XF86LaunchB exec --no-startup-id "~/.bin/browser"
 bindsym XF86LaunchA exec --no-startup-id "~/.bin/i3/search"
 bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
-bindsym $KEY_PHY_WIN+XF86Launch5 move container to workspace next_on_output, workspace next_on_output
-bindsym $KEY_PHY_WIN+XF86Launch6 move container to workspace prev_on_output, workspace prev_on_output
+bindsym $KEY_WIN+XF86Launch5 move container to workspace next_on_output, workspace next_on_output
+bindsym $KEY_WIN+XF86Launch6 move container to workspace prev_on_output, workspace prev_on_output
 
 ## Application Keybindings
 # Function Keybindings
@@ -164,119 +159,110 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl 
 
 # Standard Keys
 # Alt (Physical Windows) Key Bindings
-bindsym $KEY_PHY_WIN+Return exec "/usr/bin/pcmanfm"
-bindsym $KEY_PHY_WIN+B exec --no-startup-id "~/.bin/browser"
-bindsym $KEY_PHY_WIN+Shift+2 exec --no-startup-id "~/.bin/i3/clip"
-bindsym $KEY_PHY_WIN+Shift+1 exec --no-startup-id "~/.bin/i3/shot 0"
-bindsym $KEY_PHY_WIN+Tab exec --no-startup-id "~/.bin/i3/search window"
-bindsym $KEY_PHY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
-bindsym $KEY_PHY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
+bindsym $KEY_WIN+Return exec "/usr/bin/pcmanfm"
+bindsym $KEY_WIN+B exec --no-startup-id "~/.bin/browser"
+bindsym $KEY_WIN+Shift+2 exec --no-startup-id "~/.bin/i3/clip"
+bindsym $KEY_WIN+Shift+1 exec --no-startup-id "~/.bin/i3/shot 0"
+bindsym $KEY_WIN+Tab exec --no-startup-id "~/.bin/i3/search window"
+bindsym $KEY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
+bindsym $KEY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 
 # Windows (Physical Control) Key Beindings
-bindsym $KEY_PHY_CTL+space exec --no-startup-id "~/.bin/i3/new"
-bindsym $KEY_PHY_CTL+Tab exec --no-startup-id "~/.bin/switchbg"
-bindsym $KEY_PHY_CTL+P exec --no-startup-id "~/.bin/auto-monitor"
-bindsym $KEY_PHY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
+bindsym $KEY_CTL+space exec --no-startup-id "~/.bin/i3/new"
+bindsym $KEY_CTL+Tab exec --no-startup-id "~/.bin/switchbg"
+bindsym $KEY_CTL+P exec --no-startup-id "~/.bin/auto-monitor"
+bindsym $KEY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
 
 # Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_ALT+Return exec "/usr/bin/xfce4-terminal"
-bindsym $KEY_PHY_ALT+space exec --no-startup-id "~/.bin/i3/search"
-bindsym $KEY_PHY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
-bindsym $KEY_PHY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
-bindsym $KEY_PHY_ALT+Shift+P exec --no-startup-id "/usr/bin/systemctl hibernate"
-bindsym $KEY_PHY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
+bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
+bindsym $KEY_ALT+space exec --no-startup-id "~/.bin/i3/search"
+bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
+bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
+bindsym $KEY_ALT+Shift+P exec --no-startup-id "/usr/bin/systemctl hibernate"
+bindsym $KEY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
 
 ## Window Keybindings
-# Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_ALT+Q kill
+bindsym $KEY_ALT+Q kill
 
-# Alt (Physical Windows) Key Bindings
-bindsym $KEY_PHY_WIN+Q kill
-bindsym $KEY_PHY_WIN+W sticky toggle
-bindsym $KEY_PHY_WIN+M scratchpad show
-bindsym $KEY_PHY_WIN+N move scratchpad
-bindsym $KEY_PHY_WIN+E floating toggle
-bindsym $KEY_PHY_WIN+F fullscreen toggle
+bindsym $KEY_WIN+Q kill
+bindsym $KEY_WIN+W sticky toggle
+bindsym $KEY_WIN+M scratchpad show
+bindsym $KEY_WIN+N move scratchpad
+bindsym $KEY_WIN+E floating toggle
+bindsym $KEY_WIN+F fullscreen toggle
 
 ## Workspace Keybindings
-# Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_ALT+1 workspace 1
-bindsym $KEY_PHY_ALT+2 workspace 2
-bindsym $KEY_PHY_ALT+3 workspace 3
-bindsym $KEY_PHY_ALT+4 workspace 4
-bindsym $KEY_PHY_ALT+5 workspace 5
-bindsym $KEY_PHY_ALT+6 workspace 6
-bindsym $KEY_PHY_ALT+7 workspace 7
-bindsym $KEY_PHY_ALT+8 workspace 8
-bindsym $KEY_PHY_ALT+9 workspace 9
-bindsym $KEY_PHY_ALT+0 workspace 10
+bindsym $KEY_ALT+1 workspace 1
+bindsym $KEY_ALT+2 workspace 2
+bindsym $KEY_ALT+3 workspace 3
+bindsym $KEY_ALT+4 workspace 4
+bindsym $KEY_ALT+5 workspace 5
+bindsym $KEY_ALT+6 workspace 6
+bindsym $KEY_ALT+7 workspace 7
+bindsym $KEY_ALT+8 workspace 8
+bindsym $KEY_ALT+9 workspace 9
+bindsym $KEY_ALT+0 workspace 10
 
-# Alt (Physical Windows) Key Bindings
-bindsym $KEY_PHY_WIN+1 move container to workspace 1, workspace 1
-bindsym $KEY_PHY_WIN+2 move container to workspace 2, workspace 2
-bindsym $KEY_PHY_WIN+3 move container to workspace 3, workspace 3
-bindsym $KEY_PHY_WIN+4 move container to workspace 4, workspace 4
-bindsym $KEY_PHY_WIN+5 move container to workspace 5, workspace 5
-bindsym $KEY_PHY_WIN+6 move container to workspace 6, workspace 6
-bindsym $KEY_PHY_WIN+7 move container to workspace 7, workspace 7
-bindsym $KEY_PHY_WIN+8 move container to workspace 8, workspace 8
-bindsym $KEY_PHY_WIN+9 move container to workspace 9, workspace 9
-bindsym $KEY_PHY_WIN+0 move container to workspace 10, workspace 10
-bindsym $KEY_PHY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move with"
-bindsym $KEY_PHY_WIN+Shift+space exec --no-startup-id "~/.bin/i3/select with"
+bindsym $KEY_WIN+1 move container to workspace 1, workspace 1
+bindsym $KEY_WIN+2 move container to workspace 2, workspace 2
+bindsym $KEY_WIN+3 move container to workspace 3, workspace 3
+bindsym $KEY_WIN+4 move container to workspace 4, workspace 4
+bindsym $KEY_WIN+5 move container to workspace 5, workspace 5
+bindsym $KEY_WIN+6 move container to workspace 6, workspace 6
+bindsym $KEY_WIN+7 move container to workspace 7, workspace 7
+bindsym $KEY_WIN+8 move container to workspace 8, workspace 8
+bindsym $KEY_WIN+9 move container to workspace 9, workspace 9
+bindsym $KEY_WIN+0 move container to workspace 10, workspace 10
+bindsym $KEY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move with"
+bindsym $KEY_WIN+Shift+space exec --no-startup-id "~/.bin/i3/select with"
 
 # Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_CTL+1 move container to workspace 1
-bindsym $KEY_PHY_CTL+2 move container to workspace 2
-bindsym $KEY_PHY_CTL+3 move container to workspace 3
-bindsym $KEY_PHY_CTL+4 move container to workspace 4
-bindsym $KEY_PHY_CTL+5 move container to workspace 5
-bindsym $KEY_PHY_CTL+6 move container to workspace 6
-bindsym $KEY_PHY_CTL+7 move container to workspace 7
-bindsym $KEY_PHY_CTL+8 move container to workspace 8
-bindsym $KEY_PHY_CTL+9 move container to workspace 9
-bindsym $KEY_PHY_CTL+0 move container to workspace 10
-bindsym $KEY_PHY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move"
-bindsym $KEY_PHY_CTL+Shift+space exec --no-startup-id "~/.bin/i3/select"
+bindsym $KEY_CTL+1 move container to workspace 1
+bindsym $KEY_CTL+2 move container to workspace 2
+bindsym $KEY_CTL+3 move container to workspace 3
+bindsym $KEY_CTL+4 move container to workspace 4
+bindsym $KEY_CTL+5 move container to workspace 5
+bindsym $KEY_CTL+6 move container to workspace 6
+bindsym $KEY_CTL+7 move container to workspace 7
+bindsym $KEY_CTL+8 move container to workspace 8
+bindsym $KEY_CTL+9 move container to workspace 9
+bindsym $KEY_CTL+0 move container to workspace 10
+bindsym $KEY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move"
+bindsym $KEY_CTL+Shift+space exec --no-startup-id "~/.bin/i3/select"
 
 ## Layout Keybindings
-# Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_ALT+Shift+H split h
-bindsym $KEY_PHY_ALT+Shift+J split v
+bindsym $KEY_ALT+Shift+H split h
+bindsym $KEY_ALT+Shift+J split v
 
-# Alt (Physical Windows) Key Bindings
-bindsym $KEY_PHY_WIN+Up move up
-bindsym $KEY_PHY_WIN+Left move left
-bindsym $KEY_PHY_WIN+Down move down
-bindsym $KEY_PHY_WIN+Shift+H split h
-bindsym $KEY_PHY_WIN+Shift+V split v
-bindsym $KEY_PHY_WIN+Shift+J split v
-bindsym $KEY_PHY_WIN+D layout tabbed
-bindsym $KEY_PHY_WIN+Right move right
-bindsym $KEY_PHY_WIN+S layout stacking
-bindsym $KEY_PHY_WIN+A layout toggle split
+bindsym $KEY_WIN+Up move up
+bindsym $KEY_WIN+Left move left
+bindsym $KEY_WIN+Down move down
+bindsym $KEY_WIN+Shift+H split h
+bindsym $KEY_WIN+Shift+V split v
+bindsym $KEY_WIN+Shift+J split v
+bindsym $KEY_WIN+D layout tabbed
+bindsym $KEY_WIN+Right move right
+bindsym $KEY_WIN+S layout stacking
+bindsym $KEY_WIN+A layout toggle split
 
 ## Focus Keybindings
-# Alt (Physical Windows) Key Bindings
-bindsym $KEY_PHY_WIN+Shift+Z focus child
-bindsym $KEY_PHY_WIN+Shift+A focus parent
+bindsym $KEY_WIN+C focus mode_toggle
+bindsym $KEY_WIN+Shift+Z focus child
+bindsym $KEY_WIN+Shift+A focus parent
 
-# Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_CTL+Shift+Up focus up
-bindsym $KEY_PHY_CTL+C focus mode_toggle
-bindsym $KEY_PHY_CTL+XF86Launch7 focus up
-bindsym $KEY_PHY_CTL+Shift+Left focus left
-bindsym $KEY_PHY_CTL+Shift+Down focus down
-bindsym $KEY_PHY_CTL+XF86Launch8 focus down
-bindsym $KEY_PHY_CTL+XF86Launch6 focus left
-bindsym $KEY_PHY_CTL+Shift+Right focus right
-bindsym $KEY_PHY_CTL+XF86Launch5 focus right
+bindsym $KEY_CTL+Shift+Up focus up
+bindsym $KEY_CTL+XF86Launch7 focus up
+bindsym $KEY_CTL+Shift+Left focus left
+bindsym $KEY_CTL+Shift+Down focus down
+bindsym $KEY_CTL+XF86Launch8 focus down
+bindsym $KEY_CTL+XF86Launch6 focus left
+bindsym $KEY_CTL+Shift+Right focus right
+bindsym $KEY_CTL+XF86Launch5 focus right
 
 ## Resize Keybindings
-# Control (Physical Alt) Key Bindings
-bindsym $KEY_PHY_CTL+Up resize shrink height 10px or 10 ppt
-bindsym $KEY_PHY_CTL+Down resize grow height 10px or 10 ppt
-bindsym $KEY_PHY_CTL+Left resize grow width 10 px or 10 ppt
-bindsym $KEY_PHY_CTL+Right resize shrink width 10 px or 10 ppt
+bindsym $KEY_CTL+Up resize shrink height 10px or 10 ppt
+bindsym $KEY_CTL+Down resize grow height 10px or 10 ppt
+bindsym $KEY_CTL+Left resize grow width 10 px or 10 ppt
+bindsym $KEY_CTL+Right resize shrink width 10 px or 10 ppt
 
 # EOF
