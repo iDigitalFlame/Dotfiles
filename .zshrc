@@ -173,7 +173,6 @@ alias sel="~/.bin/screenclip"
 alias ss-c="~/.bin/screenshot-copy"
 alias sel-c="~/.bin/screenclip-copy"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
-alias music="sudo /opt/spaceport/bin/playerctl"
 alias public-ip="wget -q -O - https://ifconfig.co"
 alias public-ip4="wget -4 -q -O - https://ifconfig.co"
 
