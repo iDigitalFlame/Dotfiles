@@ -561,6 +561,7 @@
     "git.path": null,
     "git.promptToSaveFilesBeforeCommit": true,
     "git.showInlineOpenFileAction": true,
-    "workbench.colorTheme": "Monokai"
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.rendererType": "dom"
 }
 // # EOF

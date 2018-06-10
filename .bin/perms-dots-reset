@@ -26,6 +26,7 @@ chown -R iDigitalFlame:iDigitalFlame "$HOME/.dotfiles"
 find "$HOME/.dotfiles" -type f -exec chmod 440 {} \;
 chmod -R 770 "$HOME/.dotfiles/.git"
 chmod -R 550 "$HOME/.dotfiles/.bin"
+chmod 660  "$HOME/.config/quotes.db"
 chmod 550 "$HOME/.dotfiles/.zshrc"
 
 # EOF

@@ -21,41 +21,50 @@
 # Creates the lockscreen
 # Updated 06/09/2018
 
-/usr/bin/i3lock -n \
---composite \
---show-failed-attempts \
---force-clock \
---ignore-empty-password \
---bar-indicator \
---bar-color=00000000 \
---bar-periodic-step=15 \
---bar-step=10 \
---bar-base-width=15 \
---bar-orientation=horizontal \
---bar-direction=2 \
---linecolor=#$(openssl rand -hex 3)E6 \
---separatorcolor=#$(openssl rand -hex 3)E6 \
---datecolor=000000FF \
---timecolor=000000FF \
---keyhlcolor=#$(openssl rand -hex 3)E6 \
---bshlcolor=#$(openssl rand -hex 3)E6 \
---ringvercolor=E6DB74E6 \
---ringwrongcolor=FF5555E6 \
---time-align=1 \
---date-align=1 \
---timepos="x+60:y+90" \
---datestr="%A %B %d" \
---timestr="%H:%M" \
---timesize=26 \
---datesize=18 \
---screen=eDP1 \
---wrongtext="" \
---noinputt="" \
---veriftext="" \
---pointer=default \
---color=000000 \
---image="/home/iDigitalFlame/.config/lockscreen.png" \
---tiling \
---modsize=1
+LOCKER_I3=0
 
-# EOF
+if [ $LOCKER_I3 -eq 1 ]; then
+    /usr/bin/i3lock -n \
+    --composite \
+    --show-failed-attempts \
+    --force-clock \
+    --ignore-empty-password \
+    --bar-indicator \
+    --bar-color=00000000 \
+    --bar-periodic-step=15 \
+    --bar-step=10 \
+    --bar-base-width=15 \
+    --bar-orientation=horizontal \
+    --bar-direction=2 \
+    --linecolor=#$(openssl rand -hex 3)E6 \
+    --separatorcolor=#$(openssl rand -hex 3)E6 \
+    --datecolor=000000FF \
+    --timecolor=000000FF \
+    --keyhlcolor=#$(openssl rand -hex 3)E6 \
+    --bshlcolor=#$(openssl rand -hex 3)E6 \
+    --ringvercolor=E6DB74E6 \
+    --ringwrongcolor=FF5555E6 \
+    --time-align=1 \
+    --date-align=1 \
+    --timepos="x+60:y+90" \
+    --datestr="%A %B %d" \
+    --timestr="%H:%M" \
+    --timesize=26 \
+    --datesize=18 \
+    --screen=eDP1 \
+    --wrongtext="" \
+    --noinputt="" \
+    --veriftext="" \
+    --pointer=default \
+    --color=000000 \
+    --image="/home/iDigitalFlame/Downloads/Prism_1920x1200.png" \
+    --tiling \
+    --modsize=1
+else
+    export XSECURELOCK_SHOW_USERNAME=1
+    export XSECURELOCK_PARANOID_PASSWORD=0
+    export XSECURELOCK_SAVER=saver_xscreensaver
+    export XSECURELOCK_FONT="Noto Sans Mono"
+    /usr/bin/xsecurelock
+fi
+# EOF "/home/iDigitalFlame/.config/lockscreen.png"
