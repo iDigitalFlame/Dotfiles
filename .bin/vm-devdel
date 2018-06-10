@@ -21,11 +21,6 @@
 # Hotfix to remove an USB device to a running Hydra VM.
 # Updated 06/05/2018
 
-if [ $UID -ne 0 ]; then
-  printf "[!] Only root can do this!\n"
-  exit 1
-fi
-
 if [ $# -ne 2 ]; then
   printf "$0 <vm_id> <id>\n"
   exit 1
@@ -33,8 +28,7 @@ fi
 
 vmid=$1
 usbid=$2
-chown kvm -R /dev/bus/usb/
-printf "device_del usb$usbid\n" | netcat -U /var/run/hydra/$vmid.mon
+sudo sh -c "chown kvm -R /dev/bus/usb/; printf \"device_del usb$usbid\n\" | netcat -U /var/run/hydra/$vmid.mon"
 exit 0
 
 # EOF
