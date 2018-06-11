@@ -63,8 +63,9 @@ if [ $LOCKER_I3 -eq 1 ]; then
 else
     export XSECURELOCK_SHOW_USERNAME=1
     export XSECURELOCK_PARANOID_PASSWORD=0
-    export XSECURELOCK_SAVER=saver_xscreensaver
     export XSECURELOCK_FONT="Noto Sans Mono"
+    export XSECURELOCK_SAVER=saver_xscreensaver
     /usr/bin/xsecurelock
 fi
+
 # EOF "/home/iDigitalFlame/.config/lockscreen.png"
