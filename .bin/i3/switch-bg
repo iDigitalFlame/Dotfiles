@@ -17,11 +17,10 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Next Background
-# Change up the style a little bit
-# Updated 06/05/2018
+## Switch Background
+# iDigitalFlame 2018
 
-/usr/bin/feh --bg-fill --randomize /home/iDigitalFlame/Pictures/Backgrounds/*
+/opt/spaceport/libexec/smd-message com.spaceport.background
 exit 0
 
 # EOF

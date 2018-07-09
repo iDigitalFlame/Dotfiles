@@ -17,6 +17,7 @@
 // ########## SPACEPORT ###########
 // ################################
 // ## VCSode Configuration
+// # iDigitalFlame 2018
 {
     "files.autoSave": "off",
     "editor.fontSize": 12,
@@ -79,7 +80,10 @@
     "editor.renderIndentGuides": true,
     "editor.renderLineHighlight": "line",
     "editor.roundedSelection": true,
-    "editor.rulers": [],
+    "editor.rulers": [
+        120,
+        128
+    ],
     "editor.scrollBeyondLastLine": true,
     "editor.selectionHighlight": true,
     "editor.showFoldingControls": "mouseover",

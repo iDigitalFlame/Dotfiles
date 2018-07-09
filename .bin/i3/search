@@ -17,14 +17,13 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Searchbar
-# A cool app launcher
-# Updated 06/05/2018
-
-MODE="combi"
+## Searchbar Menu
+# iDigitalFlame 2018
 
 if [ $# -eq 1 ]; then
-  MODE="$1"
+    MODE="$1"
+else
+    MODE="combi"
 fi
 
 /usr/bin/rofi -sidebar-mode -combi-modi drun,window,run -lines 12 -padding 18 -width 50 -location 2 -yoffset 100 -show $MODE -columns 3 -font "Sans 10"

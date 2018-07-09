@@ -18,8 +18,7 @@
 ########## SPACEPORT ###########
 ################################
 ## PFX2PEM
-# Windows PFX to Linux PEM files
-# Updated 06/05/2018
+# iDigitalFlame 2018
 
 if [ $# -ne 1 ]; then
   printf "Usage\npfx2pem <pfx>\n"

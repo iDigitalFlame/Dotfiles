@@ -17,9 +17,9 @@
 ########## SPACEPORT ###########
 ################################
 ## ZSH Configuration
-# Updated 06/05/2018
+# iDigitalFlame 2018
 
-## ZSH Vars
+# ZSH Vars
 export VISUAL="nano"
 export ZSH_THEME="muse"
 export GOPATH="$HOME/.go"
@@ -54,7 +54,7 @@ X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/tmp/.mounts)
 X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
 PROMPT="%n $PROMPT"
 
-## Startups
+# Startups
 ~/.bin/motivate | cowsay -W 75 -f small | lolcat
 if [ ! -d "$HOME/.pacaur" ]; then
   mkdir -p "$HOME/.pacaur"
@@ -69,27 +69,7 @@ if [ ! -d "$HOME/Pictures/Screenshots" ]; then
   mkdir -p "$HOME/Pictures/Screenshots"
 fi
 
-## Function Definitions
-ed() {
-  _params="$@"
-  /usr/bin/gedit -s "$_params" 2> /dev/null &
-}
-um() {
-  _disk="$1"
-  /usr/bin/udevil umount "/tmp/.mounts/$USER/$_disk"
-}
-mo() {
-  _params="$@"
-  /usr/bin/udevil mount $_params
-}
-sle() {
-  _file="$1"
-  _temp_file=$(openssl rand -hex 8)
-  /usr/bin/cp "$1" "/tmp/$_temp_file.tmp"
-  /usr/bin/chmod 777 "/tmp/$_temp_file.tmp"
-  /usr/bin/leafpad "/tmp/$_temp_file.tmp" 2> /dev/null
-  /usr/bin/sudo /usr/bin/mv "/tmp/$_temp_file.tmp" "$1"
-}
+# Function Definitions
 __sg_cmd() {
   _params=($@)
   if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
@@ -98,9 +78,7 @@ __sg_cmd() {
   fi
 }
 
-## IPTables Aliases
-alias pip="sudo -H pip"
-alias pip2="sudo -H pip2"
+# IPTables Aliases
 alias ssh="__sg_cmd iptables-ssh /usr/bin/ssh"
 alias scp="__sg_cmd iptables-ssh /usr/bin/scp"
 alias git="__sg_cmd iptables-web /usr/bin/git"
@@ -110,68 +88,50 @@ alias ping="__sg_cmd iptables-ping /usr/bin/ping"
 alias rsync="__sg_cmd iptables-ssh /usr/bin/rsync"
 alias pacman="__sg_cmd iptables-web /usr/bin/pacman"
 alias pacaur="__sg_cmd iptables-web /usr/bin/pacaur"
-alias wython="__sg_cmd iptables-web /usr/bin/python3"
-alias wython2="__sg_cmd iptables-web /usr/bin/python2"
-alias firefox="__sg_cmd iptables-web /usr/bin/firefox"
 alias rdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
 alias quote="sg iptables-web -c \"~/.bin/motivate -get\""
-alias python-web="__sg_cmd iptables-web /usr/bin/python3"
-alias python2-web="__sg_cmd iptables-web /usr/bin/python2"
 alias xfreerdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
 
-## Python Aliases
+# Python Aliases
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python2"
 alias python="/usr/bin/python3"
 alias python2="/usr/bin/python2"
-alias pip-update="sudo -H sh -c \"sg iptables-web -c \\\"pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U\\\"\""
-alias pip2-update="sudo -H sh -c \"sg iptables-web -c \\\"pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip2 install -U\\\"\""
 
-## System Locker Aliases
-alias lock="powerctl lock -f"
-alias plock="powerctl locker"
+# System Locker Aliases
+alias lock0="lockctl -ft -1"
+alias lock3="lockctl -ft 30"
+alias lock6="lockctl -ft 60"
+alias lock9="lockctl -ft 90"
+alias lock12="lockctl -ft 120"
+alias lock10="lockctl -ft 600"
 alias hib="systemctl hibernate"
-alias bright="powerctl brightness"
-alias lock0="powerctl lock -ft -1"
-alias lock3="powerctl lock -ft 30"
-alias lock6="powerctl lock -ft 60"
-alias lock9="powerctl lock -ft 90"
-alias lock12="powerctl lock -ft 120"
-alias lock10="powerctl lock -ft 600"
-alias bright-up="powerctl brightness -i"
-alias bright-set="powerctl brightness -s"
-alias bright-down="powerctl brightness -d"
-alias coffee="powerctl locker -ks 300 -kb 300 -kl 300"
-alias caffeine="powerctl locker -ks 600 -kb 600 -kl 600"
-alias expresso="powerctl locker -ks 900 -kb 900 -kl 900"
-alias insomnia="powerctl locker -ks true -kb true -kl true"
-alias chill="powerctl locker -ks false -kb false -kl false"
+alias bright-up="brightnessctl -i"
+alias bright-set="brightnessctl -s"
+alias bright-down="brightnessctl -d"
+alias coffee="lockerctl -s 300 -kb 300 -kl 300"
+alias caffeine="lockerctl -s 600 -kb 600 -kl 600"
+alias expresso="lockerctl -s 900 -kb 900 -kl 900"
+alias insomnia="lockerctl -ks true -kb true -kl true"
+alias chill="lockerctl -ks false -kb false -kl false"
 
-## System Power Aliases
-alias cpu="powerctl cpu"
-alias bton="powerctl blue -e"
-alias btoff="powerctl blue -d"
-alias blueon="powerctl blue -e"
-alias blueoff="powerctl blue -d"
-alias blue-on="powerctl blue -e"
-alias blue-off="powerctl blue -d"
-alias power0="powerctl cpu -x 800 -m 400 -t 0 -tx 20 -tm 10"
-alias power1="powerctl cpu -x 1Ghz -m 400 -t 0 -tx 35 -tm 10"
-alias power2="powerctl cpu -x 1.5Ghz -m 400 -t 1 -tx 50 -tm 10"
-alias power3="powerctl cpu -x 2.5Ghz -m 400 -t 1 -tx 70 -tm 10"
-alias power4="powerctl cpu -x 3.0Ghz -m 400 -t 1 -tx 80 -tm 10"
+# System Power Aliases
+alias power0="cpuctl -x 800 -m 400 -t 0 -tx 20 -tm 10"
+alias power1="cpuctl -x 1Ghz -m 400 -t 0 -tx 35 -tm 10"
+alias power2="cpuctl -x 1.5Ghz -m 400 -t 1 -tx 50 -tm 10"
+alias power3="cpuctl -x 2.5Ghz -m 400 -t 1 -tx 70 -tm 10"
+alias power4="cpuctl -x 3.0Ghz -m 400 -t 1 -tx 80 -tm 10"
 
-## ls Aliases
+# ls Aliases
 alias lsl="ls -alp --group-directories-first --color=auto"
 alias lsh="ls -alph --group-directories-first --color=auto"
 alias lsal="ls -alp --group-directories-first --color=auto"
-alias lsd="find \"\$(pwd)\" -maxdepth 1 -type d -name .\* -ls"
 
-## Utility Aliases
-alias ss="~/.bin/screenshot"
-alias sel="~/.bin/screenclip"
-alias ss-c="~/.bin/screenshot-copy"
-alias sel-c="~/.bin/screenclip-copy"
+# Utility Aliases
+alias ss="~/.bin/i3/shot"
+alias sel="~/.bin/i3/clip"
+alias ss-c="~/.bin/i3/shot-copy"
+alias sel-c="~/.bin/i3/clip-copy"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias public-ip="wget -q -O - https://ifconfig.co"
 alias public-ip4="wget -4 -q -O - https://ifconfig.co"
@@ -182,13 +142,11 @@ alias wine-restart="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --r
 
 ## Convienence Aliases
 alias xx="exit"
-alias edit="ed"
 alias exx="exit"
 alias cls="clear"
 alias less="less -R"
 alias vsc="code -r - &"
 alias nano="/usr/bin/nano -Ll"
-alias se="sudo /usr/bin/rnano -Ll"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"

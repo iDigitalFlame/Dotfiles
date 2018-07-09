@@ -18,7 +18,7 @@
 ########## SPACEPORT ###########
 ################################
 ## Inox Wrapper
-# Fixes the stupid way that xorg-xdefults handles .desktop files with paramaters.
+# iDigitalFlame 2018
 
 _args="$@"
 /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"

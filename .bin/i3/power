@@ -17,11 +17,10 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Power
-# Power menu using Rofi
-# Updated 06/05/2018
+## Power Menu
+# iDigitalFlame 2018
 
-case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -lines 5 -padding 18 -width 50 -location 2 -yoffset 100) in
+case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -p 'Power Control' -lines 5 -padding 18 -width 50 -location 2 -yoffset 100) in
     "Lock")
     /opt/spaceport/bin/powerctl lock -f
     ;;

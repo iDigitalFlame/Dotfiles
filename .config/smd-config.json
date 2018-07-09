@@ -1,0 +1,35 @@
+{
+    "background_size": "1920x1080",
+    "background_time": 600,
+    "backgrounds": "/home/iDigitalFlame/Pictures/Backgrounds",
+    "composer": [
+        "/home/iDigitalFlame/.bin/compton",
+        "-cd",
+        ":1",
+        "--config",
+        "/home/iDigitalFlame/.config/theme/current/compton.conf",
+        "--blur-method",
+        "kawase",
+        "--blur-strength",
+        "3"
+    ],
+    "hydra_dir": "/home/iDigitalFlame/Documents/VMs",
+    "hydra_names": {},
+    "locker": [
+        "/home/iDigitalFlame/.bin/i3/lock"
+    ],
+    "polybar_bars": {
+        "laptop": "laptop",
+        "tablet": "tablet"
+    },
+    "startup": [
+        "/usr/bin/nm-applet",
+        "/usr/bin/libinput-gestures",
+        "/opt/spaceport/libexec/smd-diskd",
+        "/opt/spaceport/libexec/smd-enable-tap",
+        "/usr/bin/sg iptables-web -c /usr/bin/nextcloud"
+    ],
+    "timeout_blank": 60,
+    "timeout_lock": 120,
+    "timeout_sleep": 120
+}

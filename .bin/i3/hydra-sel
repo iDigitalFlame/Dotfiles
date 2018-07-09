@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+VM_SEL=$(/opt/spaceport/libexec/smd-message com.spaceport.hydra -w com.spaceport.hydra -p '{"type": "list" }' | grep '[0-9],' | sed -e 's/,//g' | sed -e 's/ //g' | rofi -dmenu -lines 10 -padding 18 -width 10 -location 2 -yoffset 100)
+if [ ! -z "$VM_SEL" ]; then
+  /opt/spaceport/bin/hydra-view "$VM_SEL"
+fi
+exit 0

@@ -17,12 +17,10 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## New
-# Commands i3 to find the next empy workspace.
-# Updated 06/05/2018
+## New Workspace
+# iDigitalFlame 2018
 
-import sys
-
+from sys import exit
 from json import loads, JSONDecodeError
 from subprocess import Popen, PIPE, DEVNULL
 
@@ -47,14 +45,14 @@ def i3_output(i3_command):
                 return i3_json
             except JSONDecodeError as err:
                 print('[!] "i3-msg" output was not in JSON format! (%s)' % str(err))
-                sys.exit(1)
+                exit(1)
             except UnicodeDecodeError as err:
                 print('[!] "i3-msg" could not be decoded! (%s)' % str(err))
-                sys.exit(1)
+                exit(1)
         return None
     except OSError as err:
         print('[!] Command to "i3-msg" failed! (%s)' % str(err))
-        sys.exit(1)
+        exit(1)
 
 
 if __name__ == '__main__':
@@ -62,7 +60,7 @@ if __name__ == '__main__':
     if i3_workspaces is not None:
         i3_next_empty = next(x for x in range(1, 50) if not [w for w in i3_workspaces if w['num'] == x])
         i3_output(['workspace', 'number', str(i3_next_empty)])
-        sys.exit(0)
-    sys.exit(1)
+        exit(0)
+    exit(1)
 
 # EOF

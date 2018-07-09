@@ -17,44 +17,15 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## New
-# Commands i3 to find the next empy workspace and move the focused window to it.
-# Updated 06/05/2018
+## New Workspace with Move
+# iDigitalFlame 2018
 
-import sys
+from sys import exit, path
+from os.path import dirname, abspath
 
-from json import loads, JSONDecodeError
-from subprocess import Popen, PIPE, DEVNULL
+path.insert(0, dirname(abspath(__file__)))
 
-
-def i3_command(i3_type):
-    return i3_output(['-t', i3_type])
-
-
-def i3_output(i3_command):
-    i3_exec_params = i3_command
-    if not isinstance(i3_command, list):
-        i3_exec_params = str(i3_command).split(' ')
-    try:
-        i3_exec = Popen(['/usr/bin/i3-msg'] + i3_exec_params, stdout=PIPE, stderr=DEVNULL)
-        if i3_exec.wait() != 0:
-            print('[!] "i3-msg" returned non-zero status!')
-            sys.exit(1)
-        i3_output = i3_exec.stdout.read()
-        if len(i3_output) > 0:
-            try:
-                i3_json = loads(i3_output.decode('UTF-8'))
-                return i3_json
-            except JSONDecodeError as err:
-                print('[!] "i3-msg" output was not in JSON format! (%s)' % str(err))
-                sys.exit(1)
-            except UnicodeDecodeError as err:
-                print('[!] "i3-msg" could not be decoded! (%s)' % str(err))
-                sys.exit(1)
-        return None
-    except OSError as err:
-        print('[!] Command to "i3-msg" failed! (%s)' % str(err))
-        sys.exit(1)
+from new import i3_command, i3_output
 
 
 def i3_get_focused(i3_node=None):

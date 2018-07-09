@@ -18,8 +18,7 @@
 ########## SPACEPORT ###########
 ################################
 ## Screenclip Copy
-# Throws a screenclip to the clipboard
-# Updated 06/05/2018
+# iDigitalFlame 2018
 
 /usr/bin/maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
 if [ $? -eq 0 ]; then

@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ################################
 ## i3 Configuration
-# Updated 06/06/2018
+# iDigitalFlame 2018
 # i3 config file (v4)
 
 ####
@@ -47,11 +47,11 @@
 #  PCTL + Tab -> Change the Current Background
 #  PCTL + P -> Auto Detect Displays
 #  PCTL + Shift + P -> Open Display Manager
+#  PCTL + Escape -> Power Menu
 #  PALT + Enter -> Open the Terminal
 #  PALT + Space -> Open the Searchbar
 #  PALT + Shift + 1 -> Full Screen Screenshot Saved to Clipboard
 #  PALT + Shift + 2 -> Area Selection Screenshot Saved to Clipboard
-#  PALT + Shift + P -> Hibernate System
 #  PALT + L -> Lock System
 # Window Bindings:
 #  PALT + Q -> Close the Focused Window
@@ -105,8 +105,7 @@ set $KEY_WIN Mod1
 set $KEY_ALT Mod4
 set $KEY_CTL Control
 
-
-## Window Specific Rules
+# Window Specific Rules
 for_window [class="Firefox"] border pixel 0
 for_window [class="Chromium"] border pixel 0
 for_window [class="termianlservices"] fullscreen
@@ -115,7 +114,7 @@ for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="Inox" window_role="pop-up"] border normal, floating enable
 for_window [class="trojita" title="Compose Mail"] border normal, floating enable
 
-## General
+# General
 gaps outer 0
 gaps inner 5
 smart_borders on
@@ -126,15 +125,14 @@ floating_modifier $KEY_WIN
 ## i3 Application Control
 bindsym $KEY_CTL+Shift+R reload
 bindsym $KEY_CTL+Shift+T restart
-bindsym $KEY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
 
 ## Theme
 font pango:Sans 8
-client.background #282A36
-client.urgent #FFB86C #FFB86C #282A36 #6272A4 #FFB86C
-client.focused #282A36 #282A36 #F8F8F2 #6272A4 #282A36
-client.unfocused #666666 #666666 #FFFFFF #6272A4 #666666
-client.placeholder #282A36 #282A36 #F8F8F2 #6722A4 #282A36
+client.background #272727
+client.urgent #FFB86C #FFB86C #272727 #6272A4 #FFB86C
+client.focused #272727 #272727 #F8F8F2 #6272A4 #272727
+client.unfocused #8c8c8c #5e5e5e #FFFFFF #5e5e5e #5e5e5e
+client.placeholder #272727 #272727 #F8F8F2 #6722A4 #272727
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
 
 ## Special Keyboard Keybingings
@@ -151,13 +149,15 @@ bindsym $KEY_WIN+XF86Launch6 move container to workspace prev_on_output, workspa
 ## Application Keybindings
 # Function Keybindings
 bindsym Print exec --no-startup-id "~/.bin/i3/shot-copy 0"
+bindsym $KEY_CTL+Escape exec --no-startup-id "~/.bin/i3/power"
+bindsym $KEY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
 bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
 bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
 bindsym XF86MonBrightnessUp exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
 bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
 
-# Standard Keys
+## Standard Keys
 # Alt (Physical Windows) Key Bindings
 bindsym $KEY_WIN+Return exec "/usr/bin/pcmanfm"
 bindsym $KEY_WIN+B exec --no-startup-id "~/.bin/browser"
@@ -168,9 +168,9 @@ bindsym $KEY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 
 bindsym $KEY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 
 # Windows (Physical Control) Key Beindings
-bindsym $KEY_CTL+space exec --no-startup-id "~/.bin/i3/new"
-bindsym $KEY_CTL+Tab exec --no-startup-id "~/.bin/switchbg"
-bindsym $KEY_CTL+P exec --no-startup-id "~/.bin/auto-monitor"
+bindsym $KEY_CTL+P exec --no-startup-id "~/.bin/monitor-auto"
+bindsym $KEY_CTL+space exec --no-startup-id "~/.bin/i3/new.py"
+bindsym $KEY_CTL+Tab exec --no-startup-id "~/.bin/i3/switch-bg"
 bindsym $KEY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
 
 # Control (Physical Alt) Key Bindings
@@ -178,7 +178,6 @@ bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
 bindsym $KEY_ALT+space exec --no-startup-id "~/.bin/i3/search"
 bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
 bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
-bindsym $KEY_ALT+Shift+P exec --no-startup-id "/usr/bin/systemctl hibernate"
 bindsym $KEY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
 
 ## Window Keybindings
@@ -213,7 +212,7 @@ bindsym $KEY_WIN+7 move container to workspace 7, workspace 7
 bindsym $KEY_WIN+8 move container to workspace 8, workspace 8
 bindsym $KEY_WIN+9 move container to workspace 9, workspace 9
 bindsym $KEY_WIN+0 move container to workspace 10, workspace 10
-bindsym $KEY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move with"
+bindsym $KEY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move.py with"
 bindsym $KEY_WIN+Shift+space exec --no-startup-id "~/.bin/i3/select with"
 
 # Control (Physical Alt) Key Bindings
@@ -227,7 +226,7 @@ bindsym $KEY_CTL+7 move container to workspace 7
 bindsym $KEY_CTL+8 move container to workspace 8
 bindsym $KEY_CTL+9 move container to workspace 9
 bindsym $KEY_CTL+0 move container to workspace 10
-bindsym $KEY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move"
+bindsym $KEY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move.py"
 bindsym $KEY_CTL+Shift+space exec --no-startup-id "~/.bin/i3/select"
 
 ## Layout Keybindings

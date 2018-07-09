@@ -18,8 +18,7 @@
 ########## SPACEPORT ###########
 ################################
 ## Goreturns wrapper
-# Removes the EOF newline from Golang scripts.  Used by VSCode.
-# Updated 06/05/2018
+# iDigitalFlame 2018
 
 from os import environ
 from os.path import join
@@ -39,7 +38,7 @@ if __name__ == '__main__':
             print(goOutputError, end='')
             exit(1)
         goOutputLen = len(goOutputStd)
-        if goOutputLen <=2:
+        if goOutputLen <= 2:
             print(goOutputLen, end='')
         else:
             if goOutputStd[goOutputLen - 1] == '\n':

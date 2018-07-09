@@ -18,8 +18,7 @@
 ########## SPACEPORT ###########
 ################################
 ## Screenshot
-# Captures a screenshot, duh!
-# Updated 06/05/2018
+# iDigitalFlame 2018
 
 DELAY=1
 if [ $# -ge 1 ]; then

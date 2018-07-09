@@ -1,0 +1,65 @@
+#!/usr/bin/sh
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Permissions and Links Reset
+# iDigitalFlame 2018
+
+# Ownership
+chmod -R 770 "$HOME/.dotfiles"
+chown -R iDigitalFlame:iDigitalFlame "$HOME/.dotfiles"
+
+# Problem Configs
+rm -f "$HOME/.config/xfce4/terminal/terminalrc"
+
+# General Links
+ln -s "$HOME/.dotfiles/.bin" "$HOME/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc" 2> /dev/null
+ln -s "$HOME/.dotfiles/.nanorc" "$HOME/.nanorc" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/i3" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/pacaur" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/polybar" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/leafpad" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/gtk-2.0" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/pcmanfm" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.bin/goreturns" "$HOME/.go/bin/goreturns" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/quotes.db" "$HOME/.config/quotes.db" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json" 2> /dev/null
+
+# Theme Symlinks
+ln -s "$HOME/.dotfiles/.config/theme" "$HOME/.config/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/rofi.conf" "$HOME/.config/rofi/config" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/dunst.conf" "$HOME/.config/dunst/dunstrc" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini" 2> /dev/null
+ln -s "$HOME/.dotfiles/.config/theme/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc" 2> /dev/null
+
+# Final Permissions Fix
+chmod -R 550 "$HOME/.dotfiles"
+find "$HOME/.dotfiles" -type f -exec chmod 440 {} \;
+chmod 550 "$HOME/.dotfiles/.zshrc"
+chmod -R 770 "$HOME/.dotfiles/.git"
+chmod -R 550 "$HOME/.dotfiles/.bin"
+chmod 660 "$HOME/.dotfiles/.config/quotes.db"
+
+# EOF
