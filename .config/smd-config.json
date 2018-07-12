@@ -14,7 +14,9 @@
         "3"
     ],
     "hydra_dir": "/home/iDigitalFlame/Documents/VMs",
-    "hydra_names": {},
+    "hydra_names": {
+        "arch": "/home/iDigitalFlame/Documents/VMs/ArchLinuxDev/vm.conf"
+    },
     "locker": [
         "/home/iDigitalFlame/.bin/i3/lock"
     ],
