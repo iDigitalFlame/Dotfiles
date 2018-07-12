@@ -136,10 +136,6 @@ alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias public-ip="wget -q -O - https://ifconfig.co"
 alias public-ip4="wget -4 -q -O - https://ifconfig.co"
 
-## Wine Aliases
-alias wine-exit="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --kill &> /dev/null\""
-alias wine-restart="sh -c \"export WINEPREFIX=~/.msoffice; /usr/bin/wineboot --restart &> /dev/null\""
-
 ## Convienence Aliases
 alias xx="exit"
 alias exx="exit"
@@ -150,7 +146,6 @@ alias nano="/usr/bin/nano -Ll"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
-alias wineboot="echo Use a dam prefix\!"
 alias clip="/usr/bin/xclip -selection clipboard"
 
 ## Private Commands Import
