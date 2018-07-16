@@ -61,5 +61,6 @@ chmod 550 "$HOME/.dotfiles/.zshrc"
 chmod -R 770 "$HOME/.dotfiles/.git"
 chmod -R 550 "$HOME/.dotfiles/.bin"
 chmod 660 "$HOME/.dotfiles/.config/quotes.db"
+chmod 660 "$HOME/.dotfiles/dotfiles.code-workspace"
 
 # EOF
