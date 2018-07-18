@@ -45,7 +45,7 @@
 #  PWIN + Shift + L -> Lock Screen and Disable Hibernate Timer
 #  PCTL + Space -> Switch to a New Empty Workspace
 #  PCTL + Tab -> Change the Current Background
-#  PCTL + P -> Auto Detect Displays
+#  PALT + P -> Auto Detect Displays
 #  PCTL + Shift + P -> Open Display Manager
 #  PCTL + Escape -> Power Menu
 #  PALT + Enter -> Open the Terminal
@@ -168,13 +168,13 @@ bindsym $KEY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 
 bindsym $KEY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 
 # Windows (Physical Control) Key Beindings
-bindsym $KEY_CTL+P exec --no-startup-id "~/.bin/monitor-auto"
 bindsym $KEY_CTL+space exec --no-startup-id "~/.bin/i3/new.py"
 bindsym $KEY_CTL+Tab exec --no-startup-id "~/.bin/i3/switch-bg"
 bindsym $KEY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
 
 # Control (Physical Alt) Key Bindings
 bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
+bindsym $KEY_ALT+P exec --no-startup-id "~/.bin/monitor-auto"
 bindsym $KEY_ALT+space exec --no-startup-id "~/.bin/i3/search"
 bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
 bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
