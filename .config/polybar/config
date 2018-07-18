@@ -187,7 +187,7 @@ label-overline = #FFFFF914
 click-left = "/opt/spaceport/bin/powerctl rotate -t"
 click-right = "/opt/spaceport/bin/powerctl rotate -t"
 click-middle = "/opt/spaceport/bin/powerctl rotate -t"
-exec = "[[ -z $(/opt/spaceport/bin/powerctl rotate | grep "disabled") ]] && echo '' || echo ''"
+exec = "[[ $(cat /var/run/smd-rotate-lock.sock) -eq 1 ]] && echo '' || echo ''"
 [module/weather]
 interval = 600
 label-font = 3
