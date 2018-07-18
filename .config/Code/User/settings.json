@@ -372,7 +372,7 @@
     "python.formatting.autopep8Args": [
         "--max-line-length 120"
     ],
-    "python.formatting.autopep8Path": "/usr/bin/autopep8",
+    "python.formatting.autopep8Path": "autopep8",
     "python.formatting.provider": "autopep8",
     "python.formatting.yapfArgs": [],
     "python.formatting.yapfPath": "yapf",
@@ -387,7 +387,7 @@
     "python.linting.flake8CategorySeverity.F": "Error",
     "python.linting.flake8CategorySeverity.W": "Warning",
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "/usr/bin/flake8",
+    "python.linting.flake8Path": "flake8",
     "python.linting.ignorePatterns": [
         ".vscode/*.py",
         "**/site-packages/**/*.py"
@@ -408,7 +408,7 @@
     "python.linting.pep8CategorySeverity.E": "Error",
     "python.linting.pep8CategorySeverity.W": "Warning",
     "python.linting.pep8Enabled": true,
-    "python.linting.pep8Path": "/usr/bin/pep8",
+    "python.linting.pep8Path": "pep8",
     "python.linting.prospectorArgs": [],
     "python.linting.prospectorEnabled": false,
     "python.linting.prospectorPath": "prospector",
