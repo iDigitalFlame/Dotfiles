@@ -413,7 +413,7 @@
     "python.linting.prospectorEnabled": false,
     "python.linting.prospectorPath": "prospector",
     "python.linting.pydocstyleArgs": [],
-    "python.linting.pydocstyleEnabled": true,
+    "python.linting.pydocstyleEnabled": false,
     "python.linting.pydocstylePath": "pydocstyle",
     "python.linting.pylamaArgs": [],
     "python.linting.pylamaEnabled": false,
