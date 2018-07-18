@@ -5,5 +5,5 @@
     exit 1
  fi
 
-/usr/bin/screen -S "hydra-view$1" -dm /usr/bin/falkon -p hydra -u "http://localhost:8600/?path=websockify?token=VM$1&autoconnect=true&scaling=local" 2> /dev/null
+/usr/bin/screen -S "hydra-view$1" -dm /usr/bin/falkon -p hydra -u "http://hydra:8600/?path=websockify?token=VM$1&autoconnect=true&scaling=local" 2> /dev/null
 exit 0
