@@ -1,4 +1,24 @@
- #!/usr/bin/sh
+#!/usr/bin/sh
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Hydra View Command
+# iDigitalFlame 2018
 
  if [ $# -ne 1 ]; then
     printf "hydra-view <vmid>\n"
@@ -7,3 +27,5 @@
 
 /usr/bin/screen -S "hydra-view$1" -dm /usr/bin/falkon -p hydra -u "http://hydra:8600/?path=websockify?token=VM$1&autoconnect=true&scaling=local" 2> /dev/null
 exit 0
+
+# EOF
