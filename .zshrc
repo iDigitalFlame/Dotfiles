@@ -121,9 +121,9 @@ alias chill="lockerctl -ks false -kb false -kl false"
 alias power9="cpuctl -x 600 -m 400 -t 0 -tx 15 -tm 10 -g powersave -p power"
 alias power0="cpuctl -x 800 -m 400 -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
 alias power1="cpuctl -x 1Ghz -m 400 -t 0 -tx 35 -tm 10 -g powersave -p balance_power"
-alias power2="cpuctl -x 1.5Ghz -m 400 -t 1 -tx 50 -tm 15 -g preformance -p balance_preformance"
-alias power3="cpuctl -x 2.5Ghz -m 400 -t 1 -tx 70 -tm 20 -g preformance -p balance_preformance"
-alias power4="cpuctl -x 3.0Ghz -m 400 -t 1 -tx 80 -tm 20 -g preformance -p preformance"
+alias power2="cpuctl -x 1.5Ghz -m 400 -t 1 -tx 50 -tm 15 -g performance -p balance_performance"
+alias power3="cpuctl -x 2.5Ghz -m 400 -t 1 -tx 70 -tm 20 -g performance -p balance_performance"
+alias power4="cpuctl -x 3.0Ghz -m 400 -t 1 -tx 85 -tm 20 -g performance -p performance"
 
 # ls Aliases
 alias lsl="ls -alp --group-directories-first --color=auto"
