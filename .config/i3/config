@@ -45,7 +45,7 @@
 #  PWIN + Shift + L -> Lock Screen and Disable Hibernate Timer
 #  PCTL + Space -> Switch to a New Empty Workspace
 #  PCTL + Tab -> Change the Current Background
-#  PALT + P -> Auto Detect Displays
+#  PWIN + Shift + P -> Auto Detect Displays
 #  PCTL + Shift + P -> Open Display Manager
 #  PCTL + Escape -> Power Menu
 #  PALT + Enter -> Open the Terminal
@@ -164,6 +164,7 @@ bindsym $KEY_WIN+B exec --no-startup-id "~/.bin/browser"
 bindsym $KEY_WIN+Shift+2 exec --no-startup-id "~/.bin/i3/clip"
 bindsym $KEY_WIN+Shift+1 exec --no-startup-id "~/.bin/i3/shot 0"
 bindsym $KEY_WIN+Tab exec --no-startup-id "~/.bin/i3/search window"
+bindsym $KEY_WIN+Shift+P exec --no-startup-id "~/.bin/i3/monitor-auto"
 bindsym $KEY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
 bindsym $KEY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 
@@ -174,7 +175,6 @@ bindsym $KEY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
 
 # Control (Physical Alt) Key Bindings
 bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
-bindsym $KEY_ALT+P exec --no-startup-id "~/.bin/monitor-auto"
 bindsym $KEY_ALT+space exec --no-startup-id "~/.bin/i3/search"
 bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
 bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
