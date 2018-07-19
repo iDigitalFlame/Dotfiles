@@ -20,6 +20,14 @@
     "locker": [
         "/home/iDigitalFlame/.bin/i3/lock"
     ],
+    "modes": {
+        "laptop": [
+            "/usr/bin/killall onboard"
+        ],
+        "tablet": [
+            "/usr/bin/onboard"
+        ]
+    },
     "polybar_bars": {
         "laptop": "laptop",
         "tablet": "tablet"
