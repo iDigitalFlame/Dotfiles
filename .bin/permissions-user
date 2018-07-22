@@ -38,7 +38,6 @@ ln -s "$HOME/.dotfiles/.config/leafpad" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/gtk-2.0" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/pcmanfm" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.bin/goreturns" "$HOME/.go/bin/goreturns" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/quotes.db" "$HOME/.config/quotes.db" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null
@@ -60,7 +59,6 @@ find "$HOME/.dotfiles" -type f -exec chmod 440 {} \;
 chmod 550 "$HOME/.dotfiles/.zshrc"
 chmod -R 770 "$HOME/.dotfiles/.git"
 chmod -R 550 "$HOME/.dotfiles/.bin"
-chmod 660 "$HOME/.dotfiles/.config/quotes.db"
 chmod 660 "$HOME/.dotfiles/.config/smd-config.json"
 chmod 660 "$HOME/.dotfiles/dotfiles.code-workspace"
 
