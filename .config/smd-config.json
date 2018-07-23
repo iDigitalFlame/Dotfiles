@@ -15,6 +15,7 @@
     ],
     "hydra_dir": "/home/iDigitalFlame/Documents/VMs",
     "hydra_names": {
+        "android": "/home/iDigitalFlame/Documents/VMs/Android.conf",
         "arch": "/home/iDigitalFlame/Documents/VMs/ArchLinuxDev/vm.conf"
     },
     "locker": [
