@@ -70,6 +70,12 @@ if [ ! -d "$HOME/Pictures/Screenshots" ]; then
 fi
 
 # Function Definitions
+goget() {
+  if [ $# -eq 1 ]; then
+    _gourl="$1"
+    /usr/bin/sg iptables-web -c "export GOPATH=\"$HOME/.go\"; go get $_gourl"
+  fi
+}
 __sg_cmd() {
   _params=($@)
   if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then

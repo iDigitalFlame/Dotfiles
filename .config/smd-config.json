@@ -13,25 +13,43 @@
         "--blur-strength",
         "3"
     ],
-    "hydra_dir": "/home/iDigitalFlame/Documents/VMs",
-    "hydra_names": {
+    "hydra_aliases": {
         "android": "/home/iDigitalFlame/Documents/VMs/Android.conf",
-        "arch": "/home/iDigitalFlame/Documents/VMs/ArchLinuxDev/vm.conf"
+        "arch": "/home/iDigitalFlame/Documents/VMs/ArchLinuxDev/vm.conf",
+        "ios": "/home/iDigitalFlame/Documents/VMs/Windows7-iOS/Windows7-iOS.conf",
+        "kali": "/home/iDigitalFlame/Documents/VMs/Kali/Kali.conf",
+        "sbe4": "/home/iDigitalFlame/Documents/VMs/Scorebot4/vm.conf",
+        "win10": "/home/iDigitalFlame/Documents/VMs/Windows10-WS.conf"
     },
+    "hydra_directory": "/home/iDigitalFlame/Documents/VMs",
     "locker": [
         "/home/iDigitalFlame/.bin/i3/lock"
     ],
-    "modes": {
-        "laptop": [
-            "/usr/bin/killall onboard"
-        ],
-        "tablet": [
-            "/usr/bin/onboard"
-        ]
-    },
     "polybar_bars": {
         "laptop": "laptop",
         "tablet": "tablet"
+    },
+    "profiles": {
+        "display": [
+            "/usr/bin/xrandr --dpi 95x95"
+        ],
+        "lock-post": [],
+        "lock-pre": [],
+        "mode-laptop": [
+            "/usr/bin/killall onboard"
+        ],
+        "mode-tablet": [
+            "/usr/bin/onboard"
+        ],
+        "power-ac": [
+            "/opt/spaceport/bin/cpuctl -x 3.0Ghz -m 400 -t 1 -tx 85 -tm 20 -g performance -p performance"
+        ],
+        "power-battery": [
+            "/opt/spaceport/bin/cpuctl -x 800 -m 400 -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
+        ],
+        "rotate": [],
+        "sleep-post": [],
+        "sleep-pre": []
     },
     "startup": [
         "/usr/bin/nm-applet",
