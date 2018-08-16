@@ -197,7 +197,7 @@
     "update.channel": "default",
     "update.enableWindowsBackgroundUpdates": false,
     "debug.allowBreakpointsEverywhere": false,
-    "debug.hideActionBar": true,
+    //"debug.hideActionBar": true,
     "debug.inlineValues": false,
     "debug.internalConsoleOptions": "neverOpen",
     "debug.openDebug": "neverOpen",
@@ -268,7 +268,7 @@
     "typescript.autoImportSuggestions.enabled": false,
     "typescript.check.npmIsInstalled": false,
     "typescript.disableAutomaticTypeAcquisition": true,
-    "typescript.experimental.syntaxFolding": true,
+    //"typescript.experimental.syntaxFolding": true,
     "typescript.format.enable": false,
     "typescript.npm": null,
     "typescript.referencesCodeLens.enabled": false,
@@ -367,7 +367,7 @@
     "python.autoComplete.extraPaths": [],
     "python.autoComplete.preloadModules": [],
     "python.disableInstallationCheck": false,
-    "python.disablePromptForFeatures": [],
+    //"python.disablePromptForFeatures": [],
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.formatting.autopep8Args": [
         "--max-line-length 120"
@@ -434,7 +434,7 @@
     "python.terminal.executeInFileDir": false,
     "python.terminal.launchArgs": [],
     "python.unitTest.cwd": "",
-    "python.unitTest.debugHost": 0,
+    //"python.unitTest.debugHost": 0,
     "python.unitTest.debugPort": 9090,
     "python.unitTest.nosetestArgs": [],
     "python.unitTest.nosetestPath": "nosetests",
@@ -482,7 +482,9 @@
     "go.buildFlags": [],
     "go.buildOnSave": "package",
     "go.buildTags": "",
-    "go.coverageDecorator": "highlight",
+    "go.coverageDecorator": {
+        "type": "highlight"
+    },
     "go.coverageOptions": "showBothCoveredAndUncoveredCode",
     "go.coverOnSave": false,
     "go.coverOnTestPackage": true,
