@@ -130,8 +130,8 @@ bindsym $KEY_CTL+Shift+T restart
 font pango:Sans 8
 client.background #272727
 client.urgent #FFB86C #FFB86C #272727 #6272A4 #FFB86C
-client.focused #272727 #272727 #F8F8F2 #6272A4 #272727
-client.unfocused #8c8c8c #5e5e5e #FFFFFF #5e5e5e #5e5e5e
+client.focused #8c8c8c #5e5e5e #FFFFFF #5e5e5e #5e5e5e
+client.unfocused #272727 #272727 #F8F8F2 #6272A4 #272727
 client.placeholder #272727 #272727 #F8F8F2 #6722A4 #272727
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
 
