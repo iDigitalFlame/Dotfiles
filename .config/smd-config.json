@@ -14,11 +14,9 @@
         "3"
     ],
     "hydra_aliases": {
-        "android": "/home/iDigitalFlame/Documents/VMs/Android.conf",
-        "arch": "/home/iDigitalFlame/Documents/VMs/ArchLinuxDev/vm.conf",
+        "android": "/home/iDigitalFlame/Documents/VMs/Android7/Android7.conf",
         "ios": "/home/iDigitalFlame/Documents/VMs/Windows7-iOS/Windows7-iOS.conf",
-        "kali": "/home/iDigitalFlame/Documents/VMs/Kali/Kali.conf",
-        "sbe4": "/home/iDigitalFlame/Documents/VMs/Scorebot4/vm.conf",
+        "kali": "/home/iDigitalFlame/Documents/VMs/KaliLive/KaliLive.conf",
         "win": "/home/iDigitalFlame/Documents/VMs/Windows10/Windows10.conf",
         "win10": "/home/iDigitalFlame/Documents/VMs/Windows10/Windows10.conf"
     },

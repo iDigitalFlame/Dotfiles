@@ -21,7 +21,7 @@
 # iDigitalFlame 2018
 
 MONITOR="eDP1"
-MONITORS=$(xrandr | grep -E ' connected' | awk '{print $1}' | grep -v $MONITOR)
+MONITORS=$(/usr/bin/xrandr | grep -E ' connected' | awk '{print $1}' | grep -v $MONITOR)
 if [ ! -z "$MONITORS" ]; then
     MONITOR_POS=0
     MONITOR_NUM=0
