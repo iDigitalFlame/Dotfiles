@@ -16,7 +16,7 @@
     "hydra_aliases": {
         "android": "/home/iDigitalFlame/Documents/VMs/Android7/Android7.conf",
         "ios": "/home/iDigitalFlame/Documents/VMs/Windows7-iOS/Windows7-iOS.conf",
-        "kali": "/home/iDigitalFlame/Documents/VMs/KaliLive/KaliLive.conf",
+        "kali": "/home/iDigitalFlame/Documents/VMs/KaliLive.conf",
         "win": "/home/iDigitalFlame/Documents/VMs/Windows10/Windows10.conf",
         "win10": "/home/iDigitalFlame/Documents/VMs/Windows10/Windows10.conf"
     },

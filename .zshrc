@@ -142,8 +142,8 @@ alias sel="~/.bin/i3/clip"
 alias ss-c="~/.bin/i3/shot-copy"
 alias sel-c="~/.bin/i3/clip-copy"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
-alias public-ip="wget -q -O - https://ifconfig.co"
-alias public-ip4="wget -4 -q -O - https://ifconfig.co"
+alias public-ip="wget -6qO - https://ifconfig.co/ip"
+alias public-ip4="wget -4qO - https://ifconfig.co/ip"
 
 ## Convienence Aliases
 alias xx="exit"
