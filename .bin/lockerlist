@@ -1,0 +1,38 @@
+#!/usr/bin/sh
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Locker List Command
+# iDigitalFlame 2018
+
+if ! [ -f "/var/run/smd-lockers.sock" ]; then
+    printf "\n"
+    exit 0
+fi
+
+LOCKERS=$(cat /var/run/smd-lockers.sock | wc -l)
+
+if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
+    printf "\n"
+    exit 0
+fi
+
+printf " $((1+$LOCKERS))\n"
+exit 0
+
+# EOF
