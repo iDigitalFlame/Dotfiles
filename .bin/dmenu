@@ -17,15 +17,9 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Hydra View Command
+## Dmenu Wrapper for Surf
 # iDigitalFlame 2018
 
- if [ $# -ne 1 ]; then
-    printf "hydra-view <vmid>\n"
-    exit 1
- fi
-
-/usr/bin/screen -S "hydra-view$1" -dm /usr/bin/falkon -p hydra -u "http://hydra:8600/?path=websockify?token=VM$1&autoconnect=true&scaling=local" 2> /dev/null
-exit 0
+/usr/bin/rofi -dmenu -p 'URL' -padding 18 -width 50 -location 2 -yoffset 100 -lines 0
 
 # EOF
