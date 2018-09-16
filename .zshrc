@@ -22,15 +22,15 @@
 # ZSH Vars
 export VISUAL="nano"
 export ZSH_THEME="muse"
-export GOPATH="$HOME/.go"
 export UPDATE_ZSH_DAYS=14
 export GOROOT="/usr/lib/go"
 export ZSH="$HOME/.oh-my-zsh"
-export AURDEST="$HOME/.pacaur"
 export ENABLE_CORRECTION="true"
 export DISABLE_AUTO_UPDATE="false"
 export PKGDEST="/var/cache/makepkg"
+export GOPATH="$HOME/.local/lib/go"
 export COMPLETION_WAITING_DOTS="true"
+export AURDEST="$HOME/.local/lib/pacaur"
 export SRCDEST="/tmp/.$USER-pacaur-src"
 export BUILDDIR="/tmp/.$USER-pacaur-build"
 
@@ -56,8 +56,8 @@ PROMPT="%n $PROMPT"
 
 # Startups
 ~/.bin/motivate | cowsay -W 75 -f small | lolcat
-if [ ! -d "$HOME/.pacaur" ]; then
-  mkdir -p "$HOME/.pacaur"
+if [ ! -d "$HOME/.local/lib/pacaur" ]; then
+  mkdir -p "$HOME/.local/lib/pacaur"
 fi
 if [ ! -d "/tmp/.$USER-pacaur-src" ]; then
   mkdir -p "/tmp/.$USER-pacaur-src"
@@ -73,7 +73,7 @@ fi
 goget() {
   if [ $# -eq 1 ]; then
     _gourl="$1"
-    /usr/bin/sg iptables-web -c "export GOPATH=\"$HOME/.go\"; go get $_gourl"
+    /usr/bin/sg iptables-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
   fi
 }
 __sg_cmd() {
@@ -95,8 +95,8 @@ alias rsync="__sg_cmd iptables-ssh /usr/bin/rsync"
 alias pacman="__sg_cmd iptables-web /usr/bin/pacman"
 alias pacaur="__sg_cmd iptables-web /usr/bin/pacaur"
 alias rdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
-alias quote="sg iptables-web -c \"~/.bin/motivate -get\""
 alias xfreerdp="__sg_cmd iptables-remote /usr/bin/xfreerdp"
+alias quote="sg iptables-web -c \"~/.local/bin/motivate -get\""
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -137,10 +137,10 @@ alias lsh="ls -alph --group-directories-first --color=auto"
 alias lsal="ls -alp --group-directories-first --color=auto"
 
 # Utility Aliases
-alias ss="~/.bin/i3/shot"
-alias sel="~/.bin/i3/clip"
-alias ss-c="~/.bin/i3/shot-copy"
-alias sel-c="~/.bin/i3/clip-copy"
+alias ss="~/.local/bin/i3/shot"
+alias sel="~/.local/bin/i3/clip"
+alias ss-c="~/.local/bin/i3/shot-copy"
+alias sel-c="~/.local/bin/i3/clip-copy"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias public-ip="wget -6qO - https://ifconfig.co/ip"
 alias public-ip4="wget -4qO - https://ifconfig.co/ip"
