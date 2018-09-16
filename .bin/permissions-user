@@ -28,7 +28,7 @@ chown -R iDigitalFlame:iDigitalFlame "$HOME/.dotfiles"
 rm -f "$HOME/.config/xfce4/terminal/terminalrc"
 
 # General Links
-ln -s "$HOME/.dotfiles/.bin" "$HOME/" 2> /dev/null
+ln -s "$HOME/.dotfiles/.local/bin" "$HOME/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc" 2> /dev/null
 ln -s "$HOME/.dotfiles/.nanorc" "$HOME/.nanorc" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/i3" "$HOME/.config/" 2> /dev/null
@@ -37,7 +37,7 @@ ln -s "$HOME/.dotfiles/.config/polybar" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/leafpad" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/gtk-2.0" "$HOME/.config/" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/pcmanfm" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.bin/goreturns" "$HOME/.go/bin/goreturns" 2> /dev/null
+ln -s "$HOME/.dotfiles/.local/bin/goreturns" "$HOME/.go/bin/goreturns" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
 ln -s "$HOME/.dotfiles/.config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null

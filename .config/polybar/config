@@ -193,17 +193,17 @@ interval = 5
 format = <label>
 type = custom/script
 label-overline = #FFDF3D69
-exec = "$HOME/.bin/lockerlist"
+exec = "$HOME/.local/bin/lockerlist"
 [module/weather]
 interval = 600
 label-font = 3
 format = <label>
 type = custom/script
 label-overline = #FFFFF914
-exec = "$HOME/.bin/i3/weather"
-click-left = "$HOME/.bin/i3/weather go"
-click-right = "$HOME/.bin/i3/weather go"
-click-middle = "$HOME/.bin/i3/weather go"
+exec = "$HOME/.local/bin/i3/weather"
+click-left = "$HOME/.local/bin/i3/weather go"
+click-right = "$HOME/.local/bin/i3/weather go"
+click-middle = "$HOME/.local/bin/i3/weather go"
 # Bars
 [bar/laptop]
 include-file = $HOME/.config/theme/current/polybar-bar-laptop.conf

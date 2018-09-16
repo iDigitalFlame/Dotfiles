@@ -140,17 +140,17 @@ bindsym XF86Launch5 workspace next_on_output
 bindsym XF86Launch6 workspace prev_on_output
 bindsym XF86KbdBrightnessUp workspace next_on_output
 bindsym XF86KbdBrightnessDown workspace prev_on_output
-bindsym XF86LaunchB exec --no-startup-id "~/.bin/browser"
-bindsym XF86LaunchA exec --no-startup-id "~/.bin/i3/search"
+bindsym XF86LaunchB exec --no-startup-id "~/.local/bin/browser"
+bindsym XF86LaunchA exec --no-startup-id "~/.local/bin/i3/search"
 bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
 bindsym $KEY_WIN+XF86Launch5 move container to workspace next_on_output, workspace next_on_output
 bindsym $KEY_WIN+XF86Launch6 move container to workspace prev_on_output, workspace prev_on_output
 
 ## Application Keybindings
 # Function Keybindings
-bindsym Print exec --no-startup-id "~/.bin/i3/shot-copy 0"
-bindsym $KEY_CTL+Escape exec --no-startup-id "~/.bin/i3/power"
-bindsym $KEY_CTL+Shift+Z exec --no-startup-id "~/.bin/i3/power"
+bindsym Print exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
+bindsym $KEY_CTL+Escape exec --no-startup-id "~/.local/bin/i3/power"
+bindsym $KEY_CTL+Shift+Z exec --no-startup-id "~/.local/bin/i3/power"
 bindsym Scroll_Lock exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
 bindsym XF86AudioLowerVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
@@ -160,24 +160,24 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl 
 ## Standard Keys
 # Alt (Physical Windows) Key Bindings
 bindsym $KEY_WIN+Return exec "/usr/bin/pcmanfm"
-bindsym $KEY_WIN+B exec --no-startup-id "~/.bin/browser"
-bindsym $KEY_WIN+Shift+2 exec --no-startup-id "~/.bin/i3/clip"
-bindsym $KEY_WIN+Shift+1 exec --no-startup-id "~/.bin/i3/shot 0"
-bindsym $KEY_WIN+Tab exec --no-startup-id "~/.bin/i3/search window"
-bindsym $KEY_WIN+Shift+P exec --no-startup-id "~/.bin/i3/monitor-auto"
+bindsym $KEY_WIN+B exec --no-startup-id "~/.local/bin/browser"
+bindsym $KEY_WIN+Shift+2 exec --no-startup-id "~/.local/bin/i3/clip"
+bindsym $KEY_WIN+Shift+1 exec --no-startup-id "~/.local/bin/i3/shot 0"
+bindsym $KEY_WIN+Tab exec --no-startup-id "~/.local/bin/i3/search window"
+bindsym $KEY_WIN+Shift+P exec --no-startup-id "~/.local/bin/i3/monitor-auto"
 bindsym $KEY_WIN+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
 bindsym $KEY_WIN+Shift+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 
 # Windows (Physical Control) Key Beindings
-bindsym $KEY_CTL+space exec --no-startup-id "~/.bin/i3/new.py"
-bindsym $KEY_CTL+Tab exec --no-startup-id "~/.bin/i3/switch-bg"
 bindsym $KEY_CTL+Shift+P exec --no-startup-id "/usr/bin/arandr"
+bindsym $KEY_CTL+space exec --no-startup-id "~/.local/bin/i3/new.py"
+bindsym $KEY_CTL+Tab exec --no-startup-id "~/.local/bin/i3/switch-bg"
 
 # Control (Physical Alt) Key Bindings
 bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
-bindsym $KEY_ALT+space exec --no-startup-id "~/.bin/i3/search"
-bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.bin/i3/clip-copy"
-bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.bin/i3/shot-copy 0"
+bindsym $KEY_ALT+space exec --no-startup-id "~/.local/bin/i3/search"
+bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.local/bin/i3/clip-copy"
+bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
 bindsym $KEY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
 
 ## Window Keybindings
@@ -212,8 +212,8 @@ bindsym $KEY_WIN+7 move container to workspace 7, workspace 7
 bindsym $KEY_WIN+8 move container to workspace 8, workspace 8
 bindsym $KEY_WIN+9 move container to workspace 9, workspace 9
 bindsym $KEY_WIN+0 move container to workspace 10, workspace 10
-bindsym $KEY_WIN+grave exec --no-startup-id "~/.bin/i3/new-move.py with"
-bindsym $KEY_WIN+Shift+space exec --no-startup-id "~/.bin/i3/select with"
+bindsym $KEY_WIN+grave exec --no-startup-id "~/.local/bin/i3/new-move.py with"
+bindsym $KEY_WIN+Shift+space exec --no-startup-id "~/.local/bin/i3/select with"
 
 # Control (Physical Alt) Key Bindings
 bindsym $KEY_CTL+1 move container to workspace 1
@@ -226,8 +226,8 @@ bindsym $KEY_CTL+7 move container to workspace 7
 bindsym $KEY_CTL+8 move container to workspace 8
 bindsym $KEY_CTL+9 move container to workspace 9
 bindsym $KEY_CTL+0 move container to workspace 10
-bindsym $KEY_CTL+grave exec --no-startup-id "~/.bin/i3/new-move.py"
-bindsym $KEY_CTL+Shift+space exec --no-startup-id "~/.bin/i3/select"
+bindsym $KEY_CTL+grave exec --no-startup-id "~/.local/bin/i3/new-move.py"
+bindsym $KEY_CTL+Shift+space exec --no-startup-id "~/.local/bin/i3/select"
 
 ## Layout Keybindings
 bindsym $KEY_ALT+Shift+H split h

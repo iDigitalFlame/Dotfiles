@@ -43,7 +43,7 @@ get_icon() {
     printf "$_tmp_icon"
 }
 
-if [ $($HOME/.bin/online status) -eq 0 ]; then
+if [ $($HOME/.local/bin/online status) -eq 0 ]; then
   printf ""
   exit 0
 fi

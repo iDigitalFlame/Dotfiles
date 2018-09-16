@@ -3,7 +3,7 @@
     "background_time": 600,
     "backgrounds": "/home/iDigitalFlame/Pictures/Backgrounds",
     "composer": [
-        "/home/iDigitalFlame/.bin/compton",
+        "/home/iDigitalFlame/.local/bin/compton",
         "-cd",
         ":1",
         "--config",
@@ -22,7 +22,7 @@
     },
     "hydra_directory": "/home/iDigitalFlame/Documents/VMs",
     "locker": [
-        "/home/iDigitalFlame/.bin/i3/lock"
+        "/home/iDigitalFlame/.local/bin/i3/lock"
     ],
     "polybar_bars": {
         "laptop": "laptop",
