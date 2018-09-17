@@ -17,15 +17,21 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Inox Wrapper
+## Browser Wrapper
 # iDigitalFlame 2018
 
-if ! [ -d "/tmp/.inox-cache/$USER/" ]; then
-    mkdir "/tmp/.inox-cache/$USER/" 2> /dev/null
+_args="$@"
+
+if [ -z "$FIREFOX" ]; then
+    FIREFOX=1
 fi
 
-_args="$@"
-/usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
+if [ $FIREFOX -eq 1 ]; then
+    /usr/bin/sg iptables-web -c "GTK_THEME=null; TZ=UTC; /usr/bin/firefox -P default $_args"
+else
+    /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
+fi
+
 exit 0
 
 # EOF
