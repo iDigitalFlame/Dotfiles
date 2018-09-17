@@ -27,7 +27,7 @@ if [ -z "$FIREFOX" ]; then
 fi
 
 if [ $FIREFOX -eq 1 ]; then
-    /usr/bin/sg iptables-web -c "GTK_THEME=null; TZ=UTC; /usr/bin/firefox -P default $_args"
+    /usr/bin/sg iptables-web -c "export GTK_THEME=null; export TZ=UTC; /usr/bin/firefox -P default $_args"
 else
     /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome $_args"
 fi
