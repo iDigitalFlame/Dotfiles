@@ -51,7 +51,7 @@ fi
 source "$HOME/.config/weather.conf"
 
 if [ $# -eq 1 ] && [ "$1" == "go" ]; then
-  xdg-open "https://openweathermap.org/city/$CITY"
+  /usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://openweathermap.org/city/$CITY"
   exit 0
 fi
 
