@@ -111,6 +111,7 @@ for_window [class="Chromium"] border pixel 0
 for_window [class="Google-chrome"] border pixel 0
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="xfreerdp"] border normal, floating disable
+for_window [class="Firefox" floating] border normal, floating enable
 for_window [class="Firefox" title="Print"] border normal, floating enable
 for_window [class="Inox" window_role="pop-up"] border normal, floating enable
 for_window [class="trojita" title="Compose Mail"] border normal, floating enable
