@@ -557,7 +557,6 @@
     "git.decorations.enabled": true,
     "git.defaultCloneDirectory": "~/",
     "git.detectSubmodules": true,
-    // Eventually enable
     "git.enableCommitSigning": false,
     "git.enabled": true,
     "git.enableSmartCommit": true,
@@ -569,6 +568,7 @@
     "git.promptToSaveFilesBeforeCommit": true,
     "git.showInlineOpenFileAction": true,
     "workbench.colorTheme": "Monokai",
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+    "update.showReleaseNotes": false
 }
 // # EOF
