@@ -20,46 +20,49 @@
 ## Permissions and Links Reset
 # iDigitalFlame 2018
 
+DOTS="$HOME/.dotfiles"
+
 # Ownership
-chmod -R 770 "$HOME/.dotfiles"
-chown -R iDigitalFlame:iDigitalFlame "$HOME/.dotfiles"
+chmod -R 770 "$DOTS"
+chown -R iDigitalFlame:iDigitalFlame "$DOTS"
 
 # Problem Configs
-rm -f "$HOME/.config/xfce4/terminal/terminalrc"
+rm -f "$HOME/config/xfce4/terminal/terminalrc"
 
 # General Links
-ln -s "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc" 2> /dev/null
-ln -s "$HOME/.dotfiles/.bin" "$HOME/.local/bin" 2> /dev/null
-ln -s "$HOME/.dotfiles/.nanorc" "$HOME/.nanorc" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/i3" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/pacaur" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/polybar" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/leafpad" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/gtk-2.0" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/pcmanfm" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.local/bin/goreturns" "$HOME/.go/bin/goreturns" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json" 2> /dev/null
+ln -s "$DOTS/.zshrc" "$HOME/.zshrc" 2> /dev/null
+ln -s "$DOTS/bin" "$HOME/.local/" 2> /dev/null
+ln -s "$DOTS/.nanorc" "$HOME/.nanorc" 2> /dev/null
+ln -s "$DOTS/config/i3" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/pacaur" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/polybar" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/leafpad" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/gtk-2.0" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/pcmanfm" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/bin/browser" "$DOTS/bin/x-www-browser" 2> /dev/null
+ln -s "$DOTS/bin/goreturns" "$HOME/.local/lib/go/bin/goreturns" 2> /dev/null
+ln -s "$DOTS/config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
+ln -s "$DOTS/config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
+ln -s "$DOTS/config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null
+ln -s "$DOTS/config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json" 2> /dev/null
+ln -s "$DOTS/config/Code/User/keybindings.json" "$HOME/.config/Code/User/keybindings.json" 2> /dev/null
 
 # Theme Symlinks
-ln -s "$HOME/.dotfiles/.config/theme" "$HOME/.config/" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/rofi.conf" "$HOME/.config/rofi/config" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/dunst.conf" "$HOME/.config/dunst/dunstrc" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini" 2> /dev/null
-ln -s "$HOME/.dotfiles/.config/theme/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc" 2> /dev/null
+ln -s "$DOTS/config/theme" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0" 2> /dev/null
+ln -s "$DOTS/config/theme/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine" 2> /dev/null
+ln -s "$DOTS/config/theme/current/rofi.conf" "$HOME/.config/rofi/config" 2> /dev/null
+ln -s "$DOTS/config/theme/current/dunst.conf" "$HOME/.config/dunst/dunstrc" 2> /dev/null
+ln -s "$DOTS/config/theme/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini" 2> /dev/null
+ln -s "$DOTS/config/theme/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc" 2> /dev/null
 
 # Final Permissions Fix
-chmod -R 550 "$HOME/.dotfiles"
-find "$HOME/.dotfiles" -type f -exec chmod 440 {} \;
-chmod 550 "$HOME/.dotfiles/.zshrc"
-chmod -R 770 "$HOME/.dotfiles/.git"
-chmod -R 550 "$HOME/.dotfiles/.bin"
-chmod 660 "$HOME/.dotfiles/.config/smd-config.json"
-chmod 660 "$HOME/.dotfiles/dotfiles.code-workspace"
+chmod -R 550 "$DOTS"
+find "$DOTS" -type f -exec chmod 440 {} \;
+chmod 550 "$DOTS/.zshrc"
+chmod -R 770 "$DOTS/.git"
+chmod -R 550 "$DOTS/bin"
+chmod 660 "$DOTS/config/smd-config.json"
+chmod 660 "$DOTS/dotfiles.code-workspace"
 
 # EOF

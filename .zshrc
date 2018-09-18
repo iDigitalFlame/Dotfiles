@@ -24,12 +24,12 @@ export VISUAL="nano"
 export ZSH_THEME="muse"
 export UPDATE_ZSH_DAYS=14
 export GOROOT="/usr/lib/go"
-export ZSH="$HOME/.oh-my-zsh"
 export ENABLE_CORRECTION="true"
 export DISABLE_AUTO_UPDATE="false"
 export PKGDEST="/var/cache/makepkg"
 export GOPATH="$HOME/.local/lib/go"
 export COMPLETION_WAITING_DOTS="true"
+export ZSH="$HOME/.local/lib/oh-my-zsh"
 export AURDEST="$HOME/.local/lib/pacaur"
 export SRCDEST="/tmp/.$USER-pacaur-src"
 export BUILDDIR="/tmp/.$USER-pacaur-build"
@@ -55,7 +55,7 @@ X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
 PROMPT="%n $PROMPT"
 
 # Startups
-~/.bin/motivate | cowsay -W 75 -f small | lolcat
+motivate | cowsay -W 75 -f small | lolcat
 if [ ! -d "$HOME/.local/lib/pacaur" ]; then
   mkdir -p "$HOME/.local/lib/pacaur"
 fi
@@ -160,6 +160,6 @@ alias diff="/usr/bin/diff --color=auto"
 alias clip="/usr/bin/xclip -selection clipboard"
 
 ## Private Commands Import
-source "$HOME/.zshrc.inc"
+source "$HOME/.local/lib/zshpriv.sh"
 
 # EOF
