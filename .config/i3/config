@@ -113,7 +113,7 @@ for_window [class="^jetbrains-.+"][window_type=dialog] focus
 for_window [class="xfreerdp"] border normal, floating disable
 for_window [class="Inox" window_role="pop-up"] border normal, floating enable
 for_window [class="trojita" title="Compose Mail"] border normal, floating enable
-
+for_window [class="LSTSRDP"] border normal, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
 # General
 gaps outer 0
 gaps inner 5
