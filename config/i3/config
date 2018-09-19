@@ -144,7 +144,7 @@ bindsym XF86KbdBrightnessUp workspace next_on_output
 bindsym XF86KbdBrightnessDown workspace prev_on_output
 bindsym XF86LaunchB exec --no-startup-id "~/.local/bin/browser"
 bindsym XF86LaunchA exec --no-startup-id "~/.local/bin/i3/search"
-bindsym $KEY_CTL+XF86Eject exec --no-startup-id "~/.local/bin/slackstack"
+bindsym $KEY_CTL+XF86LaunchB exec --no-startup-id "~/.local/bin/slackstack"
 bindsym XF86AudioMute exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
 bindsym $KEY_WIN+XF86Launch5 move container to workspace next_on_output, workspace next_on_output
 bindsym $KEY_WIN+XF86Launch6 move container to workspace prev_on_output, workspace prev_on_output
