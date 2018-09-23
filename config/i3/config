@@ -130,11 +130,11 @@ bindsym $KEY_CTL+Shift+T restart
 
 ## Theme
 font pango:Sans 8
-client.background #272727
-client.urgent #FFB86C #FFB86C #272727 #6272A4 #FFB86C
+client.background #22252C
+client.urgent #FFB86C #FFB86C #22252C #6272A4 #FFB86C
 client.focused #8c8c8c #5e5e5e #FFFFFF #5e5e5e #5e5e5e
-client.unfocused #272727 #272727 #F8F8F2 #6272A4 #272727
-client.placeholder #272727 #272727 #F8F8F2 #6722A4 #272727
+client.unfocused #22252C #22252C #F8F8F2 #6272A4 #22252C
+client.placeholder #22252C #22252C #F8F8F2 #6722A4 #22252C
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
 
 ## Special Keyboard Keybingings

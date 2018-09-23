@@ -27,7 +27,7 @@ chmod -R 770 "$DOTS"
 chown -R iDigitalFlame:iDigitalFlame "$DOTS"
 
 # Problem Configs
-rm -f "$HOME/config/xfce4/terminal/terminalrc"
+rm -f "$HOME/.config/xfce4/terminal/terminalrc"
 
 # General Links
 ln -s "$DOTS/.zshrc" "$HOME/.zshrc" 2> /dev/null
