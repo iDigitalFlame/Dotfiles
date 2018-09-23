@@ -106,7 +106,17 @@
     "editor.wrappingIndent": "same",
     "scm.alwaysShowProviders": false,
     "workbench.activityBar.visible": true,
-    "workbench.colorCustomizations": {},
+    "workbench.colorCustomizations": {
+        "editor.background": "#22252C",
+        "menu.background": "#22252C",
+        "panel.background": "#22252C",
+        "sideBar.background": "#22252C",
+        "dropdown.background": "#22252C",
+        "statusBar.background": "#22252C",
+        "editorPane.background": "#22252C",
+        "sideBarSectionHeader.background": "#22252C",
+        "activityBar.background": "#22252C"
+    },
     "workbench.commandPalette.history": 50,
     "workbench.commandPalette.preserveInput": false,
     "workbench.editor.closeOnFileDelete": false,
