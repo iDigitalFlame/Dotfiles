@@ -55,7 +55,7 @@ if [ ! -z "$MONITORS" ]; then
         done
     fi
     eval "$COMMAND"
-    /opt/spaceport/libexec/smd-video
+    /opt/spaceport/libexec/smd-video "$COMMAND"
 fi
 exit 0
 
