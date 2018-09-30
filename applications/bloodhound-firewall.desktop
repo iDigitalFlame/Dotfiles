@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Bloodhound (Firewall)
+GenericName=Bloodhound
+Comment=6 Degrees of Admin
+Exec=/usr/bin/sg iptables-web -c "/opt/bloodhound/BloodHound"
+Terminal=false
+Icon=bloodhound
+Type=Application
+Categories=Network;Utility;

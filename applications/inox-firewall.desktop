@@ -1,0 +1,20 @@
+[Desktop Entry]
+Version=1.0
+Name=Inox (Firewall)
+GenericName=Web Browser
+Comment=Access the Internet
+Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+Terminal=false
+Icon=inox
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;application/xhtml_xml;image/webp;x-scheme-handler/ftp;
+Categories=Network;WebBrowser;
+Actions=NewWindow;NewPrivateWindow;
+
+[Desktop Action NewWindow]
+Name=New Window
+Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+
+[Desktop Action NewPrivateWindow]
+Name=New Incognito Window
+Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"

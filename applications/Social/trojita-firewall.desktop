@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Trojita (Firewall)
+GenericName=IMAP E-mail Client
+Exec=/usr/bin/sg iptables-mail -c "/usr/bin/trojita %u"
+Terminal=false
+Type=Application
+Icon=trojita
+Categories=Qt;Office;Network;Email;
+Keywords=mail;e-mail;IMAP;SMTP;eml;MUA;
+StartupNotify=true
+MimeType=x-scheme-handler/mailto;

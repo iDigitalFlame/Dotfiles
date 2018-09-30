@@ -30,8 +30,9 @@ chown -R iDigitalFlame:iDigitalFlame "$DOTS"
 rm -f "$HOME/.config/xfce4/terminal/terminalrc"
 
 # General Links
-ln -s "$DOTS/.zshrc" "$HOME/.zshrc" 2> /dev/null
+ln -s "$DOTS/.dmrc" "$HOME" 2> /dev/null
 ln -s "$DOTS/bin" "$HOME/.local/" 2> /dev/null
+ln -s "$DOTS/.zshrc" "$HOME/.zshrc" 2> /dev/null
 ln -s "$DOTS/.nanorc" "$HOME/.nanorc" 2> /dev/null
 ln -s "$DOTS/config/i3" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/pacaur" "$HOME/.config/" 2> /dev/null
@@ -39,6 +40,7 @@ ln -s "$DOTS/config/polybar" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/leafpad" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/gtk-2.0" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/pcmanfm" "$HOME/.config/" 2> /dev/null
+ln -s "$DOTS/applications" "$HOME/.local/share/" 2> /dev/null
 ln -s "$DOTS/bin/browser" "$DOTS/bin/x-www-browser" 2> /dev/null
 ln -s "$DOTS/bin/goreturns" "$HOME/.local/lib/go/bin/goreturns" 2> /dev/null
 ln -s "$DOTS/config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
