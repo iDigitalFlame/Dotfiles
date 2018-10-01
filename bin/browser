@@ -27,6 +27,9 @@ if [ -z "$FIREFOX" ]; then
 fi
 
 if [ $FIREFOX -eq 1 ]; then
+    if [ -z "$_args" ]; then
+        _args="moz-extension://b4c2cd70-7fbe-4466-81b3-fd12a2ea003a/newTab.xhtml"
+    fi
     /usr/bin/sg iptables-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame \"$_args\""
 else
     /usr/bin/sg iptables-web -c "/usr/bin/inox --disk-cache-dir=/tmp/inox-iDigitalFlame-cache --password-store=gnome \"$_args\""
