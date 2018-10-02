@@ -540,7 +540,7 @@
     "go.formatTool": "goreturns",
     "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
-    "go.gopath": "~/.go",
+    "go.gopath": "~/.local/lib/go",
     "go.goroot": "/usr/lib/go",
     "go.gotoSymbol.ignoreFolders": [],
     "go.gotoSymbol.includeImports": false,
