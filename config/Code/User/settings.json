@@ -507,7 +507,7 @@
         "promptForTags": true,
         "transform": "camelcase"
     },
-    "go.autocompleteUnimportedPackages": true,
+    "go.autocompleteUnimportedPackages": false,
     "go.buildFlags": [],
     "go.buildOnSave": "package",
     "go.buildTags": "",
@@ -533,12 +533,12 @@
         "playground": true
     },
     "go.enableCodeLens": {
-        "references": true,
+        "references": false,
         "runtest": true
     },
     "go.formatFlags": [],
     "go.formatTool": "goreturns",
-    "go.gocodeAutoBuild": true,
+    "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
     "go.gopath": "~/.local/lib/go",
     "go.goroot": "/usr/lib/go",
