@@ -507,7 +507,7 @@
         "promptForTags": true,
         "transform": "camelcase"
     },
-    "go.autocompleteUnimportedPackages": false,
+    "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [],
     "go.buildOnSave": "package",
     "go.buildTags": "",
@@ -515,7 +515,7 @@
         "type": "highlight"
     },
     "go.coverageOptions": "showBothCoveredAndUncoveredCode",
-    "go.coverOnSave": false,
+    "go.coverOnSave": true,
     "go.coverOnTestPackage": true,
     "go.docsTool": "godoc",
     "go.editorContextMenuCommands": {
@@ -533,17 +533,17 @@
         "playground": true
     },
     "go.enableCodeLens": {
-        "references": false,
+        "references": true,
         "runtest": true
     },
     "go.formatFlags": [],
     "go.formatTool": "goreturns",
-    "go.gocodeAutoBuild": false,
+    "go.gocodeAutoBuild": true,
     "go.gocodePackageLookupMode": "go",
     "go.gopath": "~/.local/lib/go",
     "go.goroot": "/usr/lib/go",
     "go.gotoSymbol.ignoreFolders": [],
-    "go.gotoSymbol.includeImports": false,
+    "go.gotoSymbol.includeImports": true,
     "go.inferGopath": true,
     "go.languageServerFlags": [],
     "go.lintFlags": [],
