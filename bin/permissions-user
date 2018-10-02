@@ -26,7 +26,9 @@ DOTS="$HOME/.dotfiles"
 chmod -R 770 "$DOTS"
 chown -R iDigitalFlame:iDigitalFlame "$DOTS"
 
-# Problem Configs
+# Configs Fixes
+rm -f "$HOME/.gtkrc-2.0"
+rm -f "$HOME/.config/gtk-3.0/settings.ini"
 rm -f "$HOME/.config/xfce4/terminal/terminalrc"
 
 # General Links
