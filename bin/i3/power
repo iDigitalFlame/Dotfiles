@@ -25,16 +25,16 @@ case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -p 'Powe
     /opt/spaceport/bin/powerctl lock -f
     ;;
     "Hibernate")
-    /usr/bin/systemctl hibernate
+    /usr/bin/sudo /usr/bin/systemctl hibernate
     ;;
     "Logoff")
     /usr/bin/i3-msg exit
     ;;
     "Reboot")
-    /usr/bin/reboot
+    /usr/bin/sudo /usr/bin/reboot
     ;;
     "Poweroff")
-    /usr/bin/poweroff
+    /usr/bin/sudo /usr/bin/poweroff
     ;;
 esac
 exit 0

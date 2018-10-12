@@ -124,8 +124,8 @@ gaps outer 0
 gaps inner 5
 smart_borders on
 new_window pixel 0
-default_orientation auto
 floating_modifier $KEY_WIN
+default_orientation horizontal
 
 ## i3 Application Control
 bindsym $KEY_CTL+Shift+R reload
