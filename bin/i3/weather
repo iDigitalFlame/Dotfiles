@@ -44,29 +44,29 @@ get_icon() {
 }
 
 if [ $($HOME/.local/bin/online status) -eq 0 ]; then
-  printf ""
-  exit 0
+    printf ""
+    exit 0
 fi
 
 source "$HOME/.config/weather.conf"
 
 if [ $# -eq 1 ] && [ "$1" == "go" ]; then
-  /usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://openweathermap.org/city/$CITY"
-  exit 0
+    /usr/bin/screen -dmS weather /usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://openweathermap.org/city/$CITY"
+    exit 0
 fi
 
 _tmp_indicator="°"
 _tmp_output=$(sg iptables-web -c "curl -sf \"http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&zip=$ZIP,us&units=imperial\"")
 
 if [ ! -z "$_tmp_output" ]; then
-  _tmp_icon=$(echo "$_tmp_output" | jq -r ".weather[].icon")
-  _tmp_desc=$(echo "$_tmp_output" | jq -r ".weather[].description")
-  _tmp_temp=$(echo "$_tmp_output" | jq ".main.temp" | cut -d "." -f 1)
-  if [ $# -eq 1 ]; then
-    echo "$(get_icon "$_tmp_icon")" "$_tmp_desc", "$_tmp_temp$_tmp_indicator"
-  else
-    echo "$(get_icon "$_tmp_icon")" "$_tmp_temp$_tmp_indicator"
-  fi
+    _tmp_icon=$(echo "$_tmp_output" | jq -r ".weather[].icon")
+    _tmp_desc=$(echo "$_tmp_output" | jq -r ".weather[].description")
+    _tmp_temp=$(echo "$_tmp_output" | jq ".main.temp" | cut -d "." -f 1)
+    if [ $# -eq 1 ]; then
+        echo "$(get_icon "$_tmp_icon")" "$_tmp_desc", "$_tmp_temp$_tmp_indicator"
+    else
+        echo "$(get_icon "$_tmp_icon")" "$_tmp_temp$_tmp_indicator"
+    fi
 fi
 exit 0
 
