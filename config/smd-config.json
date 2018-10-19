@@ -24,6 +24,7 @@
     "locker": [
         "/home/iDigitalFlame/.local/bin/i3/lock"
     ],
+    "lockscreen_blank": 5,
     "polybar_bars": {
         "laptop": "laptop",
         "tablet": "tablet"
