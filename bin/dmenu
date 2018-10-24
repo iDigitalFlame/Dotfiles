@@ -20,6 +20,6 @@
 ## Dmenu Wrapper for Surf
 # iDigitalFlame 2018
 
-/usr/bin/rofi -dmenu -p 'URL' -padding 18 -width 50 -location 2 -yoffset 100 -lines 0
+/usr/bin/rofi -dmenu -p 'URL' -lines 0
 
 # EOF

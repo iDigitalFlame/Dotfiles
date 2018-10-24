@@ -20,7 +20,7 @@
 ## Select Workspace
 # iDigitalFlame 2018
 
-WS=$(awk 'BEGIN {for(i=1;i<=20;++i) print "Workspace #"i}' | rofi -dmenu -p 'Move to Workspace' -padding 18 -width 50 -location 2 -yoffset 100)
+WS=$(awk 'BEGIN {for(i=1;i<=20;++i) print "Workspace #"i}' | rofi -dmenu -p 'Move to Workspace' -lines 10)
 if [ ! -z "$WS" ]; then
     WS_NUM=$(echo $WS | sed 's/Workspace #//g')
     i3-msg "move container to workspace $WS_NUM" > /dev/null

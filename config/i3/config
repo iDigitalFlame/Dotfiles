@@ -183,6 +183,7 @@ bindsym $KEY_CTL+Tab exec --no-startup-id "~/.local/bin/i3/switch-bg"
 # Control (Physical Alt) Key Bindings
 bindsym $KEY_ALT+Return exec "/usr/bin/xfce4-terminal"
 bindsym $KEY_ALT+space exec --no-startup-id "~/.local/bin/i3/search"
+bindsym $KEY_ALT+Tab exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym $KEY_ALT+Shift+2 exec --no-startup-id "~/.local/bin/i3/clip-copy"
 bindsym $KEY_ALT+Shift+1 exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
 bindsym $KEY_ALT+L exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"

@@ -26,7 +26,8 @@ else
     MODE="combi"
 fi
 
-/usr/bin/rofi -sidebar-mode -combi-modi drun,window,run -lines 12 -padding 18 -width 50 -location 2 -yoffset 100 -show $MODE -columns 3 -font "Sans 10"
+/usr/bin/rofi -combi-modi drun,window,run -show $MODE -font "Sans 10"
+
 exit 0
 
 # EOF

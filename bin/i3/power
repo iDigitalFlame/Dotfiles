@@ -20,23 +20,24 @@
 ## Power Menu
 # iDigitalFlame 2018
 
-case $(printf "Lock\nLogoff\nHibernate\nReboot\nPoweroff" | rofi -dmenu -p 'Power Control' -lines 5 -padding 18 -width 50 -location 2 -yoffset 100) in
-    "Lock")
+case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff" | rofi -dmenu -p 'Power' -lines 5 -columns 1) in
+    " Lock")
     /opt/spaceport/bin/powerctl lock -f
     ;;
-    "Hibernate")
+    " Hibernate")
     /usr/bin/sudo /usr/bin/systemctl hibernate
     ;;
-    "Logoff")
+    " Logoff")
     /usr/bin/i3-msg exit
     ;;
-    "Reboot")
+    " Reboot")
     /usr/bin/sudo /usr/bin/reboot
     ;;
-    "Poweroff")
+    " Poweroff")
     /usr/bin/sudo /usr/bin/poweroff
     ;;
 esac
+
 exit 0
 
 # EOF
