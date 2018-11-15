@@ -169,7 +169,7 @@
     "window.openFoldersInNewWindow": "default",
     "window.restoreFullscreen": false,
     "window.restoreWindows": "one",
-    "window.titleBarStyle": "custom",
+    "window.titleBarStyle": "native",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
     "files.associations": {},
