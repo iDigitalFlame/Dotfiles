@@ -3,7 +3,7 @@ Version=1.0
 Name=chromium (Firewall)
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
 Terminal=false
 Categories=Network;WebBrowser;
 Actions=NewWindow;NewPrivateWindow;
