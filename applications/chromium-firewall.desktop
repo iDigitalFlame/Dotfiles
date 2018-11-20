@@ -1,15 +1,16 @@
 [Desktop Entry]
 Version=1.0
-Name=Inox (Firewall)
+Name=chromium (Firewall)
 GenericName=Web Browser
 Comment=Access the Internet
 Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
 Terminal=false
-Icon=inox
-Type=Application
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;application/xhtml_xml;image/webp;x-scheme-handler/ftp;
 Categories=Network;WebBrowser;
 Actions=NewWindow;NewPrivateWindow;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+StartupNotify=true
+Icon=chromium
+Type=Application
 
 [Desktop Action NewWindow]
 Name=New Window
