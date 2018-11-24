@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=chromium (Firewall)
+Name=Chromium (Firewall)
 GenericName=Web Browser
 Comment=Access the Internet
 Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
