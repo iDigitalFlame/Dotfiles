@@ -162,5 +162,3 @@ alias clip="/usr/bin/xclip -selection clipboard"
 
 ## Private Commands Import
 source "$HOME/.local/lib/zshpriv.sh"
-
-# EOF
