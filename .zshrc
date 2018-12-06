@@ -57,31 +57,31 @@ PROMPT="%n $PROMPT"
 # Startups
 motivate | cowsay -W 75 -f small | lolcat
 if [ ! -d "$HOME/.local/lib/pacaur" ]; then
-  mkdir -p "$HOME/.local/lib/pacaur"
+    mkdir -p "$HOME/.local/lib/pacaur"
 fi
 if [ ! -d "/tmp/.$USER-pacaur-src" ]; then
-  mkdir -p "/tmp/.$USER-pacaur-src"
+    mkdir -p "/tmp/.$USER-pacaur-src"
 fi
 if [ ! -d "/tmp/.$USER-pacaur-build" ]; then
-  mkdir -p "/tmp/.$USER-pacaur-build"
+    mkdir -p "/tmp/.$USER-pacaur-build"
 fi
 if [ ! -d "$HOME/Pictures/Screenshots" ]; then
-  mkdir -p "$HOME/Pictures/Screenshots"
+    mkdir -p "$HOME/Pictures/Screenshots"
 fi
 
 # Function Definitions
 goget() {
-  if [ $# -eq 1 ]; then
-    _gourl="$1"
-    /usr/bin/sg iptables-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
-  fi
+    if [ $# -eq 1 ]; then
+        _gourl="$1"
+        /usr/bin/sg iptables-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
+    fi
 }
 __sg_cmd() {
-  _params=($@)
-  if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
-    _command="${_params[@]:1}"
-    /usr/bin/sg "${_params[1]}" -c "$_command"
-  fi
+    _params=($@)
+    if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
+        _command="${_params[@]:1}"
+        /usr/bin/sg "${_params[1]}" -c "$_command"
+    fi
 }
 
 # IPTables Aliases
