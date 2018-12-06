@@ -39,5 +39,3 @@ fi
 /usr/bin/sg iptables-web -c "for url in \$(cat $SLACK_LIST); do screen -dm sh -c \"export GTK_THEME=null; /usr/bin/surf -mDfIkPBSng -c ~/.config/Cookies/slack-cookies.txt \$url\"; done"
 
 exit 0
-
-# EOF

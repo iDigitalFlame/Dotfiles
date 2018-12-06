@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Google Play Music (Firewall)
-GenericName=Music Player
-Comment=Music Player
-Exec=/usr/bin/sg iptables-web -c "/usr/bin/falkon --profile gmusic --no-remote --new-window"
-Icon=multimedia-audio-player
-Terminal=false
-StartupNotify=true
-StartupWMClass=GMusic
-Keywords=muysic
-Type=Application
-Categories=Music;Audio;Qt;
+Name            = Google Play Music (Firewall)
+Exec            = /usr/bin/sg iptables-web -c "/usr/bin/falkon --profile gmusic --no-remote --new-window"
+Icon            = multimedia-audio-player
+Type            = Application
+Comment         = Music Player
+Terminal        = false
+Keywords        = music
+Categories      = Music;Audio;Qt;
+GenericName     = Music Player (Firewall)
+StartupNotify   = true
+StartupWMClass  = GMusic

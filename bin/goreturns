@@ -56,5 +56,3 @@ if __name__ == "__main__":
         print('Could not get output from "goreturns"! (%s)' % str(err))
         exit(1)
     exit(0)
-
-# EOF

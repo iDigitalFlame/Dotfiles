@@ -69,4 +69,4 @@ chmod -R 550 "$DOTS/bin"
 chmod 660 "$DOTS/config/smd-config.json"
 chmod 660 "$DOTS/dotfiles.code-workspace"
 
-# EOF
+exit 0

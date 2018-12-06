@@ -39,5 +39,3 @@ case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff" | 
 esac
 
 exit 0
-
-# EOF

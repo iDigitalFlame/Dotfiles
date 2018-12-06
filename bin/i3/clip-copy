@@ -25,5 +25,3 @@ if [ $? -eq 0 ]; then
     /usr/bin/notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
 fi
 exit 0
-
-# EOF

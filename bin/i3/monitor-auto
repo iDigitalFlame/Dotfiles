@@ -58,5 +58,3 @@ if [ ! -z "$MONITORS" ]; then
     /opt/spaceport/libexec/smd-video "$COMMAND"
 fi
 exit 0
-
-# EOF

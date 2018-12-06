@@ -21,5 +21,3 @@
 # iDigitalFlame 2018
 
 /usr/bin/rofi -dmenu -p 'URL' -lines 0
-
-# EOF

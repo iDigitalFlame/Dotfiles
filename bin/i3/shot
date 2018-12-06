@@ -29,5 +29,3 @@ PICTURE_PATH="$HOME/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg"
 /usr/bin/sleep $DELAY
 /usr/bin/notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$PICTURE_PATH\"."
 exit 0
-
-# EOF

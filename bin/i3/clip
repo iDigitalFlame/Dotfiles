@@ -26,5 +26,3 @@ if [ $? -eq 0 ]; then
     /usr/bin/notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$PICTURE_PATH\"."
 fi
 exit 0
-
-# EOF

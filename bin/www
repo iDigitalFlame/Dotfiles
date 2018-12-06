@@ -21,5 +21,3 @@
 # iDigitalFlame 2018
 
 /usr/bin/screen -dmS www sg iptables-web -c "/usr/bin/surf -mDfIkPBSng $1"
-
-# EOF

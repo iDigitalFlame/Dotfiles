@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Chroma (Firewall)
-GenericName=Color Picker
-Comment=Pick Colors
-Exec=/usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
-Icon=cs-color
-Terminal=false
-Type=Application
-StartupNotify=true
-StartupWMClass=Chroma
-Categories=Utilities;
-Keywords=tools;color;utilities;
+Name            = Chroma (Firewall)
+Exec            = /usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
+Icon            = cs-color
+Type            = Application
+Comment         = Pick Colors
+Terminal        = false
+Keywords        = tools;color;utilities;
+Categories      = Utilities;
+GenericName     = Color Picker (Firewall)
+StartupNotify   = true
+StartupWMClass  = chroma

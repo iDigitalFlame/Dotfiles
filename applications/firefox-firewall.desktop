@@ -1,22 +1,22 @@
 [Desktop Entry]
-Name=Firefox (Firewall)
-GenericName=Web Browser
-Comment=Browse the Web
-Exec=/home/iDigitalFlame/.local/bin/browser
-Icon=firefox
-Terminal=false
-Type=Application
-MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
-StartupNotify=true
-StartupWMClass=Firefox
-Categories=Network;WebBrowser;
-Keywords=web;browser;internet;
-Actions=new-window;new-private-window;
+Name            = Firefox (Firewall)
+Exec            = /home/iDigitalFlame/.local/bin/browser
+Icon            = firefox
+Type            = Application
+Actions         = new-window;new-private-window;
+Comment         = Browse the Web
+Terminal        = false
+Keywords        = web;browser;internet;
+MimeType        = text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
+Categories      = Network;WebBrowser;
+GenericName     = Web Browser (Firewall)
+StartupNotify   = true
+StartupWMClass  = Firefox
 
 [Desktop Action new-window]
-Name=New Window (Firewall)
-Exec=/home/iDigitalFlame/.local/bin/browser --new-window %u
+Name            = New Window (Firewall)
+Exec            = /home/iDigitalFlame/.local/bin/browser --new-window %u
 
 [Desktop Action new-private-window]
-Name=New Private Window
-Exec=/home/iDigitalFlame/.local/bin/browser --private-window %u
+Name            = New Private Window
+Exec            = /home/iDigitalFlame/.local/bin/browser --private-window %u

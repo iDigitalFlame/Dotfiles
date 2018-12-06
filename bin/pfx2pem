@@ -27,8 +27,6 @@ fi
 
 cert_file=$1
 /usr/bin/openssl pkcs12 -in "$cert_file" -nocerts -out "/tmp/$cert_file.pem" -nodes
-/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file-pem.pem"
-/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file-key.key"
+/usr/bin/openssl pkcs12 -in "$cert_file" -nokeys -out "$cert_file.pem"
+/usr/bin/openssl rsa -in "/tmp/$cert_file.pem" -out "$cert_file.key"
 /usr/bin/rm "/tmp/$cert.pem"
-
-# EOF

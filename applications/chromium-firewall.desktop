@@ -1,21 +1,20 @@
 [Desktop Entry]
-Version=1.0
-Name=Chromium (Firewall)
-GenericName=Web Browser
-Comment=Access the Internet
-Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
-Terminal=false
-Categories=Network;WebBrowser;
-Actions=NewWindow;NewPrivateWindow;
-MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
-StartupNotify=true
-Icon=chromium
-Type=Application
+Name            = Chromium (Firewall)
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
+Icon            = chromium
+Type            = Application
+Actions         = NewWindow;NewPrivateWindow;
+Comment         = Access the Internet
+MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Terminal        = false
+Categories      = Network;WebBrowser;
+GenericName     = Web Browser (Firewall)
+StartupNotify   = true
 
 [Desktop Action NewWindow]
-Name=New Window
-Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+Name            = New Window
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
 
 [Desktop Action NewPrivateWindow]
-Name=New Incognito Window
-Exec=/usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
+Name            = New Incognito Window
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"

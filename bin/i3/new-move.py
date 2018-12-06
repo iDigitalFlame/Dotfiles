@@ -70,5 +70,3 @@ if __name__ == "__main__":
             i3_output(["workspace", str(i3_next_empty)])
         exit(0)
     exit(1)
-
-# EOF

@@ -69,5 +69,3 @@ if [ ! -z "$_tmp_output" ]; then
     fi
 fi
 exit 0
-
-# EOF

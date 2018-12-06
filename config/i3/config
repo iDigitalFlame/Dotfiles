@@ -115,7 +115,9 @@ for_window [class="Galculator"] border normal, floating enable
 for_window [class="Firefox" floating] border normal, floating enable
 for_window [class="Firefox" title="Print"] border normal, floating enable
 for_window [class="Inox" window_role="pop-up"] border normal, floating enable
+for_window [class="chroma"] border pixel 0, floating enable, resize set 500 250
 for_window [class="trojita" title="Compose Mail"] border normal, floating enable
+for_window [class="stickynote"] border pixel 0, floating enable, resize set 750 450
 for_window [class="TSRDP"] border pixel 0, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
 for_window [class="LSTSRDP"] border normal, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
 
@@ -125,7 +127,7 @@ gaps inner 5
 smart_borders on
 new_window pixel 0
 floating_modifier $KEY_WIN
-default_orientation horizontal
+default_orientation vertical
 
 ## i3 Application Control
 bindsym $KEY_CTL+Shift+R reload
@@ -166,6 +168,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "/opt/spaceport/bin/powerctl 
 ## Standard Keys
 # Alt (Physical Windows) Key Bindings
 bindsym $KEY_WIN+Return exec "/usr/bin/pcmanfm"
+bindsym $KEY_WIN+P exec "/usr/bin/leafpad --class=stickynote"
 bindsym $KEY_WIN+B exec --no-startup-id "~/.local/bin/browser"
 bindsym $KEY_WIN+G exec --no-startup-id "~/.local/bin/slackstack"
 bindsym $KEY_WIN+Shift+2 exec --no-startup-id "~/.local/bin/i3/clip"
@@ -272,5 +275,3 @@ bindsym $KEY_CTL+Up resize shrink height 10px or 10 ppt
 bindsym $KEY_CTL+Down resize grow height 10px or 10 ppt
 bindsym $KEY_CTL+Left resize grow width 10 px or 10 ppt
 bindsym $KEY_CTL+Right resize shrink width 10 px or 10 ppt
-
-# EOF

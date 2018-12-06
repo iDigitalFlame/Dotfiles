@@ -77,5 +77,4 @@ SMB_USER=""
 unset SMB_PASSWORD
 unset SMB_DOMAIN
 unset SMB_USER
-
-# EOF
+exit 0

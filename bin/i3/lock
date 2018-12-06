@@ -57,5 +57,3 @@ KEYCOLOR="#7D0DABFF" # "#$(openssl rand -hex 3)FF"
 --insidewrongcolor="#00000000" \
 --datestr "Type password to unlock..." \
 --image "/home/iDigitalFlame/.config/smd-lockscreen.png" \
-
-# EOF

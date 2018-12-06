@@ -29,5 +29,3 @@ if [ ! -z "$WS" ]; then
     fi
 fi
 exit 0
-
-# EOF

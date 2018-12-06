@@ -29,5 +29,3 @@ fi
 /usr/bin/rofi -combi-modi drun,window,run -show $MODE -font "Sans 10"
 
 exit 0
-
-# EOF
