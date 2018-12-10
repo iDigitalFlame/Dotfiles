@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name            = Chroma (Firewall)
+Name            = Color Chroma (Firewall)
 Exec            = /usr/bin/sg iptables-web -c "/usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
 Icon            = cs-color
 Type            = Application
