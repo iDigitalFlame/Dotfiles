@@ -20,7 +20,7 @@
 ## Power Menu
 # iDigitalFlame 2018
 
-case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff" | rofi -dmenu -p 'Power' -lines 5 -columns 1) in
+case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff\n Restart i3" | rofi -dmenu -p 'Power' -lines 5 -columns 1) in
     " Lock")
     /opt/spaceport/bin/powerctl lock -f
     ;;
@@ -36,6 +36,9 @@ case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff" | 
     " Poweroff")
     /usr/bin/sudo /usr/bin/poweroff
     ;;
+    " Restart i3")
+    /usr/bin/i3-msg restart
+    /usr/bin/killall polybar
+    ;;
 esac
-
 exit 0
