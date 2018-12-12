@@ -35,5 +35,17 @@
     {
         "key": "shift+alt+o",
         "command": "workbench.action.openWorkspace"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]
