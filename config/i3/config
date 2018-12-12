@@ -33,7 +33,7 @@ workspace_layout        default
 hide_edge_borders       both
 floating_modifier       $KEY_WIN
 default_orientation     vertical
-default_floating_border pixel 0
+default_floating_border normal
 
 for_window              [class="TSRDP"]                         border pixel 0, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
 for_window              [class="chroma"]                        border pixel 0, floating enable, resize set 500 250
