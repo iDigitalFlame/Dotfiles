@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name            = Slack Stack (Firewall)
+Exec            = /usr/bin/bash -c "slackstack"
+Icon            = slack
+Type            = Application
+Comment         = Slack Stack Internet Client
+MimeType        = x-scheme-handler/slack;
+Terminal        = false
+Keywords        = slack;im;social;
+Categories      = Network;InstantMessaging;Qt;
+GenericName     = Chat Client and Messaging App (Firewall)
+StartupNotify   = true
+StartupWMClass  = Slack

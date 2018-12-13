@@ -33,6 +33,7 @@ export ZSH="$HOME/.local/lib/oh-my-zsh"
 export AURDEST="$HOME/.local/lib/pacaur"
 export SRCDEST="/tmp/.$USER-pacaur-src"
 export BUILDDIR="/tmp/.$USER-pacaur-build"
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 plugins=(git encode64 screen sudo)
 source "$ZSH/oh-my-zsh.sh"

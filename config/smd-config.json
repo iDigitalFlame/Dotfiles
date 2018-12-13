@@ -56,7 +56,8 @@
         "/usr/bin/libinput-gestures",
         "/opt/spaceport/libexec/smd-diskd",
         "/opt/spaceport/libexec/smd-enable-tap",
-        "/usr/bin/sg iptables-web -c /usr/bin/nextcloud"
+        "/usr/bin/sg iptables-web -c /usr/bin/nextcloud",
+        "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
     ],
     "timeout_blank": 60,
     "timeout_lock": 120,

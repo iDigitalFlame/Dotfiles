@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name            = Slack (Firewall)
+Exec            = /usr/bin/sg iptables-web -c "/usr/bin/falkon --profile slack --no-remote --new-window"
+Icon            = slack
+Type            = Application
+Comment         = Slack Internet Client
+MimeType        = x-scheme-handler/slack;
+Terminal        = false
+Keywords        = slack;im;social;
+Categories      = Network;InstantMessaging;Qt;
+GenericName     = Chat Client and Messaging App (Firewall)
+StartupNotify   = true
+StartupWMClass  = Slack
