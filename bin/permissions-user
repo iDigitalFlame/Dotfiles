@@ -36,6 +36,7 @@ ln -s "$DOTS/.dmrc" "$HOME" 2> /dev/null
 ln -s "$DOTS/bin" "$HOME/.local/" 2> /dev/null
 ln -s "$DOTS/.zshrc" "$HOME/.zshrc" 2> /dev/null
 ln -s "$DOTS/.nanorc" "$HOME/.nanorc" 2> /dev/null
+ln -s "$DOTS/.xinitrc" "$HOME/.xinitrc" 2> /dev/null
 ln -s "$DOTS/config/i3" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/pacaur" "$HOME/.config/" 2> /dev/null
 ln -s "$DOTS/config/polybar" "$HOME/.config/" 2> /dev/null
