@@ -46,6 +46,7 @@ ln -s "$DOTS/applications" "$HOME/.local/share/" 2> /dev/null
 ln -s "$DOTS/bin/browser" "$DOTS/bin/x-www-browser" 2> /dev/null
 ln -s "$DOTS/bin/goreturns" "$HOME/.local/lib/go/bin/goreturns" 2> /dev/null
 ln -s "$DOTS/config/smd-config.json" "$HOME/.config/smd-config.json" 2> /dev/null
+ln -s "$DOTS/applications/mimeapps.list" "$HOME/.config/mimeapps.list" 2> /dev/null
 ln -s "$DOTS/config/chromium-flags.conf" "$HOME/.config/chromium-flags.conf" 2> /dev/null
 ln -s "$DOTS/config/libinput-gestures.conf" "$HOME/.config/libinput-gestures.conf" 2> /dev/null
 ln -s "$DOTS/config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json" 2> /dev/null
