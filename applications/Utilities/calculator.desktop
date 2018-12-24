@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name            = Calculator
-Exec            = /usr/bin/galculator
-Icon            = galculator
-Type            = Application
-Comment         = Perform simple and scientific calculations
-Terminal        = false
-Categories      = Utility;
-StartupNotify   = true

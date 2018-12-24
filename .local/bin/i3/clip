@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,13 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Screenclip
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+PICTURE_PATH="$HOME/Pictures/Screenshots/$(date +%m-%d-%Y-%H-%m-%S)-capture.jpg"
+
+maim -u -c 0,0,0,0 -o -s "$PICTURE_PATH"
+if [ $? -eq 0 ]; then
+    notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$PICTURE_PATH\"."
+fi
+exit 0

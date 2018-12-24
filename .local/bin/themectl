@@ -1,0 +1,103 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Theme Contoler
+# iDigitalFlame
+
+THEME_DIR="$HOME/.config/theme"
+
+freset() {
+    theme=""
+    if [ $# -eq 1 ]; then
+        if [ -e "$THEME_DIR/$1" ]; then
+            theme="$THEME_DIR/$1"
+        else
+            printf "Theme \"$1\" does not exist!\n"
+            exit 0
+        fi
+    else
+        if ! [ -e "$THEME_DIR/current" ]; then
+            printf "No theme selected!\n"
+            exit 0
+        fi
+        theme=$(readlink "$THEME_DIR/current")
+    fi
+    theme=$(basename $theme)
+    rm "$THEME_DIR/current" 2> /dev/null
+    ln -s "$THEME_DIR/$theme" "$THEME_DIR/current"
+    rm -f "$HOME/.gtkrc-2.0"
+    rm -f "$HOME/.gtkrc-2.0.mine"
+    rm -f "$HOME/.config/rofi/config"
+    rm -f "$HOME/.config/dunst/dunstrc"
+    rm -f "$HOME/.config/gtk-3.0/settings.ini"
+    rm -f "$HOME/.config/xfce4/terminal/terminalrc"
+    return 0
+}
+
+freload() {
+    if ! [ -e "$THEME_DIR/current" ]; then
+        return 1
+    fi
+    ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
+    ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
+    ln -s "$THEME_DIR/current/rofi.conf" "$HOME/.config/rofi/config"
+    ln -s "$THEME_DIR/current/dunst.conf" "$HOME/.config/dunst/dunstrc"
+    ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
+    ln -s "$THEME_DIR/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc"
+    return 0
+}
+
+fhelp() {
+    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|help]\n\n"
+    if ! [ -e "$THEME_DIR/current" ]; then
+        printf "No theme selected!\n"
+        exit 0
+    fi
+    printf "Current theme is \"$(basename `readlink "$THEME_DIR/current"`)\"\n"
+    exit 0
+}
+
+case "$1" in
+    "reset")
+    freset
+    ;;
+    "reload")
+    freset
+    freload
+    ;;
+    "set")
+    if [ $# -ne 2 ]; then
+        printf "$0 set <theme>\n"
+        exit 1
+    fi
+    if ! [ -e "$THEME_DIR/$2" ]; then
+        printf "Theme \"$2\" does not exist!\n"
+        exit 0
+    fi
+    freset "$2"
+    freload
+    ;;
+    "help")
+    fhelp
+    ;;
+    *)
+    fhelp
+    ;;
+esac
+exit 0

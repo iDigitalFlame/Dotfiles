@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,18 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Application Entry
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+[Desktop Entry]
+Type            = Application
+Name            = Arduino IDE (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/arduino %U"
+Icon            = arduino
+Comment         = Open-source electronics prototyping platform
+Terminal        = false
+MimeType        = text/x-arduino;
+Keywords        = embedded electronics;electronics;avr;microcontroller;
+Categories      = Development;IDE;Electronics;
+GenericName     = Arduino IDE (Firewall)
+StartupWMClass  = processing-app-Base

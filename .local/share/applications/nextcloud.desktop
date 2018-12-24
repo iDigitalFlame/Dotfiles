@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,15 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Application Entry
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+[Desktop Entry]
+Type        = Application
+Exec        = /usr/bin/sg firewall-web -c "/usr/bin/nextcloud"
+Name        = Nextcloud (Firewall)
+Icon        = Nextcloud
+Comment     = Nextcloud desktop synchronization client
+Keywords    = Nextcloud;syncing;file;sharing;
+Categories  = Utility;X-SuSE-SyncUtility;
+GenericName = Folder Sync (Firewall)

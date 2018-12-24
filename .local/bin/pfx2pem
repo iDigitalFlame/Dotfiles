@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,17 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## PFX2PEM
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+if [ $# -ne 1 ]; then
+    printf "Usage\npfx2pem <pfx>\n"
+    exit 1
+fi
+
+cert=$1
+openssl pkcs12 -in "$cert" -nocerts -out "/tmp/$cert.pem" -nodes
+openssl pkcs12 -in "$cert" -nokeys -out "$cert.pem"
+openssl rsa -in "/tmp/$cert.pem" -out "$cert.key"
+rm "/tmp/$cert.pem" 2> /dev/null
+exit 0

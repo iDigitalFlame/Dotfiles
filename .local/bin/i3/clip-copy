@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,11 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Screenclip Copy
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
+if [ $? -eq 0 ]; then
+    notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
+fi
+exit 0

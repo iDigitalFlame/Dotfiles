@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## SysUpdate Wrapper
+# iDigitalFlame
+
+if [ -f "$HOME/.local/apps/updateHosts/updateHostsFile.py" ]; then
+    printf "[+] Updating hosts blocklist file..\n"
+    sg firewall-web -c "/usr/bin/python3 $HOME/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
+    export hf="$HOME/.local/apps/updateHosts/hosts"
+else
+    export hf="/etc/hosts"
+fi
+
+printf "[+] Starting pacman..\n"
+sudo sh -c "sg firewall-web -c \"/usr/bin/pacman -Syu\"; sync; cp \"$hf\" /etc/hosts; printf \"\n127.0.0.1\thydra\\n\" >> /etc/hosts; systemctl restart systemd-resolved"
+printf "[+] Starting pacaur..\n"
+sg firewall-web -c "/usr/bin/pacaur -Syua"
+sudo syslink

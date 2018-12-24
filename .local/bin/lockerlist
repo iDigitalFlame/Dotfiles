@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,20 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Locker List Command
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+if ! [ -f "/var/run/smd/locker.sock" ]; then
+    printf "\n"
+    exit 0
+fi
+
+LOCKERS=$(cat /var/run/smd/locker.sock | wc -w)
+
+if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
+    printf "\n"
+    exit 0
+fi
+
+printf " $LOCKERS\n"
+exit 0

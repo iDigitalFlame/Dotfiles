@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,21 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Browser Wrapper
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+_args="$@"
+
+if [ -z "$FIREFOX" ]; then
+    FIREFOX=1
+fi
+if [ $FIREFOX -eq 1 ]; then
+    if [ -z "$_args" ]; then
+        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame"
+    else
+        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame \"$_args\""
+    fi
+else
+    sg firewall-web -c "/usr/bin/chromium --disk-cache-dir=/tmp/chromium-iDigitalFlame-cache --password-store=gnome \"$_args\""
+fi
+exit 0

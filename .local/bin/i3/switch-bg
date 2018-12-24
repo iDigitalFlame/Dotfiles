@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,8 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Switch Background
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+/usr/lib/smd/libexec/smd-message com.spaceport.background
+exit 0

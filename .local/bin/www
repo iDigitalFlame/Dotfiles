@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Surf Wrapper
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+screen -dmS www sg firewall-web -c "/usr/bin/surf -mDfIkPBSng $1"

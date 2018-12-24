@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,14 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Screenshot Clip
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+DELAY=1
+
+if [ $# -ge 1 ]; then
+  DELAY=0
+fi
+maim -d $DELAY -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
+
+exit 0

@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,14 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
-# iDigitalFlame
+## Searchbar Menu
+# iDigitalFlame 2018
 
-xrdb =merge ~/.Xresources
-exec i3
+if [ $# -eq 1 ]; then
+    MODE="$1"
+else
+    MODE="combi"
+fi
+rofi -combi-modi drun,window,run -show $MODE
+
+exit 0

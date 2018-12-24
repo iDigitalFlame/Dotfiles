@@ -1,0 +1,52 @@
+// #!/usr/bin/false
+// ################################
+// ###### iDigitalFlame 2018 ######
+// #                              #
+// #            -/`               #
+// #            -yy-   :/`        #
+// #         ./-shho`:so`         #
+// #    .:- /syhhhh//hhs` `-`     #
+// #   :ys-:shhhhhhshhhh.:o- `    #
+// #   /yhsoshhhhhhhhhhhyho`:/.   #
+// #   `:yhyshhhhhhhhhhhhhh+hd:   #
+// #     :yssyhhhhhyhhhhhhhhdd:   #
+// #    .:.oyshhhyyyhhhhhhddd:    #
+// #    :o+hhhhhyssyhhdddmmd-     #
+// #     .+yhhhhyssshdmmddo.      #
+// #       `///yyysshd++`         #
+// #                              #
+// ########## SPACEPORT ###########
+// ################################
+// ## VCSode Keybindings Configuration
+// # iDigitalFlame
+[
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder"
+    },
+    {
+        "key": "shift+alt+o",
+        "command": "-editor.action.organizeImports",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+    },
+    {
+        "key": "shift+alt+o",
+        "command": "workbench.action.openWorkspace"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    }
+]

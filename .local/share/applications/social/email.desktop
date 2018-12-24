@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,17 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Application Entry
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+[Desktop Entry]
+Name            = Email (Firewall)
+Exec            = /usr/bin/sg firewall-mail -c "/usr/bin/trojita %u"
+Type            = Application
+Icon            = trojita
+Terminal        = false
+MimeType        = x-scheme-handler/mailto;
+Keywords        = mail;e-mail;IMAP;SMTP;eml;MUA;
+Categories      = Qt;Office;Network;Email;
+GenericName     = Email Client (Firewall)
+StartupNotify   = true

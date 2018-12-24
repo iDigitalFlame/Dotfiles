@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Application Entry
+# iDigitalFlame
+
+[Desktop Entry]
+Name            = Chromium (Firewall)
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
+Icon            = chromium
+Type            = Application
+Actions         = NewWindow;NewPrivateWindow;
+Comment         = Access the Internet
+MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Terminal        = false
+Categories      = Network;WebBrowser;
+GenericName     = Web Browser (Firewall)
+StartupNotify   = true
+
+[Desktop Action NewWindow]
+Name            = New Window
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+
+[Desktop Action NewPrivateWindow]
+Name            = New Incognito Window
+Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"

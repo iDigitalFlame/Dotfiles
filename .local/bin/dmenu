@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Dmenu Wrapper for Surf
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+rofi -dmenu -p 'URL' -lines 0

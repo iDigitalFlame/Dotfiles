@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name        = Bloodhound (Firewall)
-Icon        = bloodhound
-Type        = Application
-Exec        = /usr/bin/sg iptables-web -c "/opt/bloodhound/BloodHound"
-Comment     = 6 Degrees of Admin
-Terminal    = false
-Categories  = Network;Utility;
-GenericName = Bloodhound (Firewall)

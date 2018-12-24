@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2018 ######
 #                              #
@@ -17,8 +17,18 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## X init Script
+## Application Entry
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
-exec i3
+[Desktop Entry]
+Name            = Color Chroma (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
+Icon            = cs-color
+Type            = Application
+Comment         = Pick Colors
+Terminal        = false
+Keywords        = tools;color;utilities;
+Categories      = Utilities;
+GenericName     = Color Picker (Firewall)
+StartupNotify   = true
+StartupWMClass  = chroma

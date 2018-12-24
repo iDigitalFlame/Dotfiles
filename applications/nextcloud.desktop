@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type        = Application
-Exec        = /usr/bin/sg iptables-web -c "/usr/bin/nextcloud"
-Name        = Nextcloud (Firewall)
-Icon        = Nextcloud
-Comment     = Nextcloud desktop synchronization client
-Keywords    = Nextcloud;syncing;file;sharing;
-Categories  = Utility;X-SuSE-SyncUtility;
-GenericName = Folder Sync (Firewall)

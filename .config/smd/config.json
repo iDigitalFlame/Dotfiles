@@ -1,0 +1,63 @@
+{
+    "background_size": "3000x2000",
+    "background_time": 600,
+    "backgrounds": "/home/iDigitalFlame/Pictures/Backgrounds",
+    "composer": [
+        "/home/iDigitalFlame/.local/bin/compton",
+        "-cd",
+        ":1",
+        "--config",
+        "/home/iDigitalFlame/.config/theme/current/compton.conf",
+        "--blur-method",
+        "kawase",
+        "--blur-strength",
+        "3"
+    ],
+    "hydra_aliases": {
+        "android": "/home/iDigitalFlame/Machines/Android7/Android7.conf",
+        "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
+        "kali": "/home/iDigitalFlame/Machines/KaliLive.conf",
+        "win": "/home/iDigitalFlame/Machines/Windows10/Windows10.conf",
+        "win10": "/home/iDigitalFlame/Machines/Windows10/Windows10.conf"
+    },
+    "hydra_directory": "/home/iDigitalFlame/Machines",
+    "locker": [
+        "/home/iDigitalFlame/.local/bin/i3/lock"
+    ],
+    "lockscreen_blank": 5,
+    "polybar_bars": {
+        "laptop": "standard",
+        "tablet": "standard"
+    },
+    "profiles": {
+        "display": [
+            "/usr/bin/xrandr --dpi 125x125"
+        ],
+        "lock-post": [],
+        "lock-pre": [],
+        "mode-laptop": [],
+        "mode-tablet": [],
+        "power-ac": [
+            "/opt/spaceport/bin/cpuctl -x 4Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance"
+        ],
+        "power-battery": [
+            "/opt/spaceport/bin/cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
+        ],
+        "rotate": [],
+        "sleep-post": [],
+        "sleep-pre": []
+    },
+    "startup": [
+        "/usr/bin/nm-applet",
+        "/usr/bin/libinput-gestures",
+        "/usr/bin/xrandr --dpi 125x125",
+        "/usr/lib/smd/libexec/smd-diskd",
+        "/usr/lib/smd/libexec/smd-enable-tap",
+        "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
+        "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh",
+        "/usr/bin/xinput set-button-map 'SYNA1D31:00 06CB:CD48 Touchpad' 1 3 3 4 5 6 7"
+    ],
+    "timeout_blank": 60,
+    "timeout_lock": 120,
+    "timeout_sleep": 120
+}
