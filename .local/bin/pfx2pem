@@ -25,9 +25,12 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-cert=$1
-openssl pkcs12 -in "$cert" -nocerts -out "/tmp/$cert.pem" -nodes
-openssl pkcs12 -in "$cert" -nokeys -out "$cert.pem"
-openssl rsa -in "/tmp/$cert.pem" -out "$cert.key"
-rm "/tmp/$cert.pem" 2> /dev/null
+c="$1"
+printf "Password for PFX: "
+read -s cpa
+printf "\n"
+openssl pkcs12 -in "$c" -nocerts -out "/tmp/$c.pem" -nodes -password file:<(printf "$cpa")
+openssl pkcs12 -in "$c" -nokeys -out "$c.pem" -password file:<(printf "$cpa")
+openssl rsa -in "/tmp/$c.pem" -out "$c.key"
+rm "/tmp/$c.pem" 2> /dev/null
 exit 0

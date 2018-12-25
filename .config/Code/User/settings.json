@@ -70,7 +70,6 @@
     "editor.occurrencesHighlight": true,
     "editor.overviewRulerBorder": true,
     "editor.overviewRulerLanes": 3,
-    //"editor.parameterHints": true,
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
@@ -228,7 +227,6 @@
     "update.channel": "none",
     "update.enableWindowsBackgroundUpdates": false,
     "debug.allowBreakpointsEverywhere": false,
-    //"debug.hideActionBar": true,
     "debug.inlineValues": false,
     "debug.internalConsoleOptions": "neverOpen",
     "debug.openDebug": "neverOpen",
@@ -239,7 +237,6 @@
         "compounds": []
     },
     "html.autoClosingTags": true,
-    //"html.experimental.syntaxFolding": true,
     "html.format.contentUnformatted": "pre,code,textarea",
     "html.format.enable": true,
     "html.format.endWithNewline": false,
@@ -251,13 +248,10 @@
     "html.format.unformatted": "wbr",
     "html.format.wrapAttributes": "auto",
     "html.format.wrapLineLength": 127,
-    "html.suggest.angular1": false,
     "html.suggest.html5": true,
-    "html.suggest.ionic": false,
     "html.trace.server": "off",
     "html.validate.scripts": true,
     "html.validate.styles": true,
-    //"json.experimental.syntaxFolding": true,
     "json.format.enable": true,
     "json.schemas": [],
     "json.trace.server": "off",
@@ -299,7 +293,6 @@
     "typescript.suggest.autoImports": false,
     "typescript.check.npmIsInstalled": false,
     "typescript.disableAutomaticTypeAcquisition": true,
-    //"typescript.experimental.syntaxFolding": true,
     "typescript.format.enable": false,
     "typescript.npm": null,
     "typescript.referencesCodeLens.enabled": false,
@@ -345,7 +338,6 @@
     "terminal.integrated.env.linux": {},
     "terminal.integrated.env.osx": {},
     "terminal.integrated.env.windows": {},
-    //"terminal.integrated.experimentalRestore": false,
     "terminal.integrated.fontFamily": "",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontWeight": "normal",
@@ -397,12 +389,9 @@
     "powershell.useX86Host": false,
     "python.autoComplete.addBrackets": true,
     "python.autoComplete.extraPaths": [],
-    //"python.autoComplete.preloadModules": [],
     "python.disableInstallationCheck": false,
-    //"python.disablePromptForFeatures": [],
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.formatting.autopep8Args": [
-        //"--max-line-length 120"
         "--py36"
     ],
     "python.formatting.autopep8Path": "black",
@@ -467,7 +456,6 @@
     "python.terminal.executeInFileDir": false,
     "python.terminal.launchArgs": [],
     "python.unitTest.cwd": "",
-    //"python.unitTest.debugHost": 0,
     "python.unitTest.debugPort": 9090,
     "python.unitTest.nosetestArgs": [],
     "python.unitTest.nosetestPath": "nosetests",
@@ -484,7 +472,6 @@
         "*test*.py"
     ],
     "python.unitTest.unittestEnabled": false,
-    //"python.unitTest.useExperimentalDebugger": false,
     "python.venvFolders": [
         "envs",
         ".pyenv",
