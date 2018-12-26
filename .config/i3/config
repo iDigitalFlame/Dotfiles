@@ -33,6 +33,7 @@ new_window pixel        0
 workspace_layout        default
 hide_edge_borders       both
 floating_modifier       $KEY_WIN
+focus_follows_mouse     yes
 default_orientation     horizontal
 default_floating_border normal
 
@@ -92,6 +93,11 @@ bindsym                 $KEY_ALT+Shift+1        exec --no-startup-id "~/.local/b
 bindsym                 $KEY_ALT+Shift+2        exec --no-startup-id "~/.local/bin/i3/clip-copy"
 bindsym                 $KEY_CTL+Shift+Z        exec --no-startup-id "~/.local/bin/i3/power"
 
+bindsym                 --whole-window --border $KEY_WIN+button5 resize grow width 10px or 10 ppt
+bindsym                 --whole-window --border $KEY_CTL+button5 resize grow height 10px or 10 ppt
+bindsym                 --whole-window --border $KEY_WIN+button4 resize shrink width 10px or 10 ppt
+bindsym                 --whole-window --border $KEY_CTL+button4 resize shrink height 10px or 10 ppt
+
 bindsym                 $KEY_WIN+A              layout toggle split
 bindsym                 $KEY_WIN+C              focus mode_toggle
 bindsym                 $KEY_WIN+D              layout tabbed
@@ -109,8 +115,8 @@ bindsym                 $KEY_WIN+Right          move right
 bindsym                 $KEY_ALT+Q              kill
 bindsym                 $KEY_CTL+Up             resize shrink height 10px or 10 ppt
 bindsym                 $KEY_CTL+Down           resize grow height 10px or 10 ppt
-bindsym                 $KEY_CTL+Left           resize grow width 10 px or 10 ppt
-bindsym                 $KEY_CTL+Right          resize shrink width 10 px or 10 ppt
+bindsym                 $KEY_CTL+Left           resize shrink width 10 px or 10 ppt
+bindsym                 $KEY_CTL+Right          resize grow width 10 px or 10 ppt
 bindsym                 $KEY_WIN+Shift+A        focus parent
 bindsym                 $KEY_WIN+Shift+H        split h
 bindsym                 $KEY_WIN+Shift+J        split v

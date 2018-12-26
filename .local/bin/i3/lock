@@ -20,28 +20,25 @@
 ## Locker
 # iDigitalFlame
 
-KEYCOLOR="#7D0DABFF" # "#$(openssl rand -hex 3)FF"
+KEYCOLOR="#$(openssl rand -hex 3)FF"
 
 /usr/bin/i3lock \
--n \
 --clock \
---tiling \
---radius=20 \
 --indicator \
 --composite \
+--radius=100 \
+--datestr "" \
 --force-clock \
---time-align=1 \
---date-align=1 \
---ring-width=4 \
+--time-align=0 \
+--date-align=0 \
+--ring-width=5 \
 --veriftext="" \
 --wrongtext="" \
 --noinputtext="" \
 --timestr="%H:%M" \
+--color "#000000" \
 --pointer=default \
 --line-uses-inside \
---timepos="x+45:h-70" \
---datepos="x+45:h-45" \
---indpos="x+280:h-70" \
 --ringcolor="#FFFFFFFF" \
 --ignore-empty-password \
 --bshlcolor="#D23D3DFF" \
@@ -51,9 +48,11 @@ KEYCOLOR="#7D0DABFF" # "#$(openssl rand -hex 3)FF"
 --keyhlcolor="$KEYCOLOR" \
 --insidecolor="#00000000" \
 --ringvercolor="#E6DB74FF" \
+--indpos="x+(w/2):y+(h/2)" \
 --ringwrongcolor="#D23D3DFF" \
 --separatorcolor="#00000000" \
 --insidevercolor="#00000000" \
 --insidewrongcolor="#00000000" \
---datestr "Type password to unlock..." \
---image "/home/iDigitalFlame/.config/smd/lockscreen.png" \
+--timepos="x+(w/2):y+(h/2)+150" \
+--datepos="x+(w/2):y+(h/2)+170" \
+--image "/home/iDigitalFlame/.config/smd/lockscreen.png"
