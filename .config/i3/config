@@ -115,8 +115,8 @@ bindsym                 $KEY_WIN+Right          move right
 bindsym                 $KEY_ALT+Q              kill
 bindsym                 $KEY_CTL+Up             resize shrink height 10px or 10 ppt
 bindsym                 $KEY_CTL+Down           resize grow height 10px or 10 ppt
-bindsym                 $KEY_CTL+Left           resize shrink width 10 px or 10 ppt
-bindsym                 $KEY_CTL+Right          resize grow width 10 px or 10 ppt
+bindsym                 $KEY_CTL+Left           resize grow width 10 px or 10 ppt
+bindsym                 $KEY_CTL+Right          resize shrink width 10 px or 10 ppt
 bindsym                 $KEY_WIN+Shift+A        focus parent
 bindsym                 $KEY_WIN+Shift+H        split h
 bindsym                 $KEY_WIN+Shift+J        split v
