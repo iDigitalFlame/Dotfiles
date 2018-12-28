@@ -23,6 +23,7 @@
 KEYCOLOR="#$(openssl rand -hex 3)FF"
 
 /usr/bin/i3lock \
+-n \
 --clock \
 --indicator \
 --composite \
