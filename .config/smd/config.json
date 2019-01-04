@@ -17,8 +17,8 @@
         "android": "/home/iDigitalFlame/Machines/Android7/Android7.conf",
         "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
         "kali": "/home/iDigitalFlame/Machines/KaliLive.conf",
-        "win": "/home/iDigitalFlame/Machines/Windows10/Windows10.conf",
-        "win10": "/home/iDigitalFlame/Machines/Windows10/Windows10.conf"
+        "win": "/home/iDigitalFlame/Machines/Win10Domain/vm.conf",
+        "win10": "/home/iDigitalFlame/Machines/Win10Domain/vm.conf"
     },
     "hydra_directory": "/home/iDigitalFlame/Machines",
     "locker": [
