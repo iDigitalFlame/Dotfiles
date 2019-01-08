@@ -26,55 +26,53 @@ if [ $# -lt 2 ]; then
 fi
 
 if [ $# -eq 3 ]; then
-    SMB_USER="$2"
-    SMB_SHARE="$3"
+    smbusr="$2"
+    smbshare="$3"
 else
-    SMB_USER="$1"
-    SMB_SHARE="$2"
+    smbusr="$1"
+    smbshare="$2"
 fi
-if [ ! -z "$(echo $SMB_USER | grep '/')" ]; then
-    SMB_DOMAIN=$(echo $SMB_USER | awk -F'/' '{print $1}')
-    SMB_USER=$(echo $SMB_USER | awk -F'/' '{print $2}')
+if [ ! -z "$(echo $smbusr | grep '/')" ]; then
+    smbdom=$(echo $smbusr | awk -F'/' '{print $1}')
+    smbusr=$(echo $smbusr | awk -F'/' '{print $2}')
 else
-    SMB_DOMAIN=""
+    smbdom=""
 fi
-SMB_FOLDER=$(echo "$SMB_SHARE" | awk -F'/' '{print $NF}')
-SMB_NAME=$(echo "$SMB_FOLDER" | sed -e 's/ //g')
-SMB_WORKGROUP=$(echo "$SMB_DOMAIN" | awk -F'.' '{print $1}')
+smbfldr=$(echo "$smbshare" | awk -F'/' '{print $NF}')
+smbwkrg=$(echo "$smbdom" | awk -F'.' '{print $1}')
 if [ $# -eq 3 ];then
-    printf "" | gnome-keyring-query set smb-connect-$SMB_WORKGROUP-$SMB_USER
-    SMB_PASSWORD=""
+    printf "" | gnome-keyring-query set smb-connect-$smbwkrg-$smbusr
+    smbpwd=""
 else
-    SMB_PASSWORD=$(gnome-keyring-query get smb-connect-$SMB_WORKGROUP-$SMB_USER)
+    smbpwd=$(gnome-keyring-query get smb-connect-$smbwkrg-$smbusr)
 fi
-while [ -z "$SMB_PASSWORD" ]; do
+while [ -z "$smbpwd" ]; do
     printf "Password: "
-    read -s SMB_PASSWORD
+    read -s smbpwd
 done
-if [ -z "$SMB_PASSWORD" ]; then
+if [ -z "$smbpwd" ]; then
     printf "A password is required!\n"
     exit 1
 fi
-printf "$SMB_PASSWORD" | gnome-keyring-query set smb-connect-$SMB_WORKGROUP-$SMB_USER
-SMB_MOUNT="/tmp/.mounts/$USER/smb-$(echo $SMB_FOLDER | sed -e 's/\$//g')"
-SMB_NUMBER=0
-if [ ! -z "$(mount | grep $SMB_MOUNT)" ]; then
-    printf "\"$SMB_MOUNT\" is already mounted!\n"
+printf "$smbpwd" | gnome-keyring-query set smb-connect-$smbwkrg-$smbusr
+smbmnt="/tmp/.mounts/$USER/smb-$(echo $smbfldr | sed -e 's/\$//g')"
+if [ ! -z "$(mount | grep $smbmnt)" ]; then
+    printf "\"$smbmnt\" is already mounted!\n"
     exit 1
 fi
-if [ ! -d "$SMB_MOUNT" ]; then
-    mkdir -p "$SMB_MOUNT"
+if [ ! -d "$smbmnt" ]; then
+    mkdir -p "$smbmnt"
 fi
-sudo /opt/spaceport/sbin/smb-mount "$SMB_SHARE" "$SMB_MOUNT" "vers=3.0,username=\"$SMB_USER\",domain=\"$SMB_DOMAIN\",workgroup=\"$SMB_WORKGROUP\",password=\"$SMB_PASSWORD\",uid=$USER,gid=$USER,file_mode=0750,dir_mode=0750"
+sudo /opt/spaceport/sbin/smb-mount "$smbshare" "$smbmnt" "vers=3.0,username=\"$smbusr\",domain=\"$smbdom\",workgroup=\"$smbwkrg\",password=\"$smbpwd\",uid=$USER,gid=$USER,file_mode=0750,dir_mode=0750"
 if [ $? -ne 0 ]; then
-    printf "There was a problem mounting \"$SMB_SHARE\"!\n"
+    printf "There was a problem mounting \"$smbshare\"!\n"
 else
-    printf "\"$SMB_SHARE\" mounted to \"$SMB_MOUNT\"\n"
+    printf "\"$smbshare\" mounted to \"$smbmnt\"\n"
 fi
-SMB_PASSWORD=""
-SMB_DOMAIN=""
-SMB_USER=""
-unset SMB_PASSWORD
-unset SMB_DOMAIN
-unset SMB_USER
+smbpwd=""
+smbdom=""
+smbusr=""
+unset smbpwd
+unset smbdom
+unset smbusr
 exit 0

@@ -64,7 +64,7 @@ freload() {
 }
 
 fhelp() {
-    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|help]\n\n"
+    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|list|help]\n\n"
     if ! [ -e "$THEME_DIR/current" ]; then
         printf "No theme selected!\n"
         exit 0
@@ -74,6 +74,10 @@ fhelp() {
 }
 
 case "$1" in
+    "list")
+    printf "Current Installed Themes:\n"
+    ls -al "$THEME_DIR" | grep -v current | grep -v 'total ' | awk '{print $9}' | grep -vE '^\.' | awk '{print " - "$0}'
+    ;;
     "reset")
     freset
     ;;

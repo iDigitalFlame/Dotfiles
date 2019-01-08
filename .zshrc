@@ -83,6 +83,108 @@ __sg_cmd() {
     fi
 }
 
+# Golang Build Functions
+gbf() {
+    gbf-64 $@
+}
+gbfc() {
+    gbfc-x64 $@
+}
+gbf-64() {
+    if [ $? -eq 0 ]; then
+        printf "gbf-64 <gofile> [output]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
+    if [ $# -ge 2 ]; then
+        goout_file="$2"
+    fi
+    go build -o "$goout_file" "$1"
+}
+gbf-86() {
+    if [ $? -eq 0 ]; then
+        printf "gbf-86 <gofile> [output]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
+    if [ $# -ge 2 ]; then
+        goout_file="$2"
+    fi
+    env GOARCH=386 go build -o "$goout_file" "$1"
+}
+gbf-w64() {
+    if [ $? -eq 0 ]; then
+        printf "gbf-w64 <gofile> [output]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
+    if [ $# -ge 2 ]; then
+        goout_file="$2"
+    fi
+    env GOOS=windows go build -o "$goout_file" "$1"
+}
+gbf-w32() {
+    if [ $? -eq 0 ]; then
+        printf "gbf-w32 <gofile> [output]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
+    if [ $# -ge 2 ]; then
+        goout_file="$2"
+    fi
+    env GOOS=windows GOARCH=386 go build -o "$goout_file" "$1"
+}
+gbfc-64() {
+    if [ $# -lt 2 ]; then
+        printf "gbfc-64 <gofile> <cmain> [output] [gccargs]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
+    if [ $# -ge 3 ]; then
+        goout_file="$3"
+    fi
+    gcc_args=""
+    if [ $# -ge 4 ]; then
+        gcc_arg="$4"
+    fi
+    go build -v -x -buildmode=c-archive "$1"
+    gcc -o "$goout_file" "$2" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -lpthread $gcc_args
+}
+gbfc-w64() {
+    if [ $# -lt 2 ]; then
+        printf "gbfc-w64 <gofile> <cmain> [output] [gccargs]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
+    if [ $# -ge 3 ]; then
+        goout_file="$3"
+    fi
+    gcc_args=""
+    if [ $# -ge 4 ]; then
+        gcc_arg="$4"
+    fi
+    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -v -x -buildmode=c-archive "$1"
+    x86_64-w64-mingw32-gcc -o "$goout_file" "$2" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
+}
+gbfc-w64dll() {
+    if [ $# -lt 2 ]; then
+        printf "gbfc-w64dll <gofile> <cmain> [output] [gccargs]\n"
+        return 1
+    fi
+    goout_file=$(echo "$1" | sed -e 's/\.go$/\.dll/g')
+    if [ $# -ge 3 ]; then
+        goout_file="$3"
+    fi
+    gcc_args=""
+    if [ $# -ge 4 ]; then
+        gcc_arg="$4"
+    fi
+    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -v -x -buildmode=c-archive "$1"
+    x86_64-w64-mingw32-gcc -c -o "${goout_file}.o" "$2" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
+    x86_64-w64-mingw32-gcc -o "$goout_file" -s -shared "${goout_file}.o" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
+    rm -f "${goout_file}.o"
+}
+
 alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
 alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
 alias git="__sg_cmd firewall-web /usr/bin/git"
