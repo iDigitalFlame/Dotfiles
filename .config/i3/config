@@ -45,7 +45,7 @@ for_window              [class="Chromium"]                      border pixel 0
 for_window              [class="xfreerdp"]                      border normal, floating disable
 for_window              [class="stickynote"]                    border pixel 0, floating enable, resize set 750 450
 for_window              [class="Galculator"]                    border normal, floating enable
-for_window              [class="Firefox" floating]              border normal, floating enable
+for_window              [class="Firefox" floating]              border pixel 0, floating enable
 for_window              [class="falkon" title="*noVNC*"]        border normal, floating enable
 for_window              [window_role="GtkFileChooserDialog"]    border normal, floating enable
 for_window              [class="trojita" title="Compose Mail"]  border normal, floating enable
