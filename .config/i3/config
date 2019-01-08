@@ -84,6 +84,7 @@ bindsym                 $KEY_CTL+Tab            exec --no-startup-id "~/.local/b
 bindsym                 $KEY_CTL+grave          exec --no-startup-id "~/.local/bin/i3/new-move.py"
 bindsym                 $KEY_CTL+space          exec --no-startup-id "~/.local/bin/i3/new.py"
 bindsym                 $KEY_CTL+Escape         exec --no-startup-id "~/.local/bin/i3/power"
+bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
 bindsym                 $KEY_WIN+Shift+L        exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 0"
 bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "~/.local/bin/i3/monitor-auto"
 bindsym                 $KEY_WIN+Shift+1        exec --no-startup-id "~/.local/bin/i3/shot 0"

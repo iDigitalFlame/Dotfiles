@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Locker Menu
+# iDigitalFlame
+
+case $(printf " Chill (No Lockers)\n Coffee (5m)\n Caffeine (10m)\n Cocaine (15m)\n Insomnia (Unlimited)" | rofi -dmenu -p 'Locker Preset' -lines 5 -columns 1) in
+    " Chill (No Lockers)")
+    lockerctl -ks false -kb false -kl false
+    ;;
+    " Coffee (5m)")
+    lockerctl -ks 300 -kb 300 -kl 300
+    ;;
+    " Caffeine (10m)")
+    lockerctl -ks 600 -kb 600 -kl 600
+    ;;
+    " Cocaine (15m)")
+    lockerctl -ks 900 -kb 900 -kl 900
+    ;;
+    " Insomnia (Unlimited)")
+    lockerctl -ks true -kb true -kl true
+    ;;
+esac
+exit 0
