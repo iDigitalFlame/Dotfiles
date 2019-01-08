@@ -63,9 +63,9 @@ if [ ! -z "$_tmp_output" ]; then
     _tmp_desc=$(echo "$_tmp_output" | jq -r ".weather[].description")
     _tmp_temp=$(echo "$_tmp_output" | jq ".main.temp" | cut -d "." -f 1)
     if [ $# -eq 1 ]; then
-        echo "$(get_icon "$_tmp_icon")" "$_tmp_desc", "$_tmp_temp$_tmp_indicator"
+        echo "$_tmp_desc", "$_tmp_temp$_tmp_indicator" "$(get_icon "$_tmp_icon")"
     else
-        echo "$(get_icon "$_tmp_icon")" "$_tmp_temp$_tmp_indicator"
+        echo "$_tmp_temp$_tmp_indicator" "$(get_icon "$_tmp_icon")"
     fi
 fi
 exit 0

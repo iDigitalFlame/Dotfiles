@@ -21,16 +21,16 @@
 # iDigitalFlame
 
 if ! [ -f "/var/run/smd/lockers.state" ]; then
-    printf "\n"
+    printf "0 \n"
     exit 0
 fi
 
 LOCKERS=$(cat /var/run/smd/lockers.state | wc -w)
 
 if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
-    printf "\n"
+    printf "0 \n"
     exit 0
 fi
 
-printf " $LOCKERS\n"
+printf "$LOCKERS \n"
 exit 0
