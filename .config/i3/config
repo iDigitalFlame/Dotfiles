@@ -136,6 +136,7 @@ bindsym                 $KEY_CTL+XF86Launch5    focus right
 bindsym                 $KEY_CTL+XF86Launch7    focus up
 bindsym                 $KEY_CTL+XF86Launch8    focus down
 
+bindsym                 $KEY_ALT+Escape         workspace 0:RDP
 bindsym                 $KEY_ALT+1              workspace 1
 bindsym                 $KEY_ALT+2              workspace 2
 bindsym                 $KEY_ALT+3              workspace 3
