@@ -150,11 +150,14 @@ animation-charging-1            = ""
 animation-charging-2            = ""
 format-charging-prefix          = " "
 format-full-background          = #FF00AA00
+format-full-foreground          = ${theme.light}
 format-charging-padding         = 2
 format-discharging-padding      = 2
-format-charging-background      = #FFFFFF55
+format-charging-background      = #FF137510
+format-charging-foreground      = ${theme.light}
 animation-charging-framerate    = 750
 format-discharging-background   = #FFAA00AA
+format-discharging-foreground   = ${theme.light}
 
 [module/lockerctl]
 type                            = custom/script
