@@ -53,7 +53,7 @@
         "/usr/bin/nm-applet",
         "/usr/bin/libinput-gestures",
         "/usr/bin/xrandr --dpi 125x125",
-        "/usr/lib/smd/libexec/smd-diskd",
+        "/usr/lib/smd/libexec/smd-diskd nm",
         "/usr/lib/smd/libexec/smd-enable-tap",
         "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
         "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh",
