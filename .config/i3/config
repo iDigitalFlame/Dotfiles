@@ -137,7 +137,6 @@ bindsym                 $KEY_CTL+XF86Launch5    focus right
 bindsym                 $KEY_CTL+XF86Launch7    focus up
 bindsym                 $KEY_CTL+XF86Launch8    focus down
 
-bindsym                 $KEY_ALT+Escape         workspace 0:RDP
 bindsym                 $KEY_ALT+1              workspace 1
 bindsym                 $KEY_ALT+2              workspace 2
 bindsym                 $KEY_ALT+3              workspace 3
@@ -148,6 +147,7 @@ bindsym                 $KEY_ALT+7              workspace 7
 bindsym                 $KEY_ALT+8              workspace 8
 bindsym                 $KEY_ALT+9              workspace 9
 bindsym                 $KEY_ALT+0              workspace 10
+bindsym                 $KEY_ALT+Escape         workspace 0:RDP
 bindsym                 XF86Launch5             workspace next_on_output
 bindsym                 XF86Launch6             workspace prev_on_output
 bindsym                 XF86KbdBrightnessUp     workspace next_on_output
