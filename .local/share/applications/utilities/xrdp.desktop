@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = RDP (Firewall)
-Exec            = ~/.local/bin/xrdp
+Exec            = /usr/bin/bash -c "~/.local/bin/xrdp"
 Icon            = putty
 Type            = Application
 Comment         = Remote Desktop

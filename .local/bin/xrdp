@@ -26,20 +26,20 @@ RDP_RESOLUTON="2990x1940"
 
 case $# in
     0)
-    creds=$(zenity --class="XDRP" --title="XRDP" --window-icon=question --forms --add-entry="Host" --add-entry="Username" --add-password="Password" --text="XRDP")
+    creds=$(zenity --class="XRDP" --title="XRDP" --window-icon=question --forms --add-entry="Host" --add-entry="Username" --add-password="Password" --text="XRDP")
     if [ $? -ne 0 ]; then
         exit 1
     fi
     ;;
     1)
-    creds=$(zenity --class="XDRP" --title="XRDP into $1" --window-icon=question --username --password --text="XRDP")
+    creds=$(zenity --class="XRDP" --title="XRDP into $1" --window-icon=question --username --password --text="XRDP")
         if [ $? -ne 0 ]; then
         exit 1
     fi
     creds="$1|$creds"
     ;;
     2)
-    creds=$(zenity --class="XDRP" --title="XRDP into $1" --window-icon=question --password --text="XRDP")
+    creds=$(zenity --class="XRDP" --title="XRDP into $1" --window-icon=question --password --text="XRDP")
     if [ $? -ne 0 ]; then
         exit 1
     fi

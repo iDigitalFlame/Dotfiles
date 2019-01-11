@@ -37,6 +37,7 @@ focus_follows_mouse     yes
 default_orientation     horizontal
 default_floating_border normal
 
+for_window              [class="XRDP"]                          border normal, floating enable
 for_window              [class="TSRDP"]                         border pixel 0, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
 for_window              [class="chroma"]                        border pixel 0, floating enable, resize set 500 250
 for_window              [class="LSTSRDP"]                       border normal, floating disable, move container to workspace 0:RDP, workspace 0:RDP, layout tabbed
