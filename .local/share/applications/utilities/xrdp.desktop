@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Application Entry
+# iDigitalFlame
+
+[Desktop Entry]
+Name            = RDP (Firewall)
+Exec            = ~/.local/bin/xrdp
+Icon            = putty
+Type            = Application
+Comment         = Remote Desktop
+Terminal        = false
+Keywords        = rdp;network;utilities;
+Categories      = Utilities;email;rdp;
+GenericName     = RDP (Firewall)
+StartupNotify   = false

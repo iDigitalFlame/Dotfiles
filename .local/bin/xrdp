@@ -1,0 +1,78 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## RDP Zenity Wrapper
+# iDigitalFlame
+
+RDP_SCALE=140
+RDP_CLASS="TSRDP"
+RDP_RESOLUTON="2990x1940"
+
+case $# in
+    0)
+    creds=$(zenity --class="XDRP" --title="XRDP" --window-icon=question --forms --add-entry="Host" --add-entry="Username" --add-password="Password" --text="XRDP")
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    ;;
+    1)
+    creds=$(zenity --class="XDRP" --title="XRDP into $1" --window-icon=question --username --password --text="XRDP")
+        if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    creds="$1|$creds"
+    ;;
+    2)
+    creds=$(zenity --class="XDRP" --title="XRDP into $1" --window-icon=question --password --text="XRDP")
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+    creds="$1|$2|$creds"
+    ;;
+    3)
+    creds="$1|$2|$3"
+    ;;
+    *)
+    printf "rdp [host] [domain\\user] [password]\n"
+    exit 1
+    ;;
+esac
+
+rdp_domain=""
+rdp_host="$(echo -E $creds | cut -d '|' -f 1)"
+rdp_user="$(echo -E $creds | cut -d '|' -f 2)"
+rdp_passwd="$(echo -E $creds | cut -d '|' -f 3)"
+
+if ! [ -z "$(echo $rdp_user | grep -E '@')" ]; then
+    rdp_domain="$(echo $rdp_user | cut -d '@' -f 2)"
+    rdp_user="$(echo $rdp_user | cut -d '@' -f 1)"
+else
+    if ! [ -z "$(echo $rdp_user | grep -E '\\')" ]; then
+        rdp_domain="$(echo $rdp_user | cut -d '\' -f 1)"
+        rdp_user="$(echo $rdp_user | cut -d '\' -f 2)"
+    fi
+fi
+
+if [ -z "$rdp_domain" ]; then
+    sg firewall-remote -c "printf \"$rdp_passwd\n\" | xfreerdp /v:\"$rdp_host\" /size:\"$RDP_RESOLUTON\" /wm-class:\"$RDP_CLASS\" /scale:$RDP_SCALE +clipboard +sec-nla /u:\"$rdp_user\" /from-stdin"
+else
+    sg firewall-remote -c "printf \"$rdp_passwd\n\" | xfreerdp /v:\"$rdp_host\" /size:\"$RDP_RESOLUTON\" /wm-class:\"$RDP_CLASS\" /scale:$RDP_SCALE +clipboard +sec-nla /u:\"$rdp_user\" /d:\"$rdp_domain\" /from-stdin"
+fi
+
+exit 0
