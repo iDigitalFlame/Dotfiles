@@ -589,5 +589,7 @@
     "git.showInlineOpenFileAction": true,
     "workbench.colorTheme": "Monokai",
     "terminal.integrated.rendererType": "dom",
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    "cSpell.showStatus": false,
+    "cSpell.enabled": false
 }
