@@ -21,14 +21,14 @@
 # iDigitalFlame
 
 [Desktop Entry]
-Exec            = /opt/visual-studio-code/code %f
-Icon            = visual-studio-code
+Exec            = /usr/share/vscodium/vscodium --unity-launch %F
+Icon            = vscodium
 Type            = Application
-Name            = VS Code
+Name            = Codium
 Comment         = Editor for building and debugging modern web and cloud applications
 MimeType        = text/plain;inode/directory;
 Terminal        = false
-Keywords        = code;vscode;dev;ide
+Keywords        = code;vs;dev;ide
 Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
 StartupNotify   = true
 StartupWMClass  = code
