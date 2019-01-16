@@ -68,13 +68,6 @@ fi
 if [ ! -d "$HOME/Pictures/Screenshots" ]; then
     mkdir -p "$HOME/Pictures/Screenshots"
 fi
-
-goget() {
-    if [ $# -eq 1 ]; then
-        _gourl="$1"
-        /usr/bin/sg firewall-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
-    fi
-}
 __sg_cmd() {
     _params=($@)
     if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
@@ -89,6 +82,12 @@ gbf() {
 }
 gbfc() {
     gbfc-x64 $@
+}
+goget() {
+    if [ $# -eq 1 ]; then
+        _gourl="$1"
+        /usr/bin/sg firewall-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
+    fi
 }
 gbf-64() {
     if [ $? -eq 0 ]; then
@@ -196,7 +195,7 @@ alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
 alias pacaur="__sg_cmd firewall-web /usr/bin/pacaur"
 alias rdp="__sg_cmd firewall-remote /usr/bin/xfreerdp"
 alias xfreerdp="__sg_cmd firewall-remote /usr/bin/xfreerdp"
-alias quote="sg firewall-web -c \"~/.local/bin/motivate -get\""
+alias quote="sg firewall-web -c \"$HOME/.local/bin/motivate -get\""
 
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python2"
@@ -248,11 +247,13 @@ alias psh="pwsh"
 alias cls="clear"
 alias less="less -R"
 alias powershell="pwsh"
-alias vsc="code -r - &"
 alias nano="/usr/bin/nano -Ll"
+alias vsc="/usr/bin/vscodium -r - &"
+alias code="/usr/bin/vscodium -r - &"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
+alias vscode="/usr/bin/vscodium -r - &"
 alias clip="/usr/bin/xclip -selection clipboard"
 
 source "$HOME/.local/lib/zshpriv.sh"
