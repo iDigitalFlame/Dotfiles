@@ -24,7 +24,7 @@
 Exec            = /usr/share/vscodium/vscodium --unity-launch %F
 Icon            = vscodium
 Type            = Application
-Name            = Codium
+Name            = Code
 Comment         = Editor for building and debugging modern web and cloud applications
 MimeType        = text/plain;inode/directory;
 Terminal        = false

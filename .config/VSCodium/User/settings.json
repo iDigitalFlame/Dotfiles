@@ -22,7 +22,7 @@
 {
     "files.autoSave": "off",
     "editor.fontSize": 12,
-    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'FontAwesome'",
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.cursorStyle": "line",
