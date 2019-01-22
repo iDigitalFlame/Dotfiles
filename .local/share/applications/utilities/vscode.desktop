@@ -30,5 +30,6 @@ MimeType        = text/plain;inode/directory;
 Terminal        = false
 Keywords        = code;vs;dev;ide
 Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
+GenericName     = Text Editor
 StartupNotify   = true
 StartupWMClass  = code
