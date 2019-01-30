@@ -36,8 +36,16 @@ include-file                            = $HOME/.config/theme/current/polybar.co
 type                                    = internal/xwindow
 label                                   = "%title%"
 format                                  = "<label>"
-label-maxlen                            = 60
-label-padding                           = 2
+label-maxlen                            = 120
+label-padding                           = ${theme.padding-xwindow}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-xwindow}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
 
 [module/filesystem]
 type                                    = internal/fs
@@ -264,7 +272,8 @@ bottom                                  = false
 font-1                                  = FontAwesome:size=14;2
 font-0                                  = xos4terminus:size=16;1
 font-2                                  = Weather Icons:size=14;3
-font-3                                  = octicons:size=30;5
+font-3                                  = 3270Medium Nerd Font:size=30;1
+font-4                                  = Cambria:size=30;5
 monitor                                 = eDP1
 scroll-up                               = i3wm-wsnext
 line-size                               = 0
