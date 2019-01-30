@@ -55,7 +55,7 @@ X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/tmp/.mounts)
 X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
 PROMPT="%n $PROMPT"
 
-motivate | cowsay -W 75 -f small | lolcat
+motivate | cowsay -W 75 -f small
 if [ ! -d "$AURDEST" ]; then
     mkdir -p "$AURDEST"
 fi
