@@ -45,7 +45,7 @@
         ],
         "rotate": [],
         "sleep-post": [
-            "/home/iDigitalFlame/Documents/Projects/Dotfiles/.local/bin/fix-touchpad"
+            "/home/iDigitalFlame/.local/bin/fix-touchpad"
         ],
         "sleep-pre": []
     },
@@ -55,9 +55,9 @@
         "/usr/bin/xrandr --dpi 125x125",
         "/usr/lib/smd/libexec/smd-diskd nm",
         "/usr/lib/smd/libexec/smd-enable-tap",
+        "/home/iDigitalFlame/.local/bin/fix-touchpad",
         "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
-        "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh",
-        "/home/iDigitalFlame/Documents/Projects/Dotfiles/.local/bin/fix-touchpad"
+        "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
     ],
     "timeout_blank": 60,
     "timeout_lock": 120,
