@@ -55,6 +55,7 @@
         "/usr/bin/xrandr --dpi 125x125",
         "/usr/lib/smd/libexec/smd-diskd nm",
         "/usr/lib/smd/libexec/smd-enable-tap",
+        "/home/iDigitalFlame/.local/bin/fix-clip",
         "/home/iDigitalFlame/.local/bin/fix-touchpad",
         "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
         "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
