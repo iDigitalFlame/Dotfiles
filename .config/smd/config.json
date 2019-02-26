@@ -14,11 +14,9 @@
         "3"
     ],
     "hydra_aliases": {
-        "android": "/home/iDigitalFlame/Machines/Android7/Android7.conf",
         "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
-        "kali": "/home/iDigitalFlame/Machines/KaliLive.conf",
-        "win": "/home/iDigitalFlame/Machines/Win10Domain/vm.conf",
-        "win10": "/home/iDigitalFlame/Machines/Win10Domain/vm.conf"
+        "win": "/home/iDigitalFlame/Machines/Windows10D/vm.conf",
+        "win10": "/home/iDigitalFlame/Machines/Windows10D/vm.conf"
     },
     "hydra_directory": "/home/iDigitalFlame/Machines",
     "locker": [
@@ -55,7 +53,6 @@
         "/usr/bin/xrandr --dpi 125x125",
         "/usr/lib/smd/libexec/smd-diskd nm",
         "/usr/lib/smd/libexec/smd-enable-tap",
-        "/home/iDigitalFlame/.local/bin/fix-clip",
         "/home/iDigitalFlame/.local/bin/fix-touchpad",
         "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
         "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
