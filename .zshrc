@@ -81,7 +81,7 @@ gbf() {
     gbf-64 $@
 }
 gbfc() {
-    gbfc-x64 $@
+    gbfc-64 $@
 }
 goget() {
     if [ $# -eq 1 ]; then
@@ -195,7 +195,7 @@ alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
 alias pacaur="__sg_cmd firewall-web /usr/bin/pacaur"
 alias xfreerdp="__sg_cmd firewall-remote /usr/bin/xfreerdp"
 alias quote="sg firewall-web -c \"$HOME/.local/bin/motivate -get\""
-alias rdp="__sg_cmd firewall-remote /usr/bin/xfreerdp  /size:2990x1940 /wm-class:TSRDP /scale:140 +clipboard"
+alias rdp="__sg_cmd firewall-remote /usr/bin/xfreerdp /size:2990x1940 /wm-class:TSRDP /scale:140 +clipboard"
 
 alias p="/usr/bin/python3"
 alias p2="/usr/bin/python2"

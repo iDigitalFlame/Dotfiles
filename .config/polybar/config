@@ -229,7 +229,7 @@ format-discharging-suffix-background    = ${root.background}
 
 [module/lockerctl]
 type                                    = custom/script
-exec                                    = "$HOME/.local/bin/lslockers"
+exec                                    = "$HOME/.local/bin/polybar/_getlockers"
 format                                  = "<label>"
 interval                                = 10
 click-left                              = "$HOME/.local/bin/i3/locker"
@@ -251,9 +251,9 @@ exec                                    = "$HOME/.local/bin/i3/weather"
 format                                  = "<label>"
 interval                                = 600
 label-font                              = 3
-click-left                              = "$HOME/.local/bin/i3/weather go"
-click-right                             = "$HOME/.local/bin/i3/weather go"
-click-middle                            = "$HOME/.local/bin/i3/weather go"
+click-left                              = "$HOME/.local/bin/polybar/_getweather go"
+click-right                             = "$HOME/.local/bin/polybar/_getweather go"
+click-middle                            = "$HOME/.local/bin/polybar/_getweather go"
 label-padding                           = ${theme.padding}
 format-prefix                           = ${theme.prefix}
 format-suffix                           = ${theme.suffix}

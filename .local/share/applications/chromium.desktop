@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Chromium (Firewall)
-Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
+Exec            = /home/iDigitalFlame/.local/bin/chrome %u
 Icon            = chromium
 Type            = Application
 Actions         = NewWindow;NewPrivateWindow;
@@ -35,8 +35,8 @@ StartupNotify   = true
 
 [Desktop Action NewWindow]
 Name            = New Window
-Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser"
+Exec            = /home/iDigitalFlame/.local/bin/chrome --new-window %u
 
 [Desktop Action NewPrivateWindow]
 Name            = New Incognito Window
-Exec            = /usr/bin/sh -c "export FIREFOX=0; $HOME/.local/bin/browser --incognito"
+Exec            = /home/iDigitalFlame/.local/bin/chrome --incognito %u

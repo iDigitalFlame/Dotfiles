@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Firefox (Firewall)
-Exec            = /home/iDigitalFlame/.local/bin/browser
+Exec            = /home/iDigitalFlame/.local/bin/browser %u
 Icon            = firefox
 Type            = Application
 Actions         = new-window;new-private-window;

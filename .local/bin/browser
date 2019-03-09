@@ -20,18 +20,28 @@
 ## Browser Wrapper
 # iDigitalFlame
 
-_args="$@"
+params="$@"
+usefirefox=1
 
-if [ -z "$FIREFOX" ]; then
-    FIREFOX=1
+if [ -n "$FIREFOX" ]; then
+    if [ "$FIREFOX" == "0" ]; then
+        usefirefox=0
+    fi
 fi
-if [ $FIREFOX -eq 1 ]; then
-    if [ -z "$_args" ]; then
+if [ -n "$(basename $0 | grep -i chrome)" ]; then
+    usefirefox=0
+fi
+
+if [ $usefirefox -eq 1 ]; then
+    if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame"
     else
-        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame \"$_args\""
+        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame \"$params\""
     fi
 else
-    sg firewall-web -c "/usr/bin/chromium --disk-cache-dir=/tmp/chromium-iDigitalFlame-cache --password-store=gnome \"$_args\""
+    if [ -z "$params" ]; then
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/chromium-iDigitalFlame-cache --password-store=gnome"
+    else
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/chromium-iDigitalFlame-cache --password-store=gnome \"$params\""
+    fi
 fi
-exit 0

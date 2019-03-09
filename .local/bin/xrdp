@@ -74,5 +74,4 @@ if [ -z "$rdp_domain" ]; then
 else
     printf "$rdp_passwd\n" | sg firewall-remote -c "xfreerdp /v:\"$rdp_host\" /size:\"$RDP_RESOLUTON\" /wm-class:\"$RDP_CLASS\" /scale:$RDP_SCALE +clipboard +sec-nla /u:\"$rdp_user\" /d:\"$rdp_domain\" /from-stdin"
 fi
-
 exit 0
