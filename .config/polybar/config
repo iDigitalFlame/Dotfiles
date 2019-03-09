@@ -247,7 +247,7 @@ format-suffix-background                = ${root.background}
 
 [module/weather]
 type                                    = custom/script
-exec                                    = "$HOME/.local/bin/i3/weather"
+exec                                    = "$HOME/.local/bin/polybar/_getweather"
 format                                  = "<label>"
 interval                                = 600
 label-font                              = 3
