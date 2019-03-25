@@ -15,8 +15,8 @@
     ],
     "hydra_aliases": {
         "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
-        "win": "/home/iDigitalFlame/Machines/Windows10D/vm.conf",
-        "win10": "/home/iDigitalFlame/Machines/Windows10D/vm.conf"
+        "win": "/home/iDigitalFlame/Machines/W10D/vm.conf",
+        "win10": "/home/iDigitalFlame/Machines/W10D/vm.conf"
     },
     "hydra_directory": "/home/iDigitalFlame/Machines",
     "locker": [
