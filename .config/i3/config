@@ -59,14 +59,14 @@ client.background       #22252C
 client.placeholder      #22252C #22252C #F8F8F2 #6722A4 #22252C
 client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
 
-bind                    248                     exec "~/.local/bin/skippy --config ~/.config/skippy.conf"
+bind                    248                     exec "~/.local/bin/i3/windows"
 
 bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
 bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=stickynote"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/pcmanfm"
 bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
 
-bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/skippy --config ~/.config/skippy.conf"
+bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
 bindsym                 Scroll_Lock             exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
 bindsym                 XF86LaunchA             exec --no-startup-id "~/.local/bin/i3/search"

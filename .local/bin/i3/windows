@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2018 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Skippy Launcher
+# iDigitalFlame
+
+ps x | grep 'skippy'
+if [ -z "$(ps x | grep 'skippy' | grep -v grep)" ]; then
+    $HOME/.local/bin/skippy --config "$HOME/.config/skippy.conf"
+fi
+exit 0
