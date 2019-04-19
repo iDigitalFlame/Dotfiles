@@ -21,7 +21,7 @@
 # iDigitalFlame
 
 [Desktop Entry]
-Exec            = /usr/share/vscodium/vscodium --unity-launch %F
+Exec            = /usr/share/vscodium-bin/vscodium --unity-launch %F
 Icon            = vscodium
 Type            = Application
 Name            = Code
