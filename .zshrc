@@ -84,9 +84,10 @@ gbfc() {
     gbfc-64 $@
 }
 goget() {
-    if [ $# -eq 1 ]; then
-        _gourl="$1"
-        /usr/bin/sg firewall-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_gourl"
+    if [ $# -ge 1 ]; then
+        _goargs="$@"
+        echo "$_goargs"
+        /usr/bin/sg firewall-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_goargs"
     fi
 }
 gbf-64() {
