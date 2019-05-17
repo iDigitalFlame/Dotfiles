@@ -16,4 +16,4 @@ Standard /r/unixporn:
 ![Unixporn](.local/images/pic2.jpg)
 
 Work in progress:
-![Work in progress](.local/simages/pic3.jpg)
+![Work in progress](.local/images/pic3.jpg)
