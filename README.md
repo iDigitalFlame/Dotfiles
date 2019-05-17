@@ -10,7 +10,7 @@ Plays nicley with the System Management Daemon (SMD) https://github.com/iDigital
 ### Screenshots
 
 Empty Workspace:
-![Empty Workspace](/.local/images/pic1.jpg)
+![Empty Workspace](.local/images/pic1.jpg)
 
 Standard /r/unixporn:
 ![Unixporn](/.local/images/pic2.jpg)
