@@ -45,6 +45,7 @@ ln -s "$HOME/.local/bin/browser" "$HOME/.local/bin/www-chrome"
 ln -s "$HOME/.local/bin/browser" "$HOME/.local/bin/x-www-browser"
 ln -s "/usr/lib/smd/libexec/smd-reset-display" "$HOME/.local/bin/i3/monitor-reset"
 ln -s "$DOTS/.local/share/applications/mimeapps.list" "$HOME/.config/mimeapps.list"
+bash "$HOME/.private/sync.sh"
 themectl reload
 rm $HOME/.xsession-errors* 2> /dev/null
 printf "Broken Links Found:\n"

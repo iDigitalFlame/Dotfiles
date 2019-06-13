@@ -257,4 +257,4 @@ alias diff="/usr/bin/diff --color=auto"
 alias vscode="/usr/bin/vscodium -r - &"
 alias clip="/usr/bin/xclip -selection clipboard"
 
-source "$HOME/.local/lib/zshpriv.sh"
+source "$HOME/.local/lib/zshrc.sh"
