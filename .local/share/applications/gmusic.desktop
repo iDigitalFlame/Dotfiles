@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -29,6 +29,6 @@ Comment         = Music Player
 Terminal        = false
 Keywords        = music
 Categories      = Music;Audio;Qt;
-GenericName     = Music Player (Firewall)
+GenericName     = Music Player
 StartupNotify   = true
 StartupWMClass  = GMusic

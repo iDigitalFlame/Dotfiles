@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -30,7 +30,7 @@ Comment         = Access the Internet
 MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
 Terminal        = false
 Categories      = Network;WebBrowser;
-GenericName     = Web Browser (Firewall)
+GenericName     = Web Browser
 StartupNotify   = true
 
 [Desktop Action NewWindow]

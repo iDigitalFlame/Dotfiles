@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -29,6 +29,6 @@ Comment         = Pick Colors
 Terminal        = false
 Keywords        = tools;color;utilities;
 Categories      = Utilities;
-GenericName     = Color Picker (Firewall)
+GenericName     = Color Picker
 StartupNotify   = true
 StartupWMClass  = chroma

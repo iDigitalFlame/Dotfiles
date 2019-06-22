@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -20,7 +20,7 @@
 ## Power Menu
 # iDigitalFlame
 
-case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff\n Restart i3" | rofi -dmenu -p 'Power' -lines 5 -columns 1) in
+case $(printf " Lock\n Logoff\n Hibernate\n Reboot\n Poweroff\n Restart i3" | rofi -dmenu -p 'Power' -lines 6 -columns 1) in
     " Lock")
     powerctl lock -f
     ;;

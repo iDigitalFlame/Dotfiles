@@ -1,6 +1,6 @@
 #!/usr/bin/startx
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -20,5 +20,4 @@
 ## X init Script
 # iDigitalFlame
 
-xrdb =merge ~/.Xresources
 exec i3

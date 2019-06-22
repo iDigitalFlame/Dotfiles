@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,17 +17,13 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Application Entry
+## Permissions Smoother
 # iDigitalFlame
 
-[Desktop Entry]
-Name            = RDP (Firewall)
-Exec            = /usr/bin/bash -c "~/.local/bin/xrdp"
-Icon            = putty
-Type            = Application
-Comment         = Remote Desktop
-Terminal        = false
-Keywords        = rdp;network;utilities;
-Categories      = Utilities;email;rdp;
-GenericName     = RDP (Firewall)
-StartupNotify   = false
+find `pwd` -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo $a; cd $a; git config core.filemode false' \;
+chown $USER:$USER -R $HOME
+find $HOME -type d -exec chmod 2700 {} \;
+find $HOME -type f -exec chmod 640 {} \;
+chmod 750 $HOME/.local/lib/python/bin/*
+bash $HOME/.local/bin/dotsync
+exit 0

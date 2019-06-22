@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,17 +17,23 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Application Entry
+## Rotate Status Command
 # iDigitalFlame
 
-[Desktop Entry]
-Name            = Trojita (Firewall)
-Exec            = /usr/bin/sg firewall-mail -c "/usr/bin/trojita %u"
-Type            = Application
-Icon            = trojita
-Terminal        = false
-MimeType        = x-scheme-handler/mailto;
-Keywords        = mail;e-mail;IMAP;SMTP;eml;MUA;
-Categories      = Qt;Office;Network;Email;
-GenericName     = Email Client (Firewall)
-StartupNotify   = true
+if ! [ -f "/var/run/smd/rotate" ]; then
+    printf "\n"
+    exit 0
+fi
+
+case $(cat /var/run/smd/rotate) in
+    "true")
+    printf "\n"
+    ;;
+    "false")
+    printf "\n"
+    ;;
+    *)
+    printf "\n"
+    ;;
+esac
+exit 0

@@ -1,63 +1,74 @@
 {
-    "background_size": "3000x2000",
-    "background_time": 600,
-    "backgrounds": "/home/iDigitalFlame/Pictures/Backgrounds",
-    "composer": [
-        "/home/iDigitalFlame/.local/bin/compton",
-        "-cd",
-        ":1",
-        "--config",
-        "/home/iDigitalFlame/.config/theme/current/compton.conf",
-        "--blur-method",
-        "kawase",
-        "--blur-strength",
-        "3"
-    ],
+    "background": {
+        "auto_change": 600,
+        "directory": "/home/iDigitalFlame/Pictures/Backgrounds",
+        "lockscreen": "/home/iDigitalFlame/.cache/smd/lockscreen.png",
+        "screen_size": "1920x1080"
+    },
     "hydra_aliases": {
         "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
         "win": "/home/iDigitalFlame/Machines/W10D/vm.conf",
         "win10": "/home/iDigitalFlame/Machines/W10D/vm.conf"
     },
     "hydra_directory": "/home/iDigitalFlame/Machines",
-    "locker": [
-        "/home/iDigitalFlame/.local/bin/i3/lock"
-    ],
-    "lockscreen_blank": 5,
-    "polybar_bars": {
-        "laptop": "standard",
-        "tablet": "standard"
+    "locker": {
+        "command": "/home/iDigitalFlame/.local/bin/i3/lock",
+        "hibernate": 180,
+        "lockscreen": 120,
+        "screen_blank": 60,
+        "suspend": 60
     },
-    "profiles": {
-        "display": [
-            "/usr/bin/xrandr --dpi 125x125"
+    "notify": {
+        "default": "dialog-information.svg",
+        "dirs": [
+            "/usr/share/icons/korla/apps/scalable"
         ],
-        "lock-post": [],
-        "lock-pre": [],
-        "mode-laptop": [],
-        "mode-tablet": [],
-        "power-ac": [
+        "theme": "/usr/share/icons/korla/status/scalable"
+    },
+    "polybar": {
+        "bars": {
+            "inverted": "",
+            "left": "small",
+            "normal": "",
+            "right": "small"
+        },
+        "default": "standard"
+    },
+    "profile": {
+        "hibernate_post": [],
+        "hibernate_pre": [],
+        "lock_post": [],
+        "lock_pre": [],
+        "power_ac": [
             "/usr/local/bin/cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 20 -g performance -p performance"
         ],
-        "power-battery": [
+        "power_battery": [
             "/usr/local/bin/cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
         ],
         "rotate": [],
-        "sleep-post": [
-            "/home/iDigitalFlame/.local/bin/fix-touchpad"
-        ],
-        "sleep-pre": []
+        "suspend_post": [],
+        "suspend_pre": [],
+        "video": []
     },
-    "startup": [
-        "/usr/bin/nm-applet",
-        "/usr/bin/libinput-gestures",
-        "/usr/bin/xrandr --dpi 125x125",
-        "/usr/lib/smd/libexec/smd-diskd nm",
-        "/usr/lib/smd/libexec/smd-enable-tap",
-        "/home/iDigitalFlame/.local/bin/fix-touchpad",
-        "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
-        "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
-    ],
-    "timeout_blank": 60,
-    "timeout_lock": 120,
-    "timeout_sleep": 120
+    "session": {
+        "composer": [
+            "/usr/bin/compton",
+            "-cd",
+            ":1",
+            "--config",
+            "/home/iDigitalFlame/.config/theme/current/compton.conf",
+            "--blur-method",
+            "kawase",
+            "--blur-strength",
+            "3"
+        ],
+        "startups": [
+            "/usr/bin/touchegg",
+            "/usr/bin/nm-applet",
+            "/usr/bin/onboard --size=800x300",
+            "/usr/lib/smd/libexec/smd-enable-tap",
+            "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
+            "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
+        ]
+    }
 }

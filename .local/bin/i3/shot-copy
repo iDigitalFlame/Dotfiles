@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -25,6 +25,6 @@ DELAY=1
 if [ $# -ge 1 ]; then
   DELAY=0
 fi
-maim -d $DELAY -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
 
+maim -d $DELAY -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
 exit 0

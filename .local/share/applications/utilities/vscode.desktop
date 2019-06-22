@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -21,7 +21,7 @@
 # iDigitalFlame
 
 [Desktop Entry]
-Exec            = /usr/share/vscodium-bin/vscodium --unity-launch %F
+Exec            = /usr/share/vscodium/bin/codium --unity-launch %F
 Icon            = vscodium
 Type            = Application
 Name            = Code

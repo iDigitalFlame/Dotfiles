@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -30,5 +30,5 @@ Terminal        = false
 MimeType        = text/x-arduino;
 Keywords        = embedded electronics;electronics;avr;microcontroller;
 Categories      = Development;IDE;Electronics;
-GenericName     = Arduino IDE (Firewall)
+GenericName     = Arduino IDE
 StartupWMClass  = processing-app-Base

@@ -21,7 +21,7 @@
 # iDigitalFlame
 
 [Desktop Entry]
-Name                        = Email (Firewall)
+Name                        = Geary (Firewall)
 Icon                        = org.gnome.Geary
 Exec                        = /usr/bin/sg firewall-mail -c "geary %U"
 Type                        = Application

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -20,5 +20,5 @@
 ## Switch Background
 # iDigitalFlame
 
-/usr/lib/smd/libexec/smd-message com.spaceport.background
+/usr/lib/smd/libexec/smd-message -u background
 exit 0

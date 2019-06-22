@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -31,12 +31,12 @@ Terminal        = false
 Keywords        = web;browser;internet;
 MimeType        = text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
 Categories      = Network;WebBrowser;
-GenericName     = Web Browser (Firewall)
+GenericName     = Web Browser
 StartupNotify   = true
 StartupWMClass  = Firefox
 
 [Desktop Action new-window]
-Name            = New Window (Firewall)
+Name            = New Window
 Exec            = /home/iDigitalFlame/.local/bin/browser --new-window %u
 
 [Desktop Action new-private-window]

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -22,19 +22,19 @@
 
 case $(printf " Chill (No Lockers)\n Coffee (5m)\n Caffeine (10m)\n Cocaine (15m)\n Insomnia (Unlimited)" | rofi -dmenu -p 'Locker Preset' -lines 5 -columns 1) in
     " Chill (No Lockers)")
-    lockerctl -ks false -kb false -kl false
+    lockerctl -kz false -kb false -kl false
     ;;
     " Coffee (5m)")
-    lockerctl -ks 300 -kb 300 -kl 300
+    lockerctl -kz 300 -kb 300 -kl 300
     ;;
     " Caffeine (10m)")
-    lockerctl -ks 600 -kb 600 -kl 600
+    lockerctl -kz 600 -kb 600 -kl 600
     ;;
     " Cocaine (15m)")
-    lockerctl -ks 900 -kb 900 -kl 900
+    lockerctl -kz 900 -kb 900 -kl 900
     ;;
     " Insomnia (Unlimited)")
-    lockerctl -ks true -kb true -kl true
+    lockerctl -kz true -kb true -kl true
     ;;
 esac
 exit 0

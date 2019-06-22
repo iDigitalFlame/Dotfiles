@@ -1,6 +1,6 @@
 // #!/usr/bin/false
 // ################################
-// ###### iDigitalFlame 2018 ######
+// ###### iDigitalFlame 2019 ######
 // #                              #
 // #            -/`               #
 // #            -yy-   :/`        #
@@ -107,30 +107,30 @@
     "scm.alwaysShowProviders": false,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
-        "editor.background": "#22252C",
-        "menu.background": "#22252C",
-        "panel.background": "#22252C",
-        "sideBar.background": "#22252C",
-        "dropdown.background": "#22252C",
-        "statusBar.background": "#22252C",
-        "editorPane.background": "#22252C",
-        "sideBarSectionHeader.background": "#22252C",
-        "activityBar.background": "#22252C",
+        "editor.background": "#191919",
+        "menu.background": "#191919",
+        "panel.background": "#191919",
+        "sideBar.background": "#191919",
+        "dropdown.background": "#191919",
+        "statusBar.background": "#191919",
+        "editorPane.background": "#191919",
+        "sideBarSectionHeader.background": "#191919",
+        "activityBar.background": "#191919",
         "editor.lineHighlightBackground": "#333742",
-        "breadcrumb.background": "#22252C",
-        "titleBar.activeBackground": "#22252C",
-        "statusBarItem.activeBackground": "#22252C",
-        "settings.dropdownBackground": "#22252C",
-        "peekViewTitle.background": "#22252C",
-        "notifications.background": "#22252C",
-        "dropdown.listBackground": "#22252C",
-        "editorSuggestWidget.background": "#22252C",
-        "editorWidget.background": "#22252C",
+        "breadcrumb.background": "#191919",
+        "titleBar.activeBackground": "#191919",
+        "statusBarItem.activeBackground": "#191919",
+        "settings.dropdownBackground": "#191919",
+        "peekViewTitle.background": "#191919",
+        "notifications.background": "#191919",
+        "dropdown.listBackground": "#191919",
+        "editorSuggestWidget.background": "#191919",
+        "editorWidget.background": "#191919",
         "list.activeSelectionBackground": "#333742",
         "list.inactiveSelectionBackground": "#333742",
         "list.inactiveFocusBackground": "#333742",
         "editorSuggestWidget.selectedBackground": "#333742",
-        "list.focusBackground": "#22252C",
+        "list.focusBackground": "#191919",
         "list.hoverBackground": "#333742",
         "menu.selectionBackground": "#333742",
         "menubar.selectionBackground": "#333742"
@@ -224,7 +224,7 @@
     "http.proxy": "",
     "http.proxyAuthorization": null,
     "http.proxyStrictSSL": true,
-    "update.channel": "none",
+    "update.mode": "none",
     "update.enableWindowsBackgroundUpdates": false,
     "debug.allowBreakpointsEverywhere": false,
     "debug.inlineValues": false,
@@ -591,5 +591,6 @@
     "terminal.integrated.rendererType": "dom",
     "update.showReleaseNotes": false,
     "cSpell.showStatus": false,
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "breadcrumbs.enabled": false,
 }

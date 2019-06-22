@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -30,6 +30,6 @@ MimeType        = x-scheme-handler/slack;
 Terminal        = false
 Keywords        = slack;im;social;
 Categories      = Network;InstantMessaging;Qt;
-GenericName     = Chat Client and Messaging App (Firewall)
+GenericName     = Chat Client and Messaging App
 StartupNotify   = true
 StartupWMClass  = Slack

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -20,12 +20,12 @@
 ## Locker List Command
 # iDigitalFlame
 
-if ! [ -f "/var/run/smd/lockers.state" ]; then
+if ! [ -f "/var/run/smd/lockers" ]; then
     printf "0 \n"
     exit 0
 fi
 
-LOCKERS=$(cat /var/run/smd/lockers.state | wc -w)
+LOCKERS=$(cat /var/run/smd/lockers | wc -w)
 
 if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
     printf "0 \n"

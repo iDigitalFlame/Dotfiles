@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2018 ######
+###### iDigitalFlame 2019 ######
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -56,4 +56,4 @@ KEYCOLOR="#$(openssl rand -hex 3)FF"
 --insidewrongcolor="#00000000" \
 --timepos="x+(w/2):y+(h/2)+150" \
 --datepos="x+(w/2):y+(h/2)+170" \
---image "/home/iDigitalFlame/.config/smd/lockscreen.png"
+--image "/home/iDigitalFlame/.cache/smd/lockscreen.png"
