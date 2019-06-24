@@ -263,6 +263,24 @@ format-prefix-background                = ${root.background}
 format-suffix-foreground                = ${self.format-background}
 format-suffix-background                = ${root.background}
 
+[module/bluetooth]
+type                                    = custom/script
+exec                                    = "rfkill | grep bluetooth | grep -q "unblocked unblocked" && echo "
+format                                  = "<label>"
+interval                                = 10
+click-left                              = "blue -d"
+click-right                             = "blue -d"
+click-middle                            = "blue -d"
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-bluetooth}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
 [module/weather]
 type                                    = custom/script
 exec                                    = "$HOME/.local/bin/polybar/_getweather"
@@ -338,7 +356,7 @@ fixed-center                            = true
 padding-left                            = 0
 modules-left                            = xwindow
 padding-right                           = 0
-modules-right                           = i3 weather rotatectl volume lockerctl filesystem memory cpu battery date
+modules-right                           = i3 weather rotatectl bluetooth volume lockerctl filesystem memory cpu battery date
 tray-position                           = right
 tray-detached                           = false
 modules-center                          =

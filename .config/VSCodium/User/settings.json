@@ -392,7 +392,7 @@
     "python.disableInstallationCheck": false,
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.formatting.autopep8Args": [
-        "--py36"
+        "--target-version py38"
     ],
     "python.formatting.autopep8Path": "black",
     "python.formatting.provider": "autopep8",

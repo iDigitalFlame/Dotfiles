@@ -29,7 +29,9 @@ else
 fi
 
 printf "[+] Starting pacman..\n"
-sudo sh -c "sg firewall-web -c \"/usr/bin/pacman -Syu\"; sync; cp \"$hf\" /etc/hosts; printf \"\n127.0.0.1\thydra\\n\" >> /etc/hosts; systemctl restart systemd-resolved"
+sudo sh -c "sg firewall-web -c \"/usr/bin/pacman -Syu\"; sync; cp \"$hf\" /etc/hosts; printf \"\n127.0.0.1\thydra\\n\" >> /etc/hosts"
 printf "[+] Starting pacaur..\n"
 sg firewall-web -c "/usr/bin/pacaur -Syua"
+printf "[+] Updating PIP packages..\n"
+sg firewall-web -c "pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 sudo syslink

@@ -83,13 +83,6 @@ gbf() {
 gbfc() {
     gbfc-64 $@
 }
-goget() {
-    if [ $# -ge 1 ]; then
-        _goargs="$@"
-        echo "$_goargs"
-        /usr/bin/sg firewall-web -c "export GOPATH=\"$HOME/.local/lib/go\"; go get $_goargs"
-    fi
-}
 gbf-64() {
     if [ $? -eq 0 ]; then
         printf "gbf-64 <gofile> [output]\n"
@@ -185,42 +178,51 @@ gbfc-w64dll() {
     rm -f "${goout_file}.o"
 }
 
+# Firewall Aliases
 alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
 alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
 alias git="__sg_cmd firewall-web /usr/bin/git"
+alias pip="__sg_cmd firewall-web /usr/bin/pip"
 alias wget="__sg_cmd firewall-web /usr/bin/wget"
 alias curl="__sg_cmd firewall-web /usr/bin/curl"
 alias ping="__sg_cmd firewall-icmp /usr/bin/ping"
 alias rsync="__sg_cmd firewall-ssh /usr/bin/rsync"
+alias goget="__sg_cmd firewall-web /usr/bin/go get"
 alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
 alias pacaur="__sg_cmd firewall-web /usr/bin/pacaur"
 alias xfreerdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp"
 alias quote="sg firewall-web -c \"$HOME/.local/bin/motivate -get\""
 alias rdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
 
+# Python Aliases
 alias p="/usr/bin/python3"
-alias p2="/usr/bin/python2"
 alias python="/usr/bin/python3"
-alias python2="/usr/bin/python2"
 
+# Lock Aliases
 alias lock0="lockctl -ft -1"
 alias lock3="lockctl -ft 30"
 alias lock6="lockctl -ft 60"
 alias lock9="lockctl -ft 90"
+
+# Power Aliases
 alias bright="brightnessctl"
+alias sus="systemctl suspend"
 alias lock12="lockctl -ft 120"
 alias lock10="lockctl -ft 600"
 alias hib="systemctl hibernate"
-alias nohib="lockerctl -s true"
+alias nohib="lockerctl -z true"
 alias bright-up="brightnessctl -i"
 alias bright-set="brightnessctl -s"
 alias bright-down="brightnessctl -d"
+
+# Locker Aliases
 alias coffee="lockerctl -kz 600-kb 300 -kl 300"
 alias caffeine="lockerctl -kz 600 -kb 600 -kl 600"
 alias expresso="lockerctl -ks 900 -kb 900 -kl 900"
 alias insomnia="lockerctl -ks true -kz true -kb true -kl true"
 alias chill="lockerctl -kz false -ks false -kb false -kl false -kd false"
 
+# CPU Aliases
 alias power0="cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power"
 alias power1="cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
 alias power2="cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power"
@@ -229,17 +231,18 @@ alias power3="cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p ba
 alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance"
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
 
+# LS Aliases
 alias lsl="ls -alp --group-directories-first --color=auto"
 alias lsh="ls -alph --group-directories-first --color=auto"
 alias lsal="ls -alp --group-directories-first --color=auto"
 
+# Screenshot Aliases
 alias ss="$HOME/.local/bin/i3/shot"
 alias sel="$HOME/.local/bin/i3/clip"
 alias ss-c="$HOME/.local/bin/i3/shot-copy"
 alias sel-c="$HOME/.local/bin/i3/clip-copy"
-alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
-alias gsync="git add -A .; git commit; git push"
 
+# Utility Aliases
 alias xx="exit"
 alias exx="exit"
 alias psh="pwsh"
@@ -250,9 +253,8 @@ alias nano="/usr/bin/nano -Ll"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
-alias vsc="/usr/share/vscodium/codium -r - &"
-alias code="/usr/share/vscodium/codium -r - &"
+alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
+alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
-alias vscode="/usr/share/vscodium/codiumm -r - &"
 
 source "$HOME/.local/lib/zshrc.sh"
