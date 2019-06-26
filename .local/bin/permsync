@@ -20,7 +20,7 @@
 ## Permissions Smoother
 # iDigitalFlame
 
-find `pwd` -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \;
+find "$HOME" -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \;
 chown $USER:$USER -R $HOME
 find $HOME -type d -exec chmod 2700 {} \;
 find $HOME -type f -exec chmod 640 {} \;
