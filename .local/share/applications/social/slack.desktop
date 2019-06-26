@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Slack (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --profile slack --no-remote --new-window"
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --profile slack --new-window"
 Icon            = slack
 Type            = Application
 Comment         = Slack Internet Client
