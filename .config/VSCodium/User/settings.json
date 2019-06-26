@@ -531,7 +531,7 @@
     "go.formatTool": "goreturns",
     "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
-    "go.gopath": "~/.local/lib/go",
+    "go.gopath": "/home/iDigitalFlame/.local/lib/go",
     "go.goroot": "/usr/lib/go",
     "go.gotoSymbol.ignoreFolders": [],
     "go.gotoSymbol.includeImports": true,

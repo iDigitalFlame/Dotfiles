@@ -31,14 +31,17 @@ export GOPATH="$HOME/.local/lib/go"
 export AURDEST="$HOME/.cache/pacaur"
 export COMPLETION_WAITING_DOTS="true"
 export ZSH="$HOME/.local/lib/oh-my-zsh"
-export SSH_AUTH_SOCK=/run/user/1001/keyring/ssh
+export SSH_AUTH_SOCK="/run/user/$UID/keyring/ssh"
 export SRCDEST="/tmp/.usercache/$USER/pacaur/src"
 export BUILDDIR="/tmp/.usercache/$USER/pacaur/build"
+
+export PATH=$PATH:$GOPATH/bin
 
 plugins=(git encode64 screen sudo)
 source "$ZSH/oh-my-zsh.sh"
 typeset -A ZSH_HIGHLIGHT_STYLES
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main root)
 ZSH_HIGHLIGHT_STYLES[root]='bg=red'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'
@@ -68,6 +71,7 @@ fi
 if [ ! -d "$HOME/Pictures/Screenshots" ]; then
     mkdir -p "$HOME/Pictures/Screenshots"
 fi
+
 __sg_cmd() {
     _params=($@)
     if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
@@ -216,11 +220,11 @@ alias bright-set="brightnessctl -s"
 alias bright-down="brightnessctl -d"
 
 # Locker Aliases
-alias coffee="lockerctl -kz 600-kb 300 -kl 300"
-alias caffeine="lockerctl -kz 600 -kb 600 -kl 600"
-alias expresso="lockerctl -ks 900 -kb 900 -kl 900"
-alias insomnia="lockerctl -ks true -kz true -kb true -kl true"
-alias chill="lockerctl -kz false -ks false -kb false -kl false -kd false"
+alias coffee="lockerctl -kz 600 -kb 300 -kl 300 -ks 300"
+alias caffeine="lockerctl -kz 600 -kb 600 -kl 600 -ks 600"
+alias expresso="lockerctl -kz 900 -kb 900 -kl 900 -ks 900"
+alias insomnia="lockerctl -kz true -kb true -kl true -ks true"
+alias chill="lockerctl -kz false -kb false -kl false -ks false -kd false"
 
 # CPU Aliases
 alias power0="cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power"

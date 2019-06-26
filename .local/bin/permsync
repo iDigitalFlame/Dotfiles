@@ -20,10 +20,11 @@
 ## Permissions Smoother
 # iDigitalFlame
 
-find `pwd` -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo $a; cd $a; git config core.filemode false' \;
+find `pwd` -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \;
 chown $USER:$USER -R $HOME
 find $HOME -type d -exec chmod 2700 {} \;
 find $HOME -type f -exec chmod 640 {} \;
 chmod 750 $HOME/.local/lib/python/bin/*
+chmod 750 $HOME/.local/lib/go/bin/*
 bash $HOME/.local/bin/dotsync
 exit 0
