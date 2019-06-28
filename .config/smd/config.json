@@ -40,9 +40,11 @@
         "lock_post": [],
         "lock_pre": [],
         "power_ac": [
+            "/usr/local/bin/lockerctl -z true",
             "/usr/local/bin/cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 20 -g performance -p performance"
         ],
         "power_battery": [
+            "/usr/local/bin/lockerctl -kz false",
             "/usr/local/bin/cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
         ],
         "rotate": [],
@@ -56,11 +58,7 @@
             "-cd",
             ":1",
             "--config",
-            "/home/iDigitalFlame/.config/theme/current/compton.conf",
-            "--blur-method",
-            "kawase",
-            "--blur-strength",
-            "3"
+            "/home/iDigitalFlame/.config/theme/current/compton.conf"
         ],
         "startups": [
             "/usr/bin/touchegg",

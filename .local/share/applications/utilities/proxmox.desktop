@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2019 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Application Entry
+# iDigitalFlame
+
+[Desktop Entry]
+Name            = Hypervisors (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --profile proxmox --new-window"
+Icon            = preferences-desktop-remote-desktop
+Type            = Application
+Comment         = Hypervisor Management
+MimeType        =
+Terminal        = false
+Keywords        = slack;im;social;
+Categories      = Network;RemoteAccess;hypervisors;
+GenericName     = Hypervisor Management
+StartupNotify   = true
+StartupWMClass  = Proxmox
