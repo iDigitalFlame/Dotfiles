@@ -220,9 +220,9 @@ alias bright-set="brightnessctl -s"
 alias bright-down="brightnessctl -d"
 
 # Locker Aliases
-alias coffee="lockerctl -kz 600 -kb 300 -kl 300 -ks 300"
-alias caffeine="lockerctl -kz 600 -kb 600 -kl 600 -ks 600"
-alias expresso="lockerctl -kz 900 -kb 900 -kl 900 -ks 900"
+alias coffee="lockerctl -z 600 -kb 300 -kl 300 -s 300"
+alias caffeine="lockerctl -z 600 -kb 600 -kl 600 -s 600"
+alias expresso="lockerctl -z 900 -kb 900 -kl 900 -s 900"
 alias insomnia="lockerctl -kz true -kb true -kl true -ks true"
 alias chill="lockerctl -kz false -kb false -kl false -ks false -kd false"
 

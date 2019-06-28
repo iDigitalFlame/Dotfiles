@@ -25,13 +25,13 @@ case $(printf " Chill (No Lockers)\n Coffee (5m)\n Caffeine (10m)\n 
     lockerctl -kz false -kb false -kl false -ks false
     ;;
     " Coffee (5m)")
-    lockerctl -kz 300 -kb 300 -kl 300 -ks 300
+    lockerctl -z 300 -kb 300 -kl 300 -s 300
     ;;
     " Caffeine (10m)")
-    lockerctl -kz 600 -kb 600 -kl 600 -ks 600
+    lockerctl -z 600 -kb 600 -kl 600 -s 600
     ;;
     " Cocaine (15m)")
-    lockerctl -kz 900 -kb 900 -kl 900 -ks 900
+    lockerctl -z 900 -kb 900 -kl 900 -s 900
     ;;
     " Insomnia (Unlimited)")
     lockerctl -kz true -kb true -kl true -ks true
