@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Hypervisors (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --profile proxmox --new-window"
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --profile proxmox --no-remote --new-window"
 Icon            = preferences-desktop-remote-desktop
 Type            = Application
 Comment         = Hypervisor Management
