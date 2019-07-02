@@ -130,13 +130,13 @@ format-suffix-foreground                = ${self.format-background}
 format-suffix-background                = ${root.background}
 
 [module/date]
-date                                    = "%a"
+date                                    = "%A"
 type                                    = internal/date
 time                                    = "%H:%M"
 label                                   = "%date% %time%"
 interval                                = 10
-date-alt                                = "%A %D"
-time-alt                                = "%I:%M %p"
+date-alt                                = "%a"
+time-alt                                = "%H:%M"
 label-padding                           = ${theme.padding}
 format-prefix                           = ${theme.prefix}
 format-suffix                           = ${theme.suffix}
