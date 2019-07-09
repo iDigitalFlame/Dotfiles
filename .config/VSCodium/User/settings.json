@@ -133,7 +133,8 @@
         "list.focusBackground": "#191919",
         "list.hoverBackground": "#333742",
         "menu.selectionBackground": "#333742",
-        "menubar.selectionBackground": "#333742"
+        "menubar.selectionBackground": "#333742",
+        "statusBar.noFolderBackground": "#191919"
     },
     "workbench.commandPalette.history": 50,
     "workbench.enableExperiments": false,
