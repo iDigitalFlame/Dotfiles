@@ -23,13 +23,45 @@
 if [ -f "$HOME/.local/apps/updateHosts/updateHostsFile.py" ]; then
     printf "[+] Updating hosts blocklist file..\n"
     sg firewall-web -c "/usr/bin/python3 $HOME/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
-    export hf="$HOME/.local/apps/updateHosts/hosts"
+    export hosts="$HOME/.local/apps/updateHosts/hosts"
 else
-    export hf="/etc/hosts"
+    export hosts="/etc/hosts"
 fi
 
+hosts_list=$(cat<<EOD
+127.0.0.1 cups
+127.0.0.1 hydra
+127.0.0.1 www.facebook.com
+127.0.0.1 facebook.com
+127.0.0.1 login.facebook.com
+127.0.0.1 www.login.facebook.com
+127.0.0.1 fbcdn.net
+127.0.0.1 www.fbcdn.net
+127.0.0.1 fbcdn.com
+127.0.0.1 www.fbcdn.com
+127.0.0.1 static.ak.fbcdn.net
+127.0.0.1 static.ak.connect.facebook.com
+127.0.0.1 connect.facebook.net
+127.0.0.1 www.connect.facebook.net
+127.0.0.1 apps.facebook.com
+::1 www.facebook.com
+::1 facebook.com
+::1 login.facebook.com
+::1 www.login.facebook.com
+::1 fbcdn.net
+::1 www.fbcdn.net
+::1 fbcdn.com
+::1 www.fbcdn.com
+::1 static.ak.fbcdn.net
+::1 static.ak.connect.facebook.com
+::1 connect.facebook.net
+::1 www.connect.facebook.net
+::1 apps.facebook.com
+EOD
+)
+
 printf "[+] Starting pacman..\n"
-sudo sh -c "sg firewall-web -c \"/usr/bin/pacman -Syu\"; sync; cp \"$hf\" /etc/hosts; printf \"\n127.0.0.1\thydra\\n\" >> /etc/hosts"
+sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts"
 printf "[+] Starting pacaur..\n"
 sg firewall-web -c "/usr/bin/pacaur -Syua"
 printf "[+] Updating PIP packages..\n"
