@@ -1,0 +1,30 @@
+#!/usr/bin/zsh
+################################
+###### iDigitalFlame 2019 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## XDG Dirs Configuration
+# iDigitalFlame
+
+XDG_DESKTOP_DIR="$HOME"
+XDG_PICTURES_DIR="$HOME/Pictures"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
+XDG_DOCUMENTS_DIR="$HOME/Documents"
+XDG_MUSIC_DIR="$HOME/Documents/Music"
+XDG_VIDEOS_DIR="$HOME/Documents/Videos"
+XDG_PUBLICSHARE_DIR="$HOME/Documents/Public"
+XDG_TEMPLATES_DIR="$HOME/Documents/Templates"
