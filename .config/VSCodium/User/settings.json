@@ -529,7 +529,7 @@
         "runtest": true
     },
     "go.formatFlags": [],
-    "go.formatTool": "goreturns",
+    "go.formatTool": "goimports",
     "go.gocodeAutoBuild": false,
     "go.gocodePackageLookupMode": "go",
     "go.gopath": "/home/iDigitalFlame/.local/lib/go",
@@ -561,7 +561,7 @@
     "go.toolsGopath": "/home/iDigitalFlame/.local/lib/go",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useCodeSnippetsOnFunctionSuggestWithoutType": false,
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "go.vetFlags": [],
     "go.vetOnSave": "package",
     "npm.autoDetect": "off",

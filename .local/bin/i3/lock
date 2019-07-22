@@ -22,6 +22,10 @@
 
 KEYCOLOR="#$(openssl rand -hex 3)FF"
 
+# Disable all fullscreen windows (Messages with i3-lock).
+/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" 2> /dev/null
+
+# Lock
 /usr/bin/i3lock \
 -n \
 --clock \
