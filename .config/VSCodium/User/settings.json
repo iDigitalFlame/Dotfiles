@@ -499,7 +499,7 @@
         "promptForTags": true,
         "transform": "camelcase"
     },
-    "go.autocompleteUnimportedPackages": false,
+    "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [],
     "go.buildOnSave": "package",
     "go.buildTags": "",
@@ -511,8 +511,8 @@
     "go.coverOnTestPackage": true,
     "go.docsTool": "godoc",
     "go.editorContextMenuCommands": {
-        "toggleTestFile": true,
-        "addTags": true,
+        "toggleTestFile": false,
+        "addTags": false,
         "removeTags": false,
         "testAtCursor": true,
         "testFile": false,
@@ -520,9 +520,9 @@
         "generateTestForFunction": true,
         "generateTestForFile": true,
         "generateTestForPackage": true,
-        "addImport": true,
-        "testCoverage": true,
-        "playground": true
+        "addImport": false,
+        "testCoverage": false,
+        "playground": false
     },
     "go.enableCodeLens": {
         "references": false,
@@ -547,9 +547,9 @@
         "delay": 500
     },
     "go.playground": {
-        "openbrowser": true,
+        "openbrowser": false,
         "share": false,
-        "run": true
+        "run": false
     },
     "go.removeTags": {},
     "go.testEnvFile": "",
