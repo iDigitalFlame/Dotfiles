@@ -34,9 +34,9 @@ fi
 
 if [ $usefirefox -eq 1 ]; then
     if [ -z "$params" ]; then
-        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame"
+        sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame"
     else
-        sg firewall-web -c "export TZ=UTC; /usr/bin/firefox -P iDigitalFlame \"$params\""
+        sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame \"$params\""
     fi
 else
     if [ -z "$params" ]; then
