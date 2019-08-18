@@ -6,7 +6,7 @@
         "screen_size": "1920x1080"
     },
     "hydra_aliases": {
-        "ios": "/home/iDigitalFlame/Machines/Windows7-iOS/Windows7-iOS.conf",
+        "kali": "/home/iDigitalFlame/Machines/Kali/vm.conf",
         "win": "/home/iDigitalFlame/Machines/W10D/vm.conf",
         "win10": "/home/iDigitalFlame/Machines/W10D/vm.conf"
     },
