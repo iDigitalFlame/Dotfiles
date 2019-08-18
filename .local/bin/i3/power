@@ -25,7 +25,7 @@ case $(printf " Lock\n Logoff\n Suspend\n Hibernate\n Reboot\n
     powerctl lock -f
     ;;
     " Suspend")
-    sudo /usr/bin/systemctl suspend
+    /usr/bin/systemctl suspend
     ;;
     " Hibernate")
     sudo /usr/bin/systemctl hibernate
