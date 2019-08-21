@@ -56,11 +56,11 @@ for_window              [class="trojita" title="Compose Mail"]  border normal, f
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
 client.urgent           #FFB86C #FFB86C #191919 #6272A4 #FFB86C
-client.focused          #191919 #191919 #F8F8F2 #6272A4 #191919
-client.unfocused        #8c8c8c #5e5e5e #FFFFFF #5e5e5e #5e5e5e
-client.background       #191919
+client.focused          #7D0BAB #7D0BAB #FFFFFF #7D0BAB #7D0BAB
+client.unfocused        #191919 #191919 #FFFFFF #191919 #191919
+client.background       #7D0BAB
 client.placeholder      #191919 #191919 #F8F8F2 #6722A4 #191919
-client.focused_inactive #666666 #666666 #F8F8F2 #6272A4 #666666
+client.focused_inactive #191919 #191919 #FFFFFF #191919 #191919
 
 # Non-Key Bindings
 bind                    248                     exec "~/.local/bin/i3/windows"
