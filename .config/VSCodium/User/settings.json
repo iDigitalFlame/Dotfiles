@@ -96,7 +96,8 @@
     "editor.suggestSelection": "recentlyUsed",
     "editor.tabCompletion": "off",
     "editor.tokenColorCustomizations": {
-        "comments": "#FFFFFF"
+        "comments": "#FFFFFF",
+        "numbers": "#00DA3C"
     },
     "editor.trimAutoWhitespace": true,
     "editor.useTabStops": true,
@@ -107,6 +108,7 @@
     "scm.alwaysShowProviders": false,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#7A7A7A",
         "editor.background": "#191919",
         "menu.background": "#191919",
         "panel.background": "#191919",
