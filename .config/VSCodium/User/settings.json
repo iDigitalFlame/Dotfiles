@@ -97,7 +97,10 @@
     "editor.tabCompletion": "off",
     "editor.tokenColorCustomizations": {
         "comments": "#FFFFFF",
-        "numbers": "#00DA3C"
+        "numbers": "#01E500",
+        "types": "#39FF1E",
+        "strings": "#F7FF14",
+        "keywords": "#C3FF18",
     },
     "editor.trimAutoWhitespace": true,
     "editor.useTabStops": true,
@@ -223,7 +226,6 @@
     "search.quickOpen.includeSymbols": true,
     "search.smartCase": false,
     "search.useIgnoreFiles": true,
-    "search.usePCRE2": true,
     "http.proxy": "",
     "http.proxyAuthorization": null,
     "http.proxyStrictSSL": true,
@@ -591,7 +593,7 @@
     "git.openDiffOnClick": false,
     "git.promptToSaveFilesBeforeCommit": true,
     "git.showInlineOpenFileAction": false,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Dark Mode Warm",
     "terminal.integrated.rendererType": "dom",
     "update.showReleaseNotes": false,
     "cSpell.showStatus": false,
