@@ -600,4 +600,14 @@
     "breadcrumbs.enabled": false,
     "workbench.editor.restoreViewState": false,
     "scm.diffDecorations": "overview",
+    "cSpell.userWords": [
+        "bufs",
+        "fuckwits",
+        "logx",
+        "rbuf",
+        "rpos",
+        "swole",
+        "wpos",
+        "xerrors"
+    ],
 }
