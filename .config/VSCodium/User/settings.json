@@ -17,12 +17,12 @@
 // #                              #
 // ########## SPACEPORT ###########
 // ################################
-// ## VCSode Configuration
+// ## VCSodium Configuration
 // # iDigitalFlame
 {
     "files.autoSave": "off",
     "editor.fontSize": 12,
-    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'FontAwesome'",
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback', 'FontAwesome'",
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.cursorStyle": "line",
@@ -602,9 +602,11 @@
     "scm.diffDecorations": "overview",
     "cSpell.userWords": [
         "bufs",
+        "deshuffle",
         "fuckwits",
         "logx",
         "rbuf",
+        "regx",
         "rpos",
         "swole",
         "wpos",
