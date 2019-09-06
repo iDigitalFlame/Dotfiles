@@ -616,6 +616,7 @@
         "isupper",
         "logx",
         "mkdir",
+        "packr",
         "rbuf",
         "regx",
         "rfkill",
