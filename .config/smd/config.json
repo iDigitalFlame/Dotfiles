@@ -14,6 +14,7 @@
     "locker": {
         "command": "/home/iDigitalFlame/.local/bin/i3/lock",
         "hibernate": 180,
+        "lid_bypass": true,
         "lockscreen": 120,
         "screen_blank": 60,
         "suspend": 60

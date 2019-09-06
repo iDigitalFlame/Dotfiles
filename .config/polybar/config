@@ -32,38 +32,6 @@ screenchange-reload                     = true
 [theme]
 include-file                            = $HOME/.config/theme/current/polybar.conf
 
-[module/xwindow]
-type                                    = internal/xwindow
-label                                   = "%title%"
-format                                  = "<label>"
-label-maxlen                            = 85
-label-padding                           = ${theme.padding-xwindow}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-xwindow}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
-
-[module/filesystem]
-type                                    = internal/fs
-mount-0                                 = /home
-interval                                = 120
-fixed-values                            = true
-label-mounted                           = "%percentage_used:2%% "
-format-mounted                          = "<label-mounted>"
-format-mounted-prefix                   = ${theme.prefix}
-format-mounted-suffix                   = ${theme.suffix}
-format-mounted-padding                  = ${theme.padding}
-format-mounted-foreground               = ${theme.text}
-format-mounted-background               = ${theme.color-storage}
-format-mounted-prefix-foreground        = ${self.format-mounted-background}
-format-mounted-prefix-background        = ${root.background}
-format-mounted-suffix-foreground        = ${self.format-mounted-background}
-format-mounted-suffix-background        = ${root.background}
-
 [module/i3]
 type                                    = internal/i3
 format                                  = "<label-state>"
@@ -108,21 +76,6 @@ label-padding                           = ${theme.padding}
 format-prefix                           = ${theme.prefix}
 format-suffix                           = ${theme.suffix}
 format-background                       = ${theme.color-cpu}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
-
-[module/memory]
-type                                    = internal/memory
-format                                  = "<label>"
-label                                   = "%gb_used:8% "
-interval                                = 15
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-memory}
 format-foreground                       = ${theme.text}
 format-prefix-foreground                = ${self.format-background}
 format-prefix-background                = ${root.background}
@@ -176,6 +129,53 @@ format-volume-prefix-foreground         = ${self.format-volume-background}
 format-volume-prefix-background         = ${root.background}
 format-volume-suffix-foreground         = ${self.format-volume-background}
 format-volume-suffix-background         = ${root.background}
+
+[module/memory]
+type                                    = internal/memory
+format                                  = "<label>"
+label                                   = "%gb_used:8% "
+interval                                = 15
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-memory}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
+[module/xwindow]
+type                                    = internal/xwindow
+label                                   = "%title%"
+format                                  = "<label>"
+label-maxlen                            = 85
+label-padding                           = ${theme.padding-xwindow}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-xwindow}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
+[module/weather]
+type                                    = custom/script
+exec                                    = "$HOME/.local/bin/polybar/_getweather"
+format                                  = "<label>"
+interval                                = 600
+label-font                              = 3
+click-right                             = "$HOME/.local/bin/polybar/_getweather go"
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-weather}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
 
 [module/battery0]
 type                                    = internal/battery
@@ -277,6 +277,77 @@ format-discharging-prefix-background    = ${root.background}
 format-discharging-suffix-foreground    = ${self.format-discharging-background}
 format-discharging-suffix-background    = ${root.background}
 
+[module/lockerctl]
+type                                    = custom/script
+exec                                    = "$HOME/.local/bin/polybar/_getlockers"
+format                                  = "<label>"
+interval                                = 10
+click-left                              = "$HOME/.local/bin/i3/locker"
+click-right                             = "$HOME/.local/bin/i3/locker"
+click-middle                            = "$HOME/.local/bin/i3/locker"
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-lockers}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
+[module/rotatectl]
+type                                    = custom/script
+exec                                    = "$HOME/.local/bin/polybar/_getrotate"
+format                                  = "<label>"
+interval                                = 10
+click-left                              = "rotatectl -t"
+click-right                             = "rotatectl -t"
+click-middle                            = "rotatectl -t"
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-rotate}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
+[module/bluetooth]
+type                                    = custom/script
+exec                                    = "rfkill | grep bluetooth | grep -q "unblocked unblocked" && echo "
+format                                  = "<label>"
+interval                                = 10
+click-left                              = "blue -d"
+click-right                             = "blue -d"
+click-middle                            = "blue -d"
+label-padding                           = ${theme.padding}
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+format-background                       = ${theme.color-bluetooth}
+format-foreground                       = ${theme.text}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${root.background}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${root.background}
+
+[module/filesystem]
+type                                    = internal/fs
+mount-0                                 = /home
+interval                                = 120
+fixed-values                            = true
+label-mounted                           = "%percentage_used:2%% "
+format-mounted                          = "<label-mounted>"
+format-mounted-prefix                   = ${theme.prefix}
+format-mounted-suffix                   = ${theme.suffix}
+format-mounted-padding                  = ${theme.padding}
+format-mounted-foreground               = ${theme.text}
+format-mounted-background               = ${theme.color-storage}
+format-mounted-prefix-foreground        = ${self.format-mounted-background}
+format-mounted-prefix-background        = ${root.background}
+format-mounted-suffix-foreground        = ${self.format-mounted-background}
+format-mounted-suffix-background        = ${root.background}
+
 [module/battery0-nr]
 type                                    = internal/battery
 adapter                                 = AC
@@ -358,77 +429,6 @@ format-discharging-prefix-foreground    = ${self.format-discharging-background}
 format-discharging-prefix-background    = ${root.background}
 format-discharging-suffix-foreground    = ${self.format-discharging-background}
 format-discharging-suffix-background    = ${root.background}
-
-[module/lockerctl]
-type                                    = custom/script
-exec                                    = "$HOME/.local/bin/polybar/_getlockers"
-format                                  = "<label>"
-interval                                = 10
-click-left                              = "$HOME/.local/bin/i3/locker"
-click-right                             = "$HOME/.local/bin/i3/locker"
-click-middle                            = "$HOME/.local/bin/i3/locker"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-lockers}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
-
-[module/rotatectl]
-type                                    = custom/script
-exec                                    = "$HOME/.local/bin/polybar/_getrotate"
-format                                  = "<label>"
-interval                                = 10
-click-left                              = "rotatectl -t"
-click-right                             = "rotatectl -t"
-click-middle                            = "rotatectl -t"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-rotate}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
-
-[module/bluetooth]
-type                                    = custom/script
-exec                                    = "rfkill | grep bluetooth | grep -q "unblocked unblocked" && echo "
-format                                  = "<label>"
-interval                                = 10
-click-left                              = "blue -d"
-click-right                             = "blue -d"
-click-middle                            = "blue -d"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-bluetooth}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
-
-[module/weather]
-type                                    = custom/script
-exec                                    = "$HOME/.local/bin/polybar/_getweather"
-format                                  = "<label>"
-interval                                = 600
-label-font                              = 3
-click-right                             = "$HOME/.local/bin/polybar/_getweather go"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-weather}
-format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
 
 [bar/small]
 width                                   = 100%

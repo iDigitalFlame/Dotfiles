@@ -3,8 +3,8 @@ TigerVNC Configuration file Version 1.0
 X509CA=
 NoJPEG=0
 Shared=0
-MenuKey=F8
 X509CRL=
+MenuKey=F8
 Geometry=
 ViewOnly=0
 FullColor=1

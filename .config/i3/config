@@ -63,8 +63,8 @@ client.placeholder      #191919 #191919 #F8F8F2 #6722A4 #191919
 client.focused_inactive #191919 #191919 #FFFFFF #191919 #191919
 
 # Non-Key Bindings
-bind                    248                     exec "~/.local/bin/i3/windows"
 bind                    225                     exec "~/.local/bin/i3/search"
+bind                    248                     exec "~/.local/bin/i3/windows"
 bindsym                 --whole-window --border $KEY_WIN+Shift+button5 resize grow width 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_CTL+Shift+button5 resize grow height 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize shrink width 10px or 10 ppt
@@ -116,8 +116,8 @@ bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
 
 # Layout Keybindings
 bindsym                 $KEY_WIN+D              layout tabbed
-bindsym                 $KEY_WIN+A              layout toggle split
 bindsym                 $KEY_WIN+T              layout tabbed
+bindsym                 $KEY_WIN+A              layout toggle split
 
 # Split Keybindings
 bindsym                 $KEY_WIN+H              split h
