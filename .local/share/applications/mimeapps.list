@@ -49,4 +49,4 @@ application/x-extension-html=firefox.desktop;
 application/x-extension-shtml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-shellscript=vscode.desktop;leafpad.desktop;
-application/pdf=firefox.desktop;mupdf.desktop;xournal.desktop;
+application/pdf=chromium.desktop;firefox.desktop;mupdf.desktop;xournal.desktop;
