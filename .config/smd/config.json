@@ -5,12 +5,15 @@
         "lockscreen": "/home/iDigitalFlame/.cache/smd/lockscreen.png",
         "screen_size": "1920x1080"
     },
-    "hydra_aliases": {
-        "kali": "/home/iDigitalFlame/Machines/Kali/vm.conf",
-        "win": "/home/iDigitalFlame/Machines/W10D/vm.conf",
-        "win10": "/home/iDigitalFlame/Machines/W10D/vm.conf"
+    "hydra": {
+        "aliases": {
+            "mac": "/opt/hydra/iDigitalFlame/MacOS/vm.conf",
+            "win": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
+            "win10": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
+            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf"
+        },
+        "directory": "/opt/hydra/iDigitalFlame"
     },
-    "hydra_directory": "/home/iDigitalFlame/Machines",
     "locker": {
         "command": "/home/iDigitalFlame/.local/bin/i3/lock",
         "hibernate": 180,
