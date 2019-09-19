@@ -7,10 +7,12 @@
     },
     "hydra": {
         "aliases": {
+            "kali": "/opt/hydra/iDigitalFlame/Kali/vm.conf",
             "mac": "/opt/hydra/iDigitalFlame/MacOS/vm.conf",
             "win": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
             "win10": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
-            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf"
+            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf",
+            "wintest": "/opt/hydra/iDigitalFlame/W7/vm.conf"
         },
         "directory": "/opt/hydra/iDigitalFlame"
     },

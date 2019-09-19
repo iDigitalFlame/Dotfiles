@@ -603,6 +603,7 @@
     "cSpell.userWords": [
         "POWERCTL",
         "Popen",
+        "Regxp",
         "WIFI",
         "ahci",
         "bufs",
@@ -623,6 +624,7 @@
         "isupper",
         "lockscreen",
         "logx",
+        "machineid",
         "mkdir",
         "nargs",
         "nextcloud",
@@ -637,6 +639,7 @@
         "swole",
         "systemctl",
         "systemd",
+        "tmpdir",
         "unmap",
         "usbs",
         "virtio",
