@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## XDG Dirs Configuration
+## XDG Directory Configuration
 # iDigitalFlame
 
 XDG_DESKTOP_DIR="$HOME"
