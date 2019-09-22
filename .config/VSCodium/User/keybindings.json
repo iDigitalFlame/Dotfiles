@@ -1,24 +1,24 @@
-// #!/usr/bin/false
-// ################################
-// ###### iDigitalFlame 2019 ######
-// #                              #
-// #            -/`               #
-// #            -yy-   :/`        #
-// #         ./-shho`:so`         #
-// #    .:- /syhhhh//hhs` `-`     #
-// #   :ys-:shhhhhhshhhh.:o- `    #
-// #   /yhsoshhhhhhhhhhhyho`:/.   #
-// #   `:yhyshhhhhhhhhhhhhh+hd:   #
-// #     :yssyhhhhhyhhhhhhhhdd:   #
-// #    .:.oyshhhyyyhhhhhhddd:    #
-// #    :o+hhhhhyssyhhdddmmd-     #
-// #     .+yhhhhyssshdmmddo.      #
-// #       `///yyysshd++`         #
-// #                              #
-// ########## SPACEPORT ###########
-// ################################
-// ## VCSode Keybindings Configuration
-// # iDigitalFlame
+/*#!/usr/bin/vscodium
+################################
+###### iDigitalFlame 2019 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## VCSodium Configuration
+# iDigitalFlame*/
 [
     {
         "key": "ctrl+shift+o",

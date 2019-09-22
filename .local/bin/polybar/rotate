@@ -27,10 +27,10 @@ fi
 
 case $(cat /var/run/smd/rotate) in
     "true")
-    printf "\n"
+    printf " \n"
     ;;
     "false")
-    printf "\n"
+    printf " \n"
     ;;
     *)
     printf "\n"
