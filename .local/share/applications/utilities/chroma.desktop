@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Color Chroma (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
+Exec            = /usr/bin/sg firewall-web -c "export GTK_THEME=null; /usr/bin/surf -mDfIKPBSng https://lucumalabs.com/chroma/"
 Icon            = cs-color
 Type            = Application
 Comment         = Pick Colors
