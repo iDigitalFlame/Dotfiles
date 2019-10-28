@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2019 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Application Entry
+# iDigitalFlame
+
+[Desktop Entry]
+Name            = KeePassXC
+Icon            = keepassxc
+Type            = Application
+Exec            = /usr/bin/keepassxc --config /home/iDigitalFlame/.local/lib/keepassxc.conf %f
+Comment         = Community-driven port of the Windows application “KeePass Password Safe”
+MimeType        = application/x-keepass2;
+Terminal        = false
+Categories      = Utility;Security;Qt;
+GenericName     = Password Manager
+StartupWMClass  = keepassxc
+StartupNotify   = true

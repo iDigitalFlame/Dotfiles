@@ -25,22 +25,22 @@ export ZSH_THEME="muse"
 export UPDATE_ZSH_DAYS=14
 export GOROOT="/usr/lib/go"
 export ENABLE_CORRECTION="true"
+export AURDEST="$HOME/.cache/aur"
 export DISABLE_AUTO_UPDATE="false"
 export PKGDEST="/var/cache/makepkg"
 export GOPATH="$HOME/.local/lib/go"
-export AURDEST="$HOME/.cache/pacaur"
 export COMPLETION_WAITING_DOTS="true"
 export ZSH="$HOME/.local/lib/oh-my-zsh"
+export SRCDEST="/tmp/.usercache/$USER/aur/src"
 export SSH_AUTH_SOCK="/run/user/$UID/keyring/ssh"
-export SRCDEST="/tmp/.usercache/$USER/pacaur/src"
-export BUILDDIR="/tmp/.usercache/$USER/pacaur/build"
+export BUILDDIR="/tmp/.usercache/$USER/aur/build"
 
 export PATH=$PATH:$GOPATH/bin
 
 plugins=(git encode64 screen sudo)
 source "$ZSH/oh-my-zsh.sh"
 typeset -A ZSH_HIGHLIGHT_STYLES
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main root)
 ZSH_HIGHLIGHT_STYLES[root]='bg=red'
@@ -53,9 +53,9 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red,bold'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/media)
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/tmp/.mounts)
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
+X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
+X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
+X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("$HOME/Volumes")
 PROMPT="%n $PROMPT"
 
 motivate | cowsay -W 75 -f small
@@ -183,18 +183,20 @@ gbfc-w64dll() {
 }
 
 # Firewall Aliases
+alias yay="__sg_cmd firewall-web /usr/bin/yay"
 alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
 alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
 alias git="__sg_cmd firewall-web /usr/bin/git"
 alias pip="__sg_cmd firewall-web /usr/bin/pip"
 alias wget="__sg_cmd firewall-web /usr/bin/wget"
 alias curl="__sg_cmd firewall-web /usr/bin/curl"
+alias wp="__sg_cmd firewall-web /usr/bin/python3"
 alias ping="__sg_cmd firewall-icmp /usr/bin/ping"
 alias rsync="__sg_cmd firewall-ssh /usr/bin/rsync"
 alias goget="__sg_cmd firewall-web /usr/bin/go get"
 alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
-alias pacaur="__sg_cmd firewall-web /usr/bin/pacaur"
 alias vnc="__sg_cmd firewall-ctl /usr/bin/vncviewer"
+alias wython="__sg_cmd firewall-web /usr/bin/python3"
 alias xfreerdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp"
 alias vncviewer="__sg_cmd firewall-ctl /usr/bin/vncviewer"
 alias quote="sg firewall-web -c \"$HOME/.local/bin/motivate -get\""
@@ -258,6 +260,7 @@ alias powershell="pwsh"
 alias vsc="/usr/bin/vscodium"
 alias code="/usr/bin/vscodium"
 alias nano="/usr/bin/nano -Ll"
+alias gdiff="/usr/bin/git diff"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
