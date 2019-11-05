@@ -645,7 +645,6 @@
         "systemd",
         "tmpdir",
         "unmap",
-        "upgrader",
         "usbs",
         "uuid",
         "virtio",
