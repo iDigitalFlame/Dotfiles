@@ -21,28 +21,29 @@
 # iDigitalFlame
 
 [core]
-aout                = any
-vout                = any
-access              = any
-control             = notify-send
-vod-server          = any
-text-renderer       = any
-audio-resampler     = any
+aout=                       any
+vout=                       any
+access=                     any
+control=                    notify-send
+vod-server=                 any
+text-renderer=              any
+audio-resampler=            any
+metadata-network-access=    0
 
 [qt4]
-qt-privacy-ask      = 0
+qt-privacy-ask=             0
 
 [mono]
-sout-mono-channel   = 0
+sout-mono-channel=          0
 
 [gnutls]
-gnutls-priorities   = SECURE256
+gnutls-priorities=          SECURE256
 
 [skins2]
-skins2-transparency = 1
+skins2-transparency=        1
 
 [visual]
-effect-fft-window   = none
+effect-fft-window=          none
 
 [fb]
 [gl]

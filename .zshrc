@@ -72,114 +72,104 @@ if [ ! -d "$HOME/Pictures/Screenshots" ]; then
     mkdir -p "$HOME/Pictures/Screenshots"
 fi
 
+# Firewall Switch Group Helper Function
 __sg_cmd() {
-    _params=($@)
-    if [ ! -z "$_params" ] && [ ${#_params[@]} -ge 2 ]; then
-        _command="${_params[@]:1}"
-        /usr/bin/sg "${_params[1]}" -c "$_command"
+    args=($@); params=${args[@]:1}
+    if [ ! -z "$args" ] && [ ${#args[@]} -ge 2 ]; then
+        /usr/bin/sg "${args[1]}" -c $params
     fi
 }
 
-# Golang Build Functions
-gbf() {
-    gbf-64 $@
-}
-gbfc() {
-    gbfc-64 $@
-}
-gbf-64() {
-    if [ $? -eq 0 ]; then
-        printf "gbf-64 <gofile> [output]\n"
+# Go Build Helper Functions
+#  gbo       - Golang Build Optimized
+#  gbp       - Golang Build Optimized with Packed UPX
+#  gbo-win   - Golang Build Optimized for Windows
+#  gbp-win   - Golang Build Optimized for Windows with Packed UPX
+#  gbp-dll   - Golang Build Optimized DLL for Windows (CMain and Go) with Packed UPX
+#  gbp-exe   - Golang Build Optimized for Windows (CMain and Go) with Packed UPX
+#  gbo-win32 - Golang Build Optimized for Windows x86
+#  gbp-win32 - Golang Build Optimized for Windows x86 with Packed UPX
+gbo() {
+    if [ $# -eq 0 ]; then
+        printf "$0 <build opts...>\n"
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
-    if [ $# -ge 2 ]; then
-        goout_file="$2"
-    fi
-    go build -o "$goout_file" "$1"
+    flags=$@
+    go build -trimpath -ldflags "-s -w" $@
 }
-gbf-86() {
-    if [ $? -eq 0 ]; then
-        printf "gbf-86 <gofile> [output]\n"
+gbp() {
+    if [ $# -le 1 ]; then
+        printf "$0 <output> <build opts...>\n"
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
-    if [ $# -ge 2 ]; then
-        goout_file="$2"
-    fi
-    env GOARCH=386 go build -o "$goout_file" "$1"
-}
-gbf-w64() {
-    if [ $? -eq 0 ]; then
-        printf "gbf-w64 <gofile> [output]\n"
+    file=$1; shift
+    go build -trimpath -ldflags "-s -w" -o $file $@
+    if [ $? -ne 0 ]; then
+        printf "go build exited with non-zero status code.\n"
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
-    if [ $# -ge 2 ]; then
-        goout_file="$2"
-    fi
-    env GOOS=windows go build -o "$goout_file" "$1"
-}
-gbf-w32() {
-    if [ $? -eq 0 ]; then
-        printf "gbf-w32 <gofile> [output]\n"
+    if [ ! -f "$file" ]; then
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
-    if [ $# -ge 2 ]; then
-        goout_file="$2"
-    fi
-    env GOOS=windows GOARCH=386 go build -o "$goout_file" "$1"
+    upx --compress-exports=1 --strip-relocs=1 --compress-icons=2 --best --no-backup -9 "$file"
 }
-gbfc-64() {
-    if [ $# -lt 2 ]; then
-        printf "gbfc-64 <gofile> <cmain> [output] [gccargs]\n"
+gbo-win() {
+    GOOS=windows gbo $@
+}
+gbp-win() {
+    GOOS=windows gbp $@
+}
+gbp-dll() {
+    if [ $# -lt 3 ]; then
+        printf "gbp-dll <c_file> <go_file> <output> [gcc_args]\n"
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$//g')
-    if [ $# -ge 3 ]; then
-        goout_file="$3"
-    fi
-    gcc_args=""
-    if [ $# -ge 4 ]; then
-        gcc_arg="$4"
-    fi
-    go build -v -x -buildmode=c-archive "$1"
-    gcc -o "$goout_file" "$2" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -lpthread $gcc_args
-}
-gbfc-w64() {
-    if [ $# -lt 2 ]; then
-        printf "gbfc-w64 <gofile> <cmain> [output] [gccargs]\n"
+    cfile=$1; gofile=$2; output=$3
+    shift; shift; shift
+    name="/tmp/gb-$(openssl rand -hex 6)"
+    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
+    if [ $? -ne 0 ]; then
+        printf "go build exited with non-zero status code.\n"
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$/\.exe/g')
-    if [ $# -ge 3 ]; then
-        goout_file="$3"
-    fi
-    gcc_args=""
-    if [ $# -ge 4 ]; then
-        gcc_arg="$4"
-    fi
-    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -v -x -buildmode=c-archive "$1"
-    x86_64-w64-mingw32-gcc -o "$goout_file" "$2" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
-}
-gbfc-w64dll() {
-    if [ $# -lt 2 ]; then
-        printf "gbfc-w64dll <gofile> <cmain> [output] [gccargs]\n"
+    x86_64-w64-mingw32-gcc -c -o "${name}.o" "$cfile" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
+    if [ $? -ne 0 ]; then
+        printf "win64 gcc exited with non-zero status code.\n"
+        rm -f "${name}.a" 2> /dev/null
         return 1
     fi
-    goout_file=$(echo "$1" | sed -e 's/\.go$/\.dll/g')
-    if [ $# -ge 3 ]; then
-        goout_file="$3"
+    x86_64-w64-mingw32-gcc -o "$output" -s -shared "${name}.o" "${name}.a" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
+    rm -f "${name}.a" 2> /dev/null; rm -f "${name}.o" 2> /dev/null; rm -f "${name}.h" 2> /dev/null
+    if [ ! -f "$output" ]; then
+        return 1
     fi
-    gcc_args=""
-    if [ $# -ge 4 ]; then
-        gcc_arg="$4"
+    upx --compress-exports=1 --strip-relocs=1 --compress-icons=0 --best --no-backup -9 "$output"
+}
+gbb-exe() {
+    if [ $# -lt 3 ]; then
+        printf "gbp-exe <c_file> <go_file> <output> [gcc_args]\n"
+        return 1
     fi
-    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -v -x -buildmode=c-archive "$1"
-    x86_64-w64-mingw32-gcc -c -o "${goout_file}.o" "$2" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
-    x86_64-w64-mingw32-gcc -o "$goout_file" -s -shared "${goout_file}.o" "$(echo $1 | sed -e 's/\.go$/\.a/g')" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $gcc_args
-    rm -f "${goout_file}.o"
+    cfile=$1; gofile=$2; output=$3
+    shift; shift; shift
+    name="/tmp/gb-$(openssl rand -hex 6)"
+    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
+    if [ $? -ne 0 ]; then
+        printf "go build exited with non-zero status code.\n"
+        return 1
+    fi
+    x86_64-w64-mingw32-gcc -o "$output" "$cfile" "${name}.a" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
+    rm -f "${name}.a" 2> /dev/null; rm -f "${name}.o" 2> /dev/null; rm -f "${name}.h" 2> /dev/null
+    if [ ! -f "$output" ]; then
+        return 1
+    fi
+    upx --compress-exports=1 --strip-relocs=1 --compress-icons=2 --best --no-backup -9 "$output"
+}
+gbo-win32() {
+    GOOS=windows GOARCH=386 gbo $@
+}
+gbp-win32() {
+    GOOS=windows GOARCH=386 gbp $@
 }
 
 # Firewall Aliases
