@@ -39,6 +39,7 @@ default_floating_border normal
 
 # Window Rules
 for_window              [class="vlc"]                           border normal, floating enable
+for_window              [class="note"]                          border pixel 0, floating enable, resize set 600 300
 for_window              [class="XRDP"]                          border normal, floating enable
 for_window              [class="TSRDP"]                         border pixel 0, floating disable, move container to workspace 0:R, workspace 0:R, layout tabbed
 for_window              [class="chroma"]                        border pixel 0, floating enable, resize set 500 250
@@ -46,12 +47,15 @@ for_window              [class="LSTSRDP"]                       border normal, f
 for_window              [class="Firefox"]                       border pixel 0
 for_window              [class="Chromium"]                      border pixel 0
 for_window              [class="xfreerdp"]                      border normal, floating disable
-for_window              [class="stickynote"]                    border pixel 0, floating enable, resize set 600 300
+for_window              [class="stickynote"]                    border pixel 0, floating enable, sticky enable, resize set 600 300
 for_window              [class="Galculator"]                    border pixel 0, floating enable
 for_window              [class="Firefox" floating]              border pixel 0, floating enable
 for_window              [class="falkon" title="*noVNC*"]        border normal, floating enable
 for_window              [window_role="GtkFileChooserDialog"]    border normal, floating enable
 for_window              [class="trojita" title="Compose Mail"]  border normal, floating enable
+
+# Window Rules After Modify
+for_window              [title="Save As"]                       border normal, resize set 800 600
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
@@ -102,7 +106,9 @@ bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/b
 
 # Macro Keybindings
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"
-bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=stickynote"
+bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=note"
+bindsym                 $KEY_WIN+S              exec "/usr/bin/leafpad --class=note"
+bindsym                 $KEY_WIN+Shift+S              exec "/usr/bin/leafpad --class=stickynote"
 bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "~/.local/bin/i3/monitor-auto"
 
 # Modified Macro Keybindings
