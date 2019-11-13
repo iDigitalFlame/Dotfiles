@@ -46,7 +46,7 @@ for_window              [class="LSTSRDP"]                       border normal, f
 for_window              [class="Firefox"]                       border pixel 0
 for_window              [class="Chromium"]                      border pixel 0
 for_window              [class="xfreerdp"]                      border normal, floating disable
-for_window              [class="stickynote"]                    border pixel 0, floating enable, resize set 750 450
+for_window              [class="stickynote"]                    border pixel 0, floating enable, resize set 600 300
 for_window              [class="Galculator"]                    border pixel 0, floating enable
 for_window              [class="Firefox" floating]              border pixel 0, floating enable
 for_window              [class="falkon" title="*noVNC*"]        border normal, floating enable
@@ -71,7 +71,8 @@ bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize sh
 bindsym                 --whole-window --border $KEY_CTL+Shift+button4 resize shrink height 10px or 10 ppt
 
 # Application Bindings
-bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
+bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
+bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
 bindsym                 Scroll_Lock             exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
 bindsym                 XF86Launch3             exec --no-startup-id "/usr/bin/onboard --size=800x300"
 bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
@@ -90,8 +91,6 @@ bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/b
 bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
-bindsym                 $KEY_WIN+Shift+1        exec --no-startup-id "~/.local/bin/i3/shot 0"
-bindsym                 $KEY_WIN+Shift+2        exec --no-startup-id "~/.local/bin/i3/clip"
 
 # Standard Bindings
 bindsym                 $KEY_ALT+L              exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
@@ -100,19 +99,19 @@ bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/b
 bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search drun"
 bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
 bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/bin/i3/windows"
-bindsym                 $KEY_ALT+Shift+1        exec --no-startup-id "~/.local/bin/i3/shot-copy 0"
-bindsym                 $KEY_ALT+Shift+2        exec --no-startup-id "~/.local/bin/i3/clip-copy"
 
-# Maco Keybindings
+# Macro Keybindings
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"
 bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=stickynote"
 bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "~/.local/bin/i3/monitor-auto"
 
 # Modified Macro Keybindings
 bindsym                 $KEY_CTL+Tab            exec --no-startup-id "~/.local/bin/i3/switch-bg"
+bindsym                 $KEY_CTL+Print          exec --no-startup-id "~/.local/bin/i3/shot-copy"
 bindsym                 $KEY_CTL+grave          exec --no-startup-id "~/.local/bin/i3/new-move.py"
 bindsym                 $KEY_CTL+Escape         exec --no-startup-id "~/.local/bin/i3/power"
 bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
+bindsym                 $KEY_CTL+Shift+Print    exec --no-startup-id "~/.local/bin/i3/clip-copy"
 
 # Layout Keybindings
 bindsym                 $KEY_WIN+D              layout tabbed
