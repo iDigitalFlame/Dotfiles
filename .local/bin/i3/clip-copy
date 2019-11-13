@@ -20,8 +20,11 @@
 ## Screenclip Copy
 # iDigitalFlame
 
-maim -u -o -c 0,0,0,0 -s | xclip -selection clipboard -t image/png
-if [ $? -eq 0 ]; then
-    notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
+delay=0
+if [ $# -ge 1 ]; then
+    delay=1
 fi
+
+maim -d $delay -u -c 0,0,0,0 -o -s | xclip -selection clipboard -t image/png
+notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
 exit 0

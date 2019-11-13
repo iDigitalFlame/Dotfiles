@@ -20,11 +20,11 @@
 ## Screenshot Clip
 # iDigitalFlame
 
-DELAY=1
-
+delay=0
 if [ $# -ge 1 ]; then
-  DELAY=0
+    delay=1
 fi
 
-maim -d $DELAY -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
+maim -d $delay -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
+notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to clipboard."
 exit 0
