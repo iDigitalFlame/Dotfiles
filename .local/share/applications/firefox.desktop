@@ -23,7 +23,7 @@
 [Desktop Entry]
 Name            = Firefox (Firewall)
 Exec            = /home/iDigitalFlame/.local/bin/browser %u
-Icon            = firefox-kharos
+Icon            = firefox
 Type            = Application
 Actions         = new-window;new-private-window;
 Comment         = Browse the Web
