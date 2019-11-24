@@ -20,15 +20,15 @@
 ## SysUpdate Wrapper
 # iDigitalFlame
 
-hosts="/etc/hosts"
+hosts_file="/etc/hosts"
 if [ -f "$HOME/.local/apps/updateHosts/updateHostsFile.py" ]; then
     if [ ! -z "$(cd $HOME/.local/apps/updateHosts; sg firewall-web 'git pull' | grep -v "Already up to date")" ]; then
-        printf "[+] Grabbing updates to codebase..\n"
+        printf "[+] Grabbing updates to codebase...\n"
         sg firewall-web -c "cd $HOME/.local/apps/updateHosts; git stash; git pull"
     fi
-    printf "[+] Updating hosts blocklist file..\n"
+    printf "[+] Updating hosts blocklist file...\n"
     sg firewall-web -c "/usr/bin/python3 $HOME/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
-    hosts="$HOME/.local/apps/updateHosts/hosts"
+    hosts_file="$HOME/.local/apps/updateHosts/hosts"
 fi
 
 hosts_list=$(cat<<EOD
@@ -63,10 +63,10 @@ hosts_list=$(cat<<EOD
 EOD
 )
 
-printf "[+] Starting pacman..\n"
-sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts"
-printf "[+] Starting yay..\n"
+printf "[+] Starting pacman...\n"
+sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts"
+printf "[+] Starting yay...\n"
 sg firewall-web -c "/usr/bin/yay -Syua --answerclean N"
-printf "[+] Updating PIP packages..\n"
+printf "[+] Updating PIP packages...\n"
 sg firewall-web -c "pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" 2>&1 |grep -v 'least one requirement to install (see "pip help install")'
 sudo syslink
