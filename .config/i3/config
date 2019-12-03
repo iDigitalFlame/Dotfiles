@@ -56,6 +56,8 @@ for_window              [class="trojita" title="Compose Mail"]  border normal, f
 
 # Window Rules After Modify
 for_window              [title="Save As"]                       border normal, resize set 800 600
+for_window              [class="note" title="Open"]             border normal, resize set 800 600
+for_window              [class="stickynote" title="Open"]       border normal, resize set 800 600
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
@@ -108,7 +110,7 @@ bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/b
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"
 bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=note"
 bindsym                 $KEY_WIN+S              exec "/usr/bin/leafpad --class=note"
-bindsym                 $KEY_WIN+Shift+S              exec "/usr/bin/leafpad --class=stickynote"
+bindsym                 $KEY_WIN+Shift+S        exec "/usr/bin/leafpad --class=stickynote"
 bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "~/.local/bin/i3/monitor-auto"
 
 # Modified Macro Keybindings
