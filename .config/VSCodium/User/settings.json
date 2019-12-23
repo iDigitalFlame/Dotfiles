@@ -211,6 +211,7 @@
     "zenMode.restore": false,
     "explorer.autoReveal": true,
     "explorer.confirmDelete": false,
+    "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": true,
     "explorer.decorations.badges": true,
     "explorer.decorations.colors": true,

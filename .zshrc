@@ -173,6 +173,7 @@ gbp-win32() {
 }
 
 # Firewall Aliases
+alias go="__sg_cmd firewall-web /usr/bin/go"
 alias yay="__sg_cmd firewall-web /usr/bin/yay"
 alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
 alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
@@ -183,7 +184,6 @@ alias curl="__sg_cmd firewall-web /usr/bin/curl"
 alias wp="__sg_cmd firewall-web /usr/bin/python3"
 alias ping="__sg_cmd firewall-icmp /usr/bin/ping"
 alias rsync="__sg_cmd firewall-ssh /usr/bin/rsync"
-alias goget="__sg_cmd firewall-web /usr/bin/go get"
 alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
 alias vnc="__sg_cmd firewall-ctl /usr/bin/vncviewer"
 alias wython="__sg_cmd firewall-web /usr/bin/python3"
