@@ -602,6 +602,7 @@
     "workbench.editor.restoreViewState": false,
     "scm.diffDecorations": "overview",
     "cSpell.userWords": [
+        "Defcon",
         "POWERCTL",
         "PPID",
         "Popen",
@@ -617,6 +618,7 @@
         "deshuffle",
         "dhcp",
         "epoll",
+        "fpos",
         "fuckwits",
         "getcwd",
         "getuid",
