@@ -22,7 +22,7 @@
 
 [Desktop Entry]
 Name            = Evernote (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --wmclass ever --profile ever https://www.evernote.com/client/web"
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --wmclass ever --no-remote --profile ever https://www.evernote.com/client/web"
 Icon            = evernote
 Type            = Application
 Comment         = Notes
