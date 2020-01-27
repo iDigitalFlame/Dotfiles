@@ -62,9 +62,14 @@ hosts_list=$(cat<<EOD
 ::1 apps.facebook.com
 EOD
 )
+sg firewall-web -c "curl -sL https://www.github.developerdan.com/hosts/lists/facebook-extended.txt -o /tmp/fbhosts1.txt"
+sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all -o /tmp/fbhosts2.txt"
+sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all -o /tmp/fbhosts3.txt"
+cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt > /tmp/fbhosts.txt
 
 printf "[+] Starting pacman...\n"
-sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts"
+sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts; cat /tmp/fbhosts.txt >> /etc/hosts"
+rm -f /tmp/fbhosts*.txt 2> /dev/null
 printf "[+] Starting yay...\n"
 sg firewall-web -c "/usr/bin/yay -Syua --answerclean N"
 printf "[+] Updating PIP packages...\n"
