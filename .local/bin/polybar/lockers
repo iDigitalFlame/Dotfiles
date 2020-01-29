@@ -1,18 +1,4 @@
 #!/usr/bin/bash
-# Copyright (C) 2020 iDigitalFlame
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ################################
 ###### iDigitalFlame 2020 ######
 #                              #
@@ -32,13 +18,29 @@
 ########## SPACEPORT ###########
 ################################
 ## Locker List Command
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
 
 if ! [ -f "/var/run/smd/lockers" ]; then
     printf "0 \n"
     exit 0
 fi
 
-LOCKERS=$(cat /var/run/smd/lockers | wc -w)
+LOCKERS=$(cat "/var/run/smd/lockers" | wc -w)
 
 if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
     printf "0 \n"

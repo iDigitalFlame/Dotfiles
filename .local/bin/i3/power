@@ -1,18 +1,4 @@
 #!/usr/bin/bash
-# Copyright (C) 2020 iDigitalFlame
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ################################
 ###### iDigitalFlame 2020 ######
 #                              #
@@ -32,8 +18,24 @@
 ########## SPACEPORT ###########
 ################################
 ## Power Menu
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
 
-case $(printf " Lock\n Logoff\n Suspend\n Hibernate\n Reboot\n Poweroff\n Restart i3" | rofi -dmenu -p 'Power' -lines 7 -columns 1) in
+case $(printf " Lock\n Logoff\n Suspend\n Hibernate\n Reboot\n Poweroff\n Restart i3" | rofi -dmenu -p "Power" -lines 7 -columns 1) in
     " Lock")
     powerctl lock -f
     ;;

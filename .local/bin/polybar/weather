@@ -1,18 +1,4 @@
 #!/usr/bin/bash
-# Copyright (C) 2020 iDigitalFlame
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ################################
 ###### iDigitalFlame 2020 ######
 #                              #
@@ -32,28 +18,44 @@
 ########## SPACEPORT ###########
 ################################
 ## Polybar Weather Widget
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
 
 get_icon() {
     case $1 in
-        01d) _tmp_icon="";;
-        01n) _tmp_icon="";;
-        02d) _tmp_icon="";;
-        02n) _tmp_icon="";;
-        03*) _tmp_icon="";;
-        04*) _tmp_icon="";;
-        09d) _tmp_icon="";;
-        09n) _tmp_icon="";;
-        10d) _tmp_icon="";;
-        10n) _tmp_icon="";;
-        11d) _tmp_icon="";;
-        11n) _tmp_icon="";;
-        13d) _tmp_icon="";;
-        13n) _tmp_icon="";;
-        50d) _tmp_icon="";;
-        50n) _tmp_icon="";;
-        *) _tmp_icon="";
+        01d) result="";;
+        01n) result="";;
+        02d) result="";;
+        02n) result="";;
+        03*) result="";;
+        04*) result="";;
+        09d) result="";;
+        09n) result="";;
+        10d) result="";;
+        10n) result="";;
+        11d) result="";;
+        11n) result="";;
+        13d) result="";;
+        13n) result="";;
+        50d) result="";;
+        50n) result="";;
+        *) result="";
     esac
-    printf "$_tmp_icon"
+    printf "$result"
 }
 
 if [ -e "$HOME/.cache/offline" ]; then
@@ -61,24 +63,30 @@ if [ -e "$HOME/.cache/offline" ]; then
     exit 0
 fi
 
+if [ ! -e "$HOME/.config/weather.conf" ]; then
+    printf ""
+    exit 0
+fi
 source "$HOME/.config/weather.conf"
-
-if [ $# -eq 1 ] && [ "$1" == "go" ]; then
-    screen -dmS weather sg firewall-web -c "/usr/bin/surf -mDfIKPBSng https://openweathermap.org/city/$CITY"
+if [ $? -ne 0 ]; then
+    printf ""
     exit 0
 fi
 
-_tmp_indicator="°"
-_tmp_output=$(sg firewall-web -c "curl -sf \"http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&zip=$ZIP,us&units=imperial\"")
+if [ $# -eq 1 ] && [ "$1" == "go" ]; then
+    screen -dmS weather sg firewall-web -c "/usr/bin/surf -mDfIKPBSng https://openweathermap.org/city/${CITY}"
+    exit 0
+fi
 
-if [ ! -z "$_tmp_output" ]; then
-    _tmp_icon=$(echo "$_tmp_output" | jq -r ".weather[].icon")
-    _tmp_desc=$(echo "$_tmp_output" | jq -r ".weather[].description")
-    _tmp_temp=$(echo "$_tmp_output" | jq ".main.temp" | cut -d "." -f 1)
+weather=$(sg firewall-web -c "curl -sf \"http://api.openweathermap.org/data/2.5/weather?APPID=${KEY}&zip=${ZIP},us&units=imperial\"")
+if [ ! -z "$weather" ]; then
+    icon=$(echo "$weather" | jq -r ".weather[].icon")
+    temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+    description=$(echo "$weather" | jq -r ".weather[].description")
     if [ $# -eq 1 ]; then
-        echo "$_tmp_desc", "$_tmp_temp$_tmp_indicator" "$(get_icon "$_tmp_icon")"
+        echo "$description", "${temp}°" "$(get_icon "$icon")"
     else
-        echo "$_tmp_temp$_tmp_indicator" "$(get_icon "$_tmp_icon")"
+        echo "${temp}°" "$(get_icon "$icon")"
     fi
 fi
 exit 0
