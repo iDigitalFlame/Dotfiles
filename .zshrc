@@ -245,6 +245,7 @@ alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p pe
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
 
 # LS Aliases
+alias lsd="ls -lp --group-directories-first --color=auto"
 alias lsl="ls -alp --group-directories-first --color=auto"
 alias lsh="ls -alph --group-directories-first --color=auto"
 alias lsal="ls -alp --group-directories-first --color=auto"
@@ -269,7 +270,9 @@ alias gdiff="/usr/bin/git diff"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
+alias gv="sg firewall-web -c 'go vet ./...'"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
+alias govet="sg firewall-web -c 'go vet ./...'"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
