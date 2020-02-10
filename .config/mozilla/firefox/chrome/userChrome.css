@@ -1,0 +1,168 @@
+/*
+    ################################
+    ###### iDigitalFlame 2020 ######
+    #                              #
+    #            -/`               #
+    #            -yy-   :/`        #
+    #         ./-shho`:so`         #
+    #    .:- /syhhhh//hhs` `-`     #
+    #   :ys-:shhhhhhshhhh.:o- `    #
+    #   /yhsoshhhhhhhhhhhyho`:/.   #
+    #   `:yhyshhhhhhhhhhhhhh+hd:   #
+    #     :yssyhhhhhyhhhhhhhhdd:   #
+    #    .:.oyshhhyyyhhhhhhddd:    #
+    #    :o+hhhhhyssyhhdddmmd-     #
+    #     .+yhhhhyssshdmmddo.      #
+    #       `///yyysshd++`         #
+    #                              #
+    ########## SPACEPORT ###########
+    ################################
+    # VCSodium Configuration
+
+    Copyright (C) 2020 iDigitalFlame
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
+*/
+
+html#main-window {
+    --color-bg: #191919;
+    --toolbar-bgcolor: #191919 !important;
+    --arrowpanel-color: #FFFFFF !important;
+    --arrowpanel-background: #191919 !important;
+    --arrowpanel-border-color: transparent !important;
+    --lwt-toolbar-field-color: #FEFEFA !important;
+    --lwt-toolbar-field-focus-color: #A1FFB6 !important;
+    --lwt-toolbar-field-background-color: #191919 !important;
+}
+input#urlbar-input {
+    font-size: 12pt !important;
+    font-weight: 400 !important;
+    caret-color: #FFFFFF !important;
+    font-family: "mononoki Nerd Font", sans-serif !important;
+}
+
+#urlbar-background, #urlbar-container, .urlbar-input-box {
+    background-image: none !important;
+    background-color: #191919 !important;
+}
+#urlbar:not(.megabar), #urlbar.megabar > #urlbar-background, #searchbar {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#back-button {
+    list-style-image: url("left-arrow.svg") !important;
+}
+#forward-button {
+    list-style-image: url("right-arrow.svg") !important;
+}
+
+#navigator-toolbox {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #191919 !important;
+    --tabs-border-color: #191919 !important;
+}
+
+#tracking-protection-icon-container, #urlbar-search-button {
+    border: none !important;
+    background-color: none !important;
+    background-image: none !important;
+}
+
+.urlbarView {
+    border-radius: 0 8px 8px !important;
+    background-color: #191919 !important;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important;
+}
+.urlbarView-action {
+    color: #FFFFFF !important;
+}
+.urlbarView-row:hover {
+    color: #000000 !important;
+    background-color: none !important;
+    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important;
+}
+.urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
+    display: none !important;
+}
+.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
+    fill-opacity: 1;
+    color: #FFFFFF !important;
+    background: #7D0BAB !important;
+}
+
+.panel-arrowbox {
+    margin: 0 !important;
+    display: none !important;
+}
+.panel-arrowcontent {
+	opacity: 1 !important;
+	margin: 0 !important;
+}
+
+.tab-stack {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.tab-content {
+    background-color: none !important;
+    background-image: none !important;
+    font-family: "Cantarell", sans-serif !important;
+}
+
+.tabbrowser-tab {
+    height: 28px !important;
+    max-height: 28px !important;
+    background-color: #191919 !important;
+}
+.tabbrowser-tab[pinned="true"] {
+    background-image: none !important;
+    background-color: #191919 !important;
+}
+.tabbrowser-tab .tab-close-button {
+    display: none !important;
+    margin-left: -2px !important;
+    margin-right: 2px !important;
+}
+.tabbrowser-tab[pinned="true"] .tab-icon-image {
+    align-items: center !important;
+    display: inline-block !important;
+}
+.tabbrowser-tab[pinned="true"] .tab-label-container {
+    display: none !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-icon-image {
+    display: none !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+    display: flex !important;
+}
+.tabbrowser-tab::before, .tabbrowser-tab::after, .tab-line {
+    display: none !important;
+}
+.tabbrowser-tab:hover, .tabbrowser-tab:hover[pinned="true"] {
+    color: #000000 !important;
+    background-color: none !important;
+    background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important;
+}
+.tabbrowser-tab[selected="true"], .tabbrowser-tab[pinned="true"][selected="true"] {
+    color: #FFFFFF !important;
+    background-color: none !important;
+    background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important;
+}
+.tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
+    -moz-box-ordinal-group: 2 !important;
+}

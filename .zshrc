@@ -204,7 +204,7 @@ alias vnc="__sg_cmd firewall-ctl /usr/bin/vncviewer"
 alias wython="__sg_cmd firewall-web /usr/bin/python3"
 alias xfreerdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp"
 alias vncviewer="__sg_cmd firewall-ctl /usr/bin/vncviewer"
-alias quote="sg firewall-web -c \"$HOME/.local/bin/motivate -get\""
+alias quote="sg firewall-web -c '$HOME/.local/bin/motivate -n'"
 alias rdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
 
 # Python Aliases
