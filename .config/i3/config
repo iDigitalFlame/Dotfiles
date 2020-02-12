@@ -110,6 +110,7 @@ bindsym                 $KEY_WIN+L              exec --no-startup-id "/opt/space
 bindsym                 $KEY_WIN+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new-move.py with"
 bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search"
+bindsym                 $KEY_WIN+U              exec --no-startup-id "~/.local/bin/i3/recents-menu"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
 

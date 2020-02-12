@@ -1,0 +1,143 @@
+#!/usr/bin/python3
+################################
+###### iDigitalFlame 2020 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Firefox Recent URLs Lister
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+from re import search
+from os import remove
+from shutil import copy2
+from tempfile import mkstemp
+from sys import exit, stderr, argv
+from os.path import expandvars, join
+from sqlite3 import connect, Error as SqlError
+from configparser import ConfigParser, Error as ConfigError
+
+FIREFOX_DATA = "$HOME/.mozilla/firefox"
+
+
+def get_db():
+    cfg = ConfigParser()
+    directory = expandvars(FIREFOX_DATA)
+    profiles = join(directory, "profiles.ini")
+    try:
+        cfg.read(profiles)
+    except (ConfigError, IOError) as err:
+        print(
+            'Could not read profiles config file "%s": %s' % (profiles, str(err)),
+            file=stderr,
+        )
+        return None
+    if "Profile0" not in cfg:
+        print(
+            'Could not find "Profile0" in profiles config file "%s"' % profiles,
+            file=stderr,
+        )
+        return None
+    if "Path" not in cfg["Profile0"]:
+        print(
+            'Could not find "Profile0\\Path" in profiles config file "%s"' % profiles,
+            file=stderr,
+        )
+        return None
+    del profiles
+    temp = None
+    db = join(directory, cfg["Profile0"]["Path"], "places.sqlite")
+    del cfg
+    del directory
+    try:
+        temp = mkstemp()[1]
+        copy2(db, temp)
+    except IOError as err:
+        if temp is not None:
+            remove(temp)
+        print('Could not copy "%s" to "%s": %s' % (db, temp, str(err)), file=stderr)
+        return None
+    return temp
+
+
+def get_recent(db, rofi):
+    try:
+        d = connect(db)
+        d.create_function("REGEXP", 2, find)
+        c = d.cursor()
+        c.execute(
+            "SELECT DISTINCT RTRIM(url,'/'), title FROM moz_places WHERE url REGEXP '^(.*):\/\/' "
+            "ORDER BY moz_places.visit_count DESC"
+        )
+        o = list()
+        b = "%s (%s)"
+        if rofi:
+            b = "%-250s (%s)"
+        for r in c.fetchall():
+            if r[1] is not None:
+                o.append(
+                    (
+                        b
+                        % (
+                            str(r[1].encode(), "ascii", "ignore"),
+                            str(r[0].encode(), "ascii", "ignore"),
+                        )
+                    )
+                )
+            else:
+                o.append(str(r[0].encode(), "ascii", "ignore"))
+        c.close()
+        d.close()
+        del c
+        del d
+        return o
+    except (SqlError, IOError) as err:
+        print('Could not operate on db "%s": %s' % (db, str(err)))
+    return None
+
+
+def find(pattern, string):
+    if "moz-extension" in string:
+        return None
+    return search(pattern, string) is not None
+
+
+if __name__ == "__main__":
+    temp_db = get_db()
+    if temp_db is None:
+        remove(temp_db)
+        exit(1)
+    recent = get_recent(temp_db, len(argv) > 1)
+    if recent is None:
+        remove(temp_db)
+        exit(1)
+    print("\n".join(recent))
+    remove(temp_db)
+    exit(0)

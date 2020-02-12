@@ -238,7 +238,6 @@
         "**/bower_components": true
     },
     "search.followSymlinks": true,
-    "search.location": "sidebar",
     "search.quickOpen.includeSymbols": true,
     "search.smartCase": false,
     "search.useIgnoreFiles": true,
