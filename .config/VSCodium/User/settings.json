@@ -126,6 +126,7 @@
     "scm.alwaysShowProviders": false,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
+        "editor.foldBackground": "#191919",
         "editorWhitespace.foreground": "#7A7A7A",
         "editor.background": "#191919",
         "menu.background": "#191919",
