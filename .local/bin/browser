@@ -55,6 +55,6 @@ else
     if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome"
     else
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome "\$params\""
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome \"$params\""
     fi
 fi
