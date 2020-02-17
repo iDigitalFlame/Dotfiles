@@ -9,10 +9,9 @@
         "aliases": {
             "kali": "/opt/hydra/iDigitalFlame/Kali/vm.conf",
             "mac": "/opt/hydra/iDigitalFlame/MacOS/vm.conf",
-            "win": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
+            "win": "/opt/hydra/iDigitalFlame/W7/vm.conf",
             "win10": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
-            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf",
-            "wintest": "/opt/hydra/iDigitalFlame/W7/vm.conf"
+            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf"
         },
         "directory": "/opt/hydra/iDigitalFlame"
     },
@@ -69,7 +68,6 @@
         "startups": [
             "/usr/bin/touchegg",
             "/usr/bin/nm-applet",
-            "/usr/bin/onboard --size=800x300",
             "/usr/lib/smd/libexec/smd-enable-tap",
             "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
             "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
