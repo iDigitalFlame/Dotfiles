@@ -1,0 +1,127 @@
+#!/usr/bin/python3
+################################
+###### iDigitalFlame 2020 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## New Workspace
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+from sys import exit, argv, stderr
+from json import loads, JSONDecodeError
+from subprocess import Popen, PIPE, DEVNULL
+
+
+class i3Error(Exception):
+    pass
+
+
+def run(cmd):
+    params = cmd
+    if not isinstance(cmd, list):
+        params = str(cmd).split(" ")
+    try:
+        exe = Popen(["/usr/bin/i3-msg"] + params, stdout=PIPE, stderr=DEVNULL)
+        if exe.wait() != 0:
+            raise i3Error('"i3-msg" returned non-zero status!')
+            exit(1)
+        output = exe.stdout.read()
+        if len(output) > 0:
+            try:
+                return loads(output.decode("UTF-8"))
+            except JSONDecodeError as err:
+                raise i3Error('"i3-msg" output was not in JSON format: %s' % str(err))
+            except UnicodeDecodeError as err:
+                raise i3Error('"i3-msg" could not be decoded: %s' % str(err))
+        return None
+    except OSError as err:
+        raise i3Error('Command to "i3-msg" failed: %s' % str(err))
+    return None
+
+
+def run_cmd(cmd):
+    return run(["-t", cmd])
+
+
+def focused(parent=None):
+    if parent is None:
+        parent = run_cmd("get_tree")
+    if parent is not None and "nodes" in parent:
+        for node in parent["nodes"]:
+            if "type" in node and node["type"] == "con":
+                if (
+                    "name" in node
+                    and node["name"] is not None
+                    and "focused" in node
+                    and node["focused"]
+                    and "id" in node
+                ):
+                    return node["id"]
+            if "type" in node and "nodes" in node:
+                result = focused(node)
+                if result is not None:
+                    return result
+    return None
+
+
+if __name__ == "__main__":
+    current = None
+    if len(argv) > 1:
+        current = focused()
+    try:
+        workspaces = run_cmd("get_workspaces")
+    except i3Error as err:
+        print(str(err), file=stderr)
+        exit(1)
+    if workspaces is None:
+        print('"i3-msg" did not return any valid workspaces!', file=stderr)
+        exit(1)
+    empty = next(
+        x for x in range(1, 50) if not [w for w in workspaces if w["num"] == x]
+    )
+    try:
+        if current is not None:
+            run(
+                [
+                    '[con_id="%s"]' % current,
+                    "move",
+                    "container",
+                    "to",
+                    "workspace",
+                    str(empty),
+                ]
+            )
+        if current is None or len(argv) > 2:
+            run(["workspace", str(empty)])
+    except i3Error as err:
+        print(str(err), file=stderr)
+        exit(1)
+    exit(0)

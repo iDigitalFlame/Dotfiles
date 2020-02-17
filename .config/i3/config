@@ -108,7 +108,7 @@ bindsym                 XF86MonBrightnessDown   exec --no-startup-id "/opt/space
 # Modified Bindings
 bindsym                 $KEY_WIN+L              exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
 bindsym                 $KEY_WIN+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
-bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new-move.py with"
+bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new sel with"
 bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
@@ -116,7 +116,7 @@ bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/b
 # Standard Bindings
 bindsym                 $KEY_ALT+L              exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
 bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
-bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new.py"
+bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new"
 bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search drun"
 bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
 bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/bin/i3/windows"
@@ -132,7 +132,7 @@ bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "~/.local/b
 # Modified Macro Keybindings
 bindsym                 $KEY_CTL+Tab            exec --no-startup-id "~/.local/bin/i3/switch-bg"
 bindsym                 $KEY_CTL+Print          exec --no-startup-id "~/.local/bin/i3/shot-copy"
-bindsym                 $KEY_CTL+grave          exec --no-startup-id "~/.local/bin/i3/new-move.py"
+bindsym                 $KEY_CTL+grave          exec --no-startup-id "~/.local/bin/i3/new sel"
 bindsym                 $KEY_CTL+Escape         exec --no-startup-id "~/.local/bin/i3/power"
 bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
 bindsym                 $KEY_CTL+Shift+Print    exec --no-startup-id "~/.local/bin/i3/clip-copy"

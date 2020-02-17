@@ -35,20 +35,20 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-RECENT_LIST="$HOME/.local/bin/recents"
+recents="$HOME/.local/bin/recents"
 
-if [[ ! -e "$RECENT_LIST" ]]; then
+if [[ ! -e "$recents" ]]; then
     exit 1
 fi
 
-SELECTED=$(python $RECENT_LIST rofi | rofi -dmenu -i -p "Recents" -columns 1 -rows 200)
-if [ -z "$SELECTED" ]; then
+selected=$(python $recents rofi | rofi -dmenu -i -p "Recents" -columns 1 -rows 200)
+if [ -z "$selected" ]; then
     exit 0
 fi
 
-if [[ ! -z $(echo "$SELECTED" | grep " (") ]]; then
-    SELECTED="http$(echo "$SELECTED" | awk -F"http" '{print $2}' | sed -e 's/)$//g')"
+if [[ ! -z $(echo "$selected" | grep " (") ]]; then
+    selected="http$(echo "$selected" | awk -F"http" '{print $2}' | sed -e 's/)$//g')"
 fi
 
-browser "$SELECTED"
+browser "$selected"
 exit 0

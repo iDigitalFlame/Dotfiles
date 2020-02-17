@@ -245,10 +245,12 @@ alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p pe
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
 
 # LS Aliases
-alias lsd="ls -lp --group-directories-first --color=auto"
-alias lsl="ls -alp --group-directories-first --color=auto"
-alias lsh="ls -alph --group-directories-first --color=auto"
-alias lsal="ls -alp --group-directories-first --color=auto"
+alias ls="/usr/bin/ls -pFN --group-directories-first --color=auto"
+alias lsa="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
+alias lsd="/usr/bin/ls -lpFN --group-directories-first --color=auto"
+alias lsl="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
+alias lsh="/usr/bin/ls -AlpFNh --group-directories-first --color=auto"
+alias lsal="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
 
 # Screenshot Aliases
 alias ss="$HOME/.local/bin/i3/shot"

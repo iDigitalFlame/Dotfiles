@@ -40,12 +40,12 @@ if ! [ -f "/var/run/smd/lockers" ]; then
     exit 0
 fi
 
-LOCKERS=$(cat "/var/run/smd/lockers" | wc -w)
+lockers=$(cat "/var/run/smd/lockers" | wc -w)
 
-if [ -z "$LOCKERS" ] || [ "$LOCKERS" -eq "0" ]; then
+if [ -z "$lockers" ] || [ "$lockers" -eq "0" ]; then
     printf "0 \n"
     exit 0
 fi
 
-printf "$LOCKERS \n"
+printf "$lockers \n"
 exit 0

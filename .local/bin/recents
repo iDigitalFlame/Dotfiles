@@ -47,30 +47,28 @@ from configparser import ConfigParser, Error as ConfigError
 FIREFOX_DATA = "$HOME/.mozilla/firefox"
 
 
+class ProfileError(Exception):
+    pass
+
+
 def get_db():
     cfg = ConfigParser()
     directory = expandvars(FIREFOX_DATA)
     profiles = join(directory, "profiles.ini")
     try:
         cfg.read(profiles)
-    except (ConfigError, IOError) as err:
-        print(
-            'Could not read profiles config file "%s": %s' % (profiles, str(err)),
-            file=stderr,
+    except (ConfigError, OSError) as err:
+        raise ProfileError(
+            'Could not read profiles config file "%s": %s' % (profiles, str(err))
         )
-        return None
     if "Profile0" not in cfg:
-        print(
-            'Could not find "Profile0" in profiles config file "%s"' % profiles,
-            file=stderr,
+        raise ProfileError(
+            'Could not find "Profile0" in profiles config file "%s"' % profiles
         )
-        return None
     if "Path" not in cfg["Profile0"]:
-        print(
-            'Could not find "Profile0\\Path" in profiles config file "%s"' % profiles,
-            file=stderr,
+        raise ProfileError(
+            'Could not find "Profile0\\Path" in profiles config file "%s"' % profiles
         )
-        return None
     del profiles
     temp = None
     db = join(directory, cfg["Profile0"]["Path"], "places.sqlite")
@@ -82,12 +80,17 @@ def get_db():
     except IOError as err:
         if temp is not None:
             remove(temp)
-        print('Could not copy "%s" to "%s": %s' % (db, temp, str(err)), file=stderr)
-        return None
+        raise ProfileError('Could not copy "%s" to "%s": %s' % (db, temp, str(err)))
     return temp
 
 
-def get_recent(db, rofi):
+def find(pattern, string):
+    if "moz-extension" in string:
+        return None
+    return search(pattern, string) is not None
+
+
+def get_recent(db, terminal):
     try:
         d = connect(db)
         d.create_function("REGEXP", 2, find)
@@ -98,7 +101,7 @@ def get_recent(db, rofi):
         )
         o = list()
         b = "%s (%s)"
-        if rofi:
+        if not terminal:
             b = "%-250s (%s)"
         for r in c.fetchall():
             if r[1] is not None:
@@ -119,25 +122,19 @@ def get_recent(db, rofi):
         del d
         return o
     except (SqlError, IOError) as err:
-        print('Could not operate on db "%s": %s' % (db, str(err)))
+        raise ProfileError('Could not operate on db "%s": %s' % (db, str(err)))
     return None
 
 
-def find(pattern, string):
-    if "moz-extension" in string:
-        return None
-    return search(pattern, string) is not None
-
-
 if __name__ == "__main__":
-    temp_db = get_db()
-    if temp_db is None:
-        remove(temp_db)
+    temp_db = None
+    try:
+        temp_db = get_db()
+        print("\n".join(get_recent(temp_db, len(argv) == 1)))
+    except ProfileError as err:
+        print(str(err), file=stderr)
         exit(1)
-    recent = get_recent(temp_db, len(argv) > 1)
-    if recent is None:
-        remove(temp_db)
-        exit(1)
-    print("\n".join(recent))
-    remove(temp_db)
+    finally:
+        if temp_db is not None:
+            remove(temp_db)
     exit(0)

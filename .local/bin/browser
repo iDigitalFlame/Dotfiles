@@ -36,18 +36,16 @@
 #
 
 params="$@"
-usefirefox=1
+use_firefox=1
 
-if [ -n "$FIREFOX" ]; then
-    if [ "$FIREFOX" == "0" ]; then
-        usefirefox=0
-    fi
+if [ "$FIREFOX" == "0" ]; then
+    use_firefox=0
 fi
 if [ -n "$(basename $0 | grep -i chrome)" ]; then
-    usefirefox=0
+    use_firefox=0
 fi
 
-if [ $usefirefox -eq 1 ]; then
+if [ $use_firefox -eq 1 ]; then
     if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame"
     else
@@ -57,6 +55,6 @@ else
     if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome"
     else
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome \"$params\""
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome "\$params\""
     fi
 fi

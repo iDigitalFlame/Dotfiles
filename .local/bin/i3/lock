@@ -35,7 +35,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-KEYCOLOR="#$(openssl rand -hex 3)FF"
+key_color="#$(openssl rand -hex 3)FF"
 
 # Disable all fullscreen windows (messes with i3-lock).
 /usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" 2> /dev/null
@@ -65,7 +65,7 @@ KEYCOLOR="#$(openssl rand -hex 3)FF"
 --timecolor="#FFFFFFFF" \
 --datecolor="#FFFFFFFF" \
 --verifcolor="#FFFFFFFF" \
---keyhlcolor="$KEYCOLOR" \
+--keyhlcolor="$key_color" \
 --insidecolor="#00000000" \
 --ringvercolor="#E6DB74FF" \
 --indpos="x+(w/2):y+(h/2)" \

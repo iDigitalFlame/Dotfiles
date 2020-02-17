@@ -37,6 +37,16 @@
 
 THEME_DIR="$HOME/.config/theme"
 
+fhelp() {
+    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|list|help]\n\n"
+    if ! [ -e "$THEME_DIR/current" ]; then
+        printf "No theme selected!\n"
+        exit 0
+    fi
+    printf "Current theme is \"$(basename `readlink "$THEME_DIR/current"`)\"\n"
+    exit 0
+}
+
 freset() {
     theme=""
     if [ $# -eq 1 ]; then
@@ -76,16 +86,6 @@ freload() {
     ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
     ln -s "$THEME_DIR/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc"
     return 0
-}
-
-fhelp() {
-    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|list|help]\n\n"
-    if ! [ -e "$THEME_DIR/current" ]; then
-        printf "No theme selected!\n"
-        exit 0
-    fi
-    printf "Current theme is \"$(basename `readlink "$THEME_DIR/current"`)\"\n"
-    exit 0
 }
 
 case "$1" in

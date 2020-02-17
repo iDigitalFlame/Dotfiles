@@ -35,11 +35,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+mode="combi"
 if [ $# -eq 1 ]; then
-    MODE="$1"
-else
-    MODE="combi"
+    mode="$1"
 fi
 
-rofi -combi-modi drun,window,run -show $MODE
+rofi -combi-modi drun,window,run -show $mode
 exit 0

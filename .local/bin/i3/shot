@@ -40,7 +40,7 @@ if [ $# -ge 1 ]; then
     delay=1
 fi
 
-screenshot="$HOME/Pictures/Screenshots/$(date +%m%d%y-%H%m%S)$((1 + RANDOM % 256))-capture.jpg"
+screenshot="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)$((1 + RANDOM % 256))-capture.jpg"
 maim -d $delay -u -c 0,0,0,0 -o "$screenshot"
 notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$screenshot\"."
 exit 0
