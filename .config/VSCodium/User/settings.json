@@ -548,6 +548,31 @@
         "references": false,
         "runtest": true
     },
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "gopls": {
+        "completeUnimported": true,
+        "deepCompletion": true
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true
+    },
     "go.formatFlags": [],
     "go.formatTool": "goimports",
     "go.gocodeAutoBuild": false,
