@@ -81,7 +81,7 @@ if [[ -z $folder ]] || [[ -z $server ]]; then
 fi
 if [ ! -z "$(mount | grep $folder | grep $server)" ]; then
     printf "Share \"$folder\" on \"$server\" seems to already be mounted!\n"
-    #exit 1
+    exit 1
 fi
 
 save=0
