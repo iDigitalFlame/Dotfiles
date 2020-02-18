@@ -46,10 +46,10 @@ html#main-window {
     --lwt-toolbar-field-background-color: #191919 !important;
 }
 input#urlbar-input {
-    font-size: 12pt !important;
+    font-size: 10pt !important;
     font-weight: 400 !important;
     caret-color: #FFFFFF !important;
-    font-family: "mononoki Nerd Font", sans-serif !important;
+    font-family: "Source Code Pro", Arial, sans-serif !important;
 }
 
 #urlbar-background, #urlbar-container, .urlbar-input-box {
