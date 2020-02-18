@@ -1,0 +1,120 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2020 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## SMB Connecter with Keyring Integration
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+if [ $# -lt 2 ] || [ $# -gt 3 ]; then
+    printf "smb [--reset] <domain\\\user|user> <share>\n"
+    exit 1
+fi
+
+if [ $# -eq 3 ] && [ "$1" == "--reset" ]; then
+    user="$2"
+    share="$3"
+    keyring="smb-$(echo $2 | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
+    printf "" | gnome-keyring-query set $keyring
+else
+    if [ $# -eq 2 ]; then
+        user="$1"
+        share="$2"
+        keyring="smb-$(echo $1 | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
+    else
+        printf "smb [--reset] <domain\\\user|user> <share>\n"
+        exit 1
+    fi
+fi
+
+domain=""
+if [ ! -z "$(echo $user | grep '\\')" ]; then
+    domain=$(echo $user | awk -F'\' '{print $1}')
+    user=$(echo $user | awk -F'\' '{print $2}')
+else
+    if [ ! -z "$(echo $user | grep '@')" ]; then
+        domain=$(echo $user | awk -F'@' '{print $2}')
+        user=$(echo $user | awk -F'@' '{print $1}')
+    fi
+fi
+
+share=$(echo "$share" | sed -e 's/^\\\\//g' | sed -e 's/^\\//g' | sed -e 's/^\/\///g' | sed -e 's/^\///g'  | sed -e 's/\\/\//g')
+if [ -z $(echo "$share" | grep "/") ]; then
+    printf "Invalid share path \"$share\"!\n"
+    exit 1
+fi
+
+server=$(echo "$share" | awk -F'/' '{print $1}')
+folder=$(echo "$share" | sed -e "s/^$server\///g")
+if [[ -z $folder ]] || [[ -z $server ]]; then
+    printf "Invalid share path \"$share\"!\n"
+    exit 1
+fi
+if [ ! -z "$(mount | grep $folder | grep $server)" ]; then
+    printf "Share \"$folder\" on \"$server\" seems to already be mounted!\n"
+    #exit 1
+fi
+
+save=0
+password=$(gnome-keyring-query get $keyring 2> /dev/null)
+while [ -z "$password" ]; do
+    save=1
+    printf "Password for ${user}@${server}: "
+    read -s password
+    printf "\n"
+done
+
+if [ $save -eq 1 ]; then
+    printf "$password" | gnome-keyring-query set $keyring
+fi
+
+
+path="/tmp/.mounts/$USER/$server-$(echo $folder | awk -F'/' '{print $1}' | sed -e 's/\$//g')"
+mkdir -p "$path" 2> /dev/null
+if [ $? -ne 0 ]; then
+    printf "Could not creating mouting folder \"$path\"!\n"
+    exit 1
+fi
+
+printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$folder" "$path"
+result=$?
+
+user=""
+domain=""
+password=""
+
+if [ $result -ne 0 ]; then
+    rmdir "$path"
+    printf "Error occured during mount operation!\n"
+    exit 1
+fi
+exit 0
