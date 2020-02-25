@@ -116,7 +116,6 @@ input#urlbar-input {
     display: flex !important;
     justify-content: center !important;
 }
-
 .tab-content {
     background-color: none !important;
     background-image: none !important;
@@ -124,6 +123,7 @@ input#urlbar-input {
 }
 
 .tabbrowser-tab {
+    min-width: 10px !important;
     height: 28px !important;
     max-height: 28px !important;
     background-color: #191919 !important;
@@ -140,6 +140,9 @@ input#urlbar-input {
 .tabbrowser-tab[pinned="true"] .tab-icon-image {
     align-items: center !important;
     display: inline-block !important;
+}
+.tabbrowser-tab:not([pinned]) .tab-label-container {
+    border-top: 2px solid #7D0FFF !important;
 }
 .tabbrowser-tab[pinned="true"] .tab-label-container {
     display: none !important;
@@ -162,6 +165,9 @@ input#urlbar-input {
     color: #FFFFFF !important;
     background-color: none !important;
     background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-label-container, .tabbrowser-tab[selected="true"] .tab-label-container {
+    border-top: 2px solid transparent !important;
 }
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
     -moz-box-ordinal-group: 2 !important;
