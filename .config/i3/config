@@ -94,19 +94,19 @@ bindsym                 --whole-window --border $KEY_CTL+Shift+button4 resize sh
 # Application Bindings
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
 bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
-bindsym                 Scroll_Lock             exec --no-startup-id "/opt/spaceport/bin/powerctl rotate -t"
+bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/smd/bin/powerctl rotate -t"
 bindsym                 XF86Launch3             exec --no-startup-id "/usr/bin/onboard --size=800x300"
 bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 XF86LaunchA             exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 XF86LaunchB             exec --no-startup-id "~/.local/bin/browser"
 bindsym                 XF86AudioMute           exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
-bindsym                 XF86MonBrightnessUp     exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -i"
+bindsym                 XF86MonBrightnessUp     exec --no-startup-id "/usr/lib/smd/bin/powerctl brightness -i"
 bindsym                 XF86AudioRaiseVolume    exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
 bindsym                 XF86AudioLowerVolume    exec --no-startup-id "/usr/bin/amixer -q sset Master 5%-"
-bindsym                 XF86MonBrightnessDown   exec --no-startup-id "/opt/spaceport/bin/powerctl brightness -d"
+bindsym                 XF86MonBrightnessDown   exec --no-startup-id "/usr/lib/smd/bin/powerctl brightness -d"
 
 # Modified Bindings
-bindsym                 $KEY_WIN+L              exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f -t 300"
+bindsym                 $KEY_WIN+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f -t 300"
 bindsym                 $KEY_WIN+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new sel with"
 bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search"
@@ -114,7 +114,7 @@ bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
 
 # Standard Bindings
-bindsym                 $KEY_ALT+L              exec --no-startup-id "/opt/spaceport/bin/powerctl lock -f"
+bindsym                 $KEY_ALT+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f"
 bindsym                 $KEY_ALT+F1             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new"
