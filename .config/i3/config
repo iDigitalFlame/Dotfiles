@@ -92,6 +92,8 @@ bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize sh
 bindsym                 --whole-window --border $KEY_CTL+Shift+button4 resize shrink height 10px or 10 ppt
 
 # Application Bindings
+bindsym                 F9                      exec --no-startup-id "~/.local/bin/i3/search"
+bindsym                 F7                      exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
 bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
 bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/smd/bin/powerctl rotate -t"

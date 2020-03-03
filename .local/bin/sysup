@@ -38,10 +38,10 @@
 hosts_file="/etc/hosts"
 if [ -f "$HOME/.local/apps/updateHosts/updateHostsFile.py" ]; then
     if [ ! -z "$(cd $HOME/.local/apps/updateHosts; sg firewall-web 'git pull' | grep -v "Already up to date")" ]; then
-        printf "[+] Grabbing updates to codebase...\n"
+        printf "\x1b[32m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
         sg firewall-web -c "cd $HOME/.local/apps/updateHosts; git stash; git pull"
     fi
-    printf "[+] Updating hosts blocklist file...\n"
+    printf "\x1b[32m\x1b[1mUpdating hosts blocklist file...\x1b[0m\n"
     sg firewall-web -c "/usr/bin/python3 $HOME/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
     hosts_file="$HOME/.local/apps/updateHosts/hosts"
 fi
@@ -82,11 +82,12 @@ sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklist
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all -o /tmp/fbhosts3.txt"
 cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt > /tmp/fbhosts.txt
 
-printf "[+] Starting pacman...\n"
+sg firewall-web -c "/usr/bin/yay -Pw"
+printf "\x1b[32m\x1b[1mStarting pacman...\x1b[0m\n"
 sudo sh -c "sg firewall-web -c '/usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts; cat /tmp/fbhosts.txt >> /etc/hosts"
 rm -f /tmp/fbhosts*.txt 2> /dev/null
-printf "[+] Starting yay...\n"
+printf "\x1b[32m\x1b[1mStarting yay...\x1b[0m\n"
 sg firewall-web -c "/usr/bin/yay -Syua --answerclean N"
-printf "[+] Updating PIP packages...\n"
+printf "\x1b[32m\x1b[1mUpdating PIP packages...\x1b[0m\n"
 sg firewall-web -c "pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" 2>&1 |grep -v 'least one requirement to install (see "pip help install")'
 sudo syslink
