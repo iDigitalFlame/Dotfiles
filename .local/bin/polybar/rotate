@@ -36,7 +36,7 @@
 #
 
 if ! [ -f "/var/run/smd/rotate" ]; then
-    printf "\n"
+    printf " \n"
     exit 0
 fi
 
@@ -48,7 +48,7 @@ case $(cat "/var/run/smd/rotate") in
     printf " \n"
     ;;
     *)
-    printf "\n"
+    printf " \n"
     ;;
 esac
 exit 0

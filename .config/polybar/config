@@ -301,7 +301,7 @@ format-suffix-background                = ${root.background}
 
 [module/bluetooth]
 type                                    = custom/script
-exec                                    = "rfkill | grep bluetooth | grep -q "unblocked unblocked" && echo "
+exec                                    = "rfkill | grep bluetooth | grep -q 'unblocked unblocked' && echo "
 format                                  = "<label>"
 interval                                = 10
 click-left                              = "blue -d"
