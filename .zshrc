@@ -188,12 +188,14 @@ gbp-win32() {
 }
 
 # Firewall Aliases
+alias nc="__sg_cmd firewall-all /usr/bin/nc"
 alias go="__sg_cmd firewall-web /usr/bin/go"
 alias yay="__sg_cmd firewall-web /usr/bin/yay"
 alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
 alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
 alias git="__sg_cmd firewall-web /usr/bin/git"
 alias pip="__sg_cmd firewall-web /usr/bin/pip"
+alias nmap="__sg_cmd firewall-all /usr/bin/nmap"
 alias wget="__sg_cmd firewall-web /usr/bin/wget"
 alias curl="__sg_cmd firewall-web /usr/bin/curl"
 alias wp="__sg_cmd firewall-web /usr/bin/python3"

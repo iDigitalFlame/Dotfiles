@@ -53,8 +53,12 @@ if [ $use_firefox -eq 1 ]; then
     fi
 else
     if [ -z "$params" ]; then
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome"
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync"
     else
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome \"$params\""
+        if [[ "$params" == "--all" ]]; then
+            sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync \"$params\""
+        else
+            sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync \"$params\""
+        fi
     fi
 fi

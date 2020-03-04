@@ -1,4 +1,4 @@
-#!/usr/bin/false
+#!/usr/bin/bash
 ################################
 ###### iDigitalFlame 2020 ######
 #                              #
@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Chromium Flags Configuration
+## Application Entry
 #
 # Copyright (C) 2020 iDigitalFlame
 #
@@ -35,12 +35,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
---force-device-scale-factor=1
---disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium
---password-store=gnome
---incognito
---no-referrers
---disable-zero-suggest
---disable-notifications
---no-experiments
---disable-sync
+[Desktop Entry]
+Name            = Chromium Developer (Firewall)
+Exec            = /home/iDigitalFlame/.local/bin/chrome --all %u
+Icon            = chromium
+Type            = Application
+Actions         = NewWindow;NewPrivateWindow;
+Comment         = Access the Internet
+MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Terminal        = false
+Categories      = Network;WebBrowser;
+GenericName     = Web Browser
+StartupNotify   = true

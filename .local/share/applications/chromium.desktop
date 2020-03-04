@@ -54,4 +54,4 @@ Exec            = /home/iDigitalFlame/.local/bin/chrome --new-window %u
 
 [Desktop Action NewPrivateWindow]
 Name            = New Incognito Window
-Exec            = /home/iDigitalFlame/.local/bin/chrome --incognito %u
+Exec            = /home/iDigitalFlame/.local/bin/chrome %u
