@@ -68,9 +68,9 @@ ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red,bold'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta,bold'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow,bold'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
-X_ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("$HOME/Volumes")
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("$HOME/Volumes")
 PROMPT="%n $PROMPT"
 
 motivate | cowsay -W 75 -f small
