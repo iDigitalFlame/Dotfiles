@@ -117,4 +117,6 @@ if [ $result -ne 0 ]; then
     printf "Error occured during mount operation!\n"
     exit 1
 fi
+
+printf "Mounted \"$server/$folder\" to \"$path\"!\n"
 exit 0
