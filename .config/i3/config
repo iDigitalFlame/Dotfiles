@@ -84,8 +84,8 @@ client.placeholder      #191919 #191919 #F8F8F2 #6722A4 #191919
 client.focused_inactive #191919 #191919 #FFFFFF #191919 #191919
 
 # Non-Key Bindings
-bind                    225                     exec "~/.local/bin/i3/search"
-bind                    248                     exec "~/.local/bin/i3/windows"
+bind                    225                     exec --no-startup-id "~/.local/bin/i3/search"
+bind                    248                     exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 --whole-window --border $KEY_WIN+Shift+button5 resize grow width 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_CTL+Shift+button5 resize grow height 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize shrink width 10px or 10 ppt
@@ -97,7 +97,7 @@ bindsym                 F7                      exec --no-startup-id "/usr/bin/k
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
 bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
 bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/smd/bin/powerctl rotate -t"
-bindsym                 XF86Launch3             exec --no-startup-id "/usr/bin/onboard --size=800x300"
+bindsym                 XF86Launch3             exec --no-startup-id "~/.local/bin/i3/touchinput"
 bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 XF86LaunchA             exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 XF86LaunchB             exec --no-startup-id "~/.local/bin/browser"

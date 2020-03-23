@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+################################
+###### iDigitalFlame 2020 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Touch Input Launcher
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+SOCKET="/tmp/touchinput"
+
+if [ -f "$SOCKET" ]; then
+    rm -f "$SOCKET" 2> /dev/null
+    onboard --size=800x300 &
+    exit 0
+fi
+
+touch "$SOCKET" 2> /dev/null
+sleep 0.25s
+
+if [ -f "$SOCKET" ]; then
+    rm -f "$SOCKET" 2> /dev/null
+    bash "$HOME/.local/bin/i3/search" &
+fi
+exit 0
