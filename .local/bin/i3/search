@@ -35,10 +35,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-mode="combi"
-if [ $# -eq 1 ]; then
-    mode="$1"
-fi
+case $1 in
+    "window")
+    rofi -no-lazy-grab -show window -modi window -theme "$HOME/.config/rofi/windows.rasi"
+    ;;
+    *)
+    rofi -no-lazy-grab -show drun -combi-modi drun,window -theme "$HOME/.config/rofi/apps.rasi"
+    ;;
+esac
 
-rofi -combi-modi drun,window,run -show $mode
 exit 0

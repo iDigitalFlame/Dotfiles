@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Theme Contoler
+## Theme Controller
 #
 # Copyright (C) 2020 iDigitalFlame
 #
@@ -68,7 +68,6 @@ freset() {
     ln -s "$THEME_DIR/$theme" "$THEME_DIR/current"
     rm -f "$HOME/.gtkrc-2.0"
     rm -f "$HOME/.gtkrc-2.0.mine"
-    rm -f "$HOME/.config/rofi/config"
     rm -f "$HOME/.config/dunst/dunstrc"
     rm -f "$HOME/.config/deadd/deadd.conf"
     rm -f "$HOME/.config/gtk-3.0/settings.ini"
@@ -82,7 +81,6 @@ freload() {
     fi
     ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
     ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
-    ln -s "$THEME_DIR/current/rofi.conf" "$HOME/.config/rofi/config"
     ln -s "$THEME_DIR/current/dunst.conf" "$HOME/.config/dunst/dunstrc"
     ln -s "$THEME_DIR/current/deadd.conf" "$HOME/.config/deadd/deadd.conf"
     ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
