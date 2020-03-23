@@ -111,7 +111,7 @@ bindsym                 XF86MonBrightnessDown   exec --no-startup-id "/usr/lib/s
 bindsym                 $KEY_WIN+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f -t 300"
 bindsym                 $KEY_WIN+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new sel with"
-bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search"
+bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
 
@@ -120,7 +120,7 @@ bindsym                 $KEY_ALT+L              exec --no-startup-id "/usr/lib/s
 bindsym                 $KEY_ALT+F1             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new"
-bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search drun"
+bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
 bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/bin/i3/windows"
 
