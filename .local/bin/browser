@@ -37,6 +37,7 @@
 
 params="$@"
 use_firefox=1
+chrome_flags="--incognito --hide-crashed-bubble --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync --fingerprinting-client-rects-noise --fingerprinting-canvas-measuretext-noise --fingerprinting-canvas-image-data-noise --disable-search-engine-collection --show-avatar-button=never"
 
 if [ "$FIREFOX" == "0" ]; then
     use_firefox=0
@@ -53,12 +54,12 @@ if [ $use_firefox -eq 1 ]; then
     fi
 else
     if [ -z "$params" ]; then
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync"
+        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium $chrome_flags"
     else
         if [[ "$params" == "--all" ]]; then
-            sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync \"$params\""
+            sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window $chrome_flags"
         else
-            sg firewall-web -c "export TZ=UTC; /usr/bin/chromium --incognito --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync \"$params\""
+            sg firewall-web -c "export TZ=UTC; /usr/bin/chromium $chrome_flags \"$params\""
         fi
     fi
 fi
