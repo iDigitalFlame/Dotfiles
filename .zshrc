@@ -285,6 +285,7 @@ alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias govet="sg firewall-web -c 'go vet ./...'"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
+alias side="kill -s USR1 $(pidof deadd-notification-center)"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
 source "$HOME/.local/lib/zshrc.sh"
