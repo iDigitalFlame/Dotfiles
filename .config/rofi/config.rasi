@@ -86,7 +86,6 @@ configuration {
     ssh-command:                "/usr/bin/false";
     run-command:                "{cmd}";
     line-margin:                1;
-    plugin-path:                "/usr/lib/rofi";
     display-run:                "";
     display-ssh:                "";
     kb-select-10:               "";
@@ -102,7 +101,6 @@ configuration {
     kb-move-front:              "Control+A";
     window-format:              "[{w}] {t}";
     scroll-method:              0;
-    color-enabled:              true;
     click-to-exit:              true;
     kb-clear-line:              "Control+W";
     display-combi:              "";
@@ -178,11 +176,10 @@ inputbar {
 element {
     border:                     0;
     padding:                    12 12 12 12;
+    children:                   [element-icon, element-text];
     text-color:                 #FFFFFFFF;
     orientation:                vertical;
     border-radius:              0;
-    children:                   [element-icon, element-text];
-
 }
 element selected {
     text-color:                 #000000FF;

@@ -35,7 +35,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-case $(printf " Chill (No Lockers)\n Coffee (5m)\n Caffeine (10m)\n Cocaine (15m)\n Insomnia (Unlimited)" | rofi -dmenu -p 'Locker Preset' -lines 5 -columns 1) in
+case $(printf " Chill (No Lockers)\n Coffee (5m)\n Caffeine (10m)\n Cocaine (15m)\n Insomnia (Unlimited)" | rofi --no-lazy-grab -dmenu -p 'Locker Preset' -lines 5 -columns 1) in
     " Chill (No Lockers)")
     lockerctl -kz false -kb false -kl false -ks false
     ;;
