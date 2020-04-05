@@ -39,6 +39,7 @@
 set                     $KEY_WIN Mod1
 set                     $KEY_ALT Mod4
 set                     $KEY_CTL Control
+
 gaps                    outer 0
 gaps                    inner 5
 title_align             left
