@@ -81,6 +81,10 @@ input#urlbar-input {
     background-image: none !important;
 }
 
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
+    visibility: collapse !important;
+}
+
 .urlbarView {
     border-radius: 0 8px 8px !important;
     background-color: #191919 !important;

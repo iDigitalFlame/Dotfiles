@@ -74,7 +74,7 @@ if [ -z $(echo "$share" | grep "/") ]; then
 fi
 
 server=$(echo "$share" | awk -F'/' '{print $1}')
-folder=$(echo "$share" | sed -e "s/^$server\///g")
+folder=$(echo "$share" | sed -e "s/^$server\///g" | sed -e 's/\$/\\$/g')
 if [[ -z $folder ]] || [[ -z $server ]]; then
     printf "Invalid share path \"$share\"!\n"
     exit 1
@@ -97,13 +97,14 @@ if [ $save -eq 1 ]; then
     printf "$password" | gnome-keyring-query set $keyring
 fi
 
-
 path="/tmp/.mounts/$USER/$server-$(echo $folder | awk -F'/' '{print $1}' | sed -e 's/\$//g')"
 mkdir -p "$path" 2> /dev/null
 if [ $? -ne 0 ]; then
     printf "Could not creating mouting folder \"$path\"!\n"
     exit 1
 fi
+
+printf "$server/$folder\n"
 
 printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$folder" "$path"
 result=$?
