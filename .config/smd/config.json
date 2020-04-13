@@ -8,10 +8,10 @@
     "hydra": {
         "aliases": {
             "kali": "/opt/hydra/iDigitalFlame/Kali/vm.conf",
+            "lswin": "/opt/hydra/iDigitalFlame/Windows10LS/vm.conf",
             "mac": "/opt/hydra/iDigitalFlame/MacOS/vm.conf",
-            "win": "/opt/hydra/iDigitalFlame/W7/vm.conf",
-            "win10": "/opt/hydra/iDigitalFlame/W10D/vm.conf",
-            "win7": "/opt/hydra/iDigitalFlame/Windows7-iOS/Windows7-iOS.conf"
+            "win": "/opt/hydra/iDigitalFlame/Windows10/vm.conf",
+            "win10": "/opt/hydra/iDigitalFlame/Windows10/vm.conf"
         },
         "directory": "/opt/hydra/iDigitalFlame"
     },
