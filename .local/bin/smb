@@ -74,12 +74,13 @@ if [ -z $(echo "$share" | grep "/") ]; then
 fi
 
 server=$(echo "$share" | awk -F'/' '{print $1}')
-folder=$(echo "$share" | sed -e "s/^$server\///g" | sed -e 's/\$/\\$/g')
+folder=$(echo "$share" | sed -e "s/^$server\///g")
+folder_escaped=$(echo "$folder" | sed -e 's/\$/\\$/g')
 if [[ -z $folder ]] || [[ -z $server ]]; then
     printf "Invalid share path \"$share\"!\n"
     exit 1
 fi
-if [ ! -z "$(mount | grep $folder | grep $server)" ]; then
+if [ ! -z "$(mount | grep $folder_escaped | grep $server)" ]; then
     printf "Share \"$folder\" on \"$server\" seems to already be mounted!\n"
     exit 1
 fi
@@ -104,7 +105,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-printf "$server/$folder\n"
+printf "Server: $server\nUser: $user\nFolder: $folder\nEscaped: $folder_escaped\nPath: $path\n"
 
 printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$folder" "$path"
 result=$?
