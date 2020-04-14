@@ -679,6 +679,7 @@
         "mkdir",
         "nargs",
         "nextcloud",
+        "nofollow",
         "oauth",
         "packr",
         "polybar",
