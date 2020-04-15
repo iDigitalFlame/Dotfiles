@@ -248,23 +248,23 @@ alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p p
 
 # LS Aliases
 alias ls="/usr/bin/ls -pFN --group-directories-first --color=auto"
-alias lsa="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
 alias lsd="/usr/bin/ls -lpFN --group-directories-first --color=auto"
-alias lsl="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
 alias lst="/usr/bin/ls -pFNt --group-directories-first --color=auto"
+alias lsa="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
+alias lsl="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
 alias lsh="/usr/bin/ls -AlpFNh --group-directories-first --color=auto"
-alias lsat="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
 alias lsdt="/usr/bin/ls -lpFNt --group-directories-first --color=auto"
+alias lsal="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
+alias lsat="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
 alias lslt="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
 alias lsht="/usr/bin/ls -AlpFNht --group-directories-first --color=auto"
-alias lsal="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
 alias lsalt="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
 
 # Screenshot Aliases
 alias ss="$HOME/.local/bin/i3/shot"
 alias sel="$HOME/.local/bin/i3/clip"
-alias ss-c="$HOME/.local/bin/i3/shot-copy"
-alias sel-c="$HOME/.local/bin/i3/clip-copy"
+alias ssc="$HOME/.local/bin/i3/shot-copy"
+alias selc="$HOME/.local/bin/i3/clip-copy"
 
 # Utility Aliases
 alias xx="exit"
@@ -290,3 +290,4 @@ alias weather="/usr/bin/sg firewall-web -c 'curl wttr.in/?0'"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
 source "$HOME/.local/lib/zshrc.sh"
+source "$HOME/.local/share/colors.sh"

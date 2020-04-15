@@ -227,7 +227,6 @@
     "zenMode.hideTabs": false,
     "zenMode.restore": false,
     "explorer.autoReveal": true,
-    "explorer.confirmDelete": false,
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": true,
     "explorer.decorations.badges": true,
@@ -704,4 +703,5 @@
         "wpos",
         "xerrors"
     ],
+    "files.enableTrash": false,
 }
