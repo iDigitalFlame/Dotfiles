@@ -39,7 +39,7 @@ DOTS="$HOME/.dotfiles"
 
 printf "Updating dotfiles..\n"
 chmod -R 2550 "$DOTS"
-find "$DOTS" -type f -exec chmod 440 {} \;
+find "$DOTS" -xdev -type f -exec chmod 440 {} \;
 
 chmod 550 "$DOTS/.zshrc"
 chmod -R 2770 "$DOTS/.git"

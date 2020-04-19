@@ -35,7 +35,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-find "$HOME" -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \; 2> /dev/null
+find "$HOME" -xdev -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \; 2> /dev/null
 chown $USER:$USER -R $HOME 2> /dev/null
 
 find $HOME -type d -exec chmod 2700 {} \; 2> /dev/null
