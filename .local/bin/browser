@@ -37,7 +37,7 @@
 
 params="$@"
 use_firefox=1
-chrome_flags="--incognito --hide-crashed-bubble --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync --fingerprinting-client-rects-noise --fingerprinting-canvas-measuretext-noise --fingerprinting-canvas-image-data-noise --disable-search-engine-collection --show-avatar-button=never"
+chrome_flags="--js-flags=--noexpose_wasm --incognito --hide-crashed-bubble --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync --fingerprinting-client-rects-noise --fingerprinting-canvas-measuretext-noise --fingerprinting-canvas-image-data-noise --disable-search-engine-collection --show-avatar-button=never"
 
 if [ "$FIREFOX" == "0" ]; then
     use_firefox=0

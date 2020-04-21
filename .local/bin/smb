@@ -75,12 +75,14 @@ fi
 
 server=$(echo "$share" | awk -F'/' '{print $1}')
 folder=$(echo "$share" | sed -e "s/^$server\///g")
-folder_escaped=$(echo "$folder" | sed -e 's/\$/\\$/g')
 if [[ -z $folder ]] || [[ -z $server ]]; then
     printf "Invalid share path \"$share\"!\n"
     exit 1
 fi
-if [ ! -z "$(mount | grep $folder_escaped | grep $server)" ]; then
+
+base=$(echo "$folder" | awk -F'/' '{ print $1 }')
+escaped=$(echo "$base" | sed -e 's/\$/\\$/g')
+if [ ! -z "$(mount | grep $server | grep $escaped)" ]; then
     printf "Share \"$folder\" on \"$server\" seems to already be mounted!\n"
     exit 1
 fi
@@ -98,16 +100,15 @@ if [ $save -eq 1 ]; then
     printf "$password" | gnome-keyring-query set $keyring
 fi
 
-path="/tmp/.mounts/$USER/$server-$(echo $folder | awk -F'/' '{print $1}' | sed -e 's/\$//g')"
+path="/tmp/.mounts/$USER/$server-$(echo $base | sed -e 's/\$//g')"
+prefix=$(echo "$folder" | awk -F'/' '{ ORS=""; for(i=2;i<=NF;i++) print $i"/" }'|sed -e 's/\/*$//g'|sed -e 's/\/\/*/\//g')
 mkdir -p "$path" 2> /dev/null
 if [ $? -ne 0 ]; then
     printf "Could not creating mouting folder \"$path\"!\n"
     exit 1
 fi
 
-printf "Server: $server\nUser: $user\nFolder: $folder\nEscaped: $folder_escaped\nPath: $path\n"
-
-printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$folder" "$path"
+printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$base/$prefix" "$path"
 result=$?
 
 user=""
