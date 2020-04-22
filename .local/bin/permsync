@@ -41,7 +41,7 @@ chown $USER:$USER -R $HOME 2> /dev/null
 find $HOME -type d -exec chmod 2700 {} \; 2> /dev/null
 find $HOME -type f -exec chmod 640 {} \; 2> /dev/null
 
-chmod 750 $HOME/.vscode-oss/extensions/*/bin/*.linux
+chmod 750 $HOME/.vscode-oss/extensions/*/bin/*
 chmod 750 $HOME/.local/lib/python/bin/*
 chmod 750 $HOME/.local/lib/go/bin/*
 bash $HOME/.local/bin/dotsync
