@@ -47,3 +47,4 @@ Keywords        = embedded electronics;electronics;avr;microcontroller;
 Categories      = Development;IDE;Electronics;
 GenericName     = Arduino IDE
 StartupWMClass  = processing-app-Base
+StartupNotify   = true

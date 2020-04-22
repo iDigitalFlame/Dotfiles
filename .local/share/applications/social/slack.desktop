@@ -37,14 +37,26 @@
 
 [Desktop Entry]
 Name            = Slack (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/falkon --wmclass slack --profile slack --new-window"
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/slack -s %U"
 Icon            = slack
 Type            = Application
-Comment         = Slack Internet Client
+Comment         = Slack Desktop
 MimeType        = x-scheme-handler/slack;
 Terminal        = false
 Keywords        = slack;im;social;
-Categories      = Network;InstantMessaging;Qt;
-GenericName     = Chat Client and Messaging App
+Categories      = GNOME;GTK;Network;InstantMessaging;IM;Chat;
+GenericName     = Slack Client for Linux
 StartupNotify   = true
 StartupWMClass  = Slack
+
+[Desktop Entry]
+Name=Slack
+StartupWMClass=Slack
+Comment=Slack Desktop
+GenericName=Slack Client for Linux
+Exec=/usr/bin/slack -s %U
+Icon=slack
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;InstantMessaging;
+MimeType=x-scheme-handler/slack;
