@@ -400,7 +400,7 @@ bottom                                  = false
 font-1                                  = FontAwesome:size=10;2
 font-0                                  = Sans:size=10;1
 font-2                                  = Weather Icons:size=10;1
-font-3                                  = 3270Medium Nerd Font:size=14;3
+font-3                                  = Hack Nerd Font Mono:size=14;3
 monitor                                 =
 scroll-up                               = i3wm-wsnext
 line-size                               = 0
