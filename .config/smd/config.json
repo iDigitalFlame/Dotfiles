@@ -60,11 +60,11 @@
     },
     "session": {
         "composer": [
-            "/usr/bin/compton",
-            "-cd",
-            ":1",
+            "/usr/bin/picom",
+            "-c",
+            "--experimental-backends",
             "--config",
-            "/home/iDigitalFlame/.config/theme/current/compton.conf"
+            "/home/iDigitalFlame/.config/picom/picom.conf"
         ],
         "startups": [
             "/usr/bin/touchegg",
