@@ -287,6 +287,7 @@ alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias side="kill -s USR1 $(pidof deadd-notification-center)"
 alias weather="/usr/bin/sg firewall-web -c 'curl wttr.in/?0'"
+alias nts="python3 /home/iDigitalFlame/Projects/Scripts/Python/ntstatus.py"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
 source "$HOME/.local/lib/zshrc.sh"
