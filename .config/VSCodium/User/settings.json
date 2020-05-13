@@ -135,7 +135,7 @@
         "panel.background": "#191919",
         "sideBar.background": "#191919",
         "dropdown.background": "#191919",
-        "statusBar.background": "#191919",
+        "statusBar.background": "#7D0BAB",
         "editorPane.background": "#191919",
         "sideBarSectionHeader.background": "#191919",
         "activityBar.background": "#191919",
@@ -149,6 +149,10 @@
         "dropdown.listBackground": "#191919",
         "editorSuggestWidget.background": "#191919",
         "editorWidget.background": "#191919",
+        "tab.activeBackground": "#7D0BAB",
+        "tab.activeForeground": "#FFFFFF",
+        "tab.unfocusedActiveForeground": "#f8f8f2",
+        "tab.unfocusedActiveBackground": "#390359",
         "list.activeSelectionBackground": "#333742",
         "list.inactiveSelectionBackground": "#333742",
         "list.inactiveFocusBackground": "#333742",
@@ -157,7 +161,7 @@
         "list.hoverBackground": "#333742",
         "menu.selectionBackground": "#333742",
         "menubar.selectionBackground": "#333742",
-        "statusBar.noFolderBackground": "#191919"
+        "statusBar.noFolderBackground": "#7D0BAB"
     },
     "workbench.commandPalette.history": 50,
     "workbench.enableExperiments": false,
