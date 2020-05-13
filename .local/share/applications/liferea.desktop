@@ -37,12 +37,13 @@
 
 [Desktop Entry]
 Type            = Application
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/nextcloud"
-Name            = Nextcloud (Firewall)
-Icon            = Nextcloud
-Comment         = Nextcloud desktop synchronization client
-Keywords        = Nextcloud;syncing;file;sharing;
-Terminal        = false
-Categories      = Utility;X-SuSE-SyncUtility;
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/liferea %U"
+Name            = Liferea (Firewall)
+Icon            = liferea
+Comment         = Read news feeds and blogs
+MimeType        = application/rss+xml;application/atom+xml;application/rdf+xml;x-scheme-handler/feed
+Keywords        = news;feed;aggregator;blog;podcast;syndication;rss;atom
+Categories      = Network;News;
 GenericName     = Folder Sync
 StartupNotify   = true
+DBusActivatable = true
