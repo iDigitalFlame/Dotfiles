@@ -36,7 +36,7 @@
 */
 
 html#main-window {
-    --color-bg: #191919;
+    --color-bg: #191919 !important;
     --toolbar-bgcolor: #191919 !important;
     --arrowpanel-color: #FFFFFF !important;
     --arrowpanel-background: #191919 !important;
@@ -73,6 +73,17 @@ input#urlbar-input {
     box-shadow: none !important;
     background-color: #191919 !important;
     --tabs-border-color: #191919 !important;
+}
+#navigator-toolbox, #titlebar, #main-window, #TabsToolbar {
+    border: none !important;
+    box-shadow: none !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+#TabsToolbar {
+    background-color: rgba(25, 25, 25, 0.4) !important;
 }
 
 #tracking-protection-icon-container, #urlbar-search-button {
@@ -112,8 +123,8 @@ input#urlbar-input {
     display: none !important;
 }
 .panel-arrowcontent {
-	opacity: 1 !important;
-	margin: 0 !important;
+    opacity: 1 !important;
+    margin: 0 !important;
 }
 
 .tab-stack {
@@ -127,10 +138,10 @@ input#urlbar-input {
 }
 
 .tabbrowser-tab {
-    min-width: 10px !important;
     height: 28px !important;
+    min-width: 10px !important;
     max-height: 28px !important;
-    background-color: #191919 !important;
+    /*background-color: rgba(25, 25, 25, 0.4) !important;*/
 }
 .tabbrowser-tab[pinned="true"] {
     background-image: none !important;
