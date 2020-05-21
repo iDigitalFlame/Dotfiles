@@ -720,4 +720,5 @@
     "files.enableTrash": false,
     "editor.copyWithSyntaxHighlighting": false,
     "editor.foldingHighlight": false,
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All }",
 }

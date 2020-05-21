@@ -45,5 +45,5 @@ MimeType        = application/x-keepass2;
 Terminal        = false
 Categories      = Utility;Security;Qt;
 GenericName     = Password Manager
-StartupWMClass  = keepassxc
 StartupNotify   = true
+StartupWMClass  = keepassxc

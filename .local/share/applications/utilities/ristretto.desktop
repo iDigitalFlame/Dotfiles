@@ -36,15 +36,15 @@
 #
 
 [Desktop Entry]
+Name            = Ristretto Image Viewer
+Exec            = ristretto %F
+Icon            = ristretto
 Type            = Application
-Name            = Arduino IDE (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/arduino %U"
-Icon            = arduino
-Comment         = Open-source electronics prototyping platform
+Comment         = Look at your images easily
+MimeType        = image/png;image/gif;image/jpeg;image/bmp;image/x-pixmap;image/tiff;image/svg+xml;image/x-xpixmap;
 Terminal        = false
-MimeType        = text/x-arduino;
-Keywords        = embedded electronics;electronics;avr;microcontroller;
-Categories      = Development;IDE;Electronics;
-GenericName     = Arduino IDE
+NoDisplay       = true
+Categories      = GTK;Graphics;Viewer;
+GenericName     = Image Viewer
 StartupNotify   = true
-StartupWMClass  = processing-app-Base
+X-MultipleArgs  = false
