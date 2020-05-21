@@ -1,0 +1,142 @@
+#!/usr/bin/arduino
+################################
+###### iDigitalFlame 2020 ######
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhohyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Arduino IDE Configuration
+#
+# Copyright (C) 2020 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+board                                           = uno
+browser                                         = mozilla
+console                                         = true
+launcher                                        = xdg-open
+software                                        = ARDUINO
+gui.scale                                       = auto
+update.id                                       = 0
+custom_cpu                                      = nano_atmega328
+custom_usb                                      = teensypp2_serial
+programmer                                      = arduino:avrispmkii
+proxy.type                                      = auto
+theme.file                                      =
+custom_keys                                     = teensypp2_en-us
+editor.font                                     = Source Code Pro,plain,12
+last.folder                                     = /home/iDigitalFlame/Projects/Arduino
+run.display                                     = 1
+run.options                                     =
+serial.port                                     = /dev/ttyUSB0
+update.last                                     = 0
+cache.enable                                    = true
+custom_speed                                    = teensypp2_16
+update.check                                    = false
+upload.using                                    = bootloader
+build.verbose                                   = false
+console.lines                                   = 20
+editor.indent                                   = true
+proxy.pac.url                                   =
+serial.parity                                   = N
+upload.verify                                   = true
+console.length                                  = 500
+editor.invalid                                  = false
+ide.accessible                                  = false
+target_package                                  = archlinux-arduino
+upload.verbose                                  = true
+editor.external                                 = true
+recent.sketches                                 =
+serial.databits                                 = 8
+serial.stopbits                                 = 1
+sketchbook.path                                 = /home/iDigitalFlame/Projects/Arduino
+target_platform                                 = avr
+editor.antialias                                = true
+editor.tabs.size                                = 4
+serial.port.file                                = ttyUSB0
+last.screen.width                               = 1920
+last.sketch.count                               = 0
+proxy.manual.port                               =
+proxy.manual.type                               = HTTP
+serial.debug_rate                               = 9600
+serial.port.label                               = /dev/ttyUSB0
+console.auto_clear                              = true
+console.error.file                              = stderr.txt
+editor.caret.blink                              = true
+editor.linenumbers                              = true
+editor.tabs.expand                              = true
+last.screen.height                              = 1080
+preproc.web_colors                              = true
+run.options.memory                              = false
+serial.line_ending                              = 1
+compiler.cache_core                             = true
+console.output.file                             = stdout.txt
+editor.code_folding                             = true
+editor.divider.size                             = 0
+run.present.bgcolor                             = #7D0BAB
+serial.port.iserial                             = null
+last.serial.location                            = 0
+preferences.readonly                            = true
+preproc.imports.list                            = java.applet.*,java.awt.Dimension,java.awt.Frame,java.awt.event.MouseEvent,java.awt.event.KeyEvent,java.awt.event.FocusEvent,java.awt.Image,java.io.*,java.net.*,java.text.*,java.util.*,java.util.zip.*,java.util.regex.*
+serial.port.protocol                            = serial
+editor.save_on_verify                           = true
+proxy.manual.hostname                           =
+proxy.manual.password                           =
+proxy.manual.username                           =
+run.present.exclusive                           = false
+compiler.warning_level                          = none
+preproc.color_datatype                          = true
+run.present.stop.color                          = #CCCCCC
+editor.update_extension                         = true
+editor.window.width.min                         = 400
+export.application.stop                         = true
+last.ide.1.8.12.daterun                         = 0
+editor.auto_close_braces                        = true
+editor.languages.current                        = en_US
+editor.window.height.min                        = 290
+last.sketch.default.path                        = /home/iDigitalFlame/Projects/Arduino
+preproc.enhanced_casting                        = true
+preproc.save_build_files                        = false
+preproc.output_parse_tree                       = false
+preproc.substitute_floats                       = true
+build.warn_data_percentage                      = 75
+preproc.substitute_unicode                      = true
+run.options.memory.initial                      = 64
+run.options.memory.maximum                      = 256
+editor.window.width.default                     = 500
+export.application.platform                     = true
+export.delete_target_folder                     = true
+editor.window.height.default                    = 600
+last.ide.1.8.12.hardwarepath                    = /usr/share/arduino/hardware
+last.sketch.default.location                    = 0
+boardsmanager.additional.urls                   = https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+export.application.fullscreen                   = false
+export.applet.separate_jar_files                = false
+platform.auto_file_type_associations            = true
+editor.keys.shift_backspace_is_delete           = true
+editor.keys.alternative_cut_copy_paste          = false
+editor.keys.home_and_end_beginning_end_of_doc   = false
