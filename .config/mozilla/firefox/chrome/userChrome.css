@@ -36,25 +36,34 @@
 */
 
 html#main-window {
-    --color-bg: #191919 !important;
-    --toolbar-bgcolor: #191919 !important;
-    --arrowpanel-color: #FFFFFF !important;
-    --arrowpanel-background: #191919 !important;
-    --arrowpanel-border-color: transparent !important;
+    --color-bg: transparent !important;
+    --arrowpanel-color: #FFF !important;
     --lwt-toolbar-field-color: #FEFEFA !important;
-    --lwt-toolbar-field-focus-color: #A1FFB6 !important;
-    --lwt-toolbar-field-background-color: #191919 !important;
+    --arrowpanel-border-color: transparent !important;
+    --lwt-toolbar-field-focus-color: #FFF !important;
+    --toolbar-bgcolor: rgba(119, 119, 119, 0.4) !important;
+    --arrowpanel-background: rgba(25, 25, 25, 0.7) !important;
+    --lwt-toolbar-field-background-color: transparent !important;
 }
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
     caret-color: #FFFFFF !important;
+    background-color: transparent !important;
     font-family: "Source Code Pro", Arial, sans-serif !important;
 }
 
-#urlbar-background, #urlbar-container, .urlbar-input-box {
+.urlbar-input-box {
+    border-radius: 5px !important;
     background-image: none !important;
-    background-color: #191919 !important;
+    background-color: transparent !important;
+}
+#urlbar-background {
+    background-color: rgba(25, 25, 25, 0.8) !important;
+}
+#urlbar, #urlbar > .urlbarView, #urlbar-container, #urlbar-results {
+    border: none !important;
+    background-color: transparent !important;
 }
 #urlbar:not(.megabar), #urlbar.megabar > #urlbar-background, #searchbar {
     border: none !important;
@@ -68,23 +77,32 @@ input#urlbar-input {
     list-style-image: url("right-arrow.svg") !important;
 }
 
-#navigator-toolbox {
-    border: none !important;
-    box-shadow: none !important;
-    background-color: #191919 !important;
-    --tabs-border-color: #191919 !important;
-}
-#navigator-toolbox, #titlebar, #main-window, #TabsToolbar {
+#TabsToolbar {
     border: none !important;
     box-shadow: none !important;
     -moz-appearance: none !important;
     background-image: none !important;
+    background-color: rgba(119, 119, 119, 0.4) !important;
+}
+#navigator-toolbox {
+    border: none !important;
+    box-shadow: none !important;
     background-color: transparent !important;
+    --tabs-border-color: transparent !important;
 }
+#nav-bar, #TabsToolbar {
+    border: none !important;
+}
+#navigator-toolbox::after {
+    display: none !important;
+}
+#navigator-toolbox, #titlebar, #main-window {
+    border: none !important;
+    box-shadow: none !important;
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: transparent !important;}
 
-#TabsToolbar {
-    background-color: rgba(25, 25, 25, 0.4) !important;
-}
 
 #tracking-protection-icon-container, #urlbar-search-button {
     border: none !important;
@@ -98,14 +116,14 @@ input#urlbar-input {
 
 .urlbarView {
     border-radius: 0 8px 8px !important;
-    background-color: #191919 !important;
+    background-color: transparent !important;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important;
 }
 .urlbarView-action {
-    color: #FFFFFF !important;
+    color: #FFF !important;
 }
 .urlbarView-row:hover {
-    color: #000000 !important;
+    color: #000 !important;
     background-color: none !important;
     background-image: linear-gradient(77deg, #FFC386, #FF8989) !important;
 }
@@ -114,7 +132,7 @@ input#urlbar-input {
 }
 .urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
     fill-opacity: 1;
-    color: #FFFFFF !important;
+    color: #FFF !important;
     background: #7D0BAB !important;
 }
 
@@ -141,11 +159,12 @@ input#urlbar-input {
     height: 28px !important;
     min-width: 10px !important;
     max-height: 28px !important;
-    /*background-color: rgba(25, 25, 25, 0.4) !important;*/
+    border-radius: 25px !important;
 }
 .tabbrowser-tab[pinned="true"] {
+    color: #FFF !important;
     background-image: none !important;
-    background-color: #191919 !important;
+    background-color: transparent !important;
 }
 .tabbrowser-tab .tab-close-button {
     display: none !important;
@@ -172,12 +191,12 @@ input#urlbar-input {
     display: none !important;
 }
 .tabbrowser-tab:hover, .tabbrowser-tab:hover[pinned="true"] {
-    color: #000000 !important;
+    color: #000 !important;
     background-color: none !important;
     background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important;
 }
 .tabbrowser-tab[selected="true"], .tabbrowser-tab[pinned="true"][selected="true"] {
-    color: #FFFFFF !important;
+    color: #FFF !important;
     background-color: none !important;
     background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important;
 }
