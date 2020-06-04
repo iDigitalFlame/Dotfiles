@@ -47,21 +47,21 @@ if [ -f "$HOME/.local/apps/updateHosts/updateHostsFile.py" ]; then
 fi
 
 hosts_list=$(cat<<EOD
-127.0.0.1 cups
-127.0.0.1 hydra
-127.0.0.1 www.facebook.com
-127.0.0.1 facebook.com
-127.0.0.1 login.facebook.com
-127.0.0.1 www.login.facebook.com
-127.0.0.1 fbcdn.net
-127.0.0.1 www.fbcdn.net
-127.0.0.1 fbcdn.com
-127.0.0.1 www.fbcdn.com
-127.0.0.1 static.ak.fbcdn.net
-127.0.0.1 static.ak.connect.facebook.com
-127.0.0.1 connect.facebook.net
-127.0.0.1 www.connect.facebook.net
-127.0.0.1 apps.facebook.com
+0.0.0.0 cups
+0.0.0.0 hydra
+0.0.0.0 www.facebook.com
+0.0.0.0 facebook.com
+0.0.0.0 login.facebook.com
+0.0.0.0 www.login.facebook.com
+0.0.0.0 fbcdn.net
+0.0.0.0 www.fbcdn.net
+0.0.0.0 fbcdn.com
+0.0.0.0 www.fbcdn.com
+0.0.0.0 static.ak.fbcdn.net
+0.0.0.0 static.ak.connect.facebook.com
+0.0.0.0 connect.facebook.net
+0.0.0.0 www.connect.facebook.net
+0.0.0.0 apps.facebook.com
 ::1 www.facebook.com
 ::1 facebook.com
 ::1 login.facebook.com
