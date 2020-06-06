@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Ristretto Image Viewer
-Exec            = ristretto %F
+Exec            = /usr/bin/ristretto %F
 Icon            = ristretto
 Type            = Application
 Comment         = Look at your images easily
