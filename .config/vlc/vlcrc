@@ -36,8 +36,6 @@
 #
 
 [core]
-aout=                       any
-vout=                       any
 access=                     any
 control=                    notify-send
 vod-server=                 any
