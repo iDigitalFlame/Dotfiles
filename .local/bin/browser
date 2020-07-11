@@ -37,7 +37,6 @@
 
 params="$@"
 use_firefox=1
-chrome_flags="--js-flags=--noexpose_wasm --incognito --hide-crashed-bubble --disk-cache-dir=/tmp/.usercache/iDigitalFlame/chromium --password-store=gnome --no-referrers --disable-zero-suggest --disable-notifications --no-experiments --disable-sync --fingerprinting-client-rects-noise --fingerprinting-canvas-measuretext-noise --fingerprinting-canvas-image-data-noise --disable-search-engine-collection --show-avatar-button=never"
 
 if [ "$FIREFOX" == "0" ]; then
     use_firefox=0
@@ -49,17 +48,18 @@ fi
 if [ $use_firefox -eq 1 ]; then
     if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame"
-    else
-        sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame \"$params\""
+        exit 0
     fi
-else
-    if [ -z "$params" ]; then
-        sg firewall-web -c "export TZ=UTC; /usr/bin/chromium $chrome_flags"
-    else
-        if [[ "$params" == "--all" ]]; then
-            sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window $chrome_flags"
-        else
-            sg firewall-web -c "export TZ=UTC; /usr/bin/chromium $chrome_flags \"$params\""
-        fi
-    fi
+    sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame \"$params\""
+    exit 0
 fi
+
+if [ -z "$params" ]; then
+    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium"
+    exit 0
+fi
+if [[ "$params" == "--all" ]]; then
+    sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window"
+    exit 0
+fi
+sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$params\""
