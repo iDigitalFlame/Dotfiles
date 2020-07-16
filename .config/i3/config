@@ -72,9 +72,10 @@ for_window              [window_role="GtkFileChooserDialog"]    border normal, f
 for_window              [class="reminders-nativefier-a3f2a0"]   border pixel 0, floating enable, resize set 850 600
 
 # Window Rules After Modify
-for_window              [title="Save As"]                       border normal, resize set 800 600
-for_window              [class="note" title="Open"]             border normal, resize set 800 600
-for_window              [class="stickynote" title="Open"]       border normal, resize set 800 600
+for_window              [title="Save As"]                                       border normal, resize set 800 600
+for_window              [class="note" title="Open"]                             border normal, resize set 800 600
+for_window              [class="stickynote" title="Open"]                       border normal, resize set 800 600
+for_window              [class="firefox" title="Picture-in-Picture" floating]   sticky enable
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
