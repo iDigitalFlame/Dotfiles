@@ -266,6 +266,13 @@ alias sel="$HOME/.local/bin/i3/clip"
 alias ssc="$HOME/.local/bin/i3/shot-copy"
 alias selc="$HOME/.local/bin/i3/clip-copy"
 
+# Go Aliases
+alias gv="sg firewall-web -c 'go vet ./...'"
+alias gsc="sg firewall-web -c 'staticcheck ./...'"
+alias gsc-win="sg firewall-web -c 'env GOOS=windows staticcheck ./...'"
+alias gscw="sg firewall-web -c 'staticcheck -unused.whole-program ./...'"
+alias gscw-win="sg firewall-web -c 'env GOOS=windows staticcheck -unused.whole-program ./...'"
+
 # Utility Aliases
 alias xx="exit"
 alias exx="exit"
@@ -281,7 +288,6 @@ alias gdiff="/usr/bin/git diff"
 alias sedit="sudo /usr/bin/rnano -Ll"
 alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
-alias gv="sg firewall-web -c 'go vet ./...'"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias govet="sg firewall-web -c 'go vet ./...'"
 alias gsync="git add -A .; git commit; git push"
