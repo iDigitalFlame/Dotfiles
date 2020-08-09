@@ -59,6 +59,7 @@
         "video": []
     },
     "session": {
+        "auto_monitor": true,
         "composer": [
             "/usr/bin/picom",
             "-c",
