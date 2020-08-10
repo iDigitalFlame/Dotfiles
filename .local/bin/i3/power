@@ -40,19 +40,19 @@ case $(printf " Lock\n Logoff\n Suspend\n Hibernate\n Reboot\n
     powerctl lock -f
     ;;
     " Suspend")
-    /usr/bin/systemctl suspend
+    sudo systemctl suspend
     ;;
     " Hibernate")
-    sudo /usr/bin/systemctl hibernate
+    sudo systemctl hibernate
     ;;
     " Logoff")
     i3-msg exit
     ;;
     " Reboot")
-    sudo /usr/bin/reboot
+    sudo reboot
     ;;
     " Poweroff")
-    sudo /usr/bin/poweroff
+    sudo poweroff
     ;;
     " Restart i3")
     i3-msg restart
