@@ -71,6 +71,7 @@ freset() {
     rm -f "$HOME/.config/deadd/deadd.conf"
     rm -f "$HOME/.config/gtk-3.0/settings.ini"
     rm -f "$HOME/.config/xfce4/terminal/terminalrc"
+    rm -f "$HOME/.config/discord/0.0.11/modules/discord_desktop_core/discord-custom.css"
     return 0
 }
 
@@ -83,6 +84,7 @@ freload() {
     ln -s "$THEME_DIR/current/deadd.conf" "$HOME/.config/deadd/deadd.conf"
     ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
     ln -s "$THEME_DIR/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc"
+    ln -s "$THEME_DIR/current/discord.css" "$HOME/.config/discord/0.0.11/modules/discord_desktop_core/discord-custom.css"
     return 0
 }
 
