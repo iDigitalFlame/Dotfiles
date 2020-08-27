@@ -43,16 +43,16 @@ configuration {
     sort:                       true;
     cycle:                      true;
     lines:                      15;
-    width:                      100;
+    width:                      1;
     padding:                    0;
     xoffset:                    0;
-	yoffset:                    0;
+    yoffset:                    0;
     columns:                    1;
     threads:                    0;
-    location:                   2;
+    location:                   1;
     terminal:                   "/usr/bin/xfce4-terminal";
     tokenize:                   true;
-    matching:                   "fuzzy";
+    matching:                   "glob";
     kb-cancel:                  "Escape";
     kb-row-up:                  "Up";
     kb-row-tab:                 "";
@@ -137,7 +137,8 @@ prompt {
 }
 
 window {
-    width: 40%;
+    width:                      18%;
+    height:                     100%;
     transparency:               "real";
 }
 
