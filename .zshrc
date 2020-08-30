@@ -228,6 +228,7 @@ alias bright-up="brightnessctl -i"
 alias bright-set="brightnessctl -s"
 alias bright-down="brightnessctl -d"
 alias hib="sudo systemctl hibernate"
+alias automon="/usr/lib/smd/libexec/smd-auto-display auto"
 
 # Locker Aliases
 alias coffee="lockerctl -z 600 -kb 300 -kl 300 -s 300"
