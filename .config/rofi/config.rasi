@@ -179,8 +179,10 @@ element {
     padding:                    12 12 12 12;
     children:                   [element-icon, element-text];
     text-color:                 #FFFFFFFF;
-    orientation:                vertical;
     border-radius:              0;
+}
+element-icon {
+    size:                       20;
 }
 element selected {
     text-color:                 #000000FF;
