@@ -42,8 +42,8 @@
 :root {
     --text-normal: #FFF;
     --background-primary: #191919;
-    --background-secondary: #191919;
-    --background-tertiary: #191919
+    --background-tertiary: #191919;
+    --background-secondary: #191919
 }
 
 [class*="tabBody"] {

@@ -43,38 +43,38 @@ html#main-window {
     --lwt-toolbar-field-focus-color: #FFF !important;
     --toolbar-bgcolor: rgba(119, 119, 119, 0.4) !important;
     --arrowpanel-background: rgba(25, 25, 25, 0.7) !important;
-    --lwt-toolbar-field-background-color: transparent !important;
+    --lwt-toolbar-field-background-color: transparent !important
 }
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
     caret-color: #FFFFFF !important;
     background-color: transparent !important;
-    font-family: "Source Code Pro", Arial, sans-serif !important;
+    font-family: "Source Code Pro", Arial, sans-serif !important
 }
 
 .urlbar-input-box {
     border-radius: 5px !important;
     background-image: none !important;
-    background-color: transparent !important;
+    background-color: transparent !important
 }
 #urlbar-background {
-    background-color: rgba(25, 25, 25, 0.8) !important;
+    background-color: rgba(25, 25, 25, 0.8) !important
 }
 #urlbar, #urlbar > .urlbarView, #urlbar-container, #urlbar-results {
     border: none !important;
-    background-color: transparent !important;
+    background-color: transparent !important
 }
 #urlbar:not(.megabar), #urlbar.megabar > #urlbar-background, #searchbar {
     border: none !important;
-    box-shadow: none !important;
+    box-shadow: none !important
 }
 
 #back-button {
-    list-style-image: url("left-arrow.svg") !important;
+    list-style-image: url("left-arrow.svg") !important
 }
 #forward-button {
-    list-style-image: url("right-arrow.svg") !important;
+    list-style-image: url("right-arrow.svg") !important
 }
 
 #TabsToolbar {
@@ -82,127 +82,131 @@ input#urlbar-input {
     box-shadow: none !important;
     -moz-appearance: none !important;
     background-image: none !important;
-    background-color: rgba(119, 119, 119, 0.4) !important;
+    background-color: rgba(119, 119, 119, 0.4) !important
 }
 #navigator-toolbox {
     border: none !important;
     box-shadow: none !important;
     background-color: transparent !important;
-    --tabs-border-color: transparent !important;
+    --tabs-border-color: transparent !important
 }
 #nav-bar, #TabsToolbar {
-    border: none !important;
+    border: none !important
 }
 #navigator-toolbox::after {
-    display: none !important;
+    display: none !important
 }
 #navigator-toolbox, #titlebar, #main-window {
     border: none !important;
     box-shadow: none !important;
     -moz-appearance: none !important;
     background-image: none !important;
-    background-color: transparent !important;}
+    background-color: transparent !important
+}
 
+#window-controls, #autohide-context {
+    display:none!important
+}
 
 #tracking-protection-icon-container, #urlbar-search-button {
     border: none !important;
     background-color: none !important;
-    background-image: none !important;
+    background-image: none !important
 }
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
-    visibility: collapse !important;
+    visibility: collapse !important
 }
 
 .urlbarView {
     border-radius: 0 8px 8px !important;
     background-color: transparent !important;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important
 }
 .urlbarView-action {
-    color: #FFF !important;
+    color: #FFF !important
 }
 .urlbarView-row:hover {
     color: #000 !important;
     background-color: none !important;
-    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important;
+    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important
 }
 .urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
-    display: none !important;
+    display: none !important
 }
 .urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
     fill-opacity: 1;
     color: #FFF !important;
-    background: #7D0BAB !important;
+    background: #7D0BAB !important
 }
 
 .panel-arrowbox {
     margin: 0 !important;
-    display: none !important;
+    display: none !important
 }
 .panel-arrowcontent {
-    opacity: 1 !important;
     margin: 0 !important;
+    opacity: 1 !important
 }
 
 .tab-stack {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: center !important
 }
 .tab-content {
     background-color: none !important;
     background-image: none !important;
-    font-family: "Cantarell", sans-serif !important;
+    font-family: "Cantarell", sans-serif !important
 }
 
 .tabbrowser-tab {
     height: 28px !important;
     min-width: 10px !important;
     max-height: 28px !important;
-    border-radius: 25px !important;
+    border-radius: 25px !important
 }
 .tabbrowser-tab[pinned="true"] {
     color: #FFF !important;
     background-image: none !important;
-    background-color: transparent !important;
+    background-color: transparent !important
 }
 .tabbrowser-tab .tab-close-button {
     display: none !important;
     margin-left: -2px !important;
-    margin-right: 2px !important;
+    margin-right: 2px !important
 }
 .tabbrowser-tab[pinned="true"] .tab-icon-image {
     align-items: center !important;
-    display: inline-block !important;
+    display: inline-block !important
 }
 .tabbrowser-tab:not([pinned]) .tab-label-container {
-    border-top: 2px solid #7D0FFF !important;
+    border-top: 2px solid #7D0FFF !important
 }
 .tabbrowser-tab[pinned="true"] .tab-label-container {
-    display: none !important;
+    display: none !important
 }
 .tabbrowser-tab:not([pinned]):hover .tab-icon-image {
-    display: none !important;
+    display: none !important
 }
 .tabbrowser-tab:not([pinned]):hover .tab-close-button {
-    display: flex !important;
+    display: flex !important
 }
 .tabbrowser-tab::before, .tabbrowser-tab::after, .tab-line {
-    display: none !important;
+    display: none !important
 }
 .tabbrowser-tab:hover, .tabbrowser-tab:hover[pinned="true"] {
     color: #000 !important;
     background-color: none !important;
-    background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important;
+    background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important
 }
 .tabbrowser-tab[selected="true"], .tabbrowser-tab[pinned="true"][selected="true"] {
     color: #FFF !important;
     background-color: none !important;
-    background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important;
+    background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important
 }
 .tabbrowser-tab:not([pinned]):hover .tab-label-container, .tabbrowser-tab[selected="true"] .tab-label-container {
-    border-top: 2px solid transparent !important;
+    border-top: 2px solid transparent !important
 }
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
-    -moz-box-ordinal-group: 2 !important;
+    -moz-box-ordinal-group: 2 !important
 }
