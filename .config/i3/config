@@ -103,7 +103,7 @@ bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/s
 bindsym                 XF86Launch3             exec --no-startup-id "~/.local/bin/i3/touch"
 bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 XF86LaunchA             exec --no-startup-id "~/.local/bin/i3/search"
-bindsym                 XF86LaunchB             exec --no-startup-id "~/.local/bin/browser"
+bindsym                 XF86LaunchB             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 XF86AudioMute           exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
 bindsym                 XF86MonBrightnessUp     exec --no-startup-id "/usr/lib/smd/bin/powerctl brightness -i"
 bindsym                 XF86AudioRaiseVolume    exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
