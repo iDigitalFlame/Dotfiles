@@ -54,7 +54,7 @@ case $menu_selected in
     lockerctl -kz false -kb false -kl false -ks false
     ;;
     " Clear All Lockers (Include System)")
-    lockerctl -kz false -kb false -kl false -ks false -kl false
+    lockerctl -kz false -kb false -kl false -ks false -kl false -kd false
     ;;
     " Coffee (All 5m)")
     lockerctl -z 300 -kb 300 -kl 300 -s 300
