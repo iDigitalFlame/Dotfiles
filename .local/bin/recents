@@ -37,18 +37,15 @@
 
 from re import search
 from os import remove
+from io import StringIO
 from shutil import copy2
+from sqlite3 import connect
 from tempfile import mkstemp
 from sys import exit, stderr, argv
 from os.path import expandvars, join
-from sqlite3 import connect, Error as SqlError
 from configparser import ConfigParser, Error as ConfigError
 
 FIREFOX_DATA = "$HOME/.mozilla/firefox"
-
-
-class ProfileError(Exception):
-    pass
 
 
 def get_db():
@@ -58,29 +55,23 @@ def get_db():
     try:
         cfg.read(profiles)
     except (ConfigError, OSError) as err:
-        raise ProfileError(
+        raise OSError(
             'Could not read profiles config file "%s": %s' % (profiles, str(err))
         )
     if "Profile0" not in cfg:
-        raise ProfileError(
+        raise OSError(
             'Could not find "Profile0" in profiles config file "%s"' % profiles
         )
     if "Path" not in cfg["Profile0"]:
-        raise ProfileError(
+        raise OSError(
             'Could not find "Profile0\\Path" in profiles config file "%s"' % profiles
         )
     del profiles
-    temp = None
     db = join(directory, cfg["Profile0"]["Path"], "places.sqlite")
     del cfg
     del directory
-    try:
-        temp = mkstemp()[1]
-        copy2(db, temp)
-    except IOError as err:
-        if temp is not None:
-            remove(temp)
-        raise ProfileError('Could not copy "%s" to "%s": %s' % (db, temp, str(err)))
+    temp = mkstemp()[1]
+    copy2(db, temp)
     return temp
 
 
@@ -91,50 +82,50 @@ def find(pattern, string):
 
 
 def get_recent(db, terminal):
-    try:
-        d = connect(db)
-        d.create_function("REGEXP", 2, find)
-        c = d.cursor()
-        c.execute(
-            "SELECT DISTINCT RTRIM(url,'/'), title FROM moz_places WHERE url REGEXP '^(.*):\/\/' "
-            "ORDER BY moz_places.visit_count DESC"
-        )
-        o = list()
-        b = "%s (%s)"
-        if not terminal:
-            b = "%-250s (%s)"
-        for r in c.fetchall():
-            if r[1] is not None:
-                o.append(
-                    (
-                        b
-                        % (
-                            str(r[1].encode(), "ascii", "ignore"),
-                            str(r[0].encode(), "ascii", "ignore"),
-                        )
-                    )
+    d = connect(db)
+    d.create_function("REGEXP", 2, find)
+    c = d.cursor()
+    c.execute(
+        "SELECT DISTINCT RTRIM(url,'/'), title FROM moz_places WHERE url REGEXP '^(.*):\/\/' "
+        "ORDER BY moz_places.visit_count DESC"
+    )
+    f = "%s (%s)"
+    if not terminal:
+        f = "%-250s (%s)"
+    w = StringIO()
+    for r in c.fetchall():
+        if r[1] is None:
+            w.write("%s\n" % str(r[0].encode(), "ascii", "ignore"))
+            continue
+        w.write(
+            "%s\n"
+            % (
+                f
+                % (
+                    str(r[1].encode(), "ascii", "ignore"),
+                    str(r[0].encode(), "ascii", "ignore"),
                 )
-            else:
-                o.append(str(r[0].encode(), "ascii", "ignore"))
-        c.close()
-        d.close()
-        del c
-        del d
-        return o
-    except (SqlError, IOError) as err:
-        raise ProfileError('Could not operate on db "%s": %s' % (db, str(err)))
-    return None
+            )
+        )
+    c.close()
+    d.close()
+    del c
+    del d
+    r = w.getvalue()
+    del w
+    return r
 
 
 if __name__ == "__main__":
-    temp_db = None
     try:
-        temp_db = get_db()
-        print("\n".join(get_recent(temp_db, len(argv) == 1)))
-    except ProfileError as err:
-        print(str(err), file=stderr)
+        db = get_db()
+        print(get_recent(db, len(argv) == 1))
+    except Exception as err:
+        print("An error occurred: %s" % str(err), file=stderr)
         exit(1)
     finally:
-        if temp_db is not None:
-            remove(temp_db)
+        try:
+            remove(db)
+        except OSError:
+            pass
     exit(0)

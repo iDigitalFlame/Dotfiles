@@ -18,7 +18,6 @@
     ########## SPACEPORT ###########
     ################################
     # Rofi Configuration
-    # Applications Menu
 
     Copyright (C) 2020 iDigitalFlame
 
@@ -36,32 +35,10 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
-configuration {
-    yoffset:                0;
-    location:               1;
-    drun-display-format:    "{icon} {name}";
-}
-
-window {
-    width:                  20%;
-    height:                 100%;
-    border:                 0;
-    padding:                0;
-    border-radius:          0;
-}
-
-listview {
-    padding:                2px 0 0 3px;
-    scrollbar:              true;
-}
-
 inputbar {
-    enabled:                true;
-    border-color:           #FFFFFFFF;
-    background-color:       #7D0BABFF;
+    enabled:    false;
 }
 
 scrollbar {
-    padding:                0 0 0 3px;
-    enabled:                true;
+    enabled:    false;
 }

@@ -48,9 +48,9 @@ fi
 if [ $use_firefox -eq 1 ]; then
     if [ -z "$params" ]; then
         sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame"
-        exit 0
+    else
+        sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame \"$params\""
     fi
-    sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P iDigitalFlame \"$params\""
     exit 0
 fi
 
@@ -58,8 +58,9 @@ if [ -z "$params" ]; then
     sg firewall-web -c "export TZ=UTC; /usr/bin/chromium"
     exit 0
 fi
+
 if [[ "$params" == "--all" ]]; then
     sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window"
-    exit 0
+else
+    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$params\""
 fi
-sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$params\""

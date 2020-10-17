@@ -37,10 +37,43 @@
 */
 
 window {
-    width:              30%;
-    height:             100%;
+    width:              75%;
+    border:             0;
+    padding:            0;
 }
 
 inputbar {
-    background-color:   #0B848DFF;
+    enabled:            false;
+    children:           [entry];
+}
+
+element {
+    border:             0;
+    padding:            10px;
+    text-color:         #FFFFFFFF;
+    orientation:        vertical;
+}
+
+listview {
+    lines:              2;
+    layout:             vertical;
+    columns:            8;
+    spacing:            0;
+    dynamic:            true;
+    fixed-height:       true;
+}
+
+element-icon {
+    size:               100px;
+}
+
+element-text {
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+}
+
+element selected {
+    text-color:         #FFFFFFFF;
+    border-radius:      5px;
+    background-color:   #7D0BABFF;
 }

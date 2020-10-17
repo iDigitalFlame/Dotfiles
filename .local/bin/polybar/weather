@@ -67,6 +67,7 @@ if [ ! -e "$HOME/.config/weather.conf" ]; then
     printf ""
     exit 0
 fi
+
 source "$HOME/.config/weather.conf"
 if [ $? -ne 0 ]; then
     printf ""

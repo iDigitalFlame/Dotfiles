@@ -121,11 +121,10 @@ bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/b
 # Standard Bindings
 bindsym                 $KEY_ALT+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f"
 bindsym                 $KEY_ALT+F1             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
-bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
+bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new"
 bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search"
 bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
-bindsym                 $KEY_ALT+Escape         exec --no-startup-id "~/.local/bin/i3/windows"
 
 # Macro Keybindings
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"

@@ -41,7 +41,6 @@ if ! [ -f "/var/run/smd/lockers" ]; then
 fi
 
 lockers=$(cat "/var/run/smd/lockers" | wc -w)
-
 if [ -z "$lockers" ] || [ "$lockers" -eq "0" ]; then
     printf "0 \n"
     exit 0

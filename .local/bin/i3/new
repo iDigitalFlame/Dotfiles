@@ -52,7 +52,6 @@ def run(cmd):
         exe = Popen(["/usr/bin/i3-msg"] + params, stdout=PIPE, stderr=DEVNULL)
         if exe.wait() != 0:
             raise i3Error('"i3-msg" returned non-zero status!')
-            exit(1)
         output = exe.stdout.read()
         if len(output) > 0:
             try:
@@ -64,7 +63,6 @@ def run(cmd):
         return None
     except OSError as err:
         raise i3Error('Command to "i3-msg" failed: %s' % str(err))
-    return None
 
 
 def run_cmd(cmd):
@@ -96,6 +94,7 @@ if __name__ == "__main__":
     current = None
     if len(argv) > 1:
         current = focused()
+
     try:
         workspaces = run_cmd("get_workspaces")
     except i3Error as err:
@@ -104,6 +103,7 @@ if __name__ == "__main__":
     if workspaces is None:
         print('"i3-msg" did not return any valid workspaces!', file=stderr)
         exit(1)
+
     empty = next(
         x for x in range(1, 50) if not [w for w in workspaces if w["num"] == x]
     )

@@ -41,15 +41,15 @@ configuration {
     modi:                       "drun,window";
     font:                       "SauceCodePro Nerd Font Mono 12";
     sort:                       true;
-    cycle:                      true;
+    cycle:                      false;
     lines:                      15;
     width:                      1;
     padding:                    0;
     xoffset:                    0;
-    yoffset:                    0;
+    yoffset:                    120;
     columns:                    1;
     threads:                    0;
-    location:                   1;
+    location:                   2;
     terminal:                   "/usr/bin/xfce4-terminal";
     tokenize:                   true;
     matching:                   "glob";
@@ -99,7 +99,7 @@ configuration {
     line-padding:               2;
     kb-accept-alt:              "";
     kb-move-front:              "Control+A";
-    window-format:              "[{w}] {t}";
+    window-format:              "{t}";
     scroll-method:              0;
     click-to-exit:              true;
     kb-clear-line:              "Control+W";
@@ -128,7 +128,7 @@ configuration {
 }
 
 entry {
-    padding:                    8 12 8 12;
+    padding:                    8px 12px 8px 12px;
     text-color:                 #FFFFFFFF;
 }
 
@@ -137,9 +137,13 @@ prompt {
 }
 
 window {
-    width:                      18%;
-    height:                     100%;
+    width:                      20%;
+    border:                     1px;
+    padding:                    10px;
     transparency:               "real";
+    border-color:               #FFFFFFFF;
+    border-radius:              10px;
+    background-color:           #191919AF;
 }
 
 mainbox {
@@ -147,7 +151,6 @@ mainbox {
     padding:                    0;
     children:                   [inputbar, listview];
     border-radius:              0;
-    background-color:           #191919AF;
 }
 
 listview {
@@ -158,20 +161,11 @@ listview {
     scrollbar:                  false;
 }
 
-scrollbar{
-    enabled:                    true;
+scrollbar {
+    enabled:                    false;
     handle-width:               10px;
     border-color:               #FFFFFFFF;
     handle-color:               #FFFFFF5F;
-}
-
-inputbar {
-    border:                     0 0 2px 0;
-    padding:                    3 3 3 3;
-    children:                   [entry];
-    text-color:                 #FFFFFFFF;
-    border-color:               #FFFFFFFF;
-    background-color:           #0027C1FF;
 }
 
 element {
@@ -181,11 +175,22 @@ element {
     text-color:                 #FFFFFFFF;
     border-radius:              0;
 }
-element-icon {
-    size:                       20;
+
+inputbar {
+    border:                     0 0 2px 0;
+    padding:                    3px 3px 3px 3px;
+    enabled:                    true;
+    children:                   [entry];
+    text-color:                 #FFFFFFFF;
 }
+
+element-icon {
+    size:                       20px;
+}
+
 element selected {
     text-color:                 #000000FF;
     border-color:               #00000000;
+    border-radius:              10px;
     background-color:           #FFFFFFFF;
 }

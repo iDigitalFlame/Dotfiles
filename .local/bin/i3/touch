@@ -35,19 +35,18 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-SOCKET="/tmp/touchinput"
-
-if [ -f "$SOCKET" ]; then
-    rm -f "$SOCKET" 2> /dev/null
+sock="/tmp/touchinput"
+if [ -f "$sock" ]; then
+    rm -f "$sock" 2> /dev/null
     onboard --size=800x300 &
     exit 0
 fi
 
-touch "$SOCKET" 2> /dev/null
+touch "$sock" 2> /dev/null
 sleep 0.25s
 
-if [ -f "$SOCKET" ]; then
-    rm -f "$SOCKET" 2> /dev/null
-    bash "$HOME/.local/bin/i3/search" &
+if [ -f "$sock" ]; then
+    rm -f "$sock" 2> /dev/null
+    bash "$sock/.local/bin/i3/search" &
 fi
 exit 0
