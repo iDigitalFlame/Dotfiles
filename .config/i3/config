@@ -79,12 +79,12 @@ for_window              [class="firefox" title="Picture-in-Picture" floating]   
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
-client.urgent           #FFB86C #FFB86C #191919 #6272A4 #FFB86C
-client.focused          #7D0BAB #7D0BAB #FFFFFF #7D0BAB #7D0BAB
-client.unfocused        #191919 #191919 #FFFFFF #191919 #191919
-client.background       #7D0BAB
-client.placeholder      #191919 #191919 #F8F8F2 #6722A4 #191919
-client.focused_inactive #191919 #191919 #FFFFFF #191919 #191919
+client.urgent           #FFB86CA0 #FFB86CA0 #191919FF #00000000 #FFB86CFF
+client.focused          #7D0BABA0 #7D0BABA0 #FFFFFFFF #00000000 #7D0BABFF
+client.unfocused        #00000000 #191919FF #FFFFFFFF #00000000 #191919FF
+client.background       #7D0BABA0
+client.placeholder      #191919A0 #191919A0 #F8F8F2FF #00000000 #191919FF
+client.focused_inactive #024363AF #024363A0 #FFFFFFFF #00000000 #191919FF
 
 # Non-Key Bindings
 bind                    225                     exec --no-startup-id "~/.local/bin/i3/search"
