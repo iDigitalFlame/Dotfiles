@@ -35,6 +35,10 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
+configuration {
+    cycle:      true;
+}
+
 inputbar {
     enabled:    false;
 }

@@ -37,6 +37,7 @@
 */
 
 configuration {
+    cycle:                  false;
     yoffset:                0;
     location:               1;
     drun-display-format:    "{icon} {name}";
