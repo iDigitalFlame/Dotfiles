@@ -56,8 +56,10 @@
     <property name="hidden-devices" type="array">
         <value type="string" value="shm"/>
         <value type="string" value="tmp"/>
+        <value type="string" value="efivars"/>
         <value type="string" value="B590-68E5"/>
         <value type="string" value="hugepages"/>
+        <value type="string" value="a07a7d7e-1377-401c-a3de-7274db338987"/>
         <value type="string" value="9b7bf1d8-7ce1-4699-9aee-60de6ef033b5"/>
         <value type="string" value="d6142650-69d1-4503-a638-89ed70b48765"/>
         <value type="string" value="31cf9bed-423c-43f3-9129-2ff39808fbbb"/>
