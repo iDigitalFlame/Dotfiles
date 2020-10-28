@@ -29,7 +29,7 @@
             "/usr/share/icons/korla/apps/scalable"
         ],
         "full_path": false,
-        "theme": "/usr/share/icons/korla/status/scalable"
+        "theme": "/usr/share/icons/DarkSky/status/48"
     },
     "polybar": {
         "bars": {
