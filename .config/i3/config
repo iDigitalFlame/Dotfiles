@@ -89,14 +89,16 @@ client.focused_inactive #024363AF #024363A0 #FFFFFFFF #00000000 #191919FF
 # Non-Key Bindings
 bind                    225                     exec --no-startup-id "~/.local/bin/i3/search"
 bind                    248                     exec --no-startup-id "~/.local/bin/i3/windows"
+bindsym                 --whole-window --border button8 workspace next_on_output
+bindsym                 --whole-window --border button9 workspace prev_on_output
 bindsym                 --whole-window --border $KEY_WIN+Shift+button5 resize grow width 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_CTL+Shift+button5 resize grow height 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize shrink width 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_CTL+Shift+button4 resize shrink height 10px or 10 ppt
 
 # Application Bindings
-bindsym                 F9                      exec --no-startup-id "~/.local/bin/i3/search"
-bindsym                 F7                      exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
+bindsym                 F3                      exec --no-startup-id "~/.local/bin/i3/search"
+bindsym                 F4                      exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
 bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
 bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/smd/bin/powerctl rotate -t"
@@ -114,7 +116,6 @@ bindsym                 XF86MonBrightnessDown   exec --no-startup-id "/usr/lib/s
 bindsym                 $KEY_WIN+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f -t 300"
 bindsym                 $KEY_WIN+Tab            exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+grave          exec --no-startup-id "~/.local/bin/i3/new sel with"
-bindsym                 $KEY_WIN+space          exec --no-startup-id "~/.local/bin/i3/search window"
 bindsym                 $KEY_WIN+Return         exec "/usr/bin/thunar"
 bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/bin/i3/locker"
 
@@ -200,6 +201,8 @@ bindsym                 $KEY_ALT+8              workspace 8
 bindsym                 $KEY_ALT+9              workspace 9
 bindsym                 $KEY_ALT+0              workspace 10
 bindsym                 $KEY_ALT+Delete         workspace 0:R
+bindsym                 F5                      workspace prev_on_output
+bindsym                 F6                      workspace next_on_output
 bindsym                 XF86Launch1             workspace prev_on_output
 bindsym                 XF86Launch2             workspace next_on_output
 bindsym                 XF86Launch5             workspace next_on_output
@@ -234,5 +237,7 @@ bindsym                 $KEY_WIN+8              move container to workspace 8, w
 bindsym                 $KEY_WIN+9              move container to workspace 9, workspace 9
 bindsym                 $KEY_WIN+0              move container to workspace 10, workspace 10
 bindsym                 $KEY_WIN+Delete         move container to workspace 0:R, workspace 0:R
+bindsym                 $KEY_WIN+F5             move container to workspace next_on_output, workspace next_on_output
+bindsym                 $KEY_WIN+F6             move container to workspace prev_on_output, workspace prev_on_output
 bindsym                 $KEY_WIN+XF86Launch5    move container to workspace next_on_output, workspace next_on_output
 bindsym                 $KEY_WIN+XF86Launch6    move container to workspace prev_on_output, workspace prev_on_output
