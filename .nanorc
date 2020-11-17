@@ -1,1 +1,12 @@
 set nowrap
+set tabsize 4
+set nonewlines
+set autoindent
+set linenumbers
+set tabstospaces
+set casesensitive
+
+unset historylog
+unset positionlog
+unset suspendable
+unset jumpyscrolling

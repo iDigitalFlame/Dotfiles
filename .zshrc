@@ -47,13 +47,14 @@ export GOPATH="$HOME/.local/lib/go"
 export COMPLETION_WAITING_DOTS="true"
 export ZSH="$HOME/.local/lib/oh-my-zsh"
 export SRCDEST="/tmp/.usercache/$USER/aur/src"
-export SSH_AUTH_SOCK="/run/user/$UID/keyring/ssh"
 export BUILDDIR="/tmp/.usercache/$USER/aur/build"
+export SSH_AUTH_SOCK="/run/user/$UID/keyring/ssh"
 
 export PATH=$PATH:$GOPATH/bin
 
-plugins=(git encode64 screen sudo)
+plugins=(git screen sudo)
 source "$ZSH/oh-my-zsh.sh"
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
@@ -71,6 +72,7 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("$HOME/Volumes")
+
 PROMPT="%n $PROMPT"
 
 motivate | cowsay -W 75 -f small
@@ -140,7 +142,7 @@ gbp-dll() {
         return 1
     fi
     cfile=$1; gofile=$2; output=$3
-    shift; shift; shift
+    shift 3
     name="/tmp/gb-$(openssl rand -hex 6)"
     env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
     if [ $? -ne 0 ]; then
@@ -160,13 +162,13 @@ gbp-dll() {
     fi
     upx --compress-exports=1 --strip-relocs=1 --compress-icons=0 --best --no-backup -9 "$output"
 }
-gbb-exe() {
+gbp-exe() {
     if [ $# -lt 3 ]; then
         printf "gbp-exe <c_file> <go_file> <output> [gcc_args]\n"
         return 1
     fi
     cfile=$1; gofile=$2; output=$3
-    shift; shift; shift
+    shift 3
     name="/tmp/gb-$(openssl rand -hex 6)"
     env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
     if [ $? -ne 0 ]; then
@@ -217,16 +219,13 @@ alias lock0="lockctl -ft -1"
 alias lock3="lockctl -ft 30"
 alias lock6="lockctl -ft 60"
 alias lock9="lockctl -ft 90"
+alias lock12="lockctl -ft 120"
+alias lock10="lockctl -ft 600"
 
 # Power Aliases
 alias bright="brightnessctl"
-alias lock12="lockctl -ft 120"
-alias lock10="lockctl -ft 600"
 alias nohib="lockerctl -z true"
 alias sus="sudo systemctl suspend"
-alias bright-up="brightnessctl -i"
-alias bright-set="brightnessctl -s"
-alias bright-down="brightnessctl -d"
 alias hib="sudo systemctl hibernate"
 alias automon="/usr/lib/smd/libexec/smd-auto-display auto"
 
@@ -271,25 +270,21 @@ alias gv="sg firewall-web -c 'go vet ./...'"
 alias gsc="sg firewall-web -c 'staticcheck ./...'"
 alias gsc-win="sg firewall-web -c 'env GOOS=windows staticcheck ./...'"
 alias gscw="sg firewall-web -c 'staticcheck -unused.whole-program ./...'"
+alias gvalid="sg firewall-web -c 'go vet ./... && staticcheck ./... && maligned ./...'"
 alias gscw-win="sg firewall-web -c 'env GOOS=windows staticcheck -unused.whole-program ./...'"
+alias gvalid-win="sg firewall-web -c 'export GOOS=windows; go vet ./... && staticcheck ./... && maligned ./...'"
 
 # Utility Aliases
 alias xx="exit"
-alias exx="exit"
-alias psh="pwsh"
 alias rm="rm -I"
 alias cls="clear"
 alias less="less -R"
 alias powershell="pwsh"
 alias vsc="/usr/bin/vscodium"
 alias code="/usr/bin/vscodium"
-alias nano="/usr/bin/nano -Ll"
-alias gdiff="/usr/bin/git diff"
-alias sedit="sudo /usr/bin/rnano -Ll"
-alias suedit="sudo /usr/bin/rnano -Ll"
 alias diff="/usr/bin/diff --color=auto"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
-alias govet="sg firewall-web -c 'go vet ./...'"
+alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias side="kill -s USR1 $(pidof deadd-notification-center)"
