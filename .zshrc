@@ -111,7 +111,6 @@ gbo() {
         printf "$0 <build opts...>\n"
         return 1
     fi
-    flags=$@
     go build -trimpath -ldflags "-s -w" $@
 }
 gbp() {
