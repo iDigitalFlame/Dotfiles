@@ -200,15 +200,15 @@ bindsym                 $KEY_ALT+7              workspace 7
 bindsym                 $KEY_ALT+8              workspace 8
 bindsym                 $KEY_ALT+9              workspace 9
 bindsym                 $KEY_ALT+0              workspace 10
-bindsym                 $KEY_ALT+Delete         workspace 0:R
-bindsym                 F5                      workspace prev_on_output
-bindsym                 F6                      workspace next_on_output
+bindsym                 $KEY_ALT+Up             workspace prev_on_output
 bindsym                 XF86Launch1             workspace prev_on_output
 bindsym                 XF86Launch2             workspace next_on_output
 bindsym                 XF86Launch5             workspace next_on_output
 bindsym                 XF86Launch6             workspace prev_on_output
 bindsym                 $KEY_WIN+Next           workspace next_on_output
+bindsym                 $KEY_ALT+Down           workspace next_on_output
 bindsym                 $KEY_WIN+Prior          workspace prev_on_output
+bindsym                 $KEY_ALT+Delete         workspace 0:R
 bindsym                 XF86KbdBrightnessUp     workspace next_on_output
 bindsym                 XF86KbdBrightnessDown   workspace prev_on_output
 
