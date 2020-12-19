@@ -1,24 +1,23 @@
 {
     "background": {
         "auto_change": 600,
-        "directory": "/home/iDigitalFlame/Pictures/Backgrounds",
-        "lockscreen": "/home/iDigitalFlame/.cache/smd/lockscreen.png",
+        "directory": "$HOME/Pictures/Backgrounds",
+        "lockscreen": "$HOME/.cache/smd/lockscreen.png",
         "screen_size": "1920x1080"
     },
     "hydra": {
         "aliases": {
-            "kali": "/opt/hydra/iDigitalFlame/Kali/vm.conf",
-            "lswin": "/opt/hydra/iDigitalFlame/Windows10LS/vm.conf",
-            "mac": "/opt/hydra/iDigitalFlame/MacOS/vm.conf",
-            "win": "/opt/hydra/iDigitalFlame/Windows10/vm.conf",
-            "win10": "/opt/hydra/iDigitalFlame/Windows10/vm.conf"
+            "kali": "/opt/hydra/dij/Kali/vm.conf",
+            "mac": "/opt/hydra/dij/MacOS/vm.conf",
+            "win": "/opt/hydra/dij/Windows10/vm.conf",
+            "win10": "/opt/hydra/dij/Windows10/vm.conf"
         },
-        "directory": "/opt/hydra/iDigitalFlame"
+        "directory": "/opt/hydra/dij"
     },
     "locker": {
-        "command": "/home/iDigitalFlame/.local/bin/i3/lock",
+        "command": "$HOME/.local/bin/i3/lock",
         "hibernate": 180,
-        "lid_bypass": true,
+        "lid_close": true,
         "lockscreen": 120,
         "screen_blank": 60,
         "suspend": 60
@@ -65,13 +64,13 @@
             "-c",
             "--experimental-backends",
             "--config",
-            "/home/iDigitalFlame/.config/picom/picom.conf"
+            "$HOME/.config/picom/picom.conf"
         ],
+        "enable_tap": true,
         "startups": [
             "/usr/bin/touchegg",
             "/usr/bin/nm-applet",
             "/usr/bin/deadd-notification-center",
-            "/usr/lib/smd/libexec/smd-enable-tap",
             "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
             "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
         ]

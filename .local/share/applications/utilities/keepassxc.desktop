@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2020 ######
+### iDigitalFlame  2016-2021 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -19,7 +19,7 @@
 ################################
 ## Application Entry
 #
-# Copyright (C) 2020 iDigitalFlame
+# Copyright (C) 2016 - 2021 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@
 Name            = KeePassXC
 Icon            = keepassxc
 Type            = Application
-Exec            = /usr/bin/keepassxc --config /home/iDigitalFlame/.local/lib/keepassxc.conf %f
+Exec            = /usr/bin/keepassxc --config /home/dij/.local/lib/keepassxc.conf %f
 Comment         = Community-driven port of the Windows application “KeePass Password Safe”
 MimeType        = application/x-keepass2;
 Terminal        = false

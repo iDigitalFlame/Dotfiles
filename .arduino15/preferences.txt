@@ -1,6 +1,6 @@
 #!/usr/bin/arduino
 ################################
-###### iDigitalFlame 2020 ######
+### iDigitalFlame  2016-2021 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -19,7 +19,7 @@
 ################################
 ## Arduino IDE Configuration
 #
-# Copyright (C) 2020 iDigitalFlame
+# Copyright (C) 2016 - 2021 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ proxy.type                                      = auto
 theme.file                                      =
 custom_keys                                     = teensypp2_en-us
 editor.font                                     = Source Code Pro,plain,12
-last.folder                                     = /home/iDigitalFlame/Projects/Arduino
+last.folder                                     = /home/dij/Projects/Arduino
 run.display                                     = 1
 run.options                                     =
 serial.port                                     = /dev/ttyUSB0
@@ -73,7 +73,7 @@ editor.external                                 = true
 recent.sketches                                 =
 serial.databits                                 = 8
 serial.stopbits                                 = 1
-sketchbook.path                                 = /home/iDigitalFlame/Projects/Arduino
+sketchbook.path                                 = /home/dij/Projects/Arduino
 target_platform                                 = avr
 editor.antialias                                = true
 editor.tabs.size                                = 4
@@ -118,7 +118,7 @@ last.ide.1.8.12.daterun                         = 0
 editor.auto_close_braces                        = true
 editor.languages.current                        = en_US
 editor.window.height.min                        = 290
-last.sketch.default.path                        = /home/iDigitalFlame/Projects/Arduino
+last.sketch.default.path                        = /home/dij/Projects/Arduino
 preproc.enhanced_casting                        = true
 preproc.save_build_files                        = false
 preproc.output_parse_tree                       = false

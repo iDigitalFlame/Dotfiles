@@ -1,7 +1,7 @@
 {
     "_": [
         "################################",
-        "###### iDigitalFlame 2020 ######",
+        "### iDigitalFlame  2016-2021 ###",
         "#                              #",
         "#            -/`               #",
         "#            -yy-   :/`        #",
@@ -20,7 +20,7 @@
         "################################",
         "# Yay Configuration",
         "",
-        "Copyright (C) 2020 iDigitalFlame",
+        "Copyright (C) 2016 - 2021 iDigitalFlame",
         "",
         "This program is free software: you can redistribute it and/or modify",
         "it under the terms of the GNU General Public License as published by",
@@ -36,8 +36,8 @@
         "along with this program.  If not, see <https: //www.gnu.org/licenses/>."
     ],
     "aururl": "https://aur.archlinux.org",
-    "buildDir": "/home/iDigitalFlame/.cache/aur",
-    "absdir": "/home/iDigitalFlame/.cache/yay/abs",
+    "buildDir": "/home/dij/.cache/aur",
+    "absdir": "/home/dij/.cache/yay/abs",
     "editor": "nano",
     "editorflags": "",
     "makepkgbin": "makepkg",

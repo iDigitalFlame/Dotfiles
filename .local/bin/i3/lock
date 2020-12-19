@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ################################
-###### iDigitalFlame 2020 ######
+### iDigitalFlame  2016-2021 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -19,7 +19,7 @@
 ################################
 ## Locker
 #
-# Copyright (C) 2020 iDigitalFlame
+# Copyright (C) 2016 - 2021 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -75,4 +75,4 @@ key_color="#$(openssl rand -hex 3)FF"
 --insidewrongcolor="#00000000" \
 --timepos="x+(w/2):y+(h/2)+150" \
 --datepos="x+(w/2):y+(h/2)+170" \
---image "/home/iDigitalFlame/.cache/smd/lockscreen.png"
+--image "/home/dij/.cache/smd/lockscreen.png"
