@@ -617,7 +617,7 @@
     "go.toolsGopath": "/home/dij/.local/lib/go",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useCodeSnippetsOnFunctionSuggestWithoutType": false,
-    "go.useLanguageServer": true,
+    "go.useLanguageServer": false,
     "go.vetFlags": [],
     "go.vetOnSave": "package",
     "npm.autoDetect": "off",
