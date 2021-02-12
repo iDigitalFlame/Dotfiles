@@ -52,10 +52,15 @@ chmod 640 "$DOTS/dotfiles.code-workspace"
 
 relink "$DOTS" "$HOME"
 
+touch "$HOME/.config/surf/script.js" 2> /dev/null
+touch "$HOME/.config/surf/styles/default.css" 2> /dev/null
+
 rm -f "$HOME/.local/bin/chrome" 2> /dev/null
 rm -f "$HOME/.config/mimeapps.list" 2> /dev/null
 rm -f "$HOME/.local/bin/x-www-browser" 2> /dev/null
+rm -f "$HOME/.config/surf/cookies.txt" 2> /dev/null
 
+ln -s "/dev/null" "$HOME/.config/surf/cookies.txt"
 ln -s "$HOME/.local/bin/browser" "$HOME/.local/bin/chrome"
 ln -s "$HOME/.local/bin/browser" "$HOME/.local/bin/x-www-browser"
 ln -s "$DOTS/.local/share/applications/mimeapps.list" "$HOME/.config/mimeapps.list"
