@@ -45,9 +45,8 @@ chmod 550 "$DOTS/.zshrc"
 chmod -R 2770 "$DOTS/.git"
 chmod -R 2550 "$DOTS/.local/bin"
 
-chmod 750 "$DOTS/.config/smd"
+chmod 640 "$DOTS/.config/smd.json"
 chmod 640 "$DOTS/.config/quotes.db"
-chmod 640 "$DOTS/.config/smd/config.json"
 chmod 640 "$DOTS/dotfiles.code-workspace"
 
 relink "$DOTS" "$HOME"
