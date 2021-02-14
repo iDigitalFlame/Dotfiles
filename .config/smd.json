@@ -64,7 +64,7 @@
             "-c",
             "--experimental-backends",
             "--config",
-            "$HOME/.config/picom/picom.conf"
+            "$HOME/.config/picom.conf"
         ],
         "enable_tap": true,
         "startups": [
