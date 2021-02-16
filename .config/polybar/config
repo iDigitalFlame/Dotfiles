@@ -420,7 +420,7 @@ tray-position                           = right
 tray-detached                           = false
 modules-center                          =
 tray-background                         = ${theme.color-date}
-monitor-fallback                        = eDP1
+monitor-fallback                        = eDP-1
 module-margin-left                      = 0
 module-margin-right                     = 0
 
@@ -452,6 +452,6 @@ tray-position                           = right
 tray-detached                           = false
 modules-center                          =
 tray-background                         = ${theme.color-date}
-monitor-fallback                        = eDP1
+monitor-fallback                        = eDP-1
 module-margin-left                      = 0
 module-margin-right                     = 0
