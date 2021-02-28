@@ -72,14 +72,14 @@ for_window              [class="falkon" title="*noVNC*"]        border normal, f
 for_window              [window_role="GtkFileChooserDialog"]    border normal, floating enable, resize set 800 600
 
 # Window Rules After Modify
-for_window              [title="Save As"]                                       border normal, resize set 800 600
-for_window              [class="note" title="Open"]                             border normal, resize set 800 600
-for_window              [class="stickynote" title="Open"]                       border normal, resize set 800 600
-for_window              [window_type=dialog title="open *" floating]            border normal, resize set 800 600
-for_window              [window_type=dialog title="Open *" floating]            border normal, resize set 800 600
-for_window              [window_type=dialog title="select *" floating]          border normal, resize set 800 600
-for_window              [window_type=dialog title="Select *" floating]          border normal, resize set 800 600
-for_window              [class="firefox" title="Picture-in-Picture" floating]   sticky enable
+for_window              [title="Save As"]                                                   border normal, resize set 800 600
+for_window              [class="note" title="Open"]                                         border normal, resize set 800 600
+for_window              [class="stickynote" title="Open"]                                   border normal, resize set 800 600
+for_window              [window_type=dialog title="select *" floating]                      border normal, resize set 800 600
+for_window              [window_type=dialog title="Select *" floating]                      border normal, resize set 800 600
+for_window              [floating class="firefox" title="Picture-in-Picture"]               sticky enable
+for_window              [window_type=dialog title="open *" floating class="(i?!firefox)"]   border normal, resize set 800 600
+for_window              [window_type=dialog title="Open *" floating class="(i?!firefox)"]   border normal, resize set 800 600
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8
