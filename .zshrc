@@ -267,11 +267,11 @@ alias selc="$HOME/.local/bin/i3/clip-copy"
 # Go Aliases
 alias gv="sg firewall-web -c 'go vet ./...'"
 alias gsc="sg firewall-web -c 'staticcheck ./...'"
+
 alias gsc-win="sg firewall-web -c 'env GOOS=windows staticcheck ./...'"
 alias gscw="sg firewall-web -c 'staticcheck -unused.whole-program ./...'"
-alias gvalid="sg firewall-web -c 'go vet ./... && staticcheck ./... && maligned ./...'"
 alias gscw-win="sg firewall-web -c 'env GOOS=windows staticcheck -unused.whole-program ./...'"
-alias gvalid-win="sg firewall-web -c 'export GOOS=windows; go vet ./... && staticcheck ./... && maligned ./...'"
+alias gov="sg firewall-web -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
