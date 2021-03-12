@@ -34,27 +34,3 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
-
-.deadd-noti-center.date {
-    font-size: 20px;
-}
-button.deadd-noti-center {
-    opacity: 100;
-    font-size: 16px;
-    background-size: 0;
-}
-.deadd-noti-center.time, .noti-center.time {
-    font-size: 38px
-}
-button.deadd-noti-center.in-center.button-close {
-    opacity: 100;
-    font-size: 25px;
-    padding-right: 20px
-}
-.notification button, .notificationInCenter button {
-    opacity: 0;
-}
-button.deadd-noti-center.in-center.button-close:hover {
-    opacity: 50;
-    font-size: 25px;
-}

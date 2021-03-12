@@ -102,14 +102,12 @@ bindsym                 --whole-window --border $KEY_CTL+Shift+button4 resize sh
 
 # Application Bindings
 bindsym                 F3                      exec --no-startup-id "~/.local/bin/i3/search"
-bindsym                 F4                      exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 Print                   exec --no-startup-id "~/.local/bin/i3/shot"
 bindsym                 Shift+Print             exec --no-startup-id "~/.local/bin/i3/clip"
 bindsym                 Scroll_Lock             exec --no-startup-id "/usr/lib/smd/bin/powerctl rotate -t"
 bindsym                 XF86Launch3             exec --no-startup-id "~/.local/bin/i3/touch"
 bindsym                 XF86Launch7             exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 XF86LaunchA             exec --no-startup-id "~/.local/bin/i3/windows"
-bindsym                 XF86LaunchB             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 XF86AudioMute           exec --no-startup-id "/usr/bin/amixer -q sset Master toggle"
 bindsym                 XF86MonBrightnessUp     exec --no-startup-id "/usr/lib/smd/bin/powerctl brightness -i"
 bindsym                 XF86AudioRaiseVolume    exec --no-startup-id "/usr/bin/amixer -q sset Master 5%+"
@@ -125,7 +123,6 @@ bindsym                 $KEY_WIN+Escape         exec --no-startup-id "~/.local/b
 
 # Standard Bindings
 bindsym                 $KEY_ALT+L              exec --no-startup-id "/usr/lib/smd/bin/powerctl lock -f"
-bindsym                 $KEY_ALT+F1             exec --no-startup-id "/usr/bin/kill -s USR1 $(pidof deadd-notification-center)"
 bindsym                 $KEY_ALT+Tab            exec --no-startup-id "~/.local/bin/i3/windows"
 bindsym                 $KEY_ALT+grave          exec --no-startup-id "~/.local/bin/i3/new"
 bindsym                 $KEY_ALT+space          exec --no-startup-id "~/.local/bin/i3/search"

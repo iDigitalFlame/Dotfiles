@@ -68,9 +68,9 @@
         ],
         "enable_tap": true,
         "startups": [
+            "/usr/bin/dunst",
             "/usr/bin/touchegg",
             "/usr/bin/nm-applet",
-            "/usr/bin/deadd-notification-center",
             "/usr/bin/sg firewall-web -c /usr/bin/nextcloud",
             "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
         ]

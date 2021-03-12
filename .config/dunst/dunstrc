@@ -1,0 +1,126 @@
+#!/usr/bin/dunst
+################################
+### iDigitalFlame  2016-2021 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Dunst Configuration
+#
+# Copyright (C) 2016 - 2021 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+[global]
+    font                    = Sans 10
+    sort                    = true
+    dmenu                   = /usr/bin/false
+    title                   = Dunst
+    class                   = Dunst
+    follow                  = mouse
+    shrink                  = false
+    format                  = "<b>%s</b>\n%b"
+    markup                  = full
+    browser                 = /usr/bin/false
+    monitor                 = 0
+    padding                 = 10
+    geometry                = "350x5-15+15"
+    verbosity               = mesg
+    alignment               = left
+    word_wrap               = true
+    ellipsize               = end
+    icon_path               = "/usr/share/icons/DarkSky/status/48:/usr/share/icons/korla/apps/scalable"
+    frame_width             = 0
+    frame_color             = "#191919"
+    line_height             = 0
+    transparency            = 30
+    corner_radius           = 15
+    icon_position           = left
+    min_icon_size           = 16
+    max_icon_size           = 64
+    force_xinerama          = false
+    history_length          = 0
+    sticky_history          = false
+    idle_threshold          = 30
+    ignore_newline          = false
+    separator_color         = foreground
+    indicate_hidden         = true
+    show_indicators         = false
+    separator_height        = 2
+    stack_duplicates        = true
+    ignore_dbusclose        = true
+    mouse_left_click        = close_current
+    always_run_script       = false
+    mouse_right_click       = close_all
+    mouse_middle_click      = close_current
+    horizontal_padding      = 10
+    vertical_alignment      = top
+    show_age_threshold      = -1
+    notification_height     = 0
+    hide_duplicate_count    = false
+    startup_notification    = false
+
+[experimental]
+    per_monitor_dpi         = false
+
+[shortcuts]
+    close                   =
+    history                 =
+    context                 =
+    close_all               = F4
+
+[urgency_low]
+    icon                    = "/usr/share/icons/DarkSky/status/48/dialog-question.svg"
+    timeout                 = 4
+    background              = "#191919"
+    foreground              = "#FFFFFF"
+    frame_color             = "#FFFFFF"
+
+[urgency_normal]
+    icon                    = "/usr/share/icons/DarkSky/status/48/dialog-information.svg"
+    timeout                 = 5
+    background              = "#191919"
+    foreground              = "#FFFFFF"
+    frame_color             = "#FFFFFF"
+
+[urgency_critical]
+    icon                    = "/usr/share/icons/DarkSky/status/48/dialog-error.svg"
+    timeout                 = 0
+    background              = "#84000B"
+    foreground              = "#FFFFFF"
+    frame_color             = "#FFFFFF"
+
+[history-ignore]
+    summary                 = "*"
+    history_ignore          = true
+
+[fullscreen_show_critical]
+    fullscreen              = show
+    msg_urgency             = critical
+
+[fullscreen_delay_everything]
+    fullscreen              = delay
