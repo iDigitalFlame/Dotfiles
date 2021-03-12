@@ -95,14 +95,14 @@
 
 [urgency_low]
     icon                    = "/usr/share/icons/DarkSky/status/48/dialog-question.svg"
-    timeout                 = 4
+    timeout                 = 6
     background              = "#191919"
     foreground              = "#FFFFFF"
     frame_color             = "#FFFFFF"
 
 [urgency_normal]
     icon                    = "/usr/share/icons/DarkSky/status/48/dialog-information.svg"
-    timeout                 = 5
+    timeout                 = 8
     background              = "#191919"
     foreground              = "#FFFFFF"
     frame_color             = "#FFFFFF"
