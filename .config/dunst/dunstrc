@@ -102,7 +102,7 @@
 
 [urgency_normal]
     icon                    = "/usr/share/icons/DarkSky/status/48/dialog-information.svg"
-    timeout                 = 8
+    timeout                 = 6
     background              = "#191919"
     foreground              = "#FFFFFF"
     frame_color             = "#FFFFFF"
