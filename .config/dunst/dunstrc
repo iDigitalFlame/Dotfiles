@@ -65,7 +65,7 @@
     force_xinerama          = false
     history_length          = 0
     sticky_history          = false
-    idle_threshold          = 30
+    idle_threshold          = 0
     ignore_newline          = false
     separator_color         = foreground
     indicate_hidden         = true
