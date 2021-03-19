@@ -139,7 +139,8 @@
             },
             {
                 "scope": [
-                    "constant"
+                    "constant",
+                    "storage.type"
                 ],
                 "settings": {
                     "foreground": "#7EFF7A",
@@ -155,10 +156,20 @@
             },
             {
                 "scope": [
-                    "string.quoted.double",
+                    "string.quoted.other",
+                    "string.quoted.single",
+                    "string.quoted.double"
                 ],
                 "settings": {
                     "foreground": "#F7FF14",
+                }
+            },
+            {
+                "scope": [
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "foreground": "#FFB86C"
                 }
             },
             {
@@ -820,7 +831,8 @@
         "websockify",
         "wpos",
         "xerr",
-        "xerrors"
+        "xerrors",
+        "zfill"
     ],
     "files.enableTrash": false,
     "editor.copyWithSyntaxHighlighting": false,
