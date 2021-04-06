@@ -1,0 +1,109 @@
+#!/usr/bin/python3
+################################
+### iDigitalFlame  2016-2021 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Sticky Note Creator
+#
+# Copyright (C) 2016 - 2021 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+from random import choice
+from os.path import isfile
+from sys import exit, stderr
+from datetime import datetime
+from string import ascii_lowercase
+from subprocess import Popen, DEVNULL
+from evernote.edam.type.ttypes import Note
+from evernote.api.client import EvernoteClient
+from os import fork, makedirs, environ, getpid, remove
+
+TOKEN_FILE = ".config/note.conf"
+
+
+def take_note():
+    h = environ["HOME"]
+    if not isinstance(h, str) or len(h) == 0:
+        raise ValueError("Could not get a proper $HOME value")
+    makedirs(f"{h}/.cache/notes", mode=0o750, exist_ok=True)
+    t = f"{h}/{TOKEN_FILE}"
+    n = f"{h}/.cache/notes/{getpid()}-{''.join([choice(ascii_lowercase) for _ in range(32)])}.txt"
+    del h
+    p = Popen(
+        ["/usr/bin/leafpad", "--class=stickynote", n],
+        stdout=DEVNULL,
+        stderr=DEVNULL,
+    )
+    if p.wait() > 0:
+        print("Warning: Leafpad exited with a non-zero status!", file=stderr)
+    del p
+    if not isfile(n) or not isfile(t):
+        return
+    text = None
+    token = None
+    with open(n, "r") as nh, open(t, "r") as th:
+        text = nh.read().replace("\n", "<br/>")
+        token = th.read().replace("\n", "").strip()
+    del t
+    if not isinstance(token, str) or len(token) == 0:
+        return
+    if not isinstance(text, str) or len(text.strip()) == 0:
+        return
+    note = Note()
+    note.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
+    note.content = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note>'
+        f"{text}"
+        "</en-note>"
+    )
+    del text
+    store = EvernoteClient(token=token, sandbox=False).get_note_store()
+    store.createNote(note)
+    del note
+    del store
+    del token
+    remove(n)
+    del n
+
+
+if __name__ == "__main__":
+    try:
+        if fork() > 0:
+            exit(0)
+        try:
+            take_note()
+        except Exception as err:
+            print(f"Error taking note: {err}!", file=stderr)
+        else:
+            exit(0)
+    except OSError as err:
+        print(f"Could not fork: {err}!", file=stderr)
+    exit(1)

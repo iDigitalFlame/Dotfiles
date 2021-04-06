@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Sticky Note Creator
+## Sticky Note Creator Wrapper
 #
 # Copyright (C) 2016 - 2021 iDigitalFlame
 #
@@ -35,4 +35,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-screen -dmS stickynote /usr/bin/leafpad --class=stickynote
+sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/bin/i3/sticky"
