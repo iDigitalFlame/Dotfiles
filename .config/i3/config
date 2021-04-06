@@ -131,8 +131,8 @@ bindsym                 $KEY_ALT+Return         exec "/usr/bin/xfce4-terminal"
 
 # Macro Keybindings
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"
-bindsym                 $KEY_WIN+P              exec "/usr/bin/leafpad --class=note"
-bindsym                 $KEY_WIN+S              exec "/usr/bin/leafpad --class=note"
+bindsym                 $KEY_WIN+P              exec "~/.local/bin/sticky"
+bindsym                 $KEY_WIN+S              exec "~/.local/bin/sticky"
 bindsym                 $KEY_WIN+U              exec --no-startup-id "~/.local/bin/i3/recents"
 bindsym                 $KEY_WIN+Shift+S        exec "/usr/bin/leafpad --class=stickynote"
 bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "/usr/lib/smd/libexec/smd-auto-display"

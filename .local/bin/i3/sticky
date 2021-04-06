@@ -75,6 +75,7 @@ def take_note():
     if not isinstance(token, str) or len(token) == 0:
         return
     if not isinstance(text, str) or len(text.strip()) == 0:
+        remove(n)
         return
     note = Note()
     note.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
