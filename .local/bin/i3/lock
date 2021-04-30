@@ -45,7 +45,6 @@ key_color="#$(openssl rand -hex 3)FF"
 -n \
 --clock \
 --indicator \
---composite \
 --radius=100 \
 --datestr "" \
 --force-clock \
@@ -60,7 +59,6 @@ key_color="#$(openssl rand -hex 3)FF"
 --pointer=default \
 --line-uses-inside \
 --ringcolor="#FFFFFFFF" \
---ignore-empty-password \
 --bshlcolor="#D23D3DFF" \
 --timecolor="#FFFFFFFF" \
 --datecolor="#FFFFFFFF" \

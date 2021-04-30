@@ -17,6 +17,7 @@
     "locker": {
         "command": "$HOME/.local/bin/i3/lock",
         "hibernate": 180,
+        "key_lock": true,
         "lid_close": true,
         "lockscreen": 120,
         "screen_blank": 60,
