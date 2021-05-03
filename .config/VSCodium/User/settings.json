@@ -66,7 +66,7 @@
     "editor.folding": true,
     "editor.fontLigatures": false,
     "editor.fontWeight": "normal",
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
     "editor.formatOnType": false,
     "editor.glyphMargin": true,
@@ -811,6 +811,7 @@
         "Popen",
         "Regxp",
         "SDDL",
+        "SIGUSR",
         "Scorebot",
         "Tasker",
         "WIFI",
@@ -826,6 +827,7 @@
         "dij",
         "dnsmasq",
         "duckduckgo",
+        "dunst",
         "epoll",
         "fpos",
         "fuckwits",
@@ -882,8 +884,10 @@
         "websockify",
         "wlan",
         "wpos",
+        "xautolock",
         "xerr",
         "xerrors",
+        "xset",
         "zfill"
     ],
     "files.enableTrash": false,
@@ -947,4 +951,9 @@
     "typescript.locale": "en",
     "typescript.surveys.enabled": false,
     "workbench.colorTheme": "Simple Dark",
+    "python.dataScience.addGotoCodeLenses": false,
+    "[python]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSaveMode": "file"
+    }
 }
