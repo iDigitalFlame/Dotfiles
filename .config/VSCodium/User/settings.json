@@ -955,5 +955,6 @@
     "[python]": {
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file"
-    }
+    },
+    "workbench.editor.untitled.hint": "hidden"
 }

@@ -54,8 +54,8 @@
     word_wrap               = true
     ellipsize               = end
     icon_path               = "/usr/share/icons/DarkSky/status/48:/usr/share/icons/korla/apps/scalable"
-    frame_width             = 0
-    frame_color             = "#191919"
+    frame_width             = 2
+    frame_color             = "#FFFFFF"
     line_height             = 0
     transparency            = 30
     corner_radius           = 15
