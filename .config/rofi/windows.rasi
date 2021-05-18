@@ -55,9 +55,9 @@ element {
 }
 
 listview {
-    lines:              2;
+    lines:              4;
     layout:             vertical;
-    columns:            8;
+    columns:            4;
     spacing:            0;
     dynamic:            true;
     fixed-height:       true;
