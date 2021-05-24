@@ -1,4 +1,4 @@
-#!/usr/bin/startx
+#+/usr/bin/startx
 ################################
 ### iDigitalFlame  2016-2021 ###
 #                              #

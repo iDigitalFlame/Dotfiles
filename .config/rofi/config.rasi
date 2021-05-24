@@ -143,7 +143,7 @@ window {
     transparency:               "real";
     border-color:               #FFFFFFFF;
     border-radius:              10px;
-    background-color:           #191919CF;
+    background-color:           #191919BF;
 }
 
 mainbox {

@@ -38,17 +38,19 @@
 
 configuration {
     cycle:                  false;
-    yoffset:                0;
+    yoffset:                15;
+    xoffset:                5;
     location:               1;
     drun-display-format:    "{icon} {name}";
 }
 
 window {
     width:                  20%;
-    height:                 100%;
-    border:                 0;
+    height:                 95%;
+    border:                 1;
     padding:                0;
-    border-radius:          0;
+    border-color:           #AC0FEBFF;
+    border-radius:          10;
 }
 
 listview {
