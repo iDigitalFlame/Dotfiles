@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#+/usr/bin/X
 ################################
 ### iDigitalFlame  2016-2021 ###
 #                              #
@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Locker
+## X Resources Configuration
 #
 # Copyright (C) 2016 - 2021 iDigitalFlame
 #
@@ -35,43 +35,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-key_color="#$(openssl rand -hex 3)FF"
-
-# Disable all fullscreen windows (messes with i3-lock).
-/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" 2> /dev/null
-
-# Lock
-/usr/bin/i3lock \
--n \
---clock \
---composite \
---indicator \
---radius=100 \
---datestr "" \
---force-clock \
---time-align=0 \
---date-align=0 \
---ring-width=5 \
---veriftext="" \
---wrongtext="" \
---noinputtext="" \
---timestr="%H:%M" \
---color "#000000" \
---pointer=default \
---line-uses-inside \
---ringcolor="#FFFFFFFF" \
---bshlcolor="#D23D3DFF" \
---timecolor="#FFFFFFFF" \
---datecolor="#FFFFFFFF" \
---verifcolor="#FFFFFFFF" \
---keyhlcolor="$key_color" \
---insidecolor="#00000000" \
---ringvercolor="#E6DB74FF" \
---indpos="x+(w/2):y+(h/2)" \
---ringwrongcolor="#D23D3DFF" \
---separatorcolor="#00000000" \
---insidevercolor="#00000000" \
---insidewrongcolor="#00000000" \
---timepos="x+(w/2):y+(h/2)+150" \
---datepos="x+(w/2):y+(h/2)+170" \
---image "/home/dij/.cache/smd/lockscreen.png"
+Xft.dpi: 95

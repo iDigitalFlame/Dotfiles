@@ -849,6 +849,7 @@
         "mkdir",
         "nargs",
         "nextcloud",
+        "noatime",
         "nofollow",
         "noopener",
         "oauth",
@@ -874,6 +875,7 @@
         "tmpdir",
         "udev",
         "unmap",
+        "urandom",
         "usbs",
         "uuid",
         "virtio",
@@ -883,12 +885,14 @@
         "websockets",
         "websockify",
         "wlan",
+        "wmctrl",
         "wpos",
         "xautolock",
         "xerr",
         "xerrors",
         "xset",
-        "zfill"
+        "zfill",
+        "zstd"
     ],
     "files.enableTrash": false,
     "editor.copyWithSyntaxHighlighting": false,
@@ -942,7 +946,8 @@
     "python.experiments.enabled": false,
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pycodestyleArgs": [
-        "--max-line-length=120"
+        "--max-line-length=120",
+        "--ignore=E121,E123,E126,E226,E24,E704,W503,W504,E203"
     ],
     "python.showStartPage": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,

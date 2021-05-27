@@ -68,6 +68,12 @@
             "$HOME/.config/picom.conf"
         ],
         "enable_tap": true,
+        "freeze": {
+            "enabled": true,
+            "ignore": [
+                "xfce4-terminal"
+            ]
+        },
         "startups": [
             "/usr/bin/dunst",
             "/usr/bin/touchegg",
