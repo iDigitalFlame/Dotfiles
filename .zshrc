@@ -245,6 +245,7 @@ alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p pe
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
 
 # LS Aliases
+alias l="/usr/bin/ls -lpFN --group-directories-first --color=auto"
 alias ls="/usr/bin/ls -pFN --group-directories-first --color=auto"
 alias lsd="/usr/bin/ls -lpFN --group-directories-first --color=auto"
 alias lst="/usr/bin/ls -pFNt --group-directories-first --color=auto"
