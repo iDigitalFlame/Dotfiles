@@ -42,8 +42,6 @@ set                     $KEY_CTL Control
 
 gaps                    outer 0
 gaps                    inner 5
-shmlog                  off
-debuglog                off
 title_align             left
 smart_borders           on
 default_border          pixel 0
