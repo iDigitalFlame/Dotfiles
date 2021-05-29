@@ -1,3 +1,53 @@
+#!/usr/bin/nano
+################################
+### iDigitalFlame  2016-2021 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+################################
+## Nano Configuration
+#
+# Copyright (C) 2016 - 2021 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+include "/usr/share/nano/c.nanorc"
+include "/usr/share/nano/go.nanorc"
+include "/usr/share/nano/sh.nanorc"
+include "/usr/share/nano/css.nanorc"
+include "/usr/share/nano/html.nanorc"
+include "/usr/share/nano/json.nanorc"
+include "/usr/share/nano/cmake.nanorc"
+include "/usr/share/nano/python.nanorc"
+include "/usr/share/nano/autoconf.nanorc"
+include "/usr/share/nano/markdown.nanorc"
+include "/usr/share/nano/javascript.nanorc"
+
+set mouse
 set nowrap
 set tabsize 4
 set nonewlines
