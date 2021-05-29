@@ -35,43 +35,45 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-key_color="#$(openssl rand -hex 3)FF"
-
 # Disable all fullscreen windows (messes with i3-lock).
-/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" 2> /dev/null
+/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" &> /dev/null
 
 # Lock
 /usr/bin/i3lock \
 -n \
---clock \
+--centered \
 --composite \
---indicator \
---radius=100 \
---datestr "" \
---force-clock \
---time-align=0 \
---date-align=0 \
---ring-width=5 \
---veriftext="" \
---wrongtext="" \
---noinputtext="" \
---timestr="%H:%M" \
---color "#000000" \
+--color="00000000" \
+--image="/home/dij/.cache/smd/lockscreen.png" \
 --pointer=default \
+--force-clock \
+--date-str="" \
+--date-align=0 \
+--date-color="FFFFFFFF" \
+--date-pos="x+(w/2):y+(h/2)+170" \
+--time-align=0 \
+--time-str="%H:%M" \
+--time-color="FFFFFFFF" \
+--time-pos="x+(w/2):y+(h/2)+150" \
+--lock-text="" \
+--verif-text="" \
+--wrong-text="" \
+--no-modkey-text \
+--noinput-text="" \
+--greeter-text="" \
+--lockfailed-text="" \
+--indicator \
+--ind-pos="x+(w/2):y+(h/2)" \
+--radius=100 \
+--ring-width=5 \
+--ring-color="191919FF" \
+--ringver-color="AC0FEBFF" \
+--ringwrong-color="D23D3DFF" \
 --line-uses-inside \
---ringcolor="#FFFFFFFF" \
---bshlcolor="#D23D3DFF" \
---timecolor="#FFFFFFFF" \
---datecolor="#FFFFFFFF" \
---verifcolor="#FFFFFFFF" \
---keyhlcolor="$key_color" \
---insidecolor="#00000000" \
---ringvercolor="#E6DB74FF" \
---indpos="x+(w/2):y+(h/2)" \
---ringwrongcolor="#D23D3DFF" \
---separatorcolor="#00000000" \
---insidevercolor="#00000000" \
---insidewrongcolor="#00000000" \
---timepos="x+(w/2):y+(h/2)+150" \
---datepos="x+(w/2):y+(h/2)+170" \
---image "/home/dij/.cache/smd/lockscreen.png"
+--inside-color="00000000" \
+--insidever-color="00000000" \
+--insidewrong-color="00000000" \
+--bshl-color="D23D3DFF" \
+--verif-color="FFFFFFFF" \
+--separator-color="00000000" \
+--keyhl-color="$(openssl rand -hex 3)FF" \

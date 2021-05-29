@@ -75,7 +75,7 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ $# -eq 1 ] && [ "$1" == "go" ]; then
-    screen -dmS weather sg firewall-web -c "/usr/bin/surf -BDfgIKmnPSTc /dev/null https://openweathermap.org/city/${CITY}"
+    screen -dmS weather sg firewall-web -c "/usr/bin/surf -BDfgIKmnSTxc /dev/null https://openweathermap.org/city/${CITY}"
     exit 0
 fi
 

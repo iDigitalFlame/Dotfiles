@@ -52,7 +52,7 @@ workspace_layout        default
 hide_edge_borders       both
 floating_modifier       $KEY_WIN
 focus_follows_mouse     yes
-default_orientation     horizontal
+default_orientation     vertical
 default_floating_border normal
 
 # Window Rules

@@ -530,7 +530,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=120",
-        "--ignore=E203,W503"
+        "--ignore=E203,W503,E266"
     ],
     "python.linting.flake8CategorySeverity.E": "Error",
     "python.linting.flake8CategorySeverity.F": "Error",
@@ -947,7 +947,7 @@
     "python.linting.pycodestyleEnabled": true,
     "python.linting.pycodestyleArgs": [
         "--max-line-length=120",
-        "--ignore=E121,E123,E126,E226,E24,E704,W503,W504,E203"
+        "--ignore=E121,E123,E126,E226,E24,E704,W503,W504,E203,E266"
     ],
     "python.showStartPage": false,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
