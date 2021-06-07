@@ -41,6 +41,8 @@ html#main-window {
     --lwt-toolbar-field-color: #FEFEFA !important;
     --arrowpanel-border-color: transparent !important;
     --lwt-toolbar-field-focus-color: #FFF !important;
+    --toolbarbutton-hover-background: #7D0BAB !important;
+    --toolbarbutton-active-background: #7D0BAB !important;
     --toolbar-bgcolor: rgba(119, 119, 119, 0.4) !important;
     --arrowpanel-background: rgba(25, 25, 25, 0.7) !important;
     --lwt-toolbar-field-background-color: transparent !important
@@ -51,6 +53,11 @@ input#urlbar-input {
     caret-color: #FFFFFF !important;
     background-color: transparent !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
+}
+
+menupopup, .contentAreaContextMenu {
+    appearance: none !important;
+    border: 2px solid #AC0FEB !important;
 }
 
 .urlbar-input-box {
@@ -70,7 +77,13 @@ input#urlbar-input {
     box-shadow: none !important
 }
 
+#appMenu-popup, #widget-overflow, #protections-popup, #editBookmarkPanel {
+    border-radius: 10px !important;
+    border: 2px solid #AC0FEB !important;
+}
+
 #back-button {
+    padding-inline-start: 0 !important;
     list-style-image: url("left-arrow.svg") !important
 }
 #forward-button {
@@ -108,6 +121,17 @@ input#urlbar-input {
     display:none!important
 }
 
+#_testpilot-containers-menuitem-7, #_testpilot-containers-menuitem-6, #_testpilot-containers-menuitem-5, #_testpilot-containers-menuitem-4 {
+    display: none !important
+}
+
+#tabs-newtab-button {
+    margin: 2px 0 0 0 !important
+}
+
+#tracking-protection-icon-container {
+    margin-right: 2px !important
+}
 #tracking-protection-icon-container, #urlbar-search-button {
     border: none !important;
     background-color: none !important;
@@ -130,6 +154,9 @@ input#urlbar-input {
     color: #000 !important;
     background-color: none !important;
     background-image: linear-gradient(77deg, #FFC386, #FF8989) !important
+}
+.urlbar-addon-page-action {
+    display: none !important
 }
 .urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
     display: none !important
@@ -158,12 +185,16 @@ input#urlbar-input {
     background-image: none !important;
     font-family: "Cantarell", sans-serif !important
 }
+.tab-background {
+    display: none !important
+}
 
 .tabbrowser-tab {
     height: 28px !important;
     min-width: 10px !important;
     max-height: 28px !important;
-    border-radius: 25px !important
+    padding-inline: 0 !important;
+    border-radius: 15px !important
 }
 .tabbrowser-tab[pinned="true"] {
     color: #FFF !important;
@@ -206,6 +237,9 @@ input#urlbar-input {
 }
 .tabbrowser-tab:not([pinned]):hover .tab-label-container, .tabbrowser-tab[selected="true"] .tab-label-container {
     border-top: 2px solid transparent !important
+}
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 2px !important;
 }
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
     -moz-box-ordinal-group: 2 !important
