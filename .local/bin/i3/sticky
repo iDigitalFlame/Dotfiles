@@ -37,10 +37,10 @@
 
 from random import choice
 from os.path import isfile
-from sys import exit, stderr
 from datetime import datetime
 from string import ascii_lowercase
 from subprocess import Popen, DEVNULL
+from sys import argv, exit, stderr, stdin
 from evernote.edam.type.ttypes import Note
 from evernote.api.client import EvernoteClient
 from os import fork, makedirs, environ, getpid, remove
@@ -95,7 +95,46 @@ def take_note():
     del n
 
 
+def take_note_stdin():
+    if stdin.isatty():
+        return
+    h = environ["HOME"]
+    if not isinstance(h, str) or len(h) == 0:
+        raise ValueError("Could not get a proper $HOME value")
+    t = f"{h}/{TOKEN_FILE}"
+    del h
+    token = None
+    with open(t, "r") as tf:
+        token = tf.read().replace("\n", "").strip()
+    text = stdin.read().replace("\n", "<br/>")
+    if not isinstance(token, str) or len(token) == 0:
+        return
+    if not isinstance(text, str) or len(text.strip()) == 0:
+        return
+    note = Note()
+    note.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
+    note.content = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note>'
+        f"{text}"
+        "</en-note>"
+    )
+    del text
+    store = EvernoteClient(token=token, sandbox=False).get_note_store()
+    store.createNote(note)
+    del note
+    del store
+    del token
+
+
 if __name__ == "__main__":
+    if len(argv) == 2 and argv[1] == "-":
+        try:
+            take_note_stdin()
+        except Exception as err:
+            print(f"Error taking note: {err}!", file=stderr)
+            exit(1)
+        exit(0)
     try:
         if fork() > 0:
             exit(0)
@@ -103,8 +142,8 @@ if __name__ == "__main__":
             take_note()
         except Exception as err:
             print(f"Error taking note: {err}!", file=stderr)
-        else:
-            exit(0)
+            exit(1)
+        exit(0)
     except OSError as err:
         print(f"Could not fork: {err}!", file=stderr)
-    exit(1)
+    exit(2)

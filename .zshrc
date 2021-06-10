@@ -88,6 +88,11 @@ fi
 if [ ! -d "$HOME/Pictures/Screenshots" ]; then
     mkdir -p "$HOME/Pictures/Screenshots"
 fi
+if [ ! -d "/tmp/.usercache/$USER/trash" ]; then
+    mkdir -p "/tmp/.usercache/$USER/trash"
+    rm -f "$HOME/.local/share/Trash"
+    ln -s "/tmp/.usercache/$USER/trash" "$HOME/.local/share/Trash"
+fi
 
 # Firewall Switch Group Helper Function
 __sg_cmd() {
@@ -285,9 +290,11 @@ alias vsc="/usr/bin/vscodium"
 alias code="/usr/bin/vscodium"
 alias diff="/usr/bin/diff --color=auto"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
+alias en="python3 $HOME/.local/bin/i3/sticky -"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
+alias note="python3 $HOME/.local/bin/i3/sticky -"
 alias weather="/usr/bin/sg firewall-web -c 'curl wttr.in/?0'"
 alias nts="python3 $HOME/Projects/Scripts/Python/ntstatus.py"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
