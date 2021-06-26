@@ -966,5 +966,15 @@
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file"
     },
-    "workbench.editor.untitled.hint": "hidden"
+    "workbench.editor.untitled.hint": "hidden",
+    "C_Cpp.default.systemIncludePath": [
+        "/usr/x86_64-w64-mingw32/include",
+        "/usr/x86_64-w64-mingw32/lib",
+        "/usr/i686-w64-mingw32/include",
+        "/usr/i686-w64-mingw32/lib",
+        "/usr/lib/gcc/i686-w64-mingw32/11.1.0/include",
+        "/usr/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
+        "/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"
+    ],
+    "terminal.integrated.tabs.enabled": true
 }

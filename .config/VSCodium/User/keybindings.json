@@ -449,5 +449,274 @@
     {
         "key": "ctrl+k ctrl+down",
         "command": "-workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+alt+]",
+        "command": "-python.datascience.gotoNextCellInFile",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; c",
+        "command": "-python.datascience.changeCellToCode",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; m",
+        "command": "-python.datascience.changeCellToMarkdown",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; x",
+        "command": "-python.datascience.deleteCells",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+shift+alt+[",
+        "command": "-python.datascience.extendSelectionByCellAbove",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+shift+alt+]",
+        "command": "-python.datascience.extendSelectionByCellBelow",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "-python.datascience.gotoPrevCellInFile",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; a",
+        "command": "-python.datascience.insertCellAbove",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; b",
+        "command": "-python.datascience.insertCellBelow",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; s",
+        "command": "-python.datascience.insertCellBelowPosition",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; d",
+        "command": "-python.datascience.moveCellsDown",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+; u",
+        "command": "-python.datascience.moveCellsUp",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-python.datascience.runcurrentcell",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.datascience.runcurrentcelladvance",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.datascience.execSelectionInteractive",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !notebookEditorFocused && !python.datascience.ownsSelection && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+shift+alt+\\",
+        "command": "-python.datascience.selectCell",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+alt+\\",
+        "command": "-python.datascience.selectCellContents",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "alt+enter",
+        "command": "-python.datascience.runcurrentcellandaddbelow",
+        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+    },
+    {
+        "key": "shift+alt+[IntlBackslash]",
+        "command": "-editor.action.autoFix",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+    },
+    {
+        "key": "shift+alt+.",
+        "command": "-editor.action.autoFix",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+    },
+    {
+        "key": "alt+o",
+        "command": "-C_Cpp.SwitchHeaderSource",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "alt+o",
+        "command": "-C_Cpp.SwitchHeaderSource",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+alt+space",
+        "command": "-toggleSuggestionFocus",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+y",
+        "command": "-workbench.debug.action.toggleRepl",
+        "when": "workbench.panel.repl.view.active"
+    },
+    {
+        "key": "ctrl+meta+w",
+        "command": "-workbench.action.toggleTabsVisibility"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        "key": "ctrl+; ctrl+a",
+        "command": "-testing.debugAll"
+    },
+    {
+        "key": "ctrl+; ctrl+e",
+        "command": "-testing.debugFailTests"
+    },
+    {
+        "key": "ctrl+; ctrl+l",
+        "command": "-testing.debugLastRun"
+    },
+    {
+        "key": "ctrl+; ctrl+c",
+        "command": "-testing.debugAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+; ctrl+f",
+        "command": "-testing.debugCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+; m",
+        "command": "-testing.openOutputPeek"
+    },
+    {
+        "key": "ctrl+; e",
+        "command": "-testing.reRunFailTests"
+    },
+    {
+        "key": "ctrl+; l",
+        "command": "-testing.reRunLastRun"
+    },
+    {
+        "key": "ctrl+; a",
+        "command": "-testing.runAll"
+    },
+    {
+        "key": "ctrl+; c",
+        "command": "-testing.runAtCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+; f",
+        "command": "-testing.runCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-repl.action.acceptInput",
+        "when": "inDebugRepl && textInputFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-repl.action.filter",
+        "when": "inDebugRepl && textInputFocus"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-workbench.action.terminal.navigationModeFocusNext",
+        "when": "accessibilityModeEnabled && terminalA11yTreeFocus && terminalProcessSupported || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+down",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-workbench.action.terminal.navigationModeFocusPrevious",
+        "when": "accessibilityModeEnabled && terminalA11yTreeFocus && terminalProcessSupported || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+up",
+        "command": "-workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "-workbench.action.terminal.focusTabs",
+        "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "f8",
+        "command": "-PowerShell.RunSelection",
+        "when": "editorTextFocus && editorLangId == 'powershell'"
+    },
+    {
+        "key": "ctrl+f1",
+        "command": "-PowerShell.ShowHelp",
+        "when": "editorTextFocus && editorLangId == 'powershell'"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
     }
 ]

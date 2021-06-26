@@ -103,6 +103,7 @@
 [urgency_normal]
     icon                    = "/usr/share/icons/DarkSky/status/48/dialog-information.svg"
     timeout                 = 6
+    fullscreen              = show
     background              = "#191919"
     foreground              = "#FFFFFF"
     frame_color             = "#AC0FEB"
@@ -110,17 +111,7 @@
 [urgency_critical]
     icon                    = "/usr/share/icons/DarkSky/status/48/dialog-error.svg"
     timeout                 = 0
+    fullscreen              = show
     background              = "#84000B"
     foreground              = "#FFFFFF"
     frame_color             = "#FFFFFF"
-
-[history-ignore]
-    summary                 = "*"
-    history_ignore          = true
-
-[fullscreen_show_critical]
-    fullscreen              = show
-    msg_urgency             = critical
-
-[fullscreen_delay_everything]
-    fullscreen              = delay
