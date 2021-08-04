@@ -663,6 +663,12 @@
         }
     },
     "gopls": {
+        "annotations": {
+            "bounds": true,
+            "escape": true,
+            "inline": true,
+            "nil": true
+        },
         "build.buildFlags": [
             "-tags=windows,darwin,linux"
         ],
@@ -678,9 +684,11 @@
         "analyses": {
             "assign": true,
             "atomic": true,
+            "asmdecl": true,
             "atomicalign": true,
             "bools": true,
             "buildtag": true,
+            "cgocall": true,
             "composites": true,
             "copylocks": true,
             "deepequalerrors": true,
@@ -702,6 +710,7 @@
             "stdmethods": true,
             "stringintconv": true,
             "structtag": true,
+            "tests": true,
             "testinggoroutine": true,
             "unmarshal": true,
             "unreachable": true,
@@ -713,6 +722,13 @@
             "nonewvars": true,
             "noresultvalues": true,
             "fillstruct": true
+        },
+        "ui": {
+            "generate": false,
+            "gc_details": true,
+            "regenerate_cgo": true,
+            "tidy": true,
+            "upgrade_dependency": true
         }
     },
     "go.languageServerExperimentalFeatures": {
@@ -739,7 +755,7 @@
     "go.gotoSymbol.includeImports": true,
     "go.gotoSymbol.includeGoroot": false,
     "go.languageServerFlags": [],
-    "go.useLanguageServer": false,
+    "go.useLanguageServer": true,
     "go.inferGopath": false,
     "go.lintFlags": [],
     "go.lintOnSave": "package",
@@ -976,5 +992,6 @@
         "/usr/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
         "/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"
     ],
-    "terminal.integrated.tabs.enabled": true
+    "terminal.integrated.tabs.enabled": true,
+    "go.toolsManagement.autoUpdate": true
 }

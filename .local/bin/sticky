@@ -35,4 +35,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/bin/i3/sticky"
+sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/bin/i3/sticky $@"

@@ -53,46 +53,32 @@ def take_note():
     if not isinstance(h, str) or len(h) == 0:
         raise ValueError("Could not get a proper $HOME value")
     makedirs(f"{h}/.cache/notes", mode=0o750, exist_ok=True)
-    t = f"{h}/{TOKEN_FILE}"
-    n = f"{h}/.cache/notes/{getpid()}-{''.join([choice(ascii_lowercase) for _ in range(32)])}.txt"
-    del h
+    i = f"{h}/.cache/notes/{getpid()}-{''.join([choice(ascii_lowercase) for _ in range(8)])}.txt"
     p = Popen(
-        ["/usr/bin/leafpad", "--class=stickynote", n],
+        ["/usr/bin/leafpad", "--class=stickynote", i],
         stdout=DEVNULL,
         stderr=DEVNULL,
     )
     if p.wait() > 0:
         print("Warning: Leafpad exited with a non-zero status!", file=stderr)
     del p
-    if not isfile(n) or not isfile(t):
+    if not isfile(i):
         return
-    text = None
-    token = None
-    with open(n, "r") as nh, open(t, "r") as th:
-        text = nh.read().replace("\n", "<br/>")
-        token = th.read().replace("\n", "").strip()
-    del t
-    if not isinstance(token, str) or len(token) == 0:
+    with open(i, "r") as f:
+        d = f.read().replace("\n", "<br/>")
+    if not isinstance(d, str) or len(d.strip()) == 0:
+        remove(i)
+        del i
         return
-    if not isinstance(text, str) or len(text.strip()) == 0:
-        remove(n)
+    if not _submit(h, d):
+        del i
+        del h
+        del d
         return
-    note = Note()
-    note.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
-    note.content = (
-        '<?xml version="1.0" encoding="UTF-8"?>'
-        '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note>'
-        f"{text}"
-        "</en-note>"
-    )
-    del text
-    store = EvernoteClient(token=token, sandbox=False).get_note_store()
-    store.createNote(note)
-    del note
-    del store
-    del token
-    remove(n)
-    del n
+    del h
+    del d
+    remove(i)
+    del i
 
 
 def take_note_stdin():
@@ -101,30 +87,42 @@ def take_note_stdin():
     h = environ["HOME"]
     if not isinstance(h, str) or len(h) == 0:
         raise ValueError("Could not get a proper $HOME value")
-    t = f"{h}/{TOKEN_FILE}"
+    d = stdin.read().replace("\n", "<br/>")
+    if not isinstance(d, str) or len(d.strip()) == 0:
+        return
+    _submit(h, d)
+    del d
     del h
-    token = None
-    with open(t, "r") as tf:
-        token = tf.read().replace("\n", "").strip()
-    text = stdin.read().replace("\n", "<br/>")
-    if not isinstance(token, str) or len(token) == 0:
-        return
-    if not isinstance(text, str) or len(text.strip()) == 0:
-        return
-    note = Note()
-    note.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
-    note.content = (
+
+
+def _submit(home, note_text):
+    if not isinstance(home, str) or len(home) == 0:
+        raise ValueError("Could not get a proper $HOME value")
+    if not isinstance(note_text, str) or len(note_text.strip()) == 0:
+        return False
+    p = f"{home}/{TOKEN_FILE}"
+    if not isfile(p):
+        del p
+        return False
+    with open(p, "r") as f:
+        t = f.read().replace("\n", "").strip()
+    del p
+    if not isinstance(t, str) or len(t) == 0:
+        return False
+    n = Note()
+    n.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
+    n.content = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note>'
-        f"{text}"
+        f"{note_text}"
         "</en-note>"
     )
-    del text
-    store = EvernoteClient(token=token, sandbox=False).get_note_store()
-    store.createNote(note)
-    del note
-    del store
-    del token
+    s = EvernoteClient(token=t, sandbox=False).get_note_store()
+    s.createNote(n)
+    del n
+    del s
+    del t
+    return True
 
 
 if __name__ == "__main__":
