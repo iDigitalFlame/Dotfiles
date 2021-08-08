@@ -67,6 +67,11 @@
         <value type="string" value="7eae9ba5-8e11-482c-966f-da9dec9e0e33"/>
         <value type="string" value="e91d62b5-0465-4815-8dbe-5d35cbd02ff6"/>
         <value type="string" value="ce023f81-f408-431c-bb6c-8230f3a0bb52"/>
+        <value type="string" value="6570b1c1-ac5d-4655-91fa-4f2c9785cf7f"/>
+        <value type="string" value="0875-8C79"/>
+        <value type="string" value="de28fca4-4a3e-44f2-933e-2b38c42bb2bd"/>
+        <value type="string" value="98bb4cdf-2fa0-4584-b141-248e1ccc6a47"/>
+        <value type="string" value="382c11e7-dbfe-47b3-abcb-ebd1d5b789bc"/>
     </property>
     <property name="last-show-hidden" type="bool" value="false"/>
     <property name="last-menubar-visible" type="bool" value="false"/>
@@ -74,5 +79,5 @@
     <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
     <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
     <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-    <property name="last-details-view-column-widths" type="string" value="50,110,50,50,309,50,50,64,50,300"/>
+    <property name="last-details-view-column-widths" type="string" value="50,108,50,50,378,50,50,65,50,232"/>
 </channel>
