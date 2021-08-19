@@ -41,10 +41,15 @@ Icon            = vscodium
 Type            = Application
 Name            = Code
 Comment         = Editor for building and debugging modern web and cloud applications
-MimeType        = text/plain;inode/directory;
+MimeType        = text/plain;
 Terminal        = false
-Keywords        = code;vs;dev;ide
+Keywords        = code;vs;dev;ide;vscode
 Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
 GenericName     = Text Editor
 StartupNotify   = true
 StartupWMClass  = code
+
+[Desktop Action new-empty-window]
+Name            = New Empty Window
+Exec            = /usr/bin/vscodium --new-window %F
+Icon            = vscodium
