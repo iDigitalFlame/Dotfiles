@@ -58,20 +58,28 @@ source "$ZSH/oh-my-zsh.sh"
 typeset -A ZSH_HIGHLIGHT_STYLES
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main root)
-ZSH_HIGHLIGHT_STYLES[root]='bg=red'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red,bold'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=yellow,bold'
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("$HOME/Volumes")
+ZSH_HIGHLIGHT_MAXLENGTH=256
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+ZSH_HIGHLIGHT_STYLES[command]='none'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=93,bold'
+ZSH_HIGHLIGHT_STYLES[function]='fg=63,bold'
+ZSH_HIGHLIGHT_STYLES[root]='bg=9,underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=118,bold'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg=202,bold'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=93,bold'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,bold'
+ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=63,bold'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=210,bold'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=210,bold'
+ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=63,bold'
+ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=63,bold'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=74,bold'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=74,bold'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=74,bold'
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/media)
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/tmp/.mounts)
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
 
 PROMPT="%n $PROMPT"
 
@@ -275,15 +283,13 @@ alias gv="sg firewall-web -c 'go vet ./...'"
 alias gsc="sg firewall-web -c 'staticcheck ./...'"
 
 alias gsc-win="sg firewall-web -c 'env GOOS=windows staticcheck ./...'"
-alias gscw="sg firewall-web -c 'staticcheck -unused.whole-program ./...'"
-alias gscw-win="sg firewall-web -c 'env GOOS=windows staticcheck -unused.whole-program ./...'"
 alias gov="sg firewall-web -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
 alias rm="rm -I"
 alias cls="clear"
-alias less="less -R"
+alias less="less -iR"
 alias powershell="pwsh"
 alias hydra="nocorrect hydra"
 alias vsc="/usr/bin/vscodium"
