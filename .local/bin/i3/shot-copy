@@ -40,6 +40,8 @@ if [ $# -ge 1 ]; then
     delay=1
 fi
 
-maim -d $delay -c 0,0,0,0 -u -o | xclip -selection clipboard -t image/png
-notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to clipboard."
+maim -d $delay -uoqc 0,0,0,0 -t 0 -b 5 -f png -m 1 -n 0 | xclip -selection clipboard -t image/png
+if [ $? -eq 0 ]; then
+    notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to clipboard."
+fi
 exit 0

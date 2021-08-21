@@ -50,7 +50,7 @@ configuration {
     columns:                    1;
     threads:                    0;
     location:                   2;
-    terminal:                   "/usr/bin/xfce4-terminal";
+    terminal:                   "/usr/bin/kitty";
     tokenize:                   true;
     matching:                   "glob";
     kb-cancel:                  "Escape";

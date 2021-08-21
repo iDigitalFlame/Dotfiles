@@ -456,7 +456,7 @@
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "terminal.explorerKind": "integrated",
-    "terminal.external.linuxExec": "/usr/bin/xfce4-terminal",
+    "terminal.external.linuxExec": "/usr/bin/kitty",
     "terminal.external.osxExec": "Terminal.app",
     "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
     "terminal.integrated.confirmOnExit": false,

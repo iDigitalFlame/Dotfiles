@@ -69,7 +69,6 @@ freset() {
     rm -f "$HOME/.gtkrc-2.0"
     rm -f "$HOME/.gtkrc-2.0.mine"
     rm -f "$HOME/.config/gtk-3.0/settings.ini"
-    rm -f "$HOME/.config/xfce4/terminal/terminalrc"
     return 0
 }
 
@@ -80,7 +79,6 @@ freload() {
     ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
     ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
     ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
-    ln -s "$THEME_DIR/current/terminal.conf" "$HOME/.config/xfce4/terminal/terminalrc"
     return 0
 }
 
