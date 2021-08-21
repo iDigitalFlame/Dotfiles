@@ -456,10 +456,10 @@
     "extensions.ignoreRecommendations": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "terminal.explorerKind": "integrated",
-    "terminal.external.linuxExec": "/usr/bin/kitty",
+    "terminal.external.linuxExec": "term",
     "terminal.external.osxExec": "Terminal.app",
     "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
-    "terminal.integrated.confirmOnExit": false,
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
     "terminal.integrated.copyOnSelection": false,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
@@ -995,5 +995,19 @@
         "/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"
     ],
     "terminal.integrated.tabs.enabled": true,
-    "go.toolsManagement.autoUpdate": true
+    "go.toolsManagement.autoUpdate": true,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/usr/bin/bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "/usr/bin/zsh"
+        },
+        "pwsh": {
+            "path": "/usr/bin/pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "debug.javascript.terminalOptions": {}
 }
