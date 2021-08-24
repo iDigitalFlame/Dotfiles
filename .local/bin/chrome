@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Application Entry
+## Chrome Wrapper
 #
 # Copyright (C) 2016 - 2021 iDigitalFlame
 #
@@ -35,17 +35,16 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-[Desktop Entry]
-Name            = Firefox (Firewall)
-Exec            = /home/dij/.local/bin/firefox %u
-Icon            = firefox
-Type            = Application
-Comment         = Browse the Web
-Terminal        = false
-Keywords        = web;browser;internet;
-MimeType        = text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
-Categories      = Network;WebBrowser;
-GenericName     = Web Browser
-StartupNotify   = true
-X-MultipleArgs  = false
-StartupWMClass  = Firefox
+args=$@
+
+if [ -z "$args" ]; then
+    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium"
+    exit 0
+fi
+
+if [[ "$args" == "--all" ]]; then
+    sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window"
+    exit 0
+fi
+
+sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$args\""

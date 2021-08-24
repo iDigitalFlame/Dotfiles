@@ -36,16 +36,8 @@
 #
 
 args=$@
-is_firefox=1
 
-if [ "$FIREFOX" == "0" ]; then
-    is_firefox=0
-fi
-if [ -n "$(basename $0 | grep -i chrome)" ]; then
-    is_firefox=0
-fi
-
-if [ $is_firefox -eq 1 ]; then
+if [ "$FIREFOX" == "1" ] || [ -n "$(basename $0 | grep -i firefox)" ]; then
     if [ -z "$args" ]; then
         sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P $USER"
     else
@@ -55,12 +47,7 @@ if [ $is_firefox -eq 1 ]; then
 fi
 
 if [ -z "$args" ]; then
-    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium"
-    exit 0
-fi
-
-if [[ "$args" == "--all" ]]; then
-    sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window"
+    sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER"
 else
-    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$args\""
+    sg firewall-web -c "export TZ=UTC; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER \"$args\""
 fi

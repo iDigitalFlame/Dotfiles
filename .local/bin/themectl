@@ -65,7 +65,7 @@ freset() {
     fi
     theme=$(basename $theme)
     rm "$THEME_DIR/current" 2> /dev/null
-    ln -s "$THEME_DIR/$theme" "$THEME_DIR/current"
+    ln -sT "$THEME_DIR/$theme" "$THEME_DIR/current"
     rm -f "$HOME/.gtkrc-2.0"
     rm -f "$HOME/.gtkrc-2.0.mine"
     rm -f "$HOME/.config/gtk-3.0/settings.ini"
@@ -76,9 +76,9 @@ freload() {
     if ! [ -e "$THEME_DIR/current" ]; then
         return 1
     fi
-    ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
-    ln -s "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
-    ln -s "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
+    ln -sT "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
+    ln -sT "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
+    ln -sT "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
     return 0
 }
 

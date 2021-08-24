@@ -36,16 +36,16 @@
 #
 
 [Desktop Entry]
-Name            = Firefox (Firewall)
-Exec            = /home/dij/.local/bin/firefox %u
-Icon            = firefox
+Name            = LibreWolf (Firewall)
+Exec            = /home/dij/.local/bin/librewolf %u
+Icon            = librewolf
 Type            = Application
 Comment         = Browse the Web
 Terminal        = false
-Keywords        = web;browser;internet;
+Keywords        = web;browser;internet;firefox
 MimeType        = text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
 Categories      = Network;WebBrowser;
 GenericName     = Web Browser
 StartupNotify   = true
 X-MultipleArgs  = false
-StartupWMClass  = Firefox
+StartupWMClass  = LibreWolf

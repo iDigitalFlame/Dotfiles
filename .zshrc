@@ -62,7 +62,7 @@ ZSH_HIGHLIGHT_MAXLENGTH=256
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 ZSH_HIGHLIGHT_STYLES[command]='none'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=93,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=172,bold'
 ZSH_HIGHLIGHT_STYLES[function]='fg=63,bold'
 ZSH_HIGHLIGHT_STYLES[root]='bg=9,underline'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=118,bold'
