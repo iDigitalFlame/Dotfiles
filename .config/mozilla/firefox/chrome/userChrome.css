@@ -85,6 +85,7 @@ menupopup, .contentAreaContextMenu {
 
 #back-button {
     padding-inline-start: 0 !important;
+    list-style-image: url("left-arrow.svg") !important
 }
 #forward-button {
     list-style-image: url("right-arrow.svg") !important
