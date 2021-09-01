@@ -35,4 +35,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-rofi -no-lazy-grab -dmenu -theme-str "window {width:40%;}" -i -lines 0
+rofi -no-lazy-grab -dmenu -theme "$HOME/.config/rofi/menu.rasi" -theme-str "window {width:40%;} inputbar {enabled:true;}" -i -l 0
