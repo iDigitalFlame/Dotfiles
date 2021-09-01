@@ -37,6 +37,7 @@
 
 configuration {
     m:                          "-5";
+    dpi:                        1;
     modi:                       "drun,window";
     font:                       "SauceCodePro Nerd Font Mono 12";
     sort:                       true;

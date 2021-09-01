@@ -60,7 +60,7 @@ prompt {
 
 window {
     width:                  35%;
-    height:                 70%;
+    height:                 762;
     border:                 1;
     padding:                0;
     transparency:           "real";
