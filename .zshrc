@@ -55,6 +55,13 @@ export PATH=$PATH:$GOPATH/bin
 plugins=(git screen sudo)
 source "$ZSH/oh-my-zsh.sh"
 
+# ZSH History Auto Completion
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "\e[A" up-line-or-beginning-search
+bindkey "\e[B" down-line-or-beginning-search
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
