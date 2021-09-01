@@ -37,17 +37,12 @@
 
 configuration {
     m:                          "-5";
-    bw:                         0;
     modi:                       "drun,window";
     font:                       "SauceCodePro Nerd Font Mono 12";
     sort:                       true;
     cycle:                      false;
-    lines:                      15;
-    width:                      1;
-    padding:                    0;
     xoffset:                    0;
     yoffset:                    120;
-    columns:                    1;
     threads:                    0;
     location:                   2;
     terminal:                   "/usr/bin/kitty";
@@ -56,10 +51,8 @@ configuration {
     kb-cancel:                  "Escape";
     kb-row-up:                  "Up";
     kb-row-tab:                 "";
-    fullscreen:                 false;
     ssh-client:                 "/usr/bin/false";
     combi-modi:                 "drun,window";
-    show-match:                 true;
     show-icons:                 true;
     parse-hosts:                false;
     kb-row-last:                "End";
@@ -85,7 +78,6 @@ configuration {
     kb-custom-9:                "";
     ssh-command:                "/usr/bin/false";
     run-command:                "{cmd}";
-    line-margin:                1;
     display-run:                "";
     display-ssh:                "";
     kb-select-10:               "";
@@ -96,7 +88,6 @@ configuration {
     kb-mode-next:               "Tab";
     display-drun:               "";
     sidebar-mode:               false;
-    line-padding:               2;
     kb-accept-alt:              "";
     kb-move-front:              "Control+A";
     window-format:              "{t}";
@@ -105,92 +96,15 @@ configuration {
     kb-clear-line:              "Control+W";
     display-combi:              "";
     display-window:             "";
-    hide-scrollbar:             false;
     kb-toggle-sort:             "";
     case-sensitive:             false;
-    scrollbar-width:            5;
     disable-history:            false;
     kb-accept-entry:            "Return,KP_Enter";
     kb-accept-custom:           "";
     kb-mode-previous:           "";
     kb-primary-paste:           "Control+V";
-    fake-transparency:          false;
     parse-known-hosts:          false;
     run-shell-command:          "{terminal}";
     kb-secondary-paste:         "Control+v";
     kb-toggle-case-sensitivity: "";
-}
-
-* {
-    font:                       "SauceCodePro Nerd Font Mono 12";
-    text-color:                 #FFFFFFFF;
-    background-color:           #00000000;
-}
-
-entry {
-    padding:                    8px 12px 8px 12px;
-    text-color:                 #FFFFFFFF;
-}
-
-prompt {
-    enabled:                    false;
-}
-
-window {
-    width:                      20%;
-    border:                     1px;
-    padding:                    10px;
-    transparency:               "real";
-    border-color:               #FFFFFFFF;
-    border-radius:              10px;
-    background-color:           #191919BF;
-}
-
-mainbox {
-    border:                     0;
-    padding:                    0;
-    children:                   [inputbar, listview];
-    border-radius:              0;
-}
-
-listview {
-    columns:                    1;
-    padding:                    0;
-    spacing:                    1;
-    children:                   [scrollbar, element];
-    scrollbar:                  false;
-}
-
-scrollbar {
-    enabled:                    false;
-    handle-width:               10px;
-    border-color:               #FFFFFFFF;
-    handle-color:               #FFFFFF5F;
-}
-
-element {
-    border:                     0;
-    padding:                    12 12 12 12;
-    children:                   [element-icon, element-text];
-    text-color:                 #FFFFFFFF;
-    border-radius:              0;
-}
-
-inputbar {
-    border:                     0 0 2px 0;
-    padding:                    3px 3px 3px 3px;
-    enabled:                    true;
-    children:                   [entry];
-    text-color:                 #FFFFFFFF;
-}
-
-element-icon {
-    size:                       20px;
-}
-
-element selected {
-    text-color:                 #000000FF;
-    border-color:               #00000000;
-    border-radius:              10px;
-    background-color:           #FFFFFFFF;
 }

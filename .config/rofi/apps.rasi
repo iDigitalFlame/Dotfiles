@@ -37,11 +37,31 @@
 */
 
 configuration {
+    timeout {
+        delay:              10;
+        action:             "kb-cancel";
+    }
+
     cycle:                  false;
     yoffset:                15;
     xoffset:                5;
     location:               1;
     drun-display-format:    "{icon} {name}";
+}
+
+* {
+    font:                   "SauceCodePro Nerd Font Mono 12";
+    text-color:             #FFFFFFFF;
+    background-color:       #00000000;
+}
+
+entry {
+    padding:                8px 12px 8px 12px;
+    text-color:             #FFFFFFFF;
+}
+
+prompt {
+    enabled:                false;
 }
 
 window {
@@ -50,16 +70,32 @@ window {
     border:                 1;
     padding:                0;
     border-color:           #AC0FEBFF;
-    border-radius:          10;
+    transparency:           "real";
+    border-radius:          10px;
+    background-color:       #191919BF;
+}
+
+mainbox {
+    border:                 0;
+    padding:                0;
+    children:               [inputbar, listview];
+    border-radius:          0;
 }
 
 listview {
     padding:                2px 0 0 3px;
+    columns:                1;
+    spacing:                1;
+    children:               [scrollbar, element];
     scrollbar:              true;
 }
 
 inputbar {
+    border:                 0 0 2px 0;
     enabled:                true;
+    padding:                3px 3px 3px 3px;
+    children:               [entry];
+    text-color:             #FFFFFFFF;
     border-color:           #FFFFFFFF;
     background-color:       #7D0BABFF;
 }
@@ -67,4 +103,34 @@ inputbar {
 scrollbar {
     padding:                0 0 0 3px;
     enabled:                true;
+    handle-width:           10px;
+    border-color:           #FFFFFFFF;
+    handle-color:           #FFFFFF5F;
+}
+
+element {
+    border:                 0;
+    padding:                12 12 12 12;
+    children:               [element-icon, element-text];
+    text-color:             #FFFFFFFF;
+    border-radius:          0;
+}
+
+element selected {
+    text-color:             #FF0000FF;
+    border-color:           #00000000;
+    border-radius:          10px;
+    background-color:       #FFFFFFFF;
+}
+
+element-icon {
+    size:                   20px;
+}
+
+element-text {
+    text-color:             #FFFFFFFF;
+}
+
+element-text selected {
+    text-color:             #000000FF;
 }

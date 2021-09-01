@@ -36,44 +36,89 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
+configuration {
+    timeout {
+        delay:              10;
+        action:             "kb-cancel";
+    }
+}
+
+* {
+    font:                   "SauceCodePro Nerd Font Mono 12";
+    text-color:             #FFFFFFFF;
+    background-color:       #00000000;
+}
+
+entry {
+    padding:                8px 12px 8px 12px;
+    text-color:             #FFFFFFFF;
+}
+
+prompt {
+    enabled:                false;
+}
+
 window {
-    width:              75%;
-    border:             0;
-    padding:            0;
+    width:                  35%;
+    height:                 70%;
+    border:                 1;
+    padding:                0;
+    transparency:           "real";
+    border-color:           #AC0FEBFF;
+    border-radius:          10px;
+    background-color:       #191919BF;
 }
 
-inputbar {
-    enabled:            false;
-    children:           [entry];
-}
-
-element {
-    border:             0;
-    padding:            10px;
-    text-color:         #FFFFFFFF;
-    orientation:        vertical;
+mainbox {
+    border:                 0;
+    padding:                0;
+    children:               [inputbar, listview];
+    border-radius:          0;
 }
 
 listview {
-    lines:              4;
-    layout:             vertical;
-    columns:            4;
-    spacing:            0;
-    dynamic:            true;
-    fixed-height:       true;
+    lines:                  8;
+    layout:                 vertical;
+    columns:                1;
+    spacing:                0;
+    dynamic:                true;
+    padding:                0;
+    children:               [element];
+    scrollbar:              false;
 }
 
-element-icon {
-    size:               100px;
+inputbar {
+    enabled:                false;
 }
 
-element-text {
-    vertical-align:     0.5;
-    horizontal-align:   0.5;
+scrollbar {
+    enabled:                false;
+}
+
+element {
+    border:                 0;
+    padding:                10px;
+    text-color:             #FFFFFFFF;
+    children:               [element-icon, element-text];
+    border-radius:          0;
 }
 
 element selected {
-    text-color:         #FFFFFFFF;
-    border-radius:      5px;
-    background-color:   #7D0BABFF;
+    background-color:       #7D0BABFF;
+}
+
+element-icon {
+    size:                   75px;
+    vertical-align:         0.5;
+    horizontal-align:       0.5;
+}
+
+element-text {
+    padding:                0 0 0 10px;
+    vertical-align:         0.5;
+}
+
+element-text selected {
+    text-color:             #FFFFFFFF;
+    background-color:       #7D0BABFF;
 }

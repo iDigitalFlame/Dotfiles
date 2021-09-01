@@ -36,13 +36,85 @@
 */
 
 configuration {
+    timeout {
+        delay:              10;
+        action:             "kb-cancel";
+    }
+
     cycle:      true;
 }
 
+* {
+    font:                   "SauceCodePro Nerd Font Mono 12";
+    text-color:             #FFFFFFFF;
+    background-color:       #00000000;
+}
+
+entry {
+    padding:                8px 12px 8px 12px;
+    text-color:             #FFFFFFFF;
+}
+
+prompt {
+    enabled:                false;
+}
+
+window {
+    width:                  20%;
+    border:                 1px;
+    padding:                5px;
+    transparency:           "real";
+    border-color:           #FFFFFFFF;
+    border-radius:          10px;
+    background-color:       #191919BF;
+}
+
+mainbox {
+    border:                 0;
+    padding:                0;
+    children:               [inputbar, listview];
+    border-radius:          0;
+}
+
+listview {
+    columns:                1;
+    padding:                0;
+    spacing:                1;
+    children:               [scrollbar, element];
+    scrollbar:              false;
+}
+
 inputbar {
-    enabled:    false;
+    enabled:                false;
 }
 
 scrollbar {
-    enabled:    false;
+    enabled:                false;
+}
+
+element {
+    border:                 0;
+    padding:                10 5 10 5;
+    children:               [element-icon, element-text];
+    text-color:             #FFFFFFFF;
+    border-radius:          0;
+}
+
+element selected {
+    text-color:             #000000FF;
+    border-color:           #00000000;
+    border-radius:          10px;
+    background-color:       #FFFFFFFF;
+}
+
+element-icon {
+    size:                   20px;
+}
+
+element-text {
+    text-color:             #FFFFFFFF;
+}
+
+element-text selected {
+    text-color:             #000000FF;
 }
