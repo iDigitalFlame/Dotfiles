@@ -723,13 +723,14 @@
             "noresultvalues": true,
             "fillstruct": true
         },
+        /*
         "ui": {
             "generate": false,
             "gc_details": true,
             "regenerate_cgo": true,
             "tidy": true,
             "upgrade_dependency": true
-        }
+        }*/
     },
     "go.languageServerExperimentalFeatures": {
         "format": true,
