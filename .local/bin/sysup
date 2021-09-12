@@ -81,7 +81,8 @@ sg firewall-web -c "curl -sL https://www.github.developerdan.com/hosts/lists/fac
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all -o /tmp/fbhosts2.txt"
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all -o /tmp/fbhosts3.txt"
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt -o /tmp/fbhosts4.txt"
-cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt /tmp/fbhosts4.txt > /tmp/fbhosts.txt
+sg firewall-web -c "curl -sL https://blocklistproject.github.io/Lists/facebook.txt -o /tmp/fbhosts5.txt"
+cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt /tmp/fbhosts4.txt /tmp/fbhosts5.txt > /tmp/fbhosts.txt
 
 sg firewall-web -c "/usr/bin/yay -Pw"
 printf "\x1b[32m\x1b[1mStarting pacman...\x1b[0m\n"
