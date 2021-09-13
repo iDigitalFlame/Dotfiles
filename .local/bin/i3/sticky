@@ -35,6 +35,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+from html import escape
 from random import choice
 from os.path import isfile
 from datetime import datetime
@@ -46,6 +47,28 @@ from evernote.api.client import EvernoteClient
 from os import fork, makedirs, environ, getpid, remove
 
 TOKEN_FILE = ".config/note.conf"
+
+
+def _main():
+    if len(argv) == 2 and argv[1] == "-":
+        try:
+            take_note_stdin()
+        except Exception as err:
+            print(f"Error taking note: {err}!", file=stderr)
+            return 1
+        return 0
+    try:
+        if fork() > 0:
+            return 0
+        try:
+            take_note()
+        except Exception as err:
+            print(f"Error taking note: {err}!", file=stderr)
+            return 1
+        return 0
+    except OSError as err:
+        print(f"Could not fork: {err}!", file=stderr)
+    return 2
 
 
 def take_note():
@@ -65,7 +88,7 @@ def take_note():
     if not isfile(i):
         return
     with open(i, "r") as f:
-        d = f.read().replace("\n", "<br/>")
+        d = f.read()
     if not isinstance(d, str) or len(d.strip()) == 0:
         remove(i)
         del i
@@ -87,7 +110,7 @@ def take_note_stdin():
     h = environ["HOME"]
     if not isinstance(h, str) or len(h) == 0:
         raise ValueError("Could not get a proper $HOME value")
-    d = stdin.read().replace("\n", "<br/>")
+    d = stdin.read()
     if not isinstance(d, str) or len(d.strip()) == 0:
         return
     _submit(h, d)
@@ -109,14 +132,22 @@ def _submit(home, note_text):
     del p
     if not isinstance(t, str) or len(t) == 0:
         return False
+    d = (
+        escape(note_text)
+        .replace("\t", "    ")
+        .replace("\n", "<br/>")
+        .replace("\r", "<br/>")
+    )
     n = Note()
     n.title = f'Scratch Pad {datetime.now().strftime("%m/%d/%Y %H:%M")}'
     n.content = (
         '<?xml version="1.0" encoding="UTF-8"?>'
-        '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note>'
-        f"{note_text}"
-        "</en-note>"
+        '<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">'
+        f"<en-note><code>{d}</code></en-note>"
     )
+    del d
+    if n.validate() is not None:
+        return False
     s = EvernoteClient(token=t, sandbox=False).get_note_store()
     s.createNote(n)
     del n
@@ -126,22 +157,4 @@ def _submit(home, note_text):
 
 
 if __name__ == "__main__":
-    if len(argv) == 2 and argv[1] == "-":
-        try:
-            take_note_stdin()
-        except Exception as err:
-            print(f"Error taking note: {err}!", file=stderr)
-            exit(1)
-        exit(0)
-    try:
-        if fork() > 0:
-            exit(0)
-        try:
-            take_note()
-        except Exception as err:
-            print(f"Error taking note: {err}!", file=stderr)
-            exit(1)
-        exit(0)
-    except OSError as err:
-        print(f"Could not fork: {err}!", file=stderr)
-    exit(2)
+    exit(_main())
