@@ -36,15 +36,21 @@
 #
 
 [Desktop Entry]
-Name            = Evernote (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/evernote-client %U"
-Icon            = evernote-client
+Exec            = /usr/share/vscodium-bin/bin/codium --unity-launch %F
+Icon            = vscodium
 Type            = Application
-Comment         = Notes
-MimeType        =
+Name            = Code
+Actions         = new-empty-window;
+Comment         = Editor for building and debugging modern web and cloud applications
+MimeType        = text/plain;
 Terminal        = false
-Keywords        = notes;tasks;utilities;
-Categories      = Notes;Tasks;Utilities;
-GenericName     = Notes
+Keywords        = code;vs;dev;ide;vscode;
+Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
+GenericName     = Text Editor
 StartupNotify   = true
-StartupWMClass  = ever
+StartupWMClass  = code
+
+[Desktop Action new-empty-window]
+Name            = New Empty Window
+Exec            = /usr/share/vscodium-bin/bin/codium --unity-launch %F
+Icon            = vscodium

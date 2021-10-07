@@ -36,14 +36,15 @@
 #
 
 [Desktop Entry]
-Exec            = /usr/bin/vscodium --unity-launch %F
+Exec            = /usr/share/vscodium-bin/bin/codium --unity-launch %F
 Icon            = vscodium
 Type            = Application
-Name            = Code
+Name            = VSCodium
+Actions         = new-empty-window;
 Comment         = Editor for building and debugging modern web and cloud applications
 MimeType        = text/plain;
 Terminal        = false
-Keywords        = code;vs;dev;ide;vscode
+Keywords        = code;vs;dev;ide;vscode;
 Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
 GenericName     = Text Editor
 StartupNotify   = true
@@ -51,5 +52,5 @@ StartupWMClass  = code
 
 [Desktop Action new-empty-window]
 Name            = New Empty Window
-Exec            = /usr/bin/vscodium --new-window %F
+Exec            = /usr/share/vscodium-bin/bin/codium --new-window %F
 Icon            = vscodium

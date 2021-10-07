@@ -36,21 +36,18 @@
 #
 
 [Desktop Entry]
-Exec            = /usr/share/vscodium-bin/bin/codium --unity-launch %F
-Icon            = vscodium
+Name            = Evernote Web (Firewall)
+# Using Falkon
+Exec            = /usr/bin/sg firewall-web -c "export DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/$UID/bus\"; falkon --wmclass ever --no-remote --profile ever https://www.evernote.com/client/web"
+# Using Surf
+# Exec            = /usr/bin/sg firewall-web -c "surf -BDfgIKmnSTxc \"$HOME/.cache/surf-evernote.txt\" -u 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36' 'https://www.evernote.com/client/web'"
+Icon            = evernote
 Type            = Application
-Name            = VSCodium
-Actions         = new-empty-window;
-Comment         = Editor for building and debugging modern web and cloud applications
-MimeType        = text/plain;
+Comment         = Notes
+MimeType        =
 Terminal        = false
-Keywords        = code;vs;dev;ide;vscode;
-Categories      = Development;WebDevelopment;IDE;Utility;TextEditor;
-GenericName     = Text Editor
+Keywords        = notes;tasks;utilities;
+Categories      = Notes;Tasks;Utilities;
+GenericName     = Notes
 StartupNotify   = true
-StartupWMClass  = code
-
-[Desktop Action new-empty-window]
-Name            = New Empty Window
-Exec            = /usr/share/vscodium-bin/bin/codium --new-window %F
-Icon            = vscodium
+StartupWMClass  = ever
