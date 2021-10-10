@@ -61,10 +61,10 @@ prompt {
 
 window {
     width:                  20%;
-    border:                 1px;
+    border:                 4px;
     padding:                5px;
     transparency:           "real";
-    border-color:           #FFFFFFFF;
+    border-color:           #191919BF;
     border-radius:          10px;
     background-color:       #191919BF;
 }
@@ -95,9 +95,8 @@ scrollbar {
 element {
     border:                 0;
     padding:                10 5 10 5;
-    children:               [element-icon, element-text];
+    children:               [element-text];
     text-color:             #FFFFFFFF;
-    border-radius:          0;
 }
 
 element selected {
@@ -107,14 +106,10 @@ element selected {
     background-color:       #FFFFFFFF;
 }
 
-element-icon {
-    size:                   20px;
-}
-
 element-text {
     text-color:             #FFFFFFFF;
 }
 
 element-text selected {
-    text-color:             #000000FF;
+    text-color:             #FFFFFFFF;
 }

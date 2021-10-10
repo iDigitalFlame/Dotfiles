@@ -49,269 +49,319 @@ include-file                            = $HOME/.config/theme/current/polybar.co
 
 [module/i3]
 type                                    = internal/i3
-format                                  = "<label-state>"
 index-sort                              = true
 fuzzy-match                             = true
 enable-click                            = true
 enable-scroll                           = true
-format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.suffix}
-label-padding                           = ${theme.padding}
 pin-workspaces                          = false
 wrapping-scroll                         = true
 strip-wsnumbers                         = true
-format-foreground                       = ${theme.color-i3}
-format-background                       = ${theme.color-i3}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
+
+format                                  = "<label-state>"
+format-prefix                           = ${theme.prefix}
+format-suffix                           = ${theme.suffix}
+
+format-foreground                       = ${theme.color-module}
+format-background                       = ${theme.color-module}
+format-suffix-padding                   = ${theme.spacing}
+format-prefix-padding                   = ${theme.spacing}
+format-prefix-foreground                = ${theme.clear}
+format-prefix-background                = ${theme.color-i3}
+format-suffix-foreground                = ${theme.clear}
+format-suffix-background                = ${theme.clear}
+
 label-urgent                            = " %index%"
-label-urgent-padding                    = ${theme.padding-i3}
-label-urgent-foreground                 = ${theme.color-i3-urgent}
-label-urgent-background                 = ${theme.color-i3}
+label-urgent-padding                    = 1
+label-urgent-foreground                 = ${theme.text-urgent}
+label-urgent-background                 = ${self.format-background}
+
 label-visible                           = " %index%"
-label-visible-padding                   = ${theme.padding-i3}
-label-visible-foreground                = ${theme.color-i3-text}
-label-visible-background                = ${theme.color-i3}
+label-visible-padding                   = ${self.label-urgent-padding}
+label-visible-foreground                = ${theme.text}
+label-visible-background                = ${self.format-background}
+
 label-focused                           = " %index%"
-label-focused-padding                   = ${theme.padding-i3}
-label-focused-foreground                = ${theme.color-i3-text}
-label-focused-background                = ${theme.color-i3}
+label-focused-padding                   = ${self.label-urgent-padding}
+label-focused-foreground                = ${theme.text}
+label-focused-background                = ${self.format-background}
+
 label-unfocused                         = " %index%"
-label-unfocused-padding                 = ${theme.padding-i3}
-label-unfocused-foreground              = ${theme.color-i3-text}
-label-unfocused-background              = ${theme.color-i3}
+label-unfocused-padding                 = ${self.label-urgent-padding}
+label-unfocused-foreground              = ${theme.text}
+label-unfocused-background              = ${self.format-background}
 
 [module/cpu]
 type                                    = internal/cpu
-label                                   = "%percentage:2%% "
 format                                  = "<label>"
-interval                                = 1
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.space}
+interval                                = 2
+
+label                                   = "%percentage:02%% "
+label-padding                           = 1
+
 format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-health}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
+format-suffix-foreground                = ${theme.clear}
+format-suffix-background                = ${theme.clear}
 
 [module/date]
 date                                    = "%a"
 type                                    = internal/date
 time                                    = "%H:%M"
-label                                   = "%date:3% %time:5%"
 interval                                = 10
 date-alt                                = "%A %D"
 time-alt                                = "%H:%M"
-label-padding                           = ${theme.padding}
+
+label                                   = "%date:03% %time:05%"
+label-padding-left                      = 1
+label-padding-right                     = 1
+
 format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.space}
-format-background                       = ${theme.color-date}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
+format-prefix-padding                   = ${theme.spacing}
+format-prefix-foreground                = ${theme.color-date}
+format-prefix-background                = ${theme.color-date}
 
 [module/volume]
 type                                    = internal/pulseaudio
-label-muted                             = "Mute"
-label-volume                            = "%percentage:3%%"
-master-mixer                            = Master
-format-muted                            = "<label-muted> "
 ramp-volume-0                           = ""
 ramp-volume-1                           = ""
 ramp-volume-2                           = ""
-format-volume                           = "<label-volume> <ramp-volume>"
+master-mixer                            = Master
 master-soundcard                        = default
-label-muted-padding                     = ${theme.padding}
+
+label-muted                             = "Mute"
+label-muted-padding-left                = 1
+label-muted-padding-right               = 0
+
+label-volume                            = "%percentage:02%%"
+label-volume-padding-left               = 1
+label-volume-padding-right              = 0
+
+format-muted                            = "<label-muted>  "
 format-muted-prefix                     = ${theme.prefix}
 format-muted-suffix                     = ${theme.suffix}
-format-muted-background                 = ${theme.color-volume}
+format-muted-padding                    = 0
+format-muted-background                 = ${theme.color-module}
 format-muted-foreground                 = ${theme.text}
-format-muted-prefix-foreground          = ${self.format-muted-background}
-format-muted-prefix-background          = ${root.background}
-format-muted-suffix-foreground          = ${self.format-muted-background}
-format-muted-suffix-background          = ${root.background}
-label-volume-padding                    = ${theme.padding}
-format-volume-prefix                    = ${theme.prefix}
-format-volume-suffix                    = ${theme.suffix}
-format-volume-background                = ${theme.color-volume}
-format-volume-foreground                = ${theme.text}
-format-volume-prefix-foreground         = ${self.format-volume-background}
-format-volume-prefix-background         = ${root.background}
-format-volume-suffix-foreground         = ${self.format-volume-background}
-format-volume-suffix-background         = ${root.background}
+format-muted-padding-left               = 0
+format-muted-padding-right              = 1
+format-muted-prefix-padding             = ${theme.spacing}
+format-muted-prefix-foreground          = ${theme.color-volume}
+format-muted-prefix-background          = ${theme.color-volume}
+format-muted-suffix-foreground          = ${theme.clear}
+format-muted-suffix-background          = ${theme.clear}
+
+format-volume                           = "<label-volume> <ramp-volume> "
+format-volume-prefix                    = ${self.format-muted-prefix}
+format-volume-suffix                    = ${self.format-muted-suffix}
+format-volume-padding                   = 0
+format-volume-background                = ${self.format-muted-background}
+format-volume-foreground                = ${self.format-muted-foreground}
+format-volume-padding-left              = ${self.format-muted-padding-left}
+format-volume-padding-right             = ${self.format-muted-padding-right}
+format-volume-prefix-padding            = ${self.format-muted-prefix-padding}
+format-volume-prefix-foreground         = ${self.format-muted-prefix-foreground}
+format-volume-prefix-background         = ${self.format-muted-prefix-background}
+format-volume-suffix-foreground         = ${self.format-muted-suffix-foreground}
+format-volume-suffix-background         = ${self.format-muted-suffix-background}
 
 [module/memory]
 type                                    = internal/memory
-format                                  = "<label>"
-label                                   = "%gb_used:8% "
 interval                                = 15
-label-padding                           = ${theme.padding}
+
+label                                   = "%gb_used:05% "
+label-padding-left                      = 1
+label-padding-right                     = 0
+
+format                                  = "<label>"
 format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.space}
-format-background                       = ${theme.color-health}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
+format-prefix-foreground                = ${theme.color-health}
+format-prefix-background                = ${theme.color-health}
 
 [module/xwindow]
 type                                    = internal/xwindow
+
 label                                   = "%title%"
-format                                  = "<label>"
 label-maxlen                            = 85
-label-padding                           = ${theme.padding-xwindow}
+label-padding                           = 2
+
+format                                  = "<label>"
 format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-xwindow}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
+format-suffix-foreground                = ${theme.color-xwindow}
+format-suffix-background                = ${theme.color-xwindow}
 
 [module/weather]
 type                                    = custom/script
 exec                                    = "$HOME/.local/bin/polybar/weather"
-format                                  = "<label>"
 interval                                = 600
-label-font                              = 3
 click-right                             = "$HOME/.local/bin/polybar/weather go"
-label-padding                           = ${theme.padding}
+
+label-font                              = 3
+label-padding                           = 1
+
+format                                  = "<label>"
 format-prefix                           = ${theme.prefix}
 format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-weather}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
+format-suffix-padding                   = ${theme.spacing}
+format-prefix-padding                   = ${theme.spacing}
+format-prefix-foreground                = ${theme.color-weather}
+format-prefix-background                = ${theme.color-weather}
+format-suffix-foreground                = ${theme.clear}
+format-suffix-background                = ${theme.clear}
 
 [module/battery0]
 type                                    = internal/battery
 adapter                                 = AC
 full-at                                 = 100
 battery                                 = BAT0
-time-format                             = "%H:%M"
-label-full                              = "%percentage:3%% "
-format-full                             = "<label-full>"
-label-full-padding                      = ${theme.padding}
-format-full-prefix                      = ${theme.prefix}
-format-full-padding                     = ${theme.padding}
-format-full-background                  = ${theme.color-battery}
-format-full-foreground                  = ${theme.text}
-format-full-prefix-foreground           = ${self.format-full-background}
-format-full-prefix-background           = ${root.background}
-label-charging                          = "%percentage:3%%"
-format-charging                         = " <label-charging> <animation-charging>"
-animation-charging-0                    = ""
-animation-charging-1                    = ""
-animation-charging-2                    = ""
-format-charging-prefix                  = ${theme.prefix}
-format-charging-padding                 = ${theme.padding}
-format-charging-background              = ${theme.color-battery}
-format-charging-foreground              = ${theme.text}
-animation-charging-framerate            = 750
-format-charging-prefix-foreground       = ${self.format-charging-background}
-format-charging-prefix-background       = ${root.background}
+time-format                             = ""
 ramp-capacity-0                         = ""
 ramp-capacity-1                         = ""
 ramp-capacity-2                         = ""
 ramp-capacity-3                         = ""
 ramp-capacity-4                         = ""
-label-discharging                       = "%percentage:3%%"
+animation-charging-0                    = ""
+animation-charging-1                    = ""
+animation-charging-2                    = ""
+ramp-capacity-foreground                = ${theme.text-discharging}
+animation-charging-framerate            = 750
+animation-charging-foreground           = ${theme.text-charging}
+
+label-full                              = "%percentage:02%%"
+label-full-padding-left                 = 1
+label-full-padding-right                = 0
+
+format-full                             = "<label-full> "
+format-full-prefix                      = ${theme.prefix}
+format-full-background                  = ${theme.color-module}
+format-full-foreground                  = ${theme.text}
+format-full-prefix-padding              = ${theme.spacing}
+format-full-prefix-foreground           = ${theme.color-battery}
+format-full-prefix-background           = ${theme.color-battery}
+
+label-charging                          = "%percentage:02%%"
+label-charging-padding-left             = 1
+label-charging-padding-right            = 0
+
+format-charging                         = " <label-charging> <animation-charging>"
+format-charging-prefix                  = ${self.format-full-prefix}
+format-charging-padding                 = 1
+format-charging-background              = ${self.format-full-background}
+format-charging-foreground              = ${self.format-full-foreground}
+format-charging-prefix-foreground       = ${self.format-full-prefix-foreground}
+format-charging-prefix-background       = ${self.format-full-prefix-background}
+
+label-discharging                       = "%percentage:02%%"
+label-discharging-padding-left          = 1
+label-discharging-padding-right         = 0
+
 format-discharging                      = "<label-discharging> <ramp-capacity>"
-format-discharging-padding              = ${theme.padding}
-format-discharging-background           = ${theme.color-battery-discharging}
-format-discharging-foreground           = ${theme.text}
-format-discharging-prefix               = ${theme.prefix}
-format-discharging-prefix-foreground    = ${self.format-discharging-background}
-format-discharging-prefix-background    = ${root.background}
+format-discharging-prefix               = ${self.format-full-prefix}
+format-discharging-padding              = 1
+format-discharging-background           = ${self.format-full-background}
+format-discharging-foreground           = ${self.format-full-foreground}
+format-discharging-prefix-foreground    = ${self.format-full-prefix-foreground}
+format-discharging-prefix-background    = ${self.format-full-prefix-background}
 
 [module/battery1]
+inherit                                 = module/battery0
 type                                    = internal/battery
-adapter                                 = AC
 full-at                                 = 100
 battery                                 = BAT1
-time-format                             = ""
-label-full                              = "%percentage:3%% "
-format-full                             = "<label-full>"
-label-full-padding                      = ${theme.padding}
+
+label-full-padding-left                 = 0
+label-full-padding-right                = 0
+
+label-charging-padding-left             = 0
+label-charging-padding-right            = 0
+
+label-discharging-padding-left          = 0
+label-discharging-padding-right         = 0
+
+format-full                             = "<label-full>  "
 format-full-suffix                      = ${theme.suffix}
-format-full-prefix                      = ${theme.space}
-format-full-padding                     = ${theme.padding}
-format-full-background                  = ${theme.color-battery}
-format-full-foreground                  = ${theme.text}
-format-full-suffix-foreground           = ${self.format-full-background}
-format-full-suffix-background           = ${root.background}
-label-charging                          = "%percentage:3%%"
-format-charging                         = "<label-charging> <animation-charging>"
-animation-charging-0                    = ""
-animation-charging-1                    = ""
-animation-charging-2                    = ""
+format-full-padding-left                = 0
+format-full-padding-right               = 1
+format-full-prefix-foreground           = ${theme.color-module}
+format-full-prefix-background           = ${theme.color-module}
+format-full-suffix-foreground           = ${theme.clear}
+format-full-suffix-background           = ${theme.clear}
+
+format-charging                         = "<label-charging> <animation-charging> "
 format-charging-suffix                  = ${theme.suffix}
-format-charging-padding                 = ${theme.padding}
-format-charging-background              = ${theme.color-battery}
-format-charging-foreground              = ${theme.text}
-animation-charging-framerate            = 750
-format-charging-suffix-foreground       = ${self.format-charging-background}
-format-charging-suffix-background       = ${root.background}
-ramp-capacity-0                         = ""
-ramp-capacity-1                         = ""
-ramp-capacity-2                         = ""
-ramp-capacity-3                         = ""
-ramp-capacity-4                         = ""
-label-discharging                       = "%percentage:3%%"
-format-discharging                      = "<label-discharging> <ramp-capacity>"
-format-discharging-padding              = ${theme.padding}
-format-discharging-background           = ${theme.color-battery-discharging}
-format-discharging-foreground           = ${theme.text}
+format-charging-padding-left            = 0
+format-charging-padding-right           = 1
+format-charging-prefix-foreground       = ${theme.color-module}
+format-charging-prefix-background       = ${theme.color-module}
+format-charging-suffix-foreground       = ${theme.clear}
+format-charging-suffix-background       = ${theme.clear}
+
+format-discharging                      = "<label-discharging> <ramp-capacity> "
 format-discharging-suffix               = ${theme.suffix}
-format-discharging-prefix               = ${theme.space}
-format-discharging-suffix-foreground    = ${self.format-discharging-background}
-format-discharging-suffix-background    = ${root.background}
+format-discharging-padding-left         = 0
+format-discharging-padding-right        = 1
+format-discharging-prefix-foreground    = ${theme.color-module}
+format-discharging-prefix-background    = ${theme.color-module}
+format-discharging-suffix-foreground    = ${theme.clear}
+format-discharging-suffix-background    = ${theme.clear}
 
 [module/lockerctl]
 type                                    = custom/script
 exec                                    = "$HOME/.local/bin/polybar/lockers"
 format                                  = "<label>"
 interval                                = 10
+
+label-padding-left                      = 1
+label-padding-right                     = 0
+
 click-left                              = "$HOME/.local/bin/i3/locker"
-click-right                             = "$HOME/.local/bin/i3/locker"
-click-middle                            = "$HOME/.local/bin/i3/locker"
-label-padding                           = ${theme.padding}
+click-middle                            = "/usr/local/bin/lockerctl -kz false -kb false -kl false -ks false"
+
 format-prefix                           = ${theme.prefix}
-format-suffix                           = ${theme.space}
-format-background                       = ${theme.color-smd}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-prefix-foreground                = ${self.format-background}
-format-prefix-background                = ${root.background}
+format-prefix-padding                   = ${theme.spacing}
+format-prefix-foreground                = ${theme.color-smd}
+format-prefix-background                = ${theme.color-smd}
+format-suffix-foreground                = ${self.format-background}
+format-suffix-background                = ${self.format-background}
 
 [module/rotatectl]
 type                                    = custom/script
 exec                                    = "$HOME/.local/bin/polybar/rotate"
 format                                  = "<label>"
 interval                                = 10
-click-left                              = "rotatectl -t"
 click-right                             = "rotatectl -t"
-click-middle                            = "rotatectl -t"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.space}
+label-padding                           = 1
+
 format-suffix                           = ${theme.suffix}
-format-background                       = ${theme.color-smd}
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
-format-suffix-foreground                = ${self.format-background}
-format-suffix-background                = ${root.background}
+format-suffix-padding                   = ${theme.spacing}
+format-prefix-foreground                = ${self.format-background}
+format-prefix-background                = ${self.format-background}
+format-suffix-foreground                = ${theme.clear}
+format-suffix-background                = ${theme.clear}
 
 [module/bluetooth]
 type                                    = custom/script
-exec                                    = "rfkill | grep bluetooth | grep -q 'unblocked unblocked' && echo "
-format                                  = "<label>"
+exec                                    = "rfkill | grep bluetooth | grep -q 'unblocked unblocked' && echo "
 interval                                = 10
-click-left                              = "blue -d"
 click-right                             = "blue -d"
-click-middle                            = "blue -d"
-label-padding                           = ${theme.padding}
-format-prefix                           = ${theme.space}
-format-suffix                           = ${theme.space}
-format-background                       = ${theme.color-smd}
+
+label-padding-left                      = 1
+label-padding-right                     = 0
+
+format                                  = "<label>"
+format-background                       = ${theme.color-module}
 format-foreground                       = ${theme.text}
 
 [module/filesystem]
@@ -319,89 +369,41 @@ type                                    = internal/fs
 mount-0                                 = /home
 interval                                = 120
 fixed-values                            = true
+
 label-mounted                           = "%percentage_used:2%% "
+label-mounted-padding-left              = 1
+label-mounted-padding-right             = 0
+
 format-mounted                          = "<label-mounted>"
-format-mounted-prefix                   = ${theme.space}
-format-mounted-suffix                   = ${theme.space}
-format-mounted-padding                  = ${theme.padding}
 format-mounted-foreground               = ${theme.text}
-format-mounted-background               = ${theme.color-health}
+format-mounted-background               = ${theme.color-module}
 
 [module/battery0-small]
+inherit                                 = module/battery0
 type                                    = internal/battery
-adapter                                 = AC
-full-at                                 = 100
-battery                                 = BAT0
-time-format                             = "%H:%M"
-label-full                              = "%percentage:3%%"
+label-full                              = "%percentage:02%%"
+
 format-full                             = "<label-full>"
-label-full-padding                      = ${theme.padding}
-format-full-prefix                      = ${theme.prefix}
-format-full-padding                     = ${theme.padding}
-format-full-background                  = ${theme.color-battery}
-format-full-foreground                  = ${theme.text}
-format-full-prefix-foreground           = ${self.format-full-background}
-format-full-prefix-background           = ${root.background}
-label-charging                          = "%percentage:3%%"
 format-charging                         = " <label-charging>"
-format-charging-prefix                  = ${theme.prefix}
-format-charging-padding                 = ${theme.padding}
-format-charging-background              = ${theme.color-battery}
-format-charging-foreground              = ${theme.text}
-format-charging-prefix-foreground       = ${self.format-charging-background}
-format-charging-prefix-background       = ${root.background}
-label-discharging                       = "%percentage:3%%"
 format-discharging                      = "<label-discharging>"
-format-discharging-prefix               = ${theme.prefix}
-format-discharging-padding              = ${theme.padding}
-format-discharging-background           = ${theme.color-battery-discharging}
-format-discharging-foreground           = ${theme.text}
-format-discharging-prefix-foreground    = ${self.format-discharging-background}
-format-discharging-prefix-background    = ${root.background}
 
 [module/battery1-small]
+inherit                                 = module/battery1
 type                                    = internal/battery
-adapter                                 = AC
-full-at                                 = 100
-battery                                 = BAT1
-time-format                             = "%H:%M"
-label-full                              = "%percentage:3%%"
-format-full                             = "<label-full>"
-label-full-padding                      = ${theme.padding}
-format-full-suffix                      = ${theme.suffix}
-format-full-prefix                      = ${theme.space}
-format-full-padding                     = ${theme.padding}
-format-full-background                  = ${theme.color-battery}
-format-full-foreground                  = ${theme.text}
-format-full-suffix-foreground           = ${self.format-full-background}
-format-full-suffix-background           = ${root.background}
-label-charging                          = "%percentage:3%%"
-format-charging                         = "<label-charging>"
-format-charging-suffix                  = ${theme.suffix}
-format-charging-padding                 = ${theme.padding}
-format-charging-background              = ${theme.color-battery}
-format-charging-foreground              = ${theme.text}
-format-charging-suffix-foreground       = ${self.format-charging-background}
-format-charging-suffix-background       = ${root.background}
-label-discharging                       = "%percentage:3%%"
-format-discharging                      = "<label-discharging>"
-format-discharging-padding              = ${theme.padding}
-format-discharging-background           = ${theme.color-battery-discharging}
-format-discharging-foreground           = ${theme.text}
-format-discharging-suffix               = ${theme.suffix}
-format-discharging-prefix               = ${theme.space}
-format-discharging-suffix-foreground    = ${self.format-discharging-background}
-format-discharging-suffix-background    = ${root.background}
+label-full                              = "%percentage:02%%"
+
+format-full                             = "<label-full> "
+format-charging                         = "<label-charging> "
+format-discharging                      = "<label-discharging> "
 
 [bar/small]
 width                                   = 100%
 radius                                  = 0
 height                                  = 20
 bottom                                  = false
+font-0                                  = Hack Nerd Font Bold Mono:size=9;2
 font-1                                  = FontAwesome:size=10;2
-font-0                                  = Sans:size=10;1
 font-2                                  = Weather Icons:size=10;1
-font-3                                  = Hack Nerd Font Mono:size=14;3
 monitor                                 =
 scroll-up                               = i3wm-wsnext
 line-size                               = 0
@@ -420,39 +422,12 @@ modules-right                           = i3 lockerctl rotatectl volume memory c
 tray-position                           = right
 tray-detached                           = false
 modules-center                          =
-tray-background                         = ${theme.color-date}
+tray-background                         = ${theme.color-module}
 monitor-fallback                        = eDP-1
 module-margin-left                      = 0
 module-margin-right                     = 0
 
 [bar/standard]
-width                                   = 100%
-radius                                  = 0
-height                                  = 20
-bottom                                  = false
-font-0                                  = Hack Nerd Font Bold Mono:size=9;2
-font-1                                  = FontAwesome:size=10;2
-font-2                                  = Weather Icons:size=10;1
-font-3                                  = Hack Nerd Font Mono:size=14;3
-monitor                                 =
-scroll-up                               = i3wm-wsnext
-line-size                               = 0
-line-color                              = ${theme.text}
-foreground                              = ${theme.foreground}
-background                              = ${theme.background}
-scroll-down                             = i3wm-wsprev
-border-size                             = 0
-border-color                            = ${theme.background}
-tray-padding                            = 1
-fixed-center                            = true
-padding-left                            = 0
+inherit                                 = bar/small
 modules-left                            = xwindow
-padding-right                           = 0
 modules-right                           = i3 weather lockerctl bluetooth rotatectl volume memory filesystem cpu battery0 battery1 date
-tray-position                           = right
-tray-detached                           = false
-modules-center                          =
-tray-background                         = ${theme.color-date}
-monitor-fallback                        = eDP-1
-module-margin-left                      = 0
-module-margin-right                     = 0

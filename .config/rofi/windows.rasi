@@ -61,7 +61,7 @@ prompt {
 window {
     width:                  35%;
     height:                 762;
-    border:                 1;
+    border:                 4px;
     padding:                0;
     transparency:           "real";
     border-color:           #AC0FEBFF;
