@@ -83,6 +83,7 @@ for_window              [window_type=dialog title="Select *" floating]          
 for_window              [floating class="LibreWolf" title="(i?Extension: )"]                border normal, resize set 400 600
 for_window              [floating class="firefox" title="Picture-in-Picture"]               sticky enable
 for_window              [floating class="LibreWolf" title="Picture-in-Picture"]             sticky enable
+for_window              [class="evernote-client" title="* - Evernote" floating]             floating disable
 for_window              [window_type=dialog title="open *" floating class="(i?!firefox)"]   border normal, resize set 800 600
 for_window              [window_type=dialog title="Open *" floating class="(i?!LibreWolf)"] border normal, resize set 800 600
 
