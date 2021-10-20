@@ -109,14 +109,6 @@ if [ ! -d "/tmp/.usercache/$USER/trash" ]; then
     ln -s "/tmp/.usercache/$USER/trash" "$HOME/.local/share/Trash"
 fi
 
-# Firewall Switch Group Helper Function
-__sg_cmd() {
-    args=($@); params=${args[@]:1}
-    if [ ! -z "$args" ] && [ ${#args[@]} -ge 2 ]; then
-        /usr/bin/sg "${args[1]}" -c $params
-    fi
-}
-
 # Go Build Helper Functions
 #  gbo       - Golang Build Optimized
 #  gbp       - Golang Build Optimized with Packed UPX
@@ -209,25 +201,26 @@ gbp-win32() {
 }
 
 # Firewall Aliases
-alias nc="__sg_cmd firewall-all /usr/bin/nc"
-alias go="__sg_cmd firewall-web /usr/bin/go"
-alias yay="__sg_cmd firewall-web /usr/bin/yay"
-alias ssh="__sg_cmd firewall-ssh /usr/bin/ssh"
-alias scp="__sg_cmd firewall-ssh /usr/bin/scp"
-alias git="__sg_cmd firewall-web /usr/bin/git"
-alias pip="__sg_cmd firewall-web /usr/bin/pip"
-alias nmap="__sg_cmd firewall-all /usr/bin/nmap"
-alias wget="__sg_cmd firewall-web /usr/bin/wget"
-alias curl="__sg_cmd firewall-web /usr/bin/curl"
-alias ping="__sg_cmd firewall-icmp /usr/bin/ping"
-alias rsync="__sg_cmd firewall-ssh /usr/bin/rsync"
-alias pacman="__sg_cmd firewall-web /usr/bin/pacman"
-alias vnc="__sg_cmd firewall-ctl /usr/bin/vncviewer"
-alias wython="__sg_cmd firewall-web /usr/bin/python3"
-alias xfreerdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp"
-alias vncviewer="__sg_cmd firewall-ctl /usr/bin/vncviewer"
-alias quote="sg firewall-web -c '$HOME/.local/bin/motivate -n'"
-alias rdp="__sg_cmd firewall-ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
+alias nc="/usr/bin/gh all /usr/bin/nc"
+alias yay="/usr/bin/gh web /usr/bin/yay"
+alias ssh="/usr/bin/gh ssh /usr/bin/ssh"
+alias scp="/usr/bin/gh ssh /usr/bin/scp"
+alias git="/usr/bin/gh web /usr/bin/git"
+alias pip="/usr/bin/gh  web /usr/bin/pip"
+alias nmap="/usr/bin/gh all /usr/bin/nmap"
+alias wget="/usr/bin/gh web /usr/bin/wget"
+alias curl="/usr/bin/gh web /usr/bin/curl"
+alias ping="/usr/bin/gh icmp /usr/bin/ping"
+alias rsync="/usr/bin/gh ssh /usr/bin/rsync"
+alias pacman="/usr/bin/gh web /usr/bin/pacman"
+alias vnc="/usr/bin/gh ctl /usr/bin/vncviewer"
+alias wython="/usr/bin/gh web /usr/bin/python3"
+alias go="nocorrect /usr/bin/gh web /usr/bin/go"
+alias quote="/usr/bin/gh web $HOME/.local/bin/motivate -n"
+alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp"
+alias vncviewer="nocorrect /usr/bin/gh ctl /usr/bin/vncviewer"
+alias wgo="nocorrect env GOOS=windows /usr/bin/gh web /usr/bin/go"
+alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -286,11 +279,11 @@ alias ssc="$HOME/.local/bin/i3/shot-copy"
 alias selc="$HOME/.local/bin/i3/clip-copy"
 
 # Go Aliases
-alias gv="sg firewall-web -c 'go vet ./...'"
-alias gsc="sg firewall-web -c 'staticcheck ./...'"
+alias gv="gh web go vet ./...'"
+alias gsc="gh web staticcheck ./..."
 
-alias gsc-win="sg firewall-web -c 'env GOOS=windows staticcheck ./...'"
-alias gov="sg firewall-web -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+alias gsc-win="gh web env GOOS=windows staticcheck ./...'"
+alias gov="gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
@@ -302,13 +295,13 @@ alias hydra="nocorrect hydra"
 alias vsc="/usr/bin/vscodium"
 alias code="/usr/bin/vscodium"
 alias diff="/usr/bin/diff --color=auto"
+alias weather="gh web curl 'wttr.in/?0'"
 alias wgcc="/usr/bin/x86_64-w64-mingw32-gcc"
 alias en="python3 $HOME/.local/bin/i3/sticky -"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias note="python3 $HOME/.local/bin/i3/sticky -"
-alias weather="/usr/bin/sg firewall-web -c 'curl wttr.in/?0'"
 alias nts="python3 $HOME/Projects/Scripts/Python/ntstatus.py"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
