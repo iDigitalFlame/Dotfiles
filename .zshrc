@@ -282,7 +282,7 @@ alias selc="$HOME/.local/bin/i3/clip-copy"
 alias gv="gh web go vet ./...'"
 alias gsc="gh web staticcheck ./..."
 
-alias gsc-win="gh web env GOOS=windows staticcheck ./...'"
+alias gsc-win="gh web env GOOS=windows staticcheck ./..."
 alias gov="gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
