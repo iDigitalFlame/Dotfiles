@@ -45,7 +45,7 @@
     width                       = 325
     follow                      = mouse
     shrink                      = false
-    format                      = "<b>%s</b> (<i>%a</i>)\n%b"
+    format                      = "<b>%s</b>\n%b"
     markup                      = full
     height                      = 275
     origin                      = top-right
