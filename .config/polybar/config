@@ -251,7 +251,7 @@ label-charging                          = "%percentage:02%%"
 label-charging-padding-left             = 1
 label-charging-padding-right            = 0
 
-format-charging                         = " <label-charging> <animation-charging>"
+format-charging                         = "<label-charging>  <animation-charging>"
 format-charging-prefix                  = ${self.format-full-prefix}
 format-charging-padding                 = 1
 format-charging-background              = ${self.format-full-background}
@@ -295,7 +295,7 @@ format-full-prefix-background           = ${theme.color-module}
 format-full-suffix-foreground           = ${theme.clear}
 format-full-suffix-background           = ${theme.clear}
 
-format-charging                         = "<label-charging> <animation-charging> "
+format-charging                         = "<label-charging>  <animation-charging> "
 format-charging-suffix                  = ${theme.suffix}
 format-charging-padding-left            = 0
 format-charging-padding-right           = 1

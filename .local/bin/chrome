@@ -38,13 +38,13 @@
 args=$@
 
 if [ -z "$args" ]; then
-    sg firewall-web -c "export TZ=UTC; /usr/bin/chromium"
+    gh web sh -c "export TZ=UTC; /usr/bin/chromium"
     exit 0
 fi
 
 if [[ "$args" == "--all" ]]; then
-    sg firewall-all -c "export TZ=UTC; /usr/bin/chromium --new-window"
+    gh all sh -c  "export TZ=UTC; /usr/bin/chromium --new-window"
     exit 0
 fi
 
-sg firewall-web -c "export TZ=UTC; /usr/bin/chromium \"$args\""
+gh web sh -c "export TZ=UTC; /usr/bin/chromium \"$args\""

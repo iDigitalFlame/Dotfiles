@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Slack (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/slack -s %U"
+Exec            = /usr/bin/gh web /usr/bin/slack -s %U
 Icon            = slack
 Type            = Application
 Comment         = Slack Desktop

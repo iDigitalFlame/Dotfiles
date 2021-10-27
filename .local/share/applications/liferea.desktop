@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Type            = Application
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/liferea %U"
+Exec            = /usr/bin/gh web /usr/bin/liferea %U
 Name            = Liferea (Firewall)
 Icon            = liferea
 Comment         = Read news feeds and blogs

@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Type            = Application
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/nextcloud"
+Exec            = /usr/bin/gh web /usr/bin/nextcloud
 Name            = Nextcloud (Firewall)
 Icon            = Nextcloud
 Comment         = Nextcloud desktop synchronization client

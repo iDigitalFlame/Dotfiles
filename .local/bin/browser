@@ -39,15 +39,15 @@ args=$@
 
 if [ "$FIREFOX" == "1" ] || [ -n "$(basename $0 | grep -i firefox)" ]; then
     if [ -z "$args" ]; then
-        sg firewall-web -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P $USER"
+        gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P $USER"
     else
-        sg firewall-web -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P $USER \"$args\""
+        gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/firefox -P $USER \"$args\""
     fi
     exit 0
 fi
 
 if [ -z "$args" ]; then
-    sg firewall-web -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER"
+    gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER"
 else
-    sg firewall-web -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER \"$args\""
+    gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; /usr/bin/librewolf -P $USER \"$args\""
 fi
