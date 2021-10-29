@@ -302,6 +302,7 @@ alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias note="python3 $HOME/.local/bin/i3/sticky -"
+alias pmov="python3 $HOME/Projects/Scripts/Python/move.py"
 alias nts="python3 $HOME/Projects/Scripts/Python/ntstatus.py"
 alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
