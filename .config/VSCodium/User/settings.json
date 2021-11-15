@@ -691,6 +691,7 @@
             "errorsas": true,
             "fieldalignment": true,
             "httpresponse": true,
+            "infertypeargs": true,
             "ifaceassert": true,
             "loopclosure": true,
             "lostcancel": true,
@@ -715,9 +716,11 @@
             "unusedresult": true,
             "unusedwrite": true,
             "fillreturns": true,
+            "useany": true,
             "nonewvars": true,
             "noresultvalues": true,
-            "fillstruct": true
+            "fillstruct": true,
+            "undeclaredname": true,
         },
         /*
         "ui": {
