@@ -80,12 +80,18 @@ for_window              [class="note" title="Open"]                             
 for_window              [class="stickynote" title="Open"]                                   border normal, resize set 800 600
 for_window              [window_type=dialog title="select *" floating]                      border normal, resize set 800 600
 for_window              [window_type=dialog title="Select *" floating]                      border normal, resize set 800 600
+for_window              [floating class="firefox" title="(i?Extension: )"]                  border normal, resize set 400 600
+for_window              [floating class="librewolf" title="(i?Extension: )"]                border normal, resize set 400 600
 for_window              [floating class="LibreWolf" title="(i?Extension: )"]                border normal, resize set 400 600
+for_window              [floating class="Navigator" title="(i?Extension: )"]                border normal, resize set 400 600
 for_window              [floating class="firefox" title="Picture-in-Picture"]               sticky enable
+for_window              [floating class="librewolf" title="Picture-in-Picture"]             sticky enable
 for_window              [floating class="LibreWolf" title="Picture-in-Picture"]             sticky enable
+for_window              [floating class="Navigator" title="Picture-in-Picture"]             sticky enable
 for_window              [class="evernote-client" title="* - Evernote" floating]             floating disable
 for_window              [window_type=dialog title="open *" floating class="(i?!firefox)"]   border normal, resize set 800 600
 for_window              [window_type=dialog title="Open *" floating class="(i?!LibreWolf)"] border normal, resize set 800 600
+for_window              [window_type=dialog title="open *" floating class="(i?!Navigator)"] border normal, resize set 800 600
 
 # Theme
 font                    pango:"SauceCodePro Nerd Font Mono" 8

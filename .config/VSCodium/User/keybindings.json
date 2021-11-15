@@ -1,39 +1,3 @@
-/*
-    ################################
-    ### iDigitalFlame  2016-2021 ###
-    #                              #
-    #            -/`               #
-    #            -yy-   :/`        #
-    #         ./-shho`:so`         #
-    #    .:- /syhhhh//hhs` `-`     #
-    #   :ys-:shhhhhhshhhh.:o- `    #
-    #   /yhsoshhhhhhhhhhhyho`:/.   #
-    #   `:yhyshhhhhhhhhhhhhh+hd:   #
-    #     :yssyhhhhhyhhhhhhhhdd:   #
-    #    .:.oyshhhyyyhhhhhhddd:    #
-    #    :o+hhhhhyssyhhdddmmd-     #
-    #     .+yhhhhyssshdmmddo.      #
-    #       `///yyysshd++`         #
-    #                              #
-    ########## SPACEPORT ###########
-    ################################
-    # VCSodium Configuration
-
-    Copyright (C) 2016 - 2021 iDigitalFlame
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
-*/
 [
     {
         "key": "ctrl+shift+o",
@@ -452,78 +416,73 @@
     },
     {
         "key": "ctrl+alt+]",
-        "command": "-python.datascience.gotoNextCellInFile",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.gotoNextCellInFile",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; c",
-        "command": "-python.datascience.changeCellToCode",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.changeCellToCode",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; m",
-        "command": "-python.datascience.changeCellToMarkdown",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.changeCellToMarkdown",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; x",
-        "command": "-python.datascience.deleteCells",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.deleteCells",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+shift+alt+[",
-        "command": "-python.datascience.extendSelectionByCellAbove",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.extendSelectionByCellAbove",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+shift+alt+]",
-        "command": "-python.datascience.extendSelectionByCellBelow",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.extendSelectionByCellBelow",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+alt+[",
-        "command": "-python.datascience.gotoPrevCellInFile",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.gotoPrevCellInFile",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; a",
-        "command": "-python.datascience.insertCellAbove",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.insertCellAbove",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; b",
-        "command": "-python.datascience.insertCellBelow",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.insertCellBelow",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; s",
-        "command": "-python.datascience.insertCellBelowPosition",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.insertCellBelowPosition",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; d",
-        "command": "-python.datascience.moveCellsDown",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.moveCellsDown",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+; u",
-        "command": "-python.datascience.moveCellsUp",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.moveCellsUp",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+enter",
-        "command": "-python.datascience.runcurrentcell",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+        "command": "-jupyter.runcurrentcell",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
     },
     {
         "key": "shift+enter",
-        "command": "-python.datascience.runcurrentcelladvance",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
-    },
-    {
-        "key": "shift+enter",
-        "command": "-python.datascience.execSelectionInteractive",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+        "command": "-jupyter.runcurrentcelladvance",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
     },
     {
         "key": "shift+enter",
@@ -532,18 +491,18 @@
     },
     {
         "key": "ctrl+shift+alt+\\",
-        "command": "-python.datascience.selectCell",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.selectCell",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "ctrl+alt+\\",
-        "command": "-python.datascience.selectCellContents",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !notebookEditorFocused"
+        "command": "-jupyter.selectCellContents",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !notebookEditorFocused"
     },
     {
         "key": "alt+enter",
-        "command": "-python.datascience.runcurrentcellandaddbelow",
-        "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+        "command": "-jupyter.runcurrentcellandaddbelow",
+        "when": "editorTextFocus && jupyter.featureenabled && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
     },
     {
         "key": "shift+alt+[IntlBackslash]",
@@ -718,5 +677,20 @@
     {
         "key": "ctrl+m",
         "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-python.refreshTensorBoard",
+        "when": "python.hasActiveTensorBoardSession"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-jupyter.execSelectionInteractive",
+        "when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
     }
 ]
