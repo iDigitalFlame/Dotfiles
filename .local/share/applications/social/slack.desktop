@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Slack (Firewall)
-Exec            = /usr/bin/gh web /usr/bin/slack -s %U
+Exec            = /usr/bin/gh web nice -n 20 /usr/bin/slack -s %U
 Icon            = slack
 Type            = Application
 Comment         = Slack Desktop

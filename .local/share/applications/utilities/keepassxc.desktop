@@ -39,7 +39,7 @@
 Name            = KeePassXC
 Icon            = keepassxc
 Type            = Application
-Exec            = /usr/bin/keepassxc --config /home/dij/.local/lib/keepassxc.conf %f
+Exec            = /usr/bin/keepassxc --config /home/dij/.local/lib/keepassxc.conf
 Comment         = Community-driven port of the Windows application “KeePass Password Safe”
 MimeType        = application/x-keepass2;
 Terminal        = false

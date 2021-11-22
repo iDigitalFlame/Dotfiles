@@ -38,7 +38,7 @@
 [Desktop Entry]
 Name            = Evernote Web (Firewall)
 # Using Falkon
-Exec            = /usr/bin/gh web sh -c "export DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/$UID/bus\"; falkon --wmclass ever --no-remote --profile ever https://www.evernote.com/client/web"
+Exec            = /usr/bin/gh web sh -c "export DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/$UID/bus\"; nice -n 20 falkon --wmclass ever --no-remote --profile ever https://www.evernote.com/client/web"
 # Using Surf
 # Exec            = /usr/bin/gh web sh -c "surf -BDfgIKmnSTxc \"$HOME/.cache/surf-evernote.txt\" -u 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36' 'https://www.evernote.com/client/web'"
 Icon            = evernote

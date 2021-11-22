@@ -38,7 +38,7 @@
 [Desktop Entry]
 Type            = Application
 Name            = Arduino IDE (Firewall)
-Exec            = /usr/bin/gh web sh -c "export GTK_THEME=null; /usr/bin/arduino %U"
+Exec            = /usr/bin/gh web sh -c "export GTK_THEME=null; /usr/bin/arduino"
 Icon            = arduino
 Comment         = Open-source electronics prototyping platform
 Terminal        = false

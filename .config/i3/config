@@ -179,8 +179,8 @@ bindsym                 $KEY_WIN+Shift+Z        focus child
 bindsym                 $KEY_WIN+Shift+A        focus parent
 
 # Scratchpad Keybindings
-bindsym                 $KEY_ALT+M              move scratchpad
-bindsym                 $KEY_WIN+M              scratchpad show
+bindsym                 $KEY_WIN+X              move scratchpad
+bindsym                 $KEY_WIN+Z              scratchpad show
 
 # Kill Keybindings
 bindsym                 $KEY_WIN+Q              kill

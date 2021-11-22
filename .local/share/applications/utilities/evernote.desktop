@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Evernote (Firewall)
-Exec            = /usr/bin/gh web /usr/bin/evernote-client %U
+Exec            = /usr/bin/gh web nice -n 20 /usr/bin/evernote-client
 Icon            = evernote-client
 Type            = Application
 Comment         = Notes
