@@ -71,7 +71,7 @@
         "freeze": {
             "enabled": true,
             "ignore": [
-                "xfce4-terminal"
+                "kitty"
             ]
         },
         "startups": [
