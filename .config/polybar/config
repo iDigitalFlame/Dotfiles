@@ -287,6 +287,7 @@ label-discharging-padding-left          = 0
 label-discharging-padding-right         = 0
 
 format-full                             = "<label-full>  "
+format-full-prefix                      = ""
 format-full-suffix                      = ${theme.suffix}
 format-full-padding-left                = 0
 format-full-padding-right               = 1
@@ -296,6 +297,7 @@ format-full-suffix-foreground           = ${theme.clear}
 format-full-suffix-background           = ${theme.clear}
 
 format-charging                         = "<label-charging>  <animation-charging> "
+format-charging-prefix                  = ""
 format-charging-suffix                  = ${theme.suffix}
 format-charging-padding-left            = 0
 format-charging-padding-right           = 1
@@ -305,6 +307,7 @@ format-charging-suffix-foreground       = ${theme.clear}
 format-charging-suffix-background       = ${theme.clear}
 
 format-discharging                      = "<label-discharging> <ramp-capacity> "
+format-discharging-prefix               = ""
 format-discharging-suffix               = ${theme.suffix}
 format-discharging-padding-left         = 0
 format-discharging-padding-right        = 1
