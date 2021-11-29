@@ -36,19 +36,18 @@
 #
 
 if ! [ -f "/var/run/smd/rotate" ]; then
-    printf " \n"
+    echo " "
     exit 0
 fi
 
 case $(cat "/var/run/smd/rotate") in
     "true")
-    printf " \n"
+    echo " "
     ;;
     "false")
-    printf " \n"
+    echo " "
     ;;
     *)
-    printf " \n"
+    echo " "
     ;;
 esac
-exit 0

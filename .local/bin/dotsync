@@ -37,7 +37,7 @@
 
 DOTS="$HOME/.dotfiles"
 
-printf "Updating dotfiles..\n"
+echo "Updating dotfiles.."
 chmod -R 2550 "$DOTS"
 find "$DOTS" -xdev -type f -exec chmod 440 {} \;
 
@@ -73,8 +73,8 @@ bash "$HOME/.private/sync.sh"
 themectl reload
 rm $HOME/.xsession-errors* 2> /dev/null
 
-printf "Broken Links Found:\n"
+echo "Broken Links Found:"
 find "$HOME/" -xtype l -xdev 2> /dev/null
 
-printf "Done!\n"
+echo "Done!"
 exit 0

@@ -44,4 +44,3 @@ maim -d $delay -suoqc 0.75,0,1,0.2 -t 0 -b 5 -f png -m 1 -n 0 | xclip -selection
 if [ $? -eq 0 ]; then
     notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
 fi
-exit 0

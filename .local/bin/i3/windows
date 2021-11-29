@@ -38,4 +38,3 @@
 if [ -z "$(ps x | grep 'skippy-xd' | grep -v grep)" ]; then
     /usr/bin/skippy-xd --config "$HOME/.config/skippy.conf"
 fi
-exit 0

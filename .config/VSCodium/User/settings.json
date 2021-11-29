@@ -311,7 +311,8 @@
     "files.associations": {
         "*.sh": "shellscript",
         "*.run": "shellscript",
-        "*.conf": "properties"
+        "*.conf": "properties",
+        "config": "properties"
     },
     "files.autoGuessEncoding": true,
     "files.autoSaveDelay": 1000,

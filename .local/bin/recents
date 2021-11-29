@@ -37,7 +37,6 @@
 
 from re import search
 from os import remove
-from io import StringIO
 from shutil import copy2
 from sqlite3 import connect
 from tempfile import mkstemp
@@ -45,34 +44,33 @@ from sys import exit, stderr, argv
 from os.path import expandvars, join
 from configparser import ConfigParser, Error as ConfigError
 
-FIREFOX_DATA = "$HOME/.mozilla/firefox"
 
-
-def get_db():
-    cfg = ConfigParser()
-    directory = expandvars(FIREFOX_DATA)
-    profiles = join(directory, "profiles.ini")
+def _db():
+    c = ConfigParser()
+    d = expandvars("$HOME/.config/librewolf")
+    p = join(d, "profiles.ini")
     try:
-        cfg.read(profiles)
+        c.read(p)
     except (ConfigError, OSError) as err:
         raise OSError(
-            'Could not read profiles config file "%s": %s' % (profiles, str(err))
+            f'Could not read profiles config file "{p}": {err}'
         )
-    if "Profile0" not in cfg:
+    if "Profile0" not in c:
         raise OSError(
-            'Could not find "Profile0" in profiles config file "%s"' % profiles
+            f'Could not find "Profile0" in profiles config file "{p}"'
         )
-    if "Path" not in cfg["Profile0"]:
+    if "Path" not in c["Profile0"]:
         raise OSError(
-            'Could not find "Profile0\\Path" in profiles config file "%s"' % profiles
+            f'Could not find "Profile0\\Path" in profiles config file "{p}"'
         )
-    del profiles
-    db = join(directory, cfg["Profile0"]["Path"], "places.sqlite")
-    del cfg
-    del directory
-    temp = mkstemp()[1]
-    copy2(db, temp)
-    return temp
+    del p
+    x = join(d, c["Profile0"]["Path"], "places.sqlite")
+    del c
+    del d
+    t = mkstemp()[1]
+    copy2(x, t)
+    del x
+    return t
 
 
 def find(pattern, string):
@@ -81,51 +79,47 @@ def find(pattern, string):
     return search(pattern, string) is not None
 
 
-def get_recent(db, terminal):
+def _recent(db, terminal):
     d = connect(db)
     d.create_function("REGEXP", 2, find)
     c = d.cursor()
     c.execute(
-        "SELECT DISTINCT RTRIM(url,'/'), title FROM moz_places WHERE url REGEXP '^(.*):\/\/' "
+        "SELECT DISTINCT RTRIM(url,'/'), title FROM moz_places WHERE url REGEXP '^(.*):\\/\\/' "
         "ORDER BY moz_places.visit_count DESC"
     )
-    f = "%s (%s)"
-    if not terminal:
-        f = "%-250s (%s)"
-    w = StringIO()
     for r in c.fetchall():
         if r[1] is None:
-            w.write("%s\n" % str(r[0].encode(), "ascii", "ignore"))
+            print(str(r[0].encode(), "ascii", "ignore"))
             continue
-        w.write(
-            "%s\n"
-            % (
-                f
-                % (
-                    str(r[1].encode(), "ascii", "ignore"),
-                    str(r[0].encode(), "ascii", "ignore"),
-                )
-            )
-        )
+        t = str(r[1].encode(), "ascii", "ignore")
+        if len(t) > 100:
+            t = t[:100] + "..."
+        if terminal:
+            print(f'{t} ({str(r[0].encode(), "ascii", "ignore")})')
+        else:
+            print(f'{t:<250} ({str(r[0].encode(), "ascii", "ignore")})')
+        del t
     c.close()
     d.close()
     del c
     del d
-    r = w.getvalue()
-    del w
-    return r
 
 
 if __name__ == "__main__":
     try:
-        db = get_db()
-        print(get_recent(db, len(argv) == 1))
+        d = _db()
     except Exception as err:
-        print("An error occurred: %s" % str(err), file=stderr)
+        print(f"Error: {err}", file=stderr)
+        exit(1)
+
+    try:
+        _recent(d, len(argv) == 1)
+    except Exception as err:
+        print(f"Error: {err}", file=stderr)
         exit(1)
     finally:
         try:
-            remove(db)
+            remove(d)
         except OSError:
             pass
     exit(0)

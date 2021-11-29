@@ -41,14 +41,14 @@ if [[ ! -e "$recents" ]]; then
     exit 1
 fi
 
-selected=$(python $recents rofi | rofi -no-lazy-grab -dmenu -i -p "Recents" -columns 1 -rows 200)
+selected=$(python $recents rofi | rofi -no-lazy-grab -dmenu -theme "$HOME/.config/rofi/menu.rasi" -theme-str "inputbar{enabled:true;}window{width:40%;border-color:#CA0096;}element selected{background-color:#CA0096;}" -i -p "" -columns 1 -rows 200)
 if [ -z "$selected" ]; then
     exit 0
 fi
+
 
 if [[ ! -z $(echo "$selected" | grep " (") ]]; then
     selected="http$(echo "$selected" | awk -F"http" '{print $2}' | sed -e 's/)$//g')"
 fi
 
 browser "$selected"
-exit 0

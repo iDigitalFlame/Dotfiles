@@ -84,4 +84,3 @@ case $menu_selected in
     lockerctl -kd true
     ;;
 esac
-exit 0

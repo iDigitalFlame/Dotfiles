@@ -36,4 +36,3 @@
 #
 
 /usr/lib/smd/libexec/smd-message -u background
-exit 0

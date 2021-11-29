@@ -44,7 +44,7 @@
 --centered \
 --composite \
 --color="00000000" \
---image="/home/dij/.cache/smd/lockscreen.png" \
+--image="$HOME/.cache/smd/lockscreen.png" \
 --pointer=default \
 --force-clock \
 --date-str="" \

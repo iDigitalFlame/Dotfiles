@@ -43,4 +43,3 @@ case $1 in
     rofi -no-lazy-grab -show drun -combi-modi drun,window -theme "$HOME/.config/rofi/apps.rasi"
     ;;
 esac
-exit 0

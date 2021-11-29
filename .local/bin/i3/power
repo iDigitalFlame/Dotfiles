@@ -69,4 +69,3 @@ case $menu_selected in
     killall polybar
     ;;
 esac
-exit 0

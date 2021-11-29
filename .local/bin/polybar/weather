@@ -55,7 +55,7 @@ get_icon() {
         50n) result="";;
         *) result="";
     esac
-    printf "$result"
+    printf $result
 }
 
 if [ -e "$HOME/.cache/offline" ]; then
@@ -90,4 +90,3 @@ if [ ! -z "$weather" ]; then
         echo "${temp}°" "$(get_icon "$icon")"
     fi
 fi
-exit 0

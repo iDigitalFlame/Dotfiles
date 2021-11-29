@@ -287,7 +287,6 @@ label-discharging-padding-left          = 0
 label-discharging-padding-right         = 0
 
 format-full                             = "<label-full>  "
-format-full-prefix                      = ""
 format-full-suffix                      = ${theme.suffix}
 format-full-padding-left                = 0
 format-full-padding-right               = 1
@@ -432,5 +431,6 @@ module-margin-right                     = 0
 
 [bar/standard]
 inherit                                 = bar/small
+monitor                                 = DP-1-2
 modules-left                            = xwindow
 modules-right                           = i3 weather lockerctl bluetooth rotatectl volume memory filesystem cpu battery0 battery1 date

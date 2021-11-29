@@ -36,15 +36,14 @@
 #
 
 if ! [ -f "/var/run/smd/lockers" ]; then
-    printf "0 \n"
+    echo "0 "
     exit 0
 fi
 
 lockers=$(cat "/var/run/smd/lockers" | wc -w)
 if [ -z "$lockers" ] || [ "$lockers" -eq "0" ]; then
-    printf "0 \n"
+    echo "0 "
     exit 0
 fi
 
-printf "$lockers \n"
-exit 0
+echo "$lockers "

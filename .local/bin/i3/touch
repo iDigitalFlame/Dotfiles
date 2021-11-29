@@ -36,6 +36,7 @@
 #
 
 sock="/tmp/touchinput"
+
 if [ -f "$sock" ]; then
     rm -f "$sock" 2> /dev/null
     onboard --size=800x300 &
@@ -47,6 +48,6 @@ sleep 0.25s
 
 if [ -f "$sock" ]; then
     rm -f "$sock" 2> /dev/null
-    bash "$sock/.local/bin/i3/search" &
+    bash "$HOME/.local/bin/i3/search" &
+    exit 0
 fi
-exit 0
