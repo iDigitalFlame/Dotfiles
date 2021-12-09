@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 ################################
-### iDigitalFlame  2016-2021 ###
+### iDigitalFlame  2016-2022 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -19,7 +19,7 @@
 ################################
 ## Firefox Recent URLs Lister
 #
-# Copyright (C) 2016 - 2021 iDigitalFlame
+# Copyright (C) 2016 - 2022 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -52,17 +52,11 @@ def _db():
     try:
         c.read(p)
     except (ConfigError, OSError) as err:
-        raise OSError(
-            f'Could not read profiles config file "{p}": {err}'
-        )
+        raise OSError(f'Could not read profiles config file "{p}": {err}')
     if "Profile0" not in c:
-        raise OSError(
-            f'Could not find "Profile0" in profiles config file "{p}"'
-        )
+        raise OSError(f'Could not find "Profile0" in profiles config file "{p}"')
     if "Path" not in c["Profile0"]:
-        raise OSError(
-            f'Could not find "Profile0\\Path" in profiles config file "{p}"'
-        )
+        raise OSError(f'Could not find "Profile0\\Path" in profiles config file "{p}"')
     del p
     x = join(d, c["Profile0"]["Path"], "places.sqlite")
     del c
