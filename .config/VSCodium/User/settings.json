@@ -723,14 +723,15 @@
             "fillstruct": true,
             "undeclaredname": true,
         },
-        /*
-        "ui": {
-            "generate": false,
+        "ui.codelenses": {
+            "regenerate_cgo": false,
+            "vendor": false,
             "gc_details": true,
-            "regenerate_cgo": true,
+            "generate": false,
+            "test": true,
             "tidy": true,
-            "upgrade_dependency": true
-        }*/
+            "upgrade_dependency": true,
+        }
     },
     "go.languageServerExperimentalFeatures": {
         "format": true,
@@ -777,6 +778,9 @@
     "go.testOnSave": false,
     "go.testTimeout": "30s",
     "go.toolsEnvVars": {},
+    "go.alternateTools": {
+        "gopls": "/home/dij/.local/lib/go/gopls",
+    },
     "go.toolsGopath": "/home/dij/.local/lib/go",
     "go.useCodeSnippetsOnFunctionSuggest": true,
     "go.useCodeSnippetsOnFunctionSuggestWithoutType": false,
