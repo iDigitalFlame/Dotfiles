@@ -62,8 +62,10 @@ panelmultiview {
 }
 
 menupopup, .contentAreaContextMenu {
+    border: none !important;
     appearance: none !important;
-    border: 2px solid #AC0FEB !important;
+    border-radius: 6px !important;
+    background: #AC0FEB !important;
 }
 
 .urlbar-input-box {
