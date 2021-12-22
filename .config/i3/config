@@ -94,13 +94,19 @@ for_window              [window_type=dialog title="Open *" floating class="(i?!L
 for_window              [window_type=dialog title="open *" floating class="(i?!Navigator)"] border normal, resize set 800 600
 
 # Application Workspace Assignments
-assign                  [class="TSRDP"]           number "0:R"
+assign                  [class="TSRDP"]             number "0:R"
+assign                  [class="slack"]             number 9
+assign                  [class="Slack"]             number 9
+assign                  [class="discord"]           number 9
 assign                  [class="LSTSRDP"]           number "0:R"
 assign                  [class="librewolf"]         number 1
+assign                  [class="LibreWolf"]         number 1
+assign                  [class="Navigator"]         number 1
 assign                  [class="TelegramDesktop"]   number 10
 assign                  [class="telegram-desktop"]  number 10
 
 # Workspace to Output Assignments
+workspace               9  output DP-1-2
 workspace               10 output DP-1-2
 
 # Theme
