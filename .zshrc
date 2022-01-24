@@ -304,6 +304,7 @@ alias en="gh web python3 $HOME/.local/bin/i3/sticky -"
 alias note="gh web python3 $HOME/.local/bin/i3/sticky -"
 alias pmov="python3 $HOME/Projects/Scripts/Python/move.py"
 alias nts="python3 $HOME/Projects/Scripts/Python/ntstatus.py"
+alias dirdiff="python3 $HOME/Projects/Scripts/Python/dirdiff.py"
 # alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
 source "$HOME/.local/lib/zshrc.sh"
