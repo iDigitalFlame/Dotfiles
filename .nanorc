@@ -47,9 +47,12 @@ include "/usr/share/nano/autoconf.nanorc"
 include "/usr/share/nano/markdown.nanorc"
 include "/usr/share/nano/javascript.nanorc"
 
-set mouse
+# Disable this as it can get annoying.
+# set mouse
+
 set nowrap
 set tabsize 4
+set indicator
 set nonewlines
 set autoindent
 set linenumbers
@@ -59,4 +62,5 @@ set casesensitive
 unset historylog
 unset positionlog
 unset suspendable
+unset cutfromcursor
 unset jumpyscrolling
