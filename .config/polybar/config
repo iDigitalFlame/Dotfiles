@@ -403,7 +403,7 @@ width                                   = 100%
 radius                                  = 0
 height                                  = 20
 bottom                                  = false
-font-0                                  = Hack Nerd Font Bold Mono:size=9;2
+font-0                                  = Roboto:size=10;2
 font-1                                  = FontAwesome:size=10;2
 font-2                                  = Weather Icons:size=10;1
 monitor                                 =
