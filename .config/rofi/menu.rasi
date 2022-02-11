@@ -45,7 +45,7 @@ configuration {
 }
 
 * {
-    font:                   "SauceCodePro Nerd Font Mono 12";
+    font:                   "Roboto Regular 12";
     text-color:             #FFFFFFFF;
     background-color:       #00000000;
 }

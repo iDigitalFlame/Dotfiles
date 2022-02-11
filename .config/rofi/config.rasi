@@ -39,7 +39,7 @@ configuration {
     m:                          "-5";
     dpi:                        0;
     modi:                       "drun,window";
-    font:                       "SauceCodePro Nerd Font Mono 12";
+    font:                       "Roboto Regular 12";
     sort:                       true;
     cycle:                      false;
     xoffset:                    0;

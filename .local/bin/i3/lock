@@ -42,7 +42,6 @@
 /usr/bin/i3lock \
 -n \
 --centered \
---composite \
 --color="00000000" \
 --image="$HOME/.cache/smd/lockscreen.png" \
 --pointer=default \

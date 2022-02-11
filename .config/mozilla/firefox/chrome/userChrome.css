@@ -247,3 +247,8 @@ menupopup, .contentAreaContextMenu {
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
     -moz-box-ordinal-group: 2 !important
 }
+
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
+    display: none !important;
+    appearance: none !important;
+}

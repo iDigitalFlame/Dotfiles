@@ -36,7 +36,7 @@
 #
 
 [global]
-    font                        = Hack Nerd Font Bold Mono 10
+    font                        = Roboto 11
     sort                        = true
     scale                       = 0
     dmenu                       = /usr/bin/false
