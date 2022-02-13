@@ -17,7 +17,7 @@
 #                              #
 ########## SPACEPORT ###########
 ################################
-## Screenshot Clip
+## Screenshot Copy
 #
 # Copyright (C) 2016 - 2022 iDigitalFlame
 #
@@ -35,12 +35,12 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-delay=0
+delay=0.05
 if [ $# -ge 1 ]; then
     delay=1
 fi
 
-maim -d $delay -uoqc 0,0,0,0 -t 0 -b 5 -f png -m 1 -n 0 | xclip -selection clipboard -t image/png
+maim -d $delay -uoqc 0,0,0,0 -t 0 -b 0 -f png -m 1 -n 0 | xclip -selection clipboard -t image/png
 if [ $? -eq 0 ]; then
     notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to clipboard."
 fi

@@ -35,12 +35,12 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-delay=0
+delay=0.05
 if [ $# -ge 1 ]; then
     delay=1
 fi
 
-maim -d $delay -suoqc 0.75,0,1,0.2 -t 0 -b 5 -f png -m 1 -n 0 | xclip -selection clipboard -t image/png
+maim -d $delay -suoqc 0.5,0,1,0.5 -t 0 -b 5 -f png -m 1 -n 0 | xclip -selection clipboard -t image/png
 if [ $? -eq 0 ]; then
     notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to the clipboard."
 fi

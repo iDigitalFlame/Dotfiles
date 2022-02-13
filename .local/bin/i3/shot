@@ -35,13 +35,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-delay=0
+delay=0.05
 if [ $# -ge 1 ]; then
     delay=1
 fi
 
 screenshot="$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)$((1 + RANDOM % 256)).png"
-maim -d $delay -uoqc 0,0,0,0 -t 0 -b 5 -f png -m 1 -n 0 "$screenshot"
+maim -d $delay -uoqc 0,0,0,0 -t 0 -b 0 -f png -m 1 -n 0 "$screenshot"
 if [ $? -eq 0 ]; then
     notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$screenshot\"."
 fi
