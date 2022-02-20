@@ -35,6 +35,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
+
 find "$HOME" -xdev -type d -name ".git" -exec sh -c 'a=$(dirname "{}"); echo "Fixing $a"; cd $a; git config core.filemode false' \; 2> /dev/null
 chown $USER:$USER -R $HOME 2> /dev/null
 
@@ -45,6 +47,6 @@ find $HOME/.arduino15 -type f -exec file {} \; | grep ': ELF 64-bit' | grep 'exe
 chmod 750 $HOME/.vscode-oss/extensions/*/bin/*
 chmod 750 $HOME/.local/lib/python/bin/*
 chmod 750 $HOME/.local/lib/go/bin/*
-chmod 755 $HOME/.local/lib/go/gopls
-bash $HOME/.local/bin/dotsync
+chmod 755 "${HOME}/.local/lib/go/gopls"
+bash "${HOME}/.local/bin/dotsync"
 exit 0

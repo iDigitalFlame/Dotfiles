@@ -84,6 +84,8 @@ sg firewall-web -c "curl -sL https://raw.githubusercontent.com/anudeepND/blackli
 sg firewall-web -c "curl -sL https://blocklistproject.github.io/Lists/facebook.txt -o /tmp/fbhosts5.txt"
 cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt /tmp/fbhosts4.txt /tmp/fbhosts5.txt > /tmp/fbhosts.txt
 
+printf "\x1b[32m\x1b[1mChecking for Discord updates...\x1b[0m\n"
+sg firewall-web -c "dvm update stable"
 sg firewall-web -c "/usr/bin/yay -Pw"
 printf "\x1b[32m\x1b[1mStarting pacman...\x1b[0m\n"
 sudo sh -c "mount -o rw,remount /; sg firewall-web -c 'env SYSBATCH=1 /usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n$hosts_list\n' >> /etc/hosts; cat /tmp/fbhosts.txt >> /etc/hosts"
