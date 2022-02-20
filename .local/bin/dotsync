@@ -60,6 +60,7 @@ rm -f "$HOME/.config/mimeapps.list" 2> /dev/null
 rm -f "$HOME/.config/librewolf/chrome" 2> /dev/null
 rm -f "$HOME/.local/bin/x-www-browser" 2> /dev/null
 rm -f "$HOME/.config/surf/cookies.txt" 2> /dev/null
+rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f $HOME/.local/share/applications/userapp*.desktop 2> /dev/null
 
 ln -sT "/dev/null" "$HOME/.config/surf/cookies.txt"
