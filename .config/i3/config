@@ -173,6 +173,7 @@ bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
 bindsym                 $KEY_CTL+Shift+Print    exec --no-startup-id "~/.local/bin/i3/clip-copy"
 
 # Layout Keybindings
+bindsym                 $KEY_WIN+K              sticky disable
 bindsym                 $KEY_WIN+D              layout tabbed
 bindsym                 $KEY_WIN+T              layout tabbed
 bindsym                 $KEY_WIN+A              layout toggle split
