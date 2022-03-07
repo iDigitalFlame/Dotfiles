@@ -72,6 +72,7 @@ ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeap
 
 chmod 750 "${HOME}/.dvm/bin/discord"
 chmod 750 "${HOME}/.dvm/Discord/Discord"
+chmod 750 ${HOME}/.local/lib/oh-my-zsh/tools/*.sh
 
 bash "${HOME}/.private/sync.sh"
 themectl reload
