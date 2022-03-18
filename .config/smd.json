@@ -7,6 +7,8 @@
     },
     "hydra": {
         "aliases": {
+            "android": "/opt/hydra/dij/Android/vm.conf",
+            "droid": "/opt/hydra/dij/Android/vm.conf",
             "kali": "/opt/hydra/dij/Kali/vm.conf",
             "mac": "/opt/hydra/dij/MacOS/vm.conf",
             "win": "/opt/hydra/dij/Windows10/vm.conf",
