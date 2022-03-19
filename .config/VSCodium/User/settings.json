@@ -41,6 +41,8 @@
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.cursorStyle": "line",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
     // NOTE(dij): It says this value is not accepted, but setting it to empty
     //            disables it, which is what we want.
     "editor.multiCursorModifier": "",
