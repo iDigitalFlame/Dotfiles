@@ -35,10 +35,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-XDG_DESKTOP_DIR="$HOME"
+XDG_DESKTOP_DIR="${HOME}"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_RUNTIME_DIR="/run/user/${UID}"
 XDG_PICTURES_DIR="${HOME}/Pictures"
+XDG_DATA_HOME="${HOME}/.local/share"
 XDG_DOWNLOAD_DIR="${HOME}/Downloads"
 XDG_DOCUMENTS_DIR="${HOME}/Documents"
+XDG_STATE_HOME="${HOME}/.local/share"
 XDG_MUSIC_DIR="${HOME}/Documents/Music"
 XDG_VIDEOS_DIR="${HOME}/Documents/Videos"
 XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"

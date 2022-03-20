@@ -35,6 +35,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+# Enable Strict Mode
+set -uo pipefail
+IFS=$'\n\t'
+
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
     printf "smb [--reset] <domain\\\user|user> <share>\n"
     exit 1

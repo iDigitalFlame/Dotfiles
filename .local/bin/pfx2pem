@@ -35,6 +35,11 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+# Enable Strict Mode
+set -euo pipefail
+IFS=$'\n\t'
+
+
 if [ $# -ne 1 ]; then
     echo "Usage: pfx2pem <pfx>"
     exit 1

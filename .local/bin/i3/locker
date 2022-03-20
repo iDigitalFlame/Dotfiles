@@ -47,7 +47,7 @@ menu_items=""" Clear All Lockers
  Disable Hibernation
  Disable Lid Switch
 """
-menu_selected=$(printf "$menu_items" | rofi -theme "$HOME/.config/rofi/menu.rasi" -theme-str "window{border-color:#000096;}element selected{background-color:#000096;}" -no-lazy-grab -dmenu -i -p "" -l 11 -columns 1)
+menu_selected=$(printf "$menu_items" | rofi -theme "${HOME}/.config/rofi/menu.rasi" -theme-str "window{border-color:#000096;}element selected{background-color:#000096;}" -no-lazy-grab -dmenu -i -p "" -l 11 -columns 1)
 
 case $menu_selected in
     " Clear All Lockers")

@@ -45,6 +45,4 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
-zstyle :compinstall filename '/home/dij/.zshrc'
-autoload -Uz compinit
-compinit
+zstyle :compinstall filename "${HOME}/.cache/zshcomp"

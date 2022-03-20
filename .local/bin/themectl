@@ -35,52 +35,64 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-THEME_DIR="$HOME/.config/theme"
+# Enable Strict Mode
+set -uo pipefail
+IFS=$'\n\t'
+
+THEME_DIR="${HOME}/.config/theme"
 
 fhelp() {
     printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|list|help]\n\n"
-    if ! [ -e "$THEME_DIR/current" ]; then
+    if ! [ -e "${THEME_DIR}/current" ]; then
         printf "No theme selected!\n"
         exit 0
     fi
-    printf "Current theme is \"$(basename `readlink "$THEME_DIR/current"`)\"\n"
+    printf "Current theme is \"$(basename `readlink "${THEME_DIR}/current"`)\"\n"
     exit 0
 }
 
 freset() {
     theme=""
     if [ $# -eq 1 ]; then
-        if [ -e "$THEME_DIR/$1" ]; then
-            theme="$THEME_DIR/$1"
+        if [ -e "${THEME_DIR}/${1}" ]; then
+            theme="${THEME_DIR}/${1}"
         else
             printf "Theme \"$1\" does not exist!\n"
             exit 0
         fi
     else
-        if ! [ -e "$THEME_DIR/current" ]; then
+        if ! [ -e "${THEME_DIR}/current" ]; then
             printf "No theme selected!\n"
             exit 0
         fi
-        theme=$(readlink "$THEME_DIR/current")
+        theme=$(readlink "${THEME_DIR}/current")
     fi
     theme=$(basename $theme)
-    rm "$THEME_DIR/current" 2> /dev/null
-    ln -sT "$THEME_DIR/$theme" "$THEME_DIR/current"
-    rm -f "$HOME/.gtkrc-2.0"
-    rm -f "$HOME/.gtkrc-2.0.mine"
-    rm -f "$HOME/.config/gtk-3.0/settings.ini"
+    rm "${THEME_DIR}/current" 2> /dev/null
+    ln -sT "${THEME_DIR}/${theme}" "$THEME_DIR/current"
+    rm -f "${HOME}/.gtkrc-2.0"
+    rm -f "${HOME}/.gtkrc-2.0.mine"
+    rm -f "${HOME}/.config/gtk-1.0/gtkrc"
+    rm -f "${HOME}/.config/gtk-2.0/gtkrc"
+    rm -f "${HOME}/.config/gtk-2.0/gtkrc.mime"
+    rm -f "${HOME}/.config/gtk-3.0/settings.ini"
     return 0
 }
 
 freload() {
-    if ! [ -e "$THEME_DIR/current" ]; then
+    if ! [ -e "${THEME_DIR}/current" ]; then
         return 1
     fi
-    ln -sT "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0"
-    ln -sT "$THEME_DIR/current/gtk-2.conf" "$HOME/.gtkrc-2.0.mine"
-    ln -sT "$THEME_DIR/current/gtk-3.conf" "$HOME/.config/gtk-3.0/settings.ini"
+    ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc"
+    ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc.mime"
+    ln -sT "${THEME_DIR}/current/gtk-3.conf" "${HOME}/.config/gtk-3.0/settings.ini"
     return 0
 }
+
+if [ $# -eq 0 ]; then
+    fhelp
+    exit 2
+fi
 
 case "$1" in
     "list")
@@ -99,7 +111,7 @@ case "$1" in
         printf "$0 set <theme>\n"
         exit 1
     fi
-    if ! [ -e "$THEME_DIR/$2" ]; then
+    if ! [ -e "${THEME_DIR}/${2}" ]; then
         printf "Theme \"$2\" does not exist!\n"
         exit 0
     fi

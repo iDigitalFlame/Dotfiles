@@ -35,11 +35,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+# Enable Strict Mode
+set -uo pipefail
+IFS=$'\n\t'
+
 DOTS="${HOME}/.dotfiles"
 
 echo "Updating dotfiles.."
-chmod -R 2550 "$DOTS"
-find "$DOTS" -xdev -type f -exec chmod 440 {} \;
+chmod -R 2550 "${DOTS}"
+find "${DOTS}" -xdev -type f -exec chmod 440 {} \;
 
 chmod 550 "${DOTS}/.zshrc"
 chmod -R 2770 "${DOTS}/.git"
@@ -60,7 +64,7 @@ rm -f "${HOME}/.config/mimeapps.list" 2> /dev/null
 rm -f "${HOME}/.config/librewolf/chrome" 2> /dev/null
 rm -f "${HOME}/.local/bin/x-www-browser" 2> /dev/null
 rm -f "${HOME}/.config/surf/cookies.txt" 2> /dev/null
-rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
+rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f ${HOME}/.local/share/applications/userapp*.desktop 2> /dev/null
 
 ln -sT "/dev/null" "$HOME/.config/surf/cookies.txt"
@@ -76,6 +80,7 @@ chmod 750 ${HOME}/.local/lib/oh-my-zsh/tools/*.sh
 
 bash "${HOME}/.private/sync.sh"
 themectl reload
+
 rm $HOME/.xsession-errors* 2> /dev/null
 
 echo "Broken Links Found:"

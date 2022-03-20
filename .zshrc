@@ -35,22 +35,52 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-export VISUAL="nano"
 export ZSH_THEME="muse"
 export UPDATE_ZSH_DAYS=14
 export GOROOT="/usr/lib/go"
 export ENABLE_CORRECTION="true"
-export AURDEST="$HOME/.cache/aur"
+export PAGER="/usr/bin/less -iR"
 export DISABLE_AUTO_UPDATE="false"
+export AURDEST="${HOME}/.cache/aur"
 export PKGDEST="/var/cache/makepkg"
-export GOPATH="$HOME/.local/lib/go"
+export GOPATH="${HOME}/.local/lib/go"
 export COMPLETION_WAITING_DOTS="true"
-export ZSH="$HOME/.local/lib/oh-my-zsh"
-export SRCDEST="/tmp/.usercache/$USER/aur/src"
-export BUILDDIR="/tmp/.usercache/$USER/aur/build"
-export SSH_AUTH_SOCK="/run/user/$UID/keyring/ssh"
+export ZSH="${HOME}/.local/lib/oh-my-zsh"
+export BROWSER="${HOME}/.local/bin/browser"
+export GNUPGHOME="${HOME}/.local/share/gnupg"
+export SRCDEST="/tmp/.usercache/${USER}/aur/src"
+export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
+export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
+export BUILDDIR="/tmp/.usercache/${USER}/aur/build"
+export SSH_AUTH_SOCK="/run/user/${UID}/keyring/ssh"
 
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:${GOPATH}/bin
+
+export XDG_DESKTOP_DIR="${HOME}"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_RUNTIME_DIR="/run/user/${UID}"
+export XDG_PICTURES_DIR="${HOME}/Pictures"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_DOWNLOAD_DIR="${HOME}/Downloads"
+export XDG_DOCUMENTS_DIR="${HOME}/Documents"
+export XDG_STATE_HOME="${HOME}/.local/share"
+export XDG_MUSIC_DIR="${HOME}/Documents/Music"
+export XDG_VIDEOS_DIR="${HOME}/Documents/Videos"
+export XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"
+export XDG_TEMPLATES_DIR="${HOME}/Documents/Templates"
+
+export ERRFILE="/dev/null"
+export LESSHISTFILE="/dev/null"
+export ZDOTDIR="${HOME}/.config/zsh"
+export LESSKEY="${HOME}/.config/lesskey"
+export SCREENRC="${HOME}/screen/screenrc"
+export HISTFILE="${HOME}/.config/zsh/history"
+export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${HOME}/.config/java"
+
+export GTK_RC_FILES="${HOME}/.config/gtk-1.0/gtkrc"
+export GTK2_RC_FILES="${HOME}/.config/gtk-2.0/gtkrc"
 
 plugins=(git screen sudo)
 source "$ZSH/oh-my-zsh.sh"
@@ -64,6 +94,8 @@ bindkey "\e[B" down-line-or-beginning-search
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+compinit -d "${HOME}/.cache/zcompdump-${ZSH_VERSION}"
 
 ZSH_HIGHLIGHT_MAXLENGTH=256
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
@@ -84,9 +116,9 @@ ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=63,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=74,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=74,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=74,bold'
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/media)
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/tmp/.mounts)
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=($HOME/Volumes)
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
+ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("${HOME}/Volumes")
 
 PROMPT="%n $PROMPT"
 
@@ -100,105 +132,14 @@ fi
 if [ ! -d "$BUILDDIR" ]; then
     mkdir -p "$BUILDDIR"
 fi
-if [ ! -d "$HOME/Pictures/Screenshots" ]; then
-    mkdir -p "$HOME/Pictures/Screenshots"
+if [ ! -d "${HOME}/Pictures/Screenshots" ]; then
+    mkdir -p "${HOME}/Pictures/Screenshots"
 fi
-if [ ! -d "/tmp/.usercache/$USER/trash" ]; then
-    mkdir -p "/tmp/.usercache/$USER/trash"
-    rm -f "$HOME/.local/share/Trash"
-    ln -s "/tmp/.usercache/$USER/trash" "$HOME/.local/share/Trash"
+if [ ! -d "/tmp/.usercache/${USER}/trash" ]; then
+    mkdir -p "/tmp/.usercache/${USER}/trash"
+    rm -f "${HOME}/.local/share/Trash"
+    ln -s "/tmp/.usercache/${USER}/trash" "${HOME}/.local/share/Trash"
 fi
-
-# Go Build Helper Functions
-#  gbo       - Golang Build Optimized
-#  gbp       - Golang Build Optimized with Packed UPX
-#  gbo-win   - Golang Build Optimized for Windows
-#  gbp-win   - Golang Build Optimized for Windows with Packed UPX
-#  gbp-dll   - Golang Build Optimized DLL for Windows (CMain and Go) with Packed UPX
-#  gbp-exe   - Golang Build Optimized for Windows (CMain and Go) with Packed UPX
-#  gbo-win32 - Golang Build Optimized for Windows x86
-#  gbp-win32 - Golang Build Optimized for Windows x86 with Packed UPX
-gbo() {
-    if [ $# -eq 0 ]; then
-        printf "$0 <build opts...>\n"
-        return 1
-    fi
-    go build -trimpath -ldflags "-s -w" $@
-}
-gbp() {
-    if [ $# -le 1 ]; then
-        printf "$0 <output> <build opts...>\n"
-        return 1
-    fi
-    file=$1; shift
-    go build -trimpath -ldflags "-s -w" -o $file $@
-    if [ $? -ne 0 ]; then
-        printf "go build exited with non-zero status code.\n"
-        return 1
-    fi
-    if [ ! -f "$file" ]; then
-        return 1
-    fi
-    upx --compress-exports=1 --strip-relocs=1 --compress-icons=2 --best --no-backup -9 "$file"
-}
-gbo-win() {
-    GOOS=windows gbo $@
-}
-gbp-win() {
-    GOOS=windows gbp $@
-}
-gbp-dll() {
-    if [ $# -lt 3 ]; then
-        printf "gbp-dll <c_file> <go_file> <output> [gcc_args]\n"
-        return 1
-    fi
-    cfile=$1; gofile=$2; output=$3
-    shift 3
-    name="/tmp/gb-$(openssl rand -hex 6)"
-    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
-    if [ $? -ne 0 ]; then
-        printf "go build exited with non-zero status code.\n"
-        return 1
-    fi
-    x86_64-w64-mingw32-gcc -c -o "${name}.o" "$cfile" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
-    if [ $? -ne 0 ]; then
-        printf "win64 gcc exited with non-zero status code.\n"
-        rm -f "${name}.a" 2> /dev/null
-        return 1
-    fi
-    x86_64-w64-mingw32-gcc -o "$output" -s -shared "${name}.o" "${name}.a" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
-    rm -f "${name}.a" 2> /dev/null; rm -f "${name}.o" 2> /dev/null; rm -f "${name}.h" 2> /dev/null
-    if [ ! -f "$output" ]; then
-        return 1
-    fi
-    upx --compress-exports=1 --strip-relocs=1 --compress-icons=0 --best --no-backup -9 "$output"
-}
-gbp-exe() {
-    if [ $# -lt 3 ]; then
-        printf "gbp-exe <c_file> <go_file> <output> [gcc_args]\n"
-        return 1
-    fi
-    cfile=$1; gofile=$2; output=$3
-    shift 3
-    name="/tmp/gb-$(openssl rand -hex 6)"
-    env GOOS=windows CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc go build -ldflags "-s -w" -buildmode=c-archive -o "${name}.a" "$gofile"
-    if [ $? -ne 0 ]; then
-        printf "go build exited with non-zero status code.\n"
-        return 1
-    fi
-    x86_64-w64-mingw32-gcc -o "$output" "$cfile" "${name}.a" -fPIC -pthread -lwinmm -lntdll -lws2_32 -lpsapi -liphlpapi $@
-    rm -f "${name}.a" 2> /dev/null; rm -f "${name}.o" 2> /dev/null; rm -f "${name}.h" 2> /dev/null
-    if [ ! -f "$output" ]; then
-        return 1
-    fi
-    upx --compress-exports=1 --strip-relocs=1 --compress-icons=2 --best --no-backup -9 "$output"
-}
-gbo-win32() {
-    GOOS=windows GOARCH=386 gbo $@
-}
-gbp-win32() {
-    GOOS=windows GOARCH=386 gbp $@
-}
 
 # Firewall Aliases
 alias nc="/usr/bin/gh all /usr/bin/nc"
@@ -208,7 +149,6 @@ alias scp="/usr/bin/gh ssh /usr/bin/scp"
 alias git="/usr/bin/gh web /usr/bin/git"
 alias pip="/usr/bin/gh  web /usr/bin/pip"
 alias nmap="/usr/bin/gh all /usr/bin/nmap"
-alias wget="/usr/bin/gh web /usr/bin/wget"
 alias curl="/usr/bin/gh web /usr/bin/curl"
 alias ping="/usr/bin/gh icmp /usr/bin/ping"
 alias rsync="/usr/bin/gh ssh /usr/bin/rsync"
@@ -216,10 +156,13 @@ alias pacman="/usr/bin/gh web /usr/bin/pacman"
 alias vnc="/usr/bin/gh ctl /usr/bin/vncviewer"
 alias wython="/usr/bin/gh web /usr/bin/python3"
 alias go="nocorrect /usr/bin/gh web /usr/bin/go"
-alias quote="/usr/bin/gh web $HOME/.local/bin/motivate -n"
+alias gpg="gpg --homedir ${HOME}/.local/share/gnupg"
+alias gpg2="gpg2 --homedir ${HOME}/.local/share/gnupg"
+alias quote="/usr/bin/gh web ${HOME}/.local/bin/motivate -n"
 alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp"
 alias vncviewer="nocorrect /usr/bin/gh ctl /usr/bin/vncviewer"
 alias wgo="nocorrect env GOOS=windows /usr/bin/gh web /usr/bin/go"
+alias wget="/usr/bin/gh web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
 alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
 
 # Python Aliases
@@ -273,10 +216,10 @@ alias lsht="/usr/bin/ls -AlpFNht --group-directories-first --color=auto"
 alias lsalt="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
 
 # Screenshot Aliases
-alias ss="$HOME/.local/bin/i3/shot"
-alias sel="$HOME/.local/bin/i3/clip"
-alias ssc="$HOME/.local/bin/i3/shot-copy"
-alias selc="$HOME/.local/bin/i3/clip-copy"
+alias ss="${HOME}/.local/bin/i3/shot"
+alias sel="${HOME}/.local/bin/i3/clip"
+alias ssc="${HOME}/.local/bin/i3/shot-copy"
+alias selc="${HOME}/.local/bin/i3/clip-copy"
 
 # Go Aliases
 alias gv="gh web go vet ./...'"
@@ -300,12 +243,12 @@ alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias en="gh web python3 $HOME/.local/bin/i3/sticky -"
-alias note="gh web python3 $HOME/.local/bin/i3/sticky -"
-alias pmov="python3 $HOME/Projects/Scripts/Python/move.py"
-alias nts="python3 $HOME/Projects/Scripts/Python/ntstatus.py"
-alias dirdiff="python3 $HOME/Projects/Scripts/Python/dirdiff.py"
+alias en="gh web python3 ${HOME}/.local/bin/i3/sticky -"
+alias note="gh web python3 ${HOME}/.local/bin/i3/sticky -"
+alias pmov="python3 ${HOME}/Projects/Scripts/Python/move.py"
+alias nts="python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
+alias dirdiff="python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
 # alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
-source "$HOME/.local/lib/zshrc.sh"
-source "$HOME/.local/share/colors.sh"
+source "${HOME}/.local/lib/zshrc.sh"
+source "${HOME}/.local/share/colors.sh"

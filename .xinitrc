@@ -35,4 +35,21 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+export ERRFILE="/dev/null"
+export XDG_DESKTOP_DIR="${HOME}"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_RUNTIME_DIR="/run/user/${UID}"
+export XDG_PICTURES_DIR="${HOME}/Pictures"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_DOWNLOAD_DIR="${HOME}/Downloads"
+export XDG_DOCUMENTS_DIR="${HOME}/Documents"
+export XDG_STATE_HOME="${HOME}/.local/share"
+export XDG_MUSIC_DIR="${HOME}/Documents/Music"
+export XDG_VIDEOS_DIR="${HOME}/Documents/Videos"
+export XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"
+export XDG_TEMPLATES_DIR="${HOME}/Documents/Templates"
+
+export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+
 exec i3

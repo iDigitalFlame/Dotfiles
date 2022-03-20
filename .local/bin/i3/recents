@@ -35,13 +35,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-recents="$HOME/.local/bin/recents"
+recents="${HOME}/.local/bin/recents"
 
 if [[ ! -e "$recents" ]]; then
     exit 1
 fi
 
-selected=$(python $recents rofi | rofi -no-lazy-grab -dmenu -theme "$HOME/.config/rofi/menu.rasi" -theme-str "inputbar{enabled:true;}window{width:40%;border-color:#CA0096;}element selected{background-color:#CA0096;}" -i -p "" -columns 1 -rows 200)
+selected=$(python $recents rofi | rofi -no-lazy-grab -dmenu -theme "${HOME}/.config/rofi/menu.rasi" -theme-str "inputbar{enabled:true;}window{width:40%;border-color:#CA0096;}element selected{background-color:#CA0096;}" -i -p "" -columns 1 -rows 200)
 if [ -z "$selected" ]; then
     exit 0
 fi

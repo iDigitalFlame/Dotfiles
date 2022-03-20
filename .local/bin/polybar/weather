@@ -58,17 +58,17 @@ get_icon() {
     printf $result
 }
 
-if [ -e "$HOME/.cache/offline" ]; then
+if [ -e "${HOME}/.cache/offline" ]; then
     printf ""
     exit 0
 fi
 
-if [ ! -e "$HOME/.config/weather.conf" ]; then
+if [ ! -e "${HOME}/.config/weather.conf" ]; then
     printf ""
     exit 0
 fi
 
-source "$HOME/.config/weather.conf"
+source "${HOME}/.config/weather.conf"
 if [ $? -ne 0 ]; then
     printf ""
     exit 0

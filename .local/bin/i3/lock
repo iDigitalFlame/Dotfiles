@@ -43,7 +43,7 @@
 -n \
 --centered \
 --color="00000000" \
---image="$HOME/.cache/smd/lockscreen.png" \
+--image="${HOME}/.cache/smd/lockscreen.png" \
 --pointer=default \
 --force-clock \
 --date-str="" \

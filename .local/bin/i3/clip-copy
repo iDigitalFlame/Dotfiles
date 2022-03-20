@@ -35,7 +35,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-delay=0.1
+delay=0.3
 if [ $# -ge 1 ]; then
     delay=1
 fi
