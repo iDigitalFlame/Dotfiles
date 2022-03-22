@@ -66,6 +66,7 @@ rm -f "${HOME}/.local/bin/x-www-browser" 2> /dev/null
 rm -f "${HOME}/.config/surf/cookies.txt" 2> /dev/null
 rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f ${HOME}/.local/share/applications/userapp*.desktop 2> /dev/null
+rm -f "${HOME}/.config/BetterDiscord/themes/DarkSky.theme.css" 2> /dev/null
 
 ln -sT "/dev/null" "$HOME/.config/surf/cookies.txt"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/firefox"
@@ -73,6 +74,8 @@ ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/librewolf"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/x-www-browser"
 ln -sT "${HOME}/.config/mozilla/firefox/chrome" "${HOME}/.config/librewolf/chrome"
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeapps.list"
+
+cp -f "${DOTS}/.config/theme/darksky/discord.css" "${HOME}/.config/BetterDiscord/themes/DarkSky.theme.css"
 
 chmod 750 "${HOME}/.dvm/bin/discord"
 chmod 750 "${HOME}/.dvm/Discord/Discord"
