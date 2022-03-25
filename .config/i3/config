@@ -121,8 +121,7 @@ client.focused_inactive #024363AF #024363A0 #FFFFFFFF #00000000 #191919FF
 # Non-Key Bindings
 bind                    225                     exec --no-startup-id "~/.local/bin/i3/search"
 bind                    248                     exec --no-startup-id "~/.local/bin/i3/windows"
-bindsym                 --whole-window --border button8 workspace next_on_output
-bindsym                 --whole-window --border button9 workspace prev_on_output
+
 bindsym                 --whole-window --border $KEY_WIN+Shift+button5 resize grow width 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_CTL+Shift+button5 resize grow height 10px or 10 ppt
 bindsym                 --whole-window --border $KEY_WIN+Shift+button4 resize shrink width 10px or 10 ppt
@@ -158,22 +157,22 @@ bindsym                 $KEY_ALT+Return         exec "/usr/bin/kitty --single-in
 
 # Macro Keybindings
 bindsym                 $KEY_WIN+B              exec --no-startup-id "~/.local/bin/browser"
-bindsym                 $KEY_WIN+P              exec "~/.local/bin/sticky"
-bindsym                 $KEY_WIN+S              exec "~/.local/bin/sticky"
 bindsym                 $KEY_WIN+U              exec --no-startup-id "~/.local/bin/i3/recents"
-bindsym                 $KEY_WIN+Shift+S        exec "/usr/bin/leafpad --class=stickynote"
-bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "/usr/lib/smd/libexec/smd-auto-display"
-
-# Modified Macro Keybindings
+bindsym                 $KEY_WIN+S              exec "~/.local/bin/sticky"
 bindsym                 $KEY_CTL+Tab            exec --no-startup-id "~/.local/bin/i3/switch-bg"
 bindsym                 $KEY_CTL+Print          exec --no-startup-id "~/.local/bin/i3/shot-copy"
 bindsym                 $KEY_CTL+grave          exec --no-startup-id "~/.local/bin/i3/new sel"
 bindsym                 $KEY_CTL+Escape         exec --no-startup-id "~/.local/bin/i3/power"
+bindsym                 $KEY_WIN+Shift+S        exec "/usr/bin/leafpad --class=stickynote"
+bindsym                 $KEY_WIN+Shift+P        exec --no-startup-id "/usr/lib/smd/libexec/smd-auto-display"
 bindsym                 $KEY_CTL+Shift+P        exec "/usr/bin/arandr"
-bindsym                 $KEY_CTL+Shift+Print    exec --no-startup-id "~/.local/bin/i3/clip-copy"
+bindsym                 $KEY_WIN+Shift+1        exec --no-startup-id "~/.local/bin/i3/clip-copy"
+bindsym                 $KEY_WIN+Shift+2        exec --no-startup-id "~/.local/bin/i3/shot-copy"
+bindsym                 $KEY_CTL+Shift+1        exec --no-startup-id "~/.local/bin/i3/clip"
+bindsym                 $KEY_CTL+Shift+2        exec --no-startup-id "~/.local/bin/i3/shot"
 
 # Layout Keybindings
-bindsym                 $KEY_WIN+K              sticky disable
+bindsym                 $KEY_WIN+P              sticky disable
 bindsym                 $KEY_WIN+D              layout tabbed
 bindsym                 $KEY_WIN+T              layout tabbed
 bindsym                 $KEY_WIN+A              layout toggle split
@@ -269,5 +268,7 @@ bindsym                 $KEY_WIN+0              move container to workspace 10, 
 bindsym                 $KEY_WIN+Delete         move container to workspace 0:R, workspace 0:R
 bindsym                 $KEY_WIN+F5             move container to workspace next_on_output, workspace next_on_output
 bindsym                 $KEY_WIN+F6             move container to workspace prev_on_output, workspace prev_on_output
+bindsym                 $KEY_WIN+XF86Launch1    move container to workspace prev_on_output, workspace prev_on_output
+bindsym                 $KEY_WIN+XF86Launch2    move container to workspace next_on_output, workspace next_on_output
 bindsym                 $KEY_WIN+XF86Launch5    move container to workspace next_on_output, workspace next_on_output
 bindsym                 $KEY_WIN+XF86Launch6    move container to workspace prev_on_output, workspace prev_on_output
