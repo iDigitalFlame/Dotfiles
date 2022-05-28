@@ -700,5 +700,63 @@
     {
         "key": "alt+z",
         "command": "-editor.action.toggleWordWrap"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-notebook.centerActiveCell",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "editor.foldAll"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "editor.foldAllMarkerRegions"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-selectAllSearchEditorMatches",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-addCursorsAtSearchResults",
+        "when": "fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "editor.foldLevel1"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.unfoldAll"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "editor.foldLevel2"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "editor.foldLevel3"
+    },
+    {
+        "key": "ctrl+shift+;",
+        "command": "-breadcrumbs.focus",
+        "when": "breadcrumbsPossible"
+    },
+    {
+        "key": "ctrl+shift+;",
+        "command": "editor.foldLevel4"
     }
 ]
