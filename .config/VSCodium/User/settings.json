@@ -1018,6 +1018,7 @@
     "workbench.editor.untitled.hint": "hidden",
     "workbench.enableExperiments": false,
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.layoutControl.enabled": false,
     "workbench.list.multiSelectModifier": "ctrlCmd",
     "workbench.list.openMode": "singleClick",
     "workbench.list.smoothScrolling": true,
