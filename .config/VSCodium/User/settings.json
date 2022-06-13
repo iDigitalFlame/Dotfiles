@@ -443,10 +443,10 @@
         "remote"
     ],
     "git.confirmSync": true,
-    "git.countBadge": "all",
+    "git.countBadge": "off",
     "git.defaultCloneDirectory": "~/",
     "git.detectSubmodules": true,
-    "git.enableCommitSigning": false,
+    "git.enableCommitSigning": true,
     "git.enableSmartCommit": true,
     "git.enableStatusBarSync": false,
     "git.enabled": true,
@@ -457,6 +457,10 @@
     "git.openDiffOnClick": false,
     "git.path": null,
     "git.promptToSaveFilesBeforeCommit": "always",
+    "git.repositoryScanIgnoredFolders": [
+        "node_modules",
+        "vendor"
+    ],
     "git.showInlineOpenFileAction": false,
     "go.addTags": {
         "options": "json=omitempty",
@@ -916,6 +920,8 @@
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
         "activityBar.background": "#191919",
+        "activityBarBadge.background": "#7D0BAB",
+        "activityBarBadge.foreground": "#FFFFFF",
         "breadcrumb.background": "#191919",
         "dropdown.background": "#191919",
         "dropdown.listBackground": "#191919",
