@@ -38,4 +38,4 @@
 --tabs=4
 --theme=DarkSky
 --force-colorization
---style=rule,changes,snip,numbers
+--style=changes,snip,numbers

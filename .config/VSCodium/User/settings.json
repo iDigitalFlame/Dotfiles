@@ -556,6 +556,9 @@
         "build.buildFlags": [
             "-tags=windows,linux"
         ],
+        "build.directoryFilters": [
+            "-node_modules",
+        ],
         "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
         "deepCompletion": true,
@@ -916,7 +919,6 @@
     "window.restoreWindows": "none",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.titleBarStyle": "native",
-    "window.zoomLevel": 0,
     "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
         "activityBar.background": "#191919",

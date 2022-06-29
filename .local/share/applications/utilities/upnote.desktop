@@ -36,13 +36,15 @@
 #
 
 [Desktop Entry]
+Name            = UpNote (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "${HOME}/.local/apps/upnote.AppImage"
+Icon            = notes
 Type            = Application
-Exec            = /usr/bin/gh web qtws /usr/share/qtws-apps/youtube-music/youtube-music.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
-Name            = Youtube Music (Firewall)
-Icon            = /usr/share/pixmaps/youtube-music-desktop.png
-Comment         = YouTube Music Standalone Player
-Keywords        = Network;AudioVideo;Player;
+Comment         = Notes
+MimeType        =
 Terminal        = false
-Categories      = Network;AudioVideo;Player;
-GenericName     = YouTube Music
+Keywords        = notes;tasks;utilities;
+Categories      = Notes;Tasks;Utilities;
+GenericName     = Notes
 StartupNotify   = true
+StartupWMClass  = ever
