@@ -36,14 +36,13 @@
 #
 
 [Desktop Entry]
+Name            = Work Drive (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "$HOME/.local/apps/zohoworkdrive/bin/zohoworkdrive %U"
+Icon            = screencloud
 Type            = Application
-Exec            = /usr/bin/gh web /usr/bin/liferea %U
-Name            = Liferea (Firewall)
-Icon            = liferea
-Comment         = Read news feeds and blogs
-MimeType        = application/rss+xml;application/atom+xml;application/rdf+xml;x-scheme-handler/feed
-Keywords        = news;feed;aggregator;blog;podcast;syndication;rss;atom
-Categories      = Network;News;
-GenericName     = Folder Sync
+Comment         = Store and Sync files.
+Terminal        = false
+Categories      = Office;Files;Storage;
+GenericName     = File Sync
 StartupNotify   = true
-DBusActivatable = true
+X-MultipleArgs  = false

@@ -36,15 +36,14 @@
 #
 
 [Desktop Entry]
-Name            = UpNote (Firewall)
-Exec            = /usr/bin/sg firewall-web -c "${HOME}/.local/apps/upnote.AppImage"
-Icon            = notes
+Name            = TickTick (Firewall)
+Exec            = /usr/bin/sg firewall-web -c "ticktick %U"
+Icon            = ticktick
 Type            = Application
-Comment         = Notes
-MimeType        =
+Comment         = TickTick is a powerful to-do & task management app with seamless cloud synchronization across all your devices.
 Terminal        = false
-Keywords        = notes;tasks;utilities;
-Categories      = Notes;Tasks;Utilities;
-GenericName     = Notes
+Categories      = Office;Tasks;
+GenericName     = Tasks
 StartupNotify   = true
-StartupWMClass  = ever
+X-MultipleArgs  = false
+StartupWMClass  = TickTick

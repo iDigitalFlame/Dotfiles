@@ -158,6 +158,7 @@
         "rfkill",
         "Roboto",
         "routex",
+        "RPCSS",
         "rpos",
         "sata",
         "sched",
@@ -738,7 +739,7 @@
     "powershell.scriptAnalysis.settingsPath": "",
     "powershell.startAsLoginShell.osx": false,
     "powershell.startAutomatically": true,
-    "powershell.useX86Host": false,
+    "powershell.powerShellAdditionalExePaths": {},
     "problems.autoReveal": true,
     "problems.decorations.enabled": true,
     "pyright.disableLanguageServices": false,
@@ -1049,5 +1050,14 @@
     "zenMode.hideStatusBar": false,
     "zenMode.hideTabs": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
+    "todo-tree.tree.buttons.groupByTag": false,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.scanAtStartup": false,
+    "todo-tree.tree.disableCompactFolders": true,
+    "todo-tree.tree.autoRefresh": false,
+    "todo-tree.filtering.useBuiltInExcludes": "file excludes",
+    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "todo-tree.general.statusBar": "total",
+    "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true
 }
