@@ -57,7 +57,7 @@ configuration {
     show-icons:                 true;
     parse-hosts:                false;
     kb-row-last:                "End";
-    kb-row-down:                "Down";
+    kb-row-down:                "";
     kb-move-end:                "Control+E";
     kb-select-1:                "";
     kb-select-2:                "";
@@ -100,7 +100,8 @@ configuration {
     display-window:             "";
     kb-toggle-sort:             "";
     case-sensitive:             false;
-    kb-element-next:            "";
+    kb-element-next:            "Down";
+    kb-element-prev:            "";
     disable-history:            false;
     kb-accept-entry:            "Return,KP_Enter";
     kb-accept-custom:           "";
