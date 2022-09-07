@@ -47,7 +47,7 @@ fhelp() {
         printf "No theme selected!\n"
         exit 0
     fi
-    printf "Current theme is \"$(basename `readlink "${THEME_DIR}/current"`)\"\n"
+    echo "Current theme is \"$(basename `readlink "${THEME_DIR}/current"`)\""
     exit 0
 }
 
@@ -57,12 +57,12 @@ freset() {
         if [ -e "${THEME_DIR}/${1}" ]; then
             theme="${THEME_DIR}/${1}"
         else
-            printf "Theme \"$1\" does not exist!\n"
+            echo "Theme \"$1\" does not exist!"
             exit 0
         fi
     else
         if ! [ -e "${THEME_DIR}/current" ]; then
-            printf "No theme selected!\n"
+            echo "No theme selected!"
             exit 0
         fi
         theme=$(readlink "${THEME_DIR}/current")
@@ -96,7 +96,7 @@ fi
 
 case "$1" in
     "list")
-    printf "Current Installed Themes:\n"
+    echo "Current Installed Themes:"
     ls -al "$THEME_DIR" | grep -v current | grep -v "total " | awk '{print $9}' | grep -vE "^\." | awk '{print " - "$0}'
     ;;
     "reset")
@@ -108,11 +108,11 @@ case "$1" in
     ;;
     "set")
     if [ $# -ne 2 ]; then
-        printf "$0 set <theme>\n"
+        echo "$0 set <theme>"
         exit 1
     fi
     if ! [ -e "${THEME_DIR}/${2}" ]; then
-        printf "Theme \"$2\" does not exist!\n"
+        echo "Theme \"$2\" does not exist!"
         exit 0
     fi
     freset "$2"

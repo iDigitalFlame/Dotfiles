@@ -40,7 +40,7 @@ set -uo pipefail
 IFS=$'\n\t'
 
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
-    printf "smb [--reset] <domain\\\user|user> <share>\n"
+    echo "smb [--reset] <domain\\\user|user> <share>"
     exit 1
 fi
 
@@ -55,7 +55,7 @@ else
         share="$2"
         keyring="smb-$(echo $1 | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
     else
-        printf "smb [--reset] <domain\\\user|user> <share>\n"
+        echo "smb [--reset] <domain\\\user|user> <share>"
         exit 1
     fi
 fi
@@ -73,21 +73,21 @@ fi
 
 share=$(echo "$share" | sed -e 's/^\\\\//g' | sed -e 's/^\\//g' | sed -e 's/^\/\///g' | sed -e 's/^\///g'  | sed -e 's/\\/\//g')
 if [ -z $(echo "$share" | grep "/") ]; then
-    printf "Invalid share path \"$share\"!\n"
+    echo "Invalid share path \"$share\"!"
     exit 1
 fi
 
 server=$(echo "$share" | awk -F'/' '{print $1}')
 folder=$(echo "$share" | sed -e "s/^$server\///g")
 if [[ -z $folder ]] || [[ -z $server ]]; then
-    printf "Invalid share path \"$share\"!\n"
+    echo "Invalid share path \"$share\"!"
     exit 1
 fi
 
 base=$(echo "$folder" | awk -F'/' '{ print $1 }')
 escaped=$(echo "$base" | sed -e 's/\$/\\$/g')
 if [ ! -z "$(mount | grep $server | grep $escaped)" ]; then
-    printf "Share \"$folder\" on \"$server\" seems to already be mounted!\n"
+    echo "Share \"$folder\" on \"$server\" seems to already be mounted!"
     exit 1
 fi
 
@@ -108,7 +108,7 @@ path="/tmp/.mounts/$USER/$server-$(echo $base | sed -e 's/\$//g')"
 prefix=$(echo "$folder" | awk -F'/' '{ ORS=""; for(i=2;i<=NF;i++) print $i"/" }'|sed -e 's/\/*$//g'|sed -e 's/\/\/*/\//g')
 mkdir -p "$path" 2> /dev/null
 if [ $? -ne 0 ]; then
-    printf "Could not creating mouting folder \"$path\"!\n"
+    echo "Could not creating mouting folder \"$path\"!"
     exit 1
 fi
 
@@ -121,9 +121,9 @@ password=""
 
 if [ $result -ne 0 ]; then
     rmdir "$path"
-    printf "Error occured during mount operation!\n"
+    echo "Error occured during mount operation!"
     exit 1
 fi
 
-printf "Mounted \"$server/$folder\" to \"$path\"!\n"
+echo "Mounted \"$server/$folder\" to \"$path\"!"
 exit 0
