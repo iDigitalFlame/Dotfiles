@@ -201,23 +201,20 @@ alias power3="cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p ba
 alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance"
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
 
-# LS Aliases
-alias l="/usr/bin/ls -lpFN --group-directories-first --color=auto"
-alias ls="/usr/bin/ls -pFN --group-directories-first --color=auto"
-alias lsd="/usr/bin/ls -lpFN --group-directories-first --color=auto"
-alias lst="/usr/bin/ls -pFNt --group-directories-first --color=auto"
-alias lsa="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
-alias lsl="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
-alias lsh="/usr/bin/ls -AlpFNh --group-directories-first --color=auto"
-alias lsdt="/usr/bin/ls -lpFNt --group-directories-first --color=auto"
-alias lsal="/usr/bin/ls -AlpFN --group-directories-first --color=auto"
-alias lsat="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
-alias lslt="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
-alias lsht="/usr/bin/ls -AlpFNht --group-directories-first --color=auto"
-alias lsalt="/usr/bin/ls -AlpFNt --group-directories-first --color=auto"
+# LSd Aliases
+alias l="/usr/bin/lsd -vFl --group-directories-first --color=auto"
+alias ls="/usr/bin/lsd -vF --group-directories-first --color=auto"
+alias lsd="/usr/bin/lsd -vFlh --group-directories-first --color=auto"
+alias lsa="/usr/bin/lsd -vFlA --group-directories-first --color=auto"
+
+# LS Aliases (OG ls)
+alias z="/usr/bin/ls -vpFNl --group-directories-first --color=auto"
+alias zs="/usr/bin/ls -vpFN --group-directories-first --color=auto"
+alias zsd="/usr/bin/ls -vpFNlh --group-directories-first --color=auto"
+alias zsa="/usr/bin/ls -vpFNlA --group-directories-first --color=auto"
 
 # Screenshot Aliases
-alias ss="${HOME}/.local/bin/i3/shot"
+alias sch="${HOME}/.local/bin/i3/shot"
 alias sel="${HOME}/.local/bin/i3/clip"
 alias ssc="${HOME}/.local/bin/i3/shot-copy"
 alias selc="${HOME}/.local/bin/i3/clip-copy"
