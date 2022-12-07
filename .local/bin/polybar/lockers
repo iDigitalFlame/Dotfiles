@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -40,7 +40,7 @@ if ! [ -f "/var/run/smd/lockers" ]; then
     exit 0
 fi
 
-lockers=$(cat "/var/run/smd/lockers" | wc -w)
+lockers=$(wc -w "/var/run/smd/lockers" | awk '{print $1}')
 if [ -z "$lockers" ] || [ "$lockers" -eq "0" ]; then
     echo "0 "
     exit 0

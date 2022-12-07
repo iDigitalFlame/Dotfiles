@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -36,18 +36,17 @@
 #
 
 # Enable Strict Mode
-set -uo pipefail
-IFS=$'\n\t'
+set -u
 
 THEME_DIR="${HOME}/.config/theme"
 
 fhelp() {
-    printf "Theme Control\nUsage: $(basename $0) [reset|reload|set|list|help]\n\n"
+    printf "Theme Control\nUsage: $(basename "$0") [reset|reload|set|list|help]\n\n"
     if ! [ -e "${THEME_DIR}/current" ]; then
         printf "No theme selected!\n"
         exit 0
     fi
-    echo "Current theme is \"$(basename `readlink "${THEME_DIR}/current"`)\""
+    echo "Current theme is \"$(basename $(readlink "${THEME_DIR}/current"))\""
     exit 0
 }
 
@@ -67,7 +66,7 @@ freset() {
         fi
         theme=$(readlink "${THEME_DIR}/current")
     fi
-    theme=$(basename $theme)
+    theme=$(basename "$theme")
     rm "${THEME_DIR}/current" 2> /dev/null
     ln -sT "${THEME_DIR}/${theme}" "$THEME_DIR/current"
     rm -f "${HOME}/.gtkrc-2.0"

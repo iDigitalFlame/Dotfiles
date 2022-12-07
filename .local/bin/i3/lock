@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -36,7 +36,7 @@
 #
 
 # Disable all fullscreen windows (messes with i3-lock).
-/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" &> /dev/null
+/usr/bin/i3-msg "[workspace=__focused__] fullscreen disable" 1> /dev/null 2> /dev/null
 
 # Lock
 /usr/bin/i3lock \

@@ -39,7 +39,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-
 if [ $# -ne 1 ]; then
     echo "Usage: pfx2pem <pfx>"
     exit 1

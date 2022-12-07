@@ -563,7 +563,6 @@
         "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
         "deepCompletion": true,
-        "experimentalWorkspaceModule": true,
         "hoverKind": "FullDocumentation",
         "linkTarget": "pkg.go.dev",
         "linksInHover": false,

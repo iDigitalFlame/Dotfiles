@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -35,16 +35,16 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-args=$@
+args=$*
 
 if [ -z "$args" ]; then
-    gh web sh -c "export TZ=UTC; /usr/bin/chromium"
+    /usr/bin/gh web dash -c "export TZ=UTC; /usr/bin/chromium"
     exit 0
 fi
 
-if [[ "$args" == "--all" ]]; then
-    gh all sh -c  "export TZ=UTC; /usr/bin/chromium --new-window"
+if [ "$args" = "--all" ]; then
+    /usr/bin/gh all dash -c "export TZ=UTC; /usr/bin/chromium --new-window"
     exit 0
 fi
 
-gh web sh -c "export TZ=UTC; /usr/bin/chromium \"$args\""
+/usr/bin/gh web dash -c "export TZ=UTC; /usr/bin/chromium \"$args\""

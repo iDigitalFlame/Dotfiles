@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -37,7 +37,7 @@
 
 recents="${HOME}/.local/bin/recents"
 
-if [[ ! -e "$recents" ]]; then
+if [ ! -e "$recents" ]; then
     exit 1
 fi
 
@@ -47,7 +47,7 @@ if [ -z "$selected" ]; then
 fi
 
 
-if [[ ! -z $(echo "$selected" | grep " (") ]]; then
+if [ ! -z "$(echo "$selected" | grep " (")" ]; then
     selected="http$(echo "$selected" | awk -F"http" '{print $2}' | sed -e 's/)$//g')"
 fi
 

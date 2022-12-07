@@ -108,7 +108,7 @@ configuration {
     kb-mode-previous:           "";
     kb-primary-paste:           "Control+V";
     parse-known-hosts:          false;
-    run-shell-command:          "{terminal}";
+    run-shell-command:          "/usr/bin/dash {cmd}";
     kb-secondary-paste:         "Control+v";
     kb-toggle-case-sensitivity: "";
 }

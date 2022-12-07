@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -36,8 +36,7 @@
 #
 
 # Enable Strict Mode
-set -uo pipefail
-IFS=$'\n\t'
+set -u
 
 DOTS="${HOME}/.dotfiles"
 
@@ -82,7 +81,7 @@ chmod 750 "${HOME}/.dvm/Discord/Discord"
 chmod 750 ${HOME}/.local/apps/*.AppImage
 chmod 750 ${HOME}/.local/lib/oh-my-zsh/tools/*.sh
 
-bash "${HOME}/.private/sync.sh"
+dash "${HOME}/.private/sync.sh"
 themectl reload
 
 rm $HOME/.xsession-errors* 2> /dev/null

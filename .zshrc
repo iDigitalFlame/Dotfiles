@@ -220,11 +220,11 @@ alias ssc="${HOME}/.local/bin/i3/shot-copy"
 alias selc="${HOME}/.local/bin/i3/clip-copy"
 
 # Go Aliases
-alias gv="gh web go vet ./...'"
-alias gsc="gh web staticcheck ./..."
+alias gv="/usr/bin/gh web go vet ./...'"
+alias gsc="/usr/bin/gh web staticcheck ./..."
 
-alias gsc-win="gh web env GOOS=windows staticcheck ./..."
-alias gov="gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+alias gsc-win="/usr/bin/gh web env GOOS=windows staticcheck ./..."
+alias gov="/usr/bin/gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
@@ -245,11 +245,11 @@ alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias clip="/usr/bin/xclip -selection clipboard"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias en="gh web python3 ${HOME}/.local/bin/i3/sticky -"
-alias note="gh web python3 ${HOME}/.local/bin/i3/sticky -"
 alias pmov="python3 ${HOME}/Projects/Scripts/Python/move.py"
 alias nts="python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
+alias en="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
 alias dirdiff="python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
+alias note="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
 # alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
 
 source "${HOME}/.local/lib/zshrc.sh"

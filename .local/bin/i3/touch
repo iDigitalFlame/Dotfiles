@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -48,6 +48,6 @@ sleep 0.25s
 
 if [ -f "$sock" ]; then
     rm -f "$sock" 2> /dev/null
-    bash "${HOME}/.local/bin/i3/search" &
+    dash "${HOME}/.local/bin/i3/search" &
     exit 0
 fi

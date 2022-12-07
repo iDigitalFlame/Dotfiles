@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -35,4 +35,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-gh web /usr/bin/python3 "${HOME}/.local/bin/i3/sticky" $@
+/usr/bin/gh web /usr/bin/python3 "${HOME}/.local/bin/i3/sticky" $@

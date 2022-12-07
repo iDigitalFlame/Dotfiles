@@ -36,24 +36,23 @@
 #
 
 # Enable Strict Mode
-set -uo pipefail
-IFS=$'\n\t'
+set -u
 
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
     echo "smb [--reset] <domain\\\user|user> <share>"
     exit 1
 fi
 
-if [ $# -eq 3 ] && [ "$1" == "--reset" ]; then
+if [ $# -eq 3 ] && [ "$1" = "--reset" ]; then
     user="$2"
     share="$3"
-    keyring="smb-$(echo $2 | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
-    printf "" | gnome-keyring-query set $keyring
+    keyring="smb-$(echo "$2" | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
+    printf "" | gnome-keyring-query set "$keyring"
 else
     if [ $# -eq 2 ]; then
         user="$1"
         share="$2"
-        keyring="smb-$(echo $1 | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
+        keyring="smb-$(echo "$1" | sed -e 's/\\/-/g' | sed -e 's/@/-/g')"
     else
         echo "smb [--reset] <domain\\\user|user> <share>"
         exit 1
@@ -61,13 +60,13 @@ else
 fi
 
 domain=""
-if [ ! -z "$(echo $user | grep '\\')" ]; then
-    domain=$(echo $user | awk -F'\' '{print $1}')
-    user=$(echo $user | awk -F'\' '{print $2}')
+if [ ! -z "$(echo "$user" | grep '\\')" ]; then
+    domain=$(echo "$user" | awk -F'\' '{print $1}')
+    user=$(echo "$user" | awk -F'\' '{print $2}')
 else
-    if [ ! -z "$(echo $user | grep '@')" ]; then
-        domain=$(echo $user | awk -F'@' '{print $2}')
-        user=$(echo $user | awk -F'@' '{print $1}')
+    if [ ! -z "$(echo "$user" | grep '@')" ]; then
+        domain=$(echo "$user" | awk -F'@' '{print $2}')
+        user=$(echo "$user" | awk -F'@' '{print $1}')
     fi
 fi
 
@@ -92,7 +91,7 @@ if [ ! -z "$(mount | grep $server | grep $escaped)" ]; then
 fi
 
 save=0
-password=$(gnome-keyring-query get $keyring 2> /dev/null)
+password=$(gnome-keyring-query get "$keyring" 2> /dev/null)
 while [ -z "$password" ]; do
     save=1
     printf "Password for ${user}@${server}: "
@@ -101,7 +100,7 @@ while [ -z "$password" ]; do
 done
 
 if [ $save -eq 1 ]; then
-    printf "$password" | gnome-keyring-query set $keyring
+    printf "$password" | gnome-keyring-query set "$keyring"
 fi
 
 path="/tmp/.mounts/$USER/$server-$(echo $base | sed -e 's/\$//g')"

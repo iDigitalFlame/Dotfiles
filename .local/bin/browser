@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2022 ###
 #                              #
@@ -35,19 +35,19 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-args=$@
+args=$*
 
-if [ "$FIREFOX" == "1" ] || [ -n "$(basename $0 | grep -i firefox)" ]; then
+if [ "$FIREFOX" = "1" ] || [ -n "$(basename "$0" | grep -i firefox)" ]; then
     if [ -z "$args" ]; then
-        gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER}"
+        /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER}"
     else
-        gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER} \"$args\""
+        /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER} \"$args\""
     fi
     exit 0
 fi
 
 if [ -z "$args" ]; then
-    gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER}"
+    /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER}"
 else
-    gh web sh -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER} \"$args\""
+    /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER} \"$args\""
 fi
