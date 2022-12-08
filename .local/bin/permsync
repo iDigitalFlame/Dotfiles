@@ -55,5 +55,7 @@ chmod 755 "${HOME}/.local/apps/better-discord.AppImage"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrive"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrived"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/QtWebEngineProcess"
+find "${HOME}" -xdev -type d -name ".git" -exec dash -c 'chmod 550 {}/hooks/*' \; 2> /dev/null
+
 dash "${HOME}/.local/bin/dotsync"
 exit 0
