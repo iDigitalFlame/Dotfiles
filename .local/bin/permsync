@@ -51,7 +51,6 @@ chmod 750 ${HOME}/.vscode-oss/extensions/*/bin/*
 chmod 750 ${HOME}/.local/lib/python/bin/*
 chmod 750 ${HOME}/.local/lib/go/bin/*
 chmod 755 "${HOME}/.local/lib/go/gopls"
-chmod 755 "${HOME}/.local/apps/better-discord.AppImage"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrive"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrived"
 chmod 755 "${HOME}/.local/apps/zohoworkdrive/bin/QtWebEngineProcess"

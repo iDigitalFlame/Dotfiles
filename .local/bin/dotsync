@@ -78,7 +78,6 @@ cp -f "${DOTS}/.config/theme/darksky/discord.css" "${HOME}/.config/BetterDiscord
 
 chmod 750 "${HOME}/.dvm/bin/discord"
 chmod 750 "${HOME}/.dvm/Discord/Discord"
-chmod 750 ${HOME}/.local/apps/*.AppImage
 chmod 750 ${HOME}/.local/lib/oh-my-zsh/tools/*.sh
 
 dash "${HOME}/.private/sync.sh"
