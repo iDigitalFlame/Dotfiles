@@ -35,6 +35,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-if [ -z "$(ps x | grep 'skippy-xd' | grep -v grep)" ]; then
+if ! pgrep -q "skippy-xd"; then
     /usr/bin/skippy-xd --config "${HOME}/.config/skippy.conf"
 fi

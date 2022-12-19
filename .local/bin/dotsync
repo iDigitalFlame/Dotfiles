@@ -42,15 +42,15 @@ DOTS="${HOME}/.dotfiles"
 
 echo "Updating dotfiles.."
 chmod -R 2550 "${DOTS}"
-find "${DOTS}" -xdev -type f -exec chmod 440 {} \;
+find "${DOTS}" -xdev -type f -exec chmod 2440 {} \;
 
-chmod 550 "${DOTS}/.zshrc"
+chmod 2550 "${DOTS}/.zshrc"
 chmod -R 2770 "${DOTS}/.git"
 chmod -R 2550 "${DOTS}/.local/bin"
 
-chmod 640 "${DOTS}/.config/smd.json"
-chmod 640 "${DOTS}/.config/quotes.db"
-chmod 640 "${DOTS}/dotfiles.code-workspace"
+chmod 2640 "${DOTS}/.config/smd.json"
+chmod 2640 "${DOTS}/.config/quotes.db"
+chmod 2640 "${DOTS}/dotfiles.code-workspace"
 
 relink "$DOTS" "${HOME}"
 
@@ -64,7 +64,7 @@ rm -f "${HOME}/.config/librewolf/chrome" 2> /dev/null
 rm -f "${HOME}/.local/bin/x-www-browser" 2> /dev/null
 rm -f "${HOME}/.config/surf/cookies.txt" 2> /dev/null
 rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
-rm -f ${HOME}/.local/share/applications/userapp*.desktop 2> /dev/null
+rm -f "${HOME}"/.local/share/applications/userapp*.desktop 2> /dev/null
 rm -f "${HOME}/.config/BetterDiscord/themes/DarkSky.theme.css" 2> /dev/null
 
 ln -sT "/dev/null" "$HOME/.config/surf/cookies.txt"
@@ -76,14 +76,14 @@ ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeap
 
 cp -f "${DOTS}/.config/theme/darksky/discord.css" "${HOME}/.config/BetterDiscord/themes/DarkSky.theme.css"
 
-chmod 750 "${HOME}/.dvm/bin/discord"
-chmod 750 "${HOME}/.dvm/Discord/Discord"
-chmod 750 ${HOME}/.local/lib/oh-my-zsh/tools/*.sh
+chmod 2750 "${HOME}/.dvm/bin/discord"
+chmod 2750 "${HOME}/.dvm/Discord/Discord"
+chmod 2750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
 
 dash "${HOME}/.private/sync.sh"
 themectl reload
 
-rm $HOME/.xsession-errors* 2> /dev/null
+rm "$HOME"/.xsession-errors* 2> /dev/null
 
 echo "Broken Links Found:"
 find "${HOME}/" -xtype l -xdev 2> /dev/null

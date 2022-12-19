@@ -41,7 +41,7 @@ if [ $# -ge 1 ]; then
 fi
 
 screenshot="${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)$((1 + RANDOM % 256)).png"
-maim -d $delay -uoqc 0,0,0,0 -t 0 -b 0 -f png -m 1 -n 0 "$screenshot"
-if [ $? -eq 0 ]; then
+
+if maim -d $delay -uoqc 0,0,0,0 -t 0 -b 0 -f png -m 1 -n 0 "$screenshot"; then
     notify-send -u low -a "Clippy" -c screenshot "Screenshot Taken" "Screenshot saved to \"$screenshot\"."
 fi

@@ -40,7 +40,7 @@ set -u
 
 hosts_file="/etc/hosts"
 if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
-    if [ ! -z "$(cd ${HOME}/.local/apps/updateHosts; sg firewall-web 'git pull' | grep -v "Already up to date")" ] || [ $? -ne 0 ]; then
+    if ! cd "${HOME}/.local/apps/updateHosts"; sg firewall-web "git pull" | grep -q "Already up to date"; then
         printf "\x1b[32m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
         sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; git stash; git pull"
     fi
@@ -85,7 +85,7 @@ sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklist
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all -o /tmp/fbhosts3.txt"
 sg firewall-web -c "curl -sL https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt -o /tmp/fbhosts4.txt"
 sg firewall-web -c "curl -sL https://blocklistproject.github.io/Lists/facebook.txt -o /tmp/fbhosts5.txt"
-cat /tmp/fbhosts1.txt /tmp/fbhosts2.txt /tmp/fbhosts3.txt /tmp/fbhosts4.txt /tmp/fbhosts5.txt > /tmp/fbhosts.txt
+cat "/tmp/fbhosts1.txt" "/tmp/fbhosts2.txt" "/tmp/fbhosts3.txt" "/tmp/fbhosts4.txt" "/tmp/fbhosts5.txt" > "/tmp/fbhosts.txt"
 
 sg firewall-web -c "/usr/bin/yay -Pw"
 printf "\x1b[32m\x1b[1mStarting pacman...\x1b[0m\n"

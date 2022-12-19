@@ -41,12 +41,12 @@ set -u
 THEME_DIR="${HOME}/.config/theme"
 
 fhelp() {
-    printf "Theme Control\nUsage: $(basename "$0") [reset|reload|set|list|help]\n\n"
+    printf "Theme Control\nUsage: %s [reset|reload|set|list|help]\n\n" "$(basename "$0")"
     if ! [ -e "${THEME_DIR}/current" ]; then
         printf "No theme selected!\n"
         exit 0
     fi
-    echo "Current theme is \"$(basename $(readlink "${THEME_DIR}/current"))\""
+    echo "Current theme is \"%s\"" "$(basename "$(readlink "${THEME_DIR}/current")")"
     exit 0
 }
 
@@ -96,7 +96,7 @@ fi
 case "$1" in
     "list")
     echo "Current Installed Themes:"
-    ls -al "$THEME_DIR" | grep -v current | grep -v "total " | awk '{print $9}' | grep -vE "^\." | awk '{print " - "$0}'
+    ls -al "$THEME_DIR" | grep -vE "current|total " | awk '{print $9}' | grep -vE "^\." | awk '{print " - "$0}'
     ;;
     "reset")
     freset

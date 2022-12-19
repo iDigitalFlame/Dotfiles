@@ -60,33 +60,33 @@ else
 fi
 
 domain=""
-if [ ! -z "$(echo "$user" | grep '\\')" ]; then
+if echo "$user" | grep -q "\\"; then
     domain=$(echo "$user" | awk -F'\' '{print $1}')
     user=$(echo "$user" | awk -F'\' '{print $2}')
 else
-    if [ ! -z "$(echo "$user" | grep '@')" ]; then
+    if echo "$user" | grep -q "@"; then
         domain=$(echo "$user" | awk -F'@' '{print $2}')
         user=$(echo "$user" | awk -F'@' '{print $1}')
     fi
 fi
 
 share=$(echo "$share" | sed -e 's/^\\\\//g' | sed -e 's/^\\//g' | sed -e 's/^\/\///g' | sed -e 's/^\///g'  | sed -e 's/\\/\//g')
-if [ -z $(echo "$share" | grep "/") ]; then
-    echo "Invalid share path \"$share\"!"
+if ! echo "$share" | grep -q "/"; then
+    printf "Invalid share path \"%s\"!\n" "$share"
     exit 1
 fi
 
 server=$(echo "$share" | awk -F'/' '{print $1}')
 folder=$(echo "$share" | sed -e "s/^$server\///g")
 if [[ -z $folder ]] || [[ -z $server ]]; then
-    echo "Invalid share path \"$share\"!"
+    printf "Invalid share path \"%s\"!\n" "$share"
     exit 1
 fi
 
 base=$(echo "$folder" | awk -F'/' '{ print $1 }')
 escaped=$(echo "$base" | sed -e 's/\$/\\$/g')
-if [ ! -z "$(mount | grep $server | grep $escaped)" ]; then
-    echo "Share \"$folder\" on \"$server\" seems to already be mounted!"
+if mount | grep "$server" | grep -q "$escaped"; then
+    printf "Share \"%s\" on \"%s\" seems to already be mounted!\n" "$folder" "$server"
     exit 1
 fi
 
@@ -94,24 +94,24 @@ save=0
 password=$(gnome-keyring-query get "$keyring" 2> /dev/null)
 while [ -z "$password" ]; do
     save=1
-    printf "Password for ${user}@${server}: "
-    read -s password
+    printf "Password for %s@%s: " "$user" "$server"
+    read -r -s password
     printf "\n"
 done
 
 if [ $save -eq 1 ]; then
-    printf "$password" | gnome-keyring-query set "$keyring"
+    printf "%s" "$password" | gnome-keyring-query set "$keyring"
 fi
 
-path="/tmp/.mounts/$USER/$server-$(echo $base | sed -e 's/\$//g')"
+path="/tmp/.mounts/${USER}/${server}-$(echo "$base" | sed -e 's/\$//g')"
 prefix=$(echo "$folder" | awk -F'/' '{ ORS=""; for(i=2;i<=NF;i++) print $i"/" }'|sed -e 's/\/*$//g'|sed -e 's/\/\/*/\//g')
-mkdir -p "$path" 2> /dev/null
-if [ $? -ne 0 ]; then
-    echo "Could not creating mouting folder \"$path\"!"
+
+if ! mkdir -p "$path" 2> /dev/null; then
+    printf "Could not creating mouting folder \"%s\"!\n" "$path"
     exit 1
 fi
 
-printf "$user\b$domain\b$password\b$USER\n" | sudo /usr/lib/smd/sbin/smb "$server/$base/$prefix" "$path"
+printf "%s\b%s\b%s\b%s\n" "$user" "$domain" "$password" "$USER" | sudo "/usr/lib/smd/sbin/smb" "$server/$base/$prefix" "$path"
 result=$?
 
 user=""
@@ -124,5 +124,5 @@ if [ $result -ne 0 ]; then
     exit 1
 fi
 
-echo "Mounted \"$server/$folder\" to \"$path\"!"
+printf "Mounted \"%s\" to \"%s\"!\n" "$server/$folder" "$path"
 exit 0
