@@ -60,7 +60,7 @@ else
 fi
 
 domain=""
-if echo "$user" | grep -q "\\"; then
+if echo "$user" | grep -q '\\'; then
     domain=$(echo "$user" | awk -F'\' '{print $1}')
     user=$(echo "$user" | awk -F'\' '{print $2}')
 else
