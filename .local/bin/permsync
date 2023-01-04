@@ -40,7 +40,7 @@ rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 # Enable Strict Mode
 set -u
 
-find "${HOME}" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false' \; 2> /dev/null
+find "${HOME}" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false; chmod 2720 .git/hooks/* 2> /dev/null' \; 2> /dev/null
 chown ${USER}:${USER} -R "${HOME}" 2> /dev/null
 
 find "${HOME}" -type d -exec chmod 2700 {} \; 2> /dev/null
