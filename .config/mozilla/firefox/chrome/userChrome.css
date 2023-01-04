@@ -76,21 +76,25 @@ menupopup, .contentAreaContextMenu {
 #urlbar-background {
     background-color: rgba(25, 25, 25, 0.8) !important
 }
-#urlbar, #urlbar > .urlbarView, #urlbar-container, #urlbar-results {
+#urlbar, #urlbar>.urlbarView, #urlbar-container, #urlbar-results {
     border: none !important;
     background-color: transparent !important
 }
-#urlbar:not(.megabar), #urlbar.megabar > #urlbar-background, #searchbar {
+#urlbar:not(.megabar), #urlbar.megabar>#urlbar-background, #searchbar {
     border: none !important;
     box-shadow: none !important
 }
 
+#alltabs-button {
+    display: none !important
+}
+
 #back-button {
     padding-inline-start: 0 !important;
-    list-style-image: url("left-arrow.svg") !important
+    list-style-image: url("left-arrow.svg") !important;
 }
 #forward-button {
-    list-style-image: url("right-arrow.svg") !important
+    list-style-image: url("right-arrow.svg") !important;
 }
 
 #TabsToolbar {
@@ -98,8 +102,17 @@ menupopup, .contentAreaContextMenu {
     box-shadow: none !important;
     -moz-appearance: none !important;
     background-image: none !important;
-    background-color: rgba(119, 119, 119, 0.4) !important
+    background-color: transparent !important
 }
+
+#PanelUI-menu-button {
+    padding-inline-end: 0 !important
+}
+
+.browser-toolbar:not(.titlebar-color) {
+    background-color: transparent !important
+}
+
 #navigator-toolbox {
     border: none !important;
     box-shadow: none !important;
@@ -121,7 +134,7 @@ menupopup, .contentAreaContextMenu {
 }
 
 #window-controls, #autohide-context {
-    display:none!important
+    display: none !important
 }
 
 #_testpilot-containers-menuitem-7, #_testpilot-containers-menuitem-6, #_testpilot-containers-menuitem-5, #_testpilot-containers-menuitem-4 {
@@ -129,7 +142,7 @@ menupopup, .contentAreaContextMenu {
 }
 
 #tabs-newtab-button {
-    margin: 2px 0 0 0 !important
+    margin: 0 !important
 }
 
 #tracking-protection-icon-container {
@@ -141,7 +154,7 @@ menupopup, .contentAreaContextMenu {
     background-image: none !important
 }
 
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
+#PopupAutoComplete>richlistbox>richlistitem[originaltype="loginsFooter"] {
     visibility: collapse !important
 }
 
@@ -164,7 +177,7 @@ menupopup, .contentAreaContextMenu {
 .urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
     display: none !important
 }
-.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
+.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected]>.urlbarView-row-inner {
     fill-opacity: 1;
     color: #FFF !important;
     background: #7D0BAB !important
@@ -177,6 +190,11 @@ menupopup, .contentAreaContextMenu {
 .panel-arrowcontent {
     margin: 0 !important;
     opacity: 1 !important
+}
+
+.toolbarbutton-badge-stack, .toolbarbutton-icon {
+    border-radius: 10px !important;
+    background-color: rgba(119, 119, 119, 0.65)
 }
 
 .tab-stack {
@@ -197,14 +215,20 @@ menupopup, .contentAreaContextMenu {
     min-width: 10px !important;
     max-height: 28px !important;
     padding-inline: 0 !important;
-    border-radius: 15px !important
+    margin: 0 1px 0 1px !important;
+    border-radius: 10px !important;
+    overflow-clip-margin: 0 !important;
+    background-color: rgba(119, 119, 119, 0.65) !important
 }
 .tabbrowser-tab[pinned="true"] {
     color: #FFF !important;
     background-image: none !important;
-    background-color: transparent !important
+    background-color: rgba(119, 119, 119, 0.65) !important
 }
-.tabbrowser-tab .tab-close-button {
+.tab-close-button {
+    width: 22px !important;
+    padding: 3px !important;
+    height: 22px !important;
     display: none !important;
     margin-left: -2px !important;
     margin-right: 2px !important
@@ -241,7 +265,7 @@ menupopup, .contentAreaContextMenu {
 .tabbrowser-tab:not([pinned]):hover .tab-label-container, .tabbrowser-tab[selected="true"] .tab-label-container {
     border-top: 2px solid transparent !important
 }
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
     margin-inline-start: 2px !important;
 }
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {

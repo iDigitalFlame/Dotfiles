@@ -213,6 +213,8 @@
         "zfill",
         "zstd"
     ],
+    "css.format.newlineBetweenRules": false,
+    "css.format.newlineBetweenSelectors": false,
     "css.lint.argumentsInColorFunction": "error",
     "css.lint.boxModel": "ignore",
     "css.lint.compatibleVendorPrefixes": "warning",
