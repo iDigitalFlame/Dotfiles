@@ -251,6 +251,7 @@ alias en="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
 alias dirdiff="python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
 alias note="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
 # alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
+alias user_agents="/usr/bin/gh web curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
