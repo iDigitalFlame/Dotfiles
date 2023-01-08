@@ -40,9 +40,9 @@ set -u
 
 hosts_file="/etc/hosts"
 if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
-    if ! dash -c 'cd "${HOME}/.local/apps/updateHosts"; sg firewall-web "git pull" | grep -q "Already up to date"'; then
+    if ! dash -c 'cd "${HOME}/.local/apps/updateHosts"; sg firewall-web "git pull 2> /dev/null" | grep -q "Already up to date"'; then
         printf "\x1b[32m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
-        sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; git stash; git pull"
+        sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; git stash 1> /dev/null 2> /dev/null; git pull 1> /dev/null 2> /dev/null"
     fi
     printf "\x1b[32m\x1b[1mUpdating hosts blocklist file...\x1b[0m\n"
     sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
