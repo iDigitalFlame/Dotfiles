@@ -38,6 +38,7 @@
 html#main-window {
     --color-bg: transparent !important;
     --arrowpanel-color: #FFF !important;
+    background-color: transparent !important;
     --lwt-toolbar-field-color: #FEFEFA !important;
     --arrowpanel-border-color: transparent !important;
     --lwt-toolbar-field-focus-color: #FFF !important;
@@ -50,7 +51,7 @@ html#main-window {
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
-    caret-color: #FFFFFF !important;
+    caret-color: #FFF !important;
     background-color: transparent !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
 }
@@ -58,43 +59,13 @@ input#urlbar-input {
 panelmultiview {
     padding: 2px !important;
     border-radius: 10px !important;
-    border: 2px solid #AC0FEB !important;
+    border: 2px solid #AC0FEB !important
 }
-
 menupopup, .contentAreaContextMenu {
     border: none !important;
     appearance: none !important;
     border-radius: 6px !important;
-    background: #AC0FEB !important;
-}
-
-.urlbar-input-box {
-    border-radius: 5px !important;
-    background-image: none !important;
-    background-color: transparent !important
-}
-#urlbar-background {
-    background-color: rgba(25, 25, 25, 0.8) !important
-}
-#urlbar, #urlbar>.urlbarView, #urlbar-container, #urlbar-results {
-    border: none !important;
-    background-color: transparent !important
-}
-#urlbar:not(.megabar), #urlbar.megabar>#urlbar-background, #searchbar {
-    border: none !important;
-    box-shadow: none !important
-}
-
-#alltabs-button {
-    display: none !important
-}
-
-#back-button {
-    padding-inline-start: 0 !important;
-    list-style-image: url("left-arrow.svg") !important;
-}
-#forward-button {
-    list-style-image: url("right-arrow.svg") !important;
+    background: #AC0FEB !important
 }
 
 #TabsToolbar {
@@ -104,26 +75,42 @@ menupopup, .contentAreaContextMenu {
     background-image: none !important;
     background-color: transparent !important
 }
-
-#PanelUI-menu-button {
-    padding-inline-end: 0 !important
+#back-button {
+    padding-inline-start: 0 !important;
+    list-style-image: url("left-arrow.svg") !important
 }
-
-.browser-toolbar:not(.titlebar-color) {
-    background-color: transparent !important
+#forward-button {
+    list-style-image: url("right-arrow.svg") !important
 }
-
+#alltabs-button {
+    display: none !important
+}
+#urlbar-background {
+    background-color: rgba(25, 25, 25, 0.8) !important
+}
 #navigator-toolbox {
     border: none !important;
     box-shadow: none !important;
     background-color: transparent !important;
     --tabs-border-color: transparent !important
 }
+#tabs-newtab-button {
+    margin: 0 !important
+}
+#PanelUI-menu-button {
+    padding-inline-end: 0 !important
+}
 #nav-bar, #TabsToolbar {
     border: none !important
 }
 #navigator-toolbox::after {
     display: none !important
+}
+#window-controls, #autohide-context {
+    display: none !important
+}
+#tracking-protection-icon-container {
+    margin-right: 2px !important
 }
 #navigator-toolbox, #titlebar, #main-window {
     border: none !important;
@@ -132,84 +119,40 @@ menupopup, .contentAreaContextMenu {
     background-image: none !important;
     background-color: transparent !important
 }
-
-#window-controls, #autohide-context {
-    display: none !important
-}
-
-#_testpilot-containers-menuitem-7, #_testpilot-containers-menuitem-6, #_testpilot-containers-menuitem-5, #_testpilot-containers-menuitem-4 {
-    display: none !important
-}
-
-#tabs-newtab-button {
-    margin: 0 !important
-}
-
-#tracking-protection-icon-container {
-    margin-right: 2px !important
-}
 #tracking-protection-icon-container, #urlbar-search-button {
     border: none !important;
     background-color: none !important;
     background-image: none !important
 }
-
+#urlbar, #urlbar>.urlbarView, #urlbar-container, #urlbar-results {
+    border: none !important;
+    background-color: transparent !important
+}
+#urlbar:not(.megabar), #urlbar.megabar>#urlbar-background, #searchbar {
+    border: none !important;
+    box-shadow: none !important
+}
 #PopupAutoComplete>richlistbox>richlistitem[originaltype="loginsFooter"] {
     visibility: collapse !important
 }
-
-.urlbarView {
-    border-radius: 0 8px 8px !important;
-    background-color: transparent !important;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important
-}
-.urlbarView-action {
-    color: #FFF !important
-}
-.urlbarView-row:hover {
-    color: #000 !important;
-    background-color: none !important;
-    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important
-}
-.urlbar-addon-page-action {
+#_testpilot-containers-menuitem-7, #_testpilot-containers-menuitem-6, #_testpilot-containers-menuitem-5, #_testpilot-containers-menuitem-4 {
     display: none !important
-}
-.urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
-    display: none !important
-}
-.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected]>.urlbarView-row-inner {
-    fill-opacity: 1;
-    color: #FFF !important;
-    background: #7D0BAB !important
-}
-
-.panel-arrowbox {
-    margin: 0 !important;
-    display: none !important
-}
-.panel-arrowcontent {
-    margin: 0 !important;
-    opacity: 1 !important
-}
-
-.toolbarbutton-badge-stack, .toolbarbutton-icon {
-    border-radius: 10px !important;
-    background-color: rgba(119, 119, 119, 0.65)
 }
 
 .tab-stack {
     display: flex !important;
     justify-content: center !important
 }
+.urlbarView {
+    border-radius: 0 8px 8px !important;
+    background-color: transparent !important;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important
+}
 .tab-content {
     background-color: none !important;
     background-image: none !important;
     font-family: "Cantarell", sans-serif !important
 }
-.tab-background {
-    display: none !important
-}
-
 .tabbrowser-tab {
     height: 28px !important;
     min-width: 10px !important;
@@ -220,10 +163,17 @@ menupopup, .contentAreaContextMenu {
     overflow-clip-margin: 0 !important;
     background-color: rgba(119, 119, 119, 0.65) !important
 }
-.tabbrowser-tab[pinned="true"] {
-    color: #FFF !important;
+.panel-arrowbox {
+    margin: 0 !important;
+    display: none !important
+}
+.tab-background {
+    display: none !important
+}
+.urlbar-input-box {
+    border-radius: 5px !important;
     background-image: none !important;
-    background-color: rgba(119, 119, 119, 0.65) !important
+    background-color: transparent !important
 }
 .tab-close-button {
     width: 22px !important;
@@ -233,9 +183,36 @@ menupopup, .contentAreaContextMenu {
     margin-left: -2px !important;
     margin-right: 2px !important
 }
+.urlbarView-action {
+    color: #FFF !important
+}
+.panel-arrowcontent {
+    margin: 0 !important;
+    opacity: 1 !important
+}
+.urlbarView-row:hover {
+    color: #000 !important;
+    background-color: none !important;
+    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important
+}
+.urlbar-addon-page-action {
+    display: none !important
+}
+.tabbrowser-tab[pinned="true"] {
+    color: #FFF !important;
+    background-image: none !important;
+    background-color: rgba(119, 119, 119, 0.65) !important
+}
+.browser-toolbar:not(.titlebar-color) {
+    background-color: transparent !important
+}
 .tabbrowser-tab[pinned="true"] .tab-icon-image {
     align-items: center !important;
     display: inline-block !important
+}
+.toolbarbutton-badge-stack, .toolbarbutton-icon {
+    border-radius: 10px !important;
+    background-color: rgba(119, 119, 119, 0.65)
 }
 .tabbrowser-tab:not([pinned]) .tab-label-container {
     border-top: 2px solid #7D0FFF !important
@@ -257,6 +234,13 @@ menupopup, .contentAreaContextMenu {
     background-color: none !important;
     background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important
 }
+.urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
+    display: none !important
+}
+.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
+    display: none !important;
+    appearance: none !important
+}
 .tabbrowser-tab[selected="true"], .tabbrowser-tab[pinned="true"][selected="true"] {
     color: #FFF !important;
     background-color: none !important;
@@ -266,13 +250,13 @@ menupopup, .contentAreaContextMenu {
     border-top: 2px solid transparent !important
 }
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: 2px !important;
+    margin-inline-start: 2px !important
+}
+.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected]>.urlbarView-row-inner {
+    fill-opacity: 1;
+    color: #FFF !important;
+    background: #7D0BAB !important
 }
 .tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
     -moz-box-ordinal-group: 2 !important
-}
-
-.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
-    display: none !important;
-    appearance: none !important;
 }

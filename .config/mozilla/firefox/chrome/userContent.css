@@ -36,7 +36,14 @@
 */
 
 @-moz-document url(about:blank), url(about:newtab), url(about:home){
+body {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: transparent !important
+}
 html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
-    background-color: #191919 !important
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: transparent !important
 }
 }
