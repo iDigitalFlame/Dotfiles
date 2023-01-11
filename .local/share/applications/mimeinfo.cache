@@ -8,6 +8,7 @@ image/gif=ristretto.desktop;
 image/png=ristretto.desktop;
 image/webp=librewolf.desktop;
 image/jpeg=ristretto.desktop;
+image/heic=ristretto.desktop;
 inode/directory=thunar.desktop;
 text/x-arduino=arduino.desktop;
 application/xml=librewolf.desktop;

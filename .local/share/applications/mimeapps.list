@@ -9,6 +9,7 @@ application/xml=librewolf.desktop
 image/gif=utilities-ristretto.desktop
 image/png=utilities-ristretto.desktop
 image/jpeg=utilities-ristretto.desktop
+image/heic=utilities-ristretto.desktop
 application/x-directory=Thunar.desktop
 x-scheme-handler/http=librewolf.desktop
 application/xhtml+xml=librewolf.desktop
