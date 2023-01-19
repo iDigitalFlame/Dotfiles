@@ -41,10 +41,10 @@ set -u
 hosts_file="/etc/hosts"
 if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
     if ! dash -c 'cd "${HOME}/.local/apps/updateHosts"; sg firewall-web "git pull 2> /dev/null" | grep -q "Already up to date"'; then
-        printf "\x1b[32m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
+        printf "\x1b[93m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
         sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; git stash 1> /dev/null 2> /dev/null; git pull 1> /dev/null 2> /dev/null"
     fi
-    printf "\x1b[32m\x1b[1mUpdating hosts blocklist file...\x1b[0m\n"
+    printf "\x1b[93m\x1b[1mUpdating hosts blocklist file...\x1b[0m\n"
     sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
     hosts_file="${HOME}/.local/apps/updateHosts/hosts"
 fi
@@ -88,13 +88,13 @@ sg firewall-web -c "curl -sL https://blocklistproject.github.io/Lists/facebook.t
 cat "/tmp/fbhosts1.txt" "/tmp/fbhosts2.txt" "/tmp/fbhosts3.txt" "/tmp/fbhosts4.txt" "/tmp/fbhosts5.txt" > "/tmp/fbhosts.txt"
 
 sg firewall-web -c "/usr/bin/yay -Pw"
-printf "\x1b[32m\x1b[1mStarting pacman...\x1b[0m\n"
+printf "\x1b[96m\x1b[1mStarting pacman...\x1b[0m\n"
 sudo dash -c "mount -o rw,remount /; sg firewall-web -c 'env SYSBATCH=1 /usr/bin/sysupdate'; sync; cp '$hosts_file' /etc/hosts; printf '\n${hosts_list}\n' >> /etc/hosts; cat /tmp/fbhosts.txt >> /etc/hosts"
 rm -f /tmp/fbhosts*.txt 2> /dev/null
-printf "\x1b[32m\x1b[1mStarting yay...\x1b[0m\n"
+printf "\x1b[96m\x1b[1mStarting yay...\x1b[0m\n"
 sg firewall-web -c "sudo mount -o rw,remount /; env SYSBATCH=1 /usr/bin/yay -Syua --answerclean N"
-printf "\x1b[32m\x1b[1mChecking for Discord updates...\x1b[0m\n"
+printf "\x1b[96m\x1b[1mChecking for Discord updates...\x1b[0m\n"
 sg firewall-web -c "dvm update stable && echo 'Updating BetterDiscord, launching GUI..' && env BD_SKIP_UPDATECHECK=1 /opt/betterdiscord-installer-bin/betterdiscord-installer"
-printf "\x1b[32m\x1b[1mUpdating PIP packages...\x1b[0m\n"
+printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
 sg firewall-web -c "pip list --user --outdated --format=json | jq -r '.[] | (.name)'  | xargs -n1 pip install -U" 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 sudo dash -c "mount -o rw,remount /; syslink; mount -ro remount,ro / 2> /dev/null || mount -Rro remount,ro /"
