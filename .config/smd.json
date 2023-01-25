@@ -80,8 +80,7 @@
             "/usr/bin/dunst",
             "/usr/bin/touchegg",
             "/usr/bin/nm-applet",
-            "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh",
-            "/usr/bin/sg firewall-web -c '$HOME/.local/apps/zohoworkdrive/bin/zohoworkdrive'"
+            "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
         ]
     }
 }

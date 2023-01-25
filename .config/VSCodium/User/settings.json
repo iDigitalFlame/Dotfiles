@@ -607,11 +607,16 @@
             "-tags=windows,linux"
         ],
         "build.directoryFilters": [
-            "-node_modules"
+            "-node_modules",
+            "-src"
         ],
+        "build.env": {
+            "GOOS": "windows"
+        },
         "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
         "deepCompletion": true,
+        "formatting.gofumpt": false,
         "hoverKind": "FullDocumentation",
         "linkTarget": "pkg.go.dev",
         "linksInHover": false,
