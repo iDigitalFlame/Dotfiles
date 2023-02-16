@@ -37,7 +37,7 @@
 
 args=$*
 
-if [ "$FIREFOX" = "1" ] || [ "$(basename "$0" | grep -qi firefox)"] ; then
+if [ "$FIREFOX" = "1" ] || [ "$(basename $0)" = "firefox" ] ; then
     if [ -z "$args" ]; then
         /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER}"
     else
