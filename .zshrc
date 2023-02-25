@@ -133,6 +133,9 @@ fi
 if [ ! -d "$BUILDDIR" ]; then
     mkdir -p "$BUILDDIR"
 fi
+if [ -d "${HOME}/Desktop" ]; then
+    rmdir "${HOME}/Desktop"
+fi
 if [ ! -d "${HOME}/Pictures/Screenshots" ]; then
     mkdir -p "${HOME}/Pictures/Screenshots"
 fi
