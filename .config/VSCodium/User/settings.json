@@ -523,25 +523,25 @@
         "uncoveredGutterStyle": "slashyellow",
         "uncoveredHighlightColor": "rgba(128,64,64,0.25)"
     },
-    "go.coverageOptions": "showBothCoveredAndUncoveredCode",
+    "go.coverageOptions": "showCoveredCodeOnly",
     "go.disableConcurrentTests": true,
     "go.docsTool": "godoc",
     "go.editorContextMenuCommands": {
-        "addImport": false,
+        "toggleTestFile": false,
         "addTags": false,
-        "benchmarkAtCursor": false,
-        "debugTestAtCursor": false,
-        "fillStruct": false,
-        "generateTestForFile": false,
-        "generateTestForFunction": false,
-        "generateTestForPackage": false,
-        "playground": false,
         "removeTags": false,
+        "fillStruct": false,
         "testAtCursor": false,
-        "testCoverage": false,
         "testFile": false,
-        "testPackage": false,
-        "toggleTestFile": false
+        "testPackage": true,
+        "generateTestForFunction": false,
+        "generateTestForFile": true,
+        "generateTestForPackage": true,
+        "addImport": false,
+        "testCoverage": false,
+        "playground": false,
+        "debugTestAtCursor": false,
+        "benchmarkAtCursor": false
     },
     "go.enableCodeLens": {
         "runtest": true
@@ -560,7 +560,7 @@
     "go.inlayHints.compositeLiteralFields": false,
     "go.inlayHints.compositeLiteralTypes": false,
     "go.inlayHints.constantValues": true,
-    "go.inlayHints.functionTypeParameters": false,
+    "go.inlayHints.functionTypeParameters": true,
     "go.inlayHints.parameterNames": false,
     "go.inlayHints.rangeVariableTypes": false,
     "go.installDependenciesWhenBuilding": false,
@@ -591,7 +591,10 @@
     "go.testFlags": null,
     "go.testOnSave": false,
     "go.testTimeout": "30s",
-    "go.toolsEnvVars": {},
+    "go.toolsEnvVars": {
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+    },
     "go.toolsGopath": "/home/dij/.local/lib/go",
     "go.toolsManagement.autoUpdate": true,
     "go.toolsManagement.checkForUpdates": "local",
@@ -607,11 +610,10 @@
             "-tags=windows,linux"
         ],
         "build.directoryFilters": [
-            "-node_modules",
-            "-src"
+            "-node_modules"
         ],
         "build.env": {
-            "GOOS": "windows"
+            "GOOS": "linux"
         },
         "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
@@ -694,7 +696,6 @@
     "html.autoClosingTags": true,
     "html.format.contentUnformatted": "pre,code,textarea",
     "html.format.enable": true,
-    "html.format.endWithNewline": false,
     "html.format.extraLiners": "",
     "html.format.indentHandlebars": false,
     "html.format.indentInnerHtml": false,
@@ -1153,5 +1154,6 @@
     "zenMode.hideStatusBar": false,
     "zenMode.hideTabs": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
+    "go.diagnostic.vulncheck": "Imports"
 }
