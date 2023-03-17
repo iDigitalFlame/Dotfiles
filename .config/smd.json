@@ -28,7 +28,7 @@
     "notify": {
         "default": "dialog-information.svg",
         "dirs": [
-            "/usr/share/icons/korla/apps/scalable"
+            "/usr/share/icons/kora/apps/scalable"
         ],
         "full_path": false,
         "theme": "/usr/share/icons/DarkSky/status/48"
