@@ -491,7 +491,8 @@
     "git.promptToSaveFilesBeforeCommit": "always",
     "git.repositoryScanIgnoredFolders": [
         "node_modules",
-        "vendor"
+        "vendor",
+        "src",
     ],
     "git.showInlineOpenFileAction": false,
     "go.addTags": {
@@ -524,6 +525,7 @@
         "uncoveredHighlightColor": "rgba(128,64,64,0.25)"
     },
     "go.coverageOptions": "showCoveredCodeOnly",
+    "go.diagnostic.vulncheck": "Imports",
     "go.disableConcurrentTests": true,
     "go.docsTool": "godoc",
     "go.editorContextMenuCommands": {
@@ -592,7 +594,7 @@
     "go.testOnSave": false,
     "go.testTimeout": "30s",
     "go.toolsEnvVars": {
-        "GOOS": "linux",
+        "GOOS": "windows",
         "GOARCH": "amd64"
     },
     "go.toolsGopath": "/home/dij/.local/lib/go",
@@ -613,7 +615,7 @@
             "-node_modules"
         ],
         "build.env": {
-            "GOOS": "linux"
+            "GOOS": "windows"
         },
         "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
@@ -1155,5 +1157,4 @@
     "zenMode.hideTabs": false,
     "zenMode.restore": false,
     "zenMode.silentNotifications": false,
-    "go.diagnostic.vulncheck": "Imports"
 }
