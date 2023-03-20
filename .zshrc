@@ -271,6 +271,8 @@ alias selc="${HOME}/.local/bin/i3/clip-copy"
 # Go Aliases
 alias gv="/usr/bin/gh web go vet ./...'"
 alias gsc="/usr/bin/gh web staticcheck ./..."
+alias gmo="go list -u -m -json all | go-mod-outdated"
+alias gmou="go list -u -m -json all | go-mod-outdated -update"
 alias gsc-win="/usr/bin/gh web env GOOS=windows staticcheck ./..."
 alias gov="/usr/bin/gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
