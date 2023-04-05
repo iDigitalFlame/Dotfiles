@@ -794,5 +794,13 @@
     {
         "key": "ctrl+shift+;",
         "command": "editor.foldLevel4"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "editor.action.quickFix"
     }
 ]

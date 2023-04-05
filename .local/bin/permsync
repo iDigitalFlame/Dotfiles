@@ -43,12 +43,14 @@ set -u
 chmod 2750 "${HOME}"
 chown ${USER}:${USER} -R "${HOME}" 2> /dev/null
 
-find "${HOME}" -type d -exec chmod 2700 {} \; 2> /dev/null
-find "${HOME}" -type f -exec chmod 2640 {} \; 2> /dev/null
+find "${HOME}" -type d -xdev -exec chmod 2700 {} \; 2> /dev/null
+find "${HOME}" -type f -xdev -exec chmod 2640 {} \; 2> /dev/null
 
 find "${HOME}/.arduino15/packages" -type f ! -name "?*.*" -exec file {} \; | grep 'ELF 64-bit' | awk -F':' '{print $1}' | xargs chmod 2750
 find "${HOME}" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false; chmod 2720 .git/hooks/* 2> /dev/null' \; 2> /dev/null
 
+chmod 2750 -R "${HOME}"/Documents/Utilities/Ghidra/*
+chmod 2750 "${HOME}".rustup/toolchains/*/bin
 chmod 2750 "${HOME}"/.vscode-oss/extensions/*/bin/*
 chmod 2750 "${HOME}"/.local/lib/python/bin/*
 chmod 2750 "${HOME}"/.local/lib/go/bin/*
