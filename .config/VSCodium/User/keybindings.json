@@ -802,5 +802,9 @@
     {
         "key": "ctrl+\\",
         "command": "editor.action.quickFix"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
     }
 ]
