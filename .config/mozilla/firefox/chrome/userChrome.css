@@ -103,7 +103,14 @@ menupopup, .contentAreaContextMenu {
 #nav-bar, #TabsToolbar {
     border: none !important
 }
+#nav-bar-overflow-button {
+    /* Disable this to show the overflow menu button. */
+    display: none !important
+}
 #navigator-toolbox::after {
+    display: none !important
+}
+#unified-extensions-button {
     display: none !important
 }
 #window-controls, #autohide-context {
