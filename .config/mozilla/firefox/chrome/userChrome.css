@@ -222,6 +222,7 @@ menupopup, .contentAreaContextMenu {
     background-color: rgba(119, 119, 119, 0.65)
 }
 .tabbrowser-tab:not([pinned]) .tab-label-container {
+    order: 1;
     border-top: 2px solid #7D0FFF !important
 }
 .tabbrowser-tab[pinned="true"] .tab-label-container {
