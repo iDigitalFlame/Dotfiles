@@ -45,7 +45,7 @@ if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
         sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; git stash 1> /dev/null 2> /dev/null; git pull 1> /dev/null 2> /dev/null"
     fi
     printf "\x1b[93m\x1b[1mUpdating hosts blocklist file...\x1b[0m\n"
-    sg firewall-web -c "/usr/bin/python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
+    sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; /usr/bin/python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
     hosts_file="${HOME}/.local/apps/updateHosts/hosts"
 fi
 
@@ -96,5 +96,5 @@ sg firewall-web -c "sudo mount -o rw,remount /; env SYSBATCH=1 /usr/bin/yay -Syu
 printf "\x1b[96m\x1b[1mChecking for Discord updates...\x1b[0m\n"
 sg firewall-web -c "dvm update stable && echo 'Updating BetterDiscord, launching GUI..' && env BD_SKIP_UPDATECHECK=1 /opt/betterdiscord-installer-bin/betterdiscord-installer"
 printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
-sg firewall-web -c "pip list --user --outdated --format=json | jq -r '.[] | (.name)'  | xargs -n1 pip install -U" 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
+sg firewall-web -c "pip list --user --outdated --format=json | jq -r '.[] | (.name)'  | xargs -n1 pip install --break-system-packages -U" 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 sudo dash -c "mount -o rw,remount /; syslink; mount -ro remount,ro / 2> /dev/null || mount -Rro remount,ro /"
