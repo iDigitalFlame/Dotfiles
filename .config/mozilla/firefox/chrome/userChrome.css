@@ -110,9 +110,6 @@ menupopup, .contentAreaContextMenu {
 #navigator-toolbox::after {
     display: none !important
 }
-#unified-extensions-button {
-    display: none !important
-}
 #window-controls, #autohide-context {
     display: none !important
 }
