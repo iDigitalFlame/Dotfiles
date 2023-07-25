@@ -95,6 +95,7 @@ printf "\x1b[96m\x1b[1mStarting yay...\x1b[0m\n"
 sg firewall-web -c "sudo mount -o rw,remount /; env SYSBATCH=1 /usr/bin/yay -Syua --answerclean N"
 printf "\x1b[96m\x1b[1mChecking for Discord updates...\x1b[0m\n"
 sg firewall-web -c "dvm update stable && echo 'Updating BetterDiscord, launching GUI..' && env BD_SKIP_UPDATECHECK=1 /opt/betterdiscord-installer-bin/betterdiscord-installer"
+rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
 sg firewall-web -c "pip list --user --outdated --format=json | jq -r '.[] | (.name)'  | xargs -n1 pip install --break-system-packages -U" 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 sudo dash -c "mount -o rw,remount /; syslink; mount -ro remount,ro / 2> /dev/null || mount -Rro remount,ro /"

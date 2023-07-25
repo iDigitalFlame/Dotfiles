@@ -783,7 +783,7 @@
         "command": "editor.foldLevel2"
     },
     {
-        "key": "ctrl+;",
+        "key": "ctrl+shift+,",
         "command": "editor.foldLevel3"
     },
     {
@@ -806,5 +806,10 @@
     {
         "key": "ctrl+,",
         "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "-editor.action.inPlaceReplace.up",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
