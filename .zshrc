@@ -148,47 +148,47 @@ fi
 # Older Golang version helper functions
 go1.10() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/GoArchive/go1.10.8/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
 }
 go1.11() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.11.13\"; \"${HOME}/Documents/GoArchive/go1.11.13/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.11.13\"; \"${HOME}/Documents/Development/GoArchive/go1.11.13/bin/go\" $_args"
 }
 go1.12() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.12.17\"; \"${HOME}/Documents/GoArchive/go1.12.17/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.12.17\"; \"${HOME}/Documents/Development/GoArchive/go1.12.17/bin/go\" $_args"
 }
 go1.13() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.13.15\"; \"${HOME}/Documents/GoArchive/go1.13.15/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.13.15\"; \"${HOME}/Documents/Development/GoArchive/go1.13.15/bin/go\" $_args"
 }
 go1.14() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.14.15\"; \"${HOME}/Documents/GoArchive/go1.14.15/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
 }
 go1.15() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.15.15\"; \"${HOME}/Documents/GoArchive/go1.15.15/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.15.15\"; \"${HOME}/Documents/Development/GoArchive/go1.15.15/bin/go\" $_args"
 }
 go1.16() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.16.15\"; \"${HOME}/Documents/GoArchive/go1.16.15/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
 }
 go1.17() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.17.13\"; \"${HOME}/Documents/GoArchive/go1.17.13/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.17.13\"; \"${HOME}/Documents/Development/GoArchive/go1.17.13/bin/go\" $_args"
 }
 go1.18() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.18.10/\"; \"${HOME}/Documents/GoArchive/go1.18.10/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
 }
 go1.19() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.19.5\"; \"${HOME}/Documents/GoArchive/go1.19.5/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.19.5\"; \"${HOME}/Documents/Development/GoArchive/go1.19.5/bin/go\" $_args"
 }
 go1.20() {
     _args=$@
-    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/GoArchive/go1.20rc3\"; \"${HOME}/Documents/GoArchive/go1.20rc3/bin/go\" $_args"
+    sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
 }
 
 # Firewall Aliases
