@@ -56,8 +56,8 @@ chmod 2750 "${HOME}"/.vscode-oss/extensions/rust-lang.rust-analyzer-*/server/rus
 chmod 2750 "${HOME}"/.vscode-oss/extensions/*/bin/*
 chmod 2750 "${HOME}"/.local/lib/python/bin/*
 chmod 2750 "${HOME}"/.local/lib/go/bin/*
-chmod 2750 "${HOME}"/Documents/GoArchive/go*/bin/*
-chmod 2750 "${HOME}"/Documents/GoArchive/go*/pkg/tool/linux_amd64/*
+chmod 2750 "${HOME}"/Documents/Utilities/GoArchive/go*/bin/*
+chmod 2750 "${HOME}"/Documents/Utilities/GoArchive/go*/pkg/tool/linux_amd64/*
 chmod 2750 "${HOME}/.dvm/Discord/chrome-sandbox"
 chmod 2750 "${HOME}/.dvm/Discord/chrome_crashpad_handler"
 chmod 2750 "${HOME}/.local/lib/go/gopls"
