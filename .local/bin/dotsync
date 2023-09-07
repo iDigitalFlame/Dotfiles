@@ -86,7 +86,7 @@ themectl reload
 rm "$HOME"/.xsession-errors* 2> /dev/null
 
 echo "Broken Links Found:"
-find "${HOME}/" -xtype l -xdev 2> /dev/null
+find "${HOME}" -xtype l -xdev 2> /dev/null
 
 echo "Done!"
 exit 0
