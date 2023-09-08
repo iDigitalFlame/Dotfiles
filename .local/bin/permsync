@@ -40,14 +40,17 @@ rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 # Enable Strict Mode
 set -u
 
+printf "\033[1;36mSetting permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
 chmod 2750 "${HOME}"
-chown -R ${USER}:${USER} "${HOME}" 2> /dev/null
+chown -R ${USER}:${USER} "$HOME" 2> /dev/null
 
-find "${HOME}" -type d -xdev -exec chmod 2700 {} \; 2> /dev/null
-find "${HOME}" -type f -xdev -exec chmod 2640 {} \; 2> /dev/null
+printf "\033[1;36mFixing dir/file permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
+find "$HOME" -type d -xdev -exec chmod 2700 {} \; 2> /dev/null
+find "$HOME" -type f -xdev -exec chmod 2640 {} \; 2> /dev/null
 
+printf "\033[1;36mFixing Git repo permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
 find "${HOME}/.arduino15/packages" -type f ! -name "?*.*" -exec file {} \; | grep 'ELF 64-bit' | awk -F':' '{print $1}' | xargs chmod 2750
-find "${HOME}" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false; chmod 2720 .git/hooks/* 2> /dev/null' \; 2> /dev/null
+find "$HOME" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false; chmod 2720 .git/hooks/* 2> /dev/null' \; 2> /dev/null
 
 chmod -R 2750 "${HOME}"/Documents/Utilities/Ghidra/*
 chmod 2750 "${HOME}"/.rustup/toolchains/*/bin/*
@@ -56,8 +59,8 @@ chmod 2750 "${HOME}"/.vscode-oss/extensions/rust-lang.rust-analyzer-*/server/rus
 chmod 2750 "${HOME}"/.vscode-oss/extensions/*/bin/*
 chmod 2750 "${HOME}"/.local/lib/python/bin/*
 chmod 2750 "${HOME}"/.local/lib/go/bin/*
-chmod 2750 "${HOME}"/Documents/Utilities/GoArchive/go*/bin/*
-chmod 2750 "${HOME}"/Documents/Utilities/GoArchive/go*/pkg/tool/linux_amd64/*
+chmod 2750 "${HOME}"/Documents/Development/GoArchive/go*/bin/*
+chmod 2750 "${HOME}"/Documents/Development/GoArchive/go*/pkg/tool/linux_amd64/*
 chmod 2750 "${HOME}/.dvm/Discord/chrome-sandbox"
 chmod 2750 "${HOME}/.dvm/Discord/chrome_crashpad_handler"
 chmod 2750 "${HOME}/.local/lib/go/gopls"
@@ -66,4 +69,6 @@ chmod 2750 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrived"
 chmod 2750 "${HOME}/.local/apps/zohoworkdrive/bin/QtWebEngineProcess"
 
 dash "${HOME}/.local/bin/dotsync"
+printf "\033[1;36mDone!\033[0m\n"
+
 exit 0
