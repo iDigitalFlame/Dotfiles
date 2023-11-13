@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2023 ###
+    ### iDigitalFlame  2016-2024 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -16,10 +16,9 @@
     #       `///yyysshd++`         #
     #                              #
     ########## SPACEPORT ###########
-    ################################
-    # VCSodium Configuration
+    ## Firefox/LibreWolf UserCSS Configuration
 
-    Copyright (C) 2016 - 2023 iDigitalFlame
+    Copyright (C) 2016 - 2024 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,62 +35,78 @@
 */
 
 html#main-window {
+    background: transparent !important;
     --color-bg: transparent !important;
-    --arrowpanel-color: #FFF !important;
-    background-color: transparent !important;
-    --lwt-toolbar-field-color: #FEFEFA !important;
     --arrowpanel-border-color: transparent !important;
-    --lwt-toolbar-field-focus-color: #FFF !important;
-    --toolbarbutton-hover-background: #7D0BAB !important;
-    --toolbarbutton-active-background: #7D0BAB !important;
-    --toolbar-bgcolor: rgba(119, 119, 119, 0.4) !important;
-    --arrowpanel-background: rgba(25, 25, 25, 0.7) !important;
-    --lwt-toolbar-field-background-color: transparent !important
+    --toolbar-bgcolor: rgba(0, 0, 0, 0.4) !important;
+    --arrowpanel-color: rgb(255, 255, 255) !important;
+    --arrowpanel-background: rgba(0, 0, 0, 0.4) !important;
+    --lwt-toolbar-field-color: rgb(255, 255, 255) !important;
+    --lwt-toolbar-field-background-color: transparent !important;
+    --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
+    --toolbarbutton-hover-background: rgb(125, 11, 171) !important;
+    --toolbarbutton-active-background: rgb(125, 11, 171) !important
 }
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
-    caret-color: #FFF !important;
-    background-color: transparent !important;
+    background: transparent !important;
+    caret-color: rgb(255, 255, 255) !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
 }
 
 panelmultiview {
     padding: 2px !important;
     border-radius: 10px !important;
-    border: 2px solid #AC0FEB !important
+    background: rgba(0, 0, 0, 0.65) !important;
+    border: 2px solid rgb(172, 15, 235) !important
 }
 menupopup, .contentAreaContextMenu {
     border: none !important;
     appearance: none !important;
     border-radius: 6px !important;
-    background: #AC0FEB !important
+    background: rgb(172, 15, 235) !important
+}
+splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabpanels {
+    background: rgba(0, 0, 0, 0.45) !important
+}
+
+tab,
+#identity-box,
+.titlebar-min,
+.titlebar-max,
+#alltabs-button,
+.titlebar-close,
+.panel-arrowbox,
+.tab-background,
+#window-controls,
+.titlebar-restore,
+#autohide-context,
+.urlbarView-favicon,
+#nav-bar-overflow-button,
+#navigator-toolbox::after,
+.urlbar-addon-page-action,
+.urlbar-history-dropmarker {
+    display: none !important;
+    appearance: none !important
 }
 
 #TabsToolbar {
-    border: none !important;
     box-shadow: none !important;
-    -moz-appearance: none !important;
-    background-image: none !important;
-    background-color: transparent !important
+    appearance: none !important
 }
-#back-button {
-    padding-inline-start: 0 !important;
-    list-style-image: url("left-arrow.svg") !important
+#sidebar-box {
+    flex-direction: column-reverse !important
 }
-#forward-button {
-    list-style-image: url("right-arrow.svg") !important
-}
-#alltabs-button {
-    display: none !important
+#tabbrowser-tabs {
+    min-height: 0 !important;
+    visibility: collapse !important
 }
 #urlbar-background {
     background-color: rgba(25, 25, 25, 0.8) !important
 }
 #navigator-toolbox {
-    border: none !important;
     box-shadow: none !important;
-    background-color: transparent !important;
     --tabs-border-color: transparent !important
 }
 #tabs-newtab-button {
@@ -100,92 +115,34 @@ menupopup, .contentAreaContextMenu {
 #PanelUI-menu-button {
     padding-inline-end: 0 !important
 }
-#nav-bar, #TabsToolbar {
-    border: none !important
-}
-#nav-bar-overflow-button {
-    /* Disable this to show the overflow menu button. */
-    display: none !important
-}
-#navigator-toolbox::after {
-    display: none !important
-}
-#window-controls, #autohide-context {
-    display: none !important
-}
 #tracking-protection-icon-container {
     margin-right: 2px !important
 }
-#navigator-toolbox, #titlebar, #main-window {
-    border: none !important;
-    box-shadow: none !important;
-    -moz-appearance: none !important;
-    background-image: none !important;
-    background-color: transparent !important
-}
-#tracking-protection-icon-container, #urlbar-search-button {
-    border: none !important;
-    background-color: none !important;
-    background-image: none !important
-}
-#urlbar, #urlbar>.urlbarView, #urlbar-container, #urlbar-results {
-    border: none !important;
-    background-color: transparent !important
-}
-#urlbar:not(.megabar), #urlbar.megabar>#urlbar-background, #searchbar {
-    border: none !important;
-    box-shadow: none !important
-}
-#PopupAutoComplete>richlistbox>richlistitem[originaltype="loginsFooter"] {
-    visibility: collapse !important
-}
-#_testpilot-containers-menuitem-7, #_testpilot-containers-menuitem-6, #_testpilot-containers-menuitem-5, #_testpilot-containers-menuitem-4 {
-    display: none !important
+#navigator-toolbox, #nav-bar, #TabsToolbar {
+    border: none !important
 }
 
-.tab-stack {
-    display: flex !important;
-    justify-content: center !important
+#TabsToolbar,
+.urlbar-input-box,
+#navigator-toolbox,
+#webextpanels-window,
+#sidebar-box>#browser,
+.sidebar-panel[lwt-sidebar],
+.browser-toolbar:not(.titlebar-color) {
+    background: transparent !important
 }
+
 .urlbarView {
     border-radius: 0 8px 8px !important;
     background-color: transparent !important;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35) !important
 }
-.tab-content {
-    background-color: none !important;
-    background-image: none !important;
-    font-family: "Cantarell", sans-serif !important
-}
-.tabbrowser-tab {
-    height: 28px !important;
-    min-width: 10px !important;
-    max-height: 28px !important;
-    padding-inline: 0 !important;
-    margin: 0 1px 0 1px !important;
-    border-radius: 10px !important;
-    overflow-clip-margin: 0 !important;
-    background-color: rgba(119, 119, 119, 0.65) !important
-}
+
 .panel-arrowbox {
     margin: 0 !important;
-    display: none !important
-}
-.tab-background {
-    display: none !important
 }
 .urlbar-input-box {
-    border-radius: 5px !important;
-    background-image: none !important;
-    background-color: transparent !important
-}
-.tab-close-button {
-    width: 22px !important;
-    padding: 3px !important;
-    height: 22px !important;
-    display: none !important;
-    margin-left: -2px !important;
-    margin-right: 2px !important
+    border-radius: 5px !important
 }
 .urlbarView-action {
     color: #FFF !important
@@ -194,74 +151,7 @@ menupopup, .contentAreaContextMenu {
     margin: 0 !important;
     opacity: 1 !important
 }
-.urlbarView-row:hover {
-    color: #000 !important;
-    background-color: none !important;
-    background-image: linear-gradient(77deg, #FFC386, #FF8989) !important
-}
-.urlbar-addon-page-action {
-    display: none !important
-}
-.tabbrowser-tab[pinned="true"] {
-    color: #FFF !important;
-    background-image: none !important;
-    background-color: rgba(119, 119, 119, 0.65) !important
-}
-.browser-toolbar:not(.titlebar-color) {
-    background-color: transparent !important
-}
-.tabbrowser-tab[pinned="true"] .tab-icon-image {
-    align-items: center !important;
-    display: inline-block !important
-}
 .toolbarbutton-badge-stack, .toolbarbutton-icon {
     border-radius: 10px !important;
-    background-color: rgba(119, 119, 119, 0.65)
-}
-.tabbrowser-tab:not([pinned]) .tab-label-container {
-    order: 1;
-    border-top: 2px solid #7D0FFF !important
-}
-.tabbrowser-tab[pinned="true"] .tab-label-container {
-    display: none !important
-}
-.tabbrowser-tab:not([pinned]):hover .tab-icon-image {
-    display: none !important
-}
-.tabbrowser-tab:not([pinned]):hover .tab-close-button {
-    display: flex !important
-}
-.tabbrowser-tab::before, .tabbrowser-tab::after, .tab-line {
-    display: none !important
-}
-.tabbrowser-tab:hover, .tabbrowser-tab:hover[pinned="true"] {
-    color: #000 !important;
-    background-color: none !important;
-    background-image: linear-gradient(to left, #7D7DFF, #FF8989) !important
-}
-.urlbarView-favicon, .urlbar-history-dropmarker, #identity-box {
-    display: none !important
-}
-.titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close {
-    display: none !important;
-    appearance: none !important
-}
-.tabbrowser-tab[selected="true"], .tabbrowser-tab[pinned="true"][selected="true"] {
-    color: #FFF !important;
-    background-color: none !important;
-    background-image: linear-gradient(to left, #7D0BAB, #7D0FFF) !important
-}
-.tabbrowser-tab:not([pinned]):hover .tab-label-container, .tabbrowser-tab[selected="true"] .tab-label-container {
-    border-top: 2px solid transparent !important
-}
-#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])>#tabbrowser-arrowscrollbox>.tabbrowser-tab[first-visible-unpinned-tab] {
-    margin-inline-start: 2px !important
-}
-.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected], .urlbarView.megabar .urlbarView-row:not([type="tip"])[selected]>.urlbarView-row-inner {
-    fill-opacity: 1;
-    color: #FFF !important;
-    background: #7D0BAB !important
-}
-.tabbrowser-tab:hover .tab-throbber, .tabbrowser-tab:hover .tab-icon-image, .tabbrowser-tab:hover .tab-sharing-icon-overlay, .tabbrowser-tab:hover .tab-icon-overlay, .tabbrowser-tab:hover .tab-label-container, .tabbrowser-tab:hover .tab-icon-sound {
-    -moz-box-ordinal-group: 2 !important
+    background-color: rgba(0, 0, 0, 0.65)
 }

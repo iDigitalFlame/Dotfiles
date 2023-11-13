@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## LS Colors Config File
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

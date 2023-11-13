@@ -1,0 +1,225 @@
+// ################################
+// ### iDigitalFlame  2016-2024 ###
+// #                              #
+// #            -/`               #
+// #            -yy-   :/`        #
+// #         ./-shho`:so`         #
+// #    .:- /syhhhh//hhs` `-`     #
+// #   :ys-:shhhhhhshhhh.:o- `    #
+// #   /yhsoshhhhhhhhhhhyho`:/.   #
+// #   `:yhyshhhhhhhhhhhhhh+hd:   #
+// #     :yssyhhhhhyhhhhhhhhdd:   #
+// #    .:.oyshhhyyyhhhhhhddd:    #
+// #    :o+hhhhhyssyhhdddmmd-     #
+// #     .+yhhhhyssshdmmddo.      #
+// #       `///yyysshd++`         #
+// #                              #
+// ########## SPACEPORT ###########
+// ## Waybar Configuration
+//
+// Copyright (C) 2016 - 2024 iDigitalFlame
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+{
+    "battery#bat0": {
+        "bat": "BAT0",
+        "bat-compatibility": false,
+        "design-capacity": false,
+        "format": "{capacity:2}% {icon}",
+        "format-charging": "{capacity:2}% ",
+        "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-plugged": "{capacity:2}% ",
+        "format-time": "{H}h:{M}min",
+        "full-at": 100,
+        "interval": 60,
+        "max-length": 8,
+        "states": {
+            "critical": 10,
+            "low": 30
+        },
+        "tooltip": true,
+        "tooltip-format": "{time}"
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "bat-compatibility": false,
+        "design-capacity": false,
+        "format": "{capacity:2}% {icon}",
+        "format-charging": "{capacity:2}% ",
+        "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "format-plugged": "{capacity:2}% ",
+        "format-time": "{H}h:{M}min",
+        "full-at": 100,
+        "interval": 60,
+        "max-length": 8,
+        "states": {
+            "critical": 10,
+            "low": 30
+        },
+        "tooltip": true,
+        "tooltip-format": "{time}"
+    },
+    "clock": {
+        "actions": {
+            "on-click": "mode"
+        },
+        "calendar": {
+            "format": {
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+            },
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right"
+        },
+        "format": "{:%a %H:%M}",
+        "format-alt": "{:%a %b %d | %H:%M}",
+        "interval": 60,
+        "timezone": "America/New_York",
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "{usage:3}% ",
+        "tooltip": false
+    },
+    "custom/lockers": {
+        "escape": false,
+        "exec": "wc -l /var/run/smd/lockers | awk '{print $1}'",
+        "format": "{}",
+        "interval": 120,
+        "max-length": 1,
+        "tooltip": false
+    },
+    "disk": {
+        "format": "{percentage_used:3}% ",
+        "interval": 120,
+        "path": "/home",
+        "tooltip": true,
+        "tooltip-format": "{used} / {total} for {path} ({percentage_used}%)"
+    },
+    "fixed-center": true,
+    "height": 25,
+    "layer": "top",
+    "margin": "0",
+    "memory": {
+        "format": "{used:4.1f} ",
+        "interval": 30,
+        "max-length": 7,
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}/{total:0.1f}GiB"
+    },
+    "modules-center": [
+        "clock",
+        "sway/scratchpad",
+        "tray"
+    ],
+    "modules-left": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "sway/workspaces",
+        "wireplumber",
+        "memory",
+        "disk",
+        "cpu",
+        "battery#bat0",
+        "battery#bat1"
+    ],
+    "name": "bar1",
+    "position": "top",
+    "spacing": 0,
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "format-icons": [
+            "",
+            ""
+        ],
+        "max-length": 5,
+        "on-click": "/usr/bin/swaymsg 'scratchpad show'",
+        "show-empty": false,
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "sway/window": {
+        "format": "{title}",
+        "icon": false,
+        "icon-size": 15,
+        "max-length": 85,
+        "offscreen-css": false,
+        "offscreen-css-text": false,
+        "tooltip": true,
+        "tooltip-format": "{app_id} {shell}"
+    },
+    "sway/workspaces": {
+        "all-outputs": true,
+        "current-only": false,
+        "disable-auto-back-and-forth": false,
+        "disable-click": false,
+        "disable-markup": false,
+        "disable-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "numeric-first": true,
+        "warp-on-scroll": true
+    },
+    "tray": {
+        "icon-size": 18,
+        "reverse-direction": false,
+        "show-passive-items": true,
+        "spacing": 5
+    },
+    "wireplumber": {
+        "format": "{volume:3}% {icon}",
+        "format-bluetooth": "{volume:3}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "headphone": ""
+        },
+        "format-muted": "Muted ",
+        "format-source": "",
+        "format-source-muted": "Muted ",
+        "max-volume": 100.0,
+        "on-click": "/usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "reverse-scrolling": 0,
+        "scroll-step": 1
+    }
+}

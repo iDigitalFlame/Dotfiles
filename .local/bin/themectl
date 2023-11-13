@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Theme Controller
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,10 +42,10 @@ THEME_DIR="${HOME}/.config/theme"
 fhelp() {
     printf "Theme Control\nUsage: %s [reset|reload|set|list|help]\n\n" "$(basename "$0")"
     if ! [ -e "${THEME_DIR}/current" ]; then
-        printf "No theme selected!\n"
+        echo "No theme selected!"
         exit 0
     fi
-    echo "Current theme is \"%s\"" "$(basename "$(readlink "${THEME_DIR}/current")")"
+    printf "Current theme is \"%s\"\n" "$(basename "$(readlink "${THEME_DIR}/current")")"
     exit 0
 }
 
@@ -56,7 +55,7 @@ freset() {
         if [ -e "${THEME_DIR}/${1}" ]; then
             theme="${THEME_DIR}/${1}"
         else
-            echo "Theme \"$1\" does not exist!"
+            print "Theme \"%s\" does not exist!\n" "$1"
             exit 0
         fi
     else
@@ -75,6 +74,7 @@ freset() {
     rm -f "${HOME}/.config/gtk-2.0/gtkrc"
     rm -f "${HOME}/.config/gtk-2.0/gtkrc.mime"
     rm -f "${HOME}/.config/gtk-3.0/settings.ini"
+    rm -f "${HOME}/.config/gtk-4.0/settings.ini"
     return 0
 }
 
@@ -85,12 +85,18 @@ freload() {
     ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc"
     ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc.mime"
     ln -sT "${THEME_DIR}/current/gtk-3.conf" "${HOME}/.config/gtk-3.0/settings.ini"
+    ln -sT "${THEME_DIR}/current/gtk-3.conf" "${HOME}/.config/gtk-4.0/settings.ini"
+    gsettings set "org.gnome.desktop.interface" gtk-theme "$(grep 'gtk-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface" font-name "$(grep 'gtk-font-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface" icon-theme "$(grep 'gtk-icon-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface" cursor-theme "$(grep 'gtk-cursor-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface" color-scheme "prefer-dark"
+    gsettings set "org.gtk.Settings.FileChooser" startup-mode "cwd"
     return 0
 }
 
 if [ $# -eq 0 ]; then
     fhelp
-    exit 2
 fi
 
 case "$1" in
@@ -111,7 +117,7 @@ case "$1" in
         exit 1
     fi
     if ! [ -e "${THEME_DIR}/${2}" ]; then
-        echo "Theme \"$2\" does not exist!"
+        printf "Theme \"%s\" does not exist!\n" "$2"
         exit 0
     fi
     freset "$2"

@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Chrome Wrapper
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,16 +34,18 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-args=$*
+args="$*"
 
 if [ -z "$args" ]; then
-    /usr/bin/gh web dash -c "export TZ=UTC; /usr/bin/chromium"
+    sg firewall-web -c "env TZ=UTC /usr/bin/chromium"
     exit 0
 fi
 
 if [ "$args" = "--all" ]; then
-    /usr/bin/gh all dash -c "export TZ=UTC; /usr/bin/chromium --new-window"
+    rm -rf "/tmp/.chrome_temp_profile"
+    mkdir -p "/tmp/.chrome_temp_profile"
+    sg firewall-web -c "env TZ=UTC /usr/bin/chromium --new-window --user-data-dir=/tmp/.chrome_temp_profile"
     exit 0
 fi
 
-/usr/bin/gh web dash -c "export TZ=UTC; /usr/bin/chromium \"$args\""
+sg firewall-web -c "env TZ=UTC /usr/bin/chromium \"$args\""

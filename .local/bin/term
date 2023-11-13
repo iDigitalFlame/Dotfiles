@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Kitty Terminal Wrapper for VSCode
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,4 +34,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-/usr/bin/kitty --single-instance --instance-group i3 "$@"
+/usr/bin/kitty --single-instance --instance-group sway "$@"

@@ -1,6 +1,5 @@
-#!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +15,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Application Entry
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,14 +34,16 @@
 #
 
 [Desktop Entry]
-Name            = Chromium Developer (Firewall)
+Name            = Chromium Developer 
 Exec            = /home/dij/.local/bin/chrome --all %u
 Icon            = chromium
 Type            = Application
 Comment         = Browse the Web
-MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+MimeType        =
 Terminal        = false
+Keywords        = web;browser;internet;chrome;chromium
 Categories      = Network;WebBrowser;
 GenericName     = Web Browser
-StartupNotify   = true
-StartupWMClass  = Chromium
+StartupNotify   = false
+StartupWMClass  = chromium
+X-MultipleArgs  = false

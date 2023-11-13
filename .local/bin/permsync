@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Permissions Smoother
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,14 +34,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-rm "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
+rm -f "${HOME}/.local/share/applications/discord.desktop"
 
 # Enable Strict Mode
 set -u
 
 printf "\033[1;36mSetting permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
-chmod 2750 "${HOME}"
-chown -R ${USER}:${USER} "$HOME" 2> /dev/null
+chmod 2750 "$HOME"
+chown -R "${USER}":"${USER}" "$HOME" 2> /dev/null
 
 printf "\033[1;36mFixing dir/file permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
 find "$HOME" -type d -xdev -exec chmod 2700 {} \; 2> /dev/null

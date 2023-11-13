@@ -1,0 +1,230 @@
+/*
+    ################################
+    ### iDigitalFlame  2016-2024 ###
+    #                              #
+    #            -/`               #
+    #            -yy-   :/`        #
+    #         ./-shho`:so`         #
+    #    .:- /syhhhh//hhs` `-`     #
+    #   :ys-:shhhhhhshhhh.:o- `    #
+    #   /yhsoshhhhhhhhhhhyho`:/.   #
+    #   `:yhyshhhhhhhhhhhhhh+hd:   #
+    #     :yssyhhhhhyhhhhhhhhdd:   #
+    #    .:.oyshhhyyyhhhhhhddd:    #
+    #    :o+hhhhhyssyhhdddmmd-     #
+    #     .+yhhhhyssshdmmddo.      #
+    #       `///yyysshd++`         #
+    #                              #
+    ########## SPACEPORT ###########
+    ## SwayNC CSS Configuration
+
+    Copyright (C) 2016 - 2024 iDigitalFlame
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
+*/
+
+.control-center {
+    color: #fff;
+    font-size: 12px;
+    border-radius: 15px;
+    background: rgba(10, 0, 10, 0.65);
+    font-family: 'Cascadia Code Regular', FontAwesome
+}
+.control-center-list {
+    background: transparent
+}
+.control-center-list-placeholder {
+    opacity: 0.5
+}
+
+.time {
+    font-size: 13px;
+    margin: 0 25px 0 0;
+    font-weight: normal
+}
+.body {
+    margin: 2px;
+    font-size: 14px;
+    text-shadow: none;
+    font-weight: normal;
+    background: transparent
+}
+.body-image {
+    margin-top: 6px;
+    border-radius: 12px;
+    background-color: #FFF
+}
+.summary {
+    margin: 2px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: none;
+    background: transparent
+}
+
+.blank-window {
+    background: transparent
+}
+.floating-notifications {
+    background: transparent
+}
+
+.close-button {
+    padding: 2px;
+    border: none;
+    min-width: 25px;
+    min-height: 25px;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 100%;
+    background: #E94560;
+    margin: 10px 14px 0 0
+}
+.close-button:hover {
+    border: none;
+    box-shadow: none;
+    background: #7D0BAB;
+    transition: all 0.15s ease-in-out
+}
+
+.widget-title {
+    margin: 0;
+    padding: 0;
+    font-size: 0
+}
+.widget-title button {
+    border: none;
+    padding: 4px;
+    font-size: 20px;
+    margin: 2px 10px;
+    box-shadow: none;
+    min-width: 120px;
+    text-shadow: none;
+    border-radius: 10px;
+    background: rgba(40, 42, 58, 0.65)
+}
+.widget-title button:hover {
+    background: #7D0BAB
+}
+
+.widget-dnd {
+    font-size: 15px;
+    margin: 4px 10px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(40, 42, 58, 0.65)
+}
+.widget-dnd switch {
+    padding: 2px;
+    font-size: 0;
+    min-width: 120px;
+    box-shadow: none;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #FFF
+}
+.widget-dnd switch slider {
+    background: #FFF;
+    border-radius: 10px
+}
+.widget-dnd switch:checked {
+    background: #7D0BAB
+}
+
+.widget-buttons-grid {
+    padding: 2px 5px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    background: rgba(40, 42, 58, 0.65)
+}
+.widget-buttons-grid button {
+    margin: 0;
+    font-size: 20px;
+    padding: 5px 28px;
+    background: rgba(10, 0, 10, 0.65)
+}
+.widget-buttons-grid button:hover {
+    background: #7D0BAB
+}
+
+.widget-menubar.ctl {
+    margin: 10px 5px 0 5px
+}
+.widget-menubar.ctl revealer box {
+    padding: 2px 0;
+    border-radius: 10px;
+    margin: 0 5px 5px 5px;
+    background: rgba(40, 42, 58, 0.65)
+}
+.widget-menubar.ctl .horizontal button {
+    font-size: 20px;
+    padding: 2px 20px;
+    border-radius: 10px;
+    margin: 0 5px 5px 5px;
+    background: rgba(40, 42, 58, 0.65)
+}
+.widget-menubar.ctl revealer box button {
+    border: none;
+    margin: 0 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    background: transparent
+}
+.widget-menubar.ctl .horizontal button:hover {
+    background: #7D0BAB
+}
+.widget-menubar.ctl revealer box button:hover {
+    border: none;
+    background: #7D0BAB
+}
+
+.widget-volume, .widget-backlight {
+    margin: 4px 10px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(40, 42, 58, 0.65)
+}
+
+.notification-row {
+    outline: none;
+}
+.notification-content {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 12px
+}
+.notification-row:focus, .notification-row:hover {
+    background: transparent
+}
+
+.notification-default-action:hover, .notification-action:hover {
+    background: #7D0BAB;
+    -gtk-icon-effect: none
+}
+.notification, .notification-default-action, .notification-action {
+    border: none;
+    box-shadow: none;
+    transition: all 0.15s ease-in-out;
+    background: rgba(40, 42, 58, 0.65)
+}
+.notification {
+    border: 1px solid #7D0BAB
+}
+
+.critical {
+    background: #F94C10;
+}
+.notification.critical {
+    border: 1px solid #F94C10
+}

@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2023 ###
+    ### iDigitalFlame  2016-2024 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -16,10 +16,9 @@
     #       `///yyysshd++`         #
     #                              #
     ########## SPACEPORT ###########
-    ################################
-    # Rofi Configuration
+    ## Rofi Configuration
 
-    Copyright (C) 2016 - 2023 iDigitalFlame
+    Copyright (C) 2016 - 2024 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,29 +35,95 @@
 */
 
 configuration {
-    m:                          "-5";
+    run, drun, window {
+        fallback-icon: "applications-all";
+    }
+
+    m:                          -5;
+    eh:                         1;
     dpi:                        0;
     modi:                       "drun,window";
-    font:                       "Roboto Regular 12";
+    font:                       "Cascadia Code Regular 12";
     sort:                       true;
     cycle:                      false;
+    modes:                      "drun,window";
+    markup:                     true;
+    filter:                     "";
     xoffset:                    0;
-    yoffset:                    120;
+    yoffset:                    0;
     threads:                    0;
     location:                   2;
-    terminal:                   "/usr/bin/kitty";
+    terminal:                   "~/.local/bin/term";
     tokenize:                   true;
     matching:                   "glob";
-    kb-cancel:                  "Escape";
-    kb-row-up:                  "Up";
-    kb-row-tab:                 "";
-    ssh-client:                 "/usr/bin/false";
-    combi-modi:                 "drun,window";
+    cache-dir:                  "~/.cache";
+    icon-theme:                 "";
     show-icons:                 true;
+    auto-select:                false;
+    steal-focus:                true;
     parse-hosts:                false;
+    sidebar-mode:               false;
+    hover-select:               false;
+    scroll-method:              0;
+    click-to-exit:              true;
+    case-sensitive:             false;
+    fixed-num-lines:            false;
+    normalize-match:            false;
+    disable-history:            true;
+    ignored-prefixes:           "";
+    max-history-size:           0;
+    parse-known-hosts:          false;
+    refilter-timeout-limit:     300;
+    application-fallback-icon:  "applications-all.svg";
+
+    window-format:              "{t}";
+    window-thumbnail:           true;
+    window-match-fields:        "all";
+
+    combi-modes:                "drun,window";
+    combi-display-format:       "{mode} {text}";
+    combi-hide-mode-prefix:     true;
+
+    drun-categories:            "";
+    drun-url-launcher:          "~/.local/bin/browser";
+    drun-match-fields:          "name,exec,keywords";
+    drun-show-actions:          false;
+    drun-display-format:        "{icon} {name}";
+    drun-use-desktop-cache:     false;
+    drun-reload-desktop-cache:  false;
+
+    ssh-client:                 "/usr/bin/false";
+    ssh-command:                "/usr/bin/false";
+    run-command:                "{cmd}";
+    window-command:             "";
+    run-list-command:           "";
+    run-shell-command:          "/usr/bin/dash -c {cmd}";
+
+    display-run:                "";
+    display-ssh:                "";
+    display-drun:               "";
+    display-keys:               "";
+    display-combi:              "";
+    display-window:             "";
+    display-filebrowser:        "";
+    display-recursivebrowser:   "";
+
+    ml-row-up:                  "ScrollUp";
+    ml-row-left:                "ScrollLeft";
+    ml-row-down:                "ScrollDown";
+    ml-row-right:               "ScrollRight";
+
+    me-select-entry:            "MousePrimary";
+    me-accept-entry:            "MouseDPrimary";
+    me-accept-custom:           "";
+
+    kb-cancel:                  "Escape";
+    kb-row-up:                  "";
+    kb-row-tab:                 "";
     kb-row-last:                "End";
     kb-row-down:                "";
     kb-move-end:                "Control+E";
+    kb-row-left:                "";
     kb-select-1:                "";
     kb-select-2:                "";
     kb-select-3:                "";
@@ -77,38 +142,53 @@ configuration {
     kb-custom-7:                "";
     kb-custom-8:                "";
     kb-custom-9:                "";
-    ssh-command:                "/usr/bin/false";
-    run-command:                "{cmd}";
-    display-run:                "";
-    display-ssh:                "";
-    kb-row-down:                "";
     kb-select-10:               "";
     kb-custom-10:               "";
+    kb-custom-11:               "";
+    kb-custom-12:               "";
+    kb-custom-13:               "";
+    kb-custom-14:               "";
+    kb-custom-15:               "";
+    kb-custom-16:               "";
+    kb-custom-17:               "";
+    kb-custom-18:               "";
+    kb-custom-19:               "";
+    kb-ellipsize:               "";
     kb-page-prev:               "Page_Up";
     kb-page-next:               "Page_Down";
     kb-row-first:               "Home";
+    kb-row-right:               "";
     kb-mode-next:               "Tab";
-    display-drun:               "";
-    sidebar-mode:               false;
+    kb-screenshot:              "";
+    kb-row-select:              "";
     kb-accept-alt:              "";
     kb-move-front:              "Control+A";
-    window-format:              "{t}";
-    scroll-method:              0;
-    click-to-exit:              true;
     kb-clear-line:              "Control+W";
-    display-combi:              "";
-    display-window:             "";
+    sorting-method:             "fzf";
     kb-toggle-sort:             "";
-    case-sensitive:             false;
     kb-element-next:            "Down";
-    kb-element-prev:            "";
-    disable-history:            false;
+    kb-element-prev:            "Up";
     kb-accept-entry:            "Return,KP_Enter";
+    kb-delete-entry:            "";
+    kb-primary-copy:            "";
+    kb-mode-complete:           "";
     kb-accept-custom:           "";
     kb-mode-previous:           "";
-    kb-primary-paste:           "Control+V";
-    parse-known-hosts:          false;
-    run-shell-command:          "/usr/bin/dash {cmd}";
+    kb-primary-paste:           "";
+    kb-remove-to-eol:           "Control+k";
+    kb-remove-to-sol:           "Control+u";
+    kb-move-char-back:          "Left";
+    kb-move-word-back:          "Control+Left";
+    kb-secondary-copy:          "Control+c";
     kb-secondary-paste:         "Control+v";
+    kb-remove-word-back:        "Control+BackSpace";
+    kb-remove-char-back:        "BackSpace,Shift+BackSpace";
+    kb-entry-history-up:        "";
+    kb-move-word-forward:       "Control+Right";
+    kb-move-char-forward:       "Right";
+    kb-accept-custom-alt:       "";
+    kb-entry-history-down:      "";
+    kb-remove-word-forward:     "Control+Delete";
+    kb-remove-char-forward:     "Delete";
     kb-toggle-case-sensitivity: "";
 }

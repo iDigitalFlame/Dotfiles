@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2023 ###
+    ### iDigitalFlame  2016-2024 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -16,10 +16,9 @@
     #       `///yyysshd++`         #
     #                              #
     ########## SPACEPORT ###########
-    ################################
-    # VCSodium Configuration
+    ## Firefox/LibreWolf UserCSS Configuration
 
-    Copyright (C) 2016 - 2023 iDigitalFlame
+    Copyright (C) 2016 - 2024 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,15 +34,8 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
-@-moz-document url(about:blank), url(about:newtab), url(about:home){
-body {
-    -moz-appearance: none !important;
-    background-image: none !important;
-    background-color: transparent !important
-}
-html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
-    -moz-appearance: none !important;
-    background-image: none !important;
-    background-color: transparent !important
-}
+@-moz-document url-prefix(about:home), url-prefix(about:newtab), url-prefix(about:blank) {
+    body {
+        background-color: #0A000A !important
+    }
 }

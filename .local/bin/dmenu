@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
-## Dmenu Wrapper for Surf
+## Dmenu Wrapper
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,4 +34,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-rofi -no-lazy-grab -dmenu -theme "$HOME/.config/rofi/menu.rasi" -theme-str "window{border-color:#F4511E;width:40%;}inputbar{enabled:true;}" -i -l 0
+rofi -no-lazy-grab -dmenu -theme "${HOME}/.config/rofi/basic.rasi" -i -l 0

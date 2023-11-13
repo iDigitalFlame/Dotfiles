@@ -1,0 +1,59 @@
+################################
+### iDigitalFlame  2016-2024 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## XPad Configuration
+#
+# Copyright (C) 2016 - 2024 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+text rgb(255, 255, 255)
+back rgb(135, 69, 179)
+width 500
+height 300
+toolbar 1
+buttons Delete, Separator, Cut, Copy, Paste, Separator, Undo, Redo, Separator, Find
+use_text 1
+use_back 1
+fontname Cascadia Mono Regular 10
+scrollbar 1
+edit_lock 0
+decorations 0
+tray_enabled 1
+line_numbering 0
+autostart_delay 0
+confirm_destroy 0
+sticky_on_start 0
+autostart_new_pad 0
+auto_hide_toolbar 1
+hide_from_taskbar 1
+autostart_wait_systray 0
+autostart_display_pads 2
+hide_from_task_switcher 1
+tray_click_configuration 1

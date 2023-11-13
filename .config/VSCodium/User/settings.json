@@ -1,39 +1,37 @@
-/*
-    ################################
-    ### iDigitalFlame  2016-2023 ###
-    #                              #
-    #            -/`               #
-    #            -yy-   :/`        #
-    #         ./-shho`:so`         #
-    #    .:- /syhhhh//hhs` `-`     #
-    #   :ys-:shhhhhhshhhh.:o- `    #
-    #   /yhsoshhhhhhhhhhhyho`:/.   #
-    #   `:yhyshhhhhhhhhhhhhh+hd:   #
-    #     :yssyhhhhhyhhhhhhhhdd:   #
-    #    .:.oyshhhyyyhhhhhhddd:    #
-    #    :o+hhhhhyssyhhdddmmd-     #
-    #     .+yhhhhyssshdmmddo.      #
-    #       `///yyysshd++`         #
-    #                              #
-    ########## SPACEPORT ###########
-    ################################
-    # VCSodium Configuration
-
-    Copyright (C) 2016 - 2023 iDigitalFlame
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
-*/
+// ################################
+// ### iDigitalFlame  2016-2024 ###
+// #                              #
+// #            -/`               #
+// #            -yy-   :/`        #
+// #         ./-shho`:so`         #
+// #    .:- /syhhhh//hhs` `-`     #
+// #   :ys-:shhhhhhshhhh.:o- `    #
+// #   /yhsoshhhhhhhhhhhyho`:/.   #
+// #   `:yhyshhhhhhhhhhhhhh+hd:   #
+// #     :yssyhhhhhyhhhhhhhhdd:   #
+// #    .:.oyshhhyyyhhhhhhddd:    #
+// #    :o+hhhhhyssyhhdddmmd-     #
+// #     .+yhhhhyssshdmmddo.      #
+// #       `///yyysshd++`         #
+// #                              #
+// ########## SPACEPORT ###########
+// ## Codium Configuration
+//
+// Copyright (C) 2016 - 2024 iDigitalFlame
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
 {
     "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All }",
     "C_Cpp.default.cStandard": "c99",
@@ -351,7 +349,7 @@
     "editor.tabSize": 4,
     "editor.tokenColorCustomizations": {
         "comments": "#FFFFFF",
-        "functions": "#30E3F0",
+        "functions": "#05DFD7",
         "keywords": "#C3FF18",
         "numbers": "#01E500",
         "strings": "#F7FF14",
@@ -361,7 +359,7 @@
                     "support.type"
                 ],
                 "settings": {
-                    "foreground": "#7CF3E3"
+                    "foreground": "#7EFAFF"
                 }
             },
             {
@@ -369,7 +367,7 @@
                     "keyword"
                 ],
                 "settings": {
-                    "foreground": "#FA5E50"
+                    "foreground": "#FF0A49"
                 }
             },
             {
@@ -413,7 +411,7 @@
                 ],
                 "settings": {
                     "fontStyle": "bold",
-                    "foreground": "#2CB7EE"
+                    "foreground": "#5EDFFF"
                 }
             }
         ],
@@ -949,6 +947,13 @@
     "search.quickOpen.includeSymbols": true,
     "search.smartCase": false,
     "search.useIgnoreFiles": true,
+    "settingsSync.ignoredSettings": [
+        "*"
+    ],
+    "settingsSync.ignoredExtensions": [
+        "*"
+    ],
+    "settingsSync.keybindingsPerPlatform": false,
     "telemetry.telemetryLevel": "off",
     "terminal.explorerKind": "integrated",
     "terminal.external.linuxExec": "term",
@@ -1046,47 +1051,47 @@
     "window.restoreWindows": "none",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.titleBarStyle": "native",
-    "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
-        "activityBar.background": "#191919",
+        "activityBar.background": "#0A000A",
         "activityBarBadge.background": "#7D0BAB",
         "activityBarBadge.foreground": "#FFFFFF",
-        "breadcrumb.background": "#191919",
-        "dropdown.background": "#191919",
-        "dropdown.listBackground": "#191919",
-        "editor.background": "#191919",
-        "editor.foldBackground": "#19191900",
+        "breadcrumb.background": "#0A000A",
+        "dropdown.background": "#0A000A",
+        "dropdown.listBackground": "#0A000A",
+        "editor.background": "#0A000A",
+        "editor.foldBackground": "#0A000A00",
         "editor.foreground": "#FFFFFF",
         "editor.lineHighlightBackground": "#333742",
         "editor.selectionBackground": "#7D0BAB95",
-        "editorError.foreground": "#ff1f1f",
-        "editorGroup.border": "#191919",
-        "editorGroupHeader.noTabsBackground": "#191919",
-        "editorGroupHeader.tabsBackground": "#191919",
-        "editorGroupHeader.tabsBorder": "#191919",
-        "editorHint.foreground": "#77fcf5",
-        "editorInfo.foreground": "#37ff8a",
+        "editorError.foreground": "#FF1F1F",
+        "editorGroup.border": "#0A000A",
+        "editorGroupHeader.noTabsBackground": "#0A000A",
+        "editorGroupHeader.tabsBackground": "#0A000A",
+        "editorGroupHeader.tabsBorder": "#0A000A",
+        "editorHint.foreground": "#77FCF5",
+        "editorInfo.foreground": "#37FF8A",
         "editorLineNumber.activeForeground": "#34DEF9",
         "editorLineNumber.foreground": "#FFFFFF",
-        "editorPane.background": "#191919",
+        "editorPane.background": "#0A000A",
+        "editorInlayHint.foreground": "#F67FF5",
         "editorRuler.foreground": "#7A7A7A5A",
-        "editorSuggestWidget.background": "#191919",
+        "editorSuggestWidget.background": "#0A000A",
         "editorSuggestWidget.selectedBackground": "#333742",
-        "editorWarning.foreground": "#f7b02c",
+        "editorWarning.foreground": "#F7B02C",
         "editorWhitespace.foreground": "#7A7A7A",
-        "editorWidget.background": "#191919",
+        "editorWidget.background": "#0A000A",
         "extensionButton.prominentBackground": "#34DEF9",
-        "extensionButton.prominentForeground": "#000000",
+        "extensionButton.prominentForeground": "#0A000A",
         "extensionButton.prominentHoverBackground": "#AC0FEB",
         "foreground": "#FFFFFF",
-        "input.background": "#191919",
+        "input.background": "#0A000A",
         "input.border": "#7D0BAB",
         "input.foreground": "#FFFFFF",
         "list.activeSelectionBackground": "#333742",
         "list.activeSelectionForeground": "#FFFFFF",
         "list.deemphasizedForeground": "#FFFFFF",
         "list.errorForeground": "#FF783A",
-        "list.focusBackground": "#191919",
+        "list.focusBackground": "#0A000A",
         "list.focusForeground": "#FFFFFF",
         "list.highlightForeground": "#FFFFFF",
         "list.hoverBackground": "#333742",
@@ -1095,50 +1100,51 @@
         "list.inactiveSelectionBackground": "#333742",
         "list.inactiveSelectionForeground": "#FFFFFF",
         "list.warningForeground": "#FFD666",
-        "menu.background": "#191919",
+        "menu.background": "#0A000A",
         "menu.selectionBackground": "#333742",
         "menubar.selectionBackground": "#333742",
-        "notifications.background": "#191919",
+        "notifications.background": "#0A000A",
         "notifications.foreground": "#FFFFFF",
-        "panel.background": "#191919",
+        "panel.background": "#0A000A",
         "panel.border": "#7D0BAB",
         "panelTitle.activeBorder": "#FFFFFF",
         "panelTitle.activeForeground": "#FFFFFF",
         "panelTitle.inactiveForeground": "#FFFFFF",
         "peekViewResult.selectionBackground": "#7D0BAB",
-        "peekViewTitle.background": "#191919",
+        "peekViewTitle.background": "#0A000A",
         "scrollbarSlider.activeBackground": "#7D0BAB",
         "scrollbarSlider.background": "#34DEF995",
         "scrollbarSlider.hoverBackground": "#7D0BAB",
-        "settings.dropdownBackground": "#191919",
-        "sideBar.background": "#191919",
-        "sideBarSectionHeader.background": "#191919",
+        "settings.dropdownBackground": "#0A000A",
+        "sideBar.background": "#0A000A",
+        "sideBarSectionHeader.background": "#0A000A",
         "statusBar.background": "#7D0BAB",
         "statusBar.noFolderBackground": "#7D0BAB",
-        "statusBarItem.activeBackground": "#191919",
+        "statusBarItem.activeBackground": "#0A000A",
         "tab.activeBackground": "#7D0BAB",
-        "tab.activeBorder": "#191919",
+        "tab.activeBorder": "#0A000A",
         "tab.activeForeground": "#FFFFFF",
-        "tab.border": "#191919",
+        "tab.border": "#0A000A",
         "tab.hoverBackground": "#AC0FEB",
-        "tab.hoverBorder": "#191919",
+        "tab.hoverBorder": "#0A000A",
         "tab.hoverForeground": "#FFFFFF",
-        "tab.inactiveBackground": "#191919",
+        "tab.inactiveBackground": "#0A000A",
         "tab.inactiveForeground": "#FFFFFF",
-        "tab.inactiveModifiedBorder": "#191919",
+        "tab.inactiveModifiedBorder": "#0A000A",
         "tab.unfocusedActiveBackground": "#390359",
-        "tab.unfocusedActiveForeground": "#f8f8f2",
+        "tab.unfocusedActiveForeground": "#F8F8F2",
         "tab.unfocusedHoverForeground": "#FFFFFF",
         "tab.unfocusedInactiveForeground": "#FFFFFF",
-        "terminal.background": "#191919",
+        "terminal.background": "#0A000A",
         "terminal.foreground": "#FFFFFF",
-        "titleBar.activeBackground": "#191919"
+        "titleBar.activeBackground": "#0A000A"
     },
     "workbench.colorTheme": "Simple Dark",
     "workbench.commandPalette.history": 50,
     "workbench.commandPalette.preserveInput": false,
     "workbench.editor.closeOnFileDelete": false,
     "workbench.editor.decorations.colors": true,
+    "workbench.editor.empty.hint": "hidden",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.labelFormat": "default",
@@ -1147,10 +1153,9 @@
     "workbench.editor.restoreViewState": false,
     "workbench.editor.revealIfOpen": false,
     "workbench.editor.showIcons": true,
-    "workbench.editor.showTabs": true,
+    "workbench.editor.showTabs": "multiple",
     "workbench.editor.tabCloseButton": "right",
     "workbench.editor.tabSizing": "fit",
-    "workbench.editor.untitled.hint": "hidden",
     "workbench.enableExperiments": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.layoutControl.enabled": false,
@@ -1174,7 +1179,6 @@
     "zenMode.hideActivityBar": false,
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
-    "zenMode.hideTabs": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
 }

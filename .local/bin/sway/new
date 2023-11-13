@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+################################
+### iDigitalFlame  2016-2024 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## New Workspace Mover/Spawner Locker
+#
+# Copyright (C) 2016 - 2024 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+import sys
+
+sys.path.insert(0, "/usr/lib/smd")
+
+from sys import argv
+from lib import print_error
+from lib.sway import swaymsg, workspaces, focused
+
+
+def _new_workspace(move_focused=False):
+    n = next(i for i in range(1, 25) if not [x for x in workspaces() if x.num == i])
+    try:
+        if move_focused:
+            f = focused()
+            if f is not None:
+                swaymsg(0, f'[con_id="{f.id}"] move container to workspace {n}')
+            del f
+        swaymsg(0, f"workspace {n}")
+    finally:
+        del n
+
+
+if __name__ == "__main__":
+    try:
+        _new_workspace(len(argv) > 1)
+    except OSError as err:
+        print_error("Cannot get new workspace!", err)

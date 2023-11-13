@@ -1,0 +1,242 @@
+/*
+    ################################
+    ### iDigitalFlame  2016-2024 ###
+    #                              #
+    #            -/`               #
+    #            -yy-   :/`        #
+    #         ./-shho`:so`         #
+    #    .:- /syhhhh//hhs` `-`     #
+    #   :ys-:shhhhhhshhhh.:o- `    #
+    #   /yhsoshhhhhhhhhhhyho`:/.   #
+    #   `:yhyshhhhhhhhhhhhhh+hd:   #
+    #     :yssyhhhhhyhhhhhhhhdd:   #
+    #    .:.oyshhhyyyhhhhhhddd:    #
+    #    :o+hhhhhyssyhhdddmmd-     #
+    #     .+yhhhhyssshdmmddo.      #
+    #       `///yyysshd++`         #
+    #                              #
+    ########## SPACEPORT ###########
+    ## Waybar CSS Configuration
+
+    Copyright (C) 2016 - 2024 iDigitalFlame
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
+*/
+
+bar, window#waybar {
+    font-size: 13px;
+    background: transparent;
+    transition-duration: .5s;
+    transition-property: background-color;
+    font-family: 'Cascadia Mono', FontAwesome
+}
+
+.modules-left {
+    margin-left: 10px
+}
+.modules-right {
+    margin-right: 10px
+}
+
+#window, widget>label, #tray, #workspaces {
+    color: #FFF;
+    transition-duration: .5s;
+    background: rgba(10, 0, 10, 0.65);
+    transition-property: border-radius
+}
+widget>label, #tray, #workspaces {
+    transition-property: background-color, border-radius
+}
+
+window#waybar.chromium {
+    background: rgba(53, 21, 93, 0.6)
+}
+window#waybar.org\.telegram\.desktop {
+    background: rgba(10, 0, 10, 0.7)
+}
+window#waybar.codium, window#waybar.codium-url-handler {
+    background: rgba(10, 0, 10, 0.7)
+}
+
+window#waybar.codium #tray,
+window#waybar.chromium #tray,
+window#waybar.codium-url-handler #tray,
+window#waybar.org\.telegram\.desktop #tray {
+    border-radius: 0;
+    background: transparent;
+    transition-property: background-color
+}
+window#waybar.codium #window,
+window#waybar.chromium #window,
+window#waybar.codium-url-handler #window,
+window#waybar.org\.telegram\.desktop #window {
+    border-radius: 0;
+    background: transparent;
+    transition-property: background-color
+}
+window#waybar.codium #workspaces,
+window#waybar.chromium #workspaces,
+window#waybar.codium-url-handler #workspaces,
+window#waybar.org\.telegram\.desktop #workspaces {
+    border-radius: 0;
+    background: transparent;
+    transition-property: background-color
+}
+window#waybar.codium widget>label,
+window#waybar.chromium widget>label,
+window#waybar.codium-url-handler widget>label,
+window#waybar.org\.telegram\.desktop widget>label {
+    border-radius: 0;
+    background: transparent;
+    transition-property: background-color
+}
+
+#tray {
+    margin: 0 3px 0 0;
+    border-radius: 0 0 10px 0;
+    padding: 3px 10px 3px 5px;
+    border-bottom: 2px solid #FF6C00
+}
+#tray menu {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 10px;
+    background: rgba(10, 0, 10, 0.65);
+    border: 2px solid rgb(172, 15, 235);
+    font-family: 'Cascadia Code', FontAwesome
+}
+#scratchpad {
+    padding: 3px 5px 3px 5px;
+    border-bottom: 2px solid #FF6C00
+}
+#tray menuitem, #tray window {
+    background: transparent
+}
+#tray menuitem:hover {
+    border-radius: 10px;
+    background: #7D0BAB
+}
+#clock {
+    margin: 0 0 0 3px;
+    border-radius: 0 0 0 10px;
+    padding: 3px 5px 3px 10px;
+    border-bottom: 2px solid #FF6C00
+}
+#clock small {
+    border-radius: 10px;
+}
+#cpu {
+    margin: 0 3px 0 0;
+    border-radius: 0 0 10px 0;
+    padding: 3px 10px 3px 5px;
+    border-bottom: 2px solid #C6DE41
+}
+#disk {
+    padding: 3px 5px 3px 5px;
+    border-bottom: 2px solid #C6DE41
+}
+#memory {
+    margin: 0 0 0 3px;
+    border-radius: 0 0 0 10px;
+    padding: 3px 5px 3px 10px;
+    border-bottom: 2px solid #C6DE41
+}
+#workspaces {
+    margin: 0 2px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 2px solid #1597BB
+}
+#wireplumber {
+    margin: 0 3px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 2px solid #00FFD1
+}
+
+#waybar #window {
+    margin: 0 3px 0 0;
+    padding: 3px 10px 3px 10px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 2px solid #17B794
+}
+#waybar.empty #window {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    border-bottom: none;
+    background: transparent
+}
+
+#workspaces button {
+    padding: 0;
+    color: #fff;
+    margin: 0 1px;
+    min-width: 20px;
+    border-radius: 5px;
+    border: 1px solid transparent
+}
+
+#workspaces button:hover {
+    background: #9336B4
+}
+#workspaces button.urgent {
+    background: #F94C10
+}
+#workspaces button.visible {
+    border: 1px solid #F6F1E9
+}
+#workspaces button.focused {
+    background: #7D0BAB;
+    border: 1px solid transparent
+}
+#workspaces button.current_output {}
+#workspaces button:not(.current_output) {
+    /*background: #353941*/
+}
+
+#battery {
+    color: #FFF;
+    border-bottom: 2px solid #49FF00
+}
+#battery.bat0 {
+    margin: 0 0 0 3px;
+    border-radius: 0 0 0 10px;
+    padding: 2px 5px 2px 10px
+}
+#battery.bat1 {
+    margin: 0 3px 0 0;
+    border-radius: 0 0 10px 0;
+    padding: 2px 10px 2px 5px
+}
+#battery.bat0.low, #battery.bat1.low {
+    color: #FFD369
+}
+#battery.bat0.critical, #battery.bat1.critical {
+    color: #FF0000
+}
+#battery.bat0.plugged,
+#battery.bat1.plugged,
+#battery.bat0.charging,
+#battery.bat1.charging,
+#battery.bat0.plugged.low,
+#battery.bat1.plugged.low,
+#battery.bat0.charging.low,
+#battery.bat1.charging.low,
+#battery.bat0.plugged.critical,
+#battery.bat1.plugged.critical,
+#battery.bat0.charging.critical,
+#battery.bat1.charging.critical {
+    color: #BEF992;
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Browser Wrapper
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,19 +34,19 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-args=$*
+args="$*"
 
-if [ "$FIREFOX" = "1" ] || [ "$(basename $0)" = "firefox" ] ; then
+if [ "$FIREFOX" = "1" ] || [ "$(basename "$0")" = "firefox" ] ; then
     if [ -z "$args" ]; then
-        /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER}"
+        sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER}"
     else
-        /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/firefox -P ${USER} \"$args\""
+        sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER} \"$args\""
     fi
     exit 0
 fi
 
 if [ -z "$args" ]; then
-    /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER}"
+    sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER}"
 else
-    /usr/bin/gh web dash -c "export TZ=EST; export MOZ_GTK_TITLEBAR_DECORATION=client; nice -n 20 /usr/bin/librewolf -P ${USER} \"$args\""
+    sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER} \"$args\""
 fi

@@ -1,0 +1,246 @@
+{
+    "_": [
+        "################################",
+        "### iDigitalFlame  2016-2024 ###",
+        "#                              #",
+        "#            -/`               #",
+        "#            -yy-   :/`        #",
+        "#         ./-shho`:so`         #",
+        "#    .:- /syhhhh//hhs` `-`     #",
+        "#   :ys-:shhhhhhshhhh.:o- `    #",
+        "#   /yhsoshhhhhhhhhhhyho`:/.   #",
+        "#   `:yhyshhhhhhhhhhhhhh+hd:   #",
+        "#     :yssyhhhhhyhhhhhhhhdd:   #",
+        "#    .:.oyshhhyyyhhhhhhddd:    #",
+        "#    :o+hhhhhyssyhhdddmmd-     #",
+        "#     .+yhhhhyssshdmmddo.      #",
+        "#       `///yyysshd++`         #",
+        "#                              #",
+        "########## SPACEPORT ###########",
+        "## SwayNC Configuration",
+        "",
+        "Copyright (C) 2016 - 2024 iDigitalFlame",
+        "",
+        "This program is free software: you can redistribute it and/or modify",
+        "it under the terms of the GNU General Public License as published by",
+        "the Free Software Foundation, either version 3 of the License, or",
+        "any later version.",
+        "",
+        "This program is distributed in the hope that it will be useful,",
+        "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+        "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
+        "GNU General Public License for more details.",
+        "",
+        "You should have received a copy of the GNU General Public License",
+        "along with this program.  If not, see <https: //www.gnu.org/licenses/>."
+    ],
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "control-center-height": 300,
+    "control-center-layer": "top",
+    "control-center-margin-bottom": 5,
+    "control-center-margin-left": 0,
+    "control-center-margin-right": 5,
+    "control-center-margin-top": 5,
+    "control-center-width": 450,
+    "cssPriority": "user",
+    "fit-to-screen": true,
+    "hide-on-action": true,
+    "hide-on-clear": true,
+    "image-visibility": "when-available",
+    "keyboard-shortcuts": true,
+    "layer": "overlay",
+    "layer-shell": true,
+    "notification-2fa-action": false,
+    "notification-body-image-height": 200,
+    "notification-body-image-width": 200,
+    "notification-icon-size": 64,
+    "notification-inline-replies": false,
+    "notification-window-width": 400,
+    "positionX": "right",
+    "positionY": "top",
+    "script-fail-notify": false,
+    "timeout": 5,
+    "timeout-critical": 0,
+    "timeout-low": 5,
+    "transition-time": 200,
+    "widget-config": {
+        "backlight": {
+            "device": "intel_backlight",
+            "label": "",
+            "min": 10,
+            "subsystem": "backlight"
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "",
+                    "command": "swaync-client -cp; grimshot --notify copy area"
+                },
+                {
+                    "label": "",
+                    "command": "swaync-client -cp; grimshot --notify copy output"
+                },
+                {
+                    "label": "",
+                    "command": "bluectl -t; swaync-client -cp"
+                },
+                {
+                    "label": "",
+                    "command": "swaync-client -cp; ${HOME}/.local/bin/sway/clip"
+                },
+                {
+                    "label": "",
+                    "command": "swaync-client -cp; ${HOME}/.local/bin/sway/shot"
+                }
+            ]
+        },
+        "dnd": {
+            "text": " Do Not Disturb"
+        },
+        "menubar#ctl": {
+            "menu#locker": {
+                "actions": [
+                    {
+                        "label": " Clear All Lockers",
+                        "command": "lockerctl -kz false -kb false -kl false -ks false; swaync-client -cp"
+                    },
+                    {
+                        "label": " Clear All Lockers (Include System)",
+                        "command": "lockerctl -kz false -kb false -kl false -ks false -kl false -kd false; swaync-client -cp"
+                    },
+                    {
+                        "label": " Coffee (All 5m)",
+                        "command": "lockerctl -z 300 -kb 300 -kl 300 -s 300; swaync-client -cp"
+                    },
+                    {
+                        "label": " Caffeine (All 10m)",
+                        "command": "lockerctl -z 600 -kb 600 -kl 600 -s 600; swaync-client -cp"
+                    },
+                    {
+                        "label": " Cocaine (All 15m)",
+                        "command": "lockerctl -z 900 -kb 900 -kl 900 -s 900; swaync-client -cp"
+                    },
+                    {
+                        "label": " Insomnia (All Unlimited)",
+                        "command": "lockerctl -kz true -kb true -kl true -ks true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Screen Blank",
+                        "command": "lockerctl -kb true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Screen Lock",
+                        "command": "lockerctl -kl true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Sleep",
+                        "command": "lockerctl -ks true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Hibernation",
+                        "command": "lockerctl -kz true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Lid Switch",
+                        "command": "lockerctl -kd true; swaync-client -cp"
+                    },
+                    {
+                        "label": " Disable Yubikey",
+                        "command": "lockerctl -ky true; swaync-client -cp"
+                    }
+                ],
+                "animation-type": "slide_down",
+                "label": "",
+                "position": "left"
+            },
+            "menu#cpu": {
+                "actions": [
+                    {
+                        "label": " Power Saving (Max 600Mhz)",
+                        "command": "cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power; swaync-client -cp"
+                    },
+                    {
+                        "label": " Less Savings (Max 800Mhz)",
+                        "command": "cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power; swaync-client -cp"
+                    },
+                    {
+                        "label": " Semi-Balanced (Max 1.5Ghz)",
+                        "command": "cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power; swaync-client -cp"
+                    },
+                    {
+                        "label": " Balanced (Max 2.5Ghz)",
+                        "command": "cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p balance_performance; swaync-client -cp"
+                    },
+                    {
+                        "label": " Power (Max 3Ghz, Turbo)",
+                        "command": "cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance; swaync-client -cp"
+                    },
+                    {
+                        "label": " Max Power (Max 4.8Ghz, Turbo)",
+                        "command": "cpuctl -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance; swaync-client -cp"
+                    }
+                ],
+                "animation-type": "slide_down",
+                "label": "",
+                "position": "left"
+            },
+            "menu#power": {
+                "actions": [
+                    {
+                        "label": " Suspend",
+                        "command": "sudo systemctl suspend; swaync-client -cp"
+                    },
+                    {
+                        "label": " Hibernate",
+                        "command": "sudo systemctl hibernate; swaync-client -cp"
+                    },
+                    {
+                        "label": " Reboot",
+                        "command": "sudo systemctl reboot; swaync-client -cp"
+                    },
+                    {
+                        "label": " Shut Down",
+                        "command": "sudo systemctl poweroff; swaync-client -cp"
+                    }
+                ],
+                "animation-type": "slide_down",
+                "label": "",
+                "position": "right"
+            },
+            "buttons": {
+                "actions": [
+                    {
+                        "label": "",
+                        "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; swaync-client -cp"
+                    },
+                    {
+                        "label": "",
+                        "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; swaync-client -cp"
+                    },
+                    {
+                        "label": "",
+                        "command": "lockctl -f; swaync-client -cp"
+                    }
+                ],
+                "position": "right"
+            }
+        },
+        "title": {
+            "button-text": "",
+            "clear-all-button": true,
+            "text": ""
+        },
+        "volume": {
+            "label": ""
+        }
+    },
+    "widgets": [
+        "menubar#ctl",
+        "backlight",
+        "volume",
+        "dnd",
+        "title",
+        "notifications",
+        "buttons-grid"
+    ]
+}

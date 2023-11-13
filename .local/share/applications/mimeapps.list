@@ -1,57 +1,92 @@
-[Default Applications]
+################################
+### iDigitalFlame  2016-2024 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## Mime Configuration
+#
+# Copyright (C) 2016 - 2024 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+[Added Associations]
+image/gif=swayimg.desktop
+image/png=swayimg.desktop
+image/jpeg=swayimg.desktop
+image/heic=swayimg.desktop
 text/html=librewolf.desktop
 text/x-csrc=leafpad.desktop
-text/x-python=vscode.desktop
+text/x-python=codium.desktop
 application/pdf=mupdf.desktop
 inode/directory=thunar.desktop
 x-www-browser=librewolf.desktop
+application/json=codium.desktop
 application/xml=librewolf.desktop
-image/gif=utilities-ristretto.desktop
-image/png=utilities-ristretto.desktop
-image/jpeg=utilities-ristretto.desktop
-image/heic=utilities-ristretto.desktop
-application/x-directory=Thunar.desktop
+application/x-directory=thunar.desktop
 x-scheme-handler/http=librewolf.desktop
 application/xhtml+xml=librewolf.desktop
+application/octet-stream=codium.desktop
+application/x-shellscript=codium.desktop
 x-scheme-handler/https=librewolf.desktop
 x-scheme-handler/about=librewolf.desktop
 x-scheme-handler/chrome=librewolf.desktop
-application/json=utilities-vscode.desktop
 x-scheme-handler/unknown=librewolf.desktop
 application/x-extension-htm=librewolf.desktop
 application/x-extension-xht=librewolf.desktop
 application/x-extension-html=librewolf.desktop
 application/x-extension-shtml=librewolf.desktop
 application/x-extension-xhtml=librewolf.desktop
-application/octet-stream=utilities-vscode.desktop
-application/x-shellscript=utilities-vscode.desktop
 
-[Added Associations]
+[Default Applications]
+text/x-log=codium.desktop;
 text/html=librewolf.desktop;
 text/x-csrc=leafpad.desktop;
+text/x-python=codium.desktop;
+text/x-python3=codium.desktop;
+inode/directory=thunar.desktop;
+application/json=codium.desktop;
 x-www-browser=librewolf.desktop;
 application/xml=librewolf.desktop;
-text/x-log=utilities-vscode.desktop;
-application/x-directory=Thunar.desktop;
-text/x-python=utilities-vscode.desktop;
-application/xhtml+xml=librewolf.desktop;
-text/x-python3=utilities-vscode.desktop;
+x-scheme-handler/trash=thunar.desktop;
+application/x-directory=thunar.desktop;
 x-scheme-handler/http=librewolf.desktop;
+application/octet-stream=codium.desktop;
+application/xhtml+xml=librewolf.desktop;
 x-scheme-handler/https=librewolf.desktop;
 x-scheme-handler/about=librewolf.desktop;
+text/plain=leafpad.desktop;codium.desktop;
 x-scheme-handler/chrome=librewolf.desktop;
-application/json=utilities-vscode.desktop;
 x-scheme-handler/unknown=librewolf.desktop;
-inode/directory=thunar.desktop;Thunar.desktop;
 application/pdf=chromium.desktop;mupdf.desktop;
-image/png=utilities-ristretto.desktop;feh.desktop;
-application/octet-stream=utilities-vscode.desktop;
-image/jpeg=utilities-ristretto.desktop;feh.desktop;
-text/plain=leafpad.desktop;utilities-vscode.desktop;
-x-scheme-handler/trash=thunar.desktop;Thunar.desktop;
+image/png=swayimg.desktop;org.xfce.ristretto.desktop;
+image/jpeg=swayimg.desktop;org.xfce.ristretto.desktop;
+application/x-shellscript=codium.desktop;leafpad.desktop;
 application/x-extension-htm=librewolf.desktop;chromium.desktop;
-application/x-extension-xht=librewolf.desktop;chromium.desktop;
 application/x-extension-html=librewolf.desktop;chromium.desktop;
 application/x-extension-shtml=librewolf.desktop;chromium.desktop;
+application/x-extension-xht=librewolf.desktop;chromium.desktop;
 application/x-extension-xhtml=librewolf.desktop;chromium.desktop;
-application/x-shellscript=utilities-vscode.desktop;leafpad.desktop;

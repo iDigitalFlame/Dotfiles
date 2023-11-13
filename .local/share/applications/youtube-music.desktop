@@ -1,6 +1,5 @@
-#!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +15,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Application Entry
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,13 +34,16 @@
 #
 
 [Desktop Entry]
-Type            = Application
-Exec            = /usr/bin/gh web qtws /usr/share/qtws-apps/youtube-music/youtube-music.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"
-Name            = Youtube Music (Firewall)
+Name            = Youtube Music 
+Exec            = /usr/bin/sg firewall-web -c 'qtws /usr/share/qtws-apps/youtube-music/youtube-music.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"'
 Icon            = /usr/share/pixmaps/youtube-music-desktop.png
+Type            = Application
 Comment         = YouTube Music Standalone Player
-Keywords        = Network;AudioVideo;Player;
+MimeType        =
 Terminal        = false
+Keywords        = Network;AudioVideo;Player;
 Categories      = Network;AudioVideo;Player;
-GenericName     = YouTube Music
-StartupNotify   = true
+GenericName     = Music Player
+StartupNotify   = false
+StartupWMClass  = youtubemusic
+X-MultipleArgs  = false

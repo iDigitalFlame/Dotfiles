@@ -1,0 +1,130 @@
+/*
+    ################################
+    ### iDigitalFlame  2016-2024 ###
+    #                              #
+    #            -/`               #
+    #            -yy-   :/`        #
+    #         ./-shho`:so`         #
+    #    .:- /syhhhh//hhs` `-`     #
+    #   :ys-:shhhhhhshhhh.:o- `    #
+    #   /yhsoshhhhhhhhhhhyho`:/.   #
+    #   `:yhyshhhhhhhhhhhhhh+hd:   #
+    #     :yssyhhhhhyhhhhhhhhdd:   #
+    #    .:.oyshhhyyyhhhhhhddd:    #
+    #    :o+hhhhhyssyhhdddmmd-     #
+    #     .+yhhhhyssshdmmddo.      #
+    #       `///yyysshd++`         #
+    #                              #
+    ########## SPACEPORT ###########
+    ## Rofi Basic Menu Configuration
+
+    Copyright (C) 2016 - 2024 iDigitalFlame
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https: //www.gnu.org/licenses/>.
+*/
+
+configuration {
+    timeout {
+        delay:          5;
+        action:         "kb-cancel";
+    }
+
+    cycle:              false;
+    location:           2;
+}
+
+* {
+    text-color:         rgba(255, 255, 255, 1);
+    background-color:   rgba(0, 0, 0, 0);
+}
+
+entry {
+    padding:            8px 12px 8px 12px;
+}
+
+prompt {
+    enabled:            false;
+}
+
+window {
+    border:             0;
+    margin:             0;
+    padding:            0;
+    fullscreen:         true;
+    background-color:   rgba(10, 0, 10, 0.6);
+}
+
+mainbox {
+    margin:             20% 30% 35% 30%;
+    border:              0;
+    padding:            0;
+    children:           [inputbar, listview];
+    border-radius:      0;
+}
+
+listview {
+    border:             0;
+    padding:            5px;
+    columns:            1;
+    spacing:            0;
+    children:           [element];
+    scrollbar:          false;
+}
+
+inputbar {
+    border:             0 0 1px 0;
+    enabled:            true;
+    padding:            3px 3px 3px 3px;
+    children:           [entry];
+    text-color:         rgba(255, 255, 255, 1);
+    border-color:       rgba(255, 255, 255, 0.65);
+    border-radius:      10px;
+    background-color:   rgba(0, 51, 124, 1);
+}
+
+scrollbar {
+    enabled:            false;
+    handle-width:       0;
+}
+
+element {
+    border:             0;
+    padding:            12px;
+    children:           [element-text];
+    text-color:         rgba(255, 255, 255, 1);
+}
+element selected {
+    text-color:         rgba(0, 0, 0, 1);
+    border-color:       rgba(0, 0, 0, 0);
+    border-radius:      10px;
+    background-color:   rgba(255, 255, 255, 1);
+}
+
+element-text {
+    text-color:         rgba(255, 255, 255, 1);
+    vertical-align:     0.5;
+}
+element-text selected {
+    text-color:         rgba(0, 0, 0, 1);
+}
+
+textbox {
+    font:               "Cascadia Code Bold 11";
+    padding:            20px;
+    text-color:         rgba(249, 76, 16, 1);
+}
+
+error-message {
+    margin:             20% 30% 35% 30%;
+}

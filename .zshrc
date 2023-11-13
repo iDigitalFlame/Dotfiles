@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +16,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## ZSH Configuration
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -56,7 +55,7 @@ export SSH_AUTH_SOCK="/run/user/${UID}/keyring/ssh"
 
 export PATH=$PATH:${GOPATH}/bin
 
-export XDG_DESKTOP_DIR="${HOME}"
+export XDG_DESKTOP_DIR="$HOME"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_RUNTIME_DIR="/run/user/${UID}"
@@ -74,7 +73,7 @@ export ERRFILE="/dev/null"
 export LESSHISTFILE="/dev/null"
 export ZDOTDIR="${HOME}/.config/zsh"
 export LESSKEY="${HOME}/.config/lesskey"
-export SCREENRC="${HOME}/screen/screenrc"
+export SCREENRC="${HOME}/.screen/screenrc"
 export HISTFILE="${HOME}/.config/zsh/history"
 export BAT_CONFIG_PATH="${HOME}/.config/bat/config"
 export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
@@ -191,13 +190,29 @@ go1.20() {
     sg firewall-web -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
 }
 
+firewall_open() {
+    cat<<EOF | sudo -i --
+nft add chain inet filter input '{ policy accept; }'
+nft add chain inet filter output '{ policy accept; }'
+EOF
+}
+firewall_close() {
+    cat<<EOF | sudo -i --
+nft flush table ip nat
+nft flush table inet filter
+nft delete table ip nat
+nft delete table inet filter
+nft -f /etc/nftables.conf
+EOF
+}
+
 # Firewall Aliases
 alias nc="/usr/bin/gh all /usr/bin/nc"
 alias yay="/usr/bin/gh web /usr/bin/yay"
 alias ssh="/usr/bin/gh ssh /usr/bin/ssh"
 alias scp="/usr/bin/gh ssh /usr/bin/scp"
 alias git="/usr/bin/gh web /usr/bin/git"
-alias pip="/usr/bin/gh  web /usr/bin/pip"
+alias pip="/usr/bin/gh web /usr/bin/pip"
 alias nmap="/usr/bin/gh all /usr/bin/nmap"
 alias curl="/usr/bin/gh web /usr/bin/curl"
 alias ping="/usr/bin/gh icmp /usr/bin/ping"
@@ -206,11 +221,11 @@ alias pacman="/usr/bin/gh web /usr/bin/pacman"
 alias vnc="/usr/bin/gh ctl /usr/bin/vncviewer"
 alias wython="/usr/bin/gh web /usr/bin/python3"
 alias go="nocorrect /usr/bin/gh web /usr/bin/go"
-alias gpg="gpg --homedir ${HOME}/.local/share/gnupg"
-alias gpg2="gpg2 --homedir ${HOME}/.local/share/gnupg"
 alias quote="/usr/bin/gh web ${HOME}/.local/bin/motivate -n"
 alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp"
+alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
 alias vncviewer="nocorrect /usr/bin/gh ctl /usr/bin/vncviewer"
+alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
 alias wgo="nocorrect env GOOS=windows /usr/bin/gh web /usr/bin/go"
 alias wget="/usr/bin/gh web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
 alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
@@ -219,19 +234,10 @@ alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:191
 alias p="/usr/bin/python3"
 alias python="/usr/bin/python3"
 
-# Lock Aliases
-alias lock0="lockctl -ft -1"
-alias lock3="lockctl -ft 30"
-alias lock6="lockctl -ft 60"
-alias lock9="lockctl -ft 90"
-alias lock12="lockctl -ft 120"
-alias lock10="lockctl -ft 600"
-
 # Power Aliases
 alias bright="brightnessctl"
-alias nohib="lockerctl -z true"
-alias sus="sudo systemctl suspend"
-alias hib="sudo systemctl hibernate"
+alias sus="sudo /usr/bin/systemctl suspend"
+alias hib="sudo /usr/bin/systemctl hibernate"
 alias automon="/usr/lib/smd/libexec/smd-auto-display auto"
 
 # Locker Aliases
@@ -245,7 +251,6 @@ alias chill="lockerctl -kz false -kb false -kl false -ks false -kd false"
 alias power0="cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power"
 alias power1="cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
 alias power2="cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power"
-alias power3="cpuctl -x 1.9Ghz -m 400Mhz -t 0 -tx 75 -tm 10 -g performance -p balance_performance"
 alias power3="cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p balance_performance"
 alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance"
 alias power5="cpuctl -x 4.0Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
@@ -263,10 +268,9 @@ alias zsd="/usr/bin/ls -vpFNlh --group-directories-first --color=auto"
 alias zsa="/usr/bin/ls -vpFNlA --group-directories-first --color=auto"
 
 # Screenshot Aliases
-alias sch="${HOME}/.local/bin/i3/shot"
-alias sel="${HOME}/.local/bin/i3/clip"
-alias ssc="${HOME}/.local/bin/i3/shot-copy"
-alias selc="${HOME}/.local/bin/i3/clip-copy"
+alias sel="${HOME}/.local/bin/sway/clip"
+alias ssc="/usr/bin/grimshot --notify copy output"
+alias selc="/usr/bin/grimshot --notify copy areay"
 
 # Go Aliases
 alias gv="/usr/bin/gh web go vet ./...'"
@@ -278,30 +282,35 @@ alias gov="/usr/bin/gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; 
 
 # Utility Aliases
 alias xx="exit"
-alias rm="rm -I"
 alias cls="clear"
-alias less="less -iR"
+alias powershell="pwsh"
 alias sat="/usr/bin/cat"
 alias pat="/usr/bin/bat"
-alias powershell="pwsh"
+alias rm="/usr/bin/rm -I"
 alias jq="/usr/bin/jq -C"
 alias hydra="nocorrect hydra"
-alias vsc="/usr/bin/vscodium"
-alias code="/usr/bin/vscodium"
+alias less="/usr/bin/less -iR"
 alias cat="/usr/bin/bat --paging=never"
 alias diff="/usr/bin/diff --color=auto"
-alias weather="gh web curl 'wttr.in/?0'"
+alias clip="/usr/bin/wl-copy --trim-newline"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
-alias clip="/usr/bin/xclip -selection clipboard"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias pmov="python3 ${HOME}/Projects/Scripts/Python/move.py"
-alias nts="python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
-alias en="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
-alias dirdiff="python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
-alias note="/usr/bin/gh web python3 ${HOME}/.local/bin/i3/sticky -"
-# alias badge="sudo /usr/bin/python3 $HOME/.local/apps/badge/led-badge-11x44.py"
-alias discord-update="sg firewall-web -c 'env BD_SKIP_UPDATECHECK=1 /opt/betterdiscord-installer-bin/betterdiscord-installer'"
+alias pip_install="/usr/bin/gh web env PIP_USER=yes /usr/bin/pip"
+
+# Script Aliases
+alias pmov="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/move.py"
+alias pfx2pem="/usr/bin/dash ${HOME}/Projects/Scripts/Shell/pfx2pem.sh"
+alias nts="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
+alias dirdiff="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
+
+# Application Aliases
+alias vsc="/usr/bin/vscodium"
+alias code="/usr/bin/vscodium"
+
+# Macro Aliases
+alias weather="/usr/bin/gh web curl 'wttr.in/?0'"
+alias discord-update="sg firewall-all -c \"${HOME}/.local/apps/vencord_installer --install --install-openasar --location ${HOME}/.dvm/Discord\""
 alias user-agents="/usr/bin/gh web curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
 
 source "${HOME}/.local/lib/zshrc.sh"

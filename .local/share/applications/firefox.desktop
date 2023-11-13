@@ -1,6 +1,5 @@
-#!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2023 ###
+### iDigitalFlame  2016-2024 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -16,10 +15,9 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-################################
 ## Application Entry
 #
-# Copyright (C) 2016 - 2023 iDigitalFlame
+# Copyright (C) 2016 - 2024 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,16 +34,16 @@
 #
 
 [Desktop Entry]
-Name            = Firefox (Firewall)
+Name            = Firefox 
 Exec            = /home/dij/.local/bin/firefox %u
 Icon            = firefox
 Type            = Application
 Comment         = Browse the Web
-Terminal        = false
-Keywords        = web;browser;internet;
 MimeType        = text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;application/x-xpinstall;application/pdf;application/json;
+Terminal        = false
+Keywords        = web;browser;internet;firefox;
 Categories      = Network;WebBrowser;
 GenericName     = Web Browser
-StartupNotify   = true
+StartupNotify   = false
+StartupWMClass  = firefox
 X-MultipleArgs  = false
-StartupWMClass  = Firefox
