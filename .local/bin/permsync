@@ -56,7 +56,7 @@ chmod 2750 "${HOME}"/.rustup/toolchains/*/bin/*
 chmod 2750 "${HOME}"/.rustup/toolchains/*/libexec/*
 chmod 2750 "${HOME}"/.vscode-oss/extensions/rust-lang.rust-analyzer-*/server/rust-analyzer
 chmod 2750 "${HOME}"/.vscode-oss/extensions/*/bin/*
-chmod 2750 "${HOME}"/.local/lib/python/bin/*
+chmod 2750 "${HOME}"/.local/lib/python/bin/* 2> /dev/null
 chmod 2750 "${HOME}"/.local/lib/go/bin/*
 chmod 2750 "${HOME}"/Documents/Development/GoArchive/go*/bin/*
 chmod 2750 "${HOME}"/Documents/Development/GoArchive/go*/pkg/tool/linux_amd64/*
