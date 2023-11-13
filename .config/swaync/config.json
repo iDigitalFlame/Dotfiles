@@ -82,7 +82,7 @@
                 },
                 {
                     "label": "",
-                    "command": "bluectl -t; swaync-client -cp"
+                    "command": "swaync-client -cp; bluectl -t"
                 },
                 {
                     "label": "",

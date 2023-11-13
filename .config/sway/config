@@ -120,7 +120,6 @@ for_window {
     [app_id="Thunar"]                   opacity set 0.80, border none
     [app_id="codium"]                   opacity set 0.95, border none
     [app_id="discord"]                  opacity set 0.85, border none
-    [app_id="^swayimg_*"]               blur disable, border none
     [app_id="codium-url-handler"]       opacity set 0.95, border none
     [app_id="org.telegram.desktop"]     opacity set 0.85, border none
     [app_id="org.keepassxc.KeePassXC"]  opacity set 0.85, border none
@@ -137,6 +136,7 @@ for_window {
     [app_id="xfreerdp"]     border normal, floating disable
     [app_id="chromium"]     border none, opacity set 1
     [app_id="LibreWolf"]    border none, opacity set 1
+    [app_id="^swayimg_*"]   border none, blur disable
 }
 
 # Telgram Specifiec Fixes
