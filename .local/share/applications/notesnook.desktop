@@ -33,9 +33,11 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+# TODO(dij): Can't use Wayland yet, still crashes.
+
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/notesnook --no-sandbox %U"
+Exec            = /usr/bin/sg firewall-web -c "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U"
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
