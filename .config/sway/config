@@ -135,6 +135,7 @@ for_window {
     [app_id="LSTSRDP"]      border normal, floating disable, layout tabbed
     [app_id="xfreerdp"]     border normal, floating disable
     [app_id="chromium"]     border none, opacity set 1
+    [class="Notesnook"]     border none, floating disabled
     [app_id="LibreWolf"]    border none, opacity set 1
     [app_id="^swayimg_*"]   border none, blur disable
 }
