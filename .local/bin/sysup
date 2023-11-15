@@ -127,10 +127,7 @@ printf "\x1b[96m\x1b[1mChecking for Discord updates..\x1b[0m\n"
 if sg firewall-web -c 'dvm update stable'; then
     rm -f "${HOME}/.local/apps/vencord_installer"
     printf "\x1b[93m\x1b[1mUpdating Vencord..\x1b[0m\n"
-    # NOTE(dij): Since Vencord's installer uses Go, it uses the internal Go resolver
-    #            and testing havsn't show the ability to disable it unless we build
-    #            it directly.
-    cat<<EOF | sg firewall-all
+    cat<<EOF | sg firewall-web
         curl -sL 'https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli-linux' -o "${HOME}/.local/apps/vencord_installer"
         chmod 2750 "${HOME}/.local/apps/vencord_installer"
         "${HOME}/.local/apps/vencord_installer" --install --install-openasar --location "${HOME}/.dvm/Discord"
