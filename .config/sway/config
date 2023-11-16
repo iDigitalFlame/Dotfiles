@@ -86,11 +86,11 @@ workspace_auto_back_and_forth   no
 
 # Theme
 font                            pango:"Cascadia Mono" 8
-client.urgent                   #FFB86CA0 #FFB86CA0 #000000FF #000000A0 #FFB86CFF
-client.focused                  #7D0BABA0 #7D0BABA0 #FFFFFFFF #000000A0 #7D0BABFF
-client.unfocused                #000000A0 #0A000AA0 #FFFFFFFF #000000A0 #0A000AFF
-client.focused_inactive         #024363AF #024363A0 #FFFFFFFF #000000A0 #0A000AFF
-client.focused_tab_title        #024363AF #024363A0 #FFFFFFFF
+client.urgent                   #F94C10F0 #F94C10FF #FFFFFFFF #000000A0 #F94C10FF
+client.focused                  #7D0BABA0 #7D0BABA0 #FFFFFFFF #000000A0 #7D0BABA0
+client.unfocused                #3F3F3F00 #3F3F3FF0 #FFFFFFFF #000000A0 #3F3F3FF0
+client.focused_inactive         #024363A0 #024363A0 #FFFFFFFF #000000A0 #024363A0
+client.focused_tab_title        #024363A0 #024363A0 #FFFFFFFF
 
 seat * {
     hide_cursor                 0
