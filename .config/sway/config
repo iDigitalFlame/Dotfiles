@@ -135,7 +135,6 @@ for_window {
     [app_id="LSTSRDP"]      border normal, floating disable, layout tabbed
     [app_id="xfreerdp"]     border normal, floating disable
     [app_id="chromium"]     border none, opacity set 1
-    [class="Notesnook"]     border none, floating disabled
     [app_id="LibreWolf"]    border none, opacity set 1
     [app_id="^swayimg_*"]   border none, blur disable
 }
@@ -166,6 +165,9 @@ for_window {
     [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"]   floating enable, border normal, resize set 400px 400px
 }
 
+# Notesnook Fixes
+for_window [class="Notesnook"] border none, floating disabled, opacity set 1
+
 # Application to  Workspace Assignments
 assign {
     [app_id="TSRDP"]                    number "0:R"
@@ -178,7 +180,7 @@ assign {
 
 # Workspace to Output Assignments
 workspace {
-    1  output eDP-1
+    1  output $DOCK1
     9  output $DOCK2
     10 output $DOCK2
 }
