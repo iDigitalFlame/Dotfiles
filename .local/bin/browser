@@ -38,15 +38,15 @@ args="$*"
 
 if [ "$FIREFOX" = "1" ] || [ "$(basename "$0")" = "firefox" ] ; then
     if [ -z "$args" ]; then
-        sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER}"
+        sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER}"
     else
-        sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER} \"$args\""
+        sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER} \"$args\""
     fi
     exit 0
 fi
 
 if [ -z "$args" ]; then
-    sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER}"
+    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER}"
 else
-    sg firewall-web -c "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER} \"$args\""
+    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER} \"$args\""
 fi

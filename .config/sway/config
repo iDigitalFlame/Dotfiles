@@ -128,22 +128,25 @@ for_window {
 # Generic Application Rules
 for_window {
     [app_id="vlc"]          border normal, floating enable
-    [app_id="XRDP"]         border normal, floating enable
     [app_id="kitty"]        border pixel 1
-    [app_id="TSRDP"]        border normal, floating disable, layout tabbed
+    [app_if="wlfreerdp"]    border pixel 1, floating disable
     [app_id="Firefox"]      border none, opacity set 1
-    [app_id="LSTSRDP"]      border normal, floating disable, layout tabbed
-    [app_id="xfreerdp"]     border normal, floating disable
     [app_id="chromium"]     border none, opacity set 1
     [app_id="LibreWolf"]    border none, opacity set 1
     [app_id="^swayimg_*"]   border none, blur disable
 }
 
+# XWayland Rules
+for_window {
+    [class="xfreerdp"]  border pixel 1, floating disable
+    [class="Notesnook"] border none, floating disabled, opacity set 1
+}
+
 # Telgram Specifiec Fixes
 for_window {
-    [title="(null)"]                                        floading disable, border none
+    [title="(null)"]                                        border none, floading disable
     [app_id="org.telegram.desktop"]                         border none
-    [app_id="org.telegram.desktop" floating]                floating disable, border none
+    [app_id="org.telegram.desktop" floating]                border none, floating disable
     [app_id="org.telegram.desktop" title="Media viewer"]    fullscreen enable
 }
 
@@ -159,21 +162,16 @@ for_window {
 
 # Browser Extension and Popup Rules
 for_window {
-    [app_id="Firefox" title="Picture-in-Picture"]                           floating enable, sticky enable, resize set 500px 450px
-    [app_id="LibreWolf" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set 500px 450px
+    [app_id="Firefox" title="Picture-in-Picture"]                           floating enable, sticky enable, resize set 500px 450px, border pixel 1
+    [app_id="LibreWolf" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set 500px 450px, border pixel 1
     [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]       floating enable, border normal, resize set 400px 600px
     [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"]   floating enable, border normal, resize set 400px 400px
 }
 
-# Notesnook Fixes
-for_window [class="Notesnook"] border none, floating disabled, opacity set 1
-
-# Application to  Workspace Assignments
+# Application to Workspace Assignments
 assign {
-    [app_id="TSRDP"]                    number "0:R"
     [app_id="Slack"]                    number 9
     [app_id="discord"]                  number 9
-    [app_id="LSTSRDP"]                  number "0:R"
     [app_id="LibreWolf"]                number 1
     [app_id="org.telegram.desktop"]     number 10
 }
@@ -318,7 +316,7 @@ bindsym {
     $KEY_ALT+8              workspace 8
     $KEY_ALT+9              workspace 9
     $KEY_ALT+0              workspace 10
-    $KEY_ALT+Delete         workspace 0:R
+    $KEY_ALT+Delete         workspace 0
 }
 
 # Workspace Next / Prev Bindings
@@ -347,7 +345,7 @@ bindsym {
     $KEY_CTL+8              move container to workspace 8
     $KEY_CTL+9              move container to workspace 9
     $KEY_CTL+0              move container to workspace 10
-    $KEY_CTL+Delete         move container to workspace 0:R
+    $KEY_CTL+Delete         move container to workspace 0
 }
 
 # Workspace Window Switching Bindings
@@ -362,7 +360,7 @@ bindsym {
     $KEY_WIN+8              move container to workspace 8,      workspace 8
     $KEY_WIN+9              move container to workspace 9,      workspace 9
     $KEY_WIN+0              move container to workspace 10,     workspace 10
-    $KEY_WIN+Delete         move container to workspace 0:R,    workspace 0:R
+    $KEY_WIN+Delete         move container to workspace 0,      workspace 0
 }
 
 # Workspace Window Next / Prev Bindings

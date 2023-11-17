@@ -218,17 +218,17 @@ alias curl="/usr/bin/gh web /usr/bin/curl"
 alias ping="/usr/bin/gh icmp /usr/bin/ping"
 alias rsync="/usr/bin/gh ssh /usr/bin/rsync"
 alias pacman="/usr/bin/gh web /usr/bin/pacman"
-alias vnc="/usr/bin/gh ctl /usr/bin/vncviewer"
+alias vnc="/usr/bin/gh ctl /usr/bin/gvncviewer"
 alias wython="/usr/bin/gh web /usr/bin/python3"
 alias go="nocorrect /usr/bin/gh web /usr/bin/go"
 alias quote="/usr/bin/gh web ${HOME}/.local/bin/motivate -n"
-alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp"
+alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/wlfreerdp"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
 alias vncviewer="nocorrect /usr/bin/gh ctl /usr/bin/vncviewer"
 alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
 alias wgo="nocorrect env GOOS=windows /usr/bin/gh web /usr/bin/go"
 alias wget="/usr/bin/gh web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
-alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/xfreerdp /wm-class:TSRDP /size:1915x1035 +clipboard"
+alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1920x1035"
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -238,7 +238,6 @@ alias python="/usr/bin/python3"
 alias bright="brightnessctl"
 alias sus="sudo /usr/bin/systemctl suspend"
 alias hib="sudo /usr/bin/systemctl hibernate"
-alias automon="/usr/lib/smd/libexec/smd-auto-display auto"
 
 # Locker Aliases
 alias coffee="lockerctl -z 600 -kb 300 -kl 300 -s 300"
@@ -310,7 +309,7 @@ alias code="/usr/bin/vscodium"
 
 # Macro Aliases
 alias weather="/usr/bin/gh web curl 'wttr.in/?0'"
-alias discord-update="sg firewall-all -c \"${HOME}/.local/apps/vencord_installer --install --install-openasar --location ${HOME}/.dvm/Discord\""
+alias discord-update="sg firewall-web \"${HOME}/.local/apps/vencord_installer --install --install-openasar --location ${HOME}/.dvm/Discord\""
 alias user-agents="/usr/bin/gh web curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
 
 source "${HOME}/.local/lib/zshrc.sh"

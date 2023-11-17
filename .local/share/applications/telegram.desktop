@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Telegram 
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/telegram-desktop -- %u"
+Exec            = /usr/bin/sg firewall-web "/usr/bin/telegram-desktop -- %u"
 Icon            = telegram
 Type            = Application
 Comment         = Telegram Messager App

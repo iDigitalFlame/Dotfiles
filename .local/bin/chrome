@@ -37,15 +37,15 @@
 args="$*"
 
 if [ -z "$args" ]; then
-    sg firewall-web -c "env TZ=UTC /usr/bin/chromium"
+    sg firewall-web "env TZ=UTC /usr/bin/chromium"
     exit 0
 fi
 
 if [ "$args" = "--all" ]; then
     rm -rf "/tmp/.chrome_temp_profile"
     mkdir -p "/tmp/.chrome_temp_profile"
-    sg firewall-web -c "env TZ=UTC /usr/bin/chromium --new-window --user-data-dir=/tmp/.chrome_temp_profile"
+    sg firewall-web "env TZ=UTC /usr/bin/chromium --new-window --user-data-dir=/tmp/.chrome_temp_profile"
     exit 0
 fi
 
-sg firewall-web -c "env TZ=UTC /usr/bin/chromium \"$args\""
+sg firewall-web "env TZ=UTC /usr/bin/chromium \"$args\""

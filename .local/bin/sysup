@@ -98,10 +98,10 @@ cat<<EOF
 EOF
 )
 
-sg firewall-web -c "/usr/bin/yay -Pw"
+sg firewall-web "/usr/bin/yay -Pw"
 
 printf "\x1b[96m\x1b[1mStarting pacman..\x1b[0m\n"
-if ! sudo dash -c 'mount -o rw,remount /; sg firewall-web -c "env SYSBATCH=1 /usr/bin/sysupdate"'; then
+if ! sudo dash -c 'mount -o rw,remount /; sg firewall-web "env SYSBATCH=1 /usr/bin/sysupdate"'; then
     exit 1;
 fi
 
@@ -118,13 +118,13 @@ EOF
 rm -f "/tmp/.hosts_file"
 
 printf "\x1b[96m\x1b[1mStarting yay..\x1b[0m\n"
-if ! sg firewall-web -c "dash -c 'env SYSBATCH=1 /usr/bin/yay -Syua --answerclean N'"; then
+if ! sg firewall-web "dash -c 'env SYSBATCH=1 /usr/bin/yay -Syua --answerclean N'"; then
     exit 1;
 fi
 
 printf "\x1b[96m\x1b[1mChecking for Discord updates..\x1b[0m\n"
 
-if sg firewall-web -c 'dvm update stable'; then
+if sg firewall-web 'dvm update stable'; then
     rm -f "${HOME}/.local/apps/vencord_installer"
     printf "\x1b[93m\x1b[1mUpdating Vencord..\x1b[0m\n"
     cat<<EOF | sg firewall-web

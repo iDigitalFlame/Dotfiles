@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = TickTick 
-Exec            = /usr/bin/sg firewall-web -c "ticktick %U"
+Exec            = /usr/bin/sg firewall-web "ticktick %U"
 Icon            = ticktick
 Type            = Application
 Comment         = TickTick is a powerful to-do and task management app with seamless cloud synchronization across all your devices.

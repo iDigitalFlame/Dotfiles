@@ -97,7 +97,8 @@
         "bluetooth": {
             "disable": [],
             "enable": [
-                "/usr/bin/blueman-manager"
+                "/usr/bin/blueman-manager",
+                "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
             ]
         },
         "display": [],

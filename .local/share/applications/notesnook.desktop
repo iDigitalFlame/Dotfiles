@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/sg firewall-web -c "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U"
+Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U"
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
