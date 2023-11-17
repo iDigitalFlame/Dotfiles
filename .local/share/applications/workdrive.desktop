@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Zoho WorkDrive 
-Exec            = /usr/bin/sg firewall-web "env QT_QPA_PLATFORM=xcb $HOME/.local/apps/zohoworkdrive/bin/zohoworkdrive %U"
+Exec            = /usr/bin/sg firewall-web "${HOME}/.local/apps/zohoworkdrive/zohoworkdrive %U"
 Icon            = screencloud
 Type            = Application
 Comment         = Store and Sync files.

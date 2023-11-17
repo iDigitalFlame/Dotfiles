@@ -129,17 +129,11 @@ for_window {
 for_window {
     [app_id="vlc"]          border normal, floating enable
     [app_id="kitty"]        border pixel 1
-    [app_if="wlfreerdp"]    border pixel 1, floating disable
+    [app_id="wlfreerdp"]    border pixel 1, floating disable
     [app_id="Firefox"]      border none, opacity set 1
     [app_id="chromium"]     border none, opacity set 1
     [app_id="LibreWolf"]    border none, opacity set 1
     [app_id="^swayimg_*"]   border none, blur disable
-}
-
-# XWayland Rules
-for_window {
-    [class="xfreerdp"]  border pixel 1, floating disable
-    [class="Notesnook"] border none, floating disabled, opacity set 1
 }
 
 # Telgram Specifiec Fixes
@@ -153,11 +147,20 @@ for_window {
 # Dialog Rules
 for_window {
     [window_type="dialog"]                                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?:Open|Save) "]                                           floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^File Upload"]                                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    # This one causes problems
+    # [title="^(?:Open|Save) "]                                           floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [app_id="Discord" title=""]                                         floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [window_role="(pop-up|bubble|dialog)"]                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?:Open|Save) .* (?:File|Folder|As)$"]                     floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^(?:Open|Save|Upload) .* (?:File|Folder|As)$"]              floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [title="^(?:Choose|Open|Save) (?:Workspace|File|Files|Folder|As)"]  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+}
+
+# XWayland Rules
+for_window {
+    [class="xfreerdp"]      border pixel 1, floating disable
+    [class="Notesnook"]     border none, floating disabled, opacity set 1
+    [class="__main__\.py"]  border none, floating disable, opacity set 1
 }
 
 # Browser Extension and Popup Rules
