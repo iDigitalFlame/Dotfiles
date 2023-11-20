@@ -295,7 +295,7 @@ alias clip="/usr/bin/wl-copy --trim-newline"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias pip_install="/usr/bin/gh web env PIP_USER=yes /usr/bin/pip"
+alias pip_install="/usr/bin/gh web env PIP_USER=yes /usr/bin/pip install --break-system-packages"
 
 # Script Aliases
 alias pmov="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/move.py"

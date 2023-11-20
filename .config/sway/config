@@ -148,12 +148,10 @@ for_window {
 for_window {
     [window_type="dialog"]                                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [title="^File Upload"]                                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    # This one causes problems
-    # [title="^(?:Open|Save) "]                                           floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [app_id="Discord" title=""]                                         floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [window_role="(pop-up|bubble|dialog)"]                              floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [title="^(?:Open|Save|Upload) .* (?:File|Folder|As)$"]              floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?:Choose|Open|Save) (?:Workspace|File|Files|Folder|As)"]  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^(?:Choose|Open|Save) (?:Workspace|File|Files|Folder|As)$"] floating enable, resize set 800px 600px, opacity set 0.8, border normal
 }
 
 # XWayland Rules
