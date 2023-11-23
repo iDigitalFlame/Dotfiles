@@ -7,6 +7,37 @@ Resources and configurations for additional programs, such as Polybar are also l
 
 Plays nicley with the System Management Daemon (SMD) <https://github.com/iDigitalFlame/spaceport>
 
+## Packages
+
+- bat
+- cowsay
+- dash
+- freerdp
+- gnome-keyring-query
+- grimshot
+- gtklock
+- kitty
+- lsd
+- noto-fonts-emoji
+- otf-cascadia-code
+- otf-fira-mono
+- otf-font-awesome-4
+- rofi-lbonn-wayland-git
+- swaybg
+- swayfs (or sway)
+- swayidle
+- swaync
+- thunar
+- ttf-firacode-nerd
+- ttf-hack-nerd
+- ttf-roboto
+- vscodium-bin
+- waybar
+- wl-clipboard
+- xdg-desktop-portal-wlr
+- xpad
+- yay
+
 ### Screenshots
 
 **Empty Workspace**

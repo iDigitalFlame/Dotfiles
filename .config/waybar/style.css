@@ -112,7 +112,7 @@ window#waybar.org\.telegram\.desktop widget>label {
     padding: 5px;
     font-size: 12px;
     border-radius: 10px;
-    background: rgba(10, 0, 10, 0.65);
+    background: rgba(10, 0, 10, 0.8);
     border: 2px solid rgb(172, 15, 235);
     font-family: 'Cascadia Code', FontAwesome
 }
@@ -201,10 +201,11 @@ window#waybar.org\.telegram\.desktop widget>label {
     background: #7D0BAB;
     border: 1px solid transparent
 }
+
+/*
 #workspaces button.current_output {}
-#workspaces button:not(.current_output) {
-    /*background: #353941*/
-}
+#workspaces button:not(.current_output) {}
+*/
 
 #battery {
     color: #FFF;

@@ -210,12 +210,8 @@
             "buttons": {
                 "actions": [
                     {
-                        "label": "",
-                        "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 1; swaync-client -cp"
-                    },
-                    {
                         "label": "",
-                        "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; swaync-client -cp"
+                        "command": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; swaync-client -cp"
                     },
                     {
                         "label": "",

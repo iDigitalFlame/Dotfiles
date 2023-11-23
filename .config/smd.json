@@ -85,7 +85,9 @@
         "freeze": {
             "enabled": true,
             "ignore": [
-                "kitty"
+                "kitty",
+                "xlfreerdp",
+                "wlfreerdp"
             ]
         },
         "startups": [
@@ -97,8 +99,7 @@
         "bluetooth": {
             "disable": [],
             "enable": [
-                "/usr/bin/blueman-manager",
-                "/usr/bin/gnome-keyring-daemon --start --components=secrets,ssh"
+                "/usr/bin/blueman-manager"
             ]
         },
         "display": [],
