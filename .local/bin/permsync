@@ -63,9 +63,9 @@ chmod 2750 "${HOME}"/Documents/Development/GoArchive/go*/pkg/tool/linux_amd64/*
 chmod 2750 "${HOME}/.dvm/Discord/chrome-sandbox"
 chmod 2750 "${HOME}/.dvm/Discord/chrome_crashpad_handler"
 chmod 2750 "${HOME}/.local/lib/go/gopls"
-chmod 2750 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrive"
-chmod 2750 "${HOME}/.local/apps/zohoworkdrive/bin/zohoworkdrived"
-chmod 2750 "${HOME}/.local/apps/zohoworkdrive/bin/QtWebEngineProcess"
+chmod 2750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrive"
+chmod 2750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrived"
+chmod 2750 "${HOME}/.local/apps/zohoworkdrive/QtWebEngineProcess"
 
 dash "${HOME}/.local/bin/dotsync"
 printf "\033[1;36mDone!\033[0m\n"
