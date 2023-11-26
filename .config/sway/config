@@ -297,14 +297,15 @@ bindsym {
 
 # Workspace Modification Bindings
 bindsym {
-    $KEY_WIN+D              layout  tabbed
-    $KEY_WIN+T              layout  tabbed
-    $KEY_WIN+P              sticky  disable
-    $KEY_WIN+A              layout  toggle split
-    $KEY_ALT+grave          exec    "${HOME}/.local/bin/sway/new"
-    $KEY_CTL+grave          exec    "${HOME}/.local/bin/sway/new window"
-    $KEY_WIN+grave          exec    "${HOME}/.local/bin/sway/new window"
-    $KEY_WIN+Shift+Return   move    workspace to output current
+    $KEY_WIN+D                  layout  tabbed
+    $KEY_WIN+T                  layout  tabbed
+    $KEY_WIN+P                  sticky  disable
+    $KEY_WIN+A                  layout  toggle split
+    $KEY_ALT+grave              exec    "${HOME}/.local/bin/sway/new"
+    $KEY_CTL+grave              exec    "${HOME}/.local/bin/sway/new window"
+    $KEY_WIN+grave              exec    "${HOME}/.local/bin/sway/new window"
+    $KEY_CTL+Shift+bracketleft  move    workspace to output left
+    $KEY_CTL+Shift+bracketright move    workspace to output right
 }
 
 # Workspace Switching Bindings
