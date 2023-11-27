@@ -147,12 +147,12 @@ for_window {
 
 # Dialog Rules
 for_window {
-    [window_type="dialog"]                                                      floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^File Upload"]                                                      floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [app_id="Discord" title=""]                                                 floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [window_role="(pop-up|bubble|dialog)"]                                      floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?:Open|Save|Upload) .* (?:File|Image|Folder|As)$"]                floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?:Choose|Open|Save) (?:Workspace|File|Image|Files|Folder|As)$"]   floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [window_type="dialog"]                                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^File Upload"]                                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [app_id="Discord" title=""]                                                             floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [window_role="(pop-up|bubble|dialog)"]                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]      floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"]   floating enable, resize set 800px 600px, opacity set 0.8, border normal
 }
 
 # XWayland Rules

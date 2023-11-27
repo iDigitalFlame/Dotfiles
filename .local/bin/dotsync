@@ -53,6 +53,8 @@ chmod 2640 "${DOTS}/dotfiles.code-workspace"
 
 relink "$DOTS" "${HOME}"
 
+rm -f "${HOME}/.config/cubocore/pins"
+rm -f "${HOME}/.config/cubocore/activities"
 rm -f "${HOME}/.local/bin/firefox" 2> /dev/null
 rm -f "${HOME}/.local/bin/librewolf" 2> /dev/null
 rm -f "${HOME}/.config/mimeapps.list" 2> /dev/null
@@ -62,6 +64,8 @@ rm -f "${HOME}/.local/share/mimeapps.list" 2> /dev/null
 rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f "${HOME}"/.local/share/applications/userapp*.desktop 2> /dev/null
 
+ln -sT "/dev/null" "${HOME}/.config/cubocore/pins"
+ln -sT "/dev/null" "${HOME}/.config/cubocore/activities"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/firefox"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/librewolf"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/x-www-browser"

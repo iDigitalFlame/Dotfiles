@@ -216,7 +216,7 @@
     border: none;
     box-shadow: none;
     transition: all 0.15s ease-in-out;
-    background: rgba(40, 42, 58, 0.9)
+    background: rgba(40, 42, 58, 0.6)
 }
 .notification {
     border: 1px solid #7D0BAB
