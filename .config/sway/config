@@ -158,6 +158,7 @@ for_window {
 # XWayland Rules
 for_window {
     [class="MuPDF"]         border pixel 1, floating enable
+    [shell="xwayland"]      title_format "[X] %title"
     [class="xfreerdp"]      border pixel 1, floating disable
     [class="Notesnook"]     border none, floating disabled, opacity set 1
     [class="__main__\.py"]  border none, floating disable, opacity set 1

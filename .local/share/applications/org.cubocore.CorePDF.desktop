@@ -15,8 +15,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## GTK Configuration
-# Theme: MoonlightSky
+## Application Entry
 #
 # Copyright (C) 2016 - 2024 iDigitalFlame
 #
@@ -34,23 +33,17 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-[Settings]
-gtk-xft-rgba                        = rgb
-gtk-font-name                       = Cantarell 10
-gtk-error-bell                      = 0
-gtk-theme-name                      = MoonlightSky
-gtk-menu-images                     = 1
-gtk-xft-hinting                     = 1
-gtk-xft-antialias                   = 1
-gtk-xft-hintstyle                   = hintfull
-gtk-button-images                   = 1
-gtk-toolbar-style                   = GTK_TOOLBAR_BOTH_HORIZ
-gtk-icon-theme-name                 = MoonlightSky
-gtk-cursor-theme-name               = MoonlightSky
-gtk-cursor-theme-size               = 0
-gtk-toolbar-icon-size               = GTK_ICON_SIZE_SMALL_TOOLBAR
-gtk-decoration-layout               = menu:
-gtk-enable-event-sounds             = 0
-gtk-enable-primary-paste            = false
-gtk-enable-input-feedback-sounds    = 0
-gtk-application-prefer-dark-theme   = true
+[Desktop Entry]
+Name            = CorePDF
+Exec            = /usr/bin/corepdf %f
+Icon            = org.cubocore.CorePDF
+Type            = Application
+Hidden          = true
+Comment         = A PDF viewer for C Suite.
+MimeType        = application/pdf;
+Terminal        = false
+Keywords        = pdf;reader;
+Categories      = Qt;Office;X-CSuite;
+GenericName     = Web Browser
+StartupNotify   = false
+X-MultipleArgs  = false
