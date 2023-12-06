@@ -36,10 +36,9 @@
 */
 
 window {
-    background-size: contain;
+    background-size: cover;
     background-repeat: repeat;
     background-position: center;
-    background-attachment: fixed;
     background-color: rgb(0, 0, 0)
 }
 
