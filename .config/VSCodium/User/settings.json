@@ -58,6 +58,12 @@
         "editor.formatOnPaste": false,
         "editor.formatOnSaveMode": "file"
     },
+    "black-formatter.args": [],
+    "black-formatter.importStrategy": "fromEnvironment",
+    "black-formatter.path": [
+        "/usr/bin/black"
+    ],
+    "black-formatter.showNotifications": "onWarning",
     "breadcrumbs.enabled": false,
     "cSpell.allowCompoundWords": true,
     "cSpell.enabled": true,
@@ -267,7 +273,7 @@
     "editor.dragAndDrop": false,
     "editor.dropIntoEditor.enabled": false,
     "editor.emptySelectionClipboard": true,
-    "editor.experimental.pasteActions.enabled": false,
+    "editor.experimental.asyncTokenization": true,
     "editor.find.addExtraSpaceOnTop": true,
     "editor.find.autoFindInSelection": "never",
     "editor.find.cursorMoveOnType": true,
@@ -321,6 +327,8 @@
     //            disables it, which is what we want.
     "editor.occurrencesHighlight": true,
     "editor.overviewRulerBorder": true,
+    "editor.pasteAs.enabled": true,
+    "editor.pasteAs.showPasteSelector": "never",
     "editor.quickSuggestions": {
         "comments": false,
         "other": true,
@@ -469,6 +477,26 @@
         "**/node_modules/*/**": true,
         "*.pyc": true
     },
+    "flake8.args": [
+        "--max-line-length=120",
+        "--ignore=E203,W503,E266,E402"
+    ],
+    "flake8.cwd": "${workspaceFolder}",
+    "flake8.ignorePatterns": [
+        "**/site-packages/**/*.py",
+        ".vscode/*.py"
+    ],
+    "flake8.importStrategy": "fromEnvironment",
+    "flake8.path": [
+        "/usr/bin/flake8"
+    ],
+    "flake8.severity": {
+        "E": "Error",
+        "F": "Error",
+        "I": "Information",
+        "W": "Warning"
+    },
+    "flake8.showNotifications": "onError",
     "git.autoRepositoryDetection": true,
     "git.autofetch": false,
     "git.autorefresh": false,
@@ -569,9 +597,6 @@
     "go.inlayHints.parameterNames": false,
     "go.inlayHints.rangeVariableTypes": false,
     "go.installDependenciesWhenBuilding": false,
-    "go.languageServerExperimentalFeatures": {
-        "diagnostics": false
-    },
     "go.languageServerFlags": [],
     "go.lintFlags": [],
     "go.lintOnSave": "package",
@@ -605,8 +630,6 @@
     "go.toolsManagement.checkForUpdates": "local",
     "go.toolsManagement.go": "/home/dij/.local/lib/go/go",
     "go.trace.server": "off",
-    "go.useCodeSnippetsOnFunctionSuggest": true,
-    "go.useCodeSnippetsOnFunctionSuggestWithoutType": false,
     "go.useLanguageServer": true,
     "go.vetFlags": [],
     "go.vetOnSave": "package",
@@ -631,6 +654,7 @@
             "gc_details": true,
             "generate": false,
             "regenerate_cgo": false,
+            "run_govulncheck": true,
             "test": true,
             "tidy": true,
             "upgrade_dependency": true,
@@ -650,6 +674,8 @@
             "composites": true,
             "copylocks": true,
             "deepequalerrors": true,
+            "directive": true,
+            "embed": true,
             "errorsas": true,
             "fieldalignment": true,
             "fillreturns": true,
@@ -674,14 +700,17 @@
             "stdmethods": true,
             "stringintconv": true,
             "structtag": true,
+            "stubmethods": true,
             "testinggoroutine": true,
             "tests": true,
+            "timeformat": true,
             "undeclaredname": true,
             "unmarshal": true,
             "unreachable": true,
             "unsafeptr": true,
             "unusedparams": true,
             "unusedresult": true,
+            "unusedvariable": true,
             "unusedwrite": true,
             "useany": true
         },
@@ -718,11 +747,19 @@
     "http.proxyAuthorization": null,
     "http.proxyStrictSSL": true,
     "isort.args": [],
+    "isort.check": true,
+    "isort.importStrategy": "fromEnvironment",
     "isort.path": [
         "~/.env/python",
         "-m",
         "isort"
     ],
+    "isort.serverEnabled": true,
+    "isort.severity": {
+        "E": "Hint",
+        "W": "Warning"
+    },
+    "isort.showNotifications": "onWarning",
     "jake.autoDetect": "off",
     "javascript.format.enable": true,
     "javascript.format.insertSpaceAfterCommaDelimiter": true,
@@ -841,61 +878,10 @@
         "--ignore=E203,W503,E266,E402"
     ],
     "python.formatting.autopep8Path": "black",
-    "python.formatting.provider": "black",
-    "python.formatting.yapfArgs": [],
-    "python.formatting.yapfPath": "yapf",
     "python.globalModuleInstallation": false,
     "python.languageServer": "Jedi",
-    "python.linting.banditEnabled": false,
-    "python.linting.enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=120",
-        "--ignore=E203,W503,E266,E402"
-    ],
-    "python.linting.flake8CategorySeverity.E": "Error",
-    "python.linting.flake8CategorySeverity.F": "Error",
-    "python.linting.flake8CategorySeverity.W": "Warning",
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "flake8",
-    "python.linting.ignorePatterns": [
-        ".vscode/*.py",
-        "**/site-packages/**/*.py"
-    ],
-    "python.linting.lintOnSave": true,
-    "python.linting.maxNumberOfProblems": 250,
-    "python.linting.mypyArgs": [
-        "--ignore-missing-imports",
-        "--follow-imports=silent"
-    ],
-    "python.linting.mypyCategorySeverity.error": "Error",
-    "python.linting.mypyCategorySeverity.note": "Information",
-    "python.linting.mypyEnabled": false,
-    "python.linting.mypyPath": "mypy",
-    "python.linting.prospectorArgs": [],
-    "python.linting.prospectorEnabled": false,
-    "python.linting.prospectorPath": "prospector",
-    "python.linting.pycodestyleArgs": [
-        "--max-line-length=120",
-        "--ignore=E121,E123,E126,E226,E24,E704,W503,W504,E203,E266,E402"
-    ],
-    "python.linting.pycodestyleEnabled": true,
-    "python.linting.pydocstyleArgs": [
-        "--max-line-length=120"
-    ],
-    "python.linting.pydocstyleEnabled": false,
-    "python.linting.pydocstylePath": "pydocstyle",
-    "python.linting.pylamaArgs": [],
-    "python.linting.pylamaEnabled": false,
-    "python.linting.pylamaPath": "pylama",
-    "python.linting.pylintArgs": [],
-    "python.linting.pylintCategorySeverity.convention": "Information",
-    "python.linting.pylintCategorySeverity.error": "Error",
-    "python.linting.pylintCategorySeverity.fatal": "Error",
-    "python.linting.pylintCategorySeverity.refactor": "Hint",
-    "python.linting.pylintCategorySeverity.warning": "Warning",
-    "python.linting.pylintEnabled": false,
-    "python.linting.pylintPath": "pylint",
     "python.logging.level": "off",
+    "python.missingPackage.severity": "Warning",
     "python.pythonPath": "python3",
     "python.terminal.activateEnvironment": false,
     "python.terminal.executeInFileDir": false,
@@ -926,7 +912,8 @@
     "rust-analyzer.hover.actions.run.enable": false,
     "rust-analyzer.imports.granularity.group": "module",
     "rust-analyzer.imports.group.enable": false,
-    "rust-analyzer.imports.prefer.no.std": true,
+    "rust-analyzer.imports.preferNoStd": true,
+    "rust-analyzer.imports.preferPrelude": false,
     "rust-analyzer.imports.prefix": "crate",
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "rust-analyzer.inlayHints.expressionAdjustmentHints.mode": "postfix",
@@ -948,13 +935,6 @@
     "search.quickOpen.includeSymbols": true,
     "search.smartCase": false,
     "search.useIgnoreFiles": true,
-    "settingsSync.ignoredSettings": [
-        "*"
-    ],
-    "settingsSync.ignoredExtensions": [
-        "*"
-    ],
-    "settingsSync.keybindingsPerPlatform": false,
     "telemetry.telemetryLevel": "off",
     "terminal.explorerKind": "integrated",
     "terminal.external.linuxExec": "term",
@@ -991,8 +971,9 @@
     },
     "terminal.integrated.rightClickBehavior": "default",
     "terminal.integrated.scrollback": 1000,
-    "terminal.integrated.shellIntegration.decorationIcon": "circle-outline",
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.integrated.shellIntegration.history": 500,
+    "terminal.integrated.shellIntegration.suggestEnabled": false,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": true,
     "todo-tree.filtering.excludeGlobs": [
@@ -1037,8 +1018,8 @@
     "typescript.npm": "",
     "typescript.referencesCodeLens.enabled": true,
     "typescript.surveys.enabled": false,
+    "typescript.tsserver.enableTracing": false,
     "typescript.tsserver.log": "off",
-    "typescript.tsserver.trace": "off",
     "update.mode": "none",
     "update.showReleaseNotes": false,
     "window.autoDetectHighContrast": false,
@@ -1071,10 +1052,10 @@
         "editorGroupHeader.tabsBorder": "#0A000A",
         "editorHint.foreground": "#77FCF5",
         "editorInfo.foreground": "#37FF8A",
+        "editorInlayHint.foreground": "#F67FF5",
         "editorLineNumber.activeForeground": "#34DEF9",
         "editorLineNumber.foreground": "#FFFFFF",
         "editorPane.background": "#0A000A",
-        "editorInlayHint.foreground": "#F67FF5",
         "editorRuler.foreground": "#7A7A7A5A",
         "editorSuggestWidget.background": "#0A000A",
         "editorSuggestWidget.selectedBackground": "#333742",
@@ -1181,11 +1162,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false,
-    "flake8.importStrategy": "fromEnvironment",
-    "flake8.args": [
-        "--max-line-length=120",
-        "--ignore=E203,W503,E266,E402"
-    ],
-    "black-formatter.importStrategy": "fromEnvironment"
+    "zenMode.silentNotifications": false
 }
