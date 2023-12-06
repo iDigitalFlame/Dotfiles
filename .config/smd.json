@@ -38,6 +38,7 @@
         "auto_change": 600,
         "directory": "${HOME}/Pictures/Backgrounds",
         "enabled": true,
+        "fit": false,
         "lockscreen": "${HOME}/.cache/smd/lockscreen.jpg"
     },
     "display": {

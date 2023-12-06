@@ -116,6 +116,7 @@ input type:touchpad {
 for_window {
     [app_id="xpad"]                     opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set 500 300
     [app_id="Slack"]                    opacity set 0.85, border none
+    [class="Thunar"]                    opacity set 0.80, border none
     [app_id="thunar"]                   opacity set 0.80, border none
     [app_id="Thunar"]                   opacity set 0.80, border none
     [app_id="codium"]                   opacity set 0.95, border none
@@ -157,11 +158,14 @@ for_window {
 
 # XWayland Rules
 for_window {
-    [class="MuPDF"]         border pixel 1, floating enable
-    [shell="xwayland"]      title_format "[X] %title"
-    [class="xfreerdp"]      border pixel 1, floating disable
-    [class="Notesnook"]     border none, floating disabled, opacity set 1
-    [class="__main__\.py"]  border none, floating disable, opacity set 1
+    [class="MuPDF"]                                         border pixel 1, floating enable
+    [shell="xwayland"]                                      title_format "[X] %title"
+    [class="xfreerdp"]                                      border pixel 1, floating disable
+    [class="Notesnook"]                                     border none, floating disabled, opacity set 1
+    [class="__main__\.py"]                                  border none, floating disable, opacity set 1
+    [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
+    [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
+    [class="com-atlauncher-App" title="ATLauncher Console"] border none, floating enabled
 }
 
 # Browser Extension and Popup Rules
