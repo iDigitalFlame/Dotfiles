@@ -63,7 +63,7 @@
     "black-formatter.path": [
         "/usr/bin/black"
     ],
-    "black-formatter.showNotifications": "onWarning",
+    "black-formatter.showNotifications": "off",
     "breadcrumbs.enabled": false,
     "cSpell.allowCompoundWords": true,
     "cSpell.enabled": true,
@@ -759,7 +759,7 @@
         "E": "Hint",
         "W": "Warning"
     },
-    "isort.showNotifications": "onWarning",
+    "isort.showNotifications": "off",
     "jake.autoDetect": "off",
     "javascript.format.enable": true,
     "javascript.format.insertSpaceAfterCommaDelimiter": true,

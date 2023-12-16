@@ -163,6 +163,7 @@ for_window {
     [class="xfreerdp"]                                      border pixel 1, floating disable
     [class="Notesnook"]                                     border none, floating disabled, opacity set 1
     [class="__main__\.py"]                                  border none, floating disable, opacity set 1
+    [class="Notesnook" title="^Open Fil([es]+)$"]           border normal, floating enable, resize set 800px 600px, opacity set 0.8
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
     [class="com-atlauncher-App" title="ATLauncher Console"] border none, floating enabled
