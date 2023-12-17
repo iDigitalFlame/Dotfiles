@@ -152,6 +152,8 @@ for_window {
     [title="^File Upload"]                                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [app_id="Discord" title=""]                                                             floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [window_role="(pop-up|bubble|dialog)"]                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [class="Thunar" title="File Operation Progress"]                                        floating enable, resize set 600px 300px, opacity set 0.8, border normal
+    [app_id="thunar" title="File Operation Progress"]                                       floating enable, resize set 600px 300px, opacity set 0.8, border normal
     [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]      floating enable, resize set 800px 600px, opacity set 0.8, border normal
     [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"]   floating enable, resize set 800px 600px, opacity set 0.8, border normal
 }
@@ -171,8 +173,8 @@ for_window {
 
 # Browser Extension and Popup Rules
 for_window {
-    [app_id="Firefox" title="^Picture-in-Picture$"]                         floating enable, sticky enable, resize set 600px 450px, border pixel 1
-    [app_id="LibreWolf" title="^Picture-in-Picture$"]                       floating enable, sticky enable, resize set 600px 450px, border pixel 1
+    [app_id="Firefox" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set 600px 450px, border pixel 1
+    [app_id="LibreWolf" title="Picture-in-Picture"]                       floating enable, sticky enable, resize set 600px 450px, border pixel 1
     [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]       floating enable, border normal, resize set 400px 600px
     [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"]   floating enable, border normal, resize set 400px 400px
 }
