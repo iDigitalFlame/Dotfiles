@@ -48,7 +48,7 @@
     ],
     "[go]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
         "editor.snippetSuggestions": "none"
@@ -325,7 +325,7 @@
     "editor.multiCursorModifier": "",
     // NOTE(dij): ^ It says this value is not accepted, but setting it to empty
     //            disables it, which is what we want.
-    "editor.occurrencesHighlight": true,
+    "editor.occurrencesHighlight": "singleFile",
     "editor.overviewRulerBorder": true,
     "editor.pasteAs.enabled": true,
     "editor.pasteAs.showPasteSelector": "never",
@@ -429,7 +429,7 @@
     },
     "editor.trimAutoWhitespace": true,
     "editor.useTabStops": true,
-    "editor.wordBasedSuggestions": true,
+    "editor.wordBasedSuggestions": "matchingDocuments",
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "off",
     "editor.wordWrapColumn": 127,
@@ -1162,5 +1162,6 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
+    "workbench.editor.tabActionLocation": "right"
 }
