@@ -171,8 +171,8 @@ for_window {
 
 # Browser Extension and Popup Rules
 for_window {
-    [app_id="Firefox" title="^Picture-in-Picture"]                          floating enable, sticky enable, resize set 500px 450px, border pixel 1
-    [app_id="LibreWolf" title="^Picture-in-Picture"]                        floating enable, sticky enable, resize set 500px 450px, border pixel 1
+    [app_id="Firefox" title="^Picture-in-Picture$"]                         floating enable, sticky enable, resize set 600px 450px, border pixel 1
+    [app_id="LibreWolf" title="^Picture-in-Picture$"]                       floating enable, sticky enable, resize set 600px 450px, border pixel 1
     [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]       floating enable, border normal, resize set 400px 600px
     [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"]   floating enable, border normal, resize set 400px 400px
 }
@@ -255,7 +255,7 @@ bindsym {
 
 # Scratchpad Bindings
 bindsym {
-    $KEY_ALT+X              move        scratchpad
+    $KEY_ALT+D              move        scratchpad
     $KEY_ALT+S              scratchpad  show
 }
 
