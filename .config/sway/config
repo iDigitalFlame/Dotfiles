@@ -114,7 +114,7 @@ input type:touchpad {
 
 # Opacity Rules
 for_window {
-    [app_id="xpad"]                     opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set 500 300
+    [app_id="xpad"]                     opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
     [app_id="Slack"]                    opacity set 0.85, border none
     [class="Thunar"]                    opacity set 0.80, border none
     [app_id="thunar"]                   opacity set 0.80, border none
@@ -148,14 +148,14 @@ for_window {
 
 # Dialog Rules
 for_window {
-    [window_type="dialog"]                                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^File Upload"]                                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [app_id="Discord" title=""]                                                             floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [window_role="(pop-up|bubble|dialog)"]                                                  floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [class="Thunar" title="File Operation Progress"]                                        floating enable, resize set 600px 300px, opacity set 0.8, border normal
-    [app_id="thunar" title="File Operation Progress"]                                       floating enable, resize set 600px 300px, opacity set 0.8, border normal
-    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]      floating enable, resize set 800px 600px, opacity set 0.8, border normal
-    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"]   floating enable, resize set 800px 600px, opacity set 0.8, border normal
+    [window_type="dialog"]                                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^File Upload"]                                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="Discord" title=""]                                                             floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [window_role="(pop-up|bubble|dialog)"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="Thunar" title="File Operation Progress"]                                        floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="thunar" title="File Operation Progress"]                                       floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]      floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"]   floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
 }
 
 # XWayland Rules
@@ -165,7 +165,7 @@ for_window {
     [class="xfreerdp"]                                      border pixel 1, floating disable
     [class="Notesnook"]                                     border none, floating disabled, opacity set 1
     [class="__main__\.py"]                                  border none, floating disable, opacity set 1
-    [class="Notesnook" title="^Open Fil([es]+)$"]           border normal, floating enable, resize set 800px 600px, opacity set 0.8
+    [class="Notesnook" title="^Open Fil([es]+)$"]           border normal, floating enable, resize set width 800 px height 600 px, opacity set 0.8
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
     [class="com-atlauncher-App" title="ATLauncher Console"] border none, floating enabled
@@ -173,10 +173,10 @@ for_window {
 
 # Browser Extension and Popup Rules
 for_window {
-    [app_id="Firefox" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set 600px 450px, border pixel 1
-    [app_id="LibreWolf" title="Picture-in-Picture"]                       floating enable, sticky enable, resize set 600px 450px, border pixel 1
-    [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]       floating enable, border normal, resize set 400px 600px
-    [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"]   floating enable, border normal, resize set 400px 400px
+    [app_id="Firefox" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set width 600 px height 450 px, border pixel 1
+    [app_id="LibreWolf" title="Picture-in-Picture"]                       floating enable, sticky enable, resize set width 600 px height 450 px, border pixel 1
+    [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]     floating enable, border normal, resize set width 400 px height 600 px
+    [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"] floating enable, border normal, resize set width 400 px height 400 px
 }
 
 # Application to Workspace Assignments
@@ -269,18 +269,18 @@ bindsym {
 
 # Window Resize Bindings
 bindsym {
-    $KEY_CTL+Shift+Up       resize shrink           height  10px or 10ppt
-    $KEY_CTL+Shift+Down     resize grow             height  10px or 10ppt
-    $KEY_CTL+Shift+Left     resize grow             width   10px or 10ppt
-    $KEY_CTL+Shift+Right    resize shrink           width   10px or 10ppt
+    $KEY_CTL+Shift+Up       resize shrink           height  10 px or 10 ppt
+    $KEY_CTL+Shift+Down     resize grow             height  10 px or 10 ppt
+    $KEY_CTL+Shift+Left     resize grow             width   10 px or 10 ppt
+    $KEY_CTL+Shift+Right    resize shrink           width   10 px or 10 ppt
 }
 
 # Window Resize (Mouse) Bindings
 bindsym {
-    --whole-window --border $KEY_WIN+Shift+button5  resize grow     width   10px
-    --whole-window --border $KEY_CTL+Shift+button5  resize grow     height  10px
-    --whole-window --border $KEY_WIN+Shift+button4  resize shrink   width   10px
-    --whole-window --border $KEY_CTL+Shift+button4  resize shrink   height  10px
+    --whole-window --border $KEY_WIN+Shift+button5  resize grow     width   10 px
+    --whole-window --border $KEY_CTL+Shift+button5  resize grow     height  10 px
+    --whole-window --border $KEY_WIN+Shift+button4  resize shrink   width   10 px
+    --whole-window --border $KEY_CTL+Shift+button4  resize shrink   height  10 px
 }
 
 # Window Movement Bindings
