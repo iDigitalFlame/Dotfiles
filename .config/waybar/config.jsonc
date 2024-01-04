@@ -148,7 +148,7 @@
     ],
     "modules-right": [
         "sway/workspaces",
-        "wireplumber",
+        "pulseaudio",
         "memory",
         "disk",
         "cpu",
@@ -157,6 +157,30 @@
     ],
     "name": "bar1",
     "position": "top",
+    "pulseaudio": {
+        "format": "{volume:3}% {icon}",
+        "format-bluetooth": "{volume:3}% {icon}",
+        "format-bluetooth-muted": "Muted {icon}",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ],
+            "internal": "",
+            "hdmi": "",
+            "headset": "",
+            "headphone": ""
+        },
+        "format-muted": "Muted ",
+        "format-source": "",
+        "format-source-muted": "Muted ",
+        "max-volume": 100.0,
+        "on-click": "/usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "reverse-scrolling": 0,
+        "reverse-mouse-scrolling": false,
+        "scroll-step": 1
+    },
     "spacing": 0,
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -204,14 +228,17 @@
     },
     "wireplumber": {
         "format": "{volume:3}% {icon}",
-        "format-bluetooth": "{volume:3}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{volume:3}% {icon}",
+        "format-bluetooth-muted": "Muted {icon}",
         "format-icons": {
             "default": [
                 "",
                 "",
                 ""
             ],
+            "internal": "",
+            "hdmi": "",
+            "headset": "",
             "headphone": ""
         },
         "format-muted": "Muted ",

@@ -53,7 +53,7 @@
     "notification-2fa-action": false,
     "notification-body-image-height": 200,
     "notification-body-image-width": 200,
-    "notification-icon-size": 64,
+    "notification-icon-size": 48,
     "notification-inline-replies": false,
     "notification-window-width": 400,
     "positionX": "right",
