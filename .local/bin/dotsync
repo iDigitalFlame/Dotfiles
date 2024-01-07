@@ -40,16 +40,16 @@ set -u
 DOTS="${HOME}/.dotfiles"
 
 echo "Updating dotfiles.."
-chmod -R 2550 "${DOTS}"
-find "${DOTS}" -xdev -type f -exec chmod 2440 {} \;
+chmod -R 0550 "${DOTS}"
+find "${DOTS}" -xdev -type f -exec chmod 0440 {} \;
 
-chmod 2550 "${DOTS}/.zshrc"
-chmod -R 2770 "${DOTS}/.git"
-chmod -R 2550 "${DOTS}/.local/bin"
+chmod 0550 "${DOTS}/.zshrc"
+chmod -R 0770 "${DOTS}/.git"
+chmod -R 0550 "${DOTS}/.local/bin"
 
-chmod 2640 "${DOTS}/.config/smd.json"
-chmod 2640 "${DOTS}/.config/quotes.db"
-chmod 2640 "${DOTS}/dotfiles.code-workspace"
+chmod 0640 "${DOTS}/.config/smd.json"
+chmod 0640 "${DOTS}/.config/quotes.db"
+chmod 0640 "${DOTS}/dotfiles.code-workspace"
 
 relink "$DOTS" "${HOME}"
 
@@ -73,12 +73,15 @@ ln -sT "${HOME}/.config/mozilla/firefox/chrome" "${HOME}/.config/librewolf/chrom
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeapps.list"
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.local/share/mimeapps.list"
 
-chmod 2750 "${HOME}/.dvm/bin/discord"
-chmod 2750 "${HOME}/.dvm/Discord/Discord"
-chmod 2750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
+chmod 0750 "${HOME}/.dvm/bin/discord"
+chmod 0750 "${HOME}/.dvm/Discord/Discord"
+chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
 
 dash "${HOME}/.private/sync.sh"
 themectl reload
+
+# Reset SetGID bit on files
+find "${DOTS}" -xdev -type d -exec chmod g+s {} \;
 
 echo "Broken Links Found:"
 find "${HOME}" -xtype l -xdev 2> /dev/null
