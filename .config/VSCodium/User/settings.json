@@ -56,7 +56,8 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnPaste": false,
-        "editor.formatOnSaveMode": "file"
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
     },
     "black-formatter.args": [],
     "black-formatter.importStrategy": "fromEnvironment",
@@ -536,7 +537,6 @@
     "go.alternateTools": {
         "gopls": "/home/dij/.local/lib/go/gopls"
     },
-    "go.autocompleteUnimportedPackages": true,
     "go.buildFlags": [],
     "go.buildOnSave": "package",
     "go.buildTags": "",
@@ -558,7 +558,6 @@
     "go.coverageOptions": "showCoveredCodeOnly",
     "go.diagnostic.vulncheck": "Imports",
     "go.disableConcurrentTests": true,
-    "go.docsTool": "godoc",
     "go.editorContextMenuCommands": {
         "addImport": false,
         "addTags": false,
@@ -866,20 +865,14 @@
     },
     "python.autoComplete.extraPaths": [],
     "python.diagnostics.sourceMapsEnabled": false,
-    "python.disableInstallationCheck": false,
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.experiments.enabled": false,
     "python.experiments.optInto": [],
     "python.experiments.optOutFrom": [
         "All"
     ],
-    "python.formatting.autopep8Args": [
-        "--max-line-length=120",
-        "--ignore=E203,W503,E266,E402"
-    ],
-    "python.formatting.autopep8Path": "black",
     "python.globalModuleInstallation": false,
-    "python.languageServer": "Jedi",
+    "python.languageServer": "Default",
     "python.logging.level": "off",
     "python.missingPackage.severity": "Warning",
     "python.pythonPath": "python3",
@@ -1136,7 +1129,7 @@
     "workbench.editor.revealIfOpen": false,
     "workbench.editor.showIcons": true,
     "workbench.editor.showTabs": "multiple",
-    "workbench.editor.tabCloseButton": "right",
+    "workbench.editor.tabActionLocation": "right",
     "workbench.editor.tabSizing": "fit",
     "workbench.enableExperiments": false,
     "workbench.iconTheme": "material-icon-theme",
@@ -1163,5 +1156,4 @@
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
     "zenMode.silentNotifications": false,
-    "workbench.editor.tabActionLocation": "right"
 }

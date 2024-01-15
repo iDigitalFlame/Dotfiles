@@ -36,11 +36,7 @@
 include /etc/sway/config.d/*
 include "${HOME}/.local/lib/sway.conf"
 
-output {
-    eDP-1   enable pos 0    1920    res 1920x1080
-    $DOCK1  enable pos 0    0       res 1920x1080
-    $DOCK2  enable pos 1920 0       res 1920x1080
-}
+output eDP-1                    enable pos 0 1920 res 1920x1080
 
 set {
     $KEY_WIN                    Mod1
@@ -194,8 +190,8 @@ assign {
 # Workspace to Output Assignments
 workspace {
     1  output $DOCK1
-    9  output $DOCK2
-    10 output $DOCK2
+    9  output $DOCK3
+    10 output $DOCK3
 }
 
 # Guesture Bindings

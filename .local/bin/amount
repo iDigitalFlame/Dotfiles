@@ -1,0 +1,83 @@
+#!/usr/bin/dash
+################################
+### iDigitalFlame  2016-2024 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## Auto Userspace Mount Helper
+#
+# Copyright (C) 2016 - 2024 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+if [ $# -ne 1 ]; then
+    printf "amount <block_dev>\n"
+    exit 2
+fi
+
+if [ ! -e "$1" ]; then
+    printf 'Device "%s" does not exist!\n' "$1"
+    exit 1
+fi
+if [ ! -b "$1" ]; then
+    printf 'Device "%s" is not a block device!\n' "$1"
+    exit 1
+fi
+if mount | awk '{print $1}' | grep -q "$1"; then
+    printf 'Device "%s" is already mounted!\n' "$1"
+    exit 1
+fi
+
+dev_base="$(basename "$1")"
+dev_name="$(/usr/bin/ls -al "/dev/disk/by-label" | grep "/${dev_name}" | awk '{print $9}')"
+if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
+    dev_name="$(/usr/bin/ls -al "/dev/disk/by-uuid" | grep "/${dev_base}" | awk '{print $9}')"
+    if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
+        dev_name="$(/usr/bin/ls -al "/dev/disk/by-id" | grep "/${dev_base}" | awk '{print $9}')"
+        if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
+            printf 'unable to find sutable path for device "%s"!\n' "$1"
+            exit 1
+        fi
+    fi
+fi
+
+dev_mount="/tmp/.mounts/${USER}/${dev_base}"
+if ! mkdir "$dev_mount"; then
+    printf 'Cannot create mount path "%s"!\n' "$dev_mount"
+    exit 1
+fi
+
+trap "rmdir ${dev_mount}" 1 2 3 6
+printf 'Enter password to mount device "%s" to "%s":\n' "$1" "$dev_mount"
+if ! sudo -E mount -o nodev,nosuid,noatime,rw,fmask=0037,dmask=0027,uid=$(id -u),gid=$(id -g) "$1" "$dev_mount"; then
+    rmdir "$dev_mount"
+    printf 'Failed to mount device "%s"!\n' "$1"
+    exit 1
+fi
+trap - 1 2 3 6
+
+printf 'Mounted device "%s" to "%s"!\n' "$1" "$dev_mount"

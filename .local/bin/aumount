@@ -1,0 +1,58 @@
+#!/usr/bin/dash
+################################
+### iDigitalFlame  2016-2024 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## Auto Userspace Unmount Helper
+#
+# Copyright (C) 2016 - 2024 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+if [ $# -ne 1 ]; then
+    printf "aumount <mounted_dir>\n"
+    exit 2
+fi
+
+if [ ! -d "$1" ]; then
+    printf 'Directory "%s" does not exist!\n' "$$1"
+    exit 1
+fi
+if mount | awk '{print $3}' | grep -q "$1"; then
+    printf 'Directory "%s" is not mounted!\n' "$1"
+    exit 1
+fi
+
+if ! sudo -E umount "$1"; then
+    printf 'Could not un-mount the Directory "%s"!' "$1"
+    exit 1
+fi
+if ! rmdir "$1"; then
+    printf 'Could not remove the Directory "%s"!' "$1"
+    exit 1
+fi
