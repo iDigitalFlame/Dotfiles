@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Discord 
-Exec            = /usr/bin/sg firewall-voice "/usr/bin/dvm run stable -- --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capturer"
+Exec            = /usr/bin/sg firewall-voice "/usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture"
 Icon            = discord
 Type            = Application
 Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.

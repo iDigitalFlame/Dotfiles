@@ -34,8 +34,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-rm -f "${HOME}/.local/share/applications/discord.desktop"
-
 # Enable Strict Mode
 set -u
 
@@ -61,8 +59,6 @@ chmod 0750 "${HOME}"/.local/lib/python/bin/* 2> /dev/null
 chmod 0750 "${HOME}"/.local/lib/go/bin/*
 chmod 0750 "${HOME}"/Documents/Development/GoArchive/go*/bin/*
 chmod 0750 "${HOME}"/Documents/Development/GoArchive/go*/pkg/tool/linux_amd64/*
-chmod 0750 "${HOME}/.dvm/Discord/chrome-sandbox"
-chmod 0750 "${HOME}/.dvm/Discord/chrome_crashpad_handler"
 chmod 0750 "${HOME}/.local/lib/go/gopls"
 chmod 0750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrive"
 chmod 0750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrived"

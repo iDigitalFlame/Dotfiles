@@ -117,6 +117,7 @@ for_window {
     [app_id="Thunar"]                   opacity set 0.80, border none
     [app_id="codium"]                   opacity set 0.95, border none
     [app_id="discord"]                  opacity set 0.85, border none
+    [app_id="vesktop"]                  opacity set 0.85, border none
     [app_id="codium-url-handler"]       opacity set 0.95, border none
     [app_id="org.telegram.desktop"]     opacity set 0.85, border none
     [app_id="org.keepassxc.KeePassXC"]  opacity set 0.85, border none
@@ -183,6 +184,7 @@ for_window {
 assign {
     [app_id="Slack"]                    number 9
     [app_id="discord"]                  number 9
+    [app_id="vesktop"]                  number 9
     [app_id="LibreWolf"]                number 1
     [app_id="org.telegram.desktop"]     number 10
 }

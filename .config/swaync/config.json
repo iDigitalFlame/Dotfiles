@@ -196,11 +196,11 @@
                     },
                     {
                         "label": " Reboot",
-                        "command": "sudo systemctl reboot; swaync-client -cp"
+                        "command": "sudo systemctl reboot"
                     },
                     {
                         "label": " Shut Down",
-                        "command": "sudo systemctl poweroff; swaync-client -cp"
+                        "command": "sudo systemctl poweroff"
                     }
                 ],
                 "animation-type": "slide_down",
