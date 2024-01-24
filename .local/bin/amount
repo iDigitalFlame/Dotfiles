@@ -53,7 +53,7 @@ if mount | awk '{print $1}' | grep -q "$1"; then
 fi
 
 dev_base="$(basename "$1")"
-dev_name="$(/usr/bin/ls -al "/dev/disk/by-label" | grep "/${dev_name}" | awk '{print $9}')"
+dev_name="$(/usr/bin/ls -al "/dev/disk/by-label" | grep "/${dev_base}" | awk '{print $9}')"
 if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
     dev_name="$(/usr/bin/ls -al "/dev/disk/by-uuid" | grep "/${dev_base}" | awk '{print $9}')"
     if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
@@ -65,7 +65,7 @@ if [ -z "$dev_name" ] || [ -e "/tmp/.mounts/${USER}/${dev_name}" ]; then
     fi
 fi
 
-dev_mount="/tmp/.mounts/${USER}/${dev_base}"
+dev_mount="/tmp/.mounts/${USER}/${dev_name}"
 if ! mkdir "$dev_mount"; then
     printf 'Cannot create mount path "%s"!\n' "$dev_mount"
     exit 1
