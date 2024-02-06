@@ -112,8 +112,8 @@ cat<<EOF | sudo -i --
         printf "\x1b[93m\x1b[1mAdding generated hosts!\x1b[0m\n"
         cp "$hosts" /etc/hosts
     fi
-    cat "/tmp/.hosts_file" >> "/etc/hosts";
     mount -o rw,remount /
+    cat "/tmp/.hosts_file" >> "/etc/hosts";
 EOF
 rm -f "/tmp/.hosts_file"
 
