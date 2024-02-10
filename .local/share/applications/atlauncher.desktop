@@ -34,16 +34,15 @@
 #
 
 [Desktop Entry]
-Name            = Discord (Screen Sharing) 
-Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture
-Icon            = discord
+Name            = ATLauncher 
+Exec            = /usr/bin/sg firewall-all "java -jar ${HOME}/Documents/Minecraft/ATLauncher.jar"
+Icon            = minecraft
 Type            = Application
-Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.
-MimeType        = x-scheme-handler/discord;
+Comment         = Minecraft launcher and instance manager.
+MimeType        =
 Terminal        = false
-Keywords        = im;social;discord;dvm;cord;
-Categories      = Network;InstantMessaging;IM;Chat;P2P;
-GenericName     = Internet Messenger
+Keywords        = minecraft;atlauncher;
+Categories      = Games;
+GenericName     = Minecraft Launcher
 StartupNotify   = false
-StartupWMClass  = discord
 X-MultipleArgs  = false

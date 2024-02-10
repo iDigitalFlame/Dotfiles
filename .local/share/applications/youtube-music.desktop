@@ -38,7 +38,7 @@ Name            = Youtube Music 
 Exec            = /usr/bin/sg firewall-web 'qtws /usr/share/qtws-apps/youtube-music/youtube-music.qtws --disable-seccomp-filter-sandbox --register-pepper-plugins="/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so; application/x-ppapi-widevine-cdm"'
 Icon            = /usr/share/pixmaps/youtube-music-desktop.png
 Type            = Application
-Comment         = YouTube Music Standalone Player
+Comment         = YouTube Music Player
 MimeType        =
 Terminal        = false
 Keywords        = Network;AudioVideo;Player;
