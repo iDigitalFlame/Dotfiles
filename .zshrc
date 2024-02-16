@@ -220,7 +220,6 @@ alias yay="/usr/bin/gh web /usr/bin/yay"
 alias ssh="/usr/bin/gh ssh /usr/bin/ssh"
 alias scp="/usr/bin/gh ssh /usr/bin/scp"
 alias git="/usr/bin/gh web /usr/bin/git"
-alias pip="/usr/bin/gh web /usr/bin/pip"
 alias nmap="/usr/bin/gh all /usr/bin/nmap"
 alias curl="/usr/bin/gh web /usr/bin/curl"
 alias ping="/usr/bin/gh icmp /usr/bin/ping"
@@ -280,12 +279,12 @@ alias selc="/usr/bin/grimshot --notify copy area"
 alias ssc="/usr/bin/grimshot --notify copy output"
 
 # Go Aliases
-alias gv="/usr/bin/gh web go vet ./...'"
-alias gsc="/usr/bin/gh web staticcheck ./..."
+alias gv="/usr/bin/sg firewall-web 'go vet ./...'"
 alias gmo="go list -u -m -json all | go-mod-outdated"
+alias gsc="/usr/bin/sg firewall-web 'staticcheck ./...'"
 alias gmou="go list -u -m -json all | go-mod-outdated -update"
-alias gsc-win="/usr/bin/gh web env GOOS=windows staticcheck ./..."
-alias gov="/usr/bin/gh web sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+alias gsc-win="/usr/bin/sg firewall-web 'env GOOS=windows staticcheck ./...'"
+alias gov="/usr/bin/sg firewall-web 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
@@ -314,12 +313,11 @@ alias nts="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
 alias dirdiff="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
 
 # Application Aliases
-alias vsc="/usr/bin/vscodium"
-alias code="/usr/bin/vscodium"
+alias vsc="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --unity-launch"
+alias code="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --unity-launch"
 
 # Macro Aliases
 alias weather="/usr/bin/gh web curl 'wttr.in/?0'"
-alias discord-update="sg firewall-web \"${HOME}/.local/apps/vencord_installer --install --install-openasar --location ${HOME}/.dvm/Discord\""
 alias user-agents="/usr/bin/gh web curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
 
 source "${HOME}/.local/lib/zshrc.sh"

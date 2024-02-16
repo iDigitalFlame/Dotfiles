@@ -73,8 +73,6 @@ ln -sT "${HOME}/.config/mozilla/firefox/chrome" "${HOME}/.config/librewolf/chrom
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeapps.list"
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.local/share/mimeapps.list"
 
-chmod 0750 "${HOME}/.dvm/bin/discord"
-chmod 0750 "${HOME}/.dvm/Discord/Discord"
 chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
 
 dash "${HOME}/.private/sync.sh"
