@@ -50,6 +50,7 @@ chmod -R 0550 "${DOTS}/.local/bin"
 chmod 0640 "${DOTS}/.config/smd.json"
 chmod 0640 "${DOTS}/.config/quotes.db"
 chmod 0640 "${DOTS}/dotfiles.code-workspace"
+chmod 2550 "${DOTS}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
 relink "$DOTS" "${HOME}"
 
@@ -74,6 +75,7 @@ ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeap
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.local/share/mimeapps.list"
 
 chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
+chmod 2550 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
 dash "${HOME}/.private/sync.sh"
 themectl reload
