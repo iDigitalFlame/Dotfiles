@@ -62,7 +62,7 @@
     "black-formatter.args": [],
     "black-formatter.importStrategy": "fromEnvironment",
     "black-formatter.path": [
-        "/usr/bin/black"
+        "/home/dij/.local/bin/black"
     ],
     "black-formatter.showNotifications": "off",
     "breadcrumbs.enabled": false,

@@ -144,6 +144,14 @@ if [ ! -d "/tmp/.usercache/${USER}/trash" ]; then
     ln -s "/tmp/.usercache/${USER}/trash" "${HOME}/.local/share/Trash"
 fi
 
+cess() {
+    if [ $# -lt 1 ]; then
+        echo "cess <file1> <fileN..>" 1>&2
+        return
+    fi
+    /usr/bin/bat --paging=never $@ | less
+}
+
 # Older Golang version helper functions
 go1.10() {
     _args=$@
@@ -191,13 +199,13 @@ go1.20() {
 }
 
 firewall_open() {
-    cat<<EOF | sudo -i --
+    /usr/bin/cat<<EOF | sudo -i --
 nft add chain inet filter input '{ policy accept; }'
 nft add chain inet filter output '{ policy accept; }'
 EOF
 }
 firewall_close() {
-    cat<<EOF | sudo -i --
+    /usr/bin/cat<<EOF | sudo -i --
 nft flush table ip nat
 nft flush table inet filter
 nft delete table ip nat
