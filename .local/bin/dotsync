@@ -85,6 +85,4 @@ find "${DOTS}" -xdev -type d -exec chmod g+s {} \;
 
 echo "Broken Links Found:"
 find "${HOME}" -xtype l -xdev 2> /dev/null
-
 echo "Done!"
-exit 0

@@ -310,7 +310,6 @@
     "editor.insertSpaces": true,
     "editor.largeFileOptimizations": true,
     "editor.letterSpacing": 0,
-    "editor.lightbulb.enabled": true,
     "editor.lineHeight": 0,
     "editor.lineNumbers": "on",
     "editor.links": true,
@@ -451,7 +450,9 @@
         "*.run": "shellscript",
         "*.sh": "shellscript",
         "*.twig": "django-html",
-        "config": "properties"
+        "config": "properties",
+        "ssh_config": "plaintext",
+        "sshd_config": "plaintext"
     },
     "files.autoGuessEncoding": true,
     "files.autoSave": "off",
@@ -580,13 +581,8 @@
     },
     "go.formatFlags": [],
     "go.formatTool": "goimports",
-    "go.gocodeAutoBuild": false,
-    "go.gocodePackageLookupMode": "go",
     "go.gopath": "/home/dij/.local/lib/go",
     "go.goroot": "/usr/lib/go",
-    "go.gotoSymbol.ignoreFolders": [],
-    "go.gotoSymbol.includeGoroot": false,
-    "go.gotoSymbol.includeImports": true,
     "go.inferGopath": false,
     "go.inlayHints.assignVariableTypes": false,
     "go.inlayHints.compositeLiteralFields": false,
@@ -600,10 +596,6 @@
     "go.lintFlags": [],
     "go.lintOnSave": "package",
     "go.lintTool": "golint",
-    "go.liveErrors": {
-        "delay": 500,
-        "enabled": true
-    },
     "go.logging.level": "error",
     "go.playground": {
         "openbrowser": false,
@@ -626,7 +618,6 @@
     },
     "go.toolsGopath": "/home/dij/.local/lib/go",
     "go.toolsManagement.autoUpdate": true,
-    "go.toolsManagement.checkForUpdates": "local",
     "go.toolsManagement.go": "/home/dij/.local/lib/go/go",
     "go.trace.server": "off",
     "go.useLanguageServer": true,
@@ -642,7 +633,6 @@
         "build.env": {
             "GOOS": "windows"
         },
-        "build.expandWorkspaceToModule": true,
         "completeUnimported": true,
         "deepCompletion": true,
         "formatting.gofumpt": false,
