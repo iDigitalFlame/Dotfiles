@@ -518,7 +518,7 @@
     "git.ignoreLegacyWarning": false,
     "git.ignoreLimitWarning": false,
     "git.ignoreMissingGitWarning": false,
-    "git.inputValidation": "warn",
+    "git.inputValidation": true,
     "git.openDiffOnClick": false,
     "git.openRepositoryInParentFolders": "never",
     "git.path": null,
@@ -933,7 +933,6 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cwd": "",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.enableBell": false,
     "terminal.integrated.env.linux": {},
     "terminal.integrated.env.osx": {},
     "terminal.integrated.env.windows": {},
@@ -1152,5 +1151,9 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
+    "accessibility.signals.terminalBell": {
+        "sound": "off"
+    },
+    "terminal.integrated.enableVisualBell": false
 }
