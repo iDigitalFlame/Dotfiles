@@ -47,11 +47,11 @@ export COMPLETION_WAITING_DOTS="true"
 export ZSH="${HOME}/.local/lib/oh-my-zsh"
 export BROWSER="${HOME}/.local/bin/browser"
 export GNUPGHOME="${HOME}/.local/share/gnupg"
+export SSH_AUTH_SOCK="/run/user/${UID}/gcr/ssh"
 export SRCDEST="/tmp/.usercache/${USER}/aur/src"
 export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
 export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
 export BUILDDIR="/tmp/.usercache/${USER}/aur/build"
-export SSH_AUTH_SOCK="/run/user/${UID}/keyring/ssh"
 
 export PATH=$PATH:${GOPATH}/bin
 

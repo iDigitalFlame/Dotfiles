@@ -16,7 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## Auto Mute Helper Smoother
+## Auto Mute Helper
 #
 # Copyright (C) 2016 - 2024 iDigitalFlame
 #
@@ -33,6 +33,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+
+if [ $# -ge 1 ]; then
+    for i in $(pactl list sources | grep 'Name: ' | grep -vE '\.monitor$' | awk '{print $2}'); do
+        pactl set-source-volume $i 0
+        pactl set-source-mute $i 1
+    done
+fi
 
 for i in $(pactl list sinks | grep 'Name: ' | awk '{print $2}'); do
     pactl set-sink-volume $i 0

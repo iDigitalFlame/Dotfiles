@@ -59,6 +59,7 @@
         "editor.formatOnSave": true,
         "editor.formatOnSaveMode": "file",
     },
+    "accessibility.verbosity.terminal": false,
     "black-formatter.args": [],
     "black-formatter.importStrategy": "fromEnvironment",
     "black-formatter.path": [
@@ -923,20 +924,24 @@
     "terminal.external.linuxExec": "term",
     "terminal.external.osxExec": "Terminal.app",
     "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+    "terminal.integrated.accessibleViewFocusOnCommandExecution": false,
+    "terminal.integrated.allowChords": false,
     "terminal.integrated.altClickMovesCursor": false,
     "terminal.integrated.confirmOnExit": "hasChildProcesses",
     "terminal.integrated.copyOnSelection": false,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cwd": "",
+    "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.enableBell": false,
     "terminal.integrated.env.linux": {},
     "terminal.integrated.env.osx": {},
     "terminal.integrated.env.windows": {},
-    "terminal.integrated.fontFamily": "",
+    "terminal.integrated.fontFamily": "FiraMono-Bold",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.fontWeight": "normal",
     "terminal.integrated.fontWeightBold": "bold",
+    "terminal.integrated.hideOnStartup": "whenEmpty",
     "terminal.integrated.lineHeight": 1,
     "terminal.integrated.macOptionIsMeta": false,
     "terminal.integrated.profiles.linux": {
@@ -949,16 +954,18 @@
             "path": "/usr/bin/pwsh"
         },
         "zsh": {
+            "icon": "terminal-zsh",
             "path": "/usr/bin/zsh"
         }
     },
-    "terminal.integrated.rightClickBehavior": "default",
+    "terminal.integrated.rightClickBehavior": "copyPaste",
     "terminal.integrated.scrollback": 1000,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.shellIntegration.history": 500,
     "terminal.integrated.shellIntegration.suggestEnabled": false,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.tabs.focusMode": "singleClick",
     "todo-tree.filtering.excludeGlobs": [
         "**/node_modules",
         "README.md",
@@ -1145,5 +1152,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false,
+    "zenMode.silentNotifications": false
 }

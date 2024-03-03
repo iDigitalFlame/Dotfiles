@@ -13,7 +13,9 @@ Plays nicley with the System Management Daemon (SMD) <https://github.com/iDigita
 - cowsay
 - dash
 - freerdp
-- gnome-keyring-query
+- git
+- git-lfs
+- gnome-keyring
 - grimshot
 - gtklock
 - kitty
@@ -36,7 +38,18 @@ Plays nicley with the System Management Daemon (SMD) <https://github.com/iDigita
 - wl-clipboard
 - xdg-desktop-portal-wlr
 - xpad
-- yay
+
+## Recommended Packages
+
+- c-lolcat
+- corepdf
+- librewolf
+- network-manager-applet
+- pam-u2f
+- ungoogled-chromium
+- zsh
+- zsh-completions
+- zsh-syntax-highlighting
 
 ### Screenshots
 

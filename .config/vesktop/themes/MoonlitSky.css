@@ -117,6 +117,7 @@ html.theme-dark .theme-light .root-1CAIjD,
     --background-secondary: #0A000A !important;
     --background-secondary-alt: #0A000A !important;
     --background-tertiary: #0A000A !important;
+    --bg-overlay-2: #0A000A !important;
     --bug-reporter-modal-submitting-background: hsl(var(--primary-800-hsl)/0.6) !important;
     --button-outline-brand-background: hsl(var(--white-500-hsl)/0) !important;
     --button-outline-brand-text: var(--white-500) !important;
@@ -231,6 +232,10 @@ html.theme-dark .theme-light .root-1CAIjD,
     --dark-elevation-low: 0 1px 5px 0 hsl(var(--black-500-hsl)/0.3);
     --dark-elevation-high: 0 2px 10px 0 hsl(var(--black-500-hsl)/0.2);
     --dark-elevation-border: 0 0 0 1px hsl(var(--primary-700-hsl)/0.6);
+}
+
+div[class^="pageBody_"], section[class^="header_"] {
+    background-color: #0A000A !important;
 }
 
 :is(.theme-dark, .theme-amoled) #app-mount .container-2RRFHK {
