@@ -93,6 +93,8 @@ seat * {
     pointer_constraint          enable
 }
 
+output * adaptive_sync on
+
 input * {
     xkb_layout                  "us"
     xkb_numlock                 disabled
