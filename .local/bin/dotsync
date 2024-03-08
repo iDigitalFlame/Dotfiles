@@ -50,23 +50,30 @@ chmod -R 0550 "${DOTS}/.local/bin"
 chmod 0640 "${DOTS}/.config/smd.json"
 chmod 0640 "${DOTS}/.config/quotes.db"
 chmod 0640 "${DOTS}/dotfiles.code-workspace"
-chmod 2550 "${DOTS}/.config/xfce4/xfconf/xfce-perchannel-xml"
+
+chmod 2750 "${HOME}/.config/vlc"
+chmod 2750 "${HOME}/.config/gtk-2.0"
+chmod 2750 "${HOME}/.config/gtk-3.0"
+chmod 2750 "${HOME}/.config/gtk-4.0"
+chmod 2750 "${HOME}/.config/cubocore"
+chmod 2750 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
 relink "$DOTS" "${HOME}"
 
+rm -f "${HOME}/.local/bin/firefox"
+rm -f "${HOME}/.local/bin/librewolf"
+rm -f "${HOME}/.config/mimeapps.list"
 rm -f "${HOME}/.config/cubocore/pins"
+rm -f "${HOME}/.config/librewolf/chrome"
+rm -f "${HOME}/.local/bin/x-www-browser"
+rm -f "${HOME}/.local/share/mimeapps.list"
 rm -f "${HOME}/.config/cubocore/activities"
-rm -f "${HOME}/.local/bin/firefox" 2> /dev/null
-rm -f "${HOME}/.local/bin/librewolf" 2> /dev/null
-rm -f "${HOME}/.config/mimeapps.list" 2> /dev/null
-rm -f "${HOME}/.config/librewolf/chrome" 2> /dev/null
-rm -f "${HOME}/.local/bin/x-www-browser" 2> /dev/null
-rm -f "${HOME}/.local/share/mimeapps.list" 2> /dev/null
 rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f "${HOME}"/.local/share/applications/userapp*.desktop 2> /dev/null
 
 ln -sT "/dev/null" "${HOME}/.config/cubocore/pins"
 ln -sT "/dev/null" "${HOME}/.config/cubocore/activities"
+
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/firefox"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/librewolf"
 ln -sT "${HOME}/.local/bin/browser" "${HOME}/.local/bin/x-www-browser"
@@ -74,15 +81,20 @@ ln -sT "${HOME}/.config/mozilla/firefox/chrome" "${HOME}/.config/librewolf/chrom
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.config/mimeapps.list"
 ln -sT "${DOTS}/.local/share/applications/mimeapps.list" "${HOME}/.local/share/mimeapps.list"
 
-chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
-chmod 2550 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
-
 dash "${HOME}/.private/sync.sh"
 themectl reload
+
+chmod 2550 "${HOME}/.config/vlc"
+chmod 2550 "${HOME}/.config/gtk-2.0"
+chmod 2550 "${HOME}/.config/gtk-3.0"
+chmod 2550 "${HOME}/.config/gtk-4.0"
+chmod 2550 "${HOME}/.config/cubocore"
+chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
+chmod 2550 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
 # Reset SetGID bit on files
 find "${DOTS}" -xdev -type d -exec chmod g+s {} \;
 
 echo "Broken Links Found:"
-find "${HOME}" -xtype l -xdev 2> /dev/null
+find "${HOME}" -xtype l -xdev 2> /dev/null | grep -vE '\.dij/lock|SingletonLock|SingletonCookie|SingletonSocket'
 echo "Done!"
