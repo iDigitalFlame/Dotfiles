@@ -1,4 +1,4 @@
-#!/usr/bin/dash
+#!/usr/bin/bash
 ################################
 ### iDigitalFlame  2016-2024 ###
 #                              #
@@ -34,19 +34,17 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-args="$*"
+
+
+_args="$*"
+_prog="/usr/bin/librewolf"
 
 if [ "$FIREFOX" = "1" ] || [ "$(basename "$0")" = "firefox" ] ; then
-    if [ -z "$args" ]; then
-        sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER}"
-    else
-        sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/firefox -P ${USER} \"$args\""
-    fi
-    exit 0
+    _prog="/usr/bin/firefox"
 fi
 
-if [ -z "$args" ]; then
-    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER}"
+if [ -n "$_args" ]; then
+    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 ${_prog} -P ${USER} \"$_args\""
 else
-    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 /usr/bin/librewolf -P ${USER} \"$args\""
+    sg firewall-web "env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 ${_prog} -P ${USER}"
 fi

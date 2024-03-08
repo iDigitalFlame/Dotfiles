@@ -196,10 +196,10 @@ html.theme-dark .theme-light .root-1CAIjD,
     --profile-gradient-role-pill-background: hsl(var(--primary-660-hsl)/0.5) !important;
     --profile-gradient-role-pill-border: hsl(var(--white-500-hsl)/0.2) !important;
     --profile-gradient-section-box: hsl(var(--black-500-hsl)/0.45) !important;
-    --scrollbar-auto-scrollbar-color-thumb: var(--primary-700) !important;
-    --scrollbar-auto-scrollbar-color-track: var(--primary-630) !important;
+    --scrollbar-auto-scrollbar-color-thumb: #7D0BAB !important;
+    --scrollbar-auto-scrollbar-color-track: #0A000A !important;
     --scrollbar-auto-thumb: var(--primary-600) !important;
-    --scrollbar-auto-track: var(--primary-860) !important;
+    --scrollbar-auto-track: #7D0BAB !important;
     --scrollbar-thin-thumb: var(--primary-700) !important;
     --scrollbar-thin-track: hsl(var(--black-500-hsl)/0) !important;
     --spoiler-hidden-background: var(--primary-700) !important;

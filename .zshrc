@@ -34,6 +34,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+export XCURSOR_SIZE=24
 export ZSH_THEME="muse"
 export UPDATE_ZSH_DAYS=14
 export GOROOT="/usr/lib/go"
