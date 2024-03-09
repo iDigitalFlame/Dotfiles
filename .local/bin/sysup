@@ -66,6 +66,7 @@ cat<<EOF | sg firewall-web
     curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all'
     curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all'
     curl -sL 'https://raw.githubusercontent.com/nocturnalarchives/BlockLists/master/facebook-trackers.txt'
+    curl -sL 'https://raw.githubusercontent.com/krombopulosM/TikTok-blocklist/master/tiktok%20blocklist.txt'
 EOF
 cat<<EOF
 0.0.0.0 cups
@@ -105,7 +106,7 @@ if ! sudo dash -c 'mount -o rw,remount /; sg firewall-web "env SYSBATCH=1 /usr/b
     exit 1;
 fi
 
-echo "$entries" > "/tmp/.hosts_file"
+echo "$entries" | grep -vE '^#' | sort > "/tmp/.hosts_file"
 cat<<EOF | sudo -i --
     sync
     if ! [ -z "$hosts" ]; then
