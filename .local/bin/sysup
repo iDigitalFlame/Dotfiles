@@ -65,8 +65,12 @@ cat<<EOF | sg firewall-web
     curl -sL 'https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt'
     curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all'
     curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all'
-    curl -sL 'https://raw.githubusercontent.com/nocturnalarchives/BlockLists/master/facebook-trackers.txt'
-    curl -sL 'https://raw.githubusercontent.com/krombopulosM/TikTok-blocklist/master/tiktok%20blocklist.txt'
+    for i in \$(curl -sL 'https://raw.githubusercontent.com/nocturnalarchives/BlockLists/master/facebook-trackers.txt' | grep -v '^#'); do
+        echo "0.0.0.0 \$i"
+    done
+    for i in \$(curl -sL 'https://raw.githubusercontent.com/krombopulosM/TikTok-blocklist/master/tiktok%20blocklist.txt' | grep -v '^#'); do
+        echo "0.0.0.0 \$i"
+    done
 EOF
 cat<<EOF
 0.0.0.0 cups
