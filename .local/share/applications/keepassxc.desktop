@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = KeePassXC
-Exec            = /usr/bin/keepassxc --config "/home/dij/.local/lib/keepassxc.conf"
+Exec            = /usr/bin/keepassxc --config "/home/dij/.local/lib/keepassxc.conf" %f
 Icon            = keepassxc
 Type            = Application
 Comment         = Community-driven port of the Windows application “KeePass Password Safe”

@@ -34,4 +34,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-/usr/bin/kitty --single-instance --instance-group sway "$@"
+/usr/bin/kitty --single-instance --instance-group sway $*

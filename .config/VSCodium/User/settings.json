@@ -889,7 +889,7 @@
     "python.venvPath": "",
     "remote.autoForwardPorts": false,
     "remote.restoreForwardedPorts": false,
-    "rust-analyzer.cargo.target": "x86_64-pc-windows-gnu",
+    //"rust-analyzer.cargo.target": "x86_64-pc-windows-gnu",
     "rust-analyzer.diagnostics.enable": false,
     "rust-analyzer.hover.actions.debug.enable": false,
     "rust-analyzer.hover.actions.gotoTypeDef.enable": false,

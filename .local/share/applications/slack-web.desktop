@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Slack Web Client 
-Exec            = /usr/bin/sg firewall-web "export DBUS_SESSION_BUS_ADDRESS=\"unix:path=/run/user/$(id --user)/bus\"; nice -n 20 /usr/bin/falkon --wmclass slack --profile slack --new-window"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/nice -n 20 /usr/bin/falkon --wmclass slack --profile slack --new-window %U
 Icon            = slack
 Type            = Application
 Comment         = Slack Web Client

@@ -35,6 +35,10 @@
 
 [MIME Cache]
 text/csv=leafpad.desktop;
+image/gif=swayimg.desktop;
+image/png=swayimg.desktop;
+image/heic=swayimg.desktop;
+image/jpeg=swayimg.desktop;
 text/xml=librewolf.desktop;
 text/mml=librewolf.desktop;
 text/plain=leafpad.desktop;
@@ -43,11 +47,7 @@ image/webp=librewolf.desktop;
 inode/directory=thunar.desktop;
 text/x-arduino=arduino.desktop;
 application/xml=librewolf.desktop;
-image/gif=org.xfce.ristretto.desktop;
-image/png=org.xfce.ristretto.desktop;
-x-scheme-handler/slack=slack.desktop;
-image/jpeg=org.xfce.ristretto.desktop;
-image/heic=org.xfce.ristretto.desktop;
+x-scheme-handler/tg=telegram.desktop;
 x-scheme-handler/ftp=librewolf.desktop;
 application/x-directory=thunar.desktop;
 application/xhtml+xml=librewolf.desktop;
@@ -55,3 +55,4 @@ application/xhtml_xml=librewolf.desktop;
 x-scheme-handler/http=librewolf.desktop;
 x-scheme-handler/https=librewolf.desktop;
 x-scheme-handler/mailto=librewolf.desktop;
+x-scheme-handler/telegram=telegram.desktop;

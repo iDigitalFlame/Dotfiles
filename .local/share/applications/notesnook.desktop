@@ -37,7 +37,7 @@
 
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-webrtc-pipewire-capturer %U
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
@@ -53,12 +53,12 @@ X-MultipleArgs  = false
 
 [Desktop Action new-note]
 Name            = New Note
-Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new note"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new note
 
 [Desktop Action new-notebook]
 Name            = New Notebook
-Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new notebook"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new notebook
 
 [Desktop Action new-reminder]
 Name            = New Reminder
-Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new reminder"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new reminder

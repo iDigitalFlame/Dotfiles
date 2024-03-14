@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Arduino 
-Exec            = /usr/bin/sg firewall-web "/usr/bin/env GTK_THEME=null /usr/bin/arduino"
+Exec            = /usr/bin/ghr firewall-web /usr/bin/env GTK_THEME=null /usr/bin/arduino
 Icon            = arduino
 Type            = Application
 Comment         = Open-source electronics prototyping platform

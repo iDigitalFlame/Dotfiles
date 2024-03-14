@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Discord (Screen Sharing) 
-Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture
+Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
 Icon            = discord
 Type            = Application
 Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.

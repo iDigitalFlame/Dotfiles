@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Chromium 
-Exec            = /home/dij/.local/bin/chrome %u
+Exec            = /home/dij/.local/bin/chrome %U
 Icon            = chromium
 Type            = Application
 Comment         = Browse the Web

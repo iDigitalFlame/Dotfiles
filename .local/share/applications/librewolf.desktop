@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = LibreWolf 
-Exec            = /home/dij/.local/bin/librewolf %u
+Exec            = /home/dij/.local/bin/librewolf %U
 Icon            = librewolf
 Type            = Application
 Comment         = Browse the Web

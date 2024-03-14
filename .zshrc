@@ -156,47 +156,47 @@ cess() {
 # Older Golang version helper functions
 go1.10() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
 }
 go1.11() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.11.13\"; \"${HOME}/Documents/Development/GoArchive/go1.11.13/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.11.13\"; \"${HOME}/Documents/Development/GoArchive/go1.11.13/bin/go\" $_args"
 }
 go1.12() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.12.17\"; \"${HOME}/Documents/Development/GoArchive/go1.12.17/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.12.17\"; \"${HOME}/Documents/Development/GoArchive/go1.12.17/bin/go\" $_args"
 }
 go1.13() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.13.15\"; \"${HOME}/Documents/Development/GoArchive/go1.13.15/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.13.15\"; \"${HOME}/Documents/Development/GoArchive/go1.13.15/bin/go\" $_args"
 }
 go1.14() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
 }
 go1.15() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.15.15\"; \"${HOME}/Documents/Development/GoArchive/go1.15.15/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.15.15\"; \"${HOME}/Documents/Development/GoArchive/go1.15.15/bin/go\" $_args"
 }
 go1.16() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
 }
 go1.17() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.17.13\"; \"${HOME}/Documents/Development/GoArchive/go1.17.13/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.17.13\"; \"${HOME}/Documents/Development/GoArchive/go1.17.13/bin/go\" $_args"
 }
 go1.18() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
 }
 go1.19() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.19.5\"; \"${HOME}/Documents/Development/GoArchive/go1.19.5/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.19.5\"; \"${HOME}/Documents/Development/GoArchive/go1.19.5/bin/go\" $_args"
 }
 go1.20() {
     _args=$@
-    sg firewall-web "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
+    ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
 }
 
 firewall_open() {
@@ -216,27 +216,27 @@ EOF
 }
 
 # Firewall Aliases
-alias nc="/usr/bin/gh all /usr/bin/nc"
-alias yay="/usr/bin/gh web /usr/bin/yay"
-alias ssh="/usr/bin/gh ssh /usr/bin/ssh"
-alias scp="/usr/bin/gh ssh /usr/bin/scp"
-alias git="/usr/bin/gh web /usr/bin/git"
-alias nmap="/usr/bin/gh all /usr/bin/nmap"
-alias curl="/usr/bin/gh web /usr/bin/curl"
-alias ping="/usr/bin/gh icmp /usr/bin/ping"
-alias rsync="/usr/bin/gh ssh /usr/bin/rsync"
-alias pacman="/usr/bin/gh web /usr/bin/pacman"
-alias vnc="/usr/bin/gh ctl /usr/bin/gvncviewer"
-alias wython="/usr/bin/gh web /usr/bin/python3"
-alias go="nocorrect /usr/bin/gh web /usr/bin/go"
-alias quote="/usr/bin/gh web ${HOME}/.local/bin/motivate -n"
-alias xfreerdp="nocorrect /usr/bin/gh ctl /usr/bin/wlfreerdp"
+alias nc="/usr/bin/ghr firewall-all /usr/bin/nc"
+alias yay="/usr/bin/ghr firewall-web /usr/bin/yay"
+alias ssh="/usr/bin/ghr firewall-ssh /usr/bin/ssh"
+alias scp="/usr/bin/ghr firewall-ssh /usr/bin/scp"
+alias git="/usr/bin/ghr firewall-web /usr/bin/git"
+alias nmap="/usr/bin/ghr firewall-all /usr/bin/nmap"
+alias curl="/usr/bin/ghr firewall-web /usr/bin/curl"
+alias ping="/usr/bin/ghr firewall-icmp /usr/bin/ping"
+alias rsync="/usr/bin/ghr firewall-ssh /usr/bin/rsync"
+alias pacman="/usr/bin/ghr firewall-web /usr/bin/pacman"
+alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
+alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
+alias go="nocorrect /usr/bin/ghr firewall-web /usr/bin/go"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
-alias vncviewer="nocorrect /usr/bin/gh ctl /usr/bin/vncviewer"
 alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
-alias wgo="nocorrect env GOOS=windows /usr/bin/gh web /usr/bin/go"
-alias wget="/usr/bin/gh web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
-alias rdp="nocorrect /usr/bin/gh ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1920x1035"
+alias quote="/usr/bin/ghr firewall-web ${HOME}/.local/bin/motivate -n"
+alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp"
+alias vncviewer="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
+alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-web /usr/bin/go"
+alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
+alias rdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1920x1035"
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -280,12 +280,12 @@ alias selc="/usr/bin/grimshot --notify copy area"
 alias ssc="/usr/bin/grimshot --notify copy output"
 
 # Go Aliases
-alias gv="/usr/bin/sg firewall-web 'go vet ./...'"
 alias gmo="go list -u -m -json all | go-mod-outdated"
-alias gsc="/usr/bin/sg firewall-web 'staticcheck ./...'"
+alias gv="/usr/bin/ghr firewall-web /usr/bin/go vet ./..."
 alias gmou="go list -u -m -json all | go-mod-outdated -update"
-alias gsc-win="/usr/bin/sg firewall-web 'env GOOS=windows staticcheck ./...'"
-alias gov="/usr/bin/sg firewall-web 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+alias gsc-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
+alias gsc="/usr/bin/ghr firewall-web ${HOME}/.local/lib/go/bin/staticcheckstaticcheck ./..."
+alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Utility Aliases
 alias xx="exit"
@@ -305,7 +305,7 @@ alias clip="/usr/bin/wl-copy --trim-newline"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias pip_install="/usr/bin/gh web env PIP_USER=yes /usr/bin/pip install --break-system-packages"
+alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PIP_USER=yes /usr/bin/pip install --break-system-packages"
 
 # Script Aliases
 alias pmov="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/move.py"
@@ -318,8 +318,8 @@ alias vsc="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-
 alias code="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --unity-launch"
 
 # Macro Aliases
-alias weather="/usr/bin/gh web curl 'wttr.in/?0'"
-alias user-agents="/usr/bin/gh web curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
+alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
+alias user-agents="/usr/bin/ghr firewall-web /usr/bin/curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
