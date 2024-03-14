@@ -234,6 +234,9 @@ html.theme-dark .theme-light .root-1CAIjD,
     --dark-elevation-border: 0 0 0 1px hsl(var(--primary-700-hsl)/0.6);
 }
 
+div[class^="circleIconButton_"] {
+    display: none !important;
+}
 div[class^="pageBody_"], section[class^="header_"] {
     background-color: #0A000A !important;
 }

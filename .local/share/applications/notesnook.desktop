@@ -41,6 +41,7 @@ Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-p
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
+Actions         = new-note;new-notebook;new-reminder;
 MimeType        =
 Terminal        = false
 Keywords        = notes;journal;tasks;
@@ -49,3 +50,15 @@ GenericName     = Notes
 StartupNotify   = false
 StartupWMClass  = notesnook
 X-MultipleArgs  = false
+
+[Desktop Action new-note]
+Name            = New Note
+Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new note"
+
+[Desktop Action new-notebook]
+Name            = New Notebook
+Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new notebook"
+
+[Desktop Action new-reminder]
+Name            = New Reminder
+Exec            = /usr/bin/sg firewall-web "/usr/bin/notesnook --enable-webrtc-pipewire-capturer %U new reminder"

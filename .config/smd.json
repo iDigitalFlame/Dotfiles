@@ -94,7 +94,7 @@
         "startups": [
             "/usr/bin/swaync",
             "/usr/bin/nm-applet",
-            "/usr/bin/python /usr/bin/aa-notify -p -f /var/log/audit/audit.log"
+            "/usr/bin/python /usr/bin/aa-notify -p -f /run/log/audit/audit.log"
         ]
     },
     "trigger": {
