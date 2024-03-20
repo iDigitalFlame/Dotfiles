@@ -220,6 +220,7 @@ bindsym {
     $KEY_WIN+Return         exec    "/usr/bin/thunar"
     $KEY_ALT+Return         exec    "/usr/bin/kitty --single-instance --instance-group sway"
     $KEY_CTL+Shift+P        exec    "/usr/bin/wlay"
+    $KEY_CTL+Shift+K        exec    "${HOME}/.local/bin/hview"
 }
 
 # Application Launcher / Window Switcher Bindings
