@@ -34,16 +34,15 @@
 #
 
 [Desktop Entry]
-Name            = Discord (Screen Sharing) 
-Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
-Icon            = discord
+Name            = Ghidra
+Exec            = /usr/bin/dash -c 'bash "${HOME}/Documents/Utilities/Ghidra/11.0.1/support/launch.sh" bg jdk Ghidra "" "" ghidra.GhidraRun %U'
+Icon            = recstudio
 Type            = Application
-Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.
-MimeType        =
+Comment         = Open-source reverse engineering platform
 Terminal        = false
-Keywords        = im;social;discord;dvm;cord;
-Categories      = Network;InstantMessaging;IM;Chat;P2P;
-GenericName     = Internet Messenger
+MimeType        =
+Keywords        = code;reverse;debug;
+Categories      = Development;IDE;
+GenericName     = Ghidra
 StartupNotify   = false
-StartupWMClass  = discord
 X-MultipleArgs  = false

@@ -35,11 +35,11 @@
 
 [Desktop Entry]
 Name            = Zoho WorkDrive 
-Exec            = /usr/bin/ghr firewall-web "${HOME}/.local/apps/zohoworkdrive/zohoworkdrive" %U
+Exec            = /usr/bin/ghr firewall-web /home/dij/.local/apps/zohoworkdrive/zohoworkdrive
 Icon            = screencloud
 Type            = Application
 Comment         = Store and Sync files.
-MimeType        = pplication/x-ztwriter-link;application/x-ztsheet-link;application/x-ztshow-link;
+MimeType        = application/x-ztwriter-link;application/x-ztsheet-link;application/x-ztshow-link;
 Terminal        = false
 Keywords        = sync;file;storage;drive;workdrive;
 Categories      = Network;FileTransfer;Files;Storage;

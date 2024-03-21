@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = ATLauncher 
-Exec            = /usr/bin/ghr firewall-all /usr/bin/sh -c "cd ${HOME}/Documents/Minecraft && java -jar ATLauncher.jar"
+Exec            = /usr/bin/ghr firewall-all /usr/bin/dash -c "cd ${HOME}/Documents/Minecraft && java -jar ATLauncher.jar"
 Icon            = minecraft
 Type            = Application
 Comment         = Minecraft launcher and instance manager.
