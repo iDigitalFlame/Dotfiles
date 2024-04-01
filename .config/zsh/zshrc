@@ -34,72 +34,74 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-export XCURSOR_SIZE=24
-export ZSH_THEME="muse"
-export UPDATE_ZSH_DAYS=14
-export GOROOT="/usr/lib/go"
-export ENABLE_CORRECTION="true"
-export PAGER="/usr/bin/less -iR"
-export DISABLE_AUTO_UPDATE="false"
-export AURDEST="${HOME}/.cache/aur"
-export PKGDEST="/var/cache/makepkg"
-export GOPATH="${HOME}/.local/lib/go"
-export COMPLETION_WAITING_DOTS="true"
-export ZSH="${HOME}/.local/lib/oh-my-zsh"
-export BROWSER="${HOME}/.local/bin/browser"
-export GNUPGHOME="${HOME}/.local/share/gnupg"
-export SSH_AUTH_SOCK="/run/user/${UID}/gcr/ssh"
-export SRCDEST="/tmp/.usercache/${USER}/aur/src"
-export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
-export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
-export BUILDDIR="/tmp/.usercache/${USER}/aur/build"
+# OhMyZsh Configuration Options
+ZSH_THEME="muse"
+CASE_SENSITIVE=false
+ENABLE_CORRECTION=true
+DISABLE_LS_COLORS=false
+HIST_STAMPS="mm/dd/yyyy"
+DISABLE_AUTO_TITLE=false
+ZSH_DISABLE_COMPFIX=false
+COMPLETION_WAITING_DOTS=true
+DISABLE_UNTRACKED_FILES_DIRTY=true
 
-export PATH=$PATH:${GOPATH}/bin
+[ ! -d "$AURDEST" ] && mkdir -p "$AURDEST"
+[ ! -d "$SRCDEST" ] && mkdir -p "$SRCDEST"
+[ ! -d "$BUILDDIR" ] && mkdir -p "$BUILDDIR"
+[ ! -d "${HOME}/.cache/zsh" ] && mkdir -p "${HOME}/.cache/zsh"
+[ ! -d "${HOME}/Pictures/Screenshots" ] && mkdir -p "${HOME}/Pictures/Screenshots"
 
-export XDG_DESKTOP_DIR="$HOME"
-export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_RUNTIME_DIR="/run/user/${UID}"
-export XDG_PICTURES_DIR="${HOME}/Pictures"
-export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_DOWNLOAD_DIR="${HOME}/Downloads"
-export XDG_DOCUMENTS_DIR="${HOME}/Documents"
-export XDG_STATE_HOME="${HOME}/.local/share"
-export XDG_MUSIC_DIR="${HOME}/Documents/Music"
-export XDG_VIDEOS_DIR="${HOME}/Documents/Videos"
-export XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"
-export XDG_TEMPLATES_DIR="${HOME}/Documents/Templates"
+if [ ! -d "/tmp/.usercache/${USER}/trash" ]; then
+    mkdir -p "/tmp/.usercache/${USER}/trash"
+    rm -f "${HOME}/.local/share/Trash"
+    ln -s "/tmp/.usercache/${USER}/trash" "${HOME}/.local/share/Trash"
+fi
 
-export ERRFILE="/dev/null"
-export LESSHISTFILE="/dev/null"
-export ZDOTDIR="${HOME}/.config/zsh"
-export LESSKEY="${HOME}/.config/lesskey"
-export SCREENRC="${HOME}/.screen/screenrc"
-export HISTFILE="${HOME}/.config/zsh/history"
-export BAT_CONFIG_PATH="${HOME}/.config/bat/config"
-export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${HOME}/.config/java"
+[ -d "${HOME}/Desktop" ] && rmdir "${HOME}/Desktop"
 
-export GTK_RC_FILES="${HOME}/.config/gtk-1.0/gtkrc"
-export GTK2_RC_FILES="${HOME}/.config/gtk-2.0/gtkrc"
+# OhMyZsh Plugins
+plugins=(archlinux git screen systemd sudo)
+source "${ZSH}/oh-my-zsh.sh"
 
-plugins=(git screen sudo)
-source "$ZSH/oh-my-zsh.sh"
+zstyle ':omz:update' frequency 14
+zstyle ':omz:update' mode reminder
 
-# ZSH History Auto Completion
+# ZSH Auto Completion
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "\e[A" up-line-or-beginning-search
 bindkey "\e[B" down-line-or-beginning-search
 
+autoload -U compinit
+compinit -d "$ZSH_COMPDUMP"
+
+zstyle ':compinstall' filename "${HOME}/.cache/zsh/zshcomp"
+
+# Auto Completion Options
+zstyle ':completion:*' completer _complete _extensions _approximate
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${HOME}/.cache/zsh/zshcomp_cache"
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' file-sort name modification
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*' 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' use-compctl false
+
+zstyle ':completion:*:messages' format '%F{yellow}[%d]%f'
+zstyle ':completion:*:warnings' format '%F{red}... No matches found!%f'
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-compinit -d "${HOME}/.cache/zcompdump-${ZSH_VERSION}"
-
 ZSH_HIGHLIGHT_MAXLENGTH=256
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
 ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
 ZSH_HIGHLIGHT_STYLES[command]='fg=113,bold'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=172,bold'
@@ -117,33 +119,33 @@ ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=63,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=74,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=74,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=74,bold'
+
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("${HOME}/Volumes")
 
 PROMPT="%n $PROMPT"
 
-motivate | cowsay -W 75 -f small
-if [ ! -d "$AURDEST" ]; then
-    mkdir -p "$AURDEST"
-fi
-if [ ! -d "$SRCDEST" ]; then
-    mkdir -p "$SRCDEST"
-fi
-if [ ! -d "$BUILDDIR" ]; then
-    mkdir -p "$BUILDDIR"
-fi
-if [ -d "${HOME}/Desktop" ]; then
-    rmdir "${HOME}/Desktop"
-fi
-if [ ! -d "${HOME}/Pictures/Screenshots" ]; then
-    mkdir -p "${HOME}/Pictures/Screenshots"
-fi
-if [ ! -d "/tmp/.usercache/${USER}/trash" ]; then
-    mkdir -p "/tmp/.usercache/${USER}/trash"
-    rm -f "${HOME}/.local/share/Trash"
-    ln -s "/tmp/.usercache/${USER}/trash" "${HOME}/.local/share/Trash"
-fi
+# ZSH Options
+setopt HUP
+setopt AUTO_MENU
+setopt AUTO_PUSHD
+setopt BAD_PATTERN
+setopt PUSHD_SILENT
+setopt ALWAYS_TO_END
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_BY_COPY
+setopt PUSHD_IGNORE_DUPS
+
+# Integrate with Kitty
+export KITTY_SHELL_INTEGRATION="enabled"
+autoload -Uz -- "${KITTY_INSTALLATION_DIR}/shell-integration/zsh/kitty-integration"
+kitty-integration
+unfunction kitty-integration
 
 cess() {
     if [ $# -lt 1 ]; then
@@ -152,8 +154,25 @@ cess() {
     fi
     /usr/bin/bat --paging=never $@ | less
 }
+firewall_open() {
+    /usr/bin/cat<<EOF | sudo -i --
+nft add chain inet filter input '{ policy accept; }'
+nft add chain inet filter output '{ policy accept; }'
+EOF
+}
+firewall_close() {
+    /usr/bin/cat<<EOF | sudo -i --
+nft flush table ip nat
+nft flush table inet filter
+nft delete table ip nat
+nft delete table inet filter
+nft -f /etc/nftables.conf
+EOF
+}
 
-# Older Golang version helper functions
+# TODO(dij): Use gotip or another method instead? Need to see if it can handle
+#            older go toolchains.
+# Golang Version helper functions
 go1.10() {
     _args=$@
     ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
@@ -197,22 +216,6 @@ go1.19() {
 go1.20() {
     _args=$@
     ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
-}
-
-firewall_open() {
-    /usr/bin/cat<<EOF | sudo -i --
-nft add chain inet filter input '{ policy accept; }'
-nft add chain inet filter output '{ policy accept; }'
-EOF
-}
-firewall_close() {
-    /usr/bin/cat<<EOF | sudo -i --
-nft flush table ip nat
-nft flush table inet filter
-nft delete table ip nat
-nft delete table inet filter
-nft -f /etc/nftables.conf
-EOF
 }
 
 # Firewall Aliases
@@ -268,12 +271,6 @@ alias ls="/usr/bin/lsd -vF --group-directories-first --color=auto"
 alias lsd="/usr/bin/lsd -vFlh --group-directories-first --color=auto"
 alias lsa="/usr/bin/lsd -vFlA --group-directories-first --color=auto"
 
-# LS Aliases (OG ls)
-alias z="/usr/bin/ls -vpFNl --group-directories-first --color=auto"
-alias zs="/usr/bin/ls -vpFN --group-directories-first --color=auto"
-alias zsd="/usr/bin/ls -vpFNlh --group-directories-first --color=auto"
-alias zsa="/usr/bin/ls -vpFNlA --group-directories-first --color=auto"
-
 # Screenshot Aliases
 alias sel="${HOME}/.local/bin/sway/clip"
 alias selc="/usr/bin/grimshot --notify copy area"
@@ -305,6 +302,7 @@ alias clip="/usr/bin/wl-copy --trim-newline"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 alias gsync="git add -A .; git commit; git push"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
+alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
 alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PIP_USER=yes /usr/bin/pip install --break-system-packages"
 
 # Script Aliases
@@ -317,9 +315,7 @@ alias dirdiff="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
 alias vsc="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --unity-launch"
 alias code="/usr/bin/vscodium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --unity-launch"
 
-# Macro Aliases
-alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
-alias user-agents="/usr/bin/ghr firewall-web /usr/bin/curl -sL https://www.useragents.me/api | jq -r '.data[] | .ua' | awk -F'[()rv:]' '{n=\$2; gsub(\";\",\"\",n); print n\" [Random]: \"\$0}'"
-
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
+
+motivate | cowsay -W 75 -f small | lolcat --random --horizontal-frequency 0.2 --vertical-frequency 1.25

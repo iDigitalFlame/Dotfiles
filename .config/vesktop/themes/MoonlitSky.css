@@ -234,11 +234,22 @@ html.theme-dark .theme-light .root-1CAIjD,
     --dark-elevation-border: 0 0 0 1px hsl(var(--primary-700-hsl)/0.6);
 }
 
-div[class^="circleIconButton_"] {
-    display: none !important;
-}
 div[class^="pageBody_"], section[class^="header_"] {
     background-color: #0A000A !important;
+}
+div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
+    display: none !important;
+}
+div[class^="newBadge_"], li[class^="shyButton_"], ul li[class^="shyButton_"] {
+    display: none !important;
+    background: none !important;
+}
+
+button.vc-ranb-button div {
+    color: #FFF;
+    padding: 1px 2px;
+    border-radius: 5px;
+    background: #7D0BAB;
 }
 
 :is(.theme-dark, .theme-amoled) #app-mount .container-2RRFHK {

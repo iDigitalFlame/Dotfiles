@@ -122,6 +122,14 @@ tab,
     border: none !important
 }
 
+/* Remove "Send Tab to Device" */
+*[id^="treestyletab_piro_sakura_ne_jp-menuitem-_context_send"] {
+    display: none;
+}
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display: none;
+}
+
 #TabsToolbar,
 .urlbar-input-box,
 #navigator-toolbox,
