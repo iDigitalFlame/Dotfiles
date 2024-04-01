@@ -43,7 +43,9 @@ echo "Updating dotfiles.."
 chmod -R 0550 "${DOTS}"
 find "${DOTS}" -xdev -type f -exec chmod 0440 {} \;
 
-chmod 0550 "${DOTS}/.zshrc"
+chmod 0550 "${HOME}/.config/zsh/zshrc"
+chmod 0550 "${HOME}/.config/zsh/.zshrc"
+
 chmod -R 0770 "${DOTS}/.git"
 chmod -R 0550 "${DOTS}/.local/bin"
 
