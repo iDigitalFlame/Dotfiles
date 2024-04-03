@@ -143,7 +143,7 @@ setopt PUSHD_IGNORE_DUPS
 
 # Integrate with Kitty
 export KITTY_SHELL_INTEGRATION="enabled"
-autoload -Uz -- "${KITTY_INSTALLATION_DIR}/shell-integration/zsh/kitty-integration"
+autoload -Uz -- "/usr/lib/kitty/shell-integration/zsh/kitty-integration"
 kitty-integration
 unfunction kitty-integration
 

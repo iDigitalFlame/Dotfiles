@@ -183,7 +183,7 @@ for_window {
     [app_id="LibreWolf" title="Firefox"]                                  floating enable, sticky enable, resize set width 600 px height 450 px, border pixel 1
     [app_id="Firefox" title="Picture-in-Picture"]                         floating enable, sticky enable, resize set width 600 px height 450 px, border pixel 1
     [app_id="LibreWolf" title="Picture-in-Picture"]                       floating enable, sticky enable, resize set width 600 px height 450 px, border pixel 1
-    [app_id="org.telegram.desktop" title="TelegramDesktop"]               floating enable, sticky enable, resize set width 600 px height 450 px, border none, opacity set 1
+    [app_id="org.telegram.desktop" title="TelegramDesktop"]               floating enable, sticky enable, resize set width 600 px height 450 px, border none, opacity set 1, blur disable
     [app_id="LibreWolf" title="^Extension: \(.*\) - .* — LibreWolf$"]     floating enable, border normal, resize set width 400 px height 600 px
     [app_id="Firefox" title="^Extension: \(.*\) - .* — Mozilla Firefox$"] floating enable, border normal, resize set width 400 px height 400 px
 }
@@ -258,7 +258,7 @@ bindsym --locked {
 
 # Locking Bindings
 bindsym {
-    $KEY_WIN+L              exec    "/usr/local/bin/lockctl -f -t 300"
+    $KEY_WIN+L              exec    "/usr/local/bin/lockctl -f -t 5m"
     $KEY_ALT+L              exec    "/usr/local/bin/lockctl -f"
 }
 
