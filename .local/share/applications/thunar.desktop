@@ -34,16 +34,15 @@
 #
 
 [Desktop Entry]
-Name            = Discord (Screen Sharing) 
-Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
-Icon            = discord
+Name            = Thunar File Manager
+Exec            = /usr/bin/thunar %U
+Icon            = org.xfce.thunar
 Type            = Application
-Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.
-MimeType        =
+Comment         = Browse the filesystem with the file manager
+MimeType        = inode/directory;
 Terminal        = false
-Keywords        = im;social;discord;dvm;cord;
-Categories      = Network;InstantMessaging;IM;Chat;P2P;
-GenericName     = Internet Messenger
-StartupNotify   = false
-StartupWMClass  = discord
+Keywords        = file manager;explorer;finder;browser;folders;directory;directories;partitions;drives;network;devices;rename;move;copy;delete;permissions;home;trash;
+Categories      = System;Core;GTK;FileTools;FileManager;
+GenericName     = File Manager
+StartupNotify   = true
 X-MultipleArgs  = false

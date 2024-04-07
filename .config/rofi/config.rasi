@@ -35,7 +35,14 @@
 */
 
 configuration {
-    run, drun, window {
+    drun {
+        parse-user:    true;
+        parse-system:  true;
+        scan-desktop:  true;
+        fallback-icon: "applications-all";
+    }
+
+    run, window {
         fallback-icon: "applications-all";
     }
 

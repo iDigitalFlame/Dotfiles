@@ -134,6 +134,7 @@ for_window {
     [app_id="LibreWolf"]            border none, opacity set 1
     [app_id="wlfreerdp"]            border pixel 1, floating disable
     [app_id="^swayimg_*"]           border none, blur disable
+    [app_id="blueman-manager"]      border pixel 1, floating enable, resize set width 400 px height 500 px
     [app_id="org.cubocore.CorePDF"] border pixel 1, floating enable
 }
 

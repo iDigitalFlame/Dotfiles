@@ -38,6 +38,7 @@ Name            = Discord 
 Exec            = /usr/bin/ghr firewall-voice /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
 Icon            = discord
 Type            = Application
+Actions         = screen-sharing;
 Comment         = All-in-one voice and text chat for gamers thats free, secure, and works on both your desktop and phone.
 MimeType        = x-scheme-handler/discord;
 Terminal        = false
@@ -47,3 +48,8 @@ GenericName     = Internet Messenger
 StartupNotify   = false
 StartupWMClass  = discord
 X-MultipleArgs  = false
+
+[Desktop Action screen-sharing]
+Name            = Screen Sharing
+Exec            = /usr/bin/vesktop --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
+Icon            = discord
