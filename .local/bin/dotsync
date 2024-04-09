@@ -65,6 +65,7 @@ relink "$DOTS" "${HOME}"
 rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
 rm -f "${HOME}"/.local/share/applications/userapp*.desktop 2> /dev/null
 
+linkcheck "${HOME}/.config/zsh/.zsh_history" "/dev/null"
 linkcheck "${HOME}/.config/zsh/.zshrc" "${HOME}/.config/zsh/zshrc"
 
 linkcheck "${HOME}/.local/bin/firefox" "${HOME}/.local/bin/browser"

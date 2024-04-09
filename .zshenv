@@ -75,6 +75,10 @@ export BROWSER="${HOME}/.local/bin/browser"
 export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
 export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
 
+export ZDOTDIR="${HOME}/.config/zsh"
+export ZSH="${HOME}/.local/lib/oh-my-zsh"
+export ZSH_COMPDUMP="${HOME}/.cache/zsh/zcompdump"
+
 export HISTSIZE=1500
 export SAVEHIST=1500
 export ERRFILE="/dev/null"
@@ -82,6 +86,21 @@ export LESSHISTFILE="/dev/null"
 export HISTFILE="${HOME}/.cache/zsh/history"
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${HOME}/.config/java"
 
-export ZDOTDIR="${HOME}/.config/zsh"
-export ZSH="${HOME}/.local/lib/oh-my-zsh"
-export ZSH_COMPDUMP="${HOME}/.cache/zsh/zcompdump"
+# ZSH Options (Early set here)
+setopt HUP
+setopt AUTO_MENU
+setopt AUTO_PUSHD
+setopt BAD_PATTERN
+setopt PUSHD_SILENT
+setopt ALWAYS_TO_END
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_BY_COPY
+setopt PUSHD_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST

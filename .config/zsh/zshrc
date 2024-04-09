@@ -126,21 +126,6 @@ ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("${HOME}/Volumes")
 
 PROMPT="%n $PROMPT"
 
-# ZSH Options
-setopt HUP
-setopt AUTO_MENU
-setopt AUTO_PUSHD
-setopt BAD_PATTERN
-setopt PUSHD_SILENT
-setopt ALWAYS_TO_END
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_BY_COPY
-setopt PUSHD_IGNORE_DUPS
-
 # Integrate with Kitty
 export KITTY_SHELL_INTEGRATION="enabled"
 autoload -Uz -- "/usr/lib/kitty/shell-integration/zsh/kitty-integration"
