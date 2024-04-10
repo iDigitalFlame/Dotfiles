@@ -83,7 +83,17 @@ dash "${HOME}/.private/sync.sh"
 
 themectl reload
 
+chmod 2550 "${HOME}/.config/gdb"
 chmod 2550 "${HOME}/.config/vlc"
+chmod 2550 "${HOME}/.config/yay"
+chmod 2550 "${HOME}/.config/nano"
+chmod 2550 "${HOME}/.config/rofi"
+chmod 2550 "${HOME}/.config/sway"
+chmod 2550 "${HOME}/.config/kitty"
+chmod 2550 "${HOME}/.config/swaync"
+chmod 2550 "${HOME}/.config/screen"
+chmod 2550 "${HOME}/.config/waybar"
+chmod 2550 "${HOME}/.config/leafpad"
 chmod 2550 "${HOME}/.config/gtk-2.0"
 chmod 2550 "${HOME}/.config/gtk-3.0"
 chmod 2550 "${HOME}/.config/gtk-4.0"
@@ -91,6 +101,11 @@ chmod 2550 "${HOME}/.config/cubocore"
 chmod 0550 "${HOME}/.config/zsh/zshrc"
 chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
 chmod 2550 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
+
+find "${DOTS}/.local" -maxdepth 1 -type d -exec chmod 2550 {} \;
+find "${DOTS}/.config" -maxdepth 1 -type d -exec chmod 2550 {} \;
+
+find "${HOME}/.config/bat" -type d -exec chmod 2550 {} \;
 
 # NOTE(dij): Set SETGID only on directories
 find "${DOTS}" -xdev -type d -exec chmod g+s {} \;

@@ -34,16 +34,16 @@
 #
 
 [Desktop Entry]
-Name            = KeePassXC
-Exec            = /usr/bin/keepassxc --config "/home/dij/.config/keepassxc/keepassxc.ini" %f
-Icon            = keepassxc
+Name            = Hypervisor Web Client 
+Exec            = /usr/bin/ghr firewall-web /usr/bin/nice -n 20 /usr/bin/falkon --wmclass proxmox --profile proxmox --new-window %U
+Icon            = vmware-workstation
 Type            = Application
-Comment         = Community-driven port of the Windows application “KeePass Password Safe”
-MimeType        = application/x-keepass2;
+Comment         = Hypervisor Web Client
+MimeType        =
 Terminal        = false
-Keywords        = password;key;safe;
-Categories      = Utility;Security;Qt;
-GenericName     = Password Manager
+Keywords        = proxmox;hypervisor;vm;
+Categories      = Network;Utility;
+GenericName     = Hypervisor Viewer
 StartupNotify   = false
-StartupWMClass  = keepassxc
+StartupWMClass  = proxmox
 X-MultipleArgs  = false
