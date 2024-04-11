@@ -232,6 +232,8 @@ alias python="/usr/bin/python3"
 
 # Power Aliases
 alias bright="brightnessctl"
+alias reboot="systemctl reboot"
+alias poweroff="systemctl poweroff"
 alias sus="sudo /usr/bin/systemctl suspend"
 alias hib="sudo /usr/bin/systemctl hibernate"
 
