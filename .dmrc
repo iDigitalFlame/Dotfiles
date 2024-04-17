@@ -34,4 +34,5 @@
 #
 
 [Desktop]
-Session = sway
+Session  = sway
+Language = en_US.UTF-8

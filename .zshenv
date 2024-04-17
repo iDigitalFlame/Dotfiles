@@ -36,6 +36,10 @@
 
 export GOROOT="/usr/lib/go"
 export GOPATH="${HOME}/.local/lib/go"
+export GOCACHE="${HOME}/.cache/go-build"
+
+export CARGO_HOME="${HOME}/.config/rust/cargo"
+export RUSTUP_HOME="${HOME}/.config/rust/rustup"
 
 export GNUPGHOME="${HOME}/.local/share/gnupg"
 export SSH_AUTH_SOCK="/run/user/${UID}/gcr/ssh"
@@ -66,7 +70,9 @@ export XDG_TEMPLATES_DIR="${HOME}/Documents/Templates"
 
 export LESSKEY="${HOME}/.config/lesskey"
 export SCREENRC="${HOME}/.screen/screenrc"
+export GNUPGHOME="${HOME}/.local/share/gnupg"
 export BAT_CONFIG_PATH="${HOME}/.config/bat/config"
+export PYTHON_HISTORY="${HOME}/.cache/python_history"
 export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
 
 export XCURSOR_SIZE=24
