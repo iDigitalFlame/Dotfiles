@@ -34,4 +34,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-grimshot --notify save area "${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)-$((1 + RANDOM % 256)).png"
+exec grimshot --notify save area "${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S)-$((1 + RANDOM % 256)).png"

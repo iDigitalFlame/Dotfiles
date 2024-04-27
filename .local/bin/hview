@@ -39,4 +39,4 @@ if [ -z "$vm" ]; then
     exit 0
 fi
 
-hydra -c --no-fork -i "$(echo $vm | cut --delimiter=':' -f1)" 2> /dev/null
+exec hydra -c --no-fork -i "$(echo $vm | cut --delimiter=':' -f1)" 2> /dev/null

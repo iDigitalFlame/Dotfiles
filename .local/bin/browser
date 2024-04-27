@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2024 ###
 #                              #
@@ -41,4 +41,4 @@ if [ "$FIREFOX" = "1" ] || [ "$(basename "$0")" = "firefox" ] ; then
     _prog="/usr/bin/firefox"
 fi
 
-/usr/bin/ghr firewall-web /usr/bin/env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 ${_prog} -P ${USER} $*
+exec /usr/bin/ghr firewall-web /usr/bin/env TZ=EST MOZ_GTK_TITLEBAR_DECORATION=client MOZ_ENABLE_WAYLAND=1 nice -n 10 ${_prog} -P ${USER} $*

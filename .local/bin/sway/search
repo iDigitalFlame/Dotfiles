@@ -36,9 +36,9 @@
 
 case $1 in
     "window")
-    rofi -no-lazy-grab -show window -modi window -theme "${HOME}/.config/rofi/windows.rasi"
+    exec rofi -no-lazy-grab -show window -modi window -theme "${HOME}/.config/rofi/windows.rasi"
     ;;
     *)
-    rofi -no-lazy-grab -show drun -drun-show-actions -modi drun -theme "${HOME}/.config/rofi/apps.rasi"
+    exec rofi -no-lazy-grab -show drun -drun-show-actions -modi drun -theme "${HOME}/.config/rofi/apps.rasi"
     ;;
 esac

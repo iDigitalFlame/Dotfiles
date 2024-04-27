@@ -38,7 +38,7 @@
 /usr/bin/swaymsg "[workspace=__focused__] fullscreen disable" 1> /dev/null 2> /dev/null
 
 # Lock
-/usr/bin/gtklock \
+exec /usr/bin/gtklock \
 --config=/dev/null \
 --idle-hide \
 --start-hidden \
