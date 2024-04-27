@@ -95,34 +95,22 @@
             "/usr/bin/swaync",
             "/usr/bin/nm-applet",
             "${HOME}/.local/bin/sway/mute",
-            "/usr/bin/python /usr/bin/aa-notify -p -f /run/log/audit/audit.log"
+            "/usr/bin/aa-notify -p -f /run/log/audit/audit.log"
         ]
     },
     "trigger": {
         "bluetooth": {
-            "disable": [],
             "enable": [
                 "/usr/bin/blueman-manager"
             ]
         },
-        "display": [],
-        "hibernate_post": [],
-        "hibernate_pre": [],
-        "lock_post": [],
-        "lock_pre": [],
-        "power_ac": [
-            "/usr/local/bin/cpuctl -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 20 -g performance -p performance"
-        ],
-        "power_battery": [
-            "/usr/local/bin/cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
-        ],
-        "rotate": [],
-        "suspend_post": [],
-        "suspend_pre": [],
-        "video": [],
-        "wireless": {
-            "disable": [],
-            "enable": []
+        "power": {
+            "ac": [
+                "/usr/local/bin/cpuctl -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 20 -g performance -p performance"
+            ],
+            "battery": [
+                "/usr/local/bin/cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
+            ]
         }
     },
     "waybar": "bar"
