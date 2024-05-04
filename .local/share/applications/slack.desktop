@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Slack 
-Exec            = /usr/bin/ghr firewall-web /usr/bin/nice -n 20 /usr/bin/slack --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capturer -s %U
+Exec            = /usr/bin/ghr firewall-web /usr/bin/nice -n 20 /usr/bin/slack --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capturer --disable-gpu-compositing -s %U
 Icon            = slack
 Type            = Application
 Comment         = Slack Desktop
