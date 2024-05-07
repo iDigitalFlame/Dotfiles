@@ -234,8 +234,8 @@ html.theme-dark .theme-light .root-1CAIjD,
     --dark-elevation-border: 0 0 0 1px hsl(var(--primary-700-hsl)/0.6);
 }
 
-div[class^="pageBody_"], section[class^="header_"] {
-    background-color: #0A000A !important;
+div[class^="checked_"] {
+    background-color: var(--green-360) !important
 }
 div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
     display: none !important;
@@ -243,6 +243,9 @@ div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
 div[class^="newBadge_"], li[class^="shyButton_"], ul li[class^="shyButton_"] {
     display: none !important;
     background: none !important;
+}
+div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[class^="chat_"], div[class^="chat_"] div[class^="content_"] {
+    background-color: #0A000A !important
 }
 
 button.vc-ranb-button div {
