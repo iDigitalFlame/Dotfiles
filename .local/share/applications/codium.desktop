@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Codium
-Exec            = /usr/bin/codium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --disable-gpu-compositing --unity-launch %F
+Exec            = /usr/bin/codium --unity-launch --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %F
 Icon            = vscodium
 Type            = Application
 Actions         = new-empty-window;
@@ -51,5 +51,5 @@ X-MultipleArgs  = false
 
 [Desktop Action new-empty-window]
 Name            = New Empty Window
-Exec            = /usr/bin/codium --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --disable-gpu-compositing --new-window %F
+Exec            = /usr/bin/codium --new-window --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %F
 Icon            = vscodium

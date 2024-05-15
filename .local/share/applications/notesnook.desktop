@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
@@ -51,12 +51,12 @@ X-MultipleArgs  = false
 
 [Desktop Action new-note]
 Name            = New Note
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U new note
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new note
 
 [Desktop Action new-notebook]
 Name            = New Notebook
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U new notebook
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new notebook
 
 [Desktop Action new-reminder]
 Name            = New Reminder
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --enable-features=WaylandWindowDecorations --ozone-platform-hint=wayland --enable-webrtc-pipewire-capture %U new reminder
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new reminder

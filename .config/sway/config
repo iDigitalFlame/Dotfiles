@@ -112,17 +112,17 @@ input type:touchpad {
 
 # Opacity Rules
 for_window {
-    [app_id="xpad"]                     opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
-    [app_id="Slack"]                    opacity set 0.85, border none
-    [class="Thunar"]                    opacity set 0.80, border none
-    [app_id="thunar"]                   opacity set 0.80, border none
-    [app_id="Thunar"]                   opacity set 0.80, border none
-    [app_id="codium"]                   opacity set 0.95, border none
-    [app_id="vesktop"]                  opacity set 0.85, border none
-    [app_id="org.kde.falkon"]           opacity set 0.85, border none
-    [app_id="codium-url-handler"]       opacity set 0.95, border none
-    [app_id="org.telegram.desktop"]     opacity set 0.85, border none
-    [app_id="org.keepassxc.KeePassXC"]  opacity set 0.85, border none
+    [app_id="xpad"]                    opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
+    [app_id="Slack"]                   opacity set 0.85, border none
+    [class="Thunar"]                   opacity set 0.80, border none
+    [app_id="thunar"]                  opacity set 0.80, border none
+    [app_id="Thunar"]                  opacity set 0.80, border none
+    [app_id="codium"]                  opacity set 0.95, border none
+    [app_id="vesktop"]                 opacity set 0.85, border none
+    [app_id="org.kde.falkon"]          opacity set 0.85, border none
+    [app_id="codium-url-handler"]      opacity set 0.95, border none
+    [app_id="org.telegram.desktop"]    opacity set 0.85, border none
+    [app_id="org.keepassxc.KeePassXC"] opacity set 0.85, border none
 }
 
 # Generic Application Rules
@@ -141,10 +141,10 @@ for_window {
 
 # Telgram Specifiec Fixes
 for_window {
-    [title="(null)"]                                        border none, floading disable
-    [app_id="org.telegram.desktop"]                         border none
-    [app_id="org.telegram.desktop" floating]                border none, floating disable
-    [app_id="org.telegram.desktop" title="Media viewer"]    fullscreen enable
+    [title="(null)"]                                     border none, floading disable
+    [app_id="org.telegram.desktop"]                      border none
+    [app_id="org.telegram.desktop" floating]             border none, floating disable
+    [app_id="org.telegram.desktop" title="Media viewer"] fullscreen enable
 }
 
 # XWayland Rules
@@ -160,23 +160,23 @@ for_window {
 
 # Dialog Rules
 for_window {
-    [window_type="dialog"]                                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [title="^File Upload"]                                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="vesktop" title="^blob:.*$"]                                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="electron" title="^blob:.*$"]                                                   floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="^cropgui$" title="to crop$"]                                                   floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="Notesnook" title="^blob:.*$"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [window_role="(pop-up|bubble|dialog)"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="Notesnook" title="^Open Fil([es]+)$"]                                          floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="Thunar" title="File Operation Progress"]                                        floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="thunar" title="File Operation Progress"]                                       floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="codium" title="Add Folder to Workspace"]                                       floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="Thunar" title="Confirm to replace files"]                                       floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="thunar" title="Confirm to replace files"]                                      floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="org.telegram.desktop" title="Save Video"]                                      floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="codium-url-handler" title="Add Folder to Workspace"]                           floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]      floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"]   floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [window_type="dialog"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^File Upload"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="vesktop" title="^blob:.*$"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="electron" title="^blob:.*$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="^cropgui$" title="to crop$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="Notesnook" title="^blob:.*$"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [window_role="(pop-up|bubble|dialog)"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="Notesnook" title="^Open Fil([es]+)$"]                                        floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="Thunar" title="File Operation Progress"]                                      floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="thunar" title="File Operation Progress"]                                     floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="codium" title="Add Folder to Workspace"]                                     floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="Thunar" title="Confirm to replace files"]                                     floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="thunar" title="Confirm to replace files"]                                    floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="org.telegram.desktop" title="Save Video"]                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="codium-url-handler" title="Add Folder to Workspace"]                         floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"] floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
 }
 
 # Browser Extension and Popup Rules
@@ -194,10 +194,10 @@ for_window {
 
 # Application to Workspace Assignments
 assign {
-    [app_id="Slack"]                    number 9
-    [app_id="vesktop"]                  number 9
-    [app_id="LibreWolf"]                number 1
-    [app_id="org.telegram.desktop"]     number 10
+    [app_id="Slack"]                number 9
+    [app_id="vesktop"]              number 9
+    [app_id="LibreWolf"]            number 1
+    [app_id="org.telegram.desktop"] number 10
 }
 
 # Workspace to Output Assignments
@@ -209,73 +209,73 @@ workspace {
 
 # Guesture Bindings
 bindgesture {
-    swipe:up                exec        "${HOME}/.local/bin/sway/search"
-    swipe:down              exec        "/usr/bin/swaync-client -t"
-    swipe:left              workspace   prev
-    swipe:right             workspace   next
-    pinch:inward            exec        "${HOME}/.local/bin/sway/search"
+    swipe:up                exec      "${HOME}/.local/bin/sway/search"
+    swipe:down              exec      "/usr/bin/swaync-client -t"
+    swipe:left              workspace prev
+    swipe:right             workspace next
+    pinch:inward            exec      "${HOME}/.local/bin/sway/search"
 }
 
 # Standard Bindings
 bindsym {
-    $KEY_WIN+B              exec    "${HOME}/.local/bin/browser"
-    $KEY_WIN+S              exec    "/usr/bin/xpad -n"
-    $KEY_CTL+Tab            exec    "/usr/lib/smd/libexec/smd-message -u background"
-    $KEY_WIN+Return         exec    "/usr/bin/thunar"
-    $KEY_ALT+Return         exec    "/usr/bin/kitty --single-instance --instance-group sway"
-    $KEY_CTL+Shift+P        exec    "/usr/bin/wlay"
-    $KEY_CTL+Shift+K        exec    "${HOME}/.local/bin/hview"
+    $KEY_WIN+B              exec "${HOME}/.local/bin/browser"
+    $KEY_WIN+S              exec "/usr/bin/xpad -n"
+    $KEY_CTL+Tab            exec "/usr/lib/smd/libexec/smd-message -u background"
+    $KEY_WIN+Return         exec "/usr/bin/thunar"
+    $KEY_ALT+Return         exec "/usr/bin/kitty --single-instance --instance-group sway"
+    $KEY_CTL+Shift+P        exec "/usr/bin/wlay"
+    $KEY_CTL+Shift+K        exec "${HOME}/.local/bin/hview"
 }
 
 # Application Launcher / Window Switcher Bindings
 bindsym {
-    F3                      exec    "${HOME}/.local/bin/sway/search"
-    $KEY_ALT+Tab            exec    "${HOME}/.local/bin/sway/search window"
-    $KEY_WIN+Tab            exec    "${HOME}/.local/bin/sway/search window"
-    $KEY_ALT+space          exec    "${HOME}/.local/bin/sway/search"
+    F3                      exec "${HOME}/.local/bin/sway/search"
+    $KEY_ALT+Tab            exec "${HOME}/.local/bin/sway/search window"
+    $KEY_WIN+Tab            exec "${HOME}/.local/bin/sway/search window"
+    $KEY_ALT+space          exec "${HOME}/.local/bin/sway/search"
 }
 
 # Screenshot / Screenclip Bindings
 bindsym {
-    Print                   exec    "${HOME}/.local/bin/sway/shot"
-    Shift+Print             exec    "${HOME}/.local/bin/sway/clip"
-    $KEY_CTL+Print          exec    "/usr/bin/grimshot --notify copy output"
-    $KEY_WIN+Shift+2        exec    "/usr/bin/grimshot --notify copy output"
-    $KEY_WIN+Shift+1        exec    "/usr/bin/grimshot --notify copy area"
+    Print                   exec "${HOME}/.local/bin/sway/shot"
+    Shift+Print             exec "${HOME}/.local/bin/sway/clip"
+    $KEY_CTL+Print          exec "/usr/bin/grimshot --notify copy output"
+    $KEY_WIN+Shift+2        exec "/usr/bin/grimshot --notify copy output"
+    $KEY_WIN+Shift+1        exec "/usr/bin/grimshot --notify copy area"
 }
 
 # Brighness Bindings
 # Can be used while locked
 bindsym --locked {
-    XF86MonBrightnessUp     exec    "/usr/local/bin/brightnessctl -i"
-    XF86MonBrightnessDown   exec    "/usr/local/bin/brightnessctl -d"
+    XF86MonBrightnessUp     exec "/usr/local/bin/brightnessctl -i"
+    XF86MonBrightnessDown   exec "/usr/local/bin/brightnessctl -d"
 }
 
 # Audio Control Bindings
 # Can be used while locked
 bindsym --locked {
-    XF86AudioMute           exec    "/usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-    XF86AudioMute+Shift     exec    "${HOME}/.local/bin/muteall"
-    XF86AudioRaiseVolume    exec    "/usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-    XF86AudioLowerVolume    exec    "/usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    XF86AudioMute           exec "/usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    XF86AudioMute+Shift     exec "${HOME}/.local/bin/muteall"
+    XF86AudioRaiseVolume    exec "/usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+    XF86AudioLowerVolume    exec "/usr/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
 }
 
 # Locking Bindings
 bindsym {
-    $KEY_WIN+L              exec    "/usr/local/bin/lockctl -f -t 5m"
-    $KEY_ALT+L              exec    "/usr/local/bin/lockctl -f"
+    $KEY_WIN+L              exec "/usr/local/bin/lockctl -f -t 5m"
+    $KEY_ALT+L              exec "/usr/local/bin/lockctl -f"
 }
 
 # Notification Bindings
 bindsym {
-    $KEY_WIN+Escape         exec    "/usr/bin/swaync-client -t"
-    $KEY_CTL+Escape         exec    "/usr/bin/swaync-client -t"
+    $KEY_WIN+Escape         exec "/usr/bin/swaync-client -t"
+    $KEY_CTL+Escape         exec "/usr/bin/swaync-client -t"
 }
 
 # Scratchpad Bindings
 bindsym {
-    $KEY_ALT+D              move        scratchpad
-    $KEY_ALT+S              scratchpad  show
+    $KEY_ALT+D              move       scratchpad
+    $KEY_ALT+S              scratchpad show
 }
 
 # Window Kill Bindings
@@ -286,18 +286,18 @@ bindsym {
 
 # Window Resize Bindings
 bindsym {
-    $KEY_CTL+Shift+Up       resize shrink           height  10 px or 10 ppt
-    $KEY_CTL+Shift+Down     resize grow             height  10 px or 10 ppt
-    $KEY_CTL+Shift+Left     resize grow             width   10 px or 10 ppt
-    $KEY_CTL+Shift+Right    resize shrink           width   10 px or 10 ppt
+    $KEY_CTL+Shift+Up       resize shrink height 10 px or 10 ppt
+    $KEY_CTL+Shift+Down     resize grow   height 10 px or 10 ppt
+    $KEY_CTL+Shift+Left     resize grow   width  10 px or 10 ppt
+    $KEY_CTL+Shift+Right    resize shrink width  10 px or 10 ppt
 }
 
 # Window Resize (Mouse) Bindings
 bindsym {
-    --whole-window --border $KEY_WIN+Shift+button5  resize grow     width   10 px
-    --whole-window --border $KEY_CTL+Shift+button5  resize grow     height  10 px
-    --whole-window --border $KEY_WIN+Shift+button4  resize shrink   width   10 px
-    --whole-window --border $KEY_CTL+Shift+button4  resize shrink   height  10 px
+    --whole-window --border $KEY_WIN+Shift+button5 resize grow   width  10 px
+    --whole-window --border $KEY_CTL+Shift+button5 resize grow   height 10 px
+    --whole-window --border $KEY_WIN+Shift+button4 resize shrink width  10 px
+    --whole-window --border $KEY_CTL+Shift+button4 resize shrink height 10 px
 }
 
 # Window Movement Bindings
@@ -310,31 +310,32 @@ bindsym {
 
 # Layout Bindings
 bindsym {
-    $KEY_WIN+H              split       h
-    $KEY_WIN+J              split       v
-    $KEY_WIN+Shift+H        split       h
-    $KEY_WIN+Shift+J        split       v
-    $KEY_ALT+Shift+H        split       h
-    $KEY_ALT+Shift+J        split       v
-    $KEY_WIN+E              floating    toggle
-    $KEY_WIN+F              fullscreen  toggle
+    $KEY_WIN+H              split      h
+    $KEY_WIN+J              split      v
+    $KEY_WIN+Shift+H        split      h
+    $KEY_WIN+Shift+J        split      v
+    $KEY_ALT+Shift+H        split      h
+    $KEY_ALT+Shift+J        split      v
+    $KEY_WIN+E              floating   toggle
+    $KEY_WIN+F              fullscreen toggle
 }
 
 # Workspace Modification Bindings
 bindsym {
-    $KEY_WIN+D                  layout  tabbed
-    $KEY_WIN+T                  layout  tabbed
-    $KEY_WIN+P                  sticky  disable
-    $KEY_WIN+A                  layout  toggle split
-    $KEY_ALT+grave              exec    "${HOME}/.local/bin/sway/new"
-    $KEY_CTL+grave              exec    "${HOME}/.local/bin/sway/new window"
-    $KEY_WIN+grave              exec    "${HOME}/.local/bin/sway/new window"
-    $KEY_CTL+Shift+bracketleft  move    workspace to output left
-    $KEY_CTL+Shift+bracketright move    workspace to output right
+    $KEY_WIN+D                  layout tabbed
+    $KEY_WIN+T                  layout tabbed
+    $KEY_WIN+P                  sticky disable
+    $KEY_WIN+A                  layout toggle split
+    $KEY_ALT+grave              exec   "${HOME}/.local/bin/sway/new"
+    $KEY_CTL+grave              exec   "${HOME}/.local/bin/sway/new window"
+    $KEY_WIN+grave              exec   "${HOME}/.local/bin/sway/new window"
+    $KEY_CTL+Shift+bracketleft  move   workspace to output left
+    $KEY_CTL+Shift+bracketright move   workspace to output right
 }
 
 # Workspace Switching Bindings
 bindsym {
+    $KEY_ALT+Delete         workspace 0
     $KEY_ALT+1              workspace 1
     $KEY_ALT+2              workspace 2
     $KEY_ALT+3              workspace 3
@@ -345,7 +346,16 @@ bindsym {
     $KEY_ALT+8              workspace 8
     $KEY_ALT+9              workspace 9
     $KEY_ALT+0              workspace 10
-    $KEY_ALT+Delete         workspace 0
+    $KEY_ALT+Shift+1        workspace 11
+    $KEY_ALT+Shift+2        workspace 12
+    $KEY_ALT+Shift+3        workspace 13
+    $KEY_ALT+Shift+4        workspace 14
+    $KEY_ALT+Shift+5        workspace 15
+    $KEY_ALT+Shift+6        workspace 16
+    $KEY_ALT+Shift+7        workspace 17
+    $KEY_ALT+Shift+8        workspace 18
+    $KEY_ALT+Shift+9        workspace 19
+    $KEY_ALT+Shift+0        workspace 20
 }
 
 # Workspace Next / Prev Bindings
@@ -364,6 +374,7 @@ bindsym {
 
 # Workspace Window Switching (No switch-to) Bindings
 bindsym {
+    $KEY_CTL+Delete         move container to workspace 0
     $KEY_CTL+1              move container to workspace 1
     $KEY_CTL+2              move container to workspace 2
     $KEY_CTL+3              move container to workspace 3
@@ -374,22 +385,31 @@ bindsym {
     $KEY_CTL+8              move container to workspace 8
     $KEY_CTL+9              move container to workspace 9
     $KEY_CTL+0              move container to workspace 10
-    $KEY_CTL+Delete         move container to workspace 0
+    $KEY_CTL+Shift+1        move container to workspace 11
+    $KEY_CTL+Shift+2        move container to workspace 12
+    $KEY_CTL+Shift+3        move container to workspace 13
+    $KEY_CTL+Shift+4        move container to workspace 14
+    $KEY_CTL+Shift+5        move container to workspace 15
+    $KEY_CTL+Shift+6        move container to workspace 16
+    $KEY_CTL+Shift+7        move container to workspace 17
+    $KEY_CTL+Shift+8        move container to workspace 18
+    $KEY_CTL+Shift+9        move container to workspace 19
+    $KEY_CTL+Shift+0        move container to workspace 20
 }
 
 # Workspace Window Switching Bindings
 bindsym {
-    $KEY_WIN+1              move container to workspace 1,      workspace 1
-    $KEY_WIN+2              move container to workspace 2,      workspace 2
-    $KEY_WIN+3              move container to workspace 3,      workspace 3
-    $KEY_WIN+4              move container to workspace 4,      workspace 4
-    $KEY_WIN+5              move container to workspace 5,      workspace 5
-    $KEY_WIN+6              move container to workspace 6,      workspace 6
-    $KEY_WIN+7              move container to workspace 7,      workspace 7
-    $KEY_WIN+8              move container to workspace 8,      workspace 8
-    $KEY_WIN+9              move container to workspace 9,      workspace 9
-    $KEY_WIN+0              move container to workspace 10,     workspace 10
-    $KEY_WIN+Delete         move container to workspace 0,      workspace 0
+    $KEY_WIN+Delete         move container to workspace 0,  workspace 0
+    $KEY_WIN+1              move container to workspace 1,  workspace 1
+    $KEY_WIN+2              move container to workspace 2,  workspace 2
+    $KEY_WIN+3              move container to workspace 3,  workspace 3
+    $KEY_WIN+4              move container to workspace 4,  workspace 4
+    $KEY_WIN+5              move container to workspace 5,  workspace 5
+    $KEY_WIN+6              move container to workspace 6,  workspace 6
+    $KEY_WIN+7              move container to workspace 7,  workspace 7
+    $KEY_WIN+8              move container to workspace 8,  workspace 8
+    $KEY_WIN+9              move container to workspace 9,  workspace 9
+    $KEY_WIN+0              move container to workspace 10, workspace 10
 }
 
 # Workspace Window Next / Prev Bindings
