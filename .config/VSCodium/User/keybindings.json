@@ -887,5 +887,15 @@
         "key": "ctrl+k ctrl+alt+c",
         "command": "-copyFilePath",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
     }
 ]
