@@ -21,6 +21,7 @@ It's using Wayland btw :D
 - grimshot
 - gtklock
 - kitty
+- libsecret
 - lsd
 - noto-fonts-emoji
 - otf-cascadia-code

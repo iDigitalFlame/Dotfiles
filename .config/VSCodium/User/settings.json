@@ -252,6 +252,7 @@
         "logx",
         "LUID",
         "machineid",
+        "Mimikatz",
         "mkdir",
         "mtls",
         "nargs",
