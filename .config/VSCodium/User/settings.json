@@ -60,6 +60,9 @@
         "editor.formatOnSaveMode": "file"
     },
     "accessibility.hideAccessibleView": true,
+    "accessibility.signalOptions": {
+        "volume": 0
+    },
     "accessibility.signals.chatRequestSent": {
         "announcement": "off",
         "sound": "off"
@@ -592,7 +595,7 @@
         "*.conf": "properties",
         "*.run": "shellscript",
         "*.sh": "shellscript",
-        "*.twig": "django-html",
+        "*.twig": "html",
         "config": "properties",
         "ssh_config": "plaintext",
         "sshd_config": "plaintext"
@@ -889,16 +892,16 @@
     "gulp.autoDetect": "off",
     "html.autoClosingTags": true,
     "html.format.contentUnformatted": "pre,code,textarea",
-    "html.format.enable": true,
+    "html.format.enable": false,
     "html.format.extraLiners": "",
     "html.format.indentHandlebars": false,
     "html.format.indentInnerHtml": false,
     "html.format.maxPreserveNewLines": null,
     "html.format.preserveNewLines": true,
     "html.format.templating": true,
-    "html.format.unformatted": "wbr",
-    "html.format.wrapAttributes": "preserve-aligned",
-    "html.format.wrapLineLength": 250,
+    "html.format.unformatted": null,
+    "html.format.wrapAttributes": "preserve",
+    "html.format.wrapLineLength": 0,
     "html.suggest.html5": true,
     "html.trace.server": "off",
     "html.validate.scripts": true,
@@ -1484,8 +1487,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false,
-    "accessibility.signalOptions": {
-        "volume": 0
-    }
+    "zenMode.silentNotifications": false
 }
