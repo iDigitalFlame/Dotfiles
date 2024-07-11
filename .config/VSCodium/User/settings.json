@@ -782,7 +782,6 @@
     "go.vetOnSave": "package",
     "gopls": {
         "build.allowImplicitNetworkAccess": false,
-        "build.allowModfileModifications": false,
         "build.buildFlags": [
             "-tags=windows,linux"
         ],
@@ -797,9 +796,6 @@
         "completeUnimported": true,
         "deepCompletion": true,
         "formatting.gofumpt": false,
-        "hoverKind": "FullDocumentation",
-        "linkTarget": "pkg.go.dev",
-        "linksInHover": false,
         "ui.codelenses": {
             "gc_details": true,
             "generate": false,
