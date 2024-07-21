@@ -160,47 +160,47 @@ EOF
 # Golang Version helper functions
 go1.10() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
 }
 go1.11() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.11.13\"; \"${HOME}/Documents/Development/GoArchive/go1.11.13/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.11.13\"; \"${HOME}/Documents/Development/GoArchive/go1.11.13/bin/go\" $_args"
 }
 go1.12() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.12.17\"; \"${HOME}/Documents/Development/GoArchive/go1.12.17/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.12.17\"; \"${HOME}/Documents/Development/GoArchive/go1.12.17/bin/go\" $_args"
 }
 go1.13() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.13.15\"; \"${HOME}/Documents/Development/GoArchive/go1.13.15/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.13.15\"; \"${HOME}/Documents/Development/GoArchive/go1.13.15/bin/go\" $_args"
 }
 go1.14() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
 }
 go1.15() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.15.15\"; \"${HOME}/Documents/Development/GoArchive/go1.15.15/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.15.15\"; \"${HOME}/Documents/Development/GoArchive/go1.15.15/bin/go\" $_args"
 }
 go1.16() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
 }
 go1.17() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.17.13\"; \"${HOME}/Documents/Development/GoArchive/go1.17.13/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.17.13\"; \"${HOME}/Documents/Development/GoArchive/go1.17.13/bin/go\" $_args"
 }
 go1.18() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
 }
 go1.19() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.19.5\"; \"${HOME}/Documents/Development/GoArchive/go1.19.5/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.19.5\"; \"${HOME}/Documents/Development/GoArchive/go1.19.5/bin/go\" $_args"
 }
 go1.20() {
     _args=$@
-    /usr/bin/ghr firewall-web /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
+    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
 }
 
 # Firewall Aliases
@@ -216,13 +216,13 @@ alias rsync="/usr/bin/ghr firewall-ssh /usr/bin/rsync"
 alias pacman="/usr/bin/ghr firewall-web /usr/bin/pacman"
 alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
 alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
-alias go="nocorrect /usr/bin/ghr firewall-web /usr/bin/go"
+alias go="nocorrect /usr/bin/ghr firewall-all /usr/bin/go"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
 alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
 alias quote="/usr/bin/ghr firewall-web ${HOME}/.local/bin/motivate -n"
 alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp"
 alias vncviewer="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
-alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-web /usr/bin/go"
+alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-all /usr/bin/go"
 alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
 alias rdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1920x1035"
 

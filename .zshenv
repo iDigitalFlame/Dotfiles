@@ -85,8 +85,8 @@ export ZDOTDIR="${HOME}/.config/zsh"
 export ZSH="${HOME}/.local/lib/oh-my-zsh"
 export ZSH_COMPDUMP="${HOME}/.cache/zsh/zcompdump"
 
-export HISTSIZE=1500
-export SAVEHIST=1500
+export HISTSIZE=2500
+export SAVEHIST=2500
 export ERRFILE="/dev/null"
 export LESSHISTFILE="/dev/null"
 export HISTFILE="${HOME}/.cache/zsh/history"
@@ -94,19 +94,48 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="${HOME}/.config/java"
 
 # ZSH Options (Early set here)
 setopt HUP
+setopt GLOB_DOTS
 setopt AUTO_MENU
 setopt AUTO_PUSHD
 setopt BAD_PATTERN
+setopt SHORT_LOOPS
+setopt BAD_PATTERN
+setopt LOCAL_TRAPS
 setopt PUSHD_SILENT
 setopt ALWAYS_TO_END
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_SAVE_BY_COPY
+setopt CLOBBER_EMPTY
 setopt PUSHD_IGNORE_DUPS
+setopt INTERACTIVE_COMMENTS
+
+unsetopt VI
+unsetopt BEEP
+unsetopt C_BASES
+unsetopt HASH_CMDS
+unsetopt HASH_DIRS
+unsetopt PATH_DIRS
+unsetopt CHECK_JOBS
+unsetopt OCTAL_ZEROES
+unsetopt ALIAS_FUNC_DEF
+unsetopt RM_STAR_SILENT
+unsetopt CHECK_RUNNING_JOBS
+
+# History Specific
+setopt HIST_VERIFY
+setopt HIST_NO_STORE
+setopt APPEND_HISTORY
+setopt HIST_FCNTL_LOCK
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
+setopt HIST_SAVE_BY_COPY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
+
+unsetopt SHARE_HISTORY
+unsetopt HIST_LEX_WORDS
+unsetopt HIST_IGNORE_SPACE
+unsetopt HIST_NO_FUNCTIONS
+unsetopt INC_APPEND_HISTORY
+unsetopt INC_APPEND_HISTORY_TIME

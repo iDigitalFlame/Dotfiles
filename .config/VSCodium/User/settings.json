@@ -60,9 +60,6 @@
         "editor.formatOnSaveMode": "file"
     },
     "accessibility.hideAccessibleView": true,
-    "accessibility.signalOptions": {
-        "volume": 0
-    },
     "accessibility.signals.chatRequestSent": {
         "announcement": "off",
         "sound": "off"
