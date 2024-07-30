@@ -34,3 +34,5 @@
 #
 
 Xft.dpi: 95
+Xcursor.size: 24
+Xcursor.theme: MoonlightSky

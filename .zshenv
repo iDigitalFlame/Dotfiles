@@ -77,6 +77,7 @@ export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
 
 export XCURSOR_SIZE=24
 export PAGER="/usr/bin/less -iR"
+export XCURSOR_THEME="MoonlightSky"
 export BROWSER="${HOME}/.local/bin/browser"
 export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
 export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
