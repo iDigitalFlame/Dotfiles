@@ -224,7 +224,8 @@ alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp"
 alias vncviewer="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
 alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-all /usr/bin/go"
 alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
-alias rdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1600x900"
+alias rdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse -menu-anims +multitouch +clipboard -themes /size:1600x900"
+alias rdp_map="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/wlfreerdp -aero +async-channels -compression -decorations -grab-keyboard -grab-mouse +home-drive -menu-anims +multitouch +clipboard -themes /size:1600x900"
 
 # Python Aliases
 alias p="/usr/bin/python3"
