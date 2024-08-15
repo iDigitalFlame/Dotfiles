@@ -1,3 +1,4 @@
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2024 ###
 #                              #
@@ -15,7 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## Application Entry
+## Ghirda Config Wrapper
 #
 # Copyright (C) 2016 - 2024 iDigitalFlame
 #
@@ -33,16 +34,9 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-[Desktop Entry]
-Name            = Ghidra
-Exec            = /home/dij/.local/bin/tools/ghidra %f
-Icon            = recstudio
-Type            = Application
-Comment         = Open-source reverse engineering platform
-Terminal        = false
-MimeType        =
-Keywords        = code;reverse;debug;
-Categories      = Development;IDE;
-GenericName     = Ghidra
-StartupNotify   = false
-X-MultipleArgs  = false
+name="$(grep 'application.release.name' '/opt/ghidra/Ghidra/application.properties' | awk -F'=' '{print $2}')"
+version="$(grep 'application.version' '/opt/ghidra/Ghidra/application.properties' | awk -F'=' '{print $2}')"
+
+linkcheck "${HOME}/.config/Ghidra/.ghidra_${version}_${name}" "${HOME}/.config/Ghidra/config"
+
+exec "/opt/ghidra/support/launch.sh" fg jdk Ghidra "2G" "" ghidra.GhidraRun "$@"
