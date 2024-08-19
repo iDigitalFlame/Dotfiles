@@ -70,3 +70,5 @@ It's using Wayland btw :D
 
 **Application Menu (Rofi Wayland Fork)**
 ![Work in progress](.local/images/pic5.jpg)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z4121TDS)
