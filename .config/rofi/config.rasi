@@ -42,6 +42,10 @@ configuration {
         fallback-icon: "applications-all";
     }
 
+    window {
+        prefer-icon-theme: true;
+    }
+
     run, window {
         fallback-icon: "applications-all";
     }

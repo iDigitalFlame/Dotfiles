@@ -38,6 +38,7 @@ Name            = Chromium 
 Exec            = /home/dij/.local/bin/chrome %U
 Icon            = chromium
 Type            = Application
+Actions         = developer;
 Comment         = Browse the Web
 MimeType        = text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
 Terminal        = false
@@ -47,3 +48,8 @@ GenericName     = Web Browser
 StartupNotify   = false
 StartupWMClass  = chromium
 X-MultipleArgs  = false
+
+[Desktop Action developer]
+Name            = Developer
+Exec            = /home/dij/.local/bin/chrome --all %U
+Icon            = chromium
