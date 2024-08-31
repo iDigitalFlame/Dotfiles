@@ -772,7 +772,7 @@
     "go.toolsGopath": "/home/dij/.local/lib/go",
     "go.toolsManagement.autoUpdate": true,
     "go.toolsManagement.checkForUpdates": "local",
-    "go.toolsManagement.go": "/home/dij/.local/lib/go/go",
+    "go.toolsManagement.go": "/home/dij/.local/bin/tools/go",
     "go.trace.server": "off",
     "go.useLanguageServer": true,
     "go.vetFlags": [],
