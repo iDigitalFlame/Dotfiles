@@ -139,6 +139,23 @@ cess() {
     fi
     /usr/bin/bat --paging=never $@ | less
 }
+pyhttp() {
+    local port="8080"
+    if [ $# -ge 2 ]; then
+        if [ $# -eq 1 ]; then
+            port="$1"
+        fi
+        printf 'Switching to "%s"..\n' "$2"
+        cd "$2"
+    else
+        if [ $# -eq 1 ]; then
+            port="$1"
+        fi
+    fi
+    echo "IP Addresses:"
+    ifconfig | grep 'inet '| awk '{print "\t"$2}' |grep -vE '127.0.0.1|172.16.172'
+    python -m http.server "$port"
+}
 firewall_open() {
     /usr/bin/cat<<EOF | sudo -i --
 nft add chain inet filter input '{ policy accept; }'
