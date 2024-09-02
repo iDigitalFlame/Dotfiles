@@ -134,6 +134,7 @@ for_window {
     [app_id="(?i)chromium"]         border none, opacity set 1
     [app_id="(?i)Notesnook"]        border none, floating disabled, opacity set 1
     [app_id="(?i)librewolf"]        border none, opacity set 1
+    [app_id="pavucontrol-qt"]       border normal, floating enable, resize set width 800 px height 450 px
     [app_id="blueman-manager"]      border pixel 1, floating enable, resize set width 400 px height 500 px
     [app_id="org.cubocore.CorePDF"] border pixel 1, floating enable
 }
