@@ -52,7 +52,7 @@ export BUILDDIR="/tmp/.usercache/${USER}/aur/build"
 export GTK_RC_FILES="${HOME}/.config/gtk-1.0/gtkrc"
 export GTK2_RC_FILES="${HOME}/.config/gtk-2.0/gtkrc"
 
-export PATH=$PATH:${GOPATH}/bin
+export PATH=$PATH:${GOPATH}/bin:${HOME}/.config/rust/cargo/bin
 
 export XDG_DESKTOP_DIR="$HOME"
 export XDG_CACHE_HOME="${HOME}/.cache"
