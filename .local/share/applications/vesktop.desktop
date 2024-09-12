@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Discord 
-Exec            = /usr/bin/ghr firewall-voice /usr/bin/bash /usr/bin/vesktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
+Exec            = /usr/bin/ghr firewall-voice /usr/bin/vesktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
 Icon            = discord
 Type            = Application
 Actions         = screen-sharing;
@@ -51,5 +51,5 @@ X-MultipleArgs  = false
 
 [Desktop Action screen-sharing]
 Name            = Screen Sharing
-Exec            = /usr/bin/bash /usr/bin/vesktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
+Exec            = /usr/bin/vesktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
 Icon            = discord
