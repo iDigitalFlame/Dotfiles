@@ -38,8 +38,8 @@ html#main-window {
     background: transparent !important;
     --color-bg: transparent !important;
     --arrowpanel-border-color: transparent !important;
-    --toolbar-bgcolor: rgba(0, 0, 0, 0.4) !important;
     --arrowpanel-color: rgb(255, 255, 255) !important;
+    --toolbar-bgcolor: rgba(10, 0, 10, 0.4) !important;
     --arrowpanel-background: rgba(0, 0, 0, 0.4) !important;
     --lwt-toolbar-field-color: rgb(255, 255, 255) !important;
     --lwt-toolbar-field-background-color: transparent !important;
@@ -103,7 +103,8 @@ tab,
     visibility: collapse !important
 }
 #urlbar-background {
-    background-color: rgba(25, 25, 25, 0.8) !important
+    border-radius: 8px !important;
+    background-color: rgba(10, 0, 10, 0.7) !important
 }
 #navigator-toolbox {
     box-shadow: none !important;
@@ -134,7 +135,7 @@ tab,
 .urlbar-input-box,
 #navigator-toolbox,
 #webextpanels-window,
-#sidebar-box>#browser,
+#sidebar-box > #browser,
 .sidebar-panel[lwt-sidebar],
 .browser-toolbar:not(.titlebar-color) {
     background: transparent !important
@@ -161,5 +162,5 @@ tab,
 }
 .toolbarbutton-badge-stack, .toolbarbutton-icon {
     border-radius: 10px !important;
-    background-color: rgba(0, 0, 0, 0.65)
+    background-color: rgba(10, 0, 10, 0.65)
 }
