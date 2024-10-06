@@ -93,8 +93,8 @@
     <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_100_PERCENT"/>
     <property name="misc-parallel-copy-mode" type="string" value="THUNAR_PARALLEL_COPY_MODE_ALWAYS"/>
     <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-    <property name="last-toolbar-visible-buttons" type="string" value="1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0"/>
-    <property name="last-toolbar-item-order" type="string" value="0,4,1,2,3,14,16,11,9,5,6,7,8,10,12,13,15,17"/>
+    <property name="last-toolbar-visible-buttons" type="string" value="1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0"/>
+    <property name="last-toolbar-item-order" type="string" value="0,4,1,2,3,14,16,10,11,9,5,6,12,7,8,13,15,17"/>
     <property name="last-details-view-column-widths" type="string" value="103,108,109,102,77,565,50,251,1180,232,50,64,50,283"/>
     <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_CREATED,THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE"/>
     <property name="last-details-view-column-order" type="string" value="THUNAR_COLUMN_NAME,THUNAR_COLUMN_SIZE,THUNAR_COLUMN_TYPE,THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_DATE_CREATED,THUNAR_COLUMN_SIZE_IN_BYTES,THUNAR_COLUMN_LOCATION,THUNAR_COLUMN_GROUP,THUNAR_COLUMN_MIME_TYPE,THUNAR_COLUMN_OWNER,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_DATE_ACCESSED,THUNAR_COLUMN_RECENCY,THUNAR_COLUMN_DATE_DELETED"/>
