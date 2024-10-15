@@ -223,7 +223,6 @@ bindsym {
     $KEY_CTL+Tab            exec "/usr/lib/smd/libexec/smd-message -u background"
     $KEY_WIN+Return         exec "/usr/bin/thunar"
     $KEY_ALT+Return         exec "/usr/bin/kitty --single-instance --instance-group sway"
-    $KEY_CTL+Shift+P        exec "/usr/bin/wlay"
     $KEY_CTL+Shift+K        exec "${HOME}/.local/bin/hview"
 }
 
@@ -239,9 +238,9 @@ bindsym {
 bindsym {
     Print                   exec "${HOME}/.local/bin/sway/shot"
     Shift+Print             exec "${HOME}/.local/bin/sway/clip"
-    $KEY_CTL+Print          exec "/usr/bin/grimshot --notify copy output"
-    $KEY_WIN+Shift+2        exec "/usr/bin/grimshot --notify copy output"
-    $KEY_WIN+Shift+1        exec "/usr/bin/grimshot --notify copy area"
+    $KEY_CTL+Print          exec "${HOME}/.local/bin/sway/shot copy"
+    $KEY_WIN+Shift+2        exec "${HOME}/.local/bin/sway/shot copy"
+    $KEY_WIN+Shift+1        exec "${HOME}/.local/bin/sway/clip copy"
 }
 
 # Brighness Bindings

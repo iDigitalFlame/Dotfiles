@@ -76,15 +76,15 @@
             "actions": [
                 {
                     "label": "",
-                    "command": "sh -c 'swaync-client -cp; grimshot --notify copy area'"
+                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'"
                 },
                 {
                     "label": "",
-                    "command": "sh -c 'swaync-client -cp; grimshot --notify copy output'"
+                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'"
                 },
                 {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; bluectl -t'"
+                    "label": "",
+                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/hview'"
                 },
                 {
                     "label": "",
@@ -212,8 +212,12 @@
             "buttons": {
                 "actions": [
                     {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'"
+                        "label": "",
+                        "command": "sh -c 'swaync-client -cp; bluectl -t'"
+                    },
+                    {
+                        "label": "",
+                        "command": "sh -c 'swaync-client -cp; wlay'"
                     },
                     {
                         "label": "",
@@ -229,13 +233,16 @@
             "text": ""
         },
         "volume": {
-            "label": ""
+            "label": "",
+            "show-per-app": false,
+            "show-per-app-icon": false,
+            "show-per-app-label": false
         }
     },
     "widgets": [
         "menubar#ctl",
-        "backlight",
         "volume",
+        "backlight",
         "dnd",
         "title",
         "notifications",

@@ -34,8 +34,10 @@
 //
 {
     "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All }",
+    "C_Cpp.configurationWarnings": "Disabled",
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.cppStandard": "c++98",
+    "C_Cpp.formatting": "Disabled",
     "C_Cpp.default.intelliSenseMode": "clang-x64",
     "C_Cpp.default.systemIncludePath": [
         "/usr/x86_64-w64-mingw32/include",
@@ -1481,5 +1483,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
 }

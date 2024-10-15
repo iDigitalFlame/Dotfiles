@@ -34,4 +34,27 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-exec grimshot --notify save output "${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"
+fail() {
+    notify-send -u critical -a clippy -i "screengrab" "Screenshot Failed" "Failed to take Screenshot!"
+    exit 1
+}
+success() {
+    if [ -z "$1" ]; then
+        notify-send -t 3000 -a clippy -i "screengrab" "Screenshot Taken" "Saved to clipboard."
+    else
+        notify-send -t 3000 -a clippy -i "$1" "Screenshot Taken" "Saved as \"${1}\"."
+    fi
+    exit 0
+}
+
+display=$(swaymsg -rt get_outputs | jq -r '.[] | select(.focused)' | jq -r '.name')
+if [ -z "$display" ]; then
+    exit 1
+fi
+
+if [ "$1" = "copy" ]; then
+    grim -s 1.0 -l 5 -t png -o "$display" - | wl-copy --type image/png && success || fail
+fi
+
+file="${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"
+grim -s 1.0 -l 5 -t png -o "$display" "$file" && success "$file" || fail

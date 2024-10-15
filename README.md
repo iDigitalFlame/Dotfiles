@@ -18,7 +18,7 @@ It's using Wayland btw :D
 - git
 - git-lfs
 - gnome-keyring
-- grimshot
+- grim
 - gtklock
 - kitty
 - libsecret
@@ -28,8 +28,9 @@ It's using Wayland btw :D
 - otf-fira-mono
 - otf-font-awesome-4
 - rofi-lbonn-wayland-git
+- slurp
 - swaybg
-- swayfs (or sway)
+- swayfx (or sway)
 - swayidle
 - swaync
 - thunar
