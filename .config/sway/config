@@ -194,10 +194,11 @@ for_window {
 
 # Application to Workspace Assignments
 assign {
-    [app_id="vesktop"]              number 9
-    [app_id="(?i)slack"]            number 9
-    [app_id="(?i)librewolf"]        number 1
-    [app_id="org.telegram.desktop"] number 10
+    [app_id="vesktop"]                                     number 9
+    [app_id="(?i)slack"]                                   number 9
+    [app_id="(?i)librewolf"]                               number 1
+    [app_id="org.telegram.desktop"]                        number 10
+    [title="^Media viewer$" app_id="org.telegram.desktop"] number 10
 }
 
 # Workspace to Output Assignments

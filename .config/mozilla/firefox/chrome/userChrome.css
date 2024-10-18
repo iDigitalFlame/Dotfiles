@@ -67,8 +67,9 @@ menupopup, .contentAreaContextMenu {
     border-radius: 6px !important;
     background: rgb(172, 15, 235) !important
 }
-splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabpanels {
-    background: rgba(0, 0, 0, 0.45) !important
+splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabbox, #tabbrowser-tabpanels, #webext-panels-browser {
+    border: none !important;
+    background: transparent !important
 }
 
 tab,

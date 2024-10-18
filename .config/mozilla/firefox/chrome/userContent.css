@@ -34,8 +34,12 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
+.activity-stream {
+    background-color: transparent !important
+}
+
 @-moz-document url-prefix(about:home), url-prefix(about:newtab), url-prefix(about:blank) {
     body {
-        background-color: #0A000A !important
+        background-color: transparent !important
     }
 }
