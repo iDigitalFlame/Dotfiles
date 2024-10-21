@@ -1048,7 +1048,7 @@
     "problems.decorations.enabled": true,
     "pyright.disableLanguageServices": false,
     "pyright.disableOrganizeImports": true,
-    "pyright.useLibraryCodeForTypes": true,
+    "python.analysis.typeCheckingMode": "off",
     "python.analysis.autoSearchPaths": false,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.diagnosticSeverityOverrides": {
@@ -1135,7 +1135,6 @@
     "rust-analyzer.lens.enable": false,
     "rust-analyzer.lens.implementations.enable": false,
     "rust-analyzer.lens.run.enable": false,
-    "rust-analyzer.notifications.unindexedProject": true,
     "rust-analyzer.runnables.command": null,
     "rust-analyzer.rustfmt.rangeFormatting.enable": true,
     "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
@@ -1150,7 +1149,6 @@
     },
     "scm.providerCountBadge": "hidden",
     "scm.showActionButton": false,
-    "scm.showChangesSummary": false,
     "scm.showInputActionButton": false,
     "screencastMode.keyboardOptions": {
         "showCommands": false,
@@ -1233,7 +1231,7 @@
     "terminal.integrated.scrollback": 1000,
     "terminal.integrated.shellIntegration.decorationsEnabled": "gutter",
     "terminal.integrated.shellIntegration.history": 500,
-    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "terminal.integrated.suggest.quickSuggestions": true,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
