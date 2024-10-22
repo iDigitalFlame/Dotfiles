@@ -278,8 +278,8 @@ alias lsa="/usr/bin/lsd -vFlA --group-directories-first --color=auto"
 
 # Screenshot Aliases
 alias sel="${HOME}/.local/bin/sway/clip"
-alias selc="/usr/bin/grimshot --notify copy area"
-alias ssc="/usr/bin/grimshot --notify copy output"
+alias selc="${HOME}/.local/bin/sway/clip copy"
+alias ssc="${HOME}/.local/bin/sway/shot copy"
 
 # Go Aliases
 alias gmo="go list -u -m -json all | go-mod-outdated"
