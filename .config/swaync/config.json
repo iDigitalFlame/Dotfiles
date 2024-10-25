@@ -216,7 +216,7 @@
                         "command": "sh -c 'swaync-client -cp; bluectl -t'"
                     },
                     {
-                        "label": "",
+                        "label": "",
                         "command": "sh -c 'swaync-client -cp; wlay'"
                     },
                     {

@@ -36,13 +36,20 @@
 
 html#main-window {
     background: transparent !important;
+    --panel-color: #FFF !important;
     --color-bg: transparent !important;
+    --background-color-canvas: transparent !important;
     --arrowpanel-border-color: transparent !important;
     --arrowpanel-color: rgb(255, 255, 255) !important;
-    --toolbar-bgcolor: rgba(10, 0, 10, 0.4) !important;
-    --arrowpanel-background: rgba(0, 0, 0, 0.4) !important;
+    --toolbar-bgcolor: rgba(10, 0, 10, 0.65) !important;
+    --panel-background: rgba(10, 0, 10, 0.7) !important;
+    --button-hover-bgcolor: rgb(125, 11, 171) !important;
+    --button-active-bgcolor: rgb(172, 15, 235) !important;
     --lwt-toolbar-field-color: rgb(255, 255, 255) !important;
+    --arrowpanel-background: rgba(10, 0, 10, 0.7) !important;
     --lwt-toolbar-field-background-color: transparent !important;
+    --button-active-hover-bgcolor: rgb(172, 15, 235) !important;
+    --button-primary-hover-bgcolor: rgb(125, 11, 171) !important;
     --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
     --toolbarbutton-hover-background: rgb(125, 11, 171) !important;
     --toolbarbutton-active-background: rgb(125, 11, 171) !important
@@ -50,22 +57,41 @@ html#main-window {
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
+    padding-left: 2px !important;
     background: transparent !important;
     caret-color: rgb(255, 255, 255) !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
 }
 
+:is(menupopup, panel):where([type="arrow"]) {
+    --panel-background: rgba(10, 0, 10, 0.7) !important
+}
+
+panelmultiview#appMenu-multiView, panel#appMenu-popup {
+    --panel-background: rgba(10, 0, 10, 0.4) !important
+}
+
+menupopup {
+    --menu-color: #FFF !important;
+    --panel-color: #FFF !important;
+    --arrowpanel-color: #FFF !important;
+    --menu-border-color: rgb(125, 11, 171) !important;
+    --panel-border-color: rgb(125, 11, 171) !important;
+    --panel-background: rgba(10, 0, 10, 0.7) !important;
+    --button-hover-bgcolor: rgb(125, 11, 171) !important;
+    --arrowpanel-border-color: rgb(125, 11, 171) !important;
+    --menu-disabled-color: rgba(50, 50, 50, 0.75) !important;
+    --menu-background-color: rgba(10, 0, 10, 0.7) !important;
+    --arrowpanel-background: rgba(10, 0, 10, 0.7) !important;
+    --menuitem-hover-background-color: rgb(125, 11, 171) !important;
+    --menuitem-disabled-hover-background-color: rgba(80, 80, 80, 0.75) !important
+}
+
 panelmultiview {
     padding: 2px !important;
     border-radius: 10px !important;
-    background: rgba(0, 0, 0, 0.65) !important;
-    border: 2px solid rgb(172, 15, 235) !important
-}
-menupopup, .contentAreaContextMenu {
-    border: none !important;
-    appearance: none !important;
-    border-radius: 6px !important;
-    background: rgb(172, 15, 235) !important
+    background: rgba(10, 0, 10, 0.2) !important;
+    border: 1px solid rgb(172, 15, 235) !important
 }
 splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabbox, #tabbrowser-tabpanels, #webext-panels-browser {
     border: none !important;
@@ -118,6 +144,7 @@ tab,
     padding-inline-end: 0 !important
 }
 #tracking-protection-icon-container {
+    padding-right: 0 !important;
     margin-right: 2px !important
 }
 #navigator-toolbox, #nav-bar, #TabsToolbar {
@@ -126,10 +153,17 @@ tab,
 
 /* Remove "Send Tab to Device" */
 *[id^="treestyletab_piro_sakura_ne_jp-menuitem-_context_send"] {
-    display: none;
+    display: none !important
 }
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    display: none;
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header, #context-media-eme-separator {
+    display: none !important
+}
+#context-media-eme-learnmore, #context-keywordfield, #fill-login-generated-password, #manage-saved-logins, #passwordmgr-items-separator, #context-sendlinktodevice, #context-setDesktopBackground {
+    display: none !important
+}
+
+menu[id^="_testpilot-containers-menuitem-"], menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"] {
+    display: none !important
 }
 
 #TabsToolbar,
@@ -145,7 +179,10 @@ tab,
 .urlbarView {
     border-radius: 0 8px 8px !important;
     background-color: transparent !important;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.35) !important
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important
+}
+.urlbarView-row[selected] {
+    background: rgba(125, 11, 171, 0.8) !important
 }
 
 .panel-arrowbox {
@@ -160,6 +197,10 @@ tab,
 .panel-arrowcontent {
     margin: 0 !important;
     opacity: 1 !important
+}
+.contentAreaContextMenu {
+    border: none !important;
+    appearance: none !important
 }
 .toolbarbutton-badge-stack, .toolbarbutton-icon {
     border-radius: 10px !important;
