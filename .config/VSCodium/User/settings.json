@@ -1344,7 +1344,12 @@
     "workbench.cloudChanges.autoResume": "off",
     "workbench.cloudChanges.continueOn": "off",
     "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#0A000A",
+        "activityBar.activeBorder": "#AC0FEB",
+        "activityBar.activeFocusBorder": "0A000A",
         "activityBar.background": "#0A000A",
+        "activityBar.border": "#0A000A",
+        "activityBar.foreground": "#FFFFFF",
         "activityBarBadge.background": "#7D0BAB",
         "activityBarBadge.foreground": "#FFFFFF",
         "breadcrumb.background": "#0A000A",
