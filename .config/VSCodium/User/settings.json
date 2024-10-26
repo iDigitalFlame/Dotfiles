@@ -1345,7 +1345,7 @@
     "workbench.cloudChanges.continueOn": "off",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#0A000A",
-        "activityBar.activeBorder": "#AC0FEB",
+        "activityBar.activeBorder": "#0096FF",
         "activityBar.activeFocusBorder": "0A000A",
         "activityBar.background": "#0A000A",
         "activityBar.border": "#0A000A",
