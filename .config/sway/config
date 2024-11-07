@@ -113,6 +113,7 @@ input type:touchpad {
 # Opacity Rules
 for_window {
     [app_id="xpad"]                    opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
+    [app_id="signal"]                  opacity set 0.85, border none
     [class="(?i)thunar"]               opacity set 0.80, border none
     [app_id="(?i)slack"]               opacity set 0.85, border none
     [app_id="(?i)thunar"]              opacity set 0.80, border none
@@ -176,6 +177,7 @@ for_window {
     [app_id="(?i)codium" title="Add Folder to Workspace"]                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [class="(?i)thunar" title="Confirm to replace files"]                                 floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
     [app_id="(?i)thunar" title="Confirm to replace files"]                                floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [app_id="signal" title="^Signal Desktop Preferences$"]                                floating enable, border normal
     [app_id="codium-url-handler" title="Add Folder to Workspace"]                         floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"] floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
