@@ -129,6 +129,18 @@
     },
     "fixed-center": true,
     "height": 25,
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "",
+            "capslock": "{icon}"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
     "layer": "top",
     "margin": "0",
     "memory": {

@@ -49,13 +49,13 @@ bar, window#waybar {
     margin-right: 10px
 }
 
-#window, widget>label, #tray, #workspaces {
+#window, widget > label, #tray, #workspaces {
     color: #FFF;
     transition-duration: .5s;
     background: rgba(10, 0, 10, 0.65);
     transition-property: border-radius
 }
-widget>label, #tray, #workspaces {
+widget > label, #tray, #workspaces {
     transition-property: background-color, border-radius
 }
 
@@ -93,10 +93,10 @@ window#waybar.org\.telegram\.desktop #workspaces {
     background: transparent;
     transition-property: background-color
 }
-window#waybar.codium widget>label,
-window#waybar.chromium widget>label,
-window#waybar.codium-url-handler widget>label,
-window#waybar.org\.telegram\.desktop widget>label {
+window#waybar.codium widget > label,
+window#waybar.chromium widget > label,
+window#waybar.codium-url-handler widget > label,
+window#waybar.org\.telegram\.desktop widget > label {
     border-radius: 0;
     background: transparent;
     transition-property: background-color
@@ -240,4 +240,8 @@ window#waybar.org\.telegram\.desktop widget>label {
 #battery.bat0.charging.critical,
 #battery.bat1.charging.critical {
     color: #BEF992;
+}
+
+#keyboard-state label.locked #battery {
+    border-bottom: 2px solid red;
 }
