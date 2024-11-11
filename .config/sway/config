@@ -199,20 +199,20 @@ for_window {
 
 # Application to Workspace Assignments
 assign {
-    [app_id="signal"]                                       number 10
+    [app_id="signal"]                                       number 10:
     [app_id="vesktop"]                                      number 9
     [app_id="(?i)slack"]                                    number 9
-    [app_id="(?i)librewolf"]                                number 1
-    [app_id="org.telegram.desktop"]                         number 10
-    [app_id="org.telegram.desktop" title="^Media viewer$"]  number 10
-    [app_id="org.telegram.desktop" title="TelegramDesktop"] number 10
+    [app_id="(?i)librewolf"]                                number 1:
+    [app_id="org.telegram.desktop"]                         number 10:
+    [app_id="org.telegram.desktop" title="^Media viewer$"]  number 10:
+    [app_id="org.telegram.desktop" title="TelegramDesktop"] number 10:
 }
 
 # Workspace to Output Assignments
 workspace {
-    1  output $DOCK1
+    1:  output $DOCK1
     9  output $DOCK3
-    10 output $DOCK3
+    10: output $DOCK3
 }
 
 # Guesture Bindings
@@ -321,8 +321,14 @@ bindsym {
     $KEY_WIN+J              split      v
     $KEY_WIN+Shift+H        split      h
     $KEY_WIN+Shift+J        split      v
+    $KEY_WIN+Shift+T        layout     tabbed
+    $KEY_WIN+Shift+K        focus      parent
+    $KEY_WIN+Shift+L        focus      mode_toggle
     $KEY_ALT+Shift+H        split      h
     $KEY_ALT+Shift+J        split      v
+    $KEY_ALT+Shift+T        layout     tabbed
+    $KEY_ALT+Shift+K        focus      parent
+    $KEY_ALT+Shift+L        focus      mode_toggle
     $KEY_WIN+E              floating   toggle
     $KEY_WIN+F              fullscreen toggle
 }
@@ -343,7 +349,7 @@ bindsym {
 # Workspace Switching Bindings
 bindsym {
     $KEY_ALT+Delete         workspace 0
-    $KEY_ALT+1              workspace 1
+    $KEY_ALT+1              workspace 1:
     $KEY_ALT+2              workspace 2
     $KEY_ALT+3              workspace 3
     $KEY_ALT+4              workspace 4
@@ -352,7 +358,7 @@ bindsym {
     $KEY_ALT+7              workspace 7
     $KEY_ALT+8              workspace 8
     $KEY_ALT+9              workspace 9
-    $KEY_ALT+0              workspace 10
+    $KEY_ALT+0              workspace 10:
     $KEY_ALT+Shift+1        workspace 11
     $KEY_ALT+Shift+2        workspace 12
     $KEY_ALT+Shift+3        workspace 13
@@ -382,7 +388,7 @@ bindsym {
 # Workspace Window Switching (No switch-to) Bindings
 bindsym {
     $KEY_CTL+Delete         move container to workspace 0
-    $KEY_CTL+1              move container to workspace 1
+    $KEY_CTL+1              move container to workspace 1:
     $KEY_CTL+2              move container to workspace 2
     $KEY_CTL+3              move container to workspace 3
     $KEY_CTL+4              move container to workspace 4
@@ -391,7 +397,7 @@ bindsym {
     $KEY_CTL+7              move container to workspace 7
     $KEY_CTL+8              move container to workspace 8
     $KEY_CTL+9              move container to workspace 9
-    $KEY_CTL+0              move container to workspace 10
+    $KEY_CTL+0              move container to workspace 10:
     $KEY_CTL+Shift+1        move container to workspace 11
     $KEY_CTL+Shift+2        move container to workspace 12
     $KEY_CTL+Shift+3        move container to workspace 13
@@ -404,10 +410,18 @@ bindsym {
     $KEY_CTL+Shift+0        move container to workspace 20
 }
 
+# Workspace Window Switching (Special) Bindingsbindsym {
+bindsym {
+    $KEY_ALT+Shift+R        move container to workspace 22:
+    $KEY_ALT+Shift+S        move container to workspace 23:
+    $KEY_ALT+Shift+D        move container to workspace 24:
+    $KEY_ALT+Shift+M        move container to workspace 25:
+}
+
 # Workspace Window Switching Bindings
 bindsym {
     $KEY_WIN+Delete         move container to workspace 0,  workspace 0
-    $KEY_WIN+1              move container to workspace 1,  workspace 1
+    $KEY_WIN+1              move container to workspace 1:, workspace 1:
     $KEY_WIN+2              move container to workspace 2,  workspace 2
     $KEY_WIN+3              move container to workspace 3,  workspace 3
     $KEY_WIN+4              move container to workspace 4,  workspace 4
@@ -416,7 +430,7 @@ bindsym {
     $KEY_WIN+7              move container to workspace 7,  workspace 7
     $KEY_WIN+8              move container to workspace 8,  workspace 8
     $KEY_WIN+9              move container to workspace 9,  workspace 9
-    $KEY_WIN+0              move container to workspace 10, workspace 10
+    $KEY_WIN+0              move container to workspace 10:, workspace 10:
 }
 
 # Workspace Window Next / Prev Bindings

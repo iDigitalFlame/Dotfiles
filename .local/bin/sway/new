@@ -16,7 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## New Workspace Mover/Spawner Locker
+## New Workspace Mover/Spawner
 #
 # Copyright (C) 2016 - 2024 iDigitalFlame
 #
@@ -43,7 +43,7 @@ from lib import print_error
 from lib.sway import swaymsg, workspaces, focused
 
 # There's some special Workspaces that shouldn't be used as auto selections.
-DISALLOWED = [9]
+DISALLOWED = [1, 9, 10]
 
 
 def _new_workspace(move_focused=False):
