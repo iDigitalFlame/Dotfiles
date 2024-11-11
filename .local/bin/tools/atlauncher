@@ -1,3 +1,4 @@
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2024 ###
 #                              #
@@ -15,7 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## Application Entry
+## Ghirda Config Wrapper
 #
 # Copyright (C) 2016 - 2024 iDigitalFlame
 #
@@ -33,16 +34,5 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-[Desktop Entry]
-Name            = ATLauncher 
-Exec            = /usr/bin/ghr firewall-all "/home/dij/.local/bin/tools/atlauncher"
-Icon            = minecraft
-Type            = Application
-Comment         = Minecraft launcher and instance manager.
-MimeType        =
-Terminal        = false
-Keywords        = minecraft;atlauncher;
-Categories      = Games;
-GenericName     = Minecraft Launcher
-StartupNotify   = false
-X-MultipleArgs  = false
+cd "${HOME}/Documents/Minecraft"
+exec java -jar ATLauncher.jar
