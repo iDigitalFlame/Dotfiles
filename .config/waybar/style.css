@@ -38,8 +38,8 @@ bar, window#waybar {
     font-size: 13px;
     background: transparent;
     transition-duration: .5s;
-    transition-property: background-color;
-    font-family: 'Cascadia Mono', FontAwesome
+    font-family: 'Cascadia Mono', FontAwesome;
+    transition-property: background, background-color
 }
 
 .modules-left {
@@ -56,7 +56,7 @@ bar, window#waybar {
     transition-property: border-radius
 }
 widget > label, #tray, #workspaces {
-    transition-property: background-color, border-radius
+    transition-property: background, background-color, border-radius
 }
 
 window#waybar.chromium {
@@ -75,7 +75,7 @@ window#waybar.codium-url-handler #tray,
 window#waybar.org\.telegram\.desktop #tray {
     border-radius: 0;
     background: transparent;
-    transition-property: background-color
+    transition-property: background, background-color
 }
 window#waybar.codium #window,
 window#waybar.chromium #window,
@@ -83,7 +83,7 @@ window#waybar.codium-url-handler #window,
 window#waybar.org\.telegram\.desktop #window {
     border-radius: 0;
     background: transparent;
-    transition-property: background-color
+    transition-property: background, background-color
 }
 window#waybar.codium #workspaces,
 window#waybar.chromium #workspaces,
@@ -91,7 +91,7 @@ window#waybar.codium-url-handler #workspaces,
 window#waybar.org\.telegram\.desktop #workspaces {
     border-radius: 0;
     background: transparent;
-    transition-property: background-color
+    transition-property: background, background-color
 }
 window#waybar.codium widget > label,
 window#waybar.chromium widget > label,
@@ -99,7 +99,7 @@ window#waybar.codium-url-handler widget > label,
 window#waybar.org\.telegram\.desktop widget > label {
     border-radius: 0;
     background: transparent;
-    transition-property: background-color
+    transition-property: background, background-color
 }
 
 #tray {
@@ -185,7 +185,8 @@ window#waybar.org\.telegram\.desktop widget > label {
     margin: 0 1px;
     min-width: 20px;
     border-radius: 5px;
-    border: 1px solid transparent
+    border: 1px solid transparent;
+    transition-property: background, background-color
 }
 
 #workspaces button:hover {
