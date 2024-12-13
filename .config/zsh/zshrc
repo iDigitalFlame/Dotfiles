@@ -313,6 +313,7 @@ alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PIP_USER=yes /usr/bin/
 
 # Script Aliases
 alias pmov="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/move.py"
+alias pinc="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/rename.py"
 alias pfx2pem="/usr/bin/bash ${HOME}/Projects/Scripts/Shell/pfx2pem.sh"
 alias nts="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
 alias dirdiff="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
