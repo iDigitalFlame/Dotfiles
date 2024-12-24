@@ -1240,7 +1240,7 @@
     "terminal.integrated.tabs.focusMode": "singleClick",
     "terminal.integrated.useWslProfiles": false,
     "terminal.integrated.windowsEnableConpty": false,
-    "testing.openTesting": "neverOpen",
+    "testing.automaticallyOpenTestResults": "neverOpen",
     "testing.showCoverageInExplorer": false,
     "todo-tree.filtering.excludeGlobs": [
         "**/vendor/**",
