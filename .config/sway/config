@@ -199,9 +199,11 @@ for_window {
 
 # Application to Workspace Assignments
 assign {
+    [app_id="qtws"]                                         number 25:
     [app_id="signal"]                                       number 10:
-    [app_id="vesktop"]                                      number 9
-    [app_id="(?i)slack"]                                    number 9
+    [app_id="vesktop"]                                      number 23:
+    [app_id="(?i)slack"]                                    number 23:
+    [app_id="Notesnook"]                                    number 24:
     [app_id="(?i)librewolf"]                                number 1:
     [app_id="org.telegram.desktop"]                         number 10:
     [app_id="org.telegram.desktop" title="^Media viewer$"]  number 10:
