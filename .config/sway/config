@@ -199,11 +199,11 @@ for_window {
 
 # Application to Workspace Assignments
 assign {
-    [app_id="qtws"]                                         number 25:
+    [app_id="qtws"]                                         number 18:
     [app_id="signal"]                                       number 10:
-    [app_id="vesktop"]                                      number 23:
-    [app_id="(?i)slack"]                                    number 23:
-    [app_id="Notesnook"]                                    number 24:
+    [app_id="vesktop"]                                      number 19:
+    [app_id="(?i)slack"]                                    number 19:
+    [app_id="Notesnook"]                                    number 20:
     [app_id="(?i)librewolf"]                                number 1:
     [app_id="org.telegram.desktop"]                         number 10:
     [app_id="org.telegram.desktop" title="^Media viewer$"]  number 10:
@@ -212,9 +212,9 @@ assign {
 
 # Workspace to Output Assignments
 workspace {
-    1:  output $DOCK1
-    9  output $DOCK3
-    10: output $DOCK3
+    1:                     output $DOCK1
+    19:                    output $DOCK3
+    10:                    output $DOCK3
 }
 
 # Guesture Bindings
@@ -224,6 +224,7 @@ bindgesture {
     swipe:left              workspace prev
     swipe:right             workspace next
     pinch:inward            exec      "${HOME}/.local/bin/sway/search"
+    pinch:outward           exec      "${HOME}/.local/bin/sway/search window"
 }
 
 # Standard Bindings
@@ -246,11 +247,11 @@ bindsym {
 
 # Screenshot / Screenclip Bindings
 bindsym {
-    Print                   exec "${HOME}/.local/bin/sway/shot"
-    Shift+Print             exec "${HOME}/.local/bin/sway/clip"
-    $KEY_CTL+Print          exec "${HOME}/.local/bin/sway/shot copy"
-    $KEY_WIN+Shift+2        exec "${HOME}/.local/bin/sway/shot copy"
-    $KEY_WIN+Shift+1        exec "${HOME}/.local/bin/sway/clip copy"
+    Print                       exec "${HOME}/.local/bin/sway/shot"
+    Shift+Print                 exec "${HOME}/.local/bin/sway/clip"
+    $KEY_CTL+Print              exec "${HOME}/.local/bin/sway/shot copy"
+    $KEY_WIN+Shift+bracketleft  exec "${HOME}/.local/bin/sway/clip copy"
+    $KEY_WIN+Shift+bracketright exec "${HOME}/.local/bin/sway/shot copy"
 }
 
 # Brighness Bindings
@@ -367,10 +368,10 @@ bindsym {
     $KEY_ALT+Shift+4        workspace 14
     $KEY_ALT+Shift+5        workspace 15
     $KEY_ALT+Shift+6        workspace 16
-    $KEY_ALT+Shift+7        workspace 17
-    $KEY_ALT+Shift+8        workspace 18
-    $KEY_ALT+Shift+9        workspace 19
-    $KEY_ALT+Shift+0        workspace 20
+    $KEY_ALT+Shift+7        workspace 17:
+    $KEY_ALT+Shift+8        workspace 18:
+    $KEY_ALT+Shift+9        workspace 19:
+    $KEY_ALT+Shift+0        workspace 20:
 }
 
 # Workspace Next / Prev Bindings
@@ -406,33 +407,43 @@ bindsym {
     $KEY_CTL+Shift+4        move container to workspace 14
     $KEY_CTL+Shift+5        move container to workspace 15
     $KEY_CTL+Shift+6        move container to workspace 16
-    $KEY_CTL+Shift+7        move container to workspace 17
-    $KEY_CTL+Shift+8        move container to workspace 18
-    $KEY_CTL+Shift+9        move container to workspace 19
-    $KEY_CTL+Shift+0        move container to workspace 20
+    $KEY_CTL+Shift+7        move container to workspace 17:
+    $KEY_CTL+Shift+8        move container to workspace 18:
+    $KEY_CTL+Shift+9        move container to workspace 19:
+    $KEY_CTL+Shift+0        move container to workspace 20:
 }
 
-# Workspace Window Switching (Special) Bindingsbindsym {
+# Workspace Window Switching (Special) Bindings
 bindsym {
-    $KEY_ALT+Shift+R        move container to workspace 22:
-    $KEY_ALT+Shift+S        move container to workspace 23:
-    $KEY_ALT+Shift+D        move container to workspace 24:
-    $KEY_ALT+Shift+M        move container to workspace 25:
+    $KEY_ALT+Shift+R        move container to workspace 17:, workspace 17:
+    $KEY_ALT+Shift+M        move container to workspace 18:, workspace 18:
+    $KEY_ALT+Shift+S        move container to workspace 19:, workspace 19:
+    $KEY_ALT+Shift+D        move container to workspace 20:, workspace 20:
 }
 
 # Workspace Window Switching Bindings
 bindsym {
-    $KEY_WIN+Delete         move container to workspace 0,  workspace 0
-    $KEY_WIN+1              move container to workspace 1:, workspace 1:
-    $KEY_WIN+2              move container to workspace 2,  workspace 2
-    $KEY_WIN+3              move container to workspace 3,  workspace 3
-    $KEY_WIN+4              move container to workspace 4,  workspace 4
-    $KEY_WIN+5              move container to workspace 5,  workspace 5
-    $KEY_WIN+6              move container to workspace 6,  workspace 6
-    $KEY_WIN+7              move container to workspace 7,  workspace 7
-    $KEY_WIN+8              move container to workspace 8,  workspace 8
-    $KEY_WIN+9              move container to workspace 9,  workspace 9
+    $KEY_WIN+Delete         move container to workspace 0,    workspace 0
+    $KEY_WIN+1              move container to workspace 1:,  workspace 1:
+    $KEY_WIN+2              move container to workspace 2,    workspace 2
+    $KEY_WIN+3              move container to workspace 3,    workspace 3
+    $KEY_WIN+4              move container to workspace 4,    workspace 4
+    $KEY_WIN+5              move container to workspace 5,    workspace 5
+    $KEY_WIN+6              move container to workspace 6,    workspace 6
+    $KEY_WIN+7              move container to workspace 7,    workspace 7
+    $KEY_WIN+8              move container to workspace 8,    workspace 8
+    $KEY_WIN+9              move container to workspace 9,    workspace 9
     $KEY_WIN+0              move container to workspace 10:, workspace 10:
+    $KEY_WIN+Shift+1        move container to workspace 11,   workspace 11
+    $KEY_WIN+Shift+2        move container to workspace 12,   workspace 12
+    $KEY_WIN+Shift+3        move container to workspace 13,   workspace 13
+    $KEY_WIN+Shift+4        move container to workspace 14,   workspace 14
+    $KEY_WIN+Shift+5        move container to workspace 15,   workspace 15
+    $KEY_WIN+Shift+6        move container to workspace 16,   workspace 16
+    $KEY_WIN+Shift+7        move container to workspace 17:, workspace 17:
+    $KEY_WIN+Shift+8        move container to workspace 18:, workspace 18:
+    $KEY_WIN+Shift+9        move container to workspace 19:, workspace 19:
+    $KEY_WIN+Shift+0        move container to workspace 20:, workspace 20:
 }
 
 # Workspace Window Next / Prev Bindings
