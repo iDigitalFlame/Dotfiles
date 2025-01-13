@@ -38,6 +38,7 @@ html#main-window {
     background: transparent !important;
     --panel-color: #FFF !important;
     --color-bg: transparent !important;
+    --theme-colors-sidebar: transparent !important;
     --background-color-canvas: transparent !important;
     --arrowpanel-border-color: transparent !important;
     --arrowpanel-color: rgb(255, 255, 255) !important;
@@ -166,6 +167,7 @@ menu[id^="_testpilot-containers-menuitem-"], menuitem[id^="skipredirect_sblask-m
     display: none !important
 }
 
+.sidebar,
 #TabsToolbar,
 .urlbar-input-box,
 #navigator-toolbox,
