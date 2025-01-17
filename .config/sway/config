@@ -36,7 +36,7 @@
 include /etc/sway/config.d/*
 include "${HOME}/.local/lib/sway.conf"
 
-output eDP-1                    enable pos 0 1920 res 1920x1080
+output eDP-1 enable pos 0 1920 res 1920x1080
 
 set {
     $KEY_WIN                    Mod1
@@ -92,8 +92,6 @@ seat * {
     hide_cursor                 0
     pointer_constraint          enable
 }
-
-output * adaptive_sync on
 
 input * {
     xkb_layout                  "us"
