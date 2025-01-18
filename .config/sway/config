@@ -111,6 +111,7 @@ input type:touchpad {
 # Opacity Rules
 for_window {
     [app_id="xpad"]                    opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
+    [app_id="qtws"]                    opacity set 0.85, border none
     [app_id="signal"]                  opacity set 0.85, border none, layout tabbed
     [class="(?i)thunar"]               opacity set 0.80, border none
     [app_id="(?i)slack"]               opacity set 0.85, border none, layout tabbed
@@ -131,7 +132,7 @@ for_window {
     [app_id="^swayimg_*"]                                 border none, blur disable
     [app_id="(?i)firefox"]                                border none, opacity set 1, blur disable
     [app_id="(?i)chromium"]                               border none, opacity set 1
-    [app_id="(?i)Notesnook"]                              border none, floating disabled, opacity set 1
+    [app_id="(?i)Notesnook"]                              border none, floating disabled, opacity set 0.95
     [app_id="(?i)librewolf"]                              border none, opacity set 1, blur disable
     [app_id="pavucontrol-qt"]                             border normal, floating enable, resize set width 800 px height 450 px
     [app_id="blueman-manager"]                            border pixel 1, floating enable, resize set width 400 px height 500 px
