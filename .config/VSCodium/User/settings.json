@@ -61,6 +61,9 @@
         "editor.formatOnSave": true,
         "editor.formatOnSaveMode": "file"
     },
+    "[rust]": {
+        "editor.semanticHighlighting.enabled": true,
+    },
     "accessibility.hideAccessibleView": true,
     "accessibility.signals.chatRequestSent": {
         "announcement": "off",
@@ -390,6 +393,23 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "diffEditor.renderIndicators": true,
     "diffEditor.renderSideBySide": true,
+    "dependi.decoration.position": "after",
+    "dependi.go.enabled": true,
+    "dependi.go.excludeUnstableVersions": false,
+    "dependi.go.indexServerURL": "https://proxy.golang.org",
+    "dependi.npm.enabled": false,
+    "dependi.npm.excludeUnstableVersions": false,
+    "dependi.php.enabled": false,
+    "dependi.php.excludeUnstableVersions": false,
+    "dependi.python.enabled": true,
+    "dependi.python.excludeUnstableVersions": false,
+    "dependi.python.indexServerURL": "https://pypi.org/pypi",
+    "dependi.rust.enabled": true,
+    "dependi.rust.excludeUnstableVersions": false,
+    "dependi.rust.indexServerURL": "https://index.crates.io",
+    "dependi.rust.informPatchUpdates": true,
+    "dependi.vulnerability.enabled": true,
+    "dependi.vulnerability.ghsa.enabled": true,
     "editor.acceptSuggestionOnCommitCharacter": true,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.accessibilitySupport": "off",
@@ -558,11 +578,36 @@
             },
             {
                 "scope": [
+                    "storage.modifier.mut.rust"
+                ],
+                "settings": {
+                    "fontStyle": "underline"
+                }
+            },
+            {
+                "scope": [
                     "entity.name.type"
                 ],
                 "settings": {
                     "fontStyle": "bold",
                     "foreground": "#5EDFFF"
+                }
+            },
+            {
+                "scope": [
+                    "support.type.primitive.rust"
+                ],
+                "settings": {
+                    "foreground": "#D899FF",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": [
+                    "meta.attribute.rust"
+                ],
+                "settings": {
+                    "foreground": "#FEEBAD"
                 }
             }
         ],
@@ -577,6 +622,9 @@
     "editor.wordWrap": "off",
     "editor.wordWrapColumn": 127,
     "editor.wrappingIndent": "same",
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.useInlineCompletions": false,
     "explorer.autoReveal": true,
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": true,
@@ -781,7 +829,6 @@
     "go.vetFlags": [],
     "go.vetOnSave": "package",
     "gopls": {
-        "build.allowImplicitNetworkAccess": false,
         "build.buildFlags": [
             "-tags=windows,linux"
         ],
@@ -827,7 +874,6 @@
             "directive": true,
             "embed": true,
             "errorsas": true,
-            "fieldalignment": true,
             "fillreturns": true,
             "fillstruct": true,
             "httpresponse": true,

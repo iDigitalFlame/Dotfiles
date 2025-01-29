@@ -52,7 +52,7 @@ configuration {
 
     m:                          -5;
     eh:                         1;
-    dpi:                        0;
+    dpi:                        95;
     modi:                       "drun,window";
     font:                       "Cascadia Code Regular 12";
     sort:                       true;
