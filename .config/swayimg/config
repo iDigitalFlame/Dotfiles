@@ -1,0 +1,192 @@
+################################
+### iDigitalFlame  2016-2025 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## SwayImg Configuration
+#
+# Copyright (C) 2016 - 2025 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+[general]
+mode             = viewer
+size             = parent
+app_id           = swayimg
+sigusr1          = none
+sigusr2          = none
+position         = parent
+decoration       = no
+
+[viewer]
+fixed            = yes
+scale            = optimal
+window           = #00000000
+history          = 0
+preload          = 1
+position         = center
+keep_zoom        = no
+slideshow        = no
+transparency     = grid
+antialiasing     = mks13
+
+[gallery]
+fill             = yes
+size             = 250
+cache            = 25
+border           = #000000FF
+pstore           = no
+shadow           = #000000FF
+window           = #00000000
+background       = #7D0BABFF
+antialiasing     = mks13
+
+[list]
+all              = yes
+loop             = no
+order            = alpha
+recursive        = no
+
+[font]
+size             = 12
+font             = Source Code Pro
+color            = #FFFFFFFF
+shadow           = #000000FF
+background       = #0A000AAF
+
+[info]
+show             = yes
+info_timeout     = 15
+status_timeout   = 5
+
+[info.viewer]
+top_left         = +name,+format,+filesize,+exif
+top_right        = index
+bottom_left      = status
+bottom_right     = none
+
+[keys.viewer]
+a                = none
+d                = none
+c                = none
+f                = fullscreen
+h                = none
+i                = info
+m                = none
+o                = none
+q                = exit
+r                = reload
+s                = none
+0                = zoom real
+9                = zoom fill
+8                = zoom fit
+F1               = none
+Up               = prev_file
+End              = last_file
+Tab              = scale
+Down             = next_file
+Left             = prev_frame
+Next             = none
+Plus             = zoom +10
+Home             = first_file
+Equal            = none
+Minus            = zoom -10
+Right            = next_frame
+Prior            = none
+Space            = none
+Return           = none
+Shift+d          = none
+Shift+m          = none
+Shift+o          = none
+Shift+r          = none
+Shift+s          = none
+Shift+w          = none
+ScrollUp         = none
+BackSpace        = none
+ScrollDown       = none
+ScrollLeft       = none
+ScrollRight      = none
+bracketleft      = none
+bracketright     = none
+Shift+Delete     = none
+Alt+ScrollUp     = prev_frame
+Ctrl+ScrollUp    = zoom +10
+Shift+ScrollUp   = prev_file
+Alt+ScrollDown   = next_frame
+Ctrl+ScrollDown  = zoom -10
+Shift+ScrollDown = next_file
+
+[keys.gallery]
+a                = none
+d                = none
+c                = none
+f                = fullscreen
+h                = none
+i                = info
+m                = none
+o                = none
+q                = exit
+r                = reload
+s                = none
+0                = zoom real
+9                = zoom fill
+8                = zoom fit
+F1               = none
+Up               = prev_file
+End              = last_file
+Tab              = scale
+Down             = next_file
+Left             = prev_frame
+Next             = none
+Plus             = zoom +10
+Home             = first_file
+Equal            = none
+Minus            = zoom -10
+Right            = next_frame
+Prior            = none
+Space            = none
+Return           = none
+Shift+d          = none
+Shift+m          = none
+Shift+o          = none
+Shift+r          = none
+Shift+s          = none
+Shift+w          = none
+ScrollUp         = none
+BackSpace        = none
+ScrollDown       = none
+ScrollLeft       = none
+ScrollRight      = none
+bracketleft      = none
+bracketright     = none
+Shift+Delete     = none
+Alt+ScrollUp     = prev_frame
+Ctrl+ScrollUp    = zoom +10
+Shift+ScrollUp   = prev_file
+Alt+ScrollDown   = next_frame
+Ctrl+ScrollDown  = zoom -10
+Shift+ScrollDown = next_file
