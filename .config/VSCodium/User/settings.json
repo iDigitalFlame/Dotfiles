@@ -580,9 +580,7 @@
                 "scope": [
                     "storage.modifier.mut.rust"
                 ],
-                "settings": {
-                    "fontStyle": "underline"
-                }
+                "settings": {}
             },
             {
                 "scope": [

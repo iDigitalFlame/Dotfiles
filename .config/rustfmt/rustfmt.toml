@@ -1,0 +1,114 @@
+################################
+### iDigitalFlame  2016-2025 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## Rustfmt Configuration
+#
+# Copyright (C) 2016 - 2025 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+color                               = "Auto"
+ignore                              = []
+edition                             = "2024"
+version                             = "Two"
+emit_mode                           = "Files"
+hard_tabs                           = false
+max_width                           = 256
+tab_spaces                          = 4
+array_width                         = 75
+brace_style                         = "PreferSameLine"
+chain_width                         = 75
+make_backup                         = false
+indent_style                        = "Block"
+comment_width                       = 80
+fn_call_width                       = 60
+group_imports                       = "StdExternalCrate"
+merge_derives                       = true
+newline_style                       = "Auto"
+skip_children                       = false
+wrap_comments                       = true
+style_edition                       = "2024"
+fn_single_line                      = false
+format_strings                      = true
+imports_indent                      = "Block"
+imports_layout                      = "HorizontalVertical"
+trailing_comma                      = "Vertical"
+binop_separator                     = "Front"
+reorder_imports                     = true
+reorder_modules                     = true
+fn_params_layout                    = "Compressed"
+hex_literal_case                    = "Upper"
+match_arm_blocks                    = true
+struct_lit_width                    = 32
+hide_parse_errors                   = false
+space_after_colon                   = true
+unstable_features                   = true
+show_parse_errors                   = true
+use_try_shorthand                   = true
+where_single_line                   = true
+attr_fn_like_width                  = 80
+force_explicit_abi                  = true
+normalize_comments                  = false
+reorder_impl_items                  = false
+space_before_colon                  = false
+trailing_semicolon                  = true
+control_brace_style                 = "AlwaysSameLine"
+format_macro_bodies                 = false
+imports_granularity                 = "Module"
+combine_control_expr                = true
+error_on_unformatted                = false
+remove_nested_parens                = true
+spaces_around_ranges                = false
+struct_variant_width                = 35
+use_small_heuristics                = "Default"
+format_macro_matchers               = true
+disable_all_formatting              = false
+empty_item_single_line              = true
+error_on_line_overflow              = false
+force_multiline_blocks              = false
+format_generated_files              = false
+inline_attribute_width              = 0
+skip_macro_invocations              = []
+struct_lit_single_line              = true
+blank_lines_lower_bound             = 0
+blank_lines_upper_bound             = 1
+match_arm_leading_pipes             = "Never"
+overflow_delimited_expr             = true
+normalize_doc_attributes            = true
+type_punctuation_density            = "Wide"
+use_field_init_shorthand            = true
+condense_wildcard_suffixes          = true
+match_block_trailing_comma          = true
+format_code_in_doc_comments         = false
+doc_comment_code_block_width        = 100
+enum_discrim_align_threshold        = 32
+struct_field_align_threshold        = 32
+single_line_if_else_max_width       = 100
+single_line_let_else_max_width      = 100
+short_array_element_width_threshold = 10
