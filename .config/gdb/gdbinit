@@ -33,4 +33,5 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+set confirm off
 set disassembly-flavor intel
