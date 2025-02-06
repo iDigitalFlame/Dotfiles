@@ -1,0 +1,50 @@
+################################
+### iDigitalFlame  2016-2025 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+## Application Entry
+#
+# Copyright (C) 2016 - 2025 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+[Desktop Entry]
+Name            = Crop Photos
+Exec            = env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui
+Icon            = cropgui
+Type            = Application
+Actions         = developer;
+Comment         = Losslessly Crop JPEG and other images
+MimeType        = image/*;
+Terminal        = false
+Keywords        = crop;photo;
+Categories      = Graphics;2DGraphics;RasterGraphics;GTK;
+GenericName     = Crop Photos
+StartupNotify   = false
+StartupWMClass  = cropgui
+X-MultipleArgs  = false
