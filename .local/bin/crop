@@ -1,3 +1,4 @@
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2025 ###
 #                              #
@@ -15,7 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## Application Entry
+## Auto Userspace Mount Helper
 #
 # Copyright (C) 2016 - 2025 iDigitalFlame
 #
@@ -33,18 +34,5 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-[Desktop Entry]
-Name            = Crop Photos
-Exec            = /home/dij/.local/bin/crop %f
-Icon            = cropgui
-Type            = Application
-Actions         = developer;
-Comment         = Losslessly Crop JPEG and other images
-MimeType        = image/*;
-Terminal        = false
-Keywords        = crop;photo;
-Categories      = Graphics;2DGraphics;RasterGraphics;GTK;
-GenericName     = Crop Photos
-StartupNotify   = false
-StartupWMClass  = cropgui
-X-MultipleArgs  = false
+# Workaround for CropGUI not being on the latest Python directory.
+env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui $*
