@@ -155,6 +155,7 @@ for_window {
     [shell="xwayland"]                                      title_format "[X] %title"
     [class="xfreerdp"]                                      border pixel 1, floating disable
     [class="(?i)MuPDF"]                                     border pixel 1, floating enable
+    [class="ATLauncher"]                                    border none, floating enabled
     [class="__main__\.py"]                                  border none, floating disable, opacity set 1
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
