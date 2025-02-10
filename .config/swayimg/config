@@ -84,8 +84,8 @@ info_timeout     = 15
 status_timeout   = 5
 
 [info.viewer]
-top_left         = +name,+format,+filesize,+exif
-top_right        = index
+top_left         = +name,+format,+filesize,+imagesize,+exif,+frame
+top_right        = index,scale
 bottom_left      = status
 bottom_right     = none
 
