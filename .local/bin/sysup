@@ -130,7 +130,7 @@ fi
 printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
 cat<<EOF | sg firewall-web
     export PIP_USER=yes
-    pip list --user --outdated --format=json | jq -r '.[] | (.name)' | xargs -n1 pip install --disable-pip-version-check --break-system-packages -U 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
+    python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip list --user --outdated --format=json | jq -r '.[] | (.name)' | xargs -n1 python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --disable-pip-version-check --break-system-packages -U 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 EOF
 
 cat<<EOF | sudo -i --
