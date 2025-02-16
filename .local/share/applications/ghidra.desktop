@@ -36,7 +36,7 @@
 [Desktop Entry]
 Name            = Ghidra
 Exec            = /home/dij/.local/bin/tools/ghidra %f
-Icon            = recstudio
+Icon            = gaphor
 Type            = Application
 Comment         = Open-source reverse engineering platform
 Terminal        = false
