@@ -11,46 +11,60 @@ It's using Wayland btw :D
 
 ## Packages
 
-- bat
-- cowsay
-- dash
-- freerdp
-- git
-- git-lfs
+### Base
+
 - gnome-keyring
 - grim
 - gtklock
-- kitty
+- imagemagick
 - libsecret
-- lsd
-- noto-fonts-emoji
-- otf-cascadia-code
-- otf-fira-mono
-- otf-font-awesome-4
-- rofi-lbonn-wayland-git
+- network-manager-applet
+- qt5-wayland
+- qt6-wayland
+- rofi-wayland
 - slurp
+- spice-gtk
 - swaybg
-- swayfx (or sway)
+- swayfx
 - swayidle
 - swaync
-- thunar
-- ttf-firacode-nerd
-- ttf-hack-nerd
-- ttf-roboto
-- vscodium-bin
+- tigervnc
 - waybar
 - wl-clipboard
 - xdg-desktop-portal-wlr
+- xdg-utils
+- xorg-xwayland
+
+### Additional
+
+- arduino
+- arduino-avr-core
+- blueman
+- c-lolcat
+- corepdf
+- cowsay
+- cropgui
+- freerdp2
+- kitty
+- leafpad
+- mupdf
+- networkmanager-openvpn
+- pam-u2f
+- pavucontrol-qt
+- ristretto
+- seahorse
+- swayimg
+- thunar
+- vesktop-bin
+- vlc
+- wlay-git
 - xpad
+- zvbi
+- zsh
 
 ## Recommended Packages
 
-- c-lolcat
-- corepdf
 - librewolf
-- network-manager-applet
-- pam-u2f
-- ungoogled-chromium
 - zsh
 - zsh-completions
 - zsh-syntax-highlighting

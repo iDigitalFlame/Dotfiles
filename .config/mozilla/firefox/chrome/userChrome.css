@@ -38,6 +38,7 @@ html#main-window {
     background: transparent !important;
     --panel-color: #FFF !important;
     --color-bg: transparent !important;
+    --lwt-accent-color: transparent !important;
     --theme-colors-sidebar: transparent !important;
     --background-color-canvas: transparent !important;
     --arrowpanel-border-color: transparent !important;
@@ -119,6 +120,10 @@ tab,
     appearance: none !important
 }
 
+#browser {
+    background-image: none !important;
+    background-color: transparent !important
+}
 #TabsToolbar {
     box-shadow: none !important;
     appearance: none !important

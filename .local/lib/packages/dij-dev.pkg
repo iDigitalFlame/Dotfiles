@@ -1,0 +1,91 @@
+################################
+### iDigitalFlame  2016-2025 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh//hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       `///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+### Spaceport + SMD
+## Pacman Client Themes "container" package for SMD
+#
+# Copyright (C) 2016 - 2025 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+
+pkgrel=1
+pkgver=1.1.0
+pkgname="dij-dev"
+pkgdesc="iDigitalFlame's custom development packages"
+
+url="https://github.com/iDigitalFlame/dotfiles"
+arch=( "any" )
+license=( "GPL-3.0" )
+
+source=()
+noextract=()
+sha256sums=()
+
+depends=(
+    ## Compilers / Makefiles
+    "clang"
+    "cmake"
+    "gcc"
+    "go"
+    "lld"
+    "libfaketime"
+    "make"
+    "patch"
+    "mingw-w64-gcc" # Windows
+    "rustup"
+
+    ## Git
+    "git"
+    "git-lfs"
+
+    ## Signing
+    "osslsigncode"
+
+    ## Debugging
+    "gdb"
+
+    ## ARM / Embedded
+    "dosfstools"
+    "squid"       # Device Connectivity
+    "uboot-tools"
+
+    ## Consoles
+    "picocom"
+    "python-pyserial"
+
+    ## Virtualization / Emulation
+    "qemu-system-aarch64"
+    "qemu-system-arm"
+    "qemu-user-static"    # Binfmt Emulation
+
+    ## Automation
+    "python-beautifulsoup4"
+    "python-lxml"
+    "python-requests"
+)
