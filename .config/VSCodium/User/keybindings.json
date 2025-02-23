@@ -1203,5 +1203,25 @@
         "key": "enter",
         "command": "-python.execInREPLEnter",
         "when": "isCompositeNotebook && !config.interactiveWindow.executeWithShiftEnter && !inlineChatFocused && !notebookCellListFocused && activeEditor == 'workbench.editor.repl'"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "-workbench.action.zoomIn"
     }
 ]
