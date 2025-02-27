@@ -287,7 +287,13 @@ alias gv="/usr/bin/ghr firewall-web /usr/bin/go vet ./..."
 alias gmou="go list -u -m -json all | go-mod-outdated -update"
 alias gsc-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
 alias gsc="/usr/bin/ghr firewall-web ${HOME}/.local/lib/go/bin/staticcheckstaticcheck ./..."
+alias go-tools-update="/usr/bin/ghr firewall-all ${HOME}/.local/lib/go/bin/go-global-update"
 alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+
+# Rust Aliases
+alias rck="/usr/bin/ghr firewall-web cargo check"
+alias cargo="nocorrect /usr/bin/ghr firewall-web cargo"
+alias rupdate="/usr/bin/ghr firewall-web cargo install-update --all"
 
 # Utility Aliases
 alias xx="exit"
