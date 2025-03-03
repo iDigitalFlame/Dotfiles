@@ -123,13 +123,15 @@ EOF
 rm -f "/tmp/.hosts_file"
 
 printf "\x1b[96m\x1b[1mStarting yay..\x1b[0m\n"
-if ! sg firewall-web "dash -c 'env SYSBATCH=1 /usr/bin/yay -Syua --answerclean N'"; then
+if ! sg firewall-web "dash -c 'env SYSBATCH=1 PYTHONPYCACHEPREFIX=/var/cache/python PYTHONOPTIMIZE=2 /usr/bin/yay -Syua --answerclean N'"; then
     exit 1;
 fi
 
 printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
 cat<<EOF | sg firewall-web
     export PIP_USER=yes
+    export PYTHONOPTIMIZE=2
+    export PYTHONPYCACHEPREFIX=/var/cache/python
     python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip list --user --outdated --format=json | jq -r '.[] | (.name)' | xargs -n1 python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --disable-pip-version-check --break-system-packages -U 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 EOF
 

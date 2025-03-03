@@ -291,9 +291,9 @@ alias go-tools-update="/usr/bin/ghr firewall-all ${HOME}/.local/lib/go/bin/go-gl
 alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Rust Aliases
-alias rck="/usr/bin/ghr firewall-web cargo check"
-alias cargo="nocorrect /usr/bin/ghr firewall-web cargo"
-alias rupdate="/usr/bin/ghr firewall-web cargo install-update --all"
+alias rck="/usr/bin/ghr firewall-web /usr/bin/cargo check"
+alias cargo="nocorrect /usr/bin/ghr firewall-web /usr/bin/cargo"
+alias rupdate="/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all"
 
 # Utility Aliases
 alias xx="exit"
