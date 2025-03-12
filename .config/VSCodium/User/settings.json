@@ -37,7 +37,6 @@
     "C_Cpp.configurationWarnings": "Disabled",
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.cppStandard": "c++98",
-    "C_Cpp.formatting": "Disabled",
     "C_Cpp.default.intelliSenseMode": "clang-x64",
     "C_Cpp.default.systemIncludePath": [
         "/usr/x86_64-w64-mingw32/include",
@@ -48,6 +47,7 @@
         "/usr/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
         "/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"
     ],
+    "C_Cpp.formatting": "Disabled",
     "[go]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
@@ -62,8 +62,9 @@
         "editor.formatOnSaveMode": "file"
     },
     "[rust]": {
-        "editor.semanticHighlighting.enabled": true,
+        "editor.semanticHighlighting.enabled": true
     },
+    "accessibility.accessibleView.closeOnKeyPress": false,
     "accessibility.hideAccessibleView": true,
     "accessibility.signals.chatRequestSent": {
         "announcement": "off",
@@ -165,7 +166,9 @@
     "accessibility.signals.voiceRecordingStopped": {
         "sound": "off"
     },
+    "accessibility.underlineLinks": true,
     "accessibility.verbosity.comments": false,
+    "accessibility.verbosity.debug": false,
     "accessibility.verbosity.diffEditor": false,
     "accessibility.verbosity.diffEditorActive": false,
     "accessibility.verbosity.emptyEditorHint": false,
@@ -177,6 +180,8 @@
     "accessibility.verbosity.notification": false,
     "accessibility.verbosity.panelChat": false,
     "accessibility.verbosity.terminal": false,
+    "accessibility.verbosity.walkthrough": false,
+    "accessibility.windowTitleOptimized": false,
     "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json",
     "black-formatter.args": [],
     "black-formatter.importStrategy": "fromEnvironment",
@@ -356,6 +361,16 @@
         "zfill",
         "zstd"
     ],
+    "chat.commandCenter.enabled": false,
+    "chat.detectParticipant.enabled": false,
+    "chat.implicitContext.enabled": {
+        "editing-session": "never",
+        "panel": "never"
+    },
+    "chat.promptFiles": false,
+    "chat.promptFilesLocations": {
+        ".github/prompts": false
+    },
     "css.format.newlineBetweenRules": false,
     "css.format.newlineBetweenSelectors": false,
     "css.format.spaceAroundSelectorSeparator": true,
@@ -382,7 +397,6 @@
     "debug.console.wordWrap": false,
     "debug.disassemblyView.showSourceCode": false,
     "debug.gutterMiddleClickAction": "none",
-    "debug.inlineValues": "off",
     "debug.internalConsoleOptions": "neverOpen",
     "debug.javascript.automaticallyTunnelRemoteServer": false,
     "debug.javascript.terminalOptions": {},
@@ -390,9 +404,6 @@
     "debug.openExplorerOnEnd": false,
     "debug.showInStatusBar": "never",
     "debug.toolBarLocation": "hidden",
-    "diffEditor.ignoreTrimWhitespace": true,
-    "diffEditor.renderIndicators": true,
-    "diffEditor.renderSideBySide": true,
     "dependi.decoration.position": "after",
     "dependi.go.enabled": true,
     "dependi.go.excludeUnstableVersions": false,
@@ -410,10 +421,14 @@
     "dependi.rust.informPatchUpdates": true,
     "dependi.vulnerability.enabled": true,
     "dependi.vulnerability.ghsa.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.renderIndicators": true,
+    "diffEditor.renderSideBySide": true,
     "editor.acceptSuggestionOnCommitCharacter": true,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.accessibilitySupport": "off",
     "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "languageDefined",
     "editor.autoIndent": "full",
     "editor.bracketPairColorization.enabled": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -596,8 +611,8 @@
                     "support.type.primitive.rust"
                 ],
                 "settings": {
-                    "foreground": "#D899FF",
-                    "fontStyle": "bold"
+                    "fontStyle": "bold",
+                    "foreground": "#D899FF"
                 }
             },
             {
@@ -629,6 +644,7 @@
     "explorer.decorations.badges": true,
     "explorer.decorations.colors": true,
     "explorer.enableDragAndDrop": true,
+    "explorer.excludeGitIgnore": false,
     "explorer.openEditors.visible": 12,
     "explorer.sortOrder": "default",
     "extensions.autoCheckUpdates": false,
@@ -950,6 +966,7 @@
     "http.proxyAuthorization": null,
     "http.proxyStrictSSL": true,
     "inlineChat.holdToSpeech": false,
+    "inlineChat.lineNaturalLanguageHint": false,
     "ipynb.pasteImagesAsAttachments.enabled": false,
     "isort.args": [],
     "isort.check": false,
@@ -1044,6 +1061,7 @@
     "npm.packageManager": "npm",
     "npm.runSilent": false,
     "npm.scriptHover": false,
+    "outline.showPackages": false,
     "php.suggest.basic": true,
     "php.validate.enable": false,
     "php.validate.executablePath": null,
@@ -1091,7 +1109,6 @@
     "problems.decorations.enabled": true,
     "pyright.disableLanguageServices": false,
     "pyright.disableOrganizeImports": true,
-    "python.analysis.typeCheckingMode": "off",
     "python.analysis.autoSearchPaths": false,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.diagnosticSeverityOverrides": {
@@ -1099,6 +1116,7 @@
         "reportMissingImports": "none",
         "reportMissingModuleSource": "none"
     },
+    "python.analysis.typeCheckingMode": "off",
     "python.autoComplete.extraPaths": [],
     "python.envFile": "${workspaceFolder}/.pyenv",
     "python.experiments.enabled": false,
@@ -1171,8 +1189,8 @@
     "rust-analyzer.inlayHints.closingBraceHints.enable": false,
     "rust-analyzer.inlayHints.expressionAdjustmentHints.mode": "postfix",
     "rust-analyzer.inlayHints.implicitDrops.enable": true,
-    // "skip_trivial" is nice, but it can mess up formatting.
     "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "never",
+    // ^ "skip_trivial" is nice, but it can mess up formatting.
     "rust-analyzer.lens.debug.enable": false,
     "rust-analyzer.lens.enable": false,
     "rust-analyzer.lens.implementations.enable": false,
@@ -1273,9 +1291,9 @@
     "terminal.integrated.scrollback": 1000,
     "terminal.integrated.shellIntegration.decorationsEnabled": "gutter",
     "terminal.integrated.shellIntegration.history": 500,
-    "terminal.integrated.suggest.quickSuggestions": true,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.suggest.quickSuggestions": true,
     "terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
     "terminal.integrated.tabs.description": "${task}${separator}${cwdFolder}",
     "terminal.integrated.tabs.enabled": true,
@@ -1300,7 +1318,7 @@
         "**/README.md",
         "**/Cargo.toml*"
     ],
-    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "todo-tree.filtering.ignoreGitSubmodules": false,
     "todo-tree.filtering.useBuiltInExcludes": "file excludes",
     "todo-tree.general.debug": false,
     "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
@@ -1374,6 +1392,8 @@
     "update.showReleaseNotes": false,
     "window.autoDetectHighContrast": false,
     "window.closeWhenEmpty": false,
+    "window.commandCenter": false,
+    "window.dialogStyle": "native",
     "window.enableMenuBarMnemonics": true,
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "maximized",
@@ -1383,6 +1403,7 @@
     "window.restoreWindows": "none",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.titleBarStyle": "native",
+    "window.zoomLevel": 0,
     "workbench.cloudChanges.autoResume": "off",
     "workbench.cloudChanges.continueOn": "off",
     "workbench.colorCustomizations": {
@@ -1486,6 +1507,7 @@
     },
     "workbench.editor.closeOnFileDelete": false,
     "workbench.editor.decorations.colors": true,
+    "workbench.editor.dragToOpenWindow": true,
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
@@ -1505,6 +1527,7 @@
     "workbench.list.multiSelectModifier": "ctrlCmd",
     "workbench.list.openMode": "singleClick",
     "workbench.list.smoothScrolling": true,
+    "workbench.navigationControl.enabled": false,
     "workbench.panel.opensMaximized": "never",
     "workbench.preferredDarkColorTheme": "Simple Dark",
     "workbench.preferredHighContrastColorTheme": "Simple Dark",
@@ -1528,5 +1551,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false,
+    "zenMode.silentNotifications": false
 }
