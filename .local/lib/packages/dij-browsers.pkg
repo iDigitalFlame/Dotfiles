@@ -35,7 +35,7 @@
 #
 
 pkgrel=1
-pkgver=1.2.0
+pkgver=1.3.0
 pkgname="dij-browsers"
 pkgdesc="iDigitalFlame's custom browser packages"
 
@@ -49,7 +49,6 @@ sha256sums=()
 
 depends=(
     "chromium-widevine"  # For Chrome DRM Content
-    "falkon"
     "librewolf"
     "ungoogled-chromium" # Fuck Google
 

@@ -75,7 +75,6 @@ linkcheck "${HOME}/.local/bin/x-www-browser" "${HOME}/.local/bin/browser"
 linkcheck "${HOME}/.config/cubocore/pins" "/dev/null"
 linkcheck "${HOME}/.config/cubocore/activities" "/dev/null"
 
-linkcheck "${HOME}/.config/librewolf/chrome" "${HOME}/.config/mozilla/firefox/chrome"
 linkcheck "${HOME}/.config/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
 linkcheck "${HOME}/.local/share/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
 

@@ -36,7 +36,7 @@
 [Desktop Entry]
 Name            = CorePDF
 Exec            = /usr/bin/corepdf %f
-Icon            = org.cubocore.CorePDF
+Icon            = cc.cubocore.CorePDF
 Type            = Application
 Hidden          = true
 Comment         = A PDF viewer for C Suite.
