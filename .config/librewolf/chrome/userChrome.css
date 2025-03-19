@@ -34,12 +34,20 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
+@keyframes blink {}
+@keyframes throbber {}
+@keyframes tab-burst-animation {}
+@keyframes tab-burst-animation-light {}
+
 html#main-window {
     background: transparent !important;
-    --panel-color: #FFF !important;
     --color-bg: transparent !important;
+    --tab-inner-inline-margin: 4px !important;
     --lwt-accent-color: transparent !important;
+    --panel-color: rgb(255, 255, 255) !important;
+    --toolbarbutton-outer-padding: 2px !important;
     --theme-colors-sidebar: transparent !important;
+    --tab-collapsed-background-width: 30px !important;
     --background-color-canvas: transparent !important;
     --arrowpanel-border-color: transparent !important;
     --arrowpanel-color: rgb(255, 255, 255) !important;
@@ -47,36 +55,162 @@ html#main-window {
     --panel-background: rgba(10, 0, 10, 0.7) !important;
     --button-hover-bgcolor: rgb(125, 11, 171) !important;
     --button-active-bgcolor: rgb(172, 15, 235) !important;
+    --tab-pinned-expanded-background-width: 30px !important;
     --lwt-toolbar-field-color: rgb(255, 255, 255) !important;
     --arrowpanel-background: rgba(10, 0, 10, 0.7) !important;
     --lwt-toolbar-field-background-color: transparent !important;
     --button-active-hover-bgcolor: rgb(172, 15, 235) !important;
     --button-primary-hover-bgcolor: rgb(125, 11, 171) !important;
+    --button-background-color-hover: rgb(172, 15, 235) !important;
     --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
     --toolbarbutton-hover-background: rgb(125, 11, 171) !important;
-    --toolbarbutton-active-background: rgb(125, 11, 171) !important
+    --toolbarbutton-active-background: rgb(125, 11, 171) !important;
+    --button-background-color-ghost: rgba(10, 0, 10, 0.45) !important;
+    --button-background-color-ghost-hover: rgba(199, 131, 255, 0.65) !important
 }
 input#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
-    padding-left: 2px !important;
+    padding-left: 4px !important;
     background: transparent !important;
     caret-color: rgb(255, 255, 255) !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
+}
+button-group.actions-list > moz-button[aria-pressed="false"][view="viewCustomizeSidebar"] {
+    display: none !important
 }
 
 :is(menupopup, panel):where([type="arrow"]) {
     --panel-background: rgba(10, 0, 10, 0.7) !important
 }
 
-panelmultiview#appMenu-multiView, panel#appMenu-popup {
-    --panel-background: rgba(10, 0, 10, 0.4) !important
+.tab-context-line {
+    margin: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    border-radius: 5px !important;
+    transition: all 0.15s ease-in-out !important;
+}
+tab[class^="identity-color-"] vbox.tab-background {
+    border-radius: 0 0 5px 5px !important;
+    transition: all 0.15s ease-in-out !important
+}
+
+tab-group {
+    margin: 3px 0 3px 5px !important
+}
+tab-group:before {
+    inset-inline-start: -5px !important
+}
+.tab-group-label {
+    margin-block: 5px !important
+}
+.tab-group-label-container {
+    margin-bottom: 2px !important
+}
+
+#tabbrowser-tabs[orient="vertical"] .tab-group-label {
+    margin: 2px 0 2px 0 !important
+}
+#tabbrowser-tabs[orient="vertical"] tab-group .tabbrowser-tab {
+    margin: 1px 0 0 -4px !important
+}
+
+#tabbrowser-tabs {
+    margin: 0 0 0 3px !important
+}
+#tabbrowser-tabbox {
+    outline: none !important;
+    box-shadow: none !important
+}
+#tabbrowser-arrowscrollbox {
+    margin-top: -5px !important
+}
+#tabbrowser-tabs[orient="vertical"] & .tab-background {
+    margin-inline: 4px !important;
+    transition: all 0.15s ease-in-out !important
+}
+#tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-close-button {
+    padding: 1px !important;
+    background-image: none !important;
+    background: rgb(255, 0, 0) !important;
+    transition: all 0.15s ease-in-out !important
+}
+#tabbrowser-tabs[orient="vertical"][expanded] #tabbrowser-arrowscrollbox-periphery {
+    margin: 0 auto !important
+}
+
+#tabs-newtab-button {
+    transition: all 0.15s ease-in-out !important;
+    background-color: rgba(10, 0, 10, 0.45) !important
+}
+#tabs-newtab-button:hover {
+    background-color: rgba(199, 131, 255, 0.65) !important
+}
+#tabs-newtab-button image.toolbarbutton-icon {
+    background-color: transparent !important;
+    transition: all 0.15s ease-in-out !important
+}
+
+.tab-close-button {
+    padding: 2.5px !important;
+    transition: all 0.15s ease-in-out !important
+}
+.tab-close-button:hover {
+    background: none !important;
+    outline-color: transparent !important
+}
+
+.tabbrowser-tab {
+    height: 35px !important;
+    min-height: 35px !important;
+    max-height: 35px !important;
+    padding-block: 3px !important;
+    padding-block-start: 0 !important;
+    transition: all 0.15s ease-in-out !important
+}
+.tab-background {
+    margin-block: 0 !important;
+    border-radius: 5px !important;
+    transition: all 0.15s ease-in-out !important;
+    background: linear-gradient(to right, rgb(187, 131, 255), rgb(120, 88, 166), rgb(80, 159, 227)) !important
+}
+.tabbrowser-tab:hover .tab-background {
+    background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(0, 149, 240) 100%) !important
+}
+.tabbrowser-tab[selected] .tab-background {
+    background: linear-gradient(to right, rgb(248, 6, 204), rgb(48, 144, 255), rgb(125, 11, 171)) !important
+}
+.tabbrowser-tab[selected]:hover .tab-background {
+    background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(0, 149, 240) 100%) !important
+}
+
+#vertical-pinned-tabs-container {
+    padding: 0 !important;
+    max-height: none !important
+}
+#vertical-pinned-tabs-container-separator {
+    display: block !important;
+    margin: -5px 0 5px 0 !important
+}
+#vertical-pinned-tabs-container .tabbrowser-tab {
+    padding-block-start: 0 !important
+}
+#vertical-pinned-tabs-container .tabbrowser-tab .tab-background {
+    background: rgba(10, 0, 10, 0.6) !important
+}
+#vertical-pinned-tabs-container .tabbrowser-tab:hover .tab-background {
+    background: rgba(199, 131, 255, 0.65) !important
+}
+#vertical-pinned-tabs-container .tabbrowser-tab[selected] .tab-background {
+    background: rgba(172, 15, 235, 0.6) !important
 }
 
 menupopup {
-    --menu-color: #FFF !important;
-    --panel-color: #FFF !important;
-    --arrowpanel-color: #FFF !important;
+    --menu-color: rgb(255, 255, 255) !important;
+    transition: all 0.15s ease-in-out !important;
+    --panel-color: rgb(255, 255, 255) !important;
+    --arrowpanel-color: rgb(255, 255, 255) !important;
     --menu-border-color: rgb(125, 11, 171) !important;
     --panel-border-color: rgb(125, 11, 171) !important;
     --panel-background: rgba(10, 0, 10, 0.7) !important;
@@ -88,92 +222,62 @@ menupopup {
     --menuitem-hover-background-color: rgb(125, 11, 171) !important;
     --menuitem-disabled-hover-background-color: rgba(80, 80, 80, 0.75) !important
 }
-
 panelmultiview {
     padding: 2px !important;
     border-radius: 10px !important;
     background: rgba(10, 0, 10, 0.2) !important;
+    transition: all 0.15s ease-in-out !important;
     border: 1px solid rgb(172, 15, 235) !important
+}
+toolbar .toolbaritem-combined-buttons {
+    margin-inline: 0 !important
+}
+toolbarbutton:hover .toolbarbutton-icon {
+    background: rgb(125, 11, 171) !important
+}
+panelmultiview#appMenu-multiView, panel#appMenu-popup {
+    --panel-background: rgba(10, 0, 10, 0.4) !important
 }
 splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabbox, #tabbrowser-tabpanels, #webext-panels-browser {
     border: none !important;
     background: transparent !important
 }
 
-tab,
+*[id^="treestyletab_piro_sakura_ne_jp-menuitem-_context_send"] {
+    display: none !important
+}
+
 #identity-box,
 .titlebar-min,
 .titlebar-max,
 #alltabs-button,
 .titlebar-close,
 .panel-arrowbox,
-.tab-background,
 #window-controls,
 .titlebar-restore,
 #autohide-context,
 .urlbarView-favicon,
+#manage-saved-logins,
+#context-keywordfield,
+#sidebarRevampSeparator,
 #nav-bar-overflow-button,
 #navigator-toolbox::after,
 .urlbar-addon-page-action,
-.urlbar-history-dropmarker {
+#context-sendlinktodevice,
+.urlbar-history-dropmarker,
+#passwordmgr-items-separator,
+#context-media-eme-separator,
+#context-media-eme-learnmore,
+#context-setDesktopBackground,
+#fill-login-generated-password,
+menu[id^="_testpilot-containers-menuitem-"],
+menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"],
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
     display: none !important;
     appearance: none !important
 }
 
-#browser {
-    background-image: none !important;
-    background-color: transparent !important
-}
-#TabsToolbar {
-    box-shadow: none !important;
-    appearance: none !important
-}
-#sidebar-box {
-    flex-direction: column-reverse !important
-}
-#tabbrowser-tabs {
-    min-height: 0 !important;
-    visibility: collapse !important
-}
-#urlbar-background {
-    border-radius: 8px !important;
-    background-color: rgba(10, 0, 10, 0.7) !important
-}
-#navigator-toolbox {
-    box-shadow: none !important;
-    --tabs-border-color: transparent !important
-}
-#tabs-newtab-button {
-    margin: 0 !important
-}
-#PanelUI-menu-button {
-    padding-inline-end: 0 !important
-}
-#tracking-protection-icon-container {
-    padding-right: 0 !important;
-    margin-right: 2px !important
-}
-#navigator-toolbox, #nav-bar, #TabsToolbar {
-    border: none !important
-}
-
-/* Remove "Send Tab to Device" */
-*[id^="treestyletab_piro_sakura_ne_jp-menuitem-_context_send"] {
-    display: none !important
-}
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header, #context-media-eme-separator {
-    display: none !important
-}
-#context-media-eme-learnmore, #context-keywordfield, #fill-login-generated-password, #manage-saved-logins, #passwordmgr-items-separator, #context-sendlinktodevice, #context-setDesktopBackground {
-    display: none !important
-}
-
-menu[id^="_testpilot-containers-menuitem-"], menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"] {
-    display: none !important
-}
-
 .sidebar,
-#TabsToolbar,
 .urlbar-input-box,
 #navigator-toolbox,
 #webextpanels-window,
@@ -181,6 +285,32 @@ menu[id^="_testpilot-containers-menuitem-"], menuitem[id^="skipredirect_sblask-m
 .sidebar-panel[lwt-sidebar],
 .browser-toolbar:not(.titlebar-color) {
     background: transparent !important
+}
+
+#browser {
+    background-image: none !important;
+    background-color: transparent !important
+}
+#sidebar-box {
+    flex-direction: column-reverse !important
+}
+#navigator-toolbox {
+    box-shadow: none !important;
+    --tabs-border-color: transparent !important
+}
+#PanelUI-menu-button {
+    padding-inline-end: 0 !important
+}
+#navigator-toolbox, #nav-bar {
+    border: none !important
+}
+#tracking-protection-icon-container {
+    border-radius: 10px !important
+}
+
+#urlbar-background {
+    border-radius: 8px !important;
+    background-color: rgba(10, 0, 10, 0.7) !important
 }
 
 .urlbarView {
@@ -195,21 +325,24 @@ menu[id^="_testpilot-containers-menuitem-"], menuitem[id^="skipredirect_sblask-m
 .panel-arrowbox {
     margin: 0 !important;
 }
+.panel-arrowcontent {
+    margin: 0 !important;
+    opacity: 1 !important
+}
+
 .urlbar-input-box {
     border-radius: 5px !important
 }
 .urlbarView-action {
     color: #FFF !important
 }
-.panel-arrowcontent {
-    margin: 0 !important;
-    opacity: 1 !important
-}
+
 .contentAreaContextMenu {
     border: none !important;
     appearance: none !important
 }
 .toolbarbutton-badge-stack, .toolbarbutton-icon {
     border-radius: 10px !important;
-    background-color: rgba(10, 0, 10, 0.65)
+    background-color: rgba(10, 0, 10, 0.65);
+    transition: all 0.15s ease-in-out !important
 }

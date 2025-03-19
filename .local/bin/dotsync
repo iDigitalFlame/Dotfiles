@@ -78,6 +78,10 @@ linkcheck "${HOME}/.config/cubocore/activities" "/dev/null"
 linkcheck "${HOME}/.config/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
 linkcheck "${HOME}/.local/share/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
 
+linkcheck "${HOME}"/.config/librewolf/*."${USER}"/chrome "${HOME}/.config/librewolf/chrome"
+linkcheck "${HOME}"/.config/mozilla/firefox/*."${USER}"/chrome "${HOME}/.config/mozilla/firefox/chrome"
+linkcheck "${HOME}"/.config/librewolf/*."${USER}"/extensions "${HOME}"/.config/mozilla/firefox/*."${USER}"/extensions
+
 dash "${HOME}/.private/sync.sh"
 
 themectl reload

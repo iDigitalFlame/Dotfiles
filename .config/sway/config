@@ -118,7 +118,6 @@ for_window {
     [app_id="(?i)thunar"]              opacity set 0.80, border none
     [app_id="(?i)codium"]              opacity set 0.95, border none
     [app_id="(?i)vesktop"]             opacity set 0.85, border none, layout tabbed
-    [app_id="org.kde.falkon"]          opacity set 0.85, border none
     [app_id="codium-url-handler"]      opacity set 0.95, border none
     [app_id="org.telegram.desktop"]    opacity set 0.85, border none, layout tabbed
     [app_id="org.keepassxc.KeePassXC"] opacity set 0.85, border none
