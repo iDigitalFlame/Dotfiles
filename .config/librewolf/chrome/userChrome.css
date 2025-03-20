@@ -136,18 +136,20 @@ tab-group:before {
     background: rgb(255, 0, 0) !important;
     transition: all 0.15s ease-in-out !important
 }
-#tabbrowser-tabs[orient="vertical"][expanded] #tabbrowser-arrowscrollbox-periphery {
-    margin: 0 auto !important
-}
 
-#tabs-newtab-button {
+#tabbrowser-arrowscrollbox-periphery {
+    margin-top: 5px !important
+}
+#tabs-newtab-button, #vertical-tabs-newtab-button {
+    width: auto !important;
+    margin: 0 auto !important;
     transition: all 0.15s ease-in-out !important;
     background-color: rgba(10, 0, 10, 0.45) !important
 }
-#tabs-newtab-button:hover {
+#tabs-newtab-button:hover, #vertical-tabs-newtab-button:hover {
     background-color: rgba(199, 131, 255, 0.65) !important
 }
-#tabs-newtab-button image.toolbarbutton-icon {
+#tabs-newtab-button image.toolbarbutton-icon, #vertical-tabs-newtab-button image.toolbarbutton-icon {
     background-color: transparent !important;
     transition: all 0.15s ease-in-out !important
 }
