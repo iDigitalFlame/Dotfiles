@@ -35,7 +35,7 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
-:root {
+:root, .theme-dark, html.theme-dark .theme-light .root-1CAIjD, .theme-light.popout-15UxD6 {
     --activity-card-background: var(--primary-830) !important;
     --android-navigation-bar-background: var(--primary-830) !important;
     --android-navigation-scrim-background: hsl(var(--primary-830-hsl)/0.5) !important;
@@ -55,6 +55,7 @@
     --background-secondary-alt: #0A000A !important;
     --background-tertiary: #0A000A !important;
     --bg-overlay-2: #0A000A !important;
+    --bg-surface-overlay: #0A000A !important;
     --bg-overlay-selected: #7D0BAB !important;
     --bg-overlay-hover: #840084 !important;
     --bg-overlay-active: #7D0BAB !important;
@@ -231,146 +232,6 @@
     --primary-900-hsl: 0 calc(var(--saturation-factor, 1)*0%) calc(var(--lightness-900, 0) + 0.8%) !important
 }
 
-.theme-dark,
-html.theme-dark .theme-light .root-1CAIjD,
-.theme-light.popout-15UxD6 {
-    --activity-card-background: var(--primary-830) !important;
-    --android-navigation-bar-background: var(--primary-830) !important;
-    --android-navigation-scrim-background: hsl(var(--primary-830-hsl)/0.5) !important;
-    --android-ripple: hsl(var(--white-500-hsl)/0.07) !important;
-    --background-accent: var(--primary-760) !important;
-    --background-floating: #0A000A !important;
-    --background-message-hover: hsl(var(--primary-900-hsl)/0.06) !important;
-    --background-mobile-primary: var(--black-500) !important;
-    --background-mobile-secondary: var(--primary-860) !important;
-    --background-modifier-accent: hsl(var(--primary-760-hsl)/0.48) !important;
-    --background-modifier-active: hsl(var(--primary-760-hsl)/0.48) !important;
-    --background-modifier-hover: hsl(var(--primary-760-hsl)/0.4) !important;
-    --background-modifier-selected: hsl(var(--primary-760-hsl)/0.6) !important;
-    --background-nested-floating: var(--primary-830) !important;
-    --background-primary: #0A000A !important;
-    --background-secondary: #0A000A !important;
-    --background-secondary-alt: #0A000A !important;
-    --background-tertiary: #0A000A !important;
-    --bg-overlay-2: #0A000A !important;
-    --bg-overlay-selected: #7D0BAB !important;
-    --bg-overlay-hover: #840084 !important;
-    --bg-overlay-active: #7D0BAB !important;
-    --bug-reporter-modal-submitting-background: hsl(var(--primary-800-hsl)/0.6) !important;
-    --button-outline-brand-background: hsl(var(--white-500-hsl)/0) !important;
-    --button-outline-brand-text: var(--white-500) !important;
-    --button-outline-brand-text-active: var(--white-500) !important;
-    --button-outline-brand-text-hover: var(--white-500) !important;
-    --button-outline-danger-background: hsl(var(--white-500-hsl)/0) !important;
-    --button-outline-danger-background-active: var(--red-460) !important;
-    --button-outline-danger-background-hover: var(--red-430) !important;
-    --button-outline-danger-border: var(--red-400) !important;
-    --button-outline-danger-border-active: var(--red-430) !important;
-    --button-outline-danger-border-hover: var(--red-430) !important;
-    --button-outline-danger-text: var(--white-500) !important;
-    --button-outline-danger-text-active: var(--white-500) !important;
-    --button-outline-danger-text-hover: var(--white-500) !important;
-    --button-outline-positive-background: hsl(var(--white-500-hsl)/0) !important;
-    --button-outline-positive-text: var(--white-500) !important;
-    --button-outline-positive-text-active: var(--white-500) !important;
-    --button-outline-positive-text-hover: var(--white-500) !important;
-    --button-outline-primary-background: var(--primary-700) !important;
-    --button-outline-primary-background-active: var(--primary-600) !important;
-    --button-outline-primary-background-hover: var(--primary-630) !important;
-    --button-outline-primary-border: var(--primary-700) !important;
-    --button-outline-primary-border-active: var(--primary-600) !important;
-    --button-outline-primary-border-hover: var(--primary-630) !important;
-    --button-outline-primary-text: var(--white-500) !important;
-    --button-outline-primary-text-active: var(--white-500) !important;
-    --button-outline-primary-text-hover: var(--white-500) !important;
-    --button-secondary-background: var(--primary-700) !important;
-    --button-secondary-background-active: var(--primary-600) !important;
-    --button-secondary-background-disabled: var(--primary-700) !important;
-    --button-secondary-background-hover: var(--primary-630) !important;
-    --channel-icon: #FFF !important;
-    --channel-text-area-placeholder: var(--primary-400) !important;
-    --channels-default: var(--primary-360) !important;
-    --channeltextarea-background: var(--primary-830) !important;
-    --chat-background: var(--black-500) !important;
-    --chat-border: var(--primary-700) !important;
-    --chat-input-container-background: var(--primary-600) !important;
-    --deprecated-card-bg: hsl(var(--primary-700-hsl)/0.6) !important;
-    --deprecated-card-editable-bg: hsl(var(--primary-700-hsl)/0.3) !important;
-    --deprecated-quickswitcher-input-background: var(--primary-400) !important;
-    --deprecated-quickswitcher-input-placeholder: hsl(var(--white-500-hsl)/0.3) !important;
-    --deprecated-store-bg: var(--primary-600) !important;
-    --deprecated-text-input-bg: var(--primary-700) !important;
-    --deprecated-text-input-border: hsl(var(--black-500-hsl)/0.3) !important;
-    --deprecated-text-input-border-disabled: var(--primary-700) !important;
-    --deprecated-text-input-border-hover: var(--primary-900) !important;
-    --deprecated-text-input-prefix: var(--primary-200) !important;
-    --display-banner-overflow-background: hsl(var(--primary-700-hsl)/0.5) !important;
-    --forum-post-extra-media-count-container-background: hsl(var(--primary-660-hsl)/0.8) !important;
-    --forum-post-tag-background: hsl(var(--primary-660-hsl)/0.9) !important;
-    --header-primary: var(--primary-130) !important;
-    --header-secondary: var(--primary-345) !important;
-    --home-card-resting-border: hsl(var(--transparent-hsl)/0) !important;
-    --info-danger-text: var(--white-500) !important;
-    --info-help-text: var(--white-500) !important;
-    --info-positive-text: var(--white-500) !important;
-    --info-warning-text: var(--white-500) !important;
-    --input-background: var(--primary-800) !important;
-    --input-placeholder-text: var(--input-placeholder-text-dark) !important;
-    --interactive-active: var(--primary-130) !important;
-    --interactive-hover: var(--primary-230) !important;
-    --interactive-muted: var(--primary-500) !important;
-    --interactive-normal: var(--primary-345) !important;
-    --live-stage-tile-border: hsl(var(--primary-500-hsl)/0.6) !important;
-    --logo-primary: var(--white-500) !important;
-    --mention-background: hsl(var(--brand-500-hsl)/0.3) !important;
-    --modal-background: var(--primary-860) !important;
-    --modal-footer-background: var(--primary-900) !important;
-    --profile-gradient-message-input-border: hsl(var(--primary-500-hsl)/0.48) !important;
-    --profile-gradient-note-background: hsl(var(--black-500-hsl)/0.3) !important;
-    --profile-gradient-overlay: hsl(var(--black-500-hsl)/0.6) !important;
-    --profile-gradient-overlay-synced-with-user-theme: hsl(var(--black-500-hsl)/0.8) !important;
-    --profile-gradient-profile-body-background-hover: hsl(var(--white-500-hsl)/0.16) !important;
-    --profile-gradient-role-pill-background: hsl(var(--primary-660-hsl)/0.5) !important;
-    --profile-gradient-role-pill-border: hsl(var(--white-500-hsl)/0.2) !important;
-    --profile-gradient-section-box: hsl(var(--black-500-hsl)/0.45) !important;
-    --scrollbar-auto-scrollbar-color-thumb: #7D0BAB !important;
-    --scrollbar-auto-scrollbar-color-track: #0A000A !important;
-    --scrollbar-auto-thumb: var(--primary-600) !important;
-    --scrollbar-auto-track: #7D0BAB !important;
-    --scrollbar-thin-thumb: var(--primary-700) !important;
-    --scrollbar-thin-track: hsl(var(--black-500-hsl)/0) !important;
-    --spoiler-hidden-background: var(--primary-700) !important;
-    --spoiler-revealed-background: var(--primary-660) !important;
-    --status-danger-text: var(--white-500) !important;
-    --status-positive-text: var(--white-500) !important;
-    --status-warning-text: var(--black-500) !important;
-    --text-muted: var(--primary-345) !important;
-    --text-normal: var(--primary-300) !important;
-    --textbox-markdown-syntax: var(--primary-360) !important;
-    --user-profile-header-overflow-background: hsl(var(--primary-700-hsl)/0.5) !important;
-    --elevation-stroke: 0 0 0 1px hsl(var(--primary-600-hsl)/0.15) !important;
-    --elevation-low: 0 1px 0 hsl(var(--primary-630-hsl)/0.2), 0 1.5px 0 hsl(var(--primary-600-hsl)/0.05), 0 2px 0 hsl(var(--primary-630-hsl)/0.05) !important;
-    --elevation-medium: 0 4px 4px hsl(var(--black-500-hsl)/0.16) !important;
-    --elevation-high: 0 8px 16px hsl(var(--black-500-hsl)/0.24) !important;
-    --profile-gradient-primary-color: var(--background-floating);
-    --profile-gradient-secondary-color: var(--background-floating);
-    --profile-gradient-overlay-color: transparent;
-    --profile-gradient-button-color: var(--button-secondary-background);
-    --profile-avatar-border-color: var(--background-floating);
-    --profile-message-input-border-color: var(--background-modifier-accent);
-    --profile-body-background-color: var(--background-primary);
-    --profile-body-background-hover: var(--background-modifier-hover);
-    --profile-body-divider-color: var(--background-modifier-accent);
-    --profile-role-pill-background-color: var(--background-floating);
-    --profile-role-pill-border-color: var(--interactive-normal);
-    --search-popout-option-fade: linear-gradient(90deg, hsl(var(--primary-830-hsl)/0), hsl(var(--primary-830-hsl)/1) 80%) !important;
-    --search-popout-option-fade-hover: linear-gradient(90deg, hsl(var(--primary-800-hsl)/0), var(--primary-800) 50%) !important;
-    --home-background: var(--primary-900) !important;
-    --dark-elevation-low: 0 1px 5px 0 hsl(var(--black-500-hsl)/0.3);
-    --dark-elevation-high: 0 2px 10px 0 hsl(var(--black-500-hsl)/0.2);
-    --dark-elevation-border: 0 0 0 1px hsl(var(--primary-700-hsl)/0.6)
-}
-
 div[class^="checked_"] {
     background-color: var(--green-360) !important
 }
@@ -396,6 +257,10 @@ div[class^="memberInner_"] div[class^="content_"] {
 
 li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^="channel_"] > div[class^="interactive_"] > a[href="/store"] {
     display: none !important
+}
+
+#SEARCH_OPTIONS-header {
+    background: transparent !important
 }
 
 button.vc-ranb-button {
