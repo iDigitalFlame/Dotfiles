@@ -84,6 +84,10 @@ button-group.actions-list > moz-button[aria-pressed="false"][view="viewCustomize
     --panel-background: rgba(10, 0, 10, 0.7) !important
 }
 
+#sidebar-main {
+    --space-medium: 1px !important
+}
+
 .tab-context-line {
     margin: 0 !important;
     width: 100% !important;
@@ -126,9 +130,15 @@ tab-group:before {
 #tabbrowser-arrowscrollbox {
     margin-top: -5px !important
 }
+#tabbrowser-tabs[expanded] #tabs-newtab-button {
+    margin: 0 auto !important
+}
 #tabbrowser-tabs[orient="vertical"] & .tab-background {
     margin-inline: 4px !important;
     transition: all 0.15s ease-in-out !important
+}
+#tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
+    margin: 0 auto !important
 }
 #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-close-button {
     padding: 1px !important;
@@ -136,13 +146,14 @@ tab-group:before {
     background: rgb(255, 0, 0) !important;
     transition: all 0.15s ease-in-out !important
 }
+#tabbrowser-tabs[expanded] #tabs-newtab-button, #tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
+    width: auto !important
+}
 
 #tabbrowser-arrowscrollbox-periphery {
-    margin-top: 5px !important
+    margin-top: 0 !important
 }
 #tabs-newtab-button, #vertical-tabs-newtab-button {
-    width: auto !important;
-    margin: 0 auto !important;
     transition: all 0.15s ease-in-out !important;
     background-color: rgba(10, 0, 10, 0.45) !important
 }
@@ -185,6 +196,10 @@ tab-group:before {
 }
 .tabbrowser-tab[selected]:hover .tab-background {
     background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(0, 149, 240) 100%) !important
+}
+
+.tools-and-extensions {
+    padding-left: 5px !important
 }
 
 #vertical-pinned-tabs-container {

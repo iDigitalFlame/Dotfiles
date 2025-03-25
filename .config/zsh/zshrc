@@ -318,11 +318,12 @@ alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
 alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX=/var/cache/python PIP_USER=yes /usr/bin/python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --break-system-packages"
 
 # Script Aliases
-alias pmov="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/move.py"
-alias pinc="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/rename.py"
-alias pfx2pem="/usr/bin/bash ${HOME}/Projects/Scripts/Shell/pfx2pem.sh"
-alias nts="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/ntstatus.py"
-alias dirdiff="/usr/bin/python3 ${HOME}/Projects/Scripts/Python/dirdiff.py"
+alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/move.py"
+alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/norm.py"
+alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
+alias pfx2pem="/usr/bin/bash -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Shell/pfx2pem.sh"
+alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/ntstatus.py"
+alias dirdiff="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/dirdiff.py"
 
 # Application Aliases
 alias vsc="/usr/bin/codium"
