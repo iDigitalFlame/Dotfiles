@@ -96,49 +96,59 @@ button-group.actions-list > moz-button[aria-pressed="false"][view="viewCustomize
     transition: all 0.15s ease-in-out !important;
 }
 tab[class^="identity-color-"] vbox.tab-background {
-    border-radius: 0 0 5px 5px !important;
-    transition: all 0.15s ease-in-out !important
+    border-radius: 0 0 5px 5px !important
 }
 
 tab-group {
-    margin: 3px 0 3px 5px !important
+    margin: 3px 0 3px 5px !important;
+    transition: all 0.15s ease-in-out !important
 }
 tab-group:before {
-    inset-inline-start: -5px !important
+    inset-inline-start: -5px !important;
+    transition: all 0.15s ease-in-out !important
 }
 .tab-group-label {
-    margin-block: 5px !important
+    margin-block: 5px !important;
+    transition: all 0.15s ease-in-out !important
 }
 .tab-group-label-container {
-    margin-bottom: 2px !important
+    margin-bottom: 2px !important;
+    transition: all 0.15s ease-in-out !important
 }
 
 #tabbrowser-tabs[orient="vertical"] .tab-group-label {
-    margin: 2px 0 2px 0 !important
+    margin: 2px 0 2px 0 !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[orient="vertical"] tab-group .tabbrowser-tab {
-    margin: 1px 0 0 -4px !important
+    margin: 1px 0 0 -4px !important;
+    transition: all 0.15s ease-in-out !important
 }
 
 #tabbrowser-tabs {
-    margin: 0 0 0 3px !important
+    margin: 0 0 0 3px !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabbox {
     outline: none !important;
-    box-shadow: none !important
+    box-shadow: none !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-arrowscrollbox {
-    margin-top: -5px !important
+    margin-top: -5px !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[expanded] #tabs-newtab-button {
-    margin: 0 auto !important
+    margin: 0 auto !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[orient="vertical"] & .tab-background {
     margin-inline: 4px !important;
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
-    margin: 0 auto !important
+    margin: 0 auto !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-close-button {
     padding: 1px !important;
@@ -147,11 +157,13 @@ tab-group:before {
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[expanded] #tabs-newtab-button, #tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
-    width: auto !important
+    width: auto !important;
+    transition: all 0.15s ease-in-out !important
 }
 
 #tabbrowser-arrowscrollbox-periphery {
-    margin-top: 0 !important
+    margin-top: 0 !important;
+    transition: all 0.15s ease-in-out !important
 }
 #tabs-newtab-button, #vertical-tabs-newtab-button {
     transition: all 0.15s ease-in-out !important;
@@ -186,16 +198,24 @@ tab-group:before {
     margin-block: 0 !important;
     border-radius: 5px !important;
     transition: all 0.15s ease-in-out !important;
-    background: linear-gradient(to right, rgb(187, 131, 255), rgb(120, 88, 166), rgb(80, 159, 227)) !important
 }
-.tabbrowser-tab:hover .tab-background {
-    background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(0, 149, 240) 100%) !important
-}
-.tabbrowser-tab[selected] .tab-background {
+
+#tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
     background: linear-gradient(to right, rgb(248, 6, 204), rgb(48, 144, 255), rgb(125, 11, 171)) !important
 }
-.tabbrowser-tab[selected]:hover .tab-background {
+
+#tabbrowser-tabs[expanded] .tab-background {
+    background: linear-gradient(to right, rgba(187, 131, 255, 0.75), rgba(120, 88, 166, 0.75), rgba(80, 159, 227, 0.75)) !important
+}
+#tabbrowser-tabs[expanded] .tabbrowser-tab:hover .tab-background, #tabbrowser-tabs[expanded] .tabbrowser-tab[selected]:hover .tab-background {
     background: radial-gradient(circle, rgb(238, 174, 202) 0%, rgb(0, 149, 240) 100%) !important
+}
+
+#tabbrowser-tabs:not(expanded) .tab-background {
+    background: rgba(80, 159, 227, 0.75) !important
+}
+#tabbrowser-tabs:not(expanded) .tabbrowser-tab:hover .tab-background, #tabbrowser-tabs:not(expanded) .tabbrowser-tab[selected]:hover .tab-background {
+    background: rgb(238, 174, 202) !important
 }
 
 .tools-and-extensions {
@@ -204,14 +224,17 @@ tab-group:before {
 
 #vertical-pinned-tabs-container {
     padding: 0 !important;
-    max-height: none !important
+    max-height: none !important;
+    transition: all 0.15s ease-in-out !important
 }
 #vertical-pinned-tabs-container-separator {
     display: block !important;
-    margin: -5px 0 5px 0 !important
+    margin: -5px 0 5px 0 !important;
+    transition: all 0.15s ease-in-out !important
 }
 #vertical-pinned-tabs-container .tabbrowser-tab {
-    padding-block-start: 0 !important
+    padding-block-start: 0 !important;
+    transition: all 0.15s ease-in-out !important
 }
 #vertical-pinned-tabs-container .tabbrowser-tab .tab-background {
     background: rgba(10, 0, 10, 0.6) !important
