@@ -72,8 +72,8 @@ order            = alpha
 recursive        = no
 
 [font]
+name             = SourceCodePro
 size             = 12
-font             = Source Code Pro
 color            = #FFFFFFFF
 shadow           = #000000FF
 background       = #0A000AAF
