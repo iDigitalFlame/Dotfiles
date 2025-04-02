@@ -232,8 +232,23 @@
     --primary-900-hsl: 0 calc(var(--saturation-factor, 1)*0%) calc(var(--lightness-900, 0) + 0.8%) !important
 }
 
+.full-motion {
+    animation: none !important;
+    animation-play-state: paused !important
+}
+div[class^="backgroundDark_"], div[class^="backgroundLight"], div[class^="foregroundRing_"], div[class^="foregroundVase_"], div[class^="sphere_"] {
+    animation: none !important;
+    animation-play-state: paused !important
+}
+
 div[class^="checked_"] {
     background-color: var(--green-360) !important
+}
+div[class^="gradientBackground_"] {
+    display: none !important
+}
+div[class^="memberInner_"] div[class^="content_"] {
+    background: none !important
 }
 div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
     display: none !important
@@ -251,10 +266,6 @@ div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[c
     background: #0A000A !important;
     background-color: #0A000A !important
 }
-div[class^="memberInner_"] div[class^="content_"] {
-    background: none !important
-}
-
 li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^="channel_"] > div[class^="interactive_"] > a[href="/store"] {
     display: none !important
 }
