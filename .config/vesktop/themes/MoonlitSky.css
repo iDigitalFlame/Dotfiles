@@ -59,6 +59,7 @@
     --bg-overlay-selected: #7D0BAB !important;
     --bg-overlay-hover: #840084 !important;
     --bg-overlay-active: #7D0BAB !important;
+    --bg-mod-faint: #0A000A !important;
     --bug-reporter-modal-submitting-background: hsl(var(--primary-800-hsl)/0.6) !important;
     --button-outline-brand-background: hsl(var(--white-500-hsl)/0) !important;
     --button-outline-brand-text: var(--white-500) !important;
