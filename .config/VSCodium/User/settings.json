@@ -34,7 +34,7 @@
 //
 {
     "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, NamespaceIndentation: All }",
-    "C_Cpp.configurationWarnings": "Disabled",
+    "C_Cpp.configurationWarnings": "disabled",
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.cppStandard": "c++98",
     "C_Cpp.default.intelliSenseMode": "clang-x64",
@@ -47,7 +47,7 @@
         "/usr/lib/gcc/x86_64-w64-mingw32/11.1.0/include",
         "/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"
     ],
-    "C_Cpp.formatting": "Disabled",
+    "C_Cpp.formatting": "disabled",
     "[go]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
@@ -1293,7 +1293,11 @@
     "terminal.integrated.shellIntegration.history": 500,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.smoothScrolling": true,
-    "terminal.integrated.suggest.quickSuggestions": true,
+    "terminal.integrated.suggest.quickSuggestions": {
+        "arguments": "on",
+        "commands": "on",
+        "unknown": "on"
+    },
     "terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
     "terminal.integrated.tabs.description": "${task}${separator}${cwdFolder}",
     "terminal.integrated.tabs.enabled": true,
@@ -1409,7 +1413,7 @@
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#0A000A",
         "activityBar.activeBorder": "#0096FF",
-        "activityBar.activeFocusBorder": "0A000A",
+        "activityBar.activeFocusBorder": "#0A000A",
         "activityBar.background": "#0A000A",
         "activityBar.border": "#0A000A",
         "activityBar.foreground": "#FFFFFF",
