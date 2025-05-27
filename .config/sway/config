@@ -48,9 +48,11 @@ set {
 blur                            enable
 shadows                         disable
 blur_xray                       false
+blur_noise                      0
 blur_passes                     2
 blur_radius                     2
 corner_radius                   5
+shadows_on_csd                  disable
 shadow_blur_radius              5
 titlebar_separator              disable
 scratchpad_minimize             disable
@@ -143,7 +145,7 @@ for_window {
 
 # Telgram Specific Fixes
 for_window {
-    [title="(null)"]                                     border none, floading disable
+    [title="(null)"]                                     border none, floating disable
     [app_id="org.telegram.desktop"]                      border none
     [app_id="org.telegram.desktop" floating]             border none, floating disable
     [app_id="org.telegram.desktop" title="Media viewer"] fullscreen enable
@@ -169,14 +171,16 @@ for_window {
     [app_id="electron" title="^blob:.*$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [app_id="^cropgui$" title="to crop$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [window_role="(pop-up|bubble|dialog)"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="^Rename .*$"]                                              floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="^Rename .*$"]                                             floating enable, opacity set 0.8, border normal
     [app_id="(?i)Notesnook" title="^blob:.*$"]                                            floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [app_id="(?i)Notesnook" title="^Open Fil([es]+)$"]                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [app_id="org.telegram.desktop" title="Save Video"]                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="(?i)thunar" title="File Operation Progress"]                                  floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="(?i)thunar" title="File Operation Progress"]                                 floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="File Operation Progress"]                                  floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="File Operation Progress"]                                 floating enable, opacity set 0.8, border normal
     [app_id="(?i)codium" title="Add Folder to Workspace"]                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="(?i)thunar" title="Confirm to replace files"]                                 floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
-    [app_id="(?i)thunar" title="Confirm to replace files"]                                floating enable, resize set width 600 px height 300 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="Confirm to replace files"]                                 floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="Confirm to replace files"]                                floating enable, opacity set 0.8, border normal
     [app_id="signal" title="^Signal Desktop Preferences$"]                                floating enable, border normal
     [app_id="codium-url-handler" title="Add Folder to Workspace"]                         floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
