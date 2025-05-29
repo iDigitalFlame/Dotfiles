@@ -43,7 +43,6 @@ position         = parent
 decoration       = no
 
 [viewer]
-fixed            = yes
 scale            = optimal
 window           = #00000000
 history          = 0
