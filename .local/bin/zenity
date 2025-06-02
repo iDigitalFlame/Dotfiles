@@ -1,3 +1,4 @@
+#!/usr/bin/dash
 ################################
 ### iDigitalFlame  2016-2025 ###
 #                              #
@@ -15,8 +16,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-### Spaceport + SMD
-## Pacman Client Themes "container" package for SMD
+## Fake Zenity for Minecraft Skins
 #
 # Copyright (C) 2016 - 2025 iDigitalFlame
 #
@@ -34,36 +34,4 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-pkgrel=1
-pkgver=1.4.0
-pkgname="dij-browsers"
-pkgdesc="iDigitalFlame's custom browser packages"
-
-url="https://github.com/iDigitalFlame/dotfiles"
-arch=( "any" )
-license=( "GPL-3.0" )
-
-source=()
-noextract=()
-sha256sums=()
-
-depends=(
-    "chromium-widevine"  # For Chrome DRM Content
-    "librewolf"
-    "ungoogled-chromium" # Fuck Google
-
-    "hunspell-en_us" # For extra spell check
-
-    ## Firefox
-    "firefox"
-    "firefox-auto-tab-discard"
-    "firefox-dark-reader"
-    "firefox-extension-canvasblocker-bin"
-    "firefox-extension-foxyproxy"
-    "firefox-extension-multi-account-containers"
-    "firefox-extension-styl-us-bin"
-    "firefox-noscript"
-    "firefox-temporary-containers"
-    "firefox-tree-style-tab"
-    "firefox-ublock-origin"
-)
+echo "${HOME}/.local/share/mcpelauncher/skin.png"
