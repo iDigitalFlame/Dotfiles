@@ -263,10 +263,10 @@ li[class^="card_"] div[class^="container_"], li[class^="card_"] div[class^="main
     background: #0A000A !important;
     background-color: #0A000A !important
 }
-div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[class^="chat_"], div[class^="chat_"] div[class^="content_"] {
+/*div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[class^="chat_"], div[class^="chat_"] div[class^="content_"] {
     background: #0A000A !important;
     background-color: #0A000A !important
-}
+}*/
 li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^="channel_"] > div[class^="interactive_"] > a[href="/store"] {
     display: none !important
 }
