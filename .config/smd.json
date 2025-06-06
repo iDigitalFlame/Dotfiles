@@ -51,7 +51,8 @@
             "kali": "/opt/hydra/dij/Kali/vm.conf",
             "mac": "/opt/hydra/dij/MacOS/vm.conf",
             "win": "/opt/hydra/dij/Windows10/vm.conf",
-            "win10": "/opt/hydra/dij/Windows10/vm.conf"
+            "win10": "/opt/hydra/dij/Windows10/vm.conf",
+            "ws": "/opt/hydra/dij/WinStation/vm.conf"
         },
         "directory": "/opt/hydra/dij"
     },
