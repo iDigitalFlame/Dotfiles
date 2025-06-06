@@ -53,7 +53,7 @@ blur_passes                     2
 blur_radius                     2
 corner_radius                   5
 shadows_on_csd                  disable
-shadow_blur_radius              5
+shadow_blur_radius              0
 titlebar_separator              disable
 scratchpad_minimize             disable
 
@@ -118,7 +118,7 @@ for_window {
     [class="(?i)thunar"]               opacity set 0.80, border none
     [app_id="(?i)slack"]               opacity set 0.85, border none, layout tabbed
     [app_id="(?i)thunar"]              opacity set 0.80, border none
-    [app_id="(?i)codium"]              opacity set 0.95, border none
+    [app_id="(?i)codium"]              opacity set 0.90, border none, blur enable
     [app_id="(?i)vesktop"]             opacity set 0.85, border none, layout tabbed
     [app_id="codium-url-handler"]      opacity set 0.95, border none
     [app_id="org.telegram.desktop"]    opacity set 0.85, border none, layout tabbed
