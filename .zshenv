@@ -38,8 +38,8 @@ export GOROOT="/usr/lib/go"
 export GOPATH="${HOME}/.local/lib/go"
 export GOCACHE="${HOME}/.cache/go-build"
 
-export CARGO_HOME="${HOME}/.config/rust/cargo"
-export RUSTUP_HOME="${HOME}/.config/rust/rustup"
+export CARGO_HOME="${HOME}/.local/lib/rust/cargo"
+export RUSTUP_HOME="${HOME}/.local/lib/rust/rustup"
 
 export GNUPGHOME="${HOME}/.local/share/gnupg"
 export SSH_AUTH_SOCK="/run/user/${UID}/gcr/ssh"
@@ -52,7 +52,7 @@ export BUILDDIR="/tmp/.usercache/${USER}/aur/build"
 export GTK_RC_FILES="${HOME}/.config/gtk-1.0/gtkrc"
 export GTK2_RC_FILES="${HOME}/.config/gtk-2.0/gtkrc"
 
-export PATH=$PATH:${GOPATH}/bin:${HOME}/.config/rust/cargo/bin
+export PATH=$PATH:${GOPATH}/bin:${HOME}/.local/lib/rust/cargo/bin
 
 export XDG_DESKTOP_DIR="$HOME"
 export XDG_CACHE_HOME="${HOME}/.cache"

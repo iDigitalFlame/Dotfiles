@@ -51,9 +51,9 @@ find "$HOME" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a;
 
 # ZSH is used here as it's globbing gets ALL folders involved, not just one level.
 chmod 0750 "${HOME}/Documents/Minecraft/launch.sh"
-chmod 0750 "${HOME}"/.config/rust/rustup/toolchains/**/bin/*
-chmod 0750 "${HOME}"/.config/rust/rustup/toolchains/**/libexec/*
-chmod 0750 "${HOME}"/.config/rust/cargo/bin/*
+chmod 0750 "${HOME}"/.local/lib/rust/rustup/toolchains/**/bin/*
+chmod 0750 "${HOME}"/.local/lib/rust/rustup/toolchains/**/libexec/*
+chmod 0750 "${HOME}"/.local/lib/rust/cargo/bin/*
 chmod 0750 "${HOME}"/.vscode-oss/extensions/rust-lang.rust-analyzer-*/server/rust-analyzer
 chmod 0750 "${HOME}"/.vscode-oss/extensions/*/bin/*
 chmod 0750 "${HOME}"/.local/lib/python/bin/* 2> /dev/null
