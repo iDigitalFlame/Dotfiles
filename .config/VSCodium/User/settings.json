@@ -196,13 +196,15 @@
         "!css"
     ],
     "cSpell.enabled": true,
-    "cSpell.experimental.enableSettingsViewerV2": true,
+    "cSpell.enabledNotifications": {
+        "Lines too Long": false,
+        "Maximum Word Length Exceeded": false
+    },
     "cSpell.globRoot": "${workspaceFolder}",
     "cSpell.ignorePaths": [
         "*.css"
     ],
     "cSpell.language": "en",
-    "cSpell.showAutocompleteSuggestions": true,
     "cSpell.showCommandsInEditorContextMenu": false,
     "cSpell.showStatus": false,
     "cSpell.suggestionMenuType": "quickFix",
@@ -398,25 +400,18 @@
     "debug.disassemblyView.showSourceCode": false,
     "debug.gutterMiddleClickAction": "none",
     "debug.internalConsoleOptions": "neverOpen",
-    "debug.javascript.automaticallyTunnelRemoteServer": false,
-    "debug.javascript.terminalOptions": {},
     "debug.openDebug": "neverOpen",
     "debug.openExplorerOnEnd": false,
     "debug.showInStatusBar": "never",
     "debug.toolBarLocation": "hidden",
     "dependi.decoration.position": "after",
     "dependi.go.enabled": true,
-    "dependi.go.excludeUnstableVersions": false,
     "dependi.go.indexServerURL": "https://proxy.golang.org",
     "dependi.npm.enabled": false,
-    "dependi.npm.excludeUnstableVersions": false,
     "dependi.php.enabled": false,
-    "dependi.php.excludeUnstableVersions": false,
     "dependi.python.enabled": true,
-    "dependi.python.excludeUnstableVersions": false,
     "dependi.python.indexServerURL": "https://pypi.org/pypi",
     "dependi.rust.enabled": true,
-    "dependi.rust.excludeUnstableVersions": false,
     "dependi.rust.indexServerURL": "https://index.crates.io",
     "dependi.rust.informPatchUpdates": true,
     "dependi.vulnerability.enabled": true,
@@ -1387,7 +1382,6 @@
     "typescript.npm": "",
     "typescript.preferences.quoteStyle": "double",
     "typescript.suggest.completeFunctionCalls": true,
-    "typescript.surveys.enabled": false,
     "typescript.tsserver.enableTracing": false,
     "typescript.tsserver.log": "off",
     "typescript.tsserver.web.projectWideIntellisense.enabled": false,
@@ -1555,5 +1549,5 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
-    "zenMode.silentNotifications": false
+    "zenMode.silentNotifications": false,
 }
