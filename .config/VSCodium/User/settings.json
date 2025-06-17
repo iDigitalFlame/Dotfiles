@@ -963,7 +963,18 @@
     "inlineChat.holdToSpeech": false,
     "inlineChat.lineNaturalLanguageHint": false,
     "ipynb.pasteImagesAsAttachments.enabled": false,
-    "isort.args": [],
+    "isort.args": [
+        "--multi-line=3",
+        "--line-length=88",
+        "--combine-as",
+        "--no-sections",
+        "--length-sort",
+        "--order-by-type",
+        "--trailing-comma",
+        "--case-sensitive",
+        "--use-parentheses",
+        "--force-sort-within-sections"
+    ],
     "isort.check": false,
     "isort.importStrategy": "fromEnvironment",
     "isort.path": [
