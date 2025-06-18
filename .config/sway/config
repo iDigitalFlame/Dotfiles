@@ -233,7 +233,7 @@ bindgesture {
 }
 
 # Standard Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+B              exec "${HOME}/.local/bin/browser"
     $KEY_WIN+S              exec "/usr/bin/xpad -n"
     $KEY_CTL+Tab            exec "/usr/lib/smd/libexec/smd-message -u background"
@@ -243,7 +243,7 @@ bindsym {
 }
 
 # Application Launcher / Window Switcher Bindings
-bindsym {
+bindsym --no-repeat {
     F3                      exec "${HOME}/.local/bin/sway/search"
     $KEY_ALT+Tab            exec "${HOME}/.local/bin/sway/search window"
     $KEY_WIN+Tab            exec "${HOME}/.local/bin/sway/search window"
@@ -251,8 +251,9 @@ bindsym {
 }
 
 # Screenshot / Screenclip Bindings
-bindsym {
+bindsym --no-repeat {
     Print                       exec "${HOME}/.local/bin/sway/shot"
+    Alt+Shift+S                 exec "${HOME}/.local/bin/sway/clip copy"
     Shift+Print                 exec "${HOME}/.local/bin/sway/clip"
     $KEY_CTL+Print              exec "${HOME}/.local/bin/sway/shot copy"
     $KEY_WIN+Shift+bracketleft  exec "${HOME}/.local/bin/sway/clip copy"
@@ -276,25 +277,25 @@ bindsym --locked {
 }
 
 # Locking Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+L              nop
     $KEY_ALT+L              exec "/usr/local/bin/lockctl -f"
 }
 
 # Notification Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+Escape         exec "/usr/bin/swaync-client -t"
     $KEY_CTL+Escape         exec "/usr/bin/swaync-client -t"
 }
 
 # Scratchpad Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_ALT+D              move       scratchpad
     $KEY_ALT+S              scratchpad show
 }
 
 # Window Kill Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+Q              kill
     $KEY_ALT+Q              kill
 }
@@ -324,7 +325,7 @@ bindsym {
 }
 
 # Layout Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+H              split      h
     $KEY_WIN+J              split      v
     $KEY_WIN+Shift+H        split      h
@@ -342,7 +343,7 @@ bindsym {
 }
 
 # Workspace Modification Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+D                  layout tabbed
     $KEY_WIN+T                  layout tabbed
     $KEY_WIN+P                  sticky disable
@@ -355,7 +356,7 @@ bindsym {
 }
 
 # Workspace Switching Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_ALT+Delete         workspace 0
     $KEY_ALT+1              workspace 1:
     $KEY_ALT+2              workspace 2
@@ -380,7 +381,7 @@ bindsym {
 }
 
 # Workspace Next / Prev Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_ALT+Up             workspace prev_on_output
     XF86Launch1             workspace prev_on_output
     XF86Launch2             workspace next_on_output
@@ -394,7 +395,7 @@ bindsym {
 }
 
 # Workspace Window Switching (No switch-to) Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_CTL+Delete         move container to workspace 0
     $KEY_CTL+1              move container to workspace 1:
     $KEY_CTL+2              move container to workspace 2
@@ -419,14 +420,14 @@ bindsym {
 }
 
 # Workspace Window Switching (Special) Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_ALT+Shift+R        move container to workspace 18:, workspace 18:
     $KEY_ALT+Shift+M        move container to workspace 19:, workspace 19:
     $KEY_ALT+Shift+D        move container to workspace 20:, workspace 20:
 }
 
 # Workspace Window Switching Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+Delete         move container to workspace 0,    workspace 0
     $KEY_WIN+1              move container to workspace 1:,  workspace 1:
     $KEY_WIN+2              move container to workspace 2,    workspace 2
@@ -451,7 +452,7 @@ bindsym {
 }
 
 # Workspace Window Next / Prev Bindings
-bindsym {
+bindsym --no-repeat {
     $KEY_WIN+F5             move container to workspace next_on_output, workspace next_on_output
     $KEY_WIN+F6             move container to workspace prev_on_output, workspace prev_on_output
     $KEY_WIN+XF86Launch1    move container to workspace prev_on_output, workspace prev_on_output
