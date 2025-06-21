@@ -168,11 +168,11 @@ for_window {
 
 # Dialog Rules
 for_window {
+    [app_id="^cropgui$"]                                                                  floating enable, resize set width 800 px height 700 px, opacity set 0.8, border normal
     [title="^File Upload"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [window_type="dialog"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [app_id="vesktop" title="^blob:.*$"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [app_id="electron" title="^blob:.*$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="^cropgui$" title="to crop$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [window_role="(pop-up|bubble|dialog)"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
     [class="(?i)thunar" title="^Rename .*$"]                                              floating enable, opacity set 0.8, border normal
     [app_id="(?i)thunar" title="^Rename .*$"]                                             floating enable, opacity set 0.8, border normal
