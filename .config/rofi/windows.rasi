@@ -37,7 +37,7 @@
 configuration {
     timeout {
         delay:          3;
-        action:         "kb-accept";
+        action:         "kb-accept-entry";
     }
 
     cycle:              true;

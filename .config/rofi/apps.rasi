@@ -36,7 +36,7 @@
 
 configuration {
     timeout {
-        delay:          5;
+        delay:          3;
         action:         "kb-cancel";
     }
 
