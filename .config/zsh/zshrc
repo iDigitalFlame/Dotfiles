@@ -132,6 +132,26 @@ autoload -Uz -- "/usr/lib/kitty/shell-integration/zsh/kitty-integration"
 kitty-integration
 unfunction kitty-integration
 
+# From: https://github.com/jgogstad/zsh-mask
+#
+# With added:
+# - Full path commands ^/
+# - Alias "stub" commands ^\
+# - Any rm/rmdir commands
+# - The "history" command lol
+# - Any __* commands
+ZSH_HISTORY_EXCLUDE='^ |//([^/]+:[^/]+)@|KEY[=:] *([^ ]+)|TOKEN[=:] *([^ ]+)|BEARER[=:] *([^ ]+)|PASSWO?R?D?[=:] *([^ ]+)|Authorization[=:] *([^'"'"'\"]+)|-us?e?r? ([^:]+:[^:]+) |^/|^\\|^rm|^rmdir|^history|^__'
+
+# ZSH History Checker
+function zshaddhistory() {
+    emulate -L zsh
+    unsetopt case_match
+    if [[ "${1%%$'\n'}" =~ "$ZSH_HISTORY_EXCLUDE" ]]; then
+        return 1
+    fi
+    return 0
+}
+
 cess() {
     if [ $# -lt 1 ]; then
         echo "cess <file1> <fileN..>" 1>&2

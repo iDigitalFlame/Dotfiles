@@ -38,16 +38,20 @@
 set -u
 
 printf "\033[1;36mSetting permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
-chmod 2750 "$HOME"
+chmod "=2750" "$HOME"
 chown -R "${USER}":"${USER}" "$HOME" 2> /dev/null
 
 printf "\033[1;36mFixing dir/file permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
-find "$HOME" -type d -xdev -exec chmod 0700 {} \; 2> /dev/null
-find "$HOME" -type f -xdev -exec chmod 0640 {} \; 2> /dev/null
+find "$HOME" -type d -xdev -exec chmod "=2700" {} \; 2> /dev/null
+find "$HOME" -type f -xdev -exec chmod "=0640" {} \; 2> /dev/null
 
 printf "\033[1;36mFixing Git repo permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
 find "${HOME}/.arduino15/packages" -type f ! -name "?*.*" -exec file {} \; | grep 'ELF 64-bit' | awk -F':' '{print $1}' | xargs chmod 0750
 find "$HOME" -xdev -type d -name ".git" -exec dash -c 'a=$(dirname "{}"); cd $a; git config core.filemode false; chmod 0750 .git/hooks/* 2> /dev/null' \; 2> /dev/null
+
+chmod 0500 "${HOME}/.ssh"
+chmod 0500 "${HOME}/.local/ssh"
+chmod 0400 "${HOME}/.local/ssh/"*
 
 # ZSH is used here as it's globbing gets ALL folders involved, not just one level.
 chmod 0750 "${HOME}/Documents/Minecraft/launch.sh"
@@ -66,7 +70,5 @@ chmod 0750 "${HOME}/.local/apps/zohoworkdrive/QtWebEngineProcess"
 
 dash "${HOME}/.local/bin/dotsync"
 
-find "${HOME}" -xdev -type d -exec chmod g+s {} \;
 printf "\033[1;36mDone!\033[0m\n"
-
 exit 0

@@ -282,7 +282,7 @@ bindsym --locked {
 
 # Locking Bindings
 bindsym --no-repeat {
-    $KEY_WIN+L              nop
+    $KEY_WIN+L              exec "/usr/local/bin/lockctl -f"
     $KEY_ALT+L              exec "/usr/local/bin/lockctl -f"
 }
 
