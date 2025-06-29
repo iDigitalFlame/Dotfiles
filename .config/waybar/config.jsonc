@@ -57,7 +57,10 @@
             "low": 30
         },
         "tooltip": true,
-        "tooltip-format": "{time}"
+        "tooltip-format": "Time Left: {time}, Cycles {cycles}, Health: {health}%",
+        "tooltip-format-full": "Full, Cycles: {cycles}, Health: {health}%",
+        "tooltip-format-charging": "Time to Full: {timeTo}, Cycles: {cycles}, Health: {health}%",
+        "weighted-average": false
     },
     "battery#bat1": {
         "bat": "BAT1",
@@ -83,7 +86,10 @@
             "low": 30
         },
         "tooltip": true,
-        "tooltip-format": "{time}"
+        "tooltip-format": "Time Left: {time}, Cycles {cycles}, Health: {health}%",
+        "tooltip-format-full": "Full, Cycles: {cycles}, Health: {health}%",
+        "tooltip-format-charging": "Time to Full: {timeTo}, Cycles: {cycles}, Health: {health}%",
+        "weighted-average": false
     },
     "clock": {
         "actions": {
@@ -110,7 +116,8 @@
     },
     "cpu": {
         "format": "{usage:3}% ",
-        "tooltip": false
+        "internal": 10,
+        "tooltip": true
     },
     "custom/lockers": {
         "escape": false,
@@ -152,6 +159,7 @@
     },
     "modules-center": [
         "clock",
+        "privacy",
         "sway/scratchpad",
         "tray"
     ],
@@ -169,6 +177,26 @@
     ],
     "name": "bar1",
     "position": "top",
+    "privacy": {
+        "expand": true,
+        "icon-spacing": 2,
+        "icon-size": 10,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 12
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 12
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": []
+    },
     "pulseaudio": {
         "format": "{volume:3}% {icon}",
         "format-bluetooth": "{volume:3}% {icon}",
@@ -230,13 +258,16 @@
             "default": ""
         },
         "numeric-first": true,
+        "sort-by-coordinates": false,
+        "sort-by-name": false,
+        "sort-by-number": true,
         "warp-on-scroll": true
     },
     "tray": {
         "icon-size": 18,
         "reverse-direction": false,
         "show-passive-items": true,
-        "spacing": 5
+        "spacing": 4
     },
     "wireplumber": {
         "format": "{volume:3}% {icon}",

@@ -49,13 +49,13 @@ bar, window#waybar {
     margin-right: 10px
 }
 
-#window, widget > label, #tray, #workspaces {
+#window, widget > label, #tray, #workspaces, #privacy {
     color: #FFF;
     transition-duration: .5s;
     background: rgba(10, 0, 10, 0.65);
     transition-property: border-radius
 }
-widget > label, #tray, #workspaces {
+widget > label, #tray, #workspaces, #privacy {
     transition-property: background, background-color, border-radius
 }
 
@@ -74,6 +74,15 @@ window#waybar.chrome #tray,
 window#waybar.chromium #tray,
 window#waybar.codium-url-handler #tray,
 window#waybar.org\.telegram\.desktop #tray {
+    border-radius: 0;
+    background: transparent;
+    transition-property: background, background-color
+}
+window#waybar.codium #privacy,
+window#waybar.chrome #privacy,
+window#waybar.chromium #privacy,
+window#waybar.codium-url-handler #privacy,
+window#waybar.org\.telegram\.desktop #privacy {
     border-radius: 0;
     background: transparent;
     transition-property: background, background-color
@@ -108,12 +117,13 @@ window#waybar.org\.telegram\.desktop widget > label {
 
 #tray {
     margin: 0 3px 0 0;
+    transition-property: all;
     border-radius: 0 0 10px 0;
-    padding: 3px 10px 3px 5px;
+    padding: 3px 10px 3px 1px;
     border-bottom: 2px solid #FF6C00
 }
 #tray menu {
-    padding: 5px;
+    padding: 2px;
     font-size: 12px;
     border-radius: 10px;
     background: rgba(10, 0, 10, 0.8);
@@ -121,20 +131,20 @@ window#waybar.org\.telegram\.desktop widget > label {
     font-family: 'Cascadia Code', FontAwesome
 }
 #scratchpad {
-    padding: 3px 5px 3px 5px;
+    padding: 3px 2px 3px 2px;
     border-bottom: 2px solid #FF6C00
 }
 #tray menuitem, #tray window {
     background: transparent
 }
 #tray menuitem:hover {
-    border-radius: 10px;
     background: #7D0BAB
 }
 #clock {
     margin: 0 0 0 3px;
+    transition-property: all;
     border-radius: 0 0 0 10px;
-    padding: 3px 5px 3px 10px;
+    padding: 3px 4px 3px 10px;
     border-bottom: 2px solid #FF6C00
 }
 #clock small {
@@ -143,18 +153,29 @@ window#waybar.org\.telegram\.desktop widget > label {
 #cpu {
     margin: 0 3px 0 0;
     border-radius: 0 0 10px 0;
-    padding: 3px 10px 3px 5px;
+    padding: 3px 10px 3px 4px;
     border-bottom: 2px solid #C6DE41
 }
 #disk {
-    padding: 3px 5px 3px 5px;
+    padding: 3px 4px 3px 2px;
     border-bottom: 2px solid #C6DE41
 }
 #memory {
     margin: 0 0 0 3px;
     border-radius: 0 0 0 10px;
-    padding: 3px 5px 3px 10px;
+    padding: 3px 3px 3px 10px;
     border-bottom: 2px solid #C6DE41
+}
+#privacy {
+    padding: 3px 2px 3px 2px;
+    border-bottom: 2px solid #FF6C00
+}
+#privacy image {
+    margin: 0;
+    color: #FFF;
+    border-radius: 16px;
+    padding: 0 2px 0 1px;
+    background: #B22D00
 }
 #workspaces {
     margin: 0 2px;
@@ -219,12 +240,12 @@ window#waybar.org\.telegram\.desktop widget > label {
 #battery.bat0 {
     margin: 0 0 0 3px;
     border-radius: 0 0 0 10px;
-    padding: 2px 5px 2px 10px
+    padding: 2px 4px 2px 10px
 }
 #battery.bat1 {
     margin: 0 3px 0 0;
     border-radius: 0 0 10px 0;
-    padding: 2px 10px 2px 5px
+    padding: 2px 10px 2px 4px
 }
 #battery.bat0.low, #battery.bat1.low {
     color: #FFD369
