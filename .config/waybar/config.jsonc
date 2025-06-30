@@ -195,7 +195,36 @@
             }
         ],
         "ignore-monitor": true,
-        "ignore": []
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "\"Windows 10 LTSC\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"Windows 11 Domain\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"Windows 11\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"Windows 11 Workstation\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"Kali Linux\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"Android x86\""
+            },
+            {
+                "type": "audio-in",
+                "name": "\"MacOS\""
+            }
+        ]
     },
     "pulseaudio": {
         "format": "{volume:3}% {icon}",

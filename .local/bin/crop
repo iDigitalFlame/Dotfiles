@@ -35,4 +35,8 @@
 #
 
 # Workaround for CropGUI not being on the latest Python directory.
-env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui "$*"
+if [ $# -eq 0 ]; then
+    env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui
+else
+    env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui "$*"
+fi

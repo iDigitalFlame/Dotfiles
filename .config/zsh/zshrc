@@ -140,7 +140,8 @@ unfunction kitty-integration
 # - Any rm/rmdir commands
 # - The "history" command lol
 # - Any __* commands
-ZSH_HISTORY_EXCLUDE='^ |//([^/]+:[^/]+)@|KEY[=:] *([^ ]+)|TOKEN[=:] *([^ ]+)|BEARER[=:] *([^ ]+)|PASSWO?R?D?[=:] *([^ ]+)|Authorization[=:] *([^'"'"'\"]+)|-us?e?r? ([^:]+:[^:]+) |^/|^\\|^rm|^rmdir|^history|^__'
+# - Any locally executed scripts "./script"
+ZSH_HISTORY_EXCLUDE='^ |//([^/]+:[^/]+)@|KEY[=:] *([^ ]+)|TOKEN[=:] *([^ ]+)|BEARER[=:] *([^ ]+)|PASSWO?R?D?[=:] *([^ ]+)|Authorization[=:] *([^'"'"'\"]+)|-us?e?r? ([^:]+:[^:]+) |^/|^\\|^rm|^rmdir|^history|^__|^\.'
 
 # ZSH History Checker
 function zshaddhistory() {
