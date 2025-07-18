@@ -49,13 +49,13 @@ bar, window#waybar {
     margin-right: 10px
 }
 
-#window, widget > label, #tray, #workspaces, #privacy {
+#window, widget > label, #tray, #workspaces {
     color: #FFF;
     transition-duration: .5s;
     background: rgba(10, 0, 10, 0.65);
     transition-property: border-radius
 }
-widget > label, #tray, #workspaces, #privacy {
+widget > label, #tray, #workspaces, #scratchpad, #privacy {
     transition-property: background, background-color, border-radius
 }
 
@@ -83,7 +83,6 @@ window#waybar.chrome #privacy,
 window#waybar.chromium #privacy,
 window#waybar.codium-url-handler #privacy,
 window#waybar.org\.telegram\.desktop #privacy {
-    border-radius: 0;
     background: transparent;
     transition-property: background, background-color
 }
@@ -131,7 +130,7 @@ window#waybar.org\.telegram\.desktop widget > label {
     font-family: 'Cascadia Code', FontAwesome
 }
 #scratchpad {
-    padding: 2px 2px 2px 2px;
+    padding: 2px;
     border-bottom: 2px solid #FF6C00
 }
 #tray menuitem, #tray window {
@@ -167,32 +166,32 @@ window#waybar.org\.telegram\.desktop widget > label {
     border-bottom: 2px solid #C6DE41
 }
 #privacy {
-    padding: 2px 2px 2px 2px;
-    border-bottom: 2px solid #FF6C00
+    margin: 0;
+    padding: 0;
 }
 #privacy image {
-    margin: 0;
     color: #FFF;
-    border-radius: 16px;
-    padding: 0 2px 0 1px;
+    margin: 4px 0;
+    padding: 0 2px;
+    border-radius: 15px;
     background: #B22D00
 }
 #workspaces {
     margin: 0 2px;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     border-radius: 0 0 10px 10px;
     border-bottom: 2px solid #1597BB
 }
 #wireplumber, #pulseaudio {
     margin: 0 3px;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     border-radius: 0 0 10px 10px;
     border-bottom: 2px solid #00FFD1
 }
 
 #waybar #window {
     margin: 0 3px 0 0;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px;
     border-radius: 0 0 10px 10px;
     border-bottom: 2px solid #17B794
 }
@@ -206,7 +205,7 @@ window#waybar.org\.telegram\.desktop widget > label {
 
 #workspaces button {
     padding: 0;
-    color: #fff;
+    color: #FFF;
     margin: 0 1px;
     min-width: 20px;
     border-radius: 5px;

@@ -159,9 +159,9 @@
     },
     "modules-center": [
         "clock",
-        "privacy",
         "sway/scratchpad",
-        "tray"
+        "tray",
+        "privacy"
     ],
     "modules-left": [
         "sway/window"
@@ -196,6 +196,9 @@
         ],
         "ignore-monitor": true,
         "ignore": [
+            // Hydra VMs connect to Audio-In, so they can be perceived as
+            // recording even when they're not, so we put their names here
+            // instead.
             {
                 "type": "audio-in",
                 "name": "\"Windows 10 LTSC\""

@@ -245,11 +245,11 @@ div[class^="backgroundDark_"], div[class^="backgroundLight"], div[class^="foregr
 div[class^="checked_"] {
     background-color: var(--green-360) !important
 }
-div[class^="gradientBackground_"] {
-    display: none !important
-}
 div[class^="memberInner_"] div[class^="content_"] {
     background: none !important
+}
+div[class^="gradientBackground_"], div[class^="pulseGradient_"] {
+    display: none !important
 }
 div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
     display: none !important

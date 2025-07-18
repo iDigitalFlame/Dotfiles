@@ -110,6 +110,19 @@ input type:touchpad {
     natural_scroll              disabled
 }
 
+layer_effects "rofi" {
+    blur                        disable;
+    shadows                     disable;
+    corner_radius               0;
+    blur_ignore_transparent     disable;
+}
+layer_effects "swaync-control-center" {
+    blur                        enable;
+    shadows                     disable;
+    corner_radius               0;
+    blur_ignore_transparent     enable;
+}
+
 # Opacity Rules
 for_window {
     [app_id="xpad"]                    opacity set 0.80, border pixel 1, sticky enable, floating enable, resize set width 500 px height 300 px
@@ -127,6 +140,7 @@ for_window {
 
 # Generic Application Rules
 for_window {
+    [app_id="swaync"]                                     border non, floating enable
     [app_id="(?i)vlc"]                                    border normal, floating enable
     [app_id="^swayimg$"]                                  border none, blur disable
     [app_id="wlfreerdp"]                                  border pixel 1, floating disable

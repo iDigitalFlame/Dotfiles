@@ -37,11 +37,11 @@
     "$schema": "/etc/xdg/swaync/configSchema.json",
     "control-center-exclusive-zone": true,
     "control-center-height": 300,
-    "control-center-layer": "top",
-    "control-center-margin-bottom": 5,
+    "control-center-layer": "overlay",
+    "control-center-margin-bottom": 2,
     "control-center-margin-left": 0,
     "control-center-margin-right": 5,
-    "control-center-margin-top": 5,
+    "control-center-margin-top": 0,
     "control-center-width": 450,
     "cssPriority": "user",
     "fit-to-screen": true,
@@ -51,16 +51,18 @@
     "keyboard-shortcuts": true,
     "layer": "overlay",
     "layer-shell": true,
+    "layer-shell-cover-screen": false,
     "notification-2fa-action": false,
     "notification-body-image-height": 200,
     "notification-body-image-width": 200,
-    "notification-icon-size": 48,
+    "notification-grouping": false,
     "notification-inline-replies": false,
     "notification-window-width": 400,
     "positionX": "right",
     "positionY": "top",
     "relative-timestamps": true,
     "script-fail-notify": false,
+    "text-empty": "",
     "timeout": 5,
     "timeout-critical": 0,
     "timeout-low": 5,
@@ -72,34 +74,33 @@
             "min": 10,
             "subsystem": "backlight"
         },
-        "buttons-grid": {
-            "actions": [
-                {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'"
-                },
-                {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'"
-                },
-                {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/hview'"
-                },
-                {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'"
-                },
-                {
-                    "label": "",
-                    "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'"
-                }
-            ]
-        },
         "dnd": {
             "text": " Do Not Disturb"
         },
         "menubar#ctl": {
+            "menu#actions": {
+                "actions": [
+                    {
+                        "label": " Screenclip Copy",
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'"
+                    },
+                    {
+                        "label": " Screenshot Copy",
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'"
+                    },
+                    {
+                        "label": " Screenclip",
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'"
+                    },
+                    {
+                        "label": " Screenshot",
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'"
+                    }
+                ],
+                "animation-type": "slide_down",
+                "label": "",
+                "position": "left"
+            },
             "menu#locker": {
                 "actions": [
                     {
@@ -186,8 +187,25 @@
                 "label": "",
                 "position": "left"
             },
+            "buttons": {
+                "actions": [
+                    {
+                        "label": "",
+                        "command": "sh -c 'swaync-client -cp; bluectl -t'"
+                    },
+                    {
+                        "label": "",
+                        "command": "sh -c 'swaync-client -cp; wlay'"
+                    }
+                ],
+                "position": "right"
+            },
             "menu#power": {
                 "actions": [
+                    {
+                        "label": " Lock",
+                        "command": "sh -c 'swaync-client -cp; lockctl -f'"
+                    },
                     {
                         "label": " Suspend",
                         "command": "sh -c 'swaync-client -cp; sudo systemctl suspend'"
@@ -208,23 +226,6 @@
                 "animation-type": "slide_down",
                 "label": "",
                 "position": "right"
-            },
-            "buttons": {
-                "actions": [
-                    {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; bluectl -t'"
-                    },
-                    {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; wlay'"
-                    },
-                    {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; lockctl -f'"
-                    }
-                ],
-                "position": "right"
             }
         },
         "title": {
@@ -243,9 +244,7 @@
         "menubar#ctl",
         "volume",
         "backlight",
-        "dnd",
         "title",
-        "notifications",
-        "buttons-grid"
+        "notifications"
     ]
 }
