@@ -86,7 +86,7 @@
 }
 
 .floating-notifications {
-    margin-right: 2px;
+    margin-right: 3px;
 }
 .blank-window, .floating-notifications {
     background: transparent;
