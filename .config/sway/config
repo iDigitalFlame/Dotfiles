@@ -122,6 +122,12 @@ layer_effects "swaync-control-center" {
     corner_radius               0;
     blur_ignore_transparent     enable;
 }
+layer_effects "swaync-notification-window" {
+    blur                        enable;
+    shadows                     disable;
+    corner_radius               0;
+    blur_ignore_transparent     enable;
+}
 
 # Opacity Rules
 for_window {

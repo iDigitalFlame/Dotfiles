@@ -1223,5 +1223,9 @@
     {
         "key": "ctrl+numpad_add",
         "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "insert",
+        "command": "-editor.action.toggleOvertypeInsertMode"
     }
 ]
