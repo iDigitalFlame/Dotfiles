@@ -131,6 +131,7 @@ window#waybar.org\.telegram\.desktop widget > label {
 }
 #scratchpad {
     padding: 2px;
+    letter-spacing: -2px;
     border-bottom: 2px solid #FF6C00
 }
 #tray menuitem, #tray window {

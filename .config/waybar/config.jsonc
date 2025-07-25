@@ -264,7 +264,7 @@
         "on-click": "/usr/bin/swaymsg 'scratchpad show'",
         "show-empty": false,
         "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+        "tooltip-format": "{title}"
     },
     "sway/window": {
         "format": "{title}",
