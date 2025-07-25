@@ -39,34 +39,34 @@ bar, window#waybar {
     background: transparent;
     transition-duration: .5s;
     font-family: 'Cascadia Mono', FontAwesome;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 
 .modules-left {
-    margin-left: 10px
+    margin-left: 10px;
 }
 .modules-right {
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 #window, widget > label, #tray, #workspaces {
     color: #FFF;
     transition-duration: .5s;
     background: rgba(10, 0, 10, 0.65);
-    transition-property: border-radius
+    transition-property: border-radius;
 }
 widget > label, #tray, #workspaces, #scratchpad, #privacy {
-    transition-property: background, background-color, border-radius
+    transition-property: background, background-color, border-radius;
 }
 
 window#waybar.org\.telegram\.desktop {
-    background: rgba(22, 41, 100, 0.6)
+    background: rgba(22, 41, 100, 0.6);
 }
 window#waybar.chromium, window#waybar.chrome {
-    background: rgba(53, 21, 93, 0.6)
+    background: rgba(53, 21, 93, 0.6);
 }
 window#waybar.codium, window#waybar.codium-url-handler {
-    background: rgba(10, 0, 10, 0.7)
+    background: rgba(10, 0, 10, 0.7);
 }
 
 window#waybar.codium #tray,
@@ -76,7 +76,7 @@ window#waybar.codium-url-handler #tray,
 window#waybar.org\.telegram\.desktop #tray {
     border-radius: 0;
     background: transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 window#waybar.codium #privacy,
 window#waybar.chrome #privacy,
@@ -84,7 +84,7 @@ window#waybar.chromium #privacy,
 window#waybar.codium-url-handler #privacy,
 window#waybar.org\.telegram\.desktop #privacy {
     background: transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 window#waybar.codium #window,
 window#waybar.chrome #window,
@@ -93,7 +93,7 @@ window#waybar.codium-url-handler #window,
 window#waybar.org\.telegram\.desktop #window {
     border-radius: 0;
     background: transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 window#waybar.codium #workspaces,
 window#waybar.chrome #workspaces,
@@ -102,7 +102,7 @@ window#waybar.codium-url-handler #workspaces,
 window#waybar.org\.telegram\.desktop #workspaces {
     border-radius: 0;
     background: transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 window#waybar.codium widget > label,
 window#waybar.chrome widget > label,
@@ -111,7 +111,7 @@ window#waybar.codium-url-handler widget > label,
 window#waybar.org\.telegram\.desktop widget > label {
     border-radius: 0;
     background: transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 
 #tray {
@@ -119,7 +119,7 @@ window#waybar.org\.telegram\.desktop widget > label {
     transition-property: all;
     border-radius: 0 0 10px 0;
     padding: 2px 10px 2px 1px;
-    border-bottom: 2px solid #FF6C00
+    border-bottom: 2px solid #FF6C00;
 }
 #tray menu {
     padding: 2px;
@@ -127,25 +127,25 @@ window#waybar.org\.telegram\.desktop widget > label {
     border-radius: 10px;
     background: rgba(10, 0, 10, 0.8);
     border: 2px solid rgb(172, 15, 235);
-    font-family: 'Cascadia Code', FontAwesome
+    font-family: 'Cascadia Code', FontAwesome;
 }
 #scratchpad {
     padding: 2px;
     letter-spacing: -2px;
-    border-bottom: 2px solid #FF6C00
+    border-bottom: 2px solid #FF6C00;
 }
 #tray menuitem, #tray window {
-    background: transparent
+    background: transparent;
 }
 #tray menuitem:hover {
-    background: #7D0BAB
+    background: #7D0BAB;
 }
 #clock {
     margin: 0 0 0 3px;
     transition-property: all;
     border-radius: 0 0 0 10px;
     padding: 2px 4px 2px 10px;
-    border-bottom: 2px solid #FF6C00
+    border-bottom: 2px solid #FF6C00;
 }
 #clock small {
     border-radius: 10px;
@@ -154,17 +154,17 @@ window#waybar.org\.telegram\.desktop widget > label {
     margin: 0 3px 0 0;
     border-radius: 0 0 10px 0;
     padding: 2px 10px 2px 4px;
-    border-bottom: 2px solid #C6DE41
+    border-bottom: 2px solid #C6DE41;
 }
 #disk {
     padding: 2px 4px 2px 2px;
-    border-bottom: 2px solid #C6DE41
+    border-bottom: 2px solid #C6DE41;
 }
 #memory {
     margin: 0 0 0 3px;
     border-radius: 0 0 0 10px;
     padding: 2px 3px 2px 10px;
-    border-bottom: 2px solid #C6DE41
+    border-bottom: 2px solid #C6DE41;
 }
 #privacy {
     margin: 0;
@@ -175,33 +175,33 @@ window#waybar.org\.telegram\.desktop widget > label {
     margin: 4px 0;
     padding: 0 2px;
     border-radius: 15px;
-    background: #B22D00
+    background: #B22D00;
 }
 #workspaces {
     margin: 0 2px;
     padding: 2px 10px;
     border-radius: 0 0 10px 10px;
-    border-bottom: 2px solid #1597BB
+    border-bottom: 2px solid #1597BB;
 }
 #wireplumber, #pulseaudio {
     margin: 0 3px;
     padding: 2px 10px;
     border-radius: 0 0 10px 10px;
-    border-bottom: 2px solid #00FFD1
+    border-bottom: 2px solid #00FFD1;
 }
 
 #waybar #window {
     margin: 0 3px 0 0;
     padding: 2px 10px;
     border-radius: 0 0 10px 10px;
-    border-bottom: 2px solid #17B794
+    border-bottom: 2px solid #17B794;
 }
 #waybar.empty #window {
     margin: 0;
     padding: 0;
     font-size: 0;
     border-bottom: none;
-    background: transparent
+    background: transparent;
 }
 
 #workspaces button {
@@ -211,21 +211,21 @@ window#waybar.org\.telegram\.desktop widget > label {
     min-width: 20px;
     border-radius: 5px;
     border: 1px solid transparent;
-    transition-property: background, background-color
+    transition-property: background, background-color;
 }
 
 #workspaces button:hover {
-    background: #9336B4
+    background: #9336B4;
 }
 #workspaces button.urgent {
-    background: #F94C10
+    background: #F94C10;
 }
 #workspaces button.visible {
-    border: 1px solid #F6F1E9
+    border: 1px solid #F6F1E9;
 }
 #workspaces button.focused {
     background: #7D0BAB;
-    border: 1px solid transparent
+    border: 1px solid transparent;
 }
 
 /*
@@ -235,23 +235,23 @@ window#waybar.org\.telegram\.desktop widget > label {
 
 #battery {
     color: #FFF;
-    border-bottom: 2px solid #49FF00
+    border-bottom: 2px solid #49FF00;
 }
 #battery.bat0 {
     margin: 0 0 0 3px;
     border-radius: 0 0 0 10px;
-    padding: 2px 4px 2px 10px
+    padding: 2px 4px 2px 10px;
 }
 #battery.bat1 {
     margin: 0 3px 0 0;
     border-radius: 0 0 10px 0;
-    padding: 2px 10px 2px 4px
+    padding: 2px 10px 2px 4px;
 }
 #battery.bat0.low, #battery.bat1.low {
-    color: #FFD369
+    color: #FFD369;
 }
 #battery.bat0.critical, #battery.bat1.critical {
-    color: #FF0000
+    color: #FF0000;
 }
 #battery.bat0.plugged,
 #battery.bat1.plugged,

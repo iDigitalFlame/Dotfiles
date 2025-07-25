@@ -95,10 +95,22 @@
                     {
                         "label": " Screenshot",
                         "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'"
+                    },
+                    {
+                        "label": " Toggle DnD",
+                        "command": "sh -c 'swaync-client -cp; swaync-client --toggle-dnd'"
+                    },
+                    {
+                        "label": " Disable DnD",
+                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-off'"
+                    },
+                    {
+                        "label": " Enable DnD",
+                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-on'"
                     }
                 ],
                 "animation-type": "slide_down",
-                "label": "",
+                "label": "",
                 "position": "left"
             },
             "menu#locker": {
@@ -153,7 +165,7 @@
                     }
                 ],
                 "animation-type": "slide_down",
-                "label": "",
+                "label": "",
                 "position": "left"
             },
             "menu#cpu": {
