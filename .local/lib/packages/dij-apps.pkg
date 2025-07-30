@@ -36,7 +36,7 @@
 # Maintainer: iDigitalFlame <idf@idigitalflame.com>
 
 pkgrel=1
-pkgver=1.5.0
+pkgver=1.5.1
 pkgname="dij-apps"
 pkgdesc="iDigitalFlame's custom application packages"
 
@@ -76,6 +76,7 @@ depends=(
     "ristretto"
     "swayimg"
     "vlc"
+    "vlc-plugin-ffmpeg"
     "youtube-music-desktop"
     "zvbi"
 
