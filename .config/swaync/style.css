@@ -132,6 +132,7 @@
     padding: 5px;
     box-shadow: none;
     border-radius: 10px 10px 0 0;
+    transition: all 0.15s ease-in-out;
     background: rgba(60, 60, 60, 0.6);
     border-top: 1px solid rgba(60, 60, 60, 0.6);
     border-left: 1px solid rgba(60, 60, 60, 0.6);
@@ -139,9 +140,11 @@
 }
 .widget-menubar revealer {
     margin: 0;
+    transition: all 0.15s ease-in-out;
 }
 .widget-menubar revealer box {
     background: transparent;
+    transition: all 0.15s ease-in-out;
 }
 .widget-menubar .horizontal button {
     font-size: 20px;
@@ -150,6 +153,7 @@
     padding: 2px 20px;
     border-radius: 10px;
     margin: 0 5px 0 5px;
+    transition: all 0.15s ease-in-out;
     background: rgba(87, 75, 144, 0.85);
 }
 .widget-menubar revealer box button {
@@ -160,6 +164,7 @@
     text-shadow: none;
     border-radius: 10px;
     background: transparent;
+    transition: all 0.15s ease-in-out;
 }
 .widget-menubar .horizontal button:hover {
     color: #000;
