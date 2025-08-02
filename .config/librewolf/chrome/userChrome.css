@@ -199,7 +199,9 @@ tab-group:before {
     border-radius: 5px !important;
     transition: all 0.15s ease-in-out !important;
 }
-
+#tabbrowser-tabs {
+    grid-gap: var(--space-xsmall) !important
+}
 #tabbrowser-tabs .tabbrowser-tab[selected] .tab-background {
     background: linear-gradient(to right, rgb(248, 6, 204), rgb(48, 144, 255), rgb(125, 11, 171)) !important
 }
@@ -230,12 +232,8 @@ tab-group:before {
 
 #vertical-pinned-tabs-container {
     padding: 0 !important;
+    height: auto !important;
     max-height: none !important;
-    transition: all 0.15s ease-in-out !important
-}
-#vertical-pinned-tabs-container-separator {
-    display: block !important;
-    margin: -5px 0 5px 0 !important;
     transition: all 0.15s ease-in-out !important
 }
 #vertical-pinned-tabs-container .tabbrowser-tab {
@@ -250,6 +248,11 @@ tab-group:before {
 }
 #vertical-pinned-tabs-container .tabbrowser-tab[selected] .tab-background {
     background: rgba(172, 15, 235, 0.6) !important
+}
+#vertical-pinned-tabs-container-separator, #vertical-pinned-tabs-splitter {
+    display: block !important;
+    margin: -5px 0 5px 0 !important;
+    transition: all 0.15s ease-in-out !important
 }
 
 menupopup {

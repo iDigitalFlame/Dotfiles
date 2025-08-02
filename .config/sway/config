@@ -149,7 +149,7 @@ for_window {
     [app_id="swaync"]                                     border non, floating enable
     [app_id="(?i)vlc"]                                    border normal, floating enable
     [app_id="^swayimg$"]                                  border none, blur disable
-    [app_id="wlfreerdp"]                                  border pixel 1, floating disable
+    [app_id="wlfreerdp"]                                  border normal, floating enable
     [app_id="(?i)kitty"]                                  border pixel 1
     [app_id="^swayimg_*"]                                 border none, blur disable
     [app_id="(?i)firefox"]                                border none, opacity set 1, blur disable
@@ -159,6 +159,7 @@ for_window {
     [app_id="pavucontrol-qt"]                             border normal, floating enable, resize set width 800 px height 450 px
     [app_id="blueman-manager"]                            border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
     [app_id="nm-connection-editor"]                       border normal, floating enable, opacity set 0.85, resize set width 450 px height 600 px
+    [app_id="wlfreerdp" title="^.*TS$"]                   border pixel 1, floating disable
     [app_id="(cc|org).cubocore.CorePDF"]                  border pixel 1, floating enable
     [app_id="io.mrarm.mcpelauncher-ui-qt"]                border normal, floating enable, resize set width 1000 px height 600 px
     [app_id="org.gnome.seahorse.Application"]             border none, opacity set 0.9
@@ -178,10 +179,11 @@ for_window {
 # XWayland Rules
 for_window {
     [shell="xwayland"]                                      title_format "[X] %title"
-    [class="xfreerdp"]                                      border pixel 1, floating disable
+    [class="xfreerdp"]                                      border normal, floating enable
     [class="(?i)MuPDF"]                                     border pixel 1, floating disable
     [class="ATLauncher"]                                    border none, floating enabled
     [class="__main__\.py"]                                  border pixel 1, floating enable, opacity set 1, resize set width 350 px height 400 px, move position cursor, move down 25 px, move right 100 px
+    [class="xfreerdp" title="^.*TS$"]                       border pixel 1, floating disable
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
     [class="__main__\.py" title="^WorkDrive Sync - .*"]     border normal, floating enable, move position center
