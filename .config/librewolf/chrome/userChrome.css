@@ -135,7 +135,7 @@ tab-group:before {
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-arrowscrollbox {
-    margin-top: -5px !important;
+    margin-top: -8px !important;
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[expanded] #tabs-newtab-button {
@@ -230,29 +230,29 @@ tab-group:before {
     background-color: transparent !important
 }
 
-#vertical-pinned-tabs-container {
+#pinned-tabs-container, #vertical-pinned-tabs-container {
     padding: 0 !important;
     height: auto !important;
     max-height: none !important;
     transition: all 0.15s ease-in-out !important
 }
-#vertical-pinned-tabs-container .tabbrowser-tab {
+#pinned-tabs-container .tabbrowser-tab, #vertical-pinned-tabs-container .tabbrowser-tab {
     padding-block-start: 0 !important;
     transition: all 0.15s ease-in-out !important
 }
-#vertical-pinned-tabs-container .tabbrowser-tab .tab-background {
+#pinned-tabs-container .tabbrowser-tab .tab-background, #vertical-pinned-tabs-container .tabbrowser-tab .tab-background {
     background: rgba(10, 0, 10, 0.6) !important
 }
-#vertical-pinned-tabs-container .tabbrowser-tab:hover .tab-background {
-    background: rgba(199, 131, 255, 0.65) !important
-}
-#vertical-pinned-tabs-container .tabbrowser-tab[selected] .tab-background {
-    background: rgba(172, 15, 235, 0.6) !important
-}
-#vertical-pinned-tabs-container-separator, #vertical-pinned-tabs-splitter {
+#pinned-tabs-container-separator, #pinned-tabs-splitter, #vertical-pinned-tabs-container-separator, #vertical-pinned-tabs-splitter {
     display: block !important;
     margin: -5px 0 5px 0 !important;
     transition: all 0.15s ease-in-out !important
+}
+#pinned-tabs-container .tabbrowser-tab:hover .tab-background, #vertical-pinned-tabs-container .tabbrowser-tab:hover .tab-background {
+    background: rgba(199, 131, 255, 0.65) !important
+}
+#pinned-tabs-container .tabbrowser-tab[selected] .tab-background, #vertical-pinned-tabs-container .tabbrowser-tab[selected] .tab-background {
+    background: rgba(172, 15, 235, 0.6) !important
 }
 
 menupopup {

@@ -35,22 +35,23 @@
 
 [general]
 mode             = viewer
-size             = parent
+size             = image
 app_id           = swayimg
 sigusr1          = none
 sigusr2          = none
-position         = parent
+overlay          = yes
+position         = auto
 decoration       = no
 
 [viewer]
+loop             = yes
 scale            = optimal
 window           = #00000000
 history          = 0
 preload          = 1
 position         = center
-slideshow        = no
-transparency     = grid
 antialiasing     = mks13
+transparency     = grid
 
 [gallery]
 fill             = yes
@@ -63,10 +64,19 @@ window           = #00000000
 background       = #7D0BABFF
 antialiasing     = mks13
 
+[slideshow]
+time             = 3
+scale            = optimal
+window           = #00000000
+position         = center
+antialiasing     = mks13
+transparency     = grid
+
 [list]
 all              = yes
-loop             = no
+fsmon            = yes
 order            = alpha
+reverse          = no
 recursive        = no
 
 [font]
@@ -82,6 +92,12 @@ info_timeout     = 15
 status_timeout   = 5
 
 [info.viewer]
+top_left         = +name,+format,+filesize,+imagesize,+exif,+frame
+top_right        = index,scale
+bottom_left      = status
+bottom_right     = none
+
+[info.gallery]
 top_left         = +name,+format,+filesize,+imagesize,+exif,+frame
 top_right        = index,scale
 bottom_left      = status

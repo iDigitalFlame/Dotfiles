@@ -36,7 +36,7 @@
 # Maintainer: iDigitalFlame <idf@idigitalflame.com>
 
 pkgrel=1
-pkgver=1.5.1
+pkgver=1.5.2
 pkgname="dij-apps"
 pkgdesc="iDigitalFlame's custom application packages"
 
@@ -108,7 +108,7 @@ depends=(
     "python-inflect"      # LSP
     "python-isort"        # LSP
     "python-pygls"        # LSP
-    "vscodium-bin"
+    "vscodium-electron-bin"
 
     ## IDE Fonts
     "adobe-source-code-pro-fonts"

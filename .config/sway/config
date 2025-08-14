@@ -196,26 +196,27 @@ for_window {
 
 # Dialog Rules
 for_window {
-    [app_id="^cropgui$"]                                                                  floating enable, resize set width 800 px height 700 px, opacity set 0.8, border normal
-    [title="^File Upload"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [window_type="dialog"]                                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="vesktop" title="^blob:.*$"]                                                  floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="electron" title="^blob:.*$"]                                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [window_role="(pop-up|bubble|dialog)"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="(?i)thunar" title="^Rename .*$"]                                              floating enable, opacity set 0.8, border normal
-    [app_id="(?i)thunar" title="^Rename .*$"]                                             floating enable, opacity set 0.8, border normal
-    [app_id="(?i)Notesnook" title="^blob:.*$"]                                            floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="(?i)Notesnook" title="^Open Fil([es]+)$"]                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [app_id="org.telegram.desktop" title="Save Video"]                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="(?i)thunar" title="File Operation Progress"]                                  floating enable, opacity set 0.8, border normal
-    [app_id="(?i)thunar" title="File Operation Progress"]                                 floating enable, opacity set 0.8, border normal
-    [app_id="(?i)codium" title="Add Folder to Workspace"]                                 floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [class="(?i)thunar" title="Confirm to replace files"]                                 floating enable, opacity set 0.8, border normal
-    [app_id="(?i)thunar" title="Confirm to replace files"]                                floating enable, opacity set 0.8, border normal
-    [app_id="signal" title="^Signal Desktop Preferences$"]                                floating enable, border normal
-    [app_id="codium-url-handler" title="Add Folder to Workspace"]                         floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [title="^(?i:Open|Save|Upload) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
-    [title="^(?i:Choose|Open|Save) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"] floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="^cropgui$"]                                                                      floating enable, resize set width 800 px height 700 px, opacity set 0.8, border normal
+    [title="^File Upload"]                                                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [window_type="dialog"]                                                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="vesktop" title="^blob:.*$"]                                                      floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="electron" title="^blob:.*$"]                                                     floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [window_role="(pop-up|bubble|dialog)"]                                                    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="^Rename .*$"]                                                  floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="^Rename .*$"]                                                 floating enable, opacity set 0.8, border normal
+    [app_id="(?i)Notesnook" title="^blob:.*$"]                                                floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="(?i)Notesnook" title="^Open Fil([es]+)$"]                                        floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="org.telegram.desktop" title="Save Video"]                                        floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [app_id="xdg-desktop-portal-gtk" title="^.* Files$"]                                      floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="File Operation Progress"]                                      floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="File Operation Progress"]                                     floating enable, opacity set 0.8, border normal
+    [app_id="(?i)codium" title="Add Folder to Workspace"]                                     floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [class="(?i)thunar" title="Confirm to replace files"]                                     floating enable, opacity set 0.8, border normal
+    [app_id="(?i)thunar" title="Confirm to replace files"]                                    floating enable, opacity set 0.8, border normal
+    [app_id="signal" title="^Signal Desktop Preferences$"]                                    floating enable, border normal
+    [app_id="codium-url-handler" title="Add Folder to Workspace"]                             floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^(?i:Open|Save|Upload|All) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
+    [title="^(?i:Choose|Open|Save|All) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"] floating enable, resize set width 800 px height 600 px, opacity set 0.8, border normal
 }
 
 # Browser Extension and Popup Rules

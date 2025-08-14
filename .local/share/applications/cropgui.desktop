@@ -38,7 +38,6 @@ Name            = Crop Photos
 Exec            = /home/dij/.local/bin/crop %f
 Icon            = cropgui
 Type            = Application
-Actions         = developer;
 Comment         = Losslessly Crop JPEG and other images
 MimeType        = image/*;
 Terminal        = false

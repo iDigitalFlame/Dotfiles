@@ -37,14 +37,14 @@
 args="$*"
 
 if [ $# -eq 0 ]; then
-    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC /usr/bin/chromium
+    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium
 fi
 
 if [ "$1" = "--all" ]; then
     shift
     rm -rf "/tmp/.chrome_temp_profile" 2> /dev/null
     mkdir -p "/tmp/.chrome_temp_profile"
-    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC /usr/bin/chromium --new-window --user-data-dir=/tmp/.chrome_temp_profile $*
+    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium --new-window --user-data-dir=/tmp/.chrome_temp_profile $*
 fi
 
-exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC /usr/bin/chromium $*
+exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium $*
