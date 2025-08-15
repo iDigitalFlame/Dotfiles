@@ -51,10 +51,10 @@ DISABLE_UNTRACKED_FILES_DIRTY=true
 [ ! -d "${HOME}/.cache/zsh" ] && mkdir -p "${HOME}/.cache/zsh"
 [ ! -d "${HOME}/Pictures/Screenshots" ] && mkdir -p "${HOME}/Pictures/Screenshots"
 
-if [ ! -d "/tmp/.usercache/${USER}/trash" ]; then
-    mkdir -p "/tmp/.usercache/${USER}/trash"
+if [ ! -d "${XDG_RUNTIME_DIR}/trash" ]; then
+    mkdir -p "{XDG_RUNTIME_DIR}/trash"
     rm -f "${HOME}/.local/share/Trash"
-    ln -s "/tmp/.usercache/${USER}/trash" "${HOME}/.local/share/Trash"
+    ln -s "${XDG_RUNTIME_DIR}/trash" "${HOME}/.local/share/Trash"
 fi
 
 [ -d "${HOME}/Desktop" ] && rmdir "${HOME}/Desktop"

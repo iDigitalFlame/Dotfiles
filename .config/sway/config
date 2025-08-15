@@ -92,22 +92,32 @@ client.focused_tab_title        #024363A0 #024363A0 #FFFFFFFF
 
 seat * {
     hide_cursor                 0
+    xcursor_theme               MoonlightSky 24
     pointer_constraint          enable
 }
 
 input * {
     xkb_layout                  "us"
+    left_handed                 disabled
     xkb_numlock                 disabled
     xkb_capslock                disabled
+    middle_emulation            disabled
 }
 input type:touch {
     map_to_output               eDP-1
 }
+input type:keyboard {
+    xkb_numlock                 disabled
+    xkb_capslock                disabled
+}
 input type:touchpad {
     dwt                         enabled
     tap                         enabled
+    drag                        enabled
+    dwtp                        disabled
     drag_lock                   disabled
     natural_scroll              disabled
+    tap_button_map              lrm
 }
 
 layer_effects "rofi" {
@@ -162,6 +172,7 @@ for_window {
     [app_id="wlfreerdp" title="^.*TS$"]                   border pixel 1, floating disable
     [app_id="(cc|org).cubocore.CorePDF"]                  border pixel 1, floating enable
     [app_id="io.mrarm.mcpelauncher-ui-qt"]                border normal, floating enable, resize set width 1000 px height 600 px
+    [app_id="com.flipperdevices.qFlipper"]                border none, opacity set 1, blur disable
     [app_id="org.gnome.seahorse.Application"]             border none, opacity set 0.9
     [app_id="org.gnome.seahorse.Application" floating]    border normal, opacity set 0.9
     [app_id="(?i)firefox" title="^Developer Tools —*$"]   border none, floating enable, resize set width 1050 px height 800 px
