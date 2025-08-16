@@ -102,7 +102,7 @@ if [ $save -eq 1 ]; then
     printf "%s" "$password" | secret-tool store --label="$keyring" name "$keyring"
 fi
 
-path="/tmp/.mounts/${USER}/${server}-$(echo "$base" | sed -e 's/\$//g')"
+path="${XDG_RUNTIME_DIR}/mounts/${server}-$(echo "$base" | sed -e 's/\$//g')"
 prefix=$(echo "$folder" | awk -F'/' '{ ORS=""; for(i=2;i<=NF;i++) print $i"/" }'|sed -e 's/\/*$//g'|sed -e 's/\/\/*/\//g')
 
 if ! mkdir -p "$path" 2> /dev/null; then
