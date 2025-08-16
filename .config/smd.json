@@ -93,7 +93,6 @@
             ]
         },
         "startups": [
-            "/usr/bin/swaync",
             "/usr/bin/nm-applet",
             "${HOME}/.local/bin/sway/mute",
             "/usr/bin/aa-notify -p -f /run/log/audit/audit.log"
