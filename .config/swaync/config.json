@@ -57,7 +57,7 @@
     "notification-body-image-width": 200,
     "notification-grouping": false,
     "notification-inline-replies": false,
-    "notification-window-width": 400,
+    "notification-window-width": 350,
     "positionX": "right",
     "positionY": "top",
     "relative-timestamps": true,
