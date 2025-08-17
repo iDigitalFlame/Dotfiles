@@ -33,9 +33,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+# NOTE(dij): Using "--xdg-portal-required-version=1000000" disables the need for
+#            electron to use the XDG portal bus. For some reason, Notesnook does
+#            not properly connect even with the fixes.
+
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland  --xdg-portal-required-version=1000000 %U
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
@@ -51,11 +55,11 @@ X-MultipleArgs  = false
 
 [Desktop Action new-note]
 Name            = New Note
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new note
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new note
 
 [Desktop Action new-notebook]
 Name            = New Notebook
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new notebook
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new notebook
 
 [Desktop Action new-reminder]
 Name            = New Reminder
