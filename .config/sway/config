@@ -173,7 +173,9 @@ for_window {
     [app_id="(cc|org).cubocore.CorePDF"]                  border pixel 1, floating enable
     [app_id="io.mrarm.mcpelauncher-ui-qt"]                border normal, floating enable, resize set width 1000 px height 600 px
     [app_id="com.flipperdevices.qFlipper"]                border none, opacity set 1, blur disable
+    [app_id="(?i)firefox" title="^Library$"]              border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
     [app_id="org.gnome.seahorse.Application"]             border none, opacity set 0.9
+    [app_id="(?i)librewolf" title="^Library$"]            border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
     [app_id="org.gnome.seahorse.Application" floating]    border normal, opacity set 0.9
     [app_id="(?i)firefox" title="^Developer Tools —*$"]   border none, floating enable, resize set width 1050 px height 800 px
     [app_id="(?i)librewolf" title="^Developer Tools —*$"] border none, floating enable, resize set width 1050 px height 800 px
@@ -248,8 +250,8 @@ for_window {
 assign {
     [app_id="qtws"]                                         number 18:
     [app_id="signal"]                                       number 10:
-    [app_id="vesktop"]                                      number 9:
-    [app_id="(?i)slack"]                                    number 9:
+    [app_id="vesktop"]                                      number 19:
+    [app_id="(?i)slack"]                                    number 9:
     [app_id="Notesnook"]                                    number 20:
     [app_id="(?i)librewolf"]                                number 1:
     [app_id="org.telegram.desktop"]                         number 10:
@@ -260,8 +262,8 @@ assign {
 # Workspace to Output Assignments
 workspace {
     1:                     output $DOCK1
-    9:                     output $DOCK3
-    19:                    output $DOCK3
+    9:                     output $DOCK3
+    19:                    output $DOCK3
     10:                    output $DOCK3
 }
 
@@ -408,7 +410,7 @@ bindsym --no-repeat {
     $KEY_ALT+6              workspace 6
     $KEY_ALT+7              workspace 7
     $KEY_ALT+8              workspace 8
-    $KEY_ALT+9              workspace 9:
+    $KEY_ALT+9              workspace 9:
     $KEY_ALT+0              workspace 10:
     $KEY_ALT+Shift+1        workspace 11
     $KEY_ALT+Shift+2        workspace 12
@@ -417,8 +419,8 @@ bindsym --no-repeat {
     $KEY_ALT+Shift+5        workspace 15
     $KEY_ALT+Shift+6        workspace 16
     $KEY_ALT+Shift+7        workspace 17
-    $KEY_ALT+Shift+8        workspace 18:
-    $KEY_ALT+Shift+9        workspace 19:
+    $KEY_ALT+Shift+8        workspace 18:
+    $KEY_ALT+Shift+9        workspace 19:
     $KEY_ALT+Shift+0        workspace 20:
 }
 
@@ -447,7 +449,7 @@ bindsym --no-repeat {
     $KEY_CTL+6              move container to workspace 6
     $KEY_CTL+7              move container to workspace 7
     $KEY_CTL+8              move container to workspace 8
-    $KEY_CTL+9              move container to workspace 9:
+    $KEY_CTL+9              move container to workspace 9:
     $KEY_CTL+0              move container to workspace 10:
     $KEY_CTL+Shift+1        move container to workspace 11
     $KEY_CTL+Shift+2        move container to workspace 12
@@ -456,16 +458,16 @@ bindsym --no-repeat {
     $KEY_CTL+Shift+5        move container to workspace 15
     $KEY_CTL+Shift+6        move container to workspace 16
     $KEY_CTL+Shift+7        move container to workspace 17
-    $KEY_CTL+Shift+8        move container to workspace 18:
-    $KEY_CTL+Shift+9        move container to workspace 19:
+    $KEY_CTL+Shift+8        move container to workspace 18:
+    $KEY_CTL+Shift+9        move container to workspace 19:
     $KEY_CTL+Shift+0        move container to workspace 20:
 }
 
 # Workspace Window Switching (Special) Bindings
 bindsym --no-repeat {
-    $KEY_ALT+Shift+R        move container to workspace 18:, workspace 18:
-    $KEY_ALT+Shift+M        move container to workspace 19:, workspace 19:
-    $KEY_ALT+Shift+D        move container to workspace 20:, workspace 20:
+    $KEY_ALT+Shift+M        move container to workspace 18:, workspace 18:
+    $KEY_ALT+Shift+D        move container to workspace 19:, workspace 19:
+    $KEY_ALT+Shift+N        move container to workspace 20:, workspace 20:
 }
 
 # Workspace Window Switching Bindings
@@ -479,7 +481,7 @@ bindsym --no-repeat {
     $KEY_WIN+6              move container to workspace 6,    workspace 6
     $KEY_WIN+7              move container to workspace 7,    workspace 7
     $KEY_WIN+8              move container to workspace 8,    workspace 8
-    $KEY_WIN+9              move container to workspace 9:,  workspace 9:
+    $KEY_WIN+9              move container to workspace 9:,  workspace 9:
     $KEY_WIN+0              move container to workspace 10:, workspace 10:
     $KEY_WIN+Shift+1        move container to workspace 11,   workspace 11
     $KEY_WIN+Shift+2        move container to workspace 12,   workspace 12
@@ -488,8 +490,8 @@ bindsym --no-repeat {
     $KEY_WIN+Shift+5        move container to workspace 15,   workspace 15
     $KEY_WIN+Shift+6        move container to workspace 16,   workspace 16
     $KEY_WIN+Shift+7        move container to workspace 17,   workspace 17
-    $KEY_WIN+Shift+8        move container to workspace 18:, workspace 18:
-    $KEY_WIN+Shift+9        move container to workspace 19:, workspace 19:
+    $KEY_WIN+Shift+8        move container to workspace 18:, workspace 18:
+    $KEY_WIN+Shift+9        move container to workspace 19:, workspace 19:
     $KEY_WIN+Shift+0        move container to workspace 20:, workspace 20:
 }
 
