@@ -798,8 +798,9 @@
         "command": "-workbench.action.splitEditor"
     },
     {
-        "key": "ctrl+\\",
-        "command": "editor.action.quickFix"
+        "key": "f2",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
     },
     {
         "key": "ctrl+,",
@@ -1227,5 +1228,37 @@
     {
         "key": "insert",
         "command": "-editor.action.toggleOvertypeInsertMode"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "f1",
+        "command": "editor.action.showDefinitionPreviewHover",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "escape",
+        "command": "editor.action.hideHover",
+        "when": "editorHoverFocused || editorHoverVisible"
+    },
+    {
+        "key": "space",
+        "command": "-debug.toggleBreakpoint",
+        "when": "breakpointsFocused && !inputFocus"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "f1",
+        "command": "-workbench.action.showCommands"
     }
 ]
