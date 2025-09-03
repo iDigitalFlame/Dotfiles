@@ -39,7 +39,7 @@
 
 [Desktop Entry]
 Name            = Notesnook 
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland  --xdg-portal-required-version=1000000 %U
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U
 Icon            = notesnook
 Type            = Application
 Comment         = Your private note taking space
@@ -63,4 +63,4 @@ Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-com
 
 [Desktop Action new-reminder]
 Name            = New Reminder
-Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland %U new reminder
+Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new reminder
