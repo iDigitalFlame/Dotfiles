@@ -200,6 +200,7 @@ for_window {
     [class="(?i)MuPDF"]                                     border pixel 1, floating disable
     [class="ATLauncher"]                                    border none, floating enabled
     [class="__main__\.py"]                                  border pixel 1, floating enable, opacity set 1, resize set width 350 px height 400 px, move position cursor, move down 25 px, move right 100 px
+    [class="UltiMaker-Cura"]                                border none, blur disable
     [class="xfreerdp" title="^.*TS$"]                       border pixel 1, floating disable
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled

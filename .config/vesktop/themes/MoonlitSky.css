@@ -36,6 +36,7 @@
 */
 
 :root, .theme-dark, html.theme-dark .theme-light .root-1CAIjD, .theme-light.popout-15UxD6 {
+    --app-border-frame: #0A000A !important;
     --activity-card-background: var(--primary-830) !important;
     --android-navigation-bar-background: var(--primary-830) !important;
     --android-navigation-scrim-background: hsl(var(--primary-830-hsl)/0.5) !important;
@@ -47,13 +48,20 @@
     --background-mobile-secondary: var(--primary-860) !important;
     --background-modifier-accent: hsl(var(--primary-760-hsl)/0.48) !important;
     --background-modifier-active: hsl(var(--primary-760-hsl)/0.48) !important;
-    --background-modifier-hover: hsl(var(--primary-760-hsl)/0.4) !important;
-    --background-modifier-selected: hsl(var(--primary-760-hsl)/0.6) !important;
+    --background-modifier-hover: #840084 !important;
+    --background-modifier-selected: #7D0BAB !important;
     --background-nested-floating: var(--primary-830) !important;
     --background-primary: #0A000A !important;
     --background-secondary: #0A000A !important;
     --background-secondary-alt: #0A000A !important;
     --background-tertiary: #0A000A !important;
+    --background-base-low: #0A000A !important;
+    --background-base-lower: #0A000A !important;
+    --background-base-lowest: #0A000A !important;
+    --background-mod-strong: #7D0BAB !important;
+    --background-surface-high: #1F001F !important;
+    --background-surface-higher: #0A000A !important;
+    --bg-brand: #7D0BAB !important;
     --bg-overlay-2: #0A000A !important;
     --bg-surface-overlay: #0A000A !important;
     --bg-overlay-selected: #7D0BAB !important;
@@ -87,7 +95,7 @@
     --button-outline-primary-text: var(--white-500) !important;
     --button-outline-primary-text-active: var(--white-500) !important;
     --button-outline-primary-text-hover: var(--white-500) !important;
-    --button-secondary-background: var(--primary-700) !important;
+    --button-secondary-background: #1F001F !important;
     --button-secondary-background-active: var(--primary-600) !important;
     --button-secondary-background-disabled: var(--primary-700) !important;
     --button-secondary-background-hover: var(--primary-630) !important;
@@ -96,6 +104,7 @@
     --channels-default: var(--primary-360) !important;
     --channeltextarea-background: var(--primary-830) !important;
     --chat-background: var(--black-500) !important;
+    --chat-background-default: #0F000F !important;
     --chat-border: var(--primary-700) !important;
     --chat-input-container-background: var(--primary-600) !important;
     --deprecated-card-bg: hsl(var(--primary-700-hsl)/0.6) !important;
@@ -118,7 +127,7 @@
     --info-help-text: var(--white-500) !important;
     --info-positive-text: var(--white-500) !important;
     --info-warning-text: var(--white-500) !important;
-    --input-background: var(--primary-800) !important;
+    --input-background: #0F000F !important;
     --input-placeholder-text: var(--input-placeholder-text-dark) !important;
     --interactive-active: var(--primary-130) !important;
     --interactive-hover: var(--primary-230) !important;
@@ -230,7 +239,8 @@
     --primary-860: hsl(var(--primary-860-hsl)/1) !important;
     --primary-860-hsl: 240 calc(var(--saturation-factor, 1)*7.7%) calc(var(--lightness-800-860, 0) + 2.5%) !important;
     --primary-900: hsl(var(--primary-900-hsl)/1) !important;
-    --primary-900-hsl: 0 calc(var(--saturation-factor, 1)*0%) calc(var(--lightness-900, 0) + 0.8%) !important
+    --primary-900-hsl: 0 calc(var(--saturation-factor, 1)*0%) calc(var(--lightness-900, 0) + 0.8%) !important;
+    --user-profile-overlay-background: #1F001F !important
 }
 
 .full-motion {
@@ -269,6 +279,17 @@ li[class^="card_"] div[class^="container_"], li[class^="card_"] div[class^="main
 }*/
 li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^="channel_"] > div[class^="interactive_"] > a[href="/store"] {
     display: none !important
+}
+
+div[aria-label="Inbox"] nav {
+    border-radius: 15px;
+    background: #1F001F !important;
+    border: 1px solid #7D0BAB !important;
+}
+div.user-profile-popout:not(.custom-user-profile-theme) div[class^="inner_"] {
+    border-radius: 15px;
+    background: #0A000A !important;
+    border: 1px solid #7D0BAB !important;
 }
 
 #SEARCH_OPTIONS-header {
