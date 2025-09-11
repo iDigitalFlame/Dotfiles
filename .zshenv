@@ -77,6 +77,7 @@ export PYTHON_HISTORY="${HOME}/.cache/python_history"
 export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
 
 export XCURSOR_SIZE=24
+export GDK_DPI_SCALE=0.95
 export PAGER="/usr/bin/less -iR"
 export XCURSOR_THEME="MoonlightSky"
 export BROWSER="${HOME}/.local/bin/browser"

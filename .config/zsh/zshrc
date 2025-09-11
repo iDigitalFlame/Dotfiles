@@ -154,6 +154,21 @@ function zshaddhistory() {
     return 0
 }
 
+vsc() {
+    if [ $# -eq 1 ]; then
+        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
+    else
+        /usr/bin/codium $* 2>/dev/null
+    fi
+}
+code() {
+    if [ $# -eq 1 ]; then
+        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
+    else
+        /usr/bin/codium $* 2>/dev/null
+    fi
+}
+
 cess() {
     if [ $# -lt 1 ]; then
         echo "cess <file1> <fileN..>" 1>&2
@@ -326,10 +341,6 @@ alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Pr
 alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
 alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/ntstatus.py"
 alias dirdiff="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/dirdiff.py"
-
-# Application Aliases
-alias vsc="/usr/bin/codium"
-alias code="/usr/bin/codium"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
