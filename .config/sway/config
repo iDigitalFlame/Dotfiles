@@ -271,8 +271,8 @@ workspace {
 # Guesture Bindings
 bindgesture {
     swipe:down              exec      "/usr/bin/swaync-client -t"
-    swipe:left              workspace prev
-    swipe:right             workspace next
+    swipe:left              workspace prev_on_output
+    swipe:right             workspace next_on_output
     pinch:inward            exec      "${HOME}/.local/bin/sway/search"
     pinch:outward           exec      "${HOME}/.local/bin/sway/search window"
 }
