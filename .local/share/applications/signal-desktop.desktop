@@ -35,7 +35,7 @@
 
 [Desktop Entry]
 Name            = Signal 
-Exec            = /usr/bin/ghr firewall-voice /usr/bin/signal-desktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=wayland -- %u
+Exec            = /usr/bin/ghr firewall-voice /usr/bin/signal-desktop --enable-webrtc-pipewire-capture --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland -- %u
 Icon            = signal-desktop
 Type            = Application
 Comment         = Signal - Private Messenger
