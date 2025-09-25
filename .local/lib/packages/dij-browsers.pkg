@@ -35,7 +35,7 @@
 #
 
 pkgrel=1
-pkgver=1.4.0
+pkgver=1.4.1
 pkgname="dij-browsers"
 pkgdesc="iDigitalFlame's custom browser packages"
 
@@ -64,6 +64,5 @@ depends=(
     "firefox-extension-styl-us-bin"
     "firefox-noscript"
     "firefox-temporary-containers"
-    "firefox-tree-style-tab"
     "firefox-ublock-origin"
 )
