@@ -62,7 +62,7 @@ window {
     margin:             0;
     padding:            0;
     fullscreen:         true;
-    background-color:   rgba(10, 0, 10, 0.6);
+    background-color:   rgba(10, 0, 10, 0.7);
 }
 
 mainbox {
