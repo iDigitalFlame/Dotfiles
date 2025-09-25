@@ -66,6 +66,8 @@ html#main-window {
     --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
     --toolbarbutton-hover-background: rgb(125, 11, 171) !important;
     --toolbarbutton-active-background: rgb(125, 11, 171) !important;
+    --toolbar-field-background-color: rgba(10, 0, 10, 0.6) !important;
+    --toolbar-field-focus-background-color: rgba(10, 0, 10, 0.85) !important;
     --button-background-color-ghost-hover: rgba(199, 131, 255, 0.65) !important
 }
 input#urlbar-input {
@@ -363,11 +365,21 @@ menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"],
     border-radius: 8px !important;
     background-color: rgba(10, 0, 10, 0.7) !important
 }
+#urlbar-searchmode-switcher {
+    background-color: transparent !important
+}
+#urlbar-input, #urlbar-input div {
+    color: rgb(255, 255, 255) !important
+}
+#urlbar-searchmode-switcher image {
+    background: transparent !important;
+    background-color: transparent !important
+}
 
 .urlbarView {
     border-radius: 0 8px 8px !important;
     background-color: transparent !important;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important
+    /*box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important*/
 }
 .urlbarView-row[selected] {
     background: rgba(125, 11, 171, 0.8) !important
