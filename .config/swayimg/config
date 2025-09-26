@@ -75,7 +75,7 @@ transparency     = grid
 [list]
 all              = yes
 fsmon            = yes
-order            = alpha
+order            = numeric
 reverse          = no
 recursive        = no
 
