@@ -168,6 +168,7 @@ for_window {
     [app_id="(?i)librewolf"]                              border none, opacity set 1, blur disable
     [app_id="pavucontrol-qt"]                             border normal, floating enable, resize set width 800 px height 450 px
     [app_id="blueman-manager"]                            border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
+    [app_id="^$" title="^wlay$"]                          border pixel 1, floating enable, opacity set 0.9, resize set width 900 px height 800 px
     [app_id="nm-connection-editor"]                       border normal, floating enable, opacity set 0.85, resize set width 450 px height 600 px
     [app_id="wlfreerdp" title="^.*TS$"]                   border pixel 1, floating disable
     [app_id="(cc|org).cubocore.CorePDF"]                  border pixel 1, floating enable
