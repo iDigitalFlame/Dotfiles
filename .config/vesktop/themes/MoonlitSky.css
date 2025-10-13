@@ -299,16 +299,18 @@ div.user-profile-popout:not(.custom-user-profile-theme) div[class^="inner_"] {
 button.vc-ranb-button {
     margin: 0 !important;
     color: #FFF !important;
-    padding: 3px !important;
-    font-size: 12px !important
+    font-size: 12px !important;
+    padding: 1px 2px !important;
+    border-radius: 10px !important;
+    background: #7D0BAB !important
 }
-button.vc-ranb-button div {
+/*button.vc-ranb-button div {
     color: #FFF !important;
     font-size: 12px !important;
     padding: 1px 2px !important;
     border-radius: 5px !important;
     background: #7D0BAB !important
-}
+}*/
 
 :is(.theme-dark, .theme-amoled) #app-mount .container-2RRFHK {
     background-color: var(--background-primary)
