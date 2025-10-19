@@ -267,8 +267,8 @@ assign {
 workspace {
     1:                     output $DOCK1
     9:                     output $DOCK3
-    19:                    output $DOCK3
     10:                    output $DOCK3
+    19:                    output $DOCK3
 }
 
 # Guesture Bindings
@@ -405,7 +405,6 @@ bindsym --no-repeat {
 
 # Workspace Switching Bindings
 bindsym --no-repeat {
-    $KEY_ALT+Delete         workspace 0
     $KEY_ALT+1              workspace 1:
     $KEY_ALT+2              workspace 2
     $KEY_ALT+3              workspace 3
@@ -444,7 +443,6 @@ bindsym --no-repeat {
 
 # Workspace Window Switching (No switch-to) Bindings
 bindsym --no-repeat {
-    $KEY_CTL+Delete         move container to workspace 0
     $KEY_CTL+1              move container to workspace 1:
     $KEY_CTL+2              move container to workspace 2
     $KEY_CTL+3              move container to workspace 3
@@ -476,7 +474,6 @@ bindsym --no-repeat {
 
 # Workspace Window Switching Bindings
 bindsym --no-repeat {
-    $KEY_WIN+Delete         move container to workspace 0,    workspace 0
     $KEY_WIN+1              move container to workspace 1:,  workspace 1:
     $KEY_WIN+2              move container to workspace 2,    workspace 2
     $KEY_WIN+3              move container to workspace 3,    workspace 3
