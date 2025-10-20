@@ -39,4 +39,4 @@ if [ ! -f "$_ra" ]; then
     exit 2
 fi
 
-exec /usr/bin/ghr firewall-web "$_ra" $*
+exec /usr/bin/ghr firewall-web /usr/bin/nice -n 20 "$_ra" $*

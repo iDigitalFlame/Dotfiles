@@ -37,6 +37,7 @@
 name="$(grep 'application.release.name' '/opt/ghidra/Ghidra/application.properties' | awk -F'=' '{print $2}')"
 version="$(grep 'application.version' '/opt/ghidra/Ghidra/application.properties' | awk -F'=' '{print $2}')"
 
+linkcheck "${HOME}/.config/Ghidra/ghidra_${version}_${name}" "${HOME}/.config/Ghidra/config"
 linkcheck "${HOME}/.config/Ghidra/.ghidra_${version}_${name}" "${HOME}/.config/Ghidra/config"
 
 exec "/opt/ghidra/support/launch.sh" fg jdk Ghidra "2G" "" ghidra.GhidraRun "$@"

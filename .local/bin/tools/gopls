@@ -35,4 +35,4 @@
 #
 
 export GOFLAGS="-tags=linux,windows"
-exec /usr/bin/ghr firewall-all "${HOME}/.local/lib/go/bin/gopls" $*
+exec /usr/bin/ghr firewall-all /usr/bin/nice -n 20 "${HOME}/.local/lib/go/bin/gopls" $*
