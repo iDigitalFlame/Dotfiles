@@ -252,6 +252,14 @@ div[class^="backgroundDark_"], div[class^="backgroundLight"], div[class^="foregr
     animation-play-state: paused !important
 }
 
+/* Hide Promoted Quests */
+div[class^="body__"] div[class^="wrapper__"] {
+    display: none !important
+}
+div[class^="body__"] section[class^="section__"]:first-child {
+    border-radius: 8px !important
+}
+
 div[class^="checked_"] {
     background-color: var(--green-360) !important
 }
