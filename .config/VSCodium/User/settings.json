@@ -1517,7 +1517,7 @@
     "window.closeWhenEmpty": false,
     "window.commandCenter": false,
     "window.dialogStyle": "native",
-    "window.enableMenuBarMnemonics": true,
+    "window.enableMenuBarMnemonics": false,
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "maximized",
     "window.openFilesInNewWindow": "off",

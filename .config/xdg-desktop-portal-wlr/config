@@ -37,5 +37,5 @@
 max_fps      = 60
 exec_after   = /usr/bin/swaync-client --dnd-off
 exec_before  = /usr/bin/swaync-client --dnd-on
-chooser_cmd  = /usr/bin/slurp -f '%o' -or -s '#7D0BABA0' -B '#00000000' -c '#00000000'
+chooser_cmd  = /usr/bin/slurp -f 'Monitor: %o' -or  -s '#7D0BABA0' -B '#00000000' -c '#00000000'
 chooser_type = simple
