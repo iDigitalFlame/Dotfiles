@@ -35,7 +35,7 @@
 #
 
 pkgrel=1
-pkgver=1.2.1
+pkgver=1.2.2
 pkgname="dij-dev"
 pkgdesc="iDigitalFlame's custom development packages"
 
@@ -78,7 +78,7 @@ depends=(
     "uboot-tools"
 
     ## Consoles
-    "picocom"
+    "ssterm"
     "python-pyserial"
 
     ## Virtualization / Emulation
