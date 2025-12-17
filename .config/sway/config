@@ -44,42 +44,56 @@ set {
     $KEY_CTL                    Control
 }
 
-# SwayFX Specific Configuration
+xwayland                        enable
+show_marks                      yes
+title_align                     center
+corner_radius                   5
+mouse_warping                   output
+hide_edge_borders               --i3 both
+primary_selection               disabled
+scratchpad_minimize             disable
+popup_during_fullscreen         leave_fullscreen
+force_display_urgency_hint      2000
+
 blur                            enable
-shadows                         disable
 blur_xray                       false
 blur_noise                      0
 blur_passes                     2
 blur_radius                     2
-corner_radius                   5
+blur_contrast                   1
+blur_brightness                 1
+blur_saturation                 1
+
+default_border                  none
+default_orientation             auto
+default_floating_border         none
+
+floating_modifier               $KEY_WIN
+floating_maximum_size            0 x  0
+floating_minimum_size           50 x 50
+
+focus_wrapping                  no
+focus_follows_mouse             yes
+focus_on_window_activation      smart
+
+gaps                            inner 5
+gaps                            outer 0
+
+shadows                         disable
 shadows_on_csd                  disable
 shadow_blur_radius              0
-titlebar_separator              disable
-scratchpad_minimize             disable
 
-gaps                            outer 0
-gaps                            inner 5
-xwayland                        enable
-show_marks                      yes
 smart_gaps                      off
-title_align                     center
-tiling_drag                     enable
-mouse_warping                   output
 smart_borders                   on
-default_border                  none
-focus_wrapping                  no
+
 titlebar_padding                6 6
-workspace_layout                default
-hide_edge_borders               --i3 both
-floating_modifier               $KEY_WIN
-default_orientation             auto
-focus_follows_mouse             yes
-tiling_drag_threshold           9
-default_floating_border         none
-popup_during_fullscreen         leave_fullscreen
+titlebar_separator              disable
 titlebar_border_thickness       1
-force_display_urgency_hint      2500
-focus_on_window_activation      urgent
+
+tiling_drag                     disable
+tiling_drag_threshold           12
+
+workspace_layout                default
 workspace_auto_back_and_forth   no
 
 # Theme
@@ -104,6 +118,8 @@ input * {
     middle_emulation            disabled
 }
 input type:touch {
+    tool_mode                   pen    absolute
+    tool_mode                   pencil absolute
     map_to_output               eDP-1
 }
 input type:keyboard {
@@ -116,8 +132,11 @@ input type:touchpad {
     drag                        enabled
     dwtp                        disabled
     drag_lock                   disabled
+    pointer_accel               1
+    scroll_method               two_finger
     natural_scroll              disabled
     tap_button_map              lrm
+    scroll_button_lock          disabled
 }
 
 layer_effects "rofi" {

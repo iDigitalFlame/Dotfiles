@@ -52,14 +52,20 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
+        "editor.formatOnPaste": false,
         "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
         "editor.snippetSuggestions": "none"
     },
     "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnPaste": false,
         "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "file"
+        "editor.formatOnSaveMode": "file",
+        "editor.snippetSuggestions": "none"
     },
     "[rust]": {
         "editor.semanticHighlighting.enabled": true
@@ -966,18 +972,19 @@
     "inlineChat.lineNaturalLanguageHint": false,
     "ipynb.pasteImagesAsAttachments.enabled": false,
     "isort.args": [
-        "--multi-line=3",
-        "--line-length=88",
-        "--combine-as",
         "--no-sections",
         "--length-sort",
+        "--force-sort-within-sections",
+        "--multi-line=3",
+        "--line-length=88",
         "--order-by-type",
+        "--combine-as",
         "--trailing-comma",
         "--case-sensitive",
         "--use-parentheses",
-        "--force-sort-within-sections"
+        "--honor-noqa",
     ],
-    "isort.check": false,
+    "isort.check": true,
     "isort.importStrategy": "fromEnvironment",
     "isort.path": [
         "/usr/bin/python3",
@@ -989,7 +996,7 @@
         "E": "Hint",
         "W": "Warning"
     },
-    "isort.showNotifications": "off",
+    "isort.showNotifications": "onWarning",
     "jake.autoDetect": "off",
     "javascript.format.enable": true,
     "javascript.format.insertSpaceAfterCommaDelimiter": true,

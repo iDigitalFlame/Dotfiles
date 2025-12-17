@@ -256,6 +256,12 @@ div[class^="backgroundDark_"], div[class^="backgroundLight"], div[class^="foregr
 div[class^="body__"] div[class^="wrapper__"] {
     display: none !important
 }
+div[aria-haspopup="menu"] div[class$="-body"] {
+    margin-top: 0 !important
+}
+div[aria-haspopup="menu"] div[class$="-wrapper"] {
+    display: none !important
+}
 div[class^="body__"] section[class^="section__"]:first-child {
     border-radius: 8px !important
 }

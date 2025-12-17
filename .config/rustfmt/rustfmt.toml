@@ -36,7 +36,6 @@
 color                               = "Auto"
 ignore                              = []
 edition                             = "2024"
-version                             = "Two"
 emit_mode                           = "Files"
 hard_tabs                           = false
 max_width                           = 256
@@ -66,7 +65,6 @@ fn_params_layout                    = "Compressed"
 hex_literal_case                    = "Upper"
 match_arm_blocks                    = true
 struct_lit_width                    = 32
-hide_parse_errors                   = false
 space_after_colon                   = true
 unstable_features                   = true
 show_parse_errors                   = true

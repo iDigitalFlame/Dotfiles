@@ -35,7 +35,7 @@
 #
 
 from atexit import register
-from os.path import expandvars, isfile
+from os.path import isfile, expandvars
 from readline import read_history_file, write_history_file
 
 _PYTHON_HISTORY = f'{expandvars("$HOME")}/.cache/python_history'
