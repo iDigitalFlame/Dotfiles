@@ -89,7 +89,8 @@
             "ignore": [
                 "kitty",
                 "xlfreerdp",
-                "wlfreerdp"
+                "wlfreerdp",
+                "blueman-manager"
             ]
         },
         "startups": [

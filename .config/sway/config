@@ -177,9 +177,8 @@ for_window {
 for_window {
     [app_id="swaync"]                                     border non, floating enable
     [app_id="(?i)vlc"]                                    border normal, floating enable
-    [app_id="^swayimg$"]                                  border none, blur disable
-    [app_id="wlfreerdp"]                                  border normal, floating enable
     [app_id="(?i)kitty"]                                  border pixel 1
+    [app_id="^swayimg$"]                                  border none, blur disable
     [app_id="^swayimg_*"]                                 border none, blur disable
     [app_id="(?i)firefox"]                                border none, opacity set 1, blur disable
     [app_id="(?i)chromium"]                               border none, opacity set 1
@@ -188,14 +187,16 @@ for_window {
     [app_id="pavucontrol-qt"]                             border normal, floating enable, resize set width 800 px height 450 px
     [app_id="blueman-manager"]                            border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
     [app_id="^$" title="^wlay$"]                          border pixel 1, floating enable, opacity set 0.9, resize set width 900 px height 800 px
+    [app_id="(sdl-|wl|x)freerdp"]                         border normal, floating enable
     [app_id="nm-connection-editor"]                       border normal, floating enable, opacity set 0.85, resize set width 450 px height 600 px
-    [app_id="wlfreerdp" title="^.*TS$"]                   border pixel 1, floating disable
+    [app_id="org.gnome.Connections"]                      border none, blur disable, shadows disable
     [app_id="(cc|org).cubocore.CorePDF"]                  border pixel 1, floating enable
     [app_id="io.mrarm.mcpelauncher-ui-qt"]                border normal, floating enable, resize set width 1000 px height 600 px
     [app_id="com.flipperdevices.qFlipper"]                border none, opacity set 1, blur disable
     [app_id="(?i)firefox" title="^Library$"]              border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
     [app_id="org.gnome.seahorse.Application"]             border none, opacity set 0.9
     [app_id="(?i)librewolf" title="^Library$"]            border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
+    [app_id="(sdl-|wl|x)freerdp" title="^.*TS$"]          border normal, floating disable
     [app_id="org.gnome.seahorse.Application" floating]    border normal, opacity set 0.9
     [app_id="(?i)firefox" title="^Developer Tools —*$"]   border none, floating enable, resize set width 1050 px height 800 px
     [app_id="(?i)librewolf" title="^Developer Tools —*$"] border none, floating enable, resize set width 1050 px height 800 px
@@ -221,7 +222,7 @@ for_window {
     [class="ATLauncher"]                                    border none, floating enabled
     [class="__main__\.py"]                                  border pixel 1, floating enable, opacity set 1, resize set width 350 px height 400 px, move position cursor, move down 25 px, move right 100 px
     [class="UltiMaker-Cura"]                                border none, blur disable
-    [class="xfreerdp" title="^.*TS$"]                       border pixel 1, floating disable
+    [class="xfreerdp" title="^.*TS$"]                       border normal, floating disable
     [class="com-atlauncher-App" title="ATLauncher"]         border none, floating enabled
     [class="com-atlauncher-App" title="^win([0-9]+)$"]      border none, floating enabled
     [class="__main__\.py" title="^WorkDrive Sync - .*"]     border normal, floating enable, move position center

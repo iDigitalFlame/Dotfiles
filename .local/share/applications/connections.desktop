@@ -34,16 +34,15 @@
 #
 
 [Desktop Entry]
-Name            = Crop Photos
-Exec            = /home/dij/.local/bin/crop %f
-Icon            = cropgui
+Name            = Connections 
+Exec            = /usr/bin/ghr firewall-all /usr/bin/gnome-connections %U
+Icon            = org.gnome.Connections
 Type            = Application
-Comment         = Losslessly Crop JPEG and other images
-Keywords        = crop;photo;
-MimeType        = image/*;
+Comment         = RDP/VNC Client
+Keywords        = vnc;rdp;remote;desktop;windows;support;access;view;
+MimeType        = application/x-vnc
 Terminal        = false
-Categories      = Graphics;2DGraphics;RasterGraphics;GTK;
-GenericName     = Crop Photos
+Categories      = GNOME;GTK;Utility;RemoteAccess;Network;
+GenericName     = RDP/VNC Client
 StartupNotify   = false
-StartupWMClass  = cropgui
 X-MultipleArgs  = false

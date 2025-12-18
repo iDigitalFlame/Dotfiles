@@ -272,9 +272,7 @@ div[class^="checked_"] {
 div[class^="memberInner_"] div[class^="content_"] {
     background: none !important
 }
-div[class^="gradientBackground_"], div[class^="pulseGradient_"] {
-    display: none !important
-}
+
 div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {
     display: none !important
 }
@@ -286,6 +284,9 @@ li[class^="card_"] div[class^="container_"], li[class^="card_"] div[class^="main
     border: 1px solid #7D0BAB;
     background: #0A000A !important;
     background-color: #0A000A !important
+}
+div[class^="gradientBackground_"], div[class^="pulseGradient_"], div[class$="-pulseGradient"] {
+    display: none !important
 }
 /*div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[class^="chat_"], div[class^="chat_"] div[class^="content_"] {
     background: #0A000A !important;

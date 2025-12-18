@@ -36,7 +36,7 @@
 # Maintainer: iDigitalFlame <idf@idigitalflame.com>
 
 pkgrel=1
-pkgver=1.5.3
+pkgver=1.5.5
 pkgname="dij-apps"
 pkgdesc="iDigitalFlame's custom application packages"
 
@@ -58,8 +58,9 @@ depends=(
     "corepdf"
     "cups"
     "cura-bin"
-    "freerdp2"
+    "freerdp"
     "ghidra"
+    "gnome-connections"
     "keepassxc"
     "kitty"
     "leafpad"
