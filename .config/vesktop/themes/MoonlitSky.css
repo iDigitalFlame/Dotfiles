@@ -265,6 +265,9 @@ div[aria-haspopup="menu"] div[class$="-wrapper"] {
 div[class^="body__"] section[class^="section__"]:first-child {
     border-radius: 8px !important
 }
+div[class$="-linkButton"] a[data-list-item-id$="_nitro"], div[class$="-linkButton"] a[data-list-item-id$="_shop"] {
+    display: none !important
+}
 
 div[class^="checked_"] {
     background-color: var(--green-360) !important
