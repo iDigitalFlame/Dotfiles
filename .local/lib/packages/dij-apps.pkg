@@ -45,9 +45,11 @@ arch=( "any" )
 license=( "GPL-3.0" )
 
 source=()
-provides=( "libnice" )
 noextract=()
 sha256sums=()
+
+provides=( "libnice" )
+optdepends=( "signal-desktop" )
 
 depends=(
     ## Arduino
@@ -119,8 +121,4 @@ depends=(
     ## Programming
     "python-django"
     "python-websocket-client"
-)
-
-optdepends=(
-    "signal-desktop"
 )
