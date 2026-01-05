@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2025 ###
+    ### iDigitalFlame  2016-2026 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -18,7 +18,7 @@
     ########## SPACEPORT ###########
     ## Rofi Configuration
 
-    Copyright (C) 2016 - 2025 iDigitalFlame
+    Copyright (C) 2016 - 2026 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,51 +36,51 @@
 
 configuration {
     drun {
-        parse-user:    true;
-        parse-system:  true;
-        scan-desktop:  true;
-        fallback-icon: "applications-all";
+        parse-user:             true;
+        parse-system:           true;
+        scan-desktop:           true;
+        fallback-icon:          "applications-all";
     }
 
     window {
-        prefer-icon-theme: true;
+        prefer-icon-theme:      true;
     }
 
     run, window {
-        fallback-icon: "applications-all";
+        fallback-icon:          "applications-all";
     }
 
     m:                          -5;
     eh:                         1;
     dpi:                        95;
-    modi:                       "drun,window";
     font:                       "Cascadia Code Regular 12";
+    modi:                       "drun,window";
     sort:                       true;
     cycle:                      false;
     modes:                      "drun,window";
-    markup:                     true;
     filter:                     "";
+    markup:                     true;
+    threads:                    0;
     xoffset:                    0;
     yoffset:                    0;
-    threads:                    0;
     location:                   2;
+    matching:                   "glob";
     terminal:                   "~/.local/bin/term";
     tokenize:                   true;
-    matching:                   "glob";
     cache-dir:                  "~/.cache";
     icon-theme:                 "";
     show-icons:                 true;
     auto-select:                false;
-    steal-focus:                true;
     parse-hosts:                false;
-    sidebar-mode:               false;
+    steal-focus:                true;
     hover-select:               false;
-    scroll-method:              0;
+    sidebar-mode:               false;
     click-to-exit:              true;
+    scroll-method:              0;
     case-sensitive:             false;
+    disable-history:            true;
     fixed-num-lines:            false;
     normalize-match:            false;
-    disable-history:            true;
     ignored-prefixes:           "";
     max-history-size:           0;
     parse-known-hosts:          false;
@@ -96,16 +96,16 @@ configuration {
     combi-hide-mode-prefix:     true;
 
     drun-categories:            "";
-    drun-url-launcher:          "~/.local/bin/browser";
     drun-match-fields:          "name,exec,keywords";
+    drun-url-launcher:          "~/.local/bin/browser";
     drun-show-actions:          false;
     drun-display-format:        "{icon} {name}";
     drun-use-desktop-cache:     false;
     drun-reload-desktop-cache:  false;
 
     ssh-client:                 "/usr/bin/false";
-    ssh-command:                "/usr/bin/false";
     run-command:                "{cmd}";
+    ssh-command:                "/usr/bin/false";
     window-command:             "";
     run-list-command:           "";
     run-shell-command:          "/usr/bin/dash -c {cmd}";
@@ -124,16 +124,25 @@ configuration {
     ml-row-down:                "ScrollDown";
     ml-row-right:               "ScrollRight";
 
-    me-select-entry:            "MousePrimary";
     me-accept-entry:            "MouseDPrimary";
+    me-select-entry:            "MousePrimary";
     me-accept-custom:           "";
 
     kb-cancel:                  "Escape";
     kb-row-up:                  "";
     kb-row-tab:                 "";
-    kb-row-last:                "End";
-    kb-row-down:                "";
+    kb-custom-1:                "";
+    kb-custom-2:                "";
+    kb-custom-3:                "";
+    kb-custom-4:                "";
+    kb-custom-5:                "";
+    kb-custom-6:                "";
+    kb-custom-7:                "";
+    kb-custom-8:                "";
+    kb-custom-9:                "";
     kb-move-end:                "Control+E";
+    kb-row-down:                "";
+    kb-row-last:                "End";
     kb-row-left:                "";
     kb-select-1:                "";
     kb-select-2:                "";
@@ -144,16 +153,6 @@ configuration {
     kb-select-7:                "";
     kb-select-8:                "";
     kb-select-9:                "";
-    kb-custom-1:                "";
-    kb-custom-2:                "";
-    kb-custom-3:                "";
-    kb-custom-4:                "";
-    kb-custom-5:                "";
-    kb-custom-6:                "";
-    kb-custom-7:                "";
-    kb-custom-8:                "";
-    kb-custom-9:                "";
-    kb-select-10:               "";
     kb-custom-10:               "";
     kb-custom-11:               "";
     kb-custom-12:               "";
@@ -165,41 +164,42 @@ configuration {
     kb-custom-18:               "";
     kb-custom-19:               "";
     kb-ellipsize:               "";
-    kb-page-prev:               "Page_Up";
+    kb-mode-next:               "Tab";
     kb-page-next:               "Page_Down";
+    kb-page-prev:               "Page_Up";
     kb-row-first:               "Home";
     kb-row-right:               "";
-    kb-mode-next:               "Tab";
-    kb-screenshot:              "";
-    kb-row-select:              "";
+    kb-select-10:               "";
     kb-accept-alt:              "";
-    kb-move-front:              "Control+A";
     kb-clear-line:              "Control+W";
-    sorting-method:             "fzf";
+    kb-move-front:              "Control+A";
+    kb-row-select:              "";
+    kb-screenshot:              "";
     kb-toggle-sort:             "";
-    kb-element-next:            "Down";
-    kb-element-prev:            "Up";
+    sorting-method:             "fzf";
     kb-accept-entry:            "Return,KP_Enter";
     kb-delete-entry:            "";
+    kb-element-next:            "Down";
+    kb-element-prev:            "Up";
     kb-primary-copy:            "";
-    kb-mode-complete:           "";
     kb-accept-custom:           "";
+    kb-mode-complete:           "";
     kb-mode-previous:           "";
     kb-primary-paste:           "";
-    kb-remove-to-eol:           "Control+k";
-    kb-remove-to-sol:           "Control+u";
+    kb-remove-to-eol:           "Control+K";
+    kb-remove-to-sol:           "Control+U";
     kb-move-char-back:          "Left";
     kb-move-word-back:          "Control+Left";
-    kb-secondary-copy:          "Control+c";
-    kb-secondary-paste:         "Control+v";
-    kb-remove-word-back:        "Control+BackSpace";
-    kb-remove-char-back:        "BackSpace,Shift+BackSpace";
+    kb-secondary-copy:          "Control+C";
+    kb-secondary-paste:         "Control+V";
     kb-entry-history-up:        "";
-    kb-move-word-forward:       "Control+Right";
-    kb-move-char-forward:       "Right";
+    kb-remove-char-back:        "BackSpace,Shift+BackSpace";
+    kb-remove-word-back:        "Control+BackSpace";
     kb-accept-custom-alt:       "";
+    kb-move-char-forward:       "Right";
+    kb-move-word-forward:       "Control+Right";
     kb-entry-history-down:      "";
-    kb-remove-word-forward:     "Control+Delete";
     kb-remove-char-forward:     "Delete";
+    kb-remove-word-forward:     "Control+Delete";
     kb-toggle-case-sensitivity: "";
 }

@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2025 ###
+    ### iDigitalFlame  2016-2026 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -18,7 +18,7 @@
     ########## SPACEPORT ###########
     ## Rofi Applications Menu Configuration
 
-    Copyright (C) 2016 - 2025 iDigitalFlame
+    Copyright (C) 2016 - 2026 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,101 +36,101 @@
 
 configuration {
     timeout {
-        delay:          3;
-        action:         "kb-cancel";
+        delay:        3;
+        action:       "kb-cancel";
     }
 
-    cycle:              false;
-    location:           2;
+    cycle:            false;
+    location:         2;
 }
 
 * {
     text-color:         rgba(255, 255, 255, 1);
-    background-color:   rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 entry {
-    padding:            8px 12px 8px 12px;
+    padding:          8px 12px 8px 12px;
 }
 
 prompt {
-    enabled:            false;
+    enabled:          false;
 }
 
 window {
-    border:             0;
-    margin:             0;
-    padding:            0;
-    fullscreen:         true;
-    background-color:   rgba(10, 0, 10, 0.7);
+    border:           0;
+    margin:           0;
+    padding:          0;
+    fullscreen:       true;
+    background-color: rgba(10, 0, 10, 0.7);
 }
 
 mainbox {
-    margin:             22% 30% 22% 30%;
-    border:             0;
-    padding:            0;
-    children:           [inputbar, listview];
-    border-radius:      0;
+    margin:           22% 30% 22% 30%;
+    border:           0;
+    padding:          0;
+    children:         [inputbar, listview];
+    border-radius:    0;
 }
 
 listview {
-    border:             0;
-    padding:            5px;
-    columns:            1;
-    spacing:            0;
-    children:           [element];
-    scrollbar:          false;
+    border:           0;
+    columns:          1;
+    padding:          5px;
+    spacing:          0;
+    children:         [element];
+    scrollbar:        false;
 }
 
 inputbar {
-    border:             0 0 1px 0;
-    enabled:            true;
-    padding:            3px 3px 3px 3px;
-    children:           [entry];
-    text-color:         rgba(255, 255, 255, 1);
-    border-color:       rgba(255, 255, 255, 0.65);
-    border-radius:      10px;
-    background-color:   rgba(125, 11, 171, 1);
+    border:           0 0 1px 0;
+    enabled:          true;
+    padding:          3px 3px 3px 3px;
+    children:         [entry];
+    text-color:       rgba(255, 255, 255, 1);
+    border-color:     rgba(255, 255, 255, 0.65);
+    border-radius:    10px;
+    background-color: rgba(125, 11, 171, 1);
 }
 
 scrollbar {
-    enabled:            false;
-    handle-width:       0;
+    enabled:          false;
+    handle-width:     0;
 }
 
 element {
-    border:             0;
-    padding:            12px;
-    children:           [element-icon, element-text];
-    text-color:         rgba(255, 255, 255, 1);
+    border:           0;
+    padding:          12px;
+    children:         [element-icon, element-text];
+    text-color:       rgba(255, 255, 255, 1);
 }
 element selected {
-    text-color:         rgba(0, 0, 0, 1);
-    border-color:       rgba(0, 0, 0, 0);
-    border-radius:      10px;
-    background-color:   rgba(255, 255, 255, 1);
+    text-color:       rgba(0, 0, 0, 1);
+    border-color:     rgba(0, 0, 0, 0);
+    border-radius:    10px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 element-icon {
-    size:               20px;
-    vertical-align:     0.5;
-    horizontal-align:   0.5;
+    size:             20px;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
 }
 
 element-text {
-    text-color:         rgba(255, 255, 255, 1);
-    vertical-align:     0.5;
+    text-color:       rgba(255, 255, 255, 1);
+    vertical-align:   0.5;
 }
 element-text selected {
-    text-color:         rgba(0, 0, 0, 1);
+    text-color:       rgba(0, 0, 0, 1);
 }
 
 textbox {
-    font:               "Cascadia Code Bold 11";
-    padding:            20px;
-    text-color:         rgba(249, 76, 16, 1);
+    font:             "Cascadia Code Bold 11";
+    padding:          20px;
+    text-color:       rgba(249, 76, 16, 1);
 }
 
 error-message {
-    margin:             20% 30% 35% 30%;
+    margin:           20% 30% 35% 30%;
 }

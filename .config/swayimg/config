@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## SwayImg Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,9 +37,9 @@
 mode             = viewer
 size             = image
 app_id           = swayimg
+overlay          = yes
 sigusr1          = none
 sigusr2          = none
-overlay          = yes
 position         = auto
 decoration       = no
 
@@ -104,9 +104,12 @@ bottom_left      = status
 bottom_right     = none
 
 [keys.viewer]
+0                = zoom real
+8                = zoom fit
+9                = zoom fill
 a                = none
-d                = none
 c                = none
+d                = none
 f                = fullscreen
 h                = none
 i                = info
@@ -115,25 +118,22 @@ o                = none
 q                = exit
 r                = reload
 s                = none
-0                = zoom real
-9                = zoom fill
-8                = zoom fit
 F1               = none
 Up               = prev_file
 End              = last_file
 Tab              = none
 Down             = next_file
+Home             = first_file
 Left             = prev_frame
 Next             = none
 Plus             = zoom +10
-Home             = first_file
 Equal            = none
 Minus            = zoom -10
-Right            = next_frame
 Prior            = none
+Right            = next_frame
 Space            = none
-Return           = none
 Ctrl+c           = exec "/usr/bin/wl-copy" --trim-newline "%"
+Return           = none
 Shift+c          = exec "/usr/bin/swaymsg" 'exec "${HOME}/.local/bin/crop" "%"'
 Shift+d          = none
 Shift+m          = none
@@ -147,19 +147,22 @@ ScrollDown       = none
 ScrollLeft       = none
 ScrollRight      = none
 bracketleft      = none
-bracketright     = none
-Shift+Delete     = none
 Alt+ScrollUp     = prev_frame
+Shift+Delete     = none
+bracketright     = none
 Ctrl+ScrollUp    = zoom +10
-Shift+ScrollUp   = prev_file
 Alt+ScrollDown   = next_frame
+Shift+ScrollUp   = prev_file
 Ctrl+ScrollDown  = zoom -10
 Shift+ScrollDown = next_file
 
 [keys.gallery]
+0                = zoom real
+8                = zoom fit
+9                = zoom fill
 a                = none
-d                = none
 c                = none
+d                = none
 f                = fullscreen
 h                = none
 i                = info
@@ -168,22 +171,19 @@ o                = none
 q                = exit
 r                = reload
 s                = none
-0                = zoom real
-9                = zoom fill
-8                = zoom fit
 F1               = none
 Up               = prev_file
 End              = last_file
 Tab              = none
 Down             = next_file
+Home             = first_file
 Left             = prev_frame
 Next             = none
 Plus             = zoom +10
-Home             = first_file
 Equal            = none
 Minus            = zoom -10
-Right            = next_frame
 Prior            = none
+Right            = next_frame
 Space            = none
 Return           = none
 Shift+d          = none
@@ -198,11 +198,11 @@ ScrollDown       = none
 ScrollLeft       = none
 ScrollRight      = none
 bracketleft      = none
-bracketright     = none
-Shift+Delete     = none
 Alt+ScrollUp     = prev_frame
+Shift+Delete     = none
+bracketright     = none
 Ctrl+ScrollUp    = zoom +10
-Shift+ScrollUp   = prev_file
 Alt+ScrollDown   = next_frame
+Shift+ScrollUp   = prev_file
 Ctrl+ScrollDown  = zoom -10
 Shift+ScrollDown = next_file

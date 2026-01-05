@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Sway Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -199,6 +199,7 @@ for_window {
     [app_id="(sdl-|wl|x)freerdp" title="^.*TS$"]          border normal, floating disable
     [app_id="org.gnome.seahorse.Application" floating]    border normal, opacity set 0.9
     [app_id="(?i)firefox" title="^Developer Tools —*$"]   border none, floating enable, resize set width 1050 px height 800 px
+    [app_id="nm-applet" title="Connection Information"]   border normal, floating enable, opacity set 0.85
     [app_id="(?i)librewolf" title="^Developer Tools —*$"] border none, floating enable, resize set width 1050 px height 800 px
 }
 

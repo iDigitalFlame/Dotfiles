@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## XDG Directory Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,16 +33,16 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-XDG_DESKTOP_DIR="${HOME}"
-XDG_CACHE_HOME="${HOME}/.cache"
-XDG_CONFIG_HOME="${HOME}/.config"
-XDG_RUNTIME_DIR="/run/user/${UID}"
-XDG_PICTURES_DIR="${HOME}/Pictures"
 XDG_DATA_HOME="${HOME}/.local/share"
-XDG_DOWNLOAD_DIR="${HOME}/Downloads"
-XDG_DOCUMENTS_DIR="${HOME}/Documents"
-XDG_STATE_HOME="${HOME}/.local/share"
 XDG_MUSIC_DIR="${HOME}/Documents/Music"
+XDG_CACHE_HOME="${HOME}/.cache"
+XDG_STATE_HOME="${HOME}/.local/share"
 XDG_VIDEOS_DIR="${HOME}/Documents/Videos"
-XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"
+XDG_CONFIG_HOME="${HOME}/.config"
+XDG_DESKTOP_DIR="${HOME}"
+XDG_RUNTIME_DIR="/run/user/${UID}"
+XDG_DOWNLOAD_DIR="${HOME}/Downloads"
+XDG_PICTURES_DIR="${HOME}/Pictures"
+XDG_DOCUMENTS_DIR="${HOME}/Documents"
 XDG_TEMPLATES_DIR="${HOME}/Documents/Templates"
+XDG_PUBLICSHARE_DIR="${HOME}/Documents/Public"

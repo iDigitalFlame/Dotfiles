@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2025 ###
+    ### iDigitalFlame  2016-2026 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -18,7 +18,7 @@
     ########## SPACEPORT ###########
     ## Rofi Window Menu Configuration
 
-    Copyright (C) 2016 - 2025 iDigitalFlame
+    Copyright (C) 2016 - 2026 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -36,89 +36,89 @@
 
 configuration {
     timeout {
-        delay:          3;
-        action:         "kb-accept-entry";
+        delay:        3;
+        action:       "kb-accept-entry";
     }
 
-    cycle:              true;
-    location:           2;
-    auto-select:        true;
-    hover-select:       true;
-    kb-mode-next:       "";
-    kb-element-next:    "Down,Tab";
-    kb-element-prev:    "Up";
+    cycle:            true;
+    location:         2;
+    auto-select:      true;
+    hover-select:     true;
+    kb-mode-next:     "";
+    kb-element-next:  "Down,Tab";
+    kb-element-prev:  "Up";
 }
 
 * {
-    text-color:         rgba(255, 255, 255, 1);
-    background-color:   rgba(0, 0, 0, 0);
+    text-color:       rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 entry {
-    padding:            8px 12px 8px 12px;
+    padding:          8px 12px 8px 12px;
 }
 
 prompt {
-    enabled:            false;
+    enabled:          false;
 }
 
 window {
-    border:             0;
-    margin:             0;
-    padding:            0;
-    fullscreen:         true;
-    background-color:   rgba(10, 0, 10, 0.7);
+    border:           0;
+    margin:           0;
+    padding:          0;
+    fullscreen:       true;
+    background-color: rgba(10, 0, 10, 0.7);
 }
 
 mainbox {
-    border:             0;
-    margin:             15% 15% 15% 15%;
-    children:           [inputbar, listview];
-    border-radius:      0;
+    border:           0;
+    margin:           15% 15% 15% 15%;
+    children:         [inputbar, listview];
+    border-radius:    0;
 }
 
 listview {
-    layout:             vertical;
-    columns:            4;
-    spacing:            0;
-    padding:            0;
-    children:           [element];
-    scrollbar:          false;
+    layout:           vertical;
+    columns:          4;
+    padding:          0;
+    spacing:          0;
+    children:         [element];
+    scrollbar:        false;
 }
 
 inputbar {
-    enabled:            false;
+    enabled:          false;
 }
 
 scrollbar {
-    enabled:            false;
-    handle-width:       0;
+    enabled:          false;
+    handle-width:     0;
 }
 
 element {
-    border:             0;
-    padding:            5px;
-    text-color:         rgba(255, 255, 255, 1);
-    children:           [element-icon, element-text];
+    border:           0;
+    padding:          5px;
+    children:         [element-icon, element-text];
+    text-color:       rgba(255, 255, 255, 1);
 }
 element selected {
-    text-color:         rgba(0, 0, 0, 1);
-    border-color:       rgba(0, 0, 0, 0);
-    border-radius:      10px;
-    background-color:   rgba(255, 255, 255, 1);
+    text-color:       rgba(0, 0, 0, 1);
+    border-color:     rgba(0, 0, 0, 0);
+    border-radius:    10px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 element-icon {
-    size:               48px;
-    vertical-align:     0.5;
-    horizontal-align:   0.5;
+    size:             48px;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
 }
 
 element-text {
-    padding:            0 0 0 5px;
-    text-color:         rgba(255, 255, 255, 1);
-    vertical-align:     0.5;
+    padding:          0 0 0 5px;
+    text-color:       rgba(255, 255, 255, 1);
+    vertical-align:   0.5;
 }
 element-text selected {
-    text-color:         rgba(0, 0, 0, 1);
+    text-color:       rgba(0, 0, 0, 1);
 }

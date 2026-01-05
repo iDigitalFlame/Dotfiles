@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Mime Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,28 +36,28 @@
 [Added Associations]
 image/gif=swayimg.desktop
 image/png=swayimg.desktop
-image/jpeg=swayimg.desktop
-image/heic=swayimg.desktop
-image/webp=swayimg.desktop
 text/html=librewolf.desktop
+image/heic=swayimg.desktop
+image/jpeg=swayimg.desktop
+image/webp=swayimg.desktop
 text/x-csrc=leafpad.desktop
 text/x-python=codium.desktop
-inode/directory=thunar.desktop
-application/xml=codium.desktop
 x-www-browser=librewolf.desktop
+application/pdf=org.cubocore.CorePDF.desktop
+application/xml=codium.desktop
+inode/directory=thunar.desktop
 application/json=codium.desktop
 x-scheme-handler/tg=telegram.desktop
-application/x-directory=thunar.desktop
-x-scheme-handler/http=librewolf.desktop
 application/xhtml+xml=librewolf.desktop
-application/octet-stream=codium.desktop
-application/x-shellscript=codium.desktop
-x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
 x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
+application/x-directory=thunar.desktop
 x-scheme-handler/chrome=librewolf.desktop
+application/octet-stream=codium.desktop
 x-scheme-handler/unknown=librewolf.desktop
+application/x-shellscript=codium.desktop
 x-scheme-handler/telegram=telegram.desktop
-application/pdf=org.cubocore.CorePDF.desktop
 application/x-extension-htm=librewolf.desktop
 application/x-extension-xht=librewolf.desktop
 application/x-extension-html=librewolf.desktop
@@ -65,34 +65,34 @@ application/x-extension-shtml=librewolf.desktop
 application/x-extension-xhtml=librewolf.desktop
 
 [Default Applications]
-text/x-log=codium.desktop;
-text/html=librewolf.desktop;
-text/x-csrc=leafpad.desktop;
-text/x-python=codium.desktop;
-text/x-python3=codium.desktop;
-inode/directory=thunar.desktop;
-application/json=codium.desktop;
-x-www-browser=librewolf.desktop;
-application/xml=librewolf.desktop;
-x-scheme-handler/tg=telegram.desktop;
-x-scheme-handler/trash=thunar.desktop;
-application/x-directory=thunar.desktop;
-x-scheme-handler/http=librewolf.desktop;
-application/octet-stream=codium.desktop;
-application/xhtml+xml=librewolf.desktop;
-x-scheme-handler/https=librewolf.desktop;
-x-scheme-handler/about=librewolf.desktop;
-text/plain=leafpad.desktop;codium.desktop;
-x-scheme-handler/chrome=librewolf.desktop;
-x-scheme-handler/unknown=librewolf.desktop;
-x-scheme-handler/telegram=telegram.desktop;
 image/png=swayimg.desktop;org.xfce.ristretto.desktop;
+text/html=librewolf.desktop;
 image/jpeg=swayimg.desktop;org.xfce.ristretto.desktop;
 image/webp=swayimg.desktop;org.xfce.ristretto.desktop;
+text/plain=leafpad.desktop;codium.desktop;
+text/x-log=codium.desktop;
+text/x-csrc=leafpad.desktop;
+text/x-python=codium.desktop;
+x-www-browser=librewolf.desktop;
+text/x-python3=codium.desktop;
+application/pdf=org.cubocore.CorePDF.desktop;mupdf.desktop;chromium.desktop;
+application/xml=librewolf.desktop;
+inode/directory=thunar.desktop;
+application/json=codium.desktop;
+x-scheme-handler/tg=telegram.desktop;
+application/xhtml+xml=librewolf.desktop;
+x-scheme-handler/http=librewolf.desktop;
+x-scheme-handler/about=librewolf.desktop;
+x-scheme-handler/https=librewolf.desktop;
+x-scheme-handler/trash=thunar.desktop;
+application/x-directory=thunar.desktop;
+x-scheme-handler/chrome=librewolf.desktop;
+application/octet-stream=codium.desktop;
+x-scheme-handler/unknown=librewolf.desktop;
 application/x-shellscript=codium.desktop;leafpad.desktop;
+x-scheme-handler/telegram=telegram.desktop;
 application/x-extension-htm=librewolf.desktop;chromium.desktop;
 application/x-extension-xht=librewolf.desktop;chromium.desktop;
 application/x-extension-html=librewolf.desktop;chromium.desktop;
 application/x-extension-shtml=librewolf.desktop;chromium.desktop;
 application/x-extension-xhtml=librewolf.desktop;chromium.desktop;
-application/pdf=org.cubocore.CorePDF.desktop;mupdf.desktop;chromium.desktop;

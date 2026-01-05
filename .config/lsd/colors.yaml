@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## LSd Color Theme Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,8 +40,8 @@ date:
 
 size:
   none:        119
-  small:       15
   large:       129
+  small:       15
   medium:      208
 
 inode:
@@ -54,10 +54,10 @@ links:
 
 permission:
   acl:         15
-  read:        83
   exec:        231
-  write:       226
+  read:        83
   octal:       119
+  write:       226
   context:     226
   no-access:   245
   exec-sticky: 196

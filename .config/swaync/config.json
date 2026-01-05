@@ -1,7 +1,7 @@
 {
     "_": [
         "################################",
-        "### iDigitalFlame  2016-2025 ###",
+        "### iDigitalFlame  2016-2026 ###",
         "#                              #",
         "#            -/`               #",
         "#            -yy-   :/`        #",
@@ -19,7 +19,7 @@
         "########## SPACEPORT ###########",
         "## SwayNC Configuration",
         "",
-        "Copyright (C) 2016 - 2025 iDigitalFlame",
+        "Copyright (C) 2016 - 2026 iDigitalFlame",
         "",
         "This program is free software: you can redistribute it and/or modify",
         "it under the terms of the GNU General Public License as published by",
@@ -81,32 +81,32 @@
             "menu#actions": {
                 "actions": [
                     {
-                        "label": " Screenclip Copy",
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'"
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'",
+                        "label": " Screenclip Copy"
                     },
                     {
-                        "label": " Screenshot Copy",
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'"
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'",
+                        "label": " Screenshot Copy"
                     },
                     {
-                        "label": " Screenclip",
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'"
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'",
+                        "label": " Screenclip"
                     },
                     {
-                        "label": " Screenshot",
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'"
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'",
+                        "label": " Screenshot"
                     },
                     {
-                        "label": " Toggle DnD",
-                        "command": "sh -c 'swaync-client -cp; swaync-client --toggle-dnd'"
+                        "command": "sh -c 'swaync-client -cp; swaync-client --toggle-dnd'",
+                        "label": " Toggle DnD"
                     },
                     {
-                        "label": " Disable DnD",
-                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-off'"
+                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-off'",
+                        "label": " Disable DnD"
                     },
                     {
-                        "label": " Enable DnD",
-                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-on'"
+                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-on'",
+                        "label": " Enable DnD"
                     }
                 ],
                 "animation-type": "slide_down",
@@ -202,12 +202,12 @@
             "buttons": {
                 "actions": [
                     {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; bluectl -t'"
+                        "command": "sh -c 'swaync-client -cp; bluectl -t'",
+                        "label": ""
                     },
                     {
-                        "label": "",
-                        "command": "sh -c 'swaync-client -cp; wlay'"
+                        "command": "sh -c 'swaync-client -cp; wlay'",
+                        "label": ""
                     }
                 ],
                 "position": "right"
@@ -215,24 +215,24 @@
             "menu#power": {
                 "actions": [
                     {
-                        "label": " Lock",
-                        "command": "sh -c 'swaync-client -cp; lockctl -f'"
+                        "command": "sh -c 'swaync-client -cp; lockctl -f'",
+                        "label": " Lock"
                     },
                     {
-                        "label": " Suspend",
-                        "command": "sh -c 'swaync-client -cp; sudo systemctl suspend'"
+                        "command": "sh -c 'swaync-client -cp; sudo systemctl suspend'",
+                        "label": " Suspend"
                     },
                     {
-                        "label": " Hibernate",
-                        "command": "sh -c 'swaync-client -cp; sudo systemctl hibernate'"
+                        "command": "sh -c 'swaync-client -cp; sudo systemctl hibernate'",
+                        "label": " Hibernate"
                     },
                     {
-                        "label": " Reboot",
-                        "command": "sudo systemctl reboot"
+                        "command": "sudo systemctl reboot",
+                        "label": " Reboot"
                     },
                     {
-                        "label": " Shut Down",
-                        "command": "sudo systemctl poweroff"
+                        "command": "sudo systemctl poweroff",
+                        "label": " Shut Down"
                     }
                 ],
                 "animation-type": "slide_down",

@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -18,7 +18,7 @@
 ########## SPACEPORT ###########
 ## Screen Locker
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -39,11 +39,11 @@
 
 # Lock
 exec /usr/bin/gtklock \
+--style="${HOME}/.config/theme/current/lockscreen.css"
 --config=/dev/null \
---idle-hide \
---start-hidden \
---idle-timeout=5 \
---time-format="%H:%M" \
 --gtk-theme=MoonlightSky \
 --background="${HOME}/.cache/smd/lockscreen.jpg" \
---style="${HOME}/.config/theme/current/lockscreen.css"
+--time-format="%H:%M" \
+--idle-timeout=5 \
+--idle-hide \
+--start-hidden \

@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -18,7 +18,7 @@
 ### Spaceport + SMD
 ## Pacman Client Themes "container" package for SMD
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@
 # Maintainer: iDigitalFlame <idf@idigitalflame.com>
 
 pkgrel=1
-pkgver=1.5.5
+pkgver=1.5.8
 pkgname="dij-apps"
 pkgdesc="iDigitalFlame's custom application packages"
 
@@ -45,6 +45,7 @@ arch=( "any" )
 license=( "GPL-3.0" )
 
 source=()
+provides=( "libnice" )
 noextract=()
 sha256sums=()
 
@@ -81,14 +82,14 @@ depends=(
     "youtube-music-desktop"
 
     ## Games
+    "xorg-xrandr" # Needed for older Minecraft Java versions
     "jdk-openjdk"
     "mcpelauncher-ui-git"
 
     ## Communications
-    "signal-desktop"
     "slack-electron"
-    "telegram-desktop"
     "vesktop-bin"
+    "telegram-desktop"
 
     ## Thumbnails
     "ffmpegthumbnailer"
@@ -118,4 +119,8 @@ depends=(
     ## Programming
     "python-django"
     "python-websocket-client"
+)
+
+optdepends=(
+    "signal-desktop"
 )

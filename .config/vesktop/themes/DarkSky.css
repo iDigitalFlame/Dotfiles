@@ -1,6 +1,6 @@
 /*
     ################################
-    ### iDigitalFlame  2016-2025 ###
+    ### iDigitalFlame  2016-2026 ###
     #                              #
     #            -/`               #
     #            -yy-   :/`        #
@@ -19,7 +19,7 @@
     ## Discord CSS Configuration
     # Theme: DarkSky
 
-    Copyright (C) 2016 - 2025 iDigitalFlame
+    Copyright (C) 2016 - 2026 iDigitalFlame
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -536,10 +536,10 @@ body .disabled-29cfPA, body .disabled-29cfPA:hover {
     border-color: var(--background-secondary);
     background-color: var(--background-tertiary);
 }
-body .disabled-29cfPA+.pageButtonNext-2_bbdk,
-body .disabled-29cfPA+.pageCount-17vMJm,
-body .disabled-29cfPA:hover+.pageButtonNext-2_bbdk,
-body .disabled-29cfPA:hover+.pageCount-17vMJm,
+body .disabled-29cfPA + .pageButtonNext-2_bbdk,
+body .disabled-29cfPA + .pageCount-17vMJm,
+body .disabled-29cfPA:hover + .pageButtonNext-2_bbdk,
+body .disabled-29cfPA:hover + .pageCount-17vMJm,
 body .pageButtonNext-2_bbdk,
 body .pageCount-17vMJm,
 body .pageButtonNext-2_bbdk,
@@ -880,6 +880,6 @@ body .contentWrapper-3RqEiS .accordionContainer-vSTU_l {
     background-color: transparent;
 }
 
-:is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .container-1CH86i, :is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .panel-ufc1-o, :is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .wrapper-VSquwh>div {
+:is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .container-1CH86i, :is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .panel-ufc1-o, :is(.theme-dark, .theme-amoled) .sidebar-1tnWFu .panels-3wFtMD .wrapper-VSquwh > div {
     background-color: var(--background-primary);
 }

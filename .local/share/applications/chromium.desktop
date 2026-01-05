@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +34,9 @@
 #
 
 [Desktop Entry]
-Name            = Chromium 
 Exec            = /home/dij/.local/bin/chrome %U
 Icon            = chromium
+Name            = Chromium 
 Type            = Application
 Actions         = developer;
 Comment         = Browse the Web
@@ -50,6 +50,6 @@ StartupWMClass  = chromium
 X-MultipleArgs  = false
 
 [Desktop Action developer]
-Name            = Developer
 Exec            = /home/dij/.local/bin/chrome --all %U
 Icon            = chromium
+Name            = Developer

@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -18,7 +18,7 @@
 ########## SPACEPORT ###########
 ## ZSH Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@
 
 # OhMyZsh Configuration Options
 ZSH_THEME="muse"
-CASE_SENSITIVE=false
-ENABLE_CORRECTION=true
-DISABLE_LS_COLORS=false
 HIST_STAMPS="mm/dd/yyyy"
+CASE_SENSITIVE=false
+DISABLE_LS_COLORS=false
+ENABLE_CORRECTION=true
 DISABLE_AUTO_TITLE=false
 ZSH_DISABLE_COMPFIX=false
 COMPLETION_WAITING_DOTS=true
@@ -102,18 +102,18 @@ source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 ZSH_HIGHLIGHT_MAXLENGTH=256
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=113,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=172,bold'
 ZSH_HIGHLIGHT_STYLES[root]='bg=9,underline'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=172,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=113,bold'
 ZSH_HIGHLIGHT_STYLES[function]='fg=202,bold'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=118,bold,underline'
 ZSH_HIGHLIGHT_STYLES[global-alias]='fg=202,bold'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=93,bold'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=118,bold,underline'
-ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=63,bold'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220,bold'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220,bold'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,bold,underline'
+ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=63,bold'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220,bold'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=63,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=63,bold'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=74,bold'
@@ -161,20 +161,19 @@ vsc() {
         /usr/bin/codium $* 2>/dev/null
     fi
 }
-code() {
-    if [ $# -eq 1 ]; then
-        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
-    else
-        /usr/bin/codium $* 2>/dev/null
-    fi
-}
-
 cess() {
     if [ $# -lt 1 ]; then
         echo "cess <file1> <fileN..>" 1>&2
         return
     fi
     /usr/bin/bat --paging=never $@ | less
+}
+code() {
+    if [ $# -eq 1 ]; then
+        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
+    else
+        /usr/bin/codium $* 2>/dev/null
+    fi
 }
 pyhttp() {
     local port="8080"
@@ -234,26 +233,25 @@ go1.20() {
 }
 
 # Firewall Aliases
-alias ssh="/usr/bin/ghr firewall-ssh /usr/bin/ssh"
-alias scp="/usr/bin/ghr firewall-ssh /usr/bin/scp"
-alias git="/usr/bin/ghr firewall-web /usr/bin/git"
-alias nmap="/usr/bin/ghr firewall-all /usr/bin/nmap"
-alias curl="/usr/bin/ghr firewall-web /usr/bin/curl"
-alias ping="/usr/bin/ghr firewall-icmp /usr/bin/ping"
-alias rsync="/usr/bin/ghr firewall-ssh /usr/bin/rsync"
-alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
-alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
-alias go="nocorrect /usr/bin/ghr firewall-all /usr/bin/go"
 alias nc="nocorrect /usr/bin/ghr firewall-all /usr/bin/nc"
-alias yay="nocorrect /usr/bin/ghr firewall-web /usr/bin/yay"
+alias go="nocorrect /usr/bin/ghr firewall-all /usr/bin/go"
+alias git="/usr/bin/ghr firewall-web /usr/bin/git"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
+alias scp="/usr/bin/ghr firewall-ssh /usr/bin/scp"
+alias ssh="/usr/bin/ghr firewall-ssh /usr/bin/ssh"
+alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
+alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-all /usr/bin/go"
+alias yay="nocorrect /usr/bin/ghr firewall-web /usr/bin/yay"
+alias curl="/usr/bin/ghr firewall-web /usr/bin/curl"
 alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
+alias nmap="/usr/bin/ghr firewall-all /usr/bin/nmap"
+alias ping="/usr/bin/ghr firewall-icmp /usr/bin/ping"
+alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
+alias rsync="/usr/bin/ghr firewall-ssh /usr/bin/rsync"
 alias pacman="nocorrect /usr/bin/ghr firewall-web /usr/bin/pacman"
-alias quote="/usr/bin/ghr firewall-web ${HOME}/.local/bin/motivate -n"
+alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
 alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3"
 alias vncviewer="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
-alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-all /usr/bin/go"
-alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
 
 # RDP Aliases
 alias rdp="/usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse -home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
@@ -264,11 +262,11 @@ alias p="/usr/bin/python3"
 alias python="/usr/bin/python3"
 
 # Power Aliases
-alias bright="brightnessctl"
-alias reboot="systemctl reboot"
-alias poweroff="systemctl poweroff"
-alias sus="sudo /usr/bin/systemctl suspend"
 alias hib="sudo /usr/bin/systemctl hibernate"
+alias sus="sudo /usr/bin/systemctl suspend"
+alias bright="brightnessctl"
+alias reboot="/usr/bin/systemctl reboot"
+alias poweroff="/usr/bin/systemctl poweroff"
 
 # Locker Aliases
 alias chill="lockerctl -C"
@@ -288,22 +286,22 @@ alias power5="cpuctl -s -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -
 # LSd Aliases
 alias l="/usr/bin/lsd -vFl --group-directories-first --color=auto"
 alias ls="/usr/bin/lsd -vF --group-directories-first --color=auto"
-alias lsd="/usr/bin/lsd -vFlh --group-directories-first --color=auto"
 alias lsa="/usr/bin/lsd -vFlA --group-directories-first --color=auto"
+alias lsd="/usr/bin/lsd -vFlh --group-directories-first --color=auto"
 
 # Screenshot Aliases
 alias sel="${HOME}/.local/bin/sway/clip"
-alias selc="${HOME}/.local/bin/sway/clip copy"
 alias ssc="${HOME}/.local/bin/sway/shot copy"
+alias selc="${HOME}/.local/bin/sway/clip copy"
 
 # Go Aliases
-alias gmo="go list -u -m -json all | go-mod-outdated"
 alias gv="/usr/bin/ghr firewall-web /usr/bin/go vet ./..."
+alias gmo="go list -u -m -json all | go-mod-outdated"
+alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
+alias gsc="/usr/bin/ghr firewall-web ${HOME}/.local/lib/go/bin/staticcheckstaticcheck ./..."
 alias gmou="go list -u -m -json all | go-mod-outdated -update"
 alias gsc-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
-alias gsc="/usr/bin/ghr firewall-web ${HOME}/.local/lib/go/bin/staticcheckstaticcheck ./..."
 alias go-tools-update="/usr/bin/ghr firewall-all ${HOME}/.local/lib/go/bin/go-global-update"
-alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
 
 # Rust Aliases
 alias rck="/usr/bin/ghr firewall-web /usr/bin/cargo check"
@@ -311,37 +309,32 @@ alias cargo="nocorrect /usr/bin/ghr firewall-web /usr/bin/cargo"
 alias rupdate="/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all"
 
 # Utility Aliases
-alias xx="exit"
-alias cls="clear"
-alias powershell="pwsh"
-alias sat="/usr/bin/cat"
-alias pat="/usr/bin/bat"
-alias find="noglob find"
-alias rm="/usr/bin/rm -I"
 alias jq="/usr/bin/jq -C"
 alias si="/usr/bin/swayimg"
-alias hydra="nocorrect hydra"
-alias less="/usr/bin/less -iR"
-alias tree="swaymsg -t get_tree"
-alias convert="nocorrect convert"
-alias find="noglob /usr/bin/find"
+alias rm="/usr/bin/rm -I"
+alias xx="exit"
 alias cat="/usr/bin/bat --paging=never"
+alias cls="clear"
 alias diff="/usr/bin/diff --color=auto"
 alias clip="/usr/bin/wl-copy --trim-newline"
+alias find="noglob /usr/bin/find"
+alias less="/usr/bin/less -iR"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
-alias gsync="git add -A .; git commit; git push"
+alias tree="swaymsg -t get_tree"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
-alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
+alias gsync="git add -A .; git commit; git push"
+alias hydra="nocorrect hydra"
 alias nohist="export HISTFILE=/dev/null; export HISTSIZE=0; export SAVEHIST=0"
+alias convert="nocorrect convert"
+alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
+alias powershell="pwsh"
 alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX=/var/cache/python PIP_USER=yes /usr/bin/python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --break-system-packages"
 
 # Script Aliases
-alias pfx2pem="/usr/bin/bash ${HOME}/Projects/Scripts/Shell/pfx2pem.sh"
-alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/move.py"
-alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/norm.py"
-alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
 alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/ntstatus.py"
-alias dirdiff="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/dirdiff.py"
+alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/move.py"
+alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
+alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/norm.py"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"

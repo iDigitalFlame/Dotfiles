@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -18,7 +18,7 @@
 ########## SPACEPORT ###########
 ## Permissions and Links Reset
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -62,27 +62,27 @@ chmod 2750 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
 relink "$DOTS" "${HOME}"
 
-rm -f "${HOME}/.local/share/applications/discord.desktop" 2> /dev/null
+rm -f "${HOME}/.local/share/applications/discord.desktop"  2> /dev/null
 rm -f "${HOME}"/.local/share/applications/userapp*.desktop 2> /dev/null
 
 linkcheck "${HOME}/.Xdefaults" "${HOME}/.Xresources"
 
+linkcheck "${HOME}/.config/zsh/.zshrc"       "${HOME}/.config/zsh/zshrc"
 linkcheck "${HOME}/.config/zsh/.zsh_history" "/dev/null"
-linkcheck "${HOME}/.config/zsh/.zshrc" "${HOME}/.config/zsh/zshrc"
 
-linkcheck "${HOME}/.local/bin/firefox" "${HOME}/.local/bin/browser"
-linkcheck "${HOME}/.local/bin/librewolf" "${HOME}/.local/bin/browser"
+linkcheck "${HOME}/.local/bin/firefox"       "${HOME}/.local/bin/browser"
+linkcheck "${HOME}/.local/bin/librewolf"     "${HOME}/.local/bin/browser"
 linkcheck "${HOME}/.local/bin/x-www-browser" "${HOME}/.local/bin/browser"
 
-linkcheck "${HOME}/.config/cubocore/pins" "/dev/null"
+linkcheck "${HOME}/.config/cubocore/pins"       "/dev/null"
 linkcheck "${HOME}/.config/cubocore/activities" "/dev/null"
 
-linkcheck "${HOME}/.config/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
+linkcheck "${HOME}/.config/mimeapps.list"      "${DOTS}/.local/share/applications/mimeapps.list"
 linkcheck "${HOME}/.local/share/mimeapps.list" "${DOTS}/.local/share/applications/mimeapps.list"
 
-linkcheck "${HOME}"/.config/librewolf/*."${USER}"/chrome "${HOME}/.config/librewolf/chrome"
+linkcheck "${HOME}"/.config/librewolf/*."${USER}"/chrome       "${HOME}/.config/librewolf/chrome"
+linkcheck "${HOME}"/.config/librewolf/*."${USER}"/extensions   "${HOME}"/.config/mozilla/firefox/*."${USER}"/extensions
 linkcheck "${HOME}"/.config/mozilla/firefox/*."${USER}"/chrome "${HOME}/.config/mozilla/firefox/chrome"
-linkcheck "${HOME}"/.config/librewolf/*."${USER}"/extensions "${HOME}"/.config/mozilla/firefox/*."${USER}"/extensions
 
 dash "${HOME}/.private/sync.sh"
 
@@ -107,12 +107,12 @@ chmod 0550 "${HOME}/.config/zsh/zshrc"
 chmod 0750 "${HOME}"/.local/lib/oh-my-zsh/tools/*.sh
 chmod 2550 "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml"
 
-find "${DOTS}/.local" -maxdepth 1 -type d -exec chmod 2550 {} \;
+find "${DOTS}/.local"  -maxdepth 1 -type d -exec chmod 2550 {} \;
 find "${DOTS}/.config" -maxdepth 1 -type d -exec chmod 2550 {} \;
 
 find "${HOME}/.config/bat" -type d -exec chmod 2550 {} \;
 
-# NOTE(dij): Set SETGID only on directories
+# Set SETGID only on directories
 find "${DOTS}" -xdev -type d -exec chmod g+s {} \;
 
 echo "Broken Links Found:"

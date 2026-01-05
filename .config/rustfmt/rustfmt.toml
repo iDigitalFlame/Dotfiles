@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Rustfmt Configuration
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -51,8 +51,8 @@ group_imports                       = "StdExternalCrate"
 merge_derives                       = true
 newline_style                       = "Auto"
 skip_children                       = false
-wrap_comments                       = true
 style_edition                       = "2024"
+wrap_comments                       = true
 fn_single_line                      = false
 format_strings                      = true
 imports_indent                      = "Block"
@@ -65,9 +65,9 @@ fn_params_layout                    = "Compressed"
 hex_literal_case                    = "Upper"
 match_arm_blocks                    = true
 struct_lit_width                    = 32
+show_parse_errors                   = true
 space_after_colon                   = true
 unstable_features                   = true
-show_parse_errors                   = true
 use_try_shorthand                   = true
 where_single_line                   = true
 attr_fn_like_width                  = 80

@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +34,9 @@
 #
 
 [Desktop Entry]
-Name            = Codium
 Exec            = /usr/bin/codium --unity-launch --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland %F
 Icon            = vscodium
+Name            = Codium
 Type            = Application
 Actions         = new-empty-window;
 Comment         = Code Editing. Redefined.
@@ -50,6 +50,6 @@ StartupWMClass  = code
 X-MultipleArgs  = false
 
 [Desktop Action new-empty-window]
-Name            = New Empty Window
 Exec            = /usr/bin/codium --new-window --disable-gpu-compositing --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland %F
 Icon            = vscodium
+Name            = New Empty Window

@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,12 +38,12 @@
 #            not properly connect even with the fixes.
 
 [Desktop Entry]
-Name            = Notesnook 
 Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U
 Icon            = notesnook
+Name            = Notesnook 
 Type            = Application
-Comment         = Your private note taking space
 Actions         = new-note;new-notebook;new-reminder;
+Comment         = Your private note taking space
 Keywords        = notes;journal;tasks;
 MimeType        =
 Terminal        = false
@@ -54,13 +54,13 @@ StartupWMClass  = notesnook
 X-MultipleArgs  = false
 
 [Desktop Action new-note]
-Name            = New Note
 Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new note
+Name            = New Note
 
 [Desktop Action new-notebook]
-Name            = New Notebook
 Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new notebook
+Name            = New Notebook
 
 [Desktop Action new-reminder]
-Name            = New Reminder
 Exec            = /usr/bin/ghr firewall-web /usr/bin/notesnook --disable-gpu-compositing --enable-webrtc-pipewire-capture --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --xdg-portal-required-version=1000000 %U new reminder
+Name            = New Reminder

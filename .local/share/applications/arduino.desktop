@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +34,9 @@
 #
 
 [Desktop Entry]
-Name            = Arduino 
 Exec            = /usr/bin/ghr firewall-web /usr/bin/env GTK_THEME=null /usr/bin/arduino
 Icon            = arduino
+Name            = Arduino 
 Type            = Application
 Comment         = Open-source electronics prototyping platform
 Keywords        = embedded electronics;electronics;avr;microcontroller;embedded;arduino;

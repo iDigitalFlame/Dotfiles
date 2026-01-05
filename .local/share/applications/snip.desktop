@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +34,9 @@
 #
 
 [Desktop Entry]
-Name            = Snip
 Exec            = /home/dij/.local/bin/sway/clip
 Icon            = clipgrab
+Name            = Snip
 Type            = Application
 Actions         = snip-copy;
 Comment         = Snip
@@ -48,6 +48,6 @@ StartupNotify   = fase
 X-MultipleArgs  = false
 
 [Desktop Action snip-copy]
-Name            = Copy
 Exec            = /home/dij/.local/bin/sway/clip copy
 Icon            = clipgrab
+Name            = Copy

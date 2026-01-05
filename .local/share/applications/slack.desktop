@@ -1,5 +1,5 @@
 ################################
-### iDigitalFlame  2016-2025 ###
+### iDigitalFlame  2016-2026 ###
 #                              #
 #            -/`               #
 #            -yy-   :/`        #
@@ -17,7 +17,7 @@
 ########## SPACEPORT ###########
 ## Application Entry
 #
-# Copyright (C) 2016 - 2025 iDigitalFlame
+# Copyright (C) 2016 - 2026 iDigitalFlame
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,9 +34,9 @@
 #
 
 [Desktop Entry]
-Name            = Slack 
 Exec            = /usr/bin/ghr firewall-web /usr/bin/nice -n 20 /usr/bin/slack --enable-webrtc-pipewire-capturer --disable-gpu-compositing --silent --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland %U
 Icon            = slack
+Name            = Slack 
 Type            = Application
 Comment         = Slack Desktop
 Keywords        = slack;im;social;
