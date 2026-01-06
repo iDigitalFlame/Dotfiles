@@ -35,7 +35,7 @@
 #
 
 pkgrel=1
-pkgver=1.4.1
+pkgver=1.4.2
 pkgname="dij-browsers"
 pkgdesc="iDigitalFlame's custom browser packages"
 
@@ -60,7 +60,7 @@ depends=(
     "firefox-dark-reader"
     "firefox-extension-canvasblocker-bin"
     "firefox-extension-foxyproxy"
-    "firefox-extension-multi-account-containers"
+    "firefox-extension-multi-account-containers-bin"
     "firefox-extension-styl-us-bin"
     "firefox-noscript"
     "firefox-temporary-containers"
