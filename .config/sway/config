@@ -178,44 +178,45 @@ layer_effects "swaync-notification-window" {
 
 ## Application Rules Configuration
 for_window {
-    [app_id="qtws"]                                                                       border none, opacity set 0.85
-    [app_id="xpad"]                                                                       border pixel 1, opacity set 0.8, sticky enable, floating enable, resize set width 500 px height 300 px
-    [app_id="signal"]                                                                     border none, opacity set 0.85
-    [app_id="swaync"]                                                                     border none, floating enable
-    [app_id="cropgui"]                                                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 700 px
-    [app_id="^(?i)vlc$"]                                                                  border normal, floating enable
-    [app_id="^(?i)kitty$"]                                                                border pixel 1
-    [app_id="^(?i)slack$"]                                                                border none, opacity set 0.85
-    [app_id="^(?i)leafpad$"]                                                              border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
-    [app_id="^(?i)vesktop$"]                                                              border none, opacity set 0.85
-    [app_id="^(?i)chromium$"]                                                             border none, opacity set 1
-    [app_id="pavucontrol-qt"]                                                             border normal, floating enable, resize set width 800 px height 450 px
-    [app_id="^$" title="wlay"]                                                            border pixel 1, opacity set 0.9, floating enable, resize set width 900 px height 800 px
-    [app_id="^(?i)notesnook$"]                                                            border none, opacity set 0.95, floating disabled
-    [app_id="^swayimg(_.*)?$"]                                                            border none, blur disable
-    [app_id="blueman-manager"]                                                            border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
-    [app_id="^(sdl-|x|wl)freerdp$"]                                                       border normal, floating enable
-    [app_id="nm-connection-editor"]                                                       border normal, opacity set 0.85, floating enable, resize set width 450 px height 600 px
-    [app_id="org.telegram.desktop"]                                                       border none, opacity set 0.85
-    [app_id="org.gnome.Connections"]                                                      border none, blur disable, shadows disable
-    [app_id="org.keepassxc.KeePassXC"]                                                    border none, opacity set 0.85
-    [app_id="^(?i)(firefox|librewolf)$"]                                                  border none, opacity set 1, blur disable
-    [app_id="^(cc|org).cubocore.CorePDF$"]                                                border pixel 1, floating enable
-    [app_id="com.flipperdevices.qFlipper"]                                                border none, opacity set 1, blur disable
-    [app_id="io.mrarm.mcpelauncher-ui-qt"]                                                border normal, floating enable, resize set width 1000 px height 600 px
-    [app_id="org.gnome.seahorse.Application"]                                             border none, opacity set 0.9
-    [app_id="^(sdl-|x|wl)freerdp$" title="^.*TS$"]                                        border normal, floating disable, layout tabbed
-    [app_id="org.gnome.seahorse.Application" floating]                                    border normal, opacity set 0.9
-    [app_id="org.telegram.desktop" title="Save Video"]                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="nm-applet" title="Connection Information"]                                   border normal, opacity set 0.85, floating enable
-    [app_id="^(?i)(firefox|librewolf)$" title="Library"]                                  border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
-    [app_id="^(?i)notesnook$" title="^Open Fil([es]+)$"]                                  border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="xdg-desktop-portal-gtk" title="^.* Files$"]                                  border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$"]                                 border none, opacity set 0.9
-    [app_id="signal" title="^Signal Desktop Preferences$"]                                border normal, floating enable
-    [app_id="com.flipperdevices.qFlipper" title="^(Open|Find Directory)$"]                border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(electron|notesnook|xdg-desktop-portal-gtk|vesktop)" title="^blob:.*$"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$" title="Add Folder to Workspace"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="qtws"]                                                                           border none, opacity set 0.85
+    [app_id="xpad"]                                                                           border pixel 1, opacity set 0.8, sticky enable, floating enable, resize set width 500 px height 300 px
+    [app_id="signal"]                                                                         border none, opacity set 0.85
+    [app_id="swaync"]                                                                         border none, floating enable
+    [app_id="cropgui"]                                                                        border normal, opacity set 0.8, floating enable, resize set width 800 px height 700 px
+    [app_id="^(?i)vlc$"]                                                                      border normal, floating enable
+    [app_id="^(?i)kitty$"]                                                                    border pixel 1
+    [app_id="^(?i)slack$"]                                                                    border none, opacity set 0.85
+    [app_id="^(?i)leafpad$"]                                                                  border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
+    [app_id="^(?i)vesktop$"]                                                                  border none, opacity set 0.85
+    [app_id="^(?i)chromium$"]                                                                 border none, opacity set 1
+    [app_id="pavucontrol-qt"]                                                                 border normal, floating enable, resize set width 800 px height 450 px
+    [app_id="^$" title="wlay"]                                                                border pixel 1, opacity set 0.9, floating enable, resize set width 900 px height 800 px
+    [app_id="^(?i)notesnook$"]                                                                border none, opacity set 0.95, floating disabled
+    [app_id="^swayimg(_.*)?$"]                                                                border none, blur disable
+    [app_id="blueman-manager"]                                                                border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
+    [app_id="^(sdl-|x|wl)freerdp$"]                                                           border normal, floating enable
+    [app_id="nm-connection-editor"]                                                           border normal, opacity set 0.85, floating enable, resize set width 450 px height 600 px
+    [app_id="org.telegram.desktop"]                                                           border none, opacity set 0.85
+    [app_id="org.gnome.Connections"]                                                          border none, blur disable, shadows disable
+    [app_id="org.keepassxc.KeePassXC"]                                                        border none, opacity set 0.85
+    [app_id="^(?i)(firefox|librewolf)$"]                                                      border none, opacity set 1, blur disable
+    [app_id="^(cc|org).cubocore.CorePDF$"]                                                    border pixel 1, floating enable
+    [app_id="com.flipperdevices.qFlipper"]                                                    border none, opacity set 1, blur disable
+    [app_id="io.mrarm.mcpelauncher-ui-qt"]                                                    border normal, floating enable, resize set width 1000 px height 600 px
+    [app_id="org.gnome.seahorse.Application"]                                                 border none, opacity set 0.9
+    [app_id="^(sdl-|x|wl)freerdp$" title="^.*TS$"]                                            border normal, floating disable, layout tabbed
+    [app_id="org.gnome.seahorse.Application" floating]                                        border normal, opacity set 0.9
+    [app_id="org.telegram.desktop" title="Save Video"]                                        border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="nm-applet" title="Connection Information"]                                       border normal, opacity set 0.85, floating enable
+    [app_id="^(?i)(firefox|librewolf)$" title="Library"]                                      border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
+    [app_id="^(?i)notesnook$" title="^Open Fil([es]+)$"]                                      border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="xdg-desktop-portal-gtk" title="^.* Files$"]                                      border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$"]                                     border none, opacity set 0.9, blur enable
+    [app_id="signal" title="^Signal Desktop Preferences$"]                                    border normal, floating enable
+    [app_id="com.flipperdevices.qFlipper" title="^(Open|Find Directory)$"]                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)xdg-desktop-portal(-gtk)?$" title="^Save (File|Image) .*$"]                 border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$" title="Add Folder to Workspace"]     border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)(electron|notesnook|xdg-desktop-portal(-gtk)?|vesktop)$" title="^blob:.*$"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
 }
 
 # Thunar Rules
