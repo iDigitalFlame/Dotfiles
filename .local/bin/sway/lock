@@ -39,11 +39,11 @@
 
 # Lock
 exec /usr/bin/gtklock \
---style="${HOME}/.config/theme/current/lockscreen.css"
+--style="${HOME}/.config/theme/current/lockscreen.css" \
 --config=/dev/null \
 --gtk-theme=MoonlightSky \
 --background="${HOME}/.cache/smd/lockscreen.jpg" \
 --time-format="%H:%M" \
 --idle-timeout=5 \
 --idle-hide \
---start-hidden \
+--start-hidden
