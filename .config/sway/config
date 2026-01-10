@@ -178,67 +178,59 @@ layer_effects "swaync-notification-window" {
 
 ## Application Rules Configuration
 for_window {
-    [app_id="qtws"]                                                                           border none, opacity set 0.85
-    [app_id="xpad"]                                                                           border pixel 1, opacity set 0.8, sticky enable, floating enable, resize set width 500 px height 300 px
-    [app_id="signal"]                                                                         border none, opacity set 0.85
-    [app_id="swaync"]                                                                         border none, floating enable
-    [app_id="cropgui"]                                                                        border normal, opacity set 0.8, floating enable, resize set width 800 px height 700 px
-    [app_id="^(?i)vlc$"]                                                                      border normal, floating enable
-    [app_id="^(?i)kitty$"]                                                                    border pixel 1
-    [app_id="^(?i)slack$"]                                                                    border none, opacity set 0.85
-    [app_id="^(?i)leafpad$"]                                                                  border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
-    [app_id="^(?i)vesktop$"]                                                                  border none, opacity set 0.85
-    [app_id="^(?i)chromium$"]                                                                 border none, opacity set 1
-    [app_id="pavucontrol-qt"]                                                                 border normal, floating enable, resize set width 800 px height 450 px
-    [app_id="^$" title="wlay"]                                                                border pixel 1, opacity set 0.9, floating enable, resize set width 900 px height 800 px
-    [app_id="^(?i)notesnook$"]                                                                border none, opacity set 0.95, floating disabled
-    [app_id="^swayimg(_.*)?$"]                                                                border none, blur disable
-    [app_id="blueman-manager"]                                                                border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
-    [app_id="^(sdl-|x|wl)freerdp$"]                                                           border normal, floating enable
-    [app_id="nm-connection-editor"]                                                           border normal, opacity set 0.85, floating enable, resize set width 450 px height 600 px
-    [app_id="org.telegram.desktop"]                                                           border none, opacity set 0.85
-    [app_id="org.gnome.Connections"]                                                          border none, blur disable, shadows disable
-    [app_id="org.keepassxc.KeePassXC"]                                                        border none, opacity set 0.85
-    [app_id="^(?i)(firefox|librewolf)$"]                                                      border none, opacity set 1, blur disable
-    [app_id="^(cc|org).cubocore.CorePDF$"]                                                    border pixel 1, floating enable
-    [app_id="com.flipperdevices.qFlipper"]                                                    border none, opacity set 1, blur disable
-    [app_id="io.mrarm.mcpelauncher-ui-qt"]                                                    border normal, floating enable, resize set width 1000 px height 600 px
-    [app_id="org.gnome.seahorse.Application"]                                                 border none, opacity set 0.9
-    [app_id="^(sdl-|x|wl)freerdp$" title="^.*TS$"]                                            border normal, floating disable, layout tabbed
-    [app_id="org.gnome.seahorse.Application" floating]                                        border normal, opacity set 0.9
-    [app_id="org.telegram.desktop" title="Save Video"]                                        border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="nm-applet" title="Connection Information"]                                       border normal, opacity set 0.85, floating enable
-    [app_id="^(?i)(firefox|librewolf)$" title="Library"]                                      border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
-    [app_id="^(?i)notesnook$" title="^Open Fil([es]+)$"]                                      border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="xdg-desktop-portal-gtk" title="^.* Files$"]                                      border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$"]                                     border none, opacity set 0.9, blur enable
-    [app_id="signal" title="^Signal Desktop Preferences$"]                                    border normal, floating enable
-    [app_id="com.flipperdevices.qFlipper" title="^(Open|Find Directory)$"]                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)xdg-desktop-portal(-gtk)?$" title="^Save (File|Image) .*$"]                 border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$" title="Add Folder to Workspace"]     border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
-    [app_id="^(?i)(electron|notesnook|xdg-desktop-portal(-gtk)?|vesktop)$" title="^blob:.*$"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^qtws$"]                                        border none, opacity set 0.85
+    [app_id="^xpad$"]                                        border pixel 1, opacity set 0.8, sticky enable, floating enable, resize set width 500 px height 300 px
+    [app_id="^signal$"]                                      border none, opacity set 0.85
+    [app_id="^swaync$"]                                      border none, floating enable
+    [app_id="^cropgui$"]                                     border normal, opacity set 0.8, floating enable, resize set width 800 px height 700 px
+    [app_id="^(?i)vlc$"]                                     border normal, floating enable
+    [app_id="^(?i)kitty$"]                                   border pixel 1
+    [app_id="^(?i)slack$"]                                   border none, opacity set 0.85
+    [app_id="^(?i)leafpad$"]                                 border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
+    [app_id="^(?i)vesktop$"]                                 border none, opacity set 0.85
+    [app_id="^(?i)chromium$"]                                border none, opacity set 1
+    [app_id="^$" title="wlay"]                               border pixel 1, opacity set 0.9, floating enable, resize set width 900 px height 800 px
+    [app_id="^(?i)notesnook$"]                               border none, opacity set 0.95, floating disabled
+    [app_id="^swayimg(_.*)?$"]                               border none, blur disable
+    [app_id="^pavucontrol-qt$"]                              border normal, floating enable, resize set width 800 px height 450 px
+    [app_id="^blueman-manager$"]                             border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
+    [app_id="^(sdl-|x|wl)freerdp$"]                          border normal, floating enable
+    [app_id="^nm-connection-editor$"]                        border normal, opacity set 0.85, floating enable, resize set width 450 px height 600 px
+    [app_id="^org.telegram.desktop$"]                        border none, opacity set 0.85
+    [app_id="^org.gnome.Connections$"]                       border none, blur disable, shadows disable
+    [app_id="^(?i)(firefox|librewolf)$"]                     border none, opacity set 1, blur disable
+    [app_id="^org.keepassxc.KeePassXC$"]                     border none, opacity set 0.85
+    [app_id="^(cc|org).cubocore.CorePDF$"]                   border pixel 1, floating enable
+    [app_id="^com.flipperdevices.qFlipper$"]                 border none, opacity set 1, blur disable
+    [app_id="^io.mrarm.mcpelauncher-ui-qt$"]                 border normal, floating enable, resize set width 1000 px height 600 px
+    [app_id="^org.gnome.seahorse.Application$"]              border none, opacity set 0.9
+    [app_id="^(sdl-|x|wl)freerdp$" title="^.*TS$"]           border normal, floating disable, layout tabbed
+    [app_id="^org.gnome.seahorse.Application" floating]      border normal, opacity set 0.9
+    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$"]    border none, opacity set 0.9, blur enable
+    [app_id="^nm-applet$" title="^Connection Information$"]  border normal, opacity set 0.85, floating enable
+    [app_id="^signal$" title="^Signal Desktop Preferences$"] border normal, floating enable
 }
 
 # Thunar Rules
 for_window {
-    [class="^(?i)thunar$"]                                   border none, opacity set 0.8
-    [app_id="^(?i)thunar$"]                                  border none, opacity set 0.8
-    [class="^(?i)thunar$" title="^Rename .*$"]               border normal, opacity set 0.8, floating enable
-    [app_id="^(?i)thunar$" title="^Rename .*$"]              border normal, opacity set 0.8, floating enable
-    [class="^(?i)thunar$" title="File Operation Progress"]   border normal, opacity set 0.8, floating enable
-    [app_id="^(?i)thunar$" title="File Operation Progress"]  border normal, opacity set 0.8, floating enable
-    [class="^(?i)thunar$" title="Confirm to replace files"]  border normal, opacity set 0.8, floating enable
-    [app_id="^(?i)thunar$" title="Confirm to replace files"] border normal, opacity set 0.8, floating enable
+    [class="^(?i)thunar$"]                                     border none, opacity set 0.8
+    [app_id="^(?i)thunar$"]                                    border none, opacity set 0.8
+    [class="^(?i)thunar$" title="^Rename .*$"]                 border normal, opacity set 0.8, floating enable
+    [app_id="^(?i)thunar$" title="^Rename .*$"]                border normal, opacity set 0.8, floating enable
+    [class="^(?i)thunar$" title="^File Operation Progress$"]   border normal, opacity set 0.8, floating enable
+    [app_id="^(?i)thunar$" title="^File Operation Progress$"]  border normal, opacity set 0.8, floating enable
+    [class="^(?i)thunar$" title="^Confirm to replace files$"]  border normal, opacity set 0.8, floating enable
+    [app_id="^(?i)thunar$" title="^Confirm to replace files$"] border normal, opacity set 0.8, floating enable
 }
 
 # Telgram Rules
 for_window {
-    [title="(null)"]                                                    border none, floating disable
-    [app_id="org.telegram.desktop" floating]                            border none, floating disable
-    [app_id="org.telegram.desktop" title="Media viewer"]                border none, fullscreen enable
-    [app_id="org.telegram.desktop" title="^Media viewer$"]              border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
-    [app_id="org.telegram.desktop" title="TelegramDesktop"]             border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
-    [app_id="org.telegram.desktop" title="^[^(Media viewer)]" floating] border pixel 1
+    [title="(null)"]                                                     border none, floating disable
+    [app_id="org.telegram.desktop" floating]                             border none, floating disable
+    [app_id="org.telegram.desktop" title="Media viewer"]                 border none, fullscreen enable
+    [app_id="org.telegram.desktop" title="^Media viewer$"]               border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
+    [app_id="org.telegram.desktop" title="^TelegramDesktop$"]            border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
+    [app_id="org.telegram.desktop" title="^[^(Media viewer)]$" floating] border pixel 1
     # NOTE(dij): ^ This rule seems to conflict on first read, however, it's used
     #            to enable pop-out chats to display a border and works only on
     #            chats and NOT media.
@@ -246,24 +238,31 @@ for_window {
 
 # XWayland Rules
 for_window {
-    [shell="xwayland"]                                                         title_format "[X] %title"
-    [class="xfreerdp"]                                                         border normal, floating enable
-    [class="^(?i)mupdf$"]                                                      border pixel 1, floating disable
-    [class="__main__\.py"]                                                     border pixel 1, opacity set 1, floating enable, resize set width 350 px height 400 px, move position cursor, move down 25 px, move right 100 px
-    [class="^(?i)leafpad$"]                                                    border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
-    [class="UltiMaker-Cura"]                                                   border none, blur disable
-    [class="^(sdl-|x|wl)freerdp$"]                                             border normal, floating enable
-    [class="^(sdl-|x|wl)freerdp$" title="^.*TS$"]                              border normal, floating disable, layout tabbed
-    [class="__main__\.py" title="^WorkDrive Sync - .*"]                        border normal, floating enable, move position center
-    [class="com-atlauncher-App" title="^(ATLauncher( Console)?|win([0-9]+))$"] border none, floating enable
+    [shell="xwayland"]                                                           title_format "[X] %title"
+    [class="^xfreerdp$"]                                                         border normal, floating enable
+    [class="^(?i)mupdf$"]                                                        border pixel 1, floating disable
+    [class="^(?i)leafpad$"]                                                      border pixel 1, opacity set 0.8, floating enable, resize set width 800 px height 800 px
+    [class="^__main__\.py$"]                                                     border pixel 1, opacity set 1, floating enable, resize set width 350 px height 400 px, move position cursor, move down 25 px, move right 100 px
+    [class="^UltiMaker-Cura$"]                                                   border none, blur disable
+    [class="^(sdl-|x|wl)freerdp$"]                                               border normal, floating enable
+    [class="^(sdl-|x|wl)freerdp$" title="^.*TS$"]                                border normal, floating disable, layout tabbed
+    [class="^__main__\.py$" title="^WorkDrive Sync - .*$"]                       border normal, floating enable, move position center
+    [class="^com-atlauncher-App$" title="^(ATLauncher( Console)?|win([0-9]+))$"] border none, floating enable
 }
 
 # Dialog Rules
 for_window {
-    [title="^File Upload"]                                                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [title="^File Upload$"]                                                                   border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
     [window_type="dialog"]                                                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
     [window_role="(pop-up|bubble|dialog)"]                                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)notesnook$" title="^Open Fil([es]+)$"]                                      border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^org.telegram.desktop$" title="^Save Video#"]                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^xdg-desktop-portal-gtk$" title="^.* Files$"]                                    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^com.flipperdevices.qFlipper$" title="^(Open|Find Directory)$"]                  border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)xdg-desktop-portal(-gtk)?$" title="^Save (As|File|Image) .*$"]              border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
     [title="^(?i:Open|Save|Upload|All) .* (?i:File|Image|Folder|As|Disk|file|file\(s\))$"]    border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)(vs)?codium(-electron|-url-handler)?$" title="^Add Folder to Workspace$"]   border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
+    [app_id="^(?i)(electron|notesnook|xdg-desktop-portal(-gtk)?|vesktop)$" title="^blob:.*$"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
     [title="^(?i:Choose|Open|Save|All) (?i:Workspace|File|Image|Files|Folder|As|file\(s\))$"] border normal, opacity set 0.8, floating enable, resize set width 800 px height 600 px
 }
 
@@ -271,7 +270,8 @@ for_window {
 for_window {
     # NOTE(dij): The title "Firefox" is applied to PIP windows before being renamed so
     #            match this first as it'll catch some windows that slip through.
-    [app_id="^(?i)(firefox|librewolf)$" title="Firefox"]                                                border pixel 1, floating enable, sticky enable, resize set width 600 px height 450 px
+    [app_id="^(?i)(firefox|librewolf)$" title="^Firefox$"]                                              border pixel 1, floating enable, sticky enable, resize set width 600 px height 450 px
+    [app_id="^(?i)(firefox|librewolf)$" title="^Library$"]                                              border pixel 1, opacity set 0.85, floating enable, resize set width 850 px height 800 px
     [app_id="^(?i)(firefox|librewolf)$" title="^Developer Tools —*$"]                                   border none, floating enable, resize set width 1050 px height 800 px
     [app_id="^(?i)(firefox|librewolf)$" title="^Picture-in-Picture$"]                                   border pixel 1, floating enable, sticky enable, resize set width 600 px height 450 px
     [app_id="^(?i)(firefox|librewolf)$" title="^Extension: \(.*\) - .* — (Mozilla Firefox|LibreWolf)$"] border normal, floating enable, resize set width 500 px height 700 px
