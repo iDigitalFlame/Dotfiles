@@ -268,6 +268,9 @@ for_window {
 
 # Browser Extension and Popup Rules
 for_window {
+    [app_id="^(?i)vesktop$" floating]                                                                   border pixel 1, opacity set 0.85, floating enable, sticky enable, resize set width 600 px height 450 px
+    [app_id="^(?i)vesktop$" title="^(?i)[^Discord |].*$"]                                               border pixel 1, opacity set 0.85, floating enable, sticky enable, resize set width 800 px height 650 px
+    [app_id="^(?i)vesktop$" title="^(?i)Discord Popout$"]                                               border pixel 1, opacity set 0.85, floating enable, sticky enable, resize set width 600 px height 450 px
     # NOTE(dij): The title "Firefox" is applied to PIP windows before being renamed so
     #            match this first as it'll catch some windows that slip through.
     [app_id="^(?i)(firefox|librewolf)$" title="^Firefox$"]                                              border pixel 1, floating enable, sticky enable, resize set width 600 px height 450 px
@@ -275,6 +278,7 @@ for_window {
     [app_id="^(?i)(firefox|librewolf)$" title="^Developer Tools —*$"]                                   border none, floating enable, resize set width 1050 px height 800 px
     [app_id="^(?i)(firefox|librewolf)$" title="^Picture-in-Picture$"]                                   border pixel 1, floating enable, sticky enable, resize set width 600 px height 450 px
     [app_id="^(?i)(firefox|librewolf)$" title="^Extension: \(.*\) - .* — (Mozilla Firefox|LibreWolf)$"] border normal, floating enable, resize set width 500 px height 700 px
+
 }
 
 ## Output Assignment Configuration
