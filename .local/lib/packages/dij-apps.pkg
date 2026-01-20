@@ -36,7 +36,7 @@
 # Maintainer: iDigitalFlame <idf@idigitalflame.com>
 
 pkgrel=1
-pkgver=1.5.8
+pkgver=1.5.9
 pkgname="dij-apps"
 pkgdesc="iDigitalFlame's custom application packages"
 
@@ -48,8 +48,8 @@ source=()
 noextract=()
 sha256sums=()
 
-provides=( "libnice" )
 optdepends=( "signal-desktop" )
+provides=( "libnice" "qrcodegencpp" "qrcodegencpp-cmake" )
 
 depends=(
     ## Arduino

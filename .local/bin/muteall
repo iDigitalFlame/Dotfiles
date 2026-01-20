@@ -34,14 +34,21 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+for i in $(pactl list cards | grep -E '[^\.]object.id =' | awk -F'"' '{print $2}'); do
+    # Set all HDMI outputs to the "HDMI" profile in order for them to work.
+    if wpctl inspect $i | grep -q 'device\.enum\.api'; then
+        wpctl set-profile 89 3
+    fi
+done
+
 if [ $# -ge 1 ]; then
-    for i in $(pactl list sources | grep 'Name: ' | grep -vE '\.monitor$' | awk '{print $2}'); do
-        pactl set-source-volume $i 0
-        pactl set-source-mute $i 1
+    for i in $(pactl list sources | grep -E '[^\.]object.id =' | awk -F'"' '{print $2}'); do
+        wpctl set-volume $i 0
+        wpctl set-mute $i 1
     done
 fi
 
-for i in $(pactl list sinks | grep 'Name: ' | awk '{print $2}'); do
-    pactl set-sink-volume $i 0
-    pactl set-sink-mute $i 1
+for i in $(pactl list sinks | grep -E '[^\.]object.id =' | awk -F'"' '{print $2}'); do
+    wpctl set-volume $i 0
+    wpctl set-mute $i 1
 done
