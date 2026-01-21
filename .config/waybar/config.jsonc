@@ -249,6 +249,7 @@
         "format-source-muted": "Muted ",
         "max-volume": 100.0,
         "on-click": "/usr/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "/usr/bin/pavucontrol-qt",
         "reverse-scrolling": 0,
         "reverse-mouse-scrolling": false,
         "scroll-step": 1
