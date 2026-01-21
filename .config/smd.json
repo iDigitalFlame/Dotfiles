@@ -95,7 +95,7 @@
         },
         "startups": [
             "/usr/bin/nm-applet",
-            "${HOME}/.local/bin/sway/mute",
+            "${HOME}/.local/bin/mute --all",
             "/usr/bin/aa-notify -p -f /run/log/audit/audit.log"
         ]
     },
