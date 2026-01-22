@@ -107,6 +107,10 @@
                     {
                         "command": "sh -c 'swaync-client -cp; swaync-client --dnd-on'",
                         "label": " Enable DnD"
+                    },
+                    {
+                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/hview'",
+                        "label": " Connect to VM"
                     }
                 ],
                 "animation-type": "slide_down",
