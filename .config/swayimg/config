@@ -54,14 +54,14 @@ antialiasing     = mks13
 transparency     = grid
 
 [gallery]
-fill             = yes
 size             = 250
 cache            = 25
-border           = #000000FF
+aspect           = fit
 pstore           = no
-shadow           = #000000FF
 window           = #00000000
 background       = #7D0BABFF
+border_color     = #000000FF
+border_width     = 0
 antialiasing     = mks13
 
 [slideshow]
