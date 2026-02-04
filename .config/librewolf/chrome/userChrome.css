@@ -331,6 +331,13 @@ menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"],
     appearance: none !important
 }
 
+vbox.browserContainer {
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    background-color: transparent !important
+}
+
 .sidebar,
 .urlbar-input-box,
 #navigator-toolbox,

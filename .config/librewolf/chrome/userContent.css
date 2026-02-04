@@ -38,6 +38,13 @@
     background-color: transparent !important
 }
 
+vbox.browserContainer {
+    outline: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    background-color: transparent !important
+}
+
 @-moz-document url-prefix(about:home), url-prefix(about:newtab), url-prefix(about:blank) {
     body {
         background-color: transparent !important
