@@ -37,7 +37,7 @@
 for i in $(pactl list cards | grep -E '[^\.]object.id =' | awk -F'"' '{print $2}'); do
     # Set all HDMI outputs to the "HDMI" profile in order for them to work.
     if wpctl inspect $i | grep -q 'device\.enum\.api'; then
-        wpctl set-profile 89 3
+        wpctl set-profile $i 3
     fi
 done
 
