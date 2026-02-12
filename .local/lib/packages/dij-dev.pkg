@@ -35,7 +35,7 @@
 #
 
 pkgrel=1
-pkgver=1.2.2
+pkgver=1.2.3
 pkgname="dij-dev"
 pkgdesc="iDigitalFlame's custom development packages"
 
@@ -73,6 +73,7 @@ depends=(
 
     ## ARM / Embedded
     "dosfstools"
+    "f2fs-tools"
     "qflipper"    # Flipper stuff
     "squid"       # Device Connectivity
     "uboot-tools"
