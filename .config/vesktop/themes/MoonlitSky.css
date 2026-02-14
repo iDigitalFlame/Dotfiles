@@ -304,10 +304,16 @@ div[aria-label="Inbox"] nav {
     background: #1F001F !important;
     border: 1px solid #7D0BAB !important;
 }
-div.user-profile-popout:not(.custom-user-profile-theme) div[class^="inner_"] {
-    border-radius: 15px;
-    background: #0A000A !important;
-    border: 1px solid #7D0BAB !important;
+div.user-profile-popout {
+    border-radius: 15px !important;
+    border: 1px solid #7D0BAB !important
+}
+div.user-profile-popout, div.user-profile-popout div[class^="header_"], div.user-profile-popout div[class^="body_"] {
+    background: #0A000A !important
+}
+
+div[class^="voiceChannelHighlightBorder_"], div[class^="voiceChannelHighlightGlow_"] {
+    display: none !important
 }
 
 #SEARCH_OPTIONS-header {
