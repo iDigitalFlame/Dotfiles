@@ -225,12 +225,13 @@ for_window {
 
 # Telgram Rules
 for_window {
-    [title="(null)"]                                                     border none, floating disable
-    [app_id="org.telegram.desktop" floating]                             border none, floating disable
-    [app_id="org.telegram.desktop" title="Media viewer"]                 border none, fullscreen enable
-    [app_id="org.telegram.desktop" title="^Media viewer$"]               border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
-    [app_id="org.telegram.desktop" title="^TelegramDesktop$"]            border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
-    [app_id="org.telegram.desktop" title="^[^(Media viewer)]$" floating] border pixel 1
+    [title="(null)"]                                                       border none, floating disable
+    [app_id="^org.telegram.desktop$" floating]                             border none, floating disable
+    [app_id="^org.telegram.desktop$" title="Media viewer"]                 border none, fullscreen enable
+    [app_id="^org.telegram.desktop$" title="^Media viewer$"]               border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
+    [app_id="^org.telegram.desktop$" title="^TelegramDesktop$"]            border none, opacity set 1, floating enable, blur disable, sticky enable, resize set width 600 px height 450 px
+    [app_id="^org.telegram.desktop$" title="^Instant View —.*$"]           border pixel 1, floating enable, resize set width 850 px height 900 px
+    [app_id="^org.telegram.desktop$" title="^[^(Media viewer)]$" floating] border pixel 1
     # NOTE(dij): ^ This rule seems to conflict on first read, however, it's used
     #            to enable pop-out chats to display a border and works only on
     #            chats and NOT media.
