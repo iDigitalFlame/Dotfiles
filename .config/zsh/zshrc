@@ -332,7 +332,7 @@ alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX=/v
 
 # Script Aliases
 alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/ntstatus.py"
-alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/move.py"
+alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/file_move.py"
 alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
 alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/norm.py"
 
