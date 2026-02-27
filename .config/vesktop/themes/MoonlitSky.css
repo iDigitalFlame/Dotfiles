@@ -107,6 +107,7 @@
     --chat-background-default: #0F000F !important;
     --chat-border: var(--primary-700) !important;
     --chat-input-container-background: var(--primary-600) !important;
+    --card-background-default: #1F001F !important;
     --deprecated-card-bg: hsl(var(--primary-700-hsl)/0.6) !important;
     --deprecated-card-editable-bg: hsl(var(--primary-700-hsl)/0.3) !important;
     --deprecated-quickswitcher-input-background: var(--primary-400) !important;
@@ -291,10 +292,6 @@ li[class^="card_"] div[class^="container_"], li[class^="card_"] div[class^="main
 div[class^="gradientBackground_"], div[class^="pulseGradient_"], div[class$="-pulseGradient"] {
     display: none !important
 }
-/*div[class^="pageBody_"], section[class^="header_"], div[class^="header_"], div[class^="chat_"], div[class^="chat_"] div[class^="content_"] {
-    background: #0A000A !important;
-    background-color: #0A000A !important
-}*/
 li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^="channel_"] > div[class^="interactive_"] > a[href="/store"] {
     display: none !important
 }
@@ -308,7 +305,7 @@ div.user-profile-popout {
     border-radius: 15px !important;
     border: 1px solid #7D0BAB !important
 }
-div.user-profile-popout, div.user-profile-popout div[class^="header_"], div.user-profile-popout div[class^="body_"] {
+div.user-profile-popout, div.user-profile-popout > div > div[class^="header_"], div.user-profile-popout > div > div[class^="body_"] {
     background: #0A000A !important
 }
 
@@ -328,13 +325,6 @@ button.vc-ranb-button {
     border-radius: 10px !important;
     background: #7D0BAB !important
 }
-/*button.vc-ranb-button div {
-    color: #FFF !important;
-    font-size: 12px !important;
-    padding: 1px 2px !important;
-    border-radius: 5px !important;
-    background: #7D0BAB !important
-}*/
 
 :is(.theme-dark, .theme-amoled) #app-mount .container-2RRFHK {
     background-color: var(--background-primary)

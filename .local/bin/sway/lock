@@ -42,7 +42,7 @@ exec /usr/bin/gtklock \
 --style="${HOME}/.config/theme/current/lockscreen.css" \
 --config=/dev/null \
 --gtk-theme=MoonlightSky \
---background="${HOME}/.cache/smd/lockscreen.jpg" \
+--background="${HOME}/.cache/smd/lockscreen.webp" \
 --time-format="%H:%M" \
 --idle-timeout=5 \
 --idle-hide \

@@ -38,7 +38,7 @@
         "auto_change": 600,
         "directory": "${HOME}/Pictures/Backgrounds",
         "enabled": true,
-        "lockscreen": "${HOME}/.cache/smd/lockscreen.jpg",
+        "lockscreen": "${HOME}/.cache/smd/lockscreen.webp",
         "method": "native"
     },
     "display": {
@@ -46,12 +46,11 @@
     },
     "hydra": {
         "aliases": {
-            "android": "/opt/hydra/dij/Android/vm.conf",
             "droid": "/opt/hydra/dij/Android/vm.conf",
             "kali": "/opt/hydra/dij/Kali/vm.conf",
-            "mac": "/opt/hydra/dij/MacOS/vm.conf",
-            "win": "/opt/hydra/dij/Windows10/vm.conf",
+            "win": "/opt/hydra/dij/Windows11/vm.conf",
             "win10": "/opt/hydra/dij/Windows10/vm.conf",
+            "win11": "/opt/hydra/dij/Windows11/vm.conf",
             "ws": "/opt/hydra/dij/WinStation/vm.conf"
         },
         "directory": "/opt/hydra/dij"

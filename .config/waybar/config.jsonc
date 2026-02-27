@@ -209,7 +209,7 @@
             },
             {
                 "type": "audio-in",
-                "name": "\"Windows 11\""
+                "name": "\"Windows 11 LTSC\""
             },
             {
                 "type": "audio-in",
@@ -217,15 +217,7 @@
             },
             {
                 "type": "audio-in",
-                "name": "\"Kali Linux\""
-            },
-            {
-                "type": "audio-in",
-                "name": "\"Android x86\""
-            },
-            {
-                "type": "audio-in",
-                "name": "\"MacOS\""
+                "name": "\"Android\""
             }
         ]
     },
