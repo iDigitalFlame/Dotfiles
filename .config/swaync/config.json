@@ -244,6 +244,9 @@
                 "position": "right"
             }
         },
+        "notifications": {
+            "vexpand": true
+        },
         "title": {
             "button-text": "",
             "clear-all-button": true,
