@@ -139,7 +139,7 @@ printf "\x1b[96m\x1b[1mUpdating Cargo packages...\x1b[0m\n"
 /usr/bin/ghr firewall-web /usr/bin/cargo install-update --all
 
 printf "\x1b[96m\x1b[1mUpdating Go packages...\x1b[0m\n"
-/usr/bin/ghr firewall-all "${HOME}/.local/lib/go/bin/go-global-update"
+/usr/bin/ghr firewall-all "${HOME}/.local/lib/go/bin/go-global-update" | grep -v 'up-to-date'
 
 cat<<EOF | sudo -i --
     mount -o rw,remount /
