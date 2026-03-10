@@ -41,16 +41,16 @@ if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
     if ! dash -c "cd \"${HOME}/.local/apps/updateHosts\"; sg firewall-web -c 'git pull' 2> /dev/null | grep -q 'Already up to date'"; then
         printf "\x1b[93m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
         cat<<EOF | sg firewall-web
-            cd "${HOME}/.local/apps/updateHosts"
-            git stash 1> /dev/null 2> /dev/null
-            git pull 1> /dev/null 2> /dev/null
+cd "${HOME}/.local/apps/updateHosts"
+git stash 1> /dev/null 2> /dev/null
+git pull 1> /dev/null 2> /dev/null
 EOF
     fi
     printf "\x1b[93m\x1b[1mUpdating hosts blocklist file..\x1b[0m\n"
     cat<<EOF | sg firewall-web
-        cd "${HOME}/.local/apps/updateHosts"
-        git stash 1> /dev/null 2> /dev/null
-        git pull 1> /dev/null 2> /dev/null
+cd "${HOME}/.local/apps/updateHosts"
+git stash 1> /dev/null 2> /dev/null
+git pull 1> /dev/null 2> /dev/null
 EOF
     sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
     hosts="${HOME}/.local/apps/updateHosts/hosts"
@@ -134,6 +134,12 @@ cat<<EOF | sg firewall-web
     export PYTHONPYCACHEPREFIX=/var/cache/python
     python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip list --user --outdated --format=json | jq -r '.[] | (.name)' | xargs -n1 python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --disable-pip-version-check --break-system-packages -U 2>&1 | grep -v 'least one requirement to install (see "pip help install")'
 EOF
+
+printf "\x1b[96m\x1b[1mUpdating Cargo packages...\x1b[0m\n"
+/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all
+
+printf "\x1b[96m\x1b[1mUpdating Go packages...\x1b[0m\n"
+/usr/bin/ghr firewall-all "${HOME}/.local/lib/go/bin/go-global-update"
 
 cat<<EOF | sudo -i --
     mount -o rw,remount /

@@ -73,7 +73,7 @@ fi
 
 trap "rmdir ${dev_mount}" 1 2 3 6
 printf 'Enter password to mount device "%s" to "%s":\n' "$1" "$dev_mount"
-if ! sudo -E mount -o nodev,nosuid,noatime,rw,fmask=0037,dmask=0027,uid=$(id -u),gid=$(id -g) "$1" "$dev_mount"; then
+if ! sudo -E mount -o nodev,nosuid,noatime,rw,fmask=0037,dmask=0027,uid=$UID,gid=$GID "$1" "$dev_mount"; then
     rmdir "$dev_mount"
     printf 'Failed to mount device "%s"!\n' "$1"
     exit 1

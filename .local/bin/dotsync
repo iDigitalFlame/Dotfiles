@@ -50,7 +50,7 @@ chmod -R 0770 "${DOTS}/.git"
 chmod -R 0550 "${DOTS}/.local/bin"
 
 chmod 0440 "${DOTS}/.config/smd.json"
-chmod 0640 "${DOTS}/.config/quotes.db"
+chmod 0440 "${DOTS}/.config/quotes.db"
 chmod 0640 "${DOTS}/dotfiles.code-workspace"
 
 chmod 2750 "${HOME}/.config/vlc"

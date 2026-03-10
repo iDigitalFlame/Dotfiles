@@ -154,39 +154,22 @@ function zshaddhistory() {
     return 0
 }
 
-vsc() {
-    if [ $# -eq 1 ]; then
-        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
-    else
-        /usr/bin/codium $* 2>/dev/null
-    fi
-}
-cess() {
-    if [ $# -lt 1 ]; then
-        echo "cess <file1> <fileN..>" 1>&2
-        return
-    fi
-    /usr/bin/bat --paging=never $@ | less
-}
+
 code() {
     if [ $# -eq 1 ]; then
-        /usr/bin/codium "$(realpath "$1")" 2>/dev/null
+        /usr/bin/codium "$(realpath "$1")" 2> /dev/null
     else
-        /usr/bin/codium $* 2>/dev/null
+        /usr/bin/codium $* 2> /dev/null
     fi
 }
 pyhttp() {
     local port="8080"
     if [ $# -ge 2 ]; then
-        if [ $# -eq 1 ]; then
-            port="$1"
-        fi
+        port="$1"
         printf 'Switching to "%s"..\n' "$2"
         cd "$2"
-    else
-        if [ $# -eq 1 ]; then
-            port="$1"
-        fi
+    elif [ $# -eq 1 ]; then
+        port="$1"
     fi
     echo "IP Addresses:"
     ifconfig | grep 'inet '| awk '{print "\t"$2}' |grep -vE '127.0.0.1|172.16.172'
@@ -208,42 +191,31 @@ nft -f /etc/nftables.conf
 EOF
 }
 
-# TODO(dij): Use gotip or another method instead? Need to see if it can handle
-#            older go toolchains.
-# Golang Version helper functions
-go1.10() {
-    _args=$@
-    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.10.8\"; export GOPATH=\"$(pwd)\"; \"${HOME}/Documents/Development/GoArchive/go1.10.8/bin/go\" $_args"
-}
-go1.14() {
-    _args=$@
-    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.14.15\"; \"${HOME}/Documents/Development/GoArchive/go1.14.15/bin/go\" $_args"
-}
-go1.16() {
-    _args=$@
-    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.16.15\"; \"${HOME}/Documents/Development/GoArchive/go1.16.15/bin/go\" $_args"
-}
-go1.18() {
-    _args=$@
-    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.18.10/\"; \"${HOME}/Documents/Development/GoArchive/go1.18.10/bin/go\" $_args"
-}
-go1.20() {
-    _args=$@
-    /usr/bin/ghr firewall-all /usr/bin/sh -c "export GOROOT=\"${HOME}/Documents/Development/GoArchive/go1.20.6\"; \"${HOME}/Documents/Development/GoArchive/go1.20.6/bin/go\" $_args"
+# Golang Version Helpers
+go10() {
+    # NOTE(dij): This needs to be function instead of an alias as we need to
+    #            read $PWD when running go1.10 due to the lack of module support.
+    #            If it was an alias, it would default to the $HOME directory always.
+    /usr/bin/ghr firewall-all /usr/bin/env GOROOT="${HOME}/Documents/Development/GoArchive/14.15" GOPATH="$(pwd)" "${HOME}/Documents/Development/GoArchive/10.8/bin/go" $@
 }
 
+alias wgo="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOOS=windows go"
+alias go14="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/14.15' '${HOME}/Documents/Development/GoArchive/14.15/bin/go'"
+alias go16="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/16.15' '${HOME}/Documents/Development/GoArchive/16.15/bin/go'"
+alias go18="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/18.10' '${HOME}/Documents/Development/GoArchive/18.10/bin/go'"
+alias go22="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/22.12' '${HOME}/Documents/Development/GoArchive/22.12/bin/go'"
+
 # Firewall Aliases
-alias nc="nocorrect /usr/bin/ghr firewall-all /usr/bin/nc"
 alias go="nocorrect /usr/bin/ghr firewall-all /usr/bin/go"
+alias nc="nocorrect /usr/bin/ghr firewall-all /usr/bin/nc"
 alias git="/usr/bin/ghr firewall-web /usr/bin/git"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
 alias scp="/usr/bin/ghr firewall-ssh /usr/bin/scp"
 alias ssh="/usr/bin/ghr firewall-ssh /usr/bin/ssh"
-alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
-alias wgo="nocorrect env GOOS=windows /usr/bin/ghr firewall-all /usr/bin/go"
+alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
 alias yay="nocorrect /usr/bin/ghr firewall-web /usr/bin/yay"
 alias curl="/usr/bin/ghr firewall-web /usr/bin/curl"
-alias gpg2="/usr/bin/gpg2 --homedir ${HOME}/.local/share/gnupg"
+alias gvnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
 alias nmap="/usr/bin/ghr firewall-all /usr/bin/nmap"
 alias ping="/usr/bin/ghr firewall-icmp /usr/bin/ping"
 alias wget="/usr/bin/ghr firewall-web /usr/bin/wget --hsts-file=${HOME}/.cache/wget-hsts"
@@ -251,7 +223,6 @@ alias rsync="/usr/bin/ghr firewall-ssh /usr/bin/rsync"
 alias pacman="nocorrect /usr/bin/ghr firewall-web /usr/bin/pacman"
 alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
 alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3"
-alias vncviewer="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
 
 # RDP Aliases
 alias rdp="/usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse -home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
@@ -296,47 +267,51 @@ alias selc="${HOME}/.local/bin/sway/clip copy"
 
 # Go Aliases
 alias gv="/usr/bin/ghr firewall-web /usr/bin/go vet ./..."
-alias gmo="go list -u -m -json all | go-mod-outdated"
-alias gov="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...; fieldalignment ./...'"
-alias gsc="/usr/bin/ghr firewall-web ${HOME}/.local/lib/go/bin/staticcheckstaticcheck ./..."
-alias gmou="go list -u -m -json all | go-mod-outdated -update"
-alias gsc-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
-alias go-tools-update="/usr/bin/ghr firewall-all ${HOME}/.local/lib/go/bin/go-global-update"
+alias go-check="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...'"
+alias go-update="go list -u -m -json all | go-mod-outdated -update"
+alias go-outdated="go list -u -m -json all | go-mod-outdated"
+alias go-check-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
+alias go-tools-update="/usr/bin/ghr firewall-all '${HOME}/.local/lib/go/bin/go-global-update'"
 
 # Rust Aliases
-alias rck="/usr/bin/ghr firewall-web /usr/bin/cargo check"
 alias cargo="nocorrect /usr/bin/ghr firewall-web /usr/bin/cargo"
-alias rupdate="/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all"
+alias rust-check="/usr/bin/ghr firewall-web /usr/bin/cargo check"
+alias rust-update="/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all"
 
 # Utility Aliases
-alias jq="/usr/bin/jq -C"
 alias si="/usr/bin/swayimg"
-alias rm="/usr/bin/rm -I"
 alias xx="exit"
-alias cat="/usr/bin/bat --paging=never"
 alias cls="clear"
-alias diff="/usr/bin/diff --color=auto"
-alias clip="/usr/bin/wl-copy --trim-newline"
-alias find="noglob /usr/bin/find"
-alias less="/usr/bin/less -iR"
-alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
+alias vsc="code"
 alias tree="swaymsg -t get_tree"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
 alias gsync="git add -A .; git commit; git push"
-alias hydra="nocorrect hydra"
 alias nohist="export HISTFILE=/dev/null; export HISTSIZE=0; export SAVEHIST=0"
-alias convert="nocorrect convert"
 alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
 alias powershell="pwsh"
-alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX=/var/cache/python PIP_USER=yes /usr/bin/python3 -X pycache_prefix=/var/cache/python -OO /usr/bin/pip install --break-system-packages"
+alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX='/var/cache/python' PIP_USER=yes /usr/bin/python3 -X pycache_prefix='/var/cache/python' -OO /usr/bin/pip install --break-system-packages"
+
+# Fixup Aliases
+alias find="noglob /usr/bin/find"
+alias hydra="nocorrect hydra"
+alias convert="nocorrect convert"
+
+# Overrite with Arguments Aliases
+alias jq="/usr/bin/jq -C"
+alias rm="/usr/bin/rm -I"
+alias cat="/usr/bin/bat --paging=never"
+alias diff="/usr/bin/diff --color=auto"
+alias clip="/usr/bin/wl-copy --trim-newline"
+alias less="/usr/bin/less -iR"
+alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 
 # Script Aliases
-alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/ntstatus.py"
-alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/file_move.py"
-alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/rename.py"
-alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/Projects/Scripts/Python/norm.py"
+alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/ntstatus.py'"
+alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/file_move.py'"
+alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/rename.py'"
+alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/norm.py'"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
 
-motivate | cowsay -W 75 -f small | lolcat --random --horizontal-frequency 0.2 --vertical-frequency 1.25
+shuf -n1 "${HOME}/.config/quotes.db" | cowsay -W 75 -f small | lolcat --random --horizontal-frequency 0.2 --vertical-frequency 1.25

@@ -52,6 +52,7 @@ image/jpeg=swayimg.desktop
 image/png=swayimg.desktop
 image/webp=swayimg.desktop
 inode/directory=thunar.desktop
+inode/x-empty=leafpad.desktop
 text/html=librewolf.desktop
 text/x-csrc=leafpad.desktop
 text/x-python=codium.desktop
