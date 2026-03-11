@@ -285,8 +285,8 @@ div[class^="newBadge_"], li[class^="shyButton_"], ul li[class^="shyButton_"] {
     background: none !important
 }
 li[class^="card_"] div[class^="container_"], li[class^="card_"] div[class^="mainCard_"] {
-    border: 1px solid #7D0BAB;
     background: #0A000A !important;
+    border: 1px solid #7D0BAB !important;
     background-color: #0A000A !important
 }
 div[class^="gradientBackground_"], div[class^="pulseGradient_"], div[class$="-pulseGradient"] {
@@ -297,7 +297,7 @@ li[class^="channel_"] > div[class^="interactive_"] > a[href="/shop"], li[class^=
 }
 
 div[aria-label="Inbox"] nav {
-    border-radius: 15px;
+    border-radius: 15px !important;
     background: #1F001F !important;
     border: 1px solid #7D0BAB !important;
 }
@@ -305,7 +305,7 @@ div.user-profile-popout {
     border-radius: 15px !important;
     border: 1px solid #7D0BAB !important
 }
-div.user-profile-popout, div.user-profile-popout > div > div[class^="header_"], div.user-profile-popout > div > div[class^="body_"] {
+div.user-profile-popout:not(.custom-theme-background), div.user-profile-popout:not(.custom-theme-background) > div > div[class^="header_"], div.user-profile-popout:not(.custom-theme-background) > div > div[class^="body_"] {
     background: #0A000A !important
 }
 
