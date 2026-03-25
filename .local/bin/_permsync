@@ -68,7 +68,7 @@ chmod 0750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrive"
 chmod 0750 "${HOME}/.local/apps/zohoworkdrive/zohoworkdrived"
 chmod 0750 "${HOME}/.local/apps/zohoworkdrive/QtWebEngineProcess"
 
-dash "${HOME}/.local/bin/dotsync"
+dash "${HOME}/.local/bin/tools/dotsync"
 
 printf "\033[1;36mDone!\033[0m\n"
 exit 0

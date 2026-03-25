@@ -142,7 +142,7 @@ unfunction kitty-integration
 # - The "history" command lol
 # - Any __* commands
 # - Any locally executed scripts "./script"
-ZSH_HISTORY_EXCLUDE='^ |//([^/]+:[^/]+)@|KEY[=:] *([^ ]+)|TOKEN[=:] *([^ ]+)|BEARER[=:] *([^ ]+)|PASSWO?R?D?[=:] *([^ ]+)|Authorization[=:] *([^'"'"'\"]+)|-us?e?r? ([^:]+:[^:]+) |^/|^\\|^rm|^rmdir|^history|^__|^\.'
+ZSH_HISTORY_EXCLUDE='^ |//([^/]+:[^/]+)@|KEY[=:] *([^ ]+)|TOKEN[=:] *([^ ]+)|BEARER[=:] *([^ ]+)|PASSWO?R?D?[=:] *([^ ]+)|Authorization[=:] *([^'"'"'\"]+)|-us?e?r? ([^:]+:[^:]+) |^/|^\\|^rm|^rmdir|^history|^sync-|^lxx |^lx-rn-|^smb-|^_|^\.'
 
 # ZSH History Checker
 function zshaddhistory() {
@@ -153,7 +153,6 @@ function zshaddhistory() {
     fi
     return 0
 }
-
 
 code() {
     if [ $# -eq 1 ]; then
@@ -175,20 +174,12 @@ pyhttp() {
     ifconfig | grep 'inet '| awk '{print "\t"$2}' |grep -vE '127.0.0.1|172.16.172'
     python -m http.server "$port"
 }
-firewall_open() {
-    /usr/bin/cat<<EOF | sudo -i --
-nft add chain inet filter input '{ policy accept; }'
-nft add chain inet filter output '{ policy accept; }'
-EOF
+
+_firewall_open() {
+    sudo sh -c "nft add chain inet filter input '{ policy accept; }'; nft add chain inet filter output '{ policy accept; }'"
 }
-firewall_close() {
-    /usr/bin/cat<<EOF | sudo -i --
-nft flush table ip nat
-nft flush table inet filter
-nft delete table ip nat
-nft delete table inet filter
-nft -f /etc/nftables.conf
-EOF
+_firewall_close() {
+    sudo sh -c "nft flush table ip nat; nft flush table inet filter; nft delete table ip nat; nft delete table inet filter; nft -f /etc/nftables.conf"
 }
 
 # Golang Version Helpers
@@ -199,11 +190,12 @@ go10() {
     /usr/bin/ghr firewall-all /usr/bin/env GOROOT="${HOME}/Documents/Development/GoArchive/14.15" GOPATH="$(pwd)" "${HOME}/Documents/Development/GoArchive/10.8/bin/go" $@
 }
 
+alias go10="nocorrect go10"
 alias wgo="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOOS=windows go"
-alias go14="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/14.15' '${HOME}/Documents/Development/GoArchive/14.15/bin/go'"
-alias go16="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/16.15' '${HOME}/Documents/Development/GoArchive/16.15/bin/go'"
-alias go18="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/18.10' '${HOME}/Documents/Development/GoArchive/18.10/bin/go'"
-alias go22="/usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/22.12' '${HOME}/Documents/Development/GoArchive/22.12/bin/go'"
+alias go14="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/14.15' '${HOME}/Documents/Development/GoArchive/14.15/bin/go'"
+alias go16="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/16.15' '${HOME}/Documents/Development/GoArchive/16.15/bin/go'"
+alias go18="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/18.10' '${HOME}/Documents/Development/GoArchive/18.10/bin/go'"
+alias go22="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/22.12' '${HOME}/Documents/Development/GoArchive/22.12/bin/go'"
 
 # Firewall Aliases
 alias go="nocorrect /usr/bin/ghr firewall-all /usr/bin/go"
@@ -212,7 +204,7 @@ alias git="/usr/bin/ghr firewall-web /usr/bin/git"
 alias gpg="/usr/bin/gpg --homedir ${HOME}/.local/share/gnupg"
 alias scp="/usr/bin/ghr firewall-ssh /usr/bin/scp"
 alias ssh="/usr/bin/ghr firewall-ssh /usr/bin/ssh"
-alias vnc="/usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
+alias vnc="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/vncviewer"
 alias yay="nocorrect /usr/bin/ghr firewall-web /usr/bin/yay"
 alias curl="/usr/bin/ghr firewall-web /usr/bin/curl"
 alias gvnc="/usr/bin/ghr firewall-ctl /usr/bin/gvncviewer"
@@ -225,8 +217,8 @@ alias wython="/usr/bin/ghr firewall-web /usr/bin/python3"
 alias xfreerdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3"
 
 # RDP Aliases
-alias rdp="/usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse -home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
-alias rdp_map="/usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse +home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
+alias rdp="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse -home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
+alias rdp_map="nocorrect /usr/bin/ghr firewall-ctl /usr/bin/xfreerdp3 -aero +async-channels +async-update +auto-request-control -compression -decorations -drives +gestures -grab-keyboard -grab-mouse +home-drive +jpeg -menu-anims +multitouch -themes -toggle-fullscreen +video +wallpaper +window-drag /cache:bitmap:off /clipboard:use-selection:CLIPBOARD,direction-to:all,files-to:all /gdi:hw /gfx /log-level:ERROR /scale-device:100 /size:1600x900"
 
 # Python Aliases
 alias p="/usr/bin/python3"
@@ -300,16 +292,19 @@ alias convert="nocorrect convert"
 alias jq="/usr/bin/jq -C"
 alias rm="/usr/bin/rm -I"
 alias cat="/usr/bin/bat --paging=never"
+alias sat="/usr/bin/cat"
 alias diff="/usr/bin/diff --color=auto"
 alias clip="/usr/bin/wl-copy --trim-newline"
 alias less="/usr/bin/less -iR"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 
 # Script Aliases
-alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/ntstatus.py'"
-alias pmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/file_move.py'"
-alias pren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/rename.py'"
-alias pnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/Projects/Scripts/Python/norm.py'"
+alias nts="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/ntstatus.py'"
+alias fih="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/image_hash.py'"
+alias fls="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/linesort.py'"
+alias fmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_move.py'"
+alias fren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_rename.py'"
+alias fnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_normalize.py'"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"

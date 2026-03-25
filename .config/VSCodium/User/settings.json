@@ -191,6 +191,9 @@
     "arduino.additionalUrls": "http://arduino.esp8266.com/stable/package_esp8266com_index.json,https://adafruit.github.io/arduino-board-index/package_adafruit_index.json,https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json",
     "black-formatter.args": [],
     "black-formatter.importStrategy": "fromEnvironment",
+    "black-formatter.interpreter": [
+        "/usr/bin/python3"
+    ],
     "black-formatter.path": [
         "/home/dij/.local/bin/black"
     ],
@@ -701,6 +704,9 @@
         ".vscode/*.py"
     ],
     "flake8.importStrategy": "fromEnvironment",
+    "flake8.interpreter": [
+        "/usr/bin/python3"
+    ],
     "flake8.path": [
         "/usr/bin/flake8"
     ],
@@ -987,6 +993,9 @@
     ],
     "isort.check": true,
     "isort.importStrategy": "fromEnvironment",
+    "isort.interpreter": [
+        "/usr/bin/python3"
+    ],
     "isort.path": [
         "/usr/bin/python3",
         "-m",
