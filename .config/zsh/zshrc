@@ -304,7 +304,7 @@ alias fih="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.lo
 alias fls="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/linesort.py'"
 alias fmov="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_move.py'"
 alias fren="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_rename.py'"
-alias fnorm="/usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_normalize.py'"
+alias fnorm="noglob nocorrect /usr/bin/python3 -X pycache_prefix=/var/cache/python -OO '${HOME}/.local/scripts/file_normalize.py'"
 
 source "${HOME}/.local/lib/zshrc.sh"
 source "${HOME}/.local/share/colors.sh"
