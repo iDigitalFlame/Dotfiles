@@ -309,7 +309,7 @@ div.user-profile-popout:not(.custom-theme-background), div.user-profile-popout:n
     background: #0A000A !important
 }
 
-div[class^="voiceChannelHighlightBorder_"], div[class^="voiceChannelHighlightGlow_"] {
+div[class^="voiceChannelHighlightBorder_"], div[class^="voiceChannelHighlightGlow_"], div[aria-label="Last Meadow Online"] {
     display: none !important
 }
 
