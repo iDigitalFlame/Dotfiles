@@ -350,6 +350,7 @@
         "uuid",
         "vesktop",
         "virtio",
+        "VIRTUALENV",
         "vmid",
         "vmware",
         "vmxnet",

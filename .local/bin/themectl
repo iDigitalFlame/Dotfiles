@@ -45,17 +45,16 @@ fhelp() {
         echo "No theme selected!"
         exit 0
     fi
-    printf "Current theme is \"%s\"\n" "$(basename "$(readlink "${THEME_DIR}/current")")"
+    printf 'Current theme is "%s"\n' "$(basename "$(readlink "${THEME_DIR}/current")")"
     exit 0
 }
-
 freset() {
-    theme=""
+    local theme=""
     if [ $# -eq 1 ]; then
         if [ -e "${THEME_DIR}/${1}" ]; then
             theme="${THEME_DIR}/${1}"
         else
-            print "Theme \"%s\" does not exist!\n" "$1"
+            print 'Theme "%s" does not exist!\n' "$1"
             exit 0
         fi
     else
@@ -66,7 +65,7 @@ freset() {
         theme=$(readlink "${THEME_DIR}/current")
     fi
     theme=$(basename "$theme")
-    rm "${THEME_DIR}/current" 2> /dev/null
+    rm     "${THEME_DIR}/current" 2> /dev/null
     ln -sT "${THEME_DIR}/${theme}" "$THEME_DIR/current"
     rm -f "${HOME}/.gtkrc-2.0"
     rm -f "${HOME}/.gtkrc-2.0.mine"
@@ -77,7 +76,6 @@ freset() {
     rm -f "${HOME}/.config/gtk-4.0/settings.ini"
     return 0
 }
-
 freload() {
     if ! [ -e "${THEME_DIR}/current" ]; then
         return 1
@@ -102,7 +100,7 @@ fi
 case "$1" in
     "list")
     echo "Current Installed Themes:"
-    ls -al "$THEME_DIR" | grep -vE "current|total " | awk '{print $9}' | grep -vE "^\." | awk '{print " - "$0}'
+    ls -l "$THEME_DIR" | grep -vE "current |total " | awk '{print $9}' | awk '{print " - "$0}'
     ;;
     "reset")
     freset
@@ -117,7 +115,7 @@ case "$1" in
         exit 1
     fi
     if ! [ -e "${THEME_DIR}/${2}" ]; then
-        printf "Theme \"%s\" does not exist!\n" "$2"
+        printf 'Theme "%s" does not exist!\n' "$2"
         exit 0
     fi
     freset "$2"

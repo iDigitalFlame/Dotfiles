@@ -113,7 +113,7 @@ fi
 echo "$entries" | grep -vE '^#' | sort > "/tmp/.hosts_file"
 cat<<EOF | sudo -i --
     sync
-    if ! [ -z "$hosts" ]; then
+    if [ -n "$hosts" ]; then
         printf "\x1b[93m\x1b[1mAdding generated hosts!\x1b[0m\n"
         cp "$hosts" /etc/hosts
     fi

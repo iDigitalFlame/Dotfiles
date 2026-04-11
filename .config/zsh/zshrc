@@ -34,51 +34,58 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# OhMyZsh Configuration Options
-ZSH_THEME="muse"
-HIST_STAMPS="mm/dd/yyyy"
-CASE_SENSITIVE=false
-DISABLE_LS_COLORS=false
-ENABLE_CORRECTION=true
-DISABLE_AUTO_TITLE=false
 ZSH_DISABLE_COMPFIX=false
-COMPLETION_WAITING_DOTS=true
+
+# Theme
+ZSH_THEME="muse"
+ZSH_THEME_VIRTUALENV_SUFFIX="]"
+ZSH_THEME_VIRTUALENV_PREFIX=" ["
+ZSH_THEME_SYSTEMD_PROMPT_CAPS=""
+
+# Tmux Plugin
+ZSH_TMUX_CONFIG="${HOME}/tmux/tmux.conf"
+ZSH_TMUX_ITERM2=false
+ZSH_TMUX_UNICODE=true
+ZSH_TMUX_AUTOQUIT=false
+ZSH_TMUX_DETACHED=false
+ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOREFRESH=false
+ZSH_TMUX_AUTOSTART_ONCE=true
+
+# Toggles
+DISABLE_LS_COLORS=false
+DISABLE_AUTO_TITLE=false
 DISABLE_UNTRACKED_FILES_DIRTY=true
 
-[ ! -d "$AURDEST" ] && mkdir -p "$AURDEST"
-[ ! -d "$SRCDEST" ] && mkdir -p "$SRCDEST"
-[ ! -d "$BUILDDIR" ] && mkdir -p "$BUILDDIR"
-[ ! -d "${HOME}/.cache/zsh" ] && mkdir -p "${HOME}/.cache/zsh"
-[ ! -d "${HOME}/Pictures/Screenshots" ] && mkdir -p "${HOME}/Pictures/Screenshots"
+# Misc
+HIST_STAMPS="mm/dd/yyyy"
+CASE_SENSITIVE=false
+ENABLE_CORRECTION=true
+COMPLETION_WAITING_DOTS=true
 
-if [ ! -d "${XDG_RUNTIME_DIR}/trash" ]; then
-    mkdir -p "${XDG_RUNTIME_DIR}/trash"
-    rm -f "${HOME}/.local/share/Trash"
-    ln -s "${XDG_RUNTIME_DIR}/trash" "${HOME}/.local/share/Trash"
-fi
-
-[ -d "${HOME}/Desktop" ] && rmdir "${HOME}/Desktop"
-
-# OhMyZsh Plugins
-plugins=(archlinux git screen systemd sudo)
+# Plugins
+plugins=(colored-man-pages copypath encode64 extract git git-lfs golang history nmap rust screen sudo systemd tmux)
 source "${ZSH}/oh-my-zsh.sh"
 
+# Auto Update
 zstyle ':omz:update' frequency 14
 zstyle ':omz:update' mode reminder
 
-# ZSH Auto Completion
+# Auto Completion
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "\e[A" up-line-or-beginning-search
 bindkey "\e[B" down-line-or-beginning-search
 
+# Compload / Compdump
 autoload -U compinit
 compinit -d "$ZSH_COMPDUMP"
 
 zstyle ':compinstall' filename "${HOME}/.cache/zsh/zshcomp"
 
-# Auto Completion Options
+# Auto Completion Configuration
 zstyle ':completion:*' completer _complete _extensions _approximate
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${HOME}/.cache/zsh/zshcomp_cache"
@@ -102,23 +109,23 @@ source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 ZSH_HIGHLIGHT_MAXLENGTH=256
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-ZSH_HIGHLIGHT_STYLES[root]='bg=9,underline'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=112,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=172,bold'
-ZSH_HIGHLIGHT_STYLES[command]='fg=113,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=202,bold'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=118,bold,underline'
-ZSH_HIGHLIGHT_STYLES[global-alias]='fg=202,bold'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=93,bold'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=196,bold,underline'
-ZSH_HIGHLIGHT_STYLES[process-substitution]='fg=63,bold'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=220,bold'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=220,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]='fg=63,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]='fg=63,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=74,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]='fg=74,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]='fg=74,bold'
+ZSH_HIGHLIGHT_STYLES[root]="bg=9,underline"
+ZSH_HIGHLIGHT_STYLES[alias]="fg=112,bold"
+ZSH_HIGHLIGHT_STYLES[builtin]="fg=172,bold"
+ZSH_HIGHLIGHT_STYLES[command]="fg=113,bold"
+ZSH_HIGHLIGHT_STYLES[function]="fg=202,bold"
+ZSH_HIGHLIGHT_STYLES[globbing]="fg=118,bold,underline"
+ZSH_HIGHLIGHT_STYLES[global-alias]="fg=202,bold"
+ZSH_HIGHLIGHT_STYLES[reserved-word]="fg=93,bold"
+ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=196,bold,underline"
+ZSH_HIGHLIGHT_STYLES[process-substitution]="fg=63,bold"
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]="fg=220,bold"
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]="fg=220,bold"
+ZSH_HIGHLIGHT_STYLES[command-substitution-quoted]="fg=63,bold"
+ZSH_HIGHLIGHT_STYLES[command-substitution-unquoted]="fg=63,bold"
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]="fg=74,bold"
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]="fg=74,bold"
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]="fg=74,bold"
 
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/media")
 ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("/tmp/.mounts")
@@ -127,7 +134,20 @@ ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("${XDG_RUNTIME_DIR}/mounts")
 
 PROMPT="%n $PROMPT"
 
-# Integrate with Kitty
+# Directory Checks
+! [ -d "$AURDEST" ]                     && mkdir -p "$AURDEST"
+! [ -d "${HOME}/.cache/zsh" ]           && mkdir -p "${HOME}/.cache/zsh"
+! [ -d "${HOME}/Pictures/Screenshots" ] && mkdir -p "${HOME}/Pictures/Screenshots"
+
+if ! [ -d "${XDG_RUNTIME_DIR}/trash" ]; then
+    mkdir -p "${XDG_RUNTIME_DIR}/trash"
+    rm -f    "${HOME}/.local/share/Trash"
+    ln -s    "${XDG_RUNTIME_DIR}/trash" "${HOME}/.local/share/Trash"
+fi
+
+[ -d "${HOME}/Desktop" ] && rmdir "${HOME}/Desktop"
+
+# Kitty Integration
 export KITTY_SHELL_INTEGRATION="enabled"
 autoload -Uz -- "/usr/lib/kitty/shell-integration/zsh/kitty-integration"
 kitty-integration
@@ -154,14 +174,14 @@ function zshaddhistory() {
     return 0
 }
 
-code() {
+function code() {
     if [ $# -eq 1 ]; then
         /usr/bin/codium "$(realpath "$1")" 2> /dev/null
     else
         /usr/bin/codium $* 2> /dev/null
     fi
 }
-pyhttp() {
+function pyhttp() {
     local port="8080"
     if [ $# -ge 2 ]; then
         port="$1"
@@ -174,24 +194,24 @@ pyhttp() {
     ifconfig | grep 'inet '| awk '{print "\t"$2}' |grep -vE '127.0.0.1|172.16.172'
     python -m http.server "$port"
 }
-
-_firewall_open() {
+function _firewall_open() {
     sudo sh -c "nft add chain inet filter input '{ policy accept; }'; nft add chain inet filter output '{ policy accept; }'"
 }
-_firewall_close() {
+function _firewall_close() {
     sudo sh -c "nft flush table ip nat; nft flush table inet filter; nft delete table ip nat; nft delete table inet filter; nft -f /etc/nftables.conf"
 }
 
-# Golang Version Helpers
-go10() {
+# Golang Helpers
+function go10() {
     # NOTE(dij): This needs to be function instead of an alias as we need to
     #            read $PWD when running go1.10 due to the lack of module support.
     #            If it was an alias, it would default to the $HOME directory always.
     /usr/bin/ghr firewall-all /usr/bin/env GOROOT="${HOME}/Documents/Development/GoArchive/14.15" GOPATH="$(pwd)" "${HOME}/Documents/Development/GoArchive/10.8/bin/go" $@
 }
 
-alias go10="nocorrect go10"
+# Golang Aliases
 alias wgo="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOOS=windows go"
+alias go10="nocorrect go10"
 alias go14="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/14.15' '${HOME}/Documents/Development/GoArchive/14.15/bin/go'"
 alias go16="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/16.15' '${HOME}/Documents/Development/GoArchive/16.15/bin/go'"
 alias go18="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/18.10' '${HOME}/Documents/Development/GoArchive/18.10/bin/go'"
@@ -288,13 +308,13 @@ alias find="noglob /usr/bin/find"
 alias hydra="nocorrect hydra"
 alias convert="nocorrect convert"
 
-# Overrite with Arguments Aliases
+# Arguments Aliases
 alias jq="/usr/bin/jq -C"
 alias rm="/usr/bin/rm -I"
 alias cat="/usr/bin/bat --paging=never"
 alias sat="/usr/bin/cat"
-alias diff="/usr/bin/diff --color=auto"
 alias clip="/usr/bin/wl-copy --trim-newline"
+alias diff="/usr/bin/diff --color=auto"
 alias less="/usr/bin/less -iR"
 alias nano="/usr/bin/nano -SLlwxiE --tabsize=4"
 

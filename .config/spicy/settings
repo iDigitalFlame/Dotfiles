@@ -15,8 +15,7 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-### Spaceport + SMD
-## Pacman Client Themes "container" package for SMD
+## Spice Viewer Configuration
 #
 # Copyright (C) 2016 - 2026 iDigitalFlame
 #
@@ -34,62 +33,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-pkgrel=1
-pkgver=1.2.0
-pkgname="dij-utils"
-pkgdesc="iDigitalFlame's custom utility packages"
+[general]
+scaling        = true
+grab-mouse     = false
+resize-guest   = true
+grab-keyboard  = false
+auto-clipboard = true
+sync-modifiers = true
 
-url="https://github.com/iDigitalFlame/dotfiles"
-arch=( "any" )
-license=( "GPL-3.0" )
-
-source=()
-noextract=()
-sha256sums=()
-
-depends=(
-    "7zip"
-    "bat"
-    "bind"
-    "binwalk"
-    "c-lolcat"
-    "cifs-utils"
-    "cowsay"
-    "diffutils"
-    "curl"
-    "findutils"
-    "iputils"
-    "jpegoptim"
-    "jq"
-    "less"
-    "lsd"
-    "lsof"
-    "man"
-    "man-pages"
-    "mariadb-clients"
-    "nano"
-    "net-tools"
-    "nmap"
-    "ntfs-3g"
-    "onefetch"
-    "openbsd-netcat"
-    "openssh"
-    "pngcrush"
-    "python-pip"
-    "powershell-bin"
-    "psmisc"
-    "rsync"
-    "sudo"
-    "sysfsutils"
-    "tcpdump"
-    "tmux"
-    "unzip"
-    "upx"
-    "usbutils"
-    "wget"
-    "which"
-    "yay"
-    "zsh"
-    "zsh-completions"
-    "zsh-syntax-highlighting"
-)
+[ui]
+toolbar        = false
+statusbar      = false

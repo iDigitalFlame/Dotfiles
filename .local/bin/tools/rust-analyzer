@@ -35,7 +35,7 @@
 #
 
 _ra="$(ls -lt /home/dij/.vscode-oss/extensions/rust-lang.rust-analyzer-*-linux-x64/server/rust-analyzer | sort -nr | head -n1 | awk '{print $9}')"
-if [ ! -f "$_ra" ]; then
+if ! [ -f "$_ra" ]; then
     exit 2
 fi
 
