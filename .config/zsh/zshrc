@@ -65,7 +65,7 @@ ENABLE_CORRECTION=true
 COMPLETION_WAITING_DOTS=true
 
 # Plugins
-plugins=(colored-man-pages copypath encode64 extract git git-lfs golang history nmap rust screen sudo systemd tmux)
+plugins=(colored-man-pages copypath encode64 extract git git-lfs golang history nmap rust sudo systemd tmux)
 source "${ZSH}/oh-my-zsh.sh"
 
 # Auto Update

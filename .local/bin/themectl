@@ -65,8 +65,9 @@ freset() {
         theme=$(readlink "${THEME_DIR}/current")
     fi
     theme=$(basename "$theme")
-    rm     "${THEME_DIR}/current" 2> /dev/null
-    ln -sT "${THEME_DIR}/${theme}" "$THEME_DIR/current"
+    chmod 2750 "${THEME_DIR}"
+    rm         "${THEME_DIR}/current"
+    ln -sT     "${THEME_DIR}/${theme}" "${THEME_DIR}/current"
     rm -f "${HOME}/.gtkrc-2.0"
     rm -f "${HOME}/.gtkrc-2.0.mine"
     rm -f "${HOME}/.config/gtk-1.0/gtkrc"
