@@ -61,6 +61,9 @@ export EDITOR="/usr/bin/nano -SLlwxiE --tabsize=4"
 export VISUAL="/usr/bin/nano -SLlwxiE --tabsize=4"
 export BROWSER="${HOME}/.local/bin/browser"
 
+# Trash
+export TRASH="${XDG_RUNTIME_DIR}/trash"
+
 # History
 export HISTFILE="${HOME}/.cache/zsh/history"
 export HISTSIZE=2500
