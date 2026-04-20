@@ -45,7 +45,6 @@ export GOCACHE="${HOME}/.cache/go-build"
 
 # Python
 export PYTHONSTARTUP="${HOME}/.local/lib/python_no_history.py"
-export PYTHONUSERBASE="${HOME}/.local/lib/python"
 
 # X / Wayland
 export XCURSOR_SIZE=24

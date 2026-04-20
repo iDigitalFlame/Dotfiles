@@ -134,17 +134,6 @@ ZSH_HIGHLIGHT_DIRS_BLACKLIST+=("${XDG_RUNTIME_DIR}/mounts")
 
 PROMPT="%n $PROMPT"
 
-# Directory Checks
-! [ -d "$AURDEST" ]                     && mkdir -p "$AURDEST"
-! [ -d "${HOME}/.cache/zsh" ]           && mkdir -p "${HOME}/.cache/zsh"
-! [ -d "${HOME}/Pictures/Screenshots" ] && mkdir -p "${HOME}/Pictures/Screenshots"
-
-if ! [ -d "${XDG_RUNTIME_DIR}/trash" ]; then
-    mkdir -p "${XDG_RUNTIME_DIR}/trash"
-    rm -f    "${HOME}/.local/share/Trash"
-    ln -s    "${XDG_RUNTIME_DIR}/trash" "${HOME}/.local/share/Trash"
-fi
-
 [ -d "${HOME}/Desktop" ] && rmdir "${HOME}/Desktop"
 
 # Kitty Integration
