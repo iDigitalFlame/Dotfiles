@@ -163,7 +163,14 @@ function zshaddhistory() {
     return 0
 }
 
-function del() {
+function code() {
+    if [ $# -eq 1 ]; then
+        /usr/bin/codium "$(realpath "$1")" 2> /dev/null
+    else
+        /usr/bin/codium $* 2> /dev/null
+    fi
+}
+function trash() {
     if [ $# -eq 0 ]; then
         echo "del [FILE]..."
         return 1
@@ -171,13 +178,6 @@ function del() {
     for i in $*; do
         mv -i "$i" "${TRASH}/"
     done
-}
-function code() {
-    if [ $# -eq 1 ]; then
-        /usr/bin/codium "$(realpath "$1")" 2> /dev/null
-    else
-        /usr/bin/codium $* 2> /dev/null
-    fi
 }
 function pyhttp() {
     local port="8080"
@@ -292,11 +292,11 @@ alias rust-update="/usr/bin/ghr firewall-web /usr/bin/cargo install-update --all
 alias si="/usr/bin/swayimg"
 alias xx="exit"
 alias cls="clear"
+alias del="trash"
 alias vsc="code"
 alias tree="swaymsg -t get_tree"
 alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
 alias gsync="git add -A .; git commit; git push"
-alias trash="del"
 alias nohist="export HISTFILE=/dev/null; export HISTSIZE=0; export SAVEHIST=0"
 alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
 alias powershell="pwsh"
