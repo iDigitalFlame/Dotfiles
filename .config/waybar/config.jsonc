@@ -52,6 +52,7 @@
         "full-at": 100,
         "interval": 60,
         "max-length": 8,
+        "on-click": "/usr/bin/swaync-client -t",
         "states": {
             "critical": 10,
             "low": 30
@@ -81,6 +82,7 @@
         "full-at": 100,
         "interval": 60,
         "max-length": 8,
+        "on-click": "/usr/bin/swaync-client -t",
         "states": {
             "critical": 10,
             "low": 30
@@ -117,6 +119,7 @@
     "cpu": {
         "format": "{usage:3}% ",
         "internal": 10,
+        "on-click": "/usr/bin/swaync-client -t",
         "tooltip": true
     },
     "custom/lockers": {
@@ -130,6 +133,7 @@
     "disk": {
         "format": "{percentage_used:3}% ",
         "interval": 120,
+        "on-click": "/usr/bin/swaync-client -t",
         "path": "/home",
         "tooltip": true,
         "tooltip-format": "{used} / {total} for {path} ({percentage_used}%)"
@@ -154,6 +158,7 @@
         "format": "{used:4.1f} ",
         "interval": 30,
         "max-length": 7,
+        "on-click": "/usr/bin/swaync-client -t",
         "tooltip": true,
         "tooltip-format": "{used:0.1f}/{total:0.1f}GiB"
     },
