@@ -202,6 +202,7 @@ for_window {
     [app_id="^org.keepassxc.KeePassXC$"]                     border none, opacity set 0.85
     [app_id="^(cc|org).cubocore.CorePDF$"]                   border pixel 1, floating enable
     [app_id="^com.flipperdevices.qFlipper$"]                 border none, opacity set 1, blur disable
+    [app_id="^io.mrarm.mcpelauncher-error$"]                 border normal, floating enabled, resize set width 350 px height 150 px
     [app_id="^io.mrarm.mcpelauncher-ui-qt$"]                 border normal, floating enable, resize set width 1000 px height 600 px
     [app_id="^org.gnome.seahorse.Application$"]              border none, opacity set 0.9
     [app_id="^(sdl-|x|wl)freerdp$" title="^.*TS$"]           border normal, floating disable, layout tabbed
