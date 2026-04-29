@@ -1,0 +1,102 @@
+################################
+### iDigitalFlame  2016-2026 ###
+#                              #
+#            -/`               #
+#            -yy-   :/`        #
+#         ./-shho`:so`         #
+#    .:- /syhhhh //hhs` `-`     #
+#   :ys-:shhhhhhshhhh.:o- `    #
+#   /yhsoshhhhhhhhhhhyho`:/.   #
+#   `:yhyshhhhhhhhhhhhhh+hd:   #
+#     :yssyhhhhhyhhhhhhhhdd:   #
+#    .:.oyshhhyyyhhhhhhddd:    #
+#    :o+hhhhhyssyhhdddmmd-     #
+#     .+yhhhhyssshdmmddo.      #
+#       ` ///yyysshd++`         #
+#                              #
+########## SPACEPORT ###########
+### Spaceport + SMD
+#
+# Copyright (C) 2016 - 2026 iDigitalFlame
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https: //www.gnu.org/licenses/>.
+#
+
+_: # Read Only
+
+background:
+  auto_change: 600
+  directory: "${HOME}/Pictures/Backgrounds"
+  enabled: true
+  lockscreen: "${HOME}/.cache/smd/lockscreen.webp"
+  method: "native"
+
+display:
+  auto: true
+
+hydra:
+  aliases:
+    droid: "/opt/hydra/dij/Android/vm.conf"
+    kali: "/opt/hydra/dij/Kali/vm.conf"
+    win: "/opt/hydra/dij/Windows11/vm.conf"
+    ws: "/opt/hydra/dij/WinStation/vm.conf"
+  directory: "/opt/hydra/dij"
+
+locker:
+  ac:
+    blank: 300
+    cpu: "max"
+    hibernate: false
+    key: false
+    lid: true
+    lockscreen: 600
+    suspend: 300
+  battery:
+    blank: 30
+    cpu:
+      efficiency: "power"
+      governor: "powersave"
+      max: "800Mhz"
+      min: "400Mhz"
+    hibernate: 180
+    key: true
+    lid: true
+    lockscreen: 120
+    suspend: 120
+  lock_command: "${HOME}/.local/bin/sway/lock"
+
+notify:
+  default: "dialog-information.svg"
+  icons:
+  - "/usr/share/icons/kora/apps/scalable"
+  show_errors: true
+  theme: "/usr/share/icons/MoonlightSky/status/48"
+
+session:
+  freeze:
+    enabled: true
+    ignore:
+    - "kitty"
+    - "xlfreerdp"
+    - "wlfreerdp"
+    - "blueman-manager"
+  startups:
+  - "/usr/bin/nm-applet"
+  - "${HOME}/.local/bin/mute --all"
+  - "/usr/bin/aa-notify -p -f /run/log/audit/audit.log"
+  triggers:
+    bluetooth:
+      enable:
+      - "/usr/bin/blueman-manager"
+  waybar: "bar"
