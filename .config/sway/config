@@ -190,7 +190,7 @@ for_window {
     [app_id="^(?i)vesktop$"]                                 border none, opacity set 0.85
     [app_id="^(?i)chromium$"]                                border none, opacity set 1
     [app_id="^$" title="wlay"]                               border pixel 1, opacity set 0.9, floating enable, resize set width 900 px height 800 px
-    [app_id="^(?i)notesnook$"]                               border none, opacity set 0.95, floating disabled
+    [app_id="^(?i)notesnook$"]                               border none, opacity set 0.90, floating disabled
     [app_id="^swayimg(_.*)?$"]                               border none, blur disable
     [app_id="^pavucontrol-qt$"]                              border normal, floating enable, resize set width 800 px height 450 px
     [app_id="^blueman-manager$"]                             border pixel 1, opacity 0.85, floating enable, resize set width 400 px height 500 px
@@ -326,7 +326,7 @@ bindsym --no-repeat {
     $KEY_WIN+L       exec "/usr/local/bin/lockctl -f"
     $KEY_WIN+Q       kill
     $KEY_WIN+S       exec "/usr/bin/xpad -n"
-    $KEY_CTL+Tab     exec "/usr/lib/smd/libexec/smd-message -u background"
+    $KEY_CTL+Tab     exec "/usr/lib/smd/cmd/smd-message background"
     $KEY_ALT+Return  exec "/usr/bin/kitty --single-instance --instance-group sway"
     $KEY_CTL+Escape  exec "/usr/bin/swaync-client -t"
     $KEY_WIN+Return  exec "/usr/bin/thunar"

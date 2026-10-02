@@ -34,11 +34,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-fail() {
+set -uo pipefail
+
+_fail() {
     notify-send -u critical -a clippy -i "screengrab" "Screenshot Failed" "Failed to take Screenshot!"
     exit 1
 }
-success() {
+_success() {
     if [ -z "$1" ]; then
         notify-send -t 3000 -a clippy -i "screengrab" "Screenshot Taken" "Saved to clipboard."
     else
@@ -53,8 +55,8 @@ if [ -z "$display" ]; then
 fi
 
 if [ "$1" = "copy" ]; then
-    grim -s 1.0 -l 5 -t png -o "$display" - | wl-copy --type image/png && success || fail
+    grim -s 1.0 -l 5 -t png -o "$display" - | wl-copy --type image/png && _success || _fail
 fi
 
 file="${HOME}/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png"
-grim -s 1.0 -l 5 -t png -o "$display" "$file" && success "$file" || fail
+grim -s 1.0 -l 5 -t png -o "$display" "$file" && _success "$file" || _fail

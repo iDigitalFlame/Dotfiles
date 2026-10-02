@@ -16,7 +16,8 @@
 #       `///yyysshd++`         #
 #                              #
 ########## SPACEPORT ###########
-## Auto Userspace Mount Helper
+## CropGUI Helper
+# Workaround for CropGUI not being on the latest Python directory.
 #
 # Copyright (C) 2016 - 2026 iDigitalFlame
 #
@@ -34,7 +35,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Workaround for CropGUI not being on the latest Python directory.
 if [ $# -eq 0 ]; then
     env PYTHONPATH="$(find '/usr/lib/' -maxdepth 1 -type d -name 'python3.*' -exec printf '{}/site-packages:' \;)" /usr/bin/cropgui
 else

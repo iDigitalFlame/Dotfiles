@@ -34,6 +34,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+set -uo pipefail
+
 if [ $# -ne 1 ]; then
     printf "aumount <mounted_dir>\n"
     exit 2

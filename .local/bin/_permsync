@@ -34,8 +34,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Enable Strict Mode
-set -u
+set -uo pipefail
 
 printf "\033[1;36mSetting permissions for \033[0m%s\033[1;36m..\033[0m\n" "$HOME"
 chmod "=2750" "$HOME"

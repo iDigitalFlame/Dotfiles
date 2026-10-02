@@ -193,14 +193,14 @@ function pyhttp() {
     python -m http.server "$port"
 }
 function _firewall_open() {
-    sudo sh -c "nft add chain inet filter input '{ policy accept; }'; nft add chain inet filter output '{ policy accept; }'"
+    sudo /usr/bin/dash -c "nft add chain inet filter input '{ policy accept; }'; nft add chain inet filter output '{ policy accept; }'"
 }
 function _firewall_close() {
-    sudo sh -c "nft flush table ip nat; nft flush table inet filter; nft delete table ip nat; nft delete table inet filter; nft -f /etc/nftables.conf"
+    sudo /usr/bin/dash -c "nft flush table ip nat; nft flush table inet filter; nft delete table ip nat; nft delete table inet filter; nft -f /etc/nftables.conf"
 }
 
 # Golang Helpers
-function go10() {
+function _go10() {
     # NOTE(dij): This needs to be function instead of an alias as we need to
     #            read $PWD when running go1.10 due to the lack of module support.
     #            If it was an alias, it would default to the $HOME directory always.
@@ -209,7 +209,7 @@ function go10() {
 
 # Golang Aliases
 alias wgo="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOOS=windows go"
-alias go10="nocorrect go10"
+alias go10="nocorrect _go10"
 alias go14="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/14.15' '${HOME}/Documents/Development/GoArchive/14.15/bin/go'"
 alias go16="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/16.15' '${HOME}/Documents/Development/GoArchive/16.15/bin/go'"
 alias go18="nocorrect /usr/bin/ghr firewall-all /usr/bin/env GOROOT='${HOME}/Documents/Development/GoArchive/18.10' '${HOME}/Documents/Development/GoArchive/18.10/bin/go'"
@@ -257,12 +257,12 @@ alias expresso="lockerctl -z 900 -kb 900 -kl 900 -s 900"
 alias insomnia="lockerctl -kz true -kb true -kl true -ks true"
 
 # CPU Aliases
-alias power0="cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power"
+alias power0="cpuctl -P min"
 alias power1="cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power"
 alias power2="cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power"
 alias power3="cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p balance_performance"
 alias power4="cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance"
-alias power5="cpuctl -s -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance"
+alias power5="cpuctl -P max"
 
 # LSd Aliases
 alias l="/usr/bin/lsd -vFl --group-directories-first --color=auto"
@@ -276,11 +276,11 @@ alias ssc="${HOME}/.local/bin/sway/shot copy"
 alias selc="${HOME}/.local/bin/sway/clip copy"
 
 # Go Aliases
-alias gv="/usr/bin/ghr firewall-web /usr/bin/go vet ./..."
-alias go-check="/usr/bin/ghr firewall-web /usr/bin/sh -c 'go mod tidy; go vet ./...; staticcheck ./...'"
-alias go-update="go list -u -m -json all | go-mod-outdated -update"
-alias go-outdated="go list -u -m -json all | go-mod-outdated"
-alias go-check-win="/usr/bin/ghr firewall-web /usr/bin/env GOOS=windows staticcheck ./..."
+alias gv="/usr/bin/ghr firewall-all /usr/bin/go vet ./..."
+alias go-check="/usr/bin/ghr firewall-all /usr/bin/sh -c '/usr/bin/go mod tidy; /usr/bin/go vet ./...; staticcheck ./...'"
+alias go-update="/usr/bin/ghr firewall-all /usr/bin/go list -u -m -json all | go-mod-outdated -update"
+alias go-outdated="/usr/bin/ghr firewall-all /usr/bin/go list -u -m -json all | go-mod-outdated"
+alias go-check-win="/usr/bin/ghr firewall-all /usr/bin/env GOOS=windows staticcheck ./..."
 alias go-tools-update="/usr/bin/ghr firewall-all '${HOME}/.local/lib/go/bin/go-global-update'"
 
 # Rust Aliases
@@ -294,15 +294,15 @@ alias xx="exit"
 alias cls="clear"
 alias del="trash"
 alias vsc="code"
+alias tmux="tmux -u"
 alias tree="swaymsg -t get_tree"
-alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
 alias gsync="git add -A .; git commit; git push"
 alias nohist="export HISTFILE=/dev/null; export HISTSIZE=0; export SAVEHIST=0"
 alias weather="/usr/bin/ghr firewall-web /usr/bin/curl 'wttr.in/?0'"
-alias powershell="pwsh"
 alias pip_install="/usr/bin/ghr firewall-web /usr/bin/env PYTHONPYCACHEPREFIX='/var/cache/python' PIP_USER=yes /usr/bin/python3 -X pycache_prefix='/var/cache/python' -OO /usr/bin/pip install --break-system-packages"
 
 # Fixup Aliases
+alias wgcc="nocorrect /usr/bin/x86_64-w64-mingw32-gcc"
 alias find="noglob /usr/bin/find"
 alias hydra="nocorrect hydra"
 alias convert="nocorrect convert"

@@ -81,35 +81,35 @@
             "menu#actions": {
                 "actions": [
                     {
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'",
+                        "command": "dash -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip copy'",
                         "label": " Screenclip Copy"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'",
+                        "command": "dash -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot copy'",
                         "label": " Screenshot Copy"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'",
+                        "command": "dash -c 'swaync-client -cp; ${HOME}/.local/bin/sway/clip'",
                         "label": " Screenclip"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'",
+                        "command": "dash -c 'swaync-client -cp; ${HOME}/.local/bin/sway/shot'",
                         "label": " Screenshot"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; swaync-client --toggle-dnd'",
+                        "command": "dash -c 'swaync-client -cp; swaync-client --toggle-dnd'",
                         "label": " Toggle DnD"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-off'",
+                        "command": "dash -c 'swaync-client -cp; swaync-client --dnd-off'",
                         "label": " Disable DnD"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; swaync-client --dnd-on'",
+                        "command": "dash -c 'swaync-client -cp; swaync-client --dnd-on'",
                         "label": " Enable DnD"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; ${HOME}/.local/bin/hview'",
+                        "command": "dash -c 'swaync-client -cp; ${HOME}/.local/bin/hview'",
                         "label": " Connect to VM"
                     }
                 ],
@@ -121,51 +121,51 @@
                 "actions": [
                     {
                         "label": " Clear All Lockers",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kz false -kb false -kl false -ks false'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kz false -kb false -kl false -ks false'"
                     },
                     {
                         "label": " Clear All Lockers (Include System)",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kz false -kb false -kl false -ks false -kl false -kd false'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kz false -kb false -kl false -ks false -kl false -kd false'"
                     },
                     {
                         "label": " Coffee (All 5m)",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -z 300 -kb 300 -kl 300 -s 300'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -z 300 -kb 300 -kl 300 -s 300'"
                     },
                     {
                         "label": " Caffeine (All 10m)",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -z 600 -kb 600 -kl 600 -s 600'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -z 600 -kb 600 -kl 600 -s 600'"
                     },
                     {
                         "label": " Cocaine (All 15m)",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -z 900 -kb 900 -kl 900 -s 900'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -z 900 -kb 900 -kl 900 -s 900'"
                     },
                     {
                         "label": " Insomnia (All Unlimited)",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kz true -kb true -kl true -ks true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kz true -kb true -kl true -ks true'"
                     },
                     {
                         "label": " Disable Screen Blank",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kb true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kb true'"
                     },
                     {
                         "label": " Disable Screen Lock",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kl true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kl true'"
                     },
                     {
                         "label": " Disable Sleep",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -ks true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -ks true'"
                     },
                     {
                         "label": " Disable Hibernation",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kz true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kz true'"
                     },
                     {
                         "label": " Disable Lid Switch",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -kd true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -kd true'"
                     },
                     {
                         "label": " Disable Yubikey",
-                        "command": "sh -c 'swaync-client -cp; lockerctl -ky true'"
+                        "command": "dash -c 'swaync-client -cp; lockerctl -ky true'"
                     }
                 ],
                 "animation-type": "slide_down",
@@ -176,27 +176,27 @@
                 "actions": [
                     {
                         "label": " Power Saving (Max 600Mhz)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 600Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p power'"
                     },
                     {
                         "label": " Less Savings (Max 800Mhz)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 800Mhz -m 400Mhz -t 0 -tx 20 -tm 10 -g powersave -p balance_power'"
                     },
                     {
                         "label": " Semi-Balanced (Max 1.5Ghz)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 1.5Ghz -m 400Mhz -t 0 -tx 40 -tm 10 -g powersave -p balance_power'"
                     },
                     {
                         "label": " Balanced (Max 2.5Ghz)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p balance_performance'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 2.5Ghz -m 400Mhz -t 1 -tx 70 -tm 10 -g performance -p balance_performance'"
                     },
                     {
                         "label": " Power (Max 3Ghz, Turbo)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 3.0Ghz -m 400Mhz -t 1 -tx 85 -tm 20 -g performance -p performance'"
                     },
                     {
                         "label": " Max Power (Max 4.8Ghz, Turbo)",
-                        "command": "sh -c 'swaync-client -cp; cpuctl -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance'"
+                        "command": "dash -c 'swaync-client -cp; cpuctl -x 4.8Ghz -m 400Mhz -t 1 -tx 100 -tm 10 -g performance -p performance'"
                     }
                 ],
                 "animation-type": "slide_down",
@@ -206,11 +206,11 @@
             "buttons": {
                 "actions": [
                     {
-                        "command": "sh -c 'swaync-client -cp; bluectl -t'",
+                        "command": "dash -c 'swaync-client -cp; bluectl -t'",
                         "label": ""
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; wlay'",
+                        "command": "dash -c 'swaync-client -cp; wlay'",
                         "label": ""
                     }
                 ],
@@ -219,15 +219,15 @@
             "menu#power": {
                 "actions": [
                     {
-                        "command": "sh -c 'swaync-client -cp; lockctl -f'",
+                        "command": "dash -c 'swaync-client -cp; lockctl -f'",
                         "label": " Lock"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; sudo systemctl suspend'",
+                        "command": "dash -c 'swaync-client -cp; sudo systemctl suspend'",
                         "label": " Suspend"
                     },
                     {
-                        "command": "sh -c 'swaync-client -cp; sudo systemctl hibernate'",
+                        "command": "dash -c 'swaync-client -cp; sudo systemctl hibernate'",
                         "label": " Hibernate"
                     },
                     {

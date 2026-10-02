@@ -113,6 +113,8 @@
         "format-alt": "{:%a %b %d | %H:%M}",
         "interval": 60,
         "timezone": "America/New_York",
+        // NOTE(dij): For DEFCON/BSLV
+        // "timezone": "America/Los_Angeles",
         "tooltip": true,
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
@@ -210,7 +212,7 @@
             },
             {
                 "type": "audio-in",
-                "name": "\"Windows 11 Domain\""
+                "name": "\"Windows 11 LSTC Domain\""
             },
             {
                 "type": "audio-in",

@@ -34,18 +34,38 @@
     along with this program.  If not, see <https: //www.gnu.org/licenses/>.
 */
 
+body {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+#alltabs-button,
+#appMenu-create-profile-button,
+#appMenu-empty-profiles-button,
+#appMenu-help-button2,
+#appMenu-passwords-button,
+#appMenu-profiles-button,
+#unified-extensions-button,
+#star-button-box {
+    display: none !important
+}
+
 #nav-bar {
     border: none !important;
-    background: transparent !important
+    background: transparent !important;
+    background-color: transparent !important
 }
 #main-window {
-    background: transparent !important
+    background: transparent !important;
+    background-color: transparent !important
 }
 #browser, #navigator-toolbox {
-    background: rgba(10, 0, 10, 0.45) !important
+    background: rgba(10, 0, 10, 0.45) !important;
+    background-color: rgba(10, 0, 10, 0.45) !important
 }
-#alltabs-button, #unified-extensions-button, #star-button-box {
-    display: none !important
+
+#main-button span.button-background {
+    background: transparent !important
 }
 
 button-group.actions-list > moz-button[aria-pressed="false"] {

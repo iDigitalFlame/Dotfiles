@@ -39,55 +39,260 @@
 @keyframes tab-burst-animation {}
 @keyframes tab-burst-animation-light {}
 
-html#main-window {
-    background: transparent !important;
-    --color-bg: transparent !important;
-    --tab-inner-inline-margin: 4px !important;
-    --lwt-accent-color: transparent !important;
-    --panel-color: rgb(255, 255, 255) !important;
-    --toolbarbutton-outer-padding: 2px !important;
-    --theme-colors-sidebar: transparent !important;
+html#main-window, :root {
+    --z-color-clear: transparent;
+    --z-color-background: rgba(10, 0, 10, 0.7);
+    --z-color-text: rgb(255, 255, 255);
+    --z-color-active: rgba(172, 15, 235, 0.75);
+    --z-color-hover: rgba(172, 15, 235, 0.75);
+    /*rgba(199, 131, 255, 0.75)*/
+    --z-color-hover-menu: rgba(172, 15, 235, 0.75);
+
+    --arrowpanel-background: var(--z-color-background) !important;
+    --arrowpanel-border-color: var(--z-color-clear) !important;
+    --arrowpanel-color: var(--z-color-text) !important;
+    --background-color-canvas: var(--z-color-clear) !important;
+    --border-radius-large: 12px !important;
+    --border-radius-medium: 12px !important;
+    --button-active-bgcolor: var(--z-color-active) !important;
+    --button-active-hover-bgcolor: var(--z-color-active) !important;
+    --button-background-color: var(--z-color-background) !important;
+    --button-background-color-ghost-hover: var(--z-color-hover) !important;
+    --button-background-color-ghost: var(--z-color-clear) !important;
+    --button-background-color-hover: var(--z-color-hover) !important;
+    --button-background-color-menu-hover: var(--z-color-active) !important;
+    --button-hover-bgcolor: var(--z-color-hover) !important;
+    --button-primary-hover-bgcolor: var(--z-color-active) !important;
+    --button-text-color-ghost-active: var(--z-color-text) !important;
+    --button-text-color-ghost-hover: var(--z-color-text) !important;
+    --button-text-color-ghost: var(--z-color-text) !important;
+    --button-text-color-menu: var(--z-color-text) !important;
+    --color-bg: var(--z-color-clear) !important;
+    --lwt-accent-color: var(--z-color-clear) !important;
+    --lwt-toolbar-field-background-color: var(--z-color-clear) !important;
+    --lwt-toolbar-field-color: var(--z-color-text) !important;
+    --lwt-toolbar-field-focus-color: var(--z-color-text) !important;
+    --menu-background-color: var(--z-color-background) !important;
+    --menu-border-color: var(--z-color-active) !important;
+    --menu-color: var(--z-color-text) !important;
+    --menu-disabled-color: rgba(50, 50, 50, 0.75) !important;
+    --menuitem-disabled-hover-background-color: rgba(80, 80, 80, 0.6) !important;
+    --menuitem-hover-background-color: var(--z-color-active) !important;
+    --panel-background-color: var(--z-color-background) !important;
+    --panel-background: var(--z-color-background) !important;
+    --panel-border-color: var(--z-color-active) !important;
+    --panel-color: var(--z-color-text) !important;
     --tab-collapsed-background-width: 30px !important;
-    --background-color-canvas: transparent !important;
-    --arrowpanel-border-color: transparent !important;
-    --arrowpanel-color: rgb(255, 255, 255) !important;
-    --toolbar-bgcolor: rgba(10, 0, 10, 0.65) !important;
-    --panel-background: rgba(10, 0, 10, 0.7) !important;
-    --button-hover-bgcolor: rgb(125, 11, 171) !important;
-    --button-background-color-ghost: transition !important;
-    --button-active-bgcolor: rgb(172, 15, 235) !important;
+    --tab-inner-inline-margin: 4px !important;
     --tab-pinned-expanded-background-width: 30px !important;
-    --lwt-toolbar-field-color: rgb(255, 255, 255) !important;
-    --arrowpanel-background: rgba(10, 0, 10, 0.7) !important;
-    --lwt-toolbar-field-background-color: transparent !important;
-    --button-active-hover-bgcolor: rgb(172, 15, 235) !important;
-    --button-primary-hover-bgcolor: rgb(125, 11, 171) !important;
-    --button-background-color-hover: rgb(172, 15, 235) !important;
-    --lwt-toolbar-field-focus-color: rgb(255, 255, 255) !important;
-    --toolbarbutton-hover-background: rgb(125, 11, 171) !important;
-    --toolbarbutton-active-background: rgb(125, 11, 171) !important;
-    --toolbar-field-background-color: rgba(10, 0, 10, 0.6) !important;
-    --toolbar-field-focus-background-color: rgba(10, 0, 10, 0.85) !important;
-    --button-background-color-ghost-hover: rgba(199, 131, 255, 0.65) !important
+    --tabpanel-background-color: var(--z-color-clear) !important;
+    --tabstrip-inner-border: var(--z-color-clear) !important;
+    --theme-colors-sidebar: var(--z-color-clear) !important;
+    --toolbar-bgcolor: var(--z-color-background) !important;
+    --toolbar-field-background-color: var(--z-color-background) !important;
+    --toolbar-field-focus-background-color: var(--z-color-background) !important;
+    --toolbarbutton-active-background: var(--z-color-active) !important;
+    --toolbarbutton-background-color-active: 1;
+    --toolbarbutton-border-radius: 14px !important;
+    --toolbarbutton-hover-background: var(--z-color-active) !important;
+    --toolbarbutton-outer-padding: 2px !important;
+    --toolbox-background-color-inactive: var(--z-color-clear) !important;
+    --toolbox-background-color: var(--z-color-clear) !important;
+    --toolbox-bgcolor-inactive: var(--z-color-clear) !important;
+    --toolbox-bgcolor: var(--z-color-clear) !important;
+
+    background: var(--z-color-clear) !important;
+    background-color: var(--z-color-clear) !important
 }
-input#urlbar-input {
+
+/* URL Bar */
+
+div.urlbarView {
+    border: none !important;
+    border-radius: 12px !important;
+    background-color: transparent !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important
+}
+
+#urlbar {
+    --urlbar-border-radius: 12px !important;
+    border: none;
+    border-radius: 12px !important;
+    color: var(--z-color-text) !important
+}
+#urlbar[open] {
+    border: 1px solid var(--z-color-active) !important
+}
+#urlbar-input {
     font-size: 10pt !important;
     font-weight: 400 !important;
     padding-left: 4px !important;
-    background: transparent !important;
-    caret-color: rgb(255, 255, 255) !important;
+    color: var(--z-color-text) !important;
+    background: var(--z-color-clear) !important;
+    caret-color: var(--z-color-text) !important;
     font-family: "Source Code Pro", Arial, sans-serif !important
 }
+
+.urlbar-container {
+    margin-inline: 3px !important;
+    padding-block: 2px !important
+}
+.urlbar-input-box {
+    border-radius: 5px !important;
+    margin-inline-start: 0 !important
+}
+.urlbar-background {
+    border: none !important;
+    border-radius: 12px !important;
+    background: var(--z-color-background) !important;
+    background-color: var(--z-color-background) !important
+}
+.urlbarView-action {
+    color: #FFF !important
+}
+.urlbarView-row[selected] {
+    background: var(--z-color-active) !important;
+    background-color: var(--z-color-active) !important
+}
+
+/* URL Bar Icons */
+
+#trust-icon-container {
+    --urlbar-box-background-color: var(--z-color-clear) !important;
+    --urlbarview-background-color-hover: var(--z-color-clear) !important;
+    --urlbarview-background-color-active: var(--z-color-clear) !important;
+    border: none !important;
+    background: var(--z-color-clear) !important;
+    background-color: var(--z-color-clear) !important
+}
+#trustpanel-toggle-checkbox-container {
+    margin: 0 5px !important
+}
+#searchmode-switcher-panel-list-urlbar {
+    background: var(--z-color-clear) !important;
+    background-color: var(--z-color-clear) !important
+}
+
+.searchmode-switcher {
+    --button-background-color: var(--z-color-clear) !important;
+    --button-background-color-hover: var(--z-color-clear) !important;
+    --button-background-color-active: var(--z-color-clear) !important
+}
+.searchmode-switcher-installed {
+    --icon-url: url(chrome://browser/skin/preferences/category-search.svg) !important
+}
+.button-background > img[src^="blob:"] {
+    content: url(chrome://browser/skin/preferences/category-search.svg) !important
+}
+
+dialog#commonDialog {
+    background: rgba(10, 0, 10, 0.8) !important;
+    background-color: rgba(10, 0, 10, 0.8) !important
+}
+
+/* Buttons */
+
+#sidebar-button stack,
+#downloads-button > stack,
+#PanelUI-menu-button > stack,
+#sidebar-button[expanded] stack,
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon,
+#stop-reload-button .toolbarbutton-icon,
+#unified-extensions-button .toolbarbutton-icon,
+#nav-bar-customization-target > toolbaritem box.unified-extensions-item-row-wrapper > toolbarbutton > stack {
+    --toolbarbutton-border-radius: 14px !important;
+    border-radius: 14px !important;
+    background: var(--z-color-background) !important;
+    background-color: var(--z-color-background) !important;
+}
+#sidebar-button:hover stack,
+#downloads-button:hover > stack,
+#PanelUI-menu-button:hover > stack,
+#sidebar-button[expanded]:hover stack,
+#back-button:hover > .toolbarbutton-icon,
+#forward-button:hover > .toolbarbutton-icon,
+#stop-reload-button:hover .toolbarbutton-icon,
+#unified-extensions-button:hover .toolbarbutton-icon,
+#nav-bar-customization-target > toolbaritem:hover box.unified-extensions-item-row-wrapper > toolbarbutton > stack {
+    background: var(--z-color-active) !important;
+    background-color: var(--z-color-active) !important;
+}
+
 button-group.actions-list > moz-button[aria-pressed="false"][view="viewCustomizeSidebar"] {
     display: none !important
 }
 
-:is(menupopup, panel):where([type="arrow"]) {
-    --panel-background: rgba(10, 0, 10, 0.7) !important
+/* Hide Menu Items */
+
+#star-button-box,
+#appMenu-create-profile-button,
+#appMenu-empty-profiles-button,
+#appMenu-help-button2,
+#appMenu-passwords-button,
+#appMenu-profiles-button,
+#context_moveTabToSplitView,
+#context_closeTabOptions,
+#context_bookmarkSelectedTabs,
+#context_bookmarkTab,
+#context_addNote,
+#context_editNote,
+#toolbar-context-bookmarkSelectedTab,
+#toolbar-context-toggle-vertical-tabs,
+#toolbar-context-selectAllTabs,
+#context-sep-copylink,
+#context-sep-sendpagetodevice,
+#context-sendpagetodevice,
+#context-translate-selection,
+#context-translate-page,
+#context-searchselect,
+#context-searchselect-private,
+#context-sep-screenshots,
+#context-take-screenshot,
+#fill-login-generated-password,
+#use-relay-mask,
+#context-setDesktopBackground,
+#context-sep-setbackground,
+#context-sendlinktodevice,
+#context-openlinkinsplitview,
+#context-openlinksmartwindow,
+#context-bookmarklink,
+#context-ask-chat,
+#context-bidi-text-direction-toggle,
+#context-bidi-page-direction-toggle,
+#context-sep-bidi,
+#context-media-eme-learnmore,
+#context-inspect-a11y,
+#context-viewpartialsource-selection,
+#urlbar-label-box,
+.search-button-actions,
+.searchmode-switcher-panel-search-settings-button,
+.searchmode-switcher-panel-installed-engine-separator {
+    display: none !important
 }
 
 #sidebar-main {
     --space-medium: 1px !important
+}
+#sidebar, #customization-container {
+    background-color: transparent !important
+}
+
+/* Tabs */
+
+tab-group {
+    margin: 2px 5px !important;
+    transition: all 0.15s ease-in-out !important
+}
+tab-group tab {
+    margin: 1px 5px !important
+}
+tab-group:before {
+    inset-inline-start: -5px !important;
+    transition: all 0.15s ease-in-out !important
+}
+tab[class^="identity-color-"] vbox.tab-background {
+    border-radius: 0 0 5px 5px !important
 }
 
 .tab-context-line {
@@ -97,38 +302,81 @@ button-group.actions-list > moz-button[aria-pressed="false"][view="viewCustomize
     border-radius: 5px !important;
     transition: all 0.15s ease-in-out !important;
 }
-tab[class^="identity-color-"] vbox.tab-background {
-    border-radius: 0 0 5px 5px !important
+
+vbox.tab-group-overflow-count-container {
+    margin-bottom: 2px !important;
+    margin-inline-start: 5px !important;
+}
+label.tab-group-overflow-count {
+    padding: 2px 0 2px 5px !important;
 }
 
-tab-group {
-    margin: 3px 0 3px 5px !important;
-    transition: all 0.15s ease-in-out !important
+tag-group:has(+ tab) .tab-stack {
+    margin-inline-start: 0 !important;
 }
-tab-group:before {
-    inset-inline-start: -5px !important;
-    transition: all 0.15s ease-in-out !important
+
+#tab-group-name {
+    padding: 5px 8px !important;
+    border: 1px solid var(--z-color-active) !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
+
+vbox.tab-group-label-hover-highlight {
+    margin-inline-end: 4px !important;
+}
+
+vbox.tab-group-label-container {
+    margin-right: 0 !important;
+    margin-left: 4px !important;
+    margin-block-start: 0 !important;
+    padding-block-end: 2px !important;
+    border-radius: 0 !important;
+}
+label.tab-group-label {
+    font-weight: bold !important;
+    border-radius: 2px !important;
+    font-family: 'FiraCode Nerd Font Mono' !important;
+}
+
+#tabbrowser-tabs[orient="vertical"] tab-group .tab-background {
+    margin: 0 0 0 5px !important;
+}
+#tabbrowser-tabs[orient="vertical"] tab-group .tab-content {
+    padding-right: 6px !important;
+}
+
+
+#tab-group-label-container {
+    padding-block-end: 0 !important;
+}
+
 .tab-group-label {
-    margin-block: 5px !important;
-    transition: all 0.15s ease-in-out !important
-}
-.tab-group-label-container {
-    margin-bottom: 2px !important;
-    transition: all 0.15s ease-in-out !important
+    max-width: 100% !important;
+    align-self: normal !important
 }
 
 #tabbrowser-tabs[orient="vertical"] .tab-group-label {
     margin: 2px 0 2px 0 !important;
     transition: all 0.15s ease-in-out !important
 }
-#tabbrowser-tabs[orient="vertical"] tab-group .tabbrowser-tab {
-    margin: 1px 0 0 -4px !important;
+#tabbrowser-tabs[orient="vertical"] & .tab-background {
+    margin-inline: 4px !important;
+    transition: all 0.15s ease-in-out !important
+}
+#tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-close-button {
+    padding: 1px !important;
+    background-image: none !important;
+    background: rgb(255, 0, 0) !important;
     transition: all 0.15s ease-in-out !important
 }
 
+#vertical-tabs {
+    margin-top: 1px !important
+}
+
 #tabbrowser-tabs {
-    margin: 0 0 0 3px !important;
+    margin: 0 !important;
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabbox {
@@ -144,18 +392,8 @@ tab-group:before {
     margin: 0 auto !important;
     transition: all 0.15s ease-in-out !important
 }
-#tabbrowser-tabs[orient="vertical"] & .tab-background {
-    margin-inline: 4px !important;
-    transition: all 0.15s ease-in-out !important
-}
 #tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
     margin: 0 auto !important;
-    transition: all 0.15s ease-in-out !important
-}
-#tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-close-button {
-    padding: 1px !important;
-    background-image: none !important;
-    background: rgb(255, 0, 0) !important;
     transition: all 0.15s ease-in-out !important
 }
 #tabbrowser-tabs[expanded] #tabs-newtab-button, #tabbrowser-tabs[expanded] #vertical-tabs-newtab-button {
@@ -197,8 +435,9 @@ tab-group:before {
     transition: all 0.15s ease-in-out !important
 }
 .tab-background {
+    outline: none !important;
     margin-block: 0 !important;
-    border-radius: 5px !important;
+    border-radius: 0 0 5px 5px !important;
     transition: all 0.15s ease-in-out !important;
 }
 #tabbrowser-tabs {
@@ -243,7 +482,7 @@ tab-group:before {
     transition: all 0.15s ease-in-out !important
 }
 #pinned-tabs-container .tabbrowser-tab .tab-background, #vertical-pinned-tabs-container .tabbrowser-tab .tab-background {
-    background: rgba(10, 0, 10, 0.6) !important
+    background: var(--z-color-background) !important
 }
 #pinned-tabs-container-separator, #pinned-tabs-splitter, #vertical-pinned-tabs-container-separator, #vertical-pinned-tabs-splitter {
     display: block !important;
@@ -257,46 +496,60 @@ tab-group:before {
     background: rgba(172, 15, 235, 0.6) !important
 }
 
-menupopup {
-    --menu-color: rgb(255, 255, 255) !important;
-    transition: all 0.15s ease-in-out !important;
-    --panel-color: rgb(255, 255, 255) !important;
-    --arrowpanel-color: rgb(255, 255, 255) !important;
+
+panel, menupopup {
+    --menu-color: var(--z-color-text) !important;
+    --panel-color: var(--z-color-text) !important;
+    --arrowpanel-color: var(--z-color-text) !important;
     --menu-border-color: rgb(125, 11, 171) !important;
     --panel-border-color: rgb(125, 11, 171) !important;
     --panel-background: rgba(10, 0, 10, 0.7) !important;
     --button-hover-bgcolor: rgb(125, 11, 171) !important;
     --arrowpanel-border-color: rgb(125, 11, 171) !important;
     --menu-disabled-color: rgba(50, 50, 50, 0.75) !important;
-    --menu-background-color: rgba(10, 0, 10, 0.7) !important;
-    --arrowpanel-background: rgba(10, 0, 10, 0.7) !important;
+    --menu-background-color: var(--z-color-background) !important;
+    --arrowpanel-background: var(--z-color-background) !important;
     --menuitem-hover-background-color: rgb(125, 11, 171) !important;
     --menuitem-disabled-hover-background-color: rgba(80, 80, 80, 0.75) !important
 }
+
+
+panelmultiview#appMenu-multiView {
+    background: var(--z-color-background) !important;
+}
+menupopup, panelmultiview#appMenu-multiView {
+    --panel-border-radius: 10px !important;
+    --panel-border-color: rgba(172, 15, 235, 0.6) !important;
+    --panel-background-color: var(--z-color-background) !important;
+}
+
 panelmultiview {
-    padding: 2px !important;
-    border-radius: 10px !important;
-    background: rgba(10, 0, 10, 0.2) !important;
+    background: transparent !important;
     transition: all 0.15s ease-in-out !important;
-    border: 1px solid rgb(172, 15, 235) !important
 }
 toolbar .toolbaritem-combined-buttons {
     margin-inline: 0 !important
 }
-toolbarbutton:hover .toolbarbutton-icon {
-    background: rgb(125, 11, 171) !important
-}
-panelmultiview#appMenu-multiView, panel#appMenu-popup {
-    --panel-background: rgba(10, 0, 10, 0.4) !important
+panel#appMenu-popup {
+    --panel-border-radius: 10px !important;
+    --panel-background: transparent !important;
+    --panel-background-color: transparent !important;
+    --panel-border-color: rgb(172, 15, 235) !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }
 splitter, #sidebar-header, #history-panel, #sidebar-box, #bookmarksPanel, #tabbrowser-tabbox, #tabbrowser-tabpanels, #webext-panels-browser {
     border: none !important;
     background: transparent !important
 }
 
-*[id^="treestyletab_piro_sakura_ne_jp-menuitem-_context_send"] {
-    display: none !important
+#ContentSelectDropdown {
+    color: #FFF !important;
 }
+#ContentSelectDropdown menuitem {
+    color: #FFF !important;
+}
+
 
 #identity-box,
 .titlebar-min,
@@ -331,7 +584,7 @@ menuitem[id^="skipredirect_sblask-menuitem-_copy-target-url"],
     appearance: none !important
 }
 
-vbox.browserContainer {
+box.browserContainer, vbox.browserContainer {
     outline: 0 !important;
     box-shadow: none !important;
     background: transparent !important;
@@ -344,6 +597,7 @@ vbox.browserContainer {
 #webextpanels-window,
 #sidebar-box > #browser,
 .sidebar-panel[lwt-sidebar],
+#main-button span.button-background,
 .browser-toolbar:not(.titlebar-color) {
     background: transparent !important
 }
@@ -359,39 +613,11 @@ vbox.browserContainer {
     box-shadow: none !important;
     --tabs-border-color: transparent !important
 }
-#PanelUI-menu-button {
-    padding-inline-end: 0 !important
-}
 #navigator-toolbox, #nav-bar {
     border: none !important
 }
-#tracking-protection-icon-container {
-    border-radius: 10px !important
-}
 
-#urlbar-background {
-    border-radius: 8px !important;
-    background-color: rgba(10, 0, 10, 0.7) !important
-}
-#urlbar-searchmode-switcher {
-    background-color: transparent !important
-}
-#urlbar-input, #urlbar-input div {
-    color: rgb(255, 255, 255) !important
-}
-#urlbar-searchmode-switcher image {
-    background: transparent !important;
-    background-color: transparent !important
-}
 
-.urlbarView {
-    border-radius: 0 8px 8px !important;
-    background-color: transparent !important;
-    /*box-shadow: 0 0 40px rgba(0, 0, 0, 0.4) !important*/
-}
-.urlbarView-row[selected] {
-    background: rgba(125, 11, 171, 0.8) !important
-}
 
 .panel-arrowbox {
     margin: 0 !important;
@@ -401,19 +627,8 @@ vbox.browserContainer {
     opacity: 1 !important
 }
 
-.urlbar-input-box {
-    border-radius: 5px !important
-}
-.urlbarView-action {
-    color: #FFF !important
-}
 
 .contentAreaContextMenu {
     border: none !important;
     appearance: none !important
-}
-.toolbarbutton-badge-stack, .toolbarbutton-icon {
-    border-radius: 10px !important;
-    background-color: rgba(10, 0, 10, 0.65);
-    transition: all 0.15s ease-in-out !important
 }

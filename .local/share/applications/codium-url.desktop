@@ -34,7 +34,7 @@
 #
 
 [Desktop Entry]
-Exec            = /usr/bin/codium --unity-launch --disable-gpu-compositing --open-url --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland %U
+Exec            = /usr/bin/codium --wayland --unity-launch --disable-gpu-compositing --open-url %U
 Icon            = vscodium
 Name            = Codium
 Type            = Application

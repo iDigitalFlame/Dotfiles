@@ -34,16 +34,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Disable all fullscreen windows
-/usr/bin/swaymsg "[workspace=__focused__] fullscreen disable" 1> /dev/null 2> /dev/null
-
-# Lock
 exec /usr/bin/gtklock \
---style="${HOME}/.config/theme/current/lockscreen.css" \
 --config=/dev/null \
 --gtk-theme=MoonlightSky \
+--style="${HOME}/.config/theme/current/lockscreen.css" \
 --background="${HOME}/.cache/smd/lockscreen.webp" \
---time-format="%H:%M" \
---idle-timeout=5 \
+--date-format="%A, %B %d" \
 --idle-hide \
+--idle-timeout=5 \
+--time-format="%H:%M" \
 --start-hidden

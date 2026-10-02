@@ -35,11 +35,11 @@
 #
 
 # Enable Strict Mode
-set -u
+set -uo pipefail
 
 THEME_DIR="${HOME}/.config/theme"
 
-fhelp() {
+_help() {
     printf "Theme Control\nUsage: %s [reset|reload|set|list|help]\n\n" "$(basename "$0")"
     if ! [ -e "${THEME_DIR}/current" ]; then
         echo "No theme selected!"
@@ -48,7 +48,7 @@ fhelp() {
     printf 'Current theme is "%s"\n' "$(basename "$(readlink "${THEME_DIR}/current")")"
     exit 0
 }
-freset() {
+_reset() {
     local theme=""
     if [ $# -eq 1 ]; then
         if [ -e "${THEME_DIR}/${1}" ]; then
@@ -68,6 +68,7 @@ freset() {
     chmod 2750 "${THEME_DIR}"
     rm         "${THEME_DIR}/current"
     ln -sT     "${THEME_DIR}/${theme}" "${THEME_DIR}/current"
+
     rm -f "${HOME}/.gtkrc-2.0"
     rm -f "${HOME}/.gtkrc-2.0.mine"
     rm -f "${HOME}/.config/gtk-1.0/gtkrc"
@@ -77,25 +78,25 @@ freset() {
     rm -f "${HOME}/.config/gtk-4.0/settings.ini"
     return 0
 }
-freload() {
+_reload() {
     if ! [ -e "${THEME_DIR}/current" ]; then
         return 1
     fi
     ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc"
     ln -sT "${THEME_DIR}/current/gtk-2.conf" "${HOME}/.config/gtk-2.0/gtkrc.mime"
     ln -sT "${THEME_DIR}/current/gtk-3.conf" "${HOME}/.config/gtk-3.0/settings.ini"
-    ln -sT "${THEME_DIR}/current/gtk-3.conf" "${HOME}/.config/gtk-4.0/settings.ini"
-    gsettings set "org.gnome.desktop.interface" gtk-theme "$(grep 'gtk-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
-    gsettings set "org.gnome.desktop.interface" font-name "$(grep 'gtk-font-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
-    gsettings set "org.gnome.desktop.interface" icon-theme "$(grep 'gtk-icon-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
-    gsettings set "org.gnome.desktop.interface" cursor-theme "$(grep 'gtk-cursor-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
-    gsettings set "org.gnome.desktop.interface" color-scheme "prefer-dark"
+    ln -sT "${THEME_DIR}/current/gtk-4.conf" "${HOME}/.config/gtk-4.0/settings.ini"
+    gsettings set "org.gnome.desktop.interface"  gtk-theme    "$(grep 'gtk-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface"  font-name    "$(grep 'gtk-font-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface"  icon-theme   "$(grep 'gtk-icon-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface"  cursor-theme "$(grep 'gtk-cursor-theme-name' "${THEME_DIR}/current/gtk-2.conf" | sed 's/.*\s*=\s*//')"
+    gsettings set "org.gnome.desktop.interface"  color-scheme "prefer-dark"
     gsettings set "org.gtk.Settings.FileChooser" startup-mode "cwd"
     return 0
 }
 
 if [ $# -eq 0 ]; then
-    fhelp
+    _help
 fi
 
 case "$1" in
@@ -104,11 +105,11 @@ case "$1" in
     ls -l "$THEME_DIR" | grep -vE "current |total " | awk '{print $9}' | awk '{print " - "$0}'
     ;;
     "reset")
-    freset
+    _reset
     ;;
     "reload")
-    freset
-    freload
+    _reset
+    _reload
     ;;
     "set")
     if [ $# -ne 2 ]; then
@@ -119,14 +120,14 @@ case "$1" in
         printf 'Theme "%s" does not exist!\n' "$2"
         exit 0
     fi
-    freset "$2"
-    freload
+    _reset "$2"
+    _reload
     ;;
     "help")
-    fhelp
+    _help
     ;;
     *)
-    fhelp
+    _help
     ;;
 esac
 exit 0

@@ -36,11 +36,11 @@
 
 import sys
 
-sys.path.insert(0, "/usr/lib/smd")
+sys.path.insert(0, "/usr/lib")
 
 from sys import argv
-from lib import print_error
-from lib.sway import focused, swaymsg, workspaces
+from smd.runtime import print_error
+from smd.lib import focused, swaymsg, workspaces
 
 # There's some special Workspaces that shouldn't be used as auto selections.
 DISALLOWED = [0, 1, 9, 10, 18, 19, 20]

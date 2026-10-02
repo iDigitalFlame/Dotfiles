@@ -34,8 +34,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Enable Strict Mode
-set -u
+set -uo pipefail
 
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
     echo 'smb [--reset] <domain\user|user> <share>'
@@ -110,7 +109,7 @@ if ! mkdir -p "$path" 2> /dev/null; then
     exit 1
 fi
 
-printf "%s\b%s\b%s\b%s\n" "$user" "$domain" "$password" "$USER" | sudo "/usr/lib/smd/sbin/smb" "${server}/${base}/${prefix}" "$path"
+printf "%s\b%s\b%s\b%s\n" "$user" "$domain" "$password" "$USER" | sudo "/usr/local/sbin/smb" "${server}/${base}/${prefix}" "$path"
 result=$?
 
 user=""

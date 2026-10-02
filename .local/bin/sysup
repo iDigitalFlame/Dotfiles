@@ -34,46 +34,59 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-# Enable Strict Mode
-set -u
+set -uo pipefail
 
 if [ -f "${HOME}/.local/apps/updateHosts/updateHostsFile.py" ]; then
-    if ! dash -c "cd \"${HOME}/.local/apps/updateHosts\"; sg firewall-web -c 'git pull' 2> /dev/null | grep -q 'Already up to date'"; then
+    if ! dash -c "cd '${HOME}/.local/apps/updateHosts'; /usr/bin/ghr firewall-web /usr/bin/dash -c 'git pull 2> /dev/null' | grep -q 'Already up to date'"; then
         printf "\x1b[93m\x1b[1mGrabbing updates to codebase...\x1b[0m\n"
-        cat<<EOF | sg firewall-web
-cd "${HOME}/.local/apps/updateHosts"
-git stash 1> /dev/null 2> /dev/null
-git pull 1> /dev/null 2> /dev/null
-EOF
+        /usr/bin/ghr firewall-web /usr/bin/dash -c "cd '${HOME}/.local/apps/updateHosts'; git stash 1> /dev/null 2> /dev/null; git pull -q 1> /dev/null 2> /dev/null"
     fi
     printf "\x1b[93m\x1b[1mUpdating hosts blocklist file..\x1b[0m\n"
-    cat<<EOF | sg firewall-web
-cd "${HOME}/.local/apps/updateHosts"
-git stash 1> /dev/null 2> /dev/null
-git pull 1> /dev/null 2> /dev/null
+    cat<<EOF | /usr/bin/ghr firewall-web /usr/bin/dash
+    cd "${HOME}/.local/apps/updateHosts"
+    python3 -X pycache_prefix=/var/cache/python -OO ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise --skipstatichosts
+    git stash 1> /dev/null 2> /dev/null
 EOF
-    sg firewall-web -c "cd ${HOME}/.local/apps/updateHosts; python3 ${HOME}/.local/apps/updateHosts/updateHostsFile.py --auto --compress --minimise"
     hosts="${HOME}/.local/apps/updateHosts/hosts"
 else
     hosts=""
 fi
 
-entries=$(
-cat<<EOF | sg firewall-web
-    curl -sL 'https://blocklistproject.github.io/Lists/facebook.txt'
-    curl -sL 'https://www.github.developerdan.com/hosts/lists/facebook-extended.txt'
-    curl -sL 'https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt'
-    curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all'
-    curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all'
-    for i in \$(curl -sL 'https://raw.githubusercontent.com/nocturnalarchives/BlockLists/master/facebook-trackers.txt' | grep -v '^#'); do
-        echo "0.0.0.0 \$i"
-    done
-    for i in \$(curl -sL 'https://raw.githubusercontent.com/krombopulosM/TikTok-blocklist/master/tiktok%20blocklist.txt' | grep -v '^#'); do
-        echo "0.0.0.0 \$i"
-    done
+localhost=$(
+cat<<EOF
+127.0.0.1 localhost
+127.0.0.1 localhost.localdomain
+127.0.0.1 local
+::1 localhost
+::1 ip6-localhost
+::1 ip6-loopback
+ff00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+127.0.0.1 $(hostname)
+127.0.0.1 cups
+172.16.2.3 lszb1.losynth.com
+EOF
+)
+
+blocked=$((
+cat<<EOF | /usr/bin/ghr firewall-web /usr/bin/dash
+curl -sL 'https://blocklistproject.github.io/Lists/facebook.txt'
+curl -sL 'https://www.github.developerdan.com/hosts/lists/facebook-extended.txt'
+curl -sL 'https://raw.githubusercontent.com/anudeepND/blacklist/master/facebook.txt'
+curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/facebook/all'
+curl -sL 'https://raw.githubusercontent.com/jmdugan/blocklists/master/corporations/pinterest/all'
+for i in \$(curl -sL 'https://raw.githubusercontent.com/nocturnalarchives/BlockLists/master/facebook-trackers.txt' | grep -v '^#'); do
+    echo "0.0.0.0 \$i"
+done
+for i in \$(curl -sL 'https://raw.githubusercontent.com/krombopulosM/TikTok-blocklist/master/tiktok%20blocklist.txt' | grep -v '^#'); do
+    echo "0.0.0.0 \$i"
+done
 EOF
 cat<<EOF
-0.0.0.0 cups
 0.0.0.0 www.facebook.com
 0.0.0.0 facebook.com
 0.0.0.0 login.facebook.com
@@ -101,34 +114,31 @@ cat<<EOF
 ::1 www.connect.facebook.net
 ::1 apps.facebook.com
 EOF
-)
+) | grep -vE '^#' | sort | uniq -u)
 
-sg firewall-web "/usr/bin/yay -Pw"
+/usr/bin/ghr firewall-web /usr/bin/yay -Pw
 
 printf "\x1b[96m\x1b[1mStarting pacman..\x1b[0m\n"
-if ! sudo dash -c 'mount -o rw,remount /; sg firewall-web "env SYSBATCH=1 /usr/bin/sysupdate"'; then
-    exit 1;
+sudo dash -c 'mount -o rw,remount /; /usr/bin/env SYSBATCH=1 /usr/bin/sysupdate' || exit 1
+
+if [ -n "$hosts" ]; then
+    printf "\x1b[93m\x1b[1mAdding generated hosts!\x1b[0m\n"
+    cat<<EOF | sudo -i --
+mount -o rw,remount /
+sync
+echo "$localhost" > "/etc/hosts"
+cat "$hosts" >> "/etc/hosts"
+echo "$blocked" >> "/etc/hosts"
+EOF
 fi
 
-echo "$entries" | grep -vE '^#' | sort > "/tmp/.hosts_file"
-cat<<EOF | sudo -i --
-    sync
-    if [ -n "$hosts" ]; then
-        printf "\x1b[93m\x1b[1mAdding generated hosts!\x1b[0m\n"
-        cp "$hosts" /etc/hosts
-    fi
-    mount -o rw,remount /
-    cat "/tmp/.hosts_file" >> "/etc/hosts";
-EOF
-rm -f "/tmp/.hosts_file"
-
 printf "\x1b[96m\x1b[1mStarting yay..\x1b[0m\n"
-if ! sg firewall-web "dash -c 'env SYSBATCH=1 PYTHONPYCACHEPREFIX=/var/cache/python PYTHONOPTIMIZE=2 /usr/bin/yay -Syua --answerclean N'"; then
+if ! /usr/bin/ghr firewall-web /usr/bin/env SYSBATCH=1 PYTHONPYCACHEPREFIX=/var/cache/python PYTHONOPTIMIZE=2 /usr/bin/yay -Syua --answerclean N; then
     exit 1;
 fi
 
 printf "\x1b[96m\x1b[1mUpdating PIP packages...\x1b[0m\n"
-cat<<EOF | sg firewall-web
+cat<<EOF | /usr/bin/ghr firewall-web /usr/bin/dash
     export PIP_USER=yes
     export PYTHONOPTIMIZE=2
     export PYTHONPYCACHEPREFIX=/var/cache/python

@@ -54,27 +54,30 @@ hydra:
   directory: "/opt/hydra/dij"
 
 locker:
-  ac:
-    blank: 300
-    cpu: "max"
-    hibernate: false
-    key: false
-    lid: true
-    lockscreen: 600
-    suspend: 300
-  battery:
-    blank: 30
-    cpu:
-      efficiency: "power"
-      governor: "powersave"
-      max: "800Mhz"
-      min: "400Mhz"
-    hibernate: 180
-    key: true
-    lid: true
-    lockscreen: 120
-    suspend: 120
+  ac: "ac"
+  battery: "battery"
   lock_command: "${HOME}/.local/bin/sway/lock"
+  profiles:
+    ac:
+      blank: 300
+      cpu: "max"
+      hibernate: false
+      key: false
+      lid: true
+      lockscreen: 600
+      suspend: 300
+    battery:
+      blank: 30
+      cpu:
+        efficiency: "power"
+        governor: "powersave"
+        max: "800Mhz"
+        min: "400Mhz"
+      hibernate: 180
+      key: true
+      lid: true
+      lockscreen: 120
+      suspend: 120
 
 notify:
   default: "dialog-information.svg"

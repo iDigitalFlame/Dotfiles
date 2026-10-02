@@ -254,9 +254,6 @@ div[class^="backgroundDark_"], div[class^="backgroundLight"], div[class^="foregr
 }
 
 /* Hide Promoted Quests */
-div[class^="body__"] div[class^="wrapper__"] {
-    display: none !important
-}
 div[aria-haspopup="menu"] div[class$="-body"] {
     margin-top: 0 !important
 }
@@ -265,6 +262,9 @@ div[aria-haspopup="menu"] div[class$="-wrapper"] {
 }
 div[class^="body__"] section[class^="section__"]:first-child {
     border-radius: 8px !important
+}
+div[class^="body__"] div[class^="wrapper__"]:not(:has(textarea, input)) {
+    display: none !important
 }
 div[class$="-linkButton"] a[data-list-item-id$="_nitro"], div[class$="-linkButton"] a[data-list-item-id$="_shop"] {
     display: none !important
@@ -275,6 +275,13 @@ div[class^="checked_"] {
 }
 div[class^="memberInner_"] div[class^="content_"] {
     background: none !important
+}
+
+li[class^="containerDefault_"] div[class^="animation_"] {
+    height: 0 !important
+}
+div[class^="animation_"] div[aria-label="Invite to Voice. Press to dismiss"] {
+    display: none !important
 }
 
 div[class^="circleIconButton_"], img[class^="marketingButtonImage_"] {

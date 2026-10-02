@@ -1234,6 +1234,10 @@
         "command": "workbench.action.showCommands"
     },
     {
+        "key": "f6",
+        "command": "workbench.action.showCommands"
+    },
+    {
         "key": "ctrl+shift+p",
         "command": "-workbench.action.showCommands"
     },
@@ -1264,5 +1268,14 @@
     {
         "key": "shift+alt+,",
         "command": "editor.foldAllBlockComments"
+    },
+    {
+        "key": "f6",
+        "command": "-workbench.action.debug.pause",
+        "when": "debugState == 'running'"
+    },
+    {
+        "key": "f6",
+        "command": "-workbench.action.focusNextPart"
     }
 ]

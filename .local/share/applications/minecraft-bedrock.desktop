@@ -34,7 +34,7 @@
 #
 
 [Desktop Entry]
-Exec            = /usr/bin/ghr firewall-all "/usr/bin/mcpelauncher-ui-qt"
+Exec            = /usr/bin/ghr firewall-all /usr/bin/mcpelauncher-ui-qt
 Icon            = mcpelauncher-ui-qt
 Name            = Minecraft Bedrock 
 Type            = Application

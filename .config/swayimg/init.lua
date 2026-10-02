@@ -33,98 +33,287 @@
 -- along with this program.  If not, see <https://www.gnu.org/licenses/>.
 --
 
--- Mask these Keybinds
-swayimg.gallery.on_key("S",        function() end)
-swayimg.gallery.on_key("Ctrl+P",   function() end)
-swayimg.gallery.on_key("Delete",   function() end)
+swayimg.appid            = "swayimg"
+swayimg.antialiasing     = true
+swayimg.decoration       = true
+swayimg.dnd_button       = "MouseRight"
+swayimg.exif_orientation = true
+swayimg.fullscreen       = false
+swayimg.format_conf      = {
+    raw  = {
+        enable     = true,
+        camera_wb  = true
+    },
+    ttf  = {
+        text       = "The quick brown fox jumps over the lazy dog 0123456789",
+        color      = 0xFFFFFFFF,
+        enable     = true,
+        background = 0x00000000
+    },
+    video = {
+        rows       = 3,
+        size       = 300,
+        label      = 0x0AFFFFFF,
+        enable     = true,
+        columns    = 3,
+        padding    = 5
+    }
+}
+swayimg.mode             = "viewer"
+swayimg.overlay          = false
+
+swayimg.gallery.aspect           = "fill"
+swayimg.gallery.border_color     = 0xA07D0BAB
+swayimg.gallery.border_size      = 5
+swayimg.gallery.cache            = 10
+swayimg.gallery.embedded_thumb   = true
+swayimg.gallery.hover            = true
+swayimg.gallery.limit_cache      = 256
+swayimg.gallery.mark_color       = 0x00000000
+swayimg.gallery.padding_size     = 5
+swayimg.gallery.pinch_factor     = 1.0
+swayimg.gallery.preload          = true
+swayimg.gallery.pstore           = false
+swayimg.gallery.selected_color   = 0xA07D0BAB
+swayimg.gallery.selected_scale   = 1.2
+swayimg.gallery.text             = {
+    topleft     = {"{name} ({sizehr})"},
+    topright    = {"{list.index} / {list.total}"},
+    bottomleft  = {},
+    bottomright = {}
+}
+swayimg.gallery.thumb_size       = 200
+swayimg.gallery.unselected_color = 0x00000000
+swayimg.gallery.window_color     = 0x00000000
+
+
+swayimg.imagelist.adjacent  = true
+swayimg.imagelist.fsmon     = true
+swayimg.imagelist.order     = "numeric"
+swayimg.imagelist.recursive = false
+swayimg.imagelist.reverse   = false
+
+swayimg.text.background     = 0xAF0A000A
+swayimg.text.color          = 0xFFFFFFFF
+swayimg.text.font           = "SourceCodePro"
+swayimg.text.padding        = 5
+swayimg.text.shadow         = 0xFF000000
+swayimg.text.size           = 16
+swayimg.text.spacing        = 0
+swayimg.text.status_timeout = 5
+swayimg.text.timeout        = 15
+swayimg.text.visible        = true
+
+swayimg.slideshow.autocenter       = true
+swayimg.slideshow.default_position = "center"
+swayimg.slideshow.default_scale    = "optimal"
+swayimg.slideshow.drag_button      = "MouseLeft"
+swayimg.slideshow.history          = 0
+swayimg.slideshow.loop             = false
+swayimg.slideshow.pinch_factor     = 1.0
+swayimg.slideshow.preload          = 0
+swayimg.slideshow.mark_color       = 0x00000000
+swayimg.slideshow.scale            = 1.0
+swayimg.slideshow.text             = {
+    topleft     = {"{name}"},
+    topright    = {},
+    bottomleft  = {},
+    bottomright = {}
+}
+swayimg.slideshow.timeout          = 0
+
+swayimg.slideshow.set_image_background(0x00000000)
+swayimg.slideshow.set_image_chessboard(10, 0xAF333333, 0xA00A000A)
+swayimg.slideshow.set_window_background(0x00000000)
+
+swayimg.viewer.autocenter       = true
+swayimg.viewer.default_position = "center"
+swayimg.viewer.default_scale    = "optimal"
+swayimg.viewer.drag_button      = "MouseLeft"
+swayimg.viewer.history          = 0
+swayimg.viewer.loop             = false
+swayimg.viewer.mark_color       = 0x00000000
+swayimg.viewer.preload          = 1
+swayimg.viewer.pinch_factor     = 1.0
+swayimg.viewer.scale            = 1.0
+swayimg.viewer.text             = {
+    topleft     = {
+        "File: {name}",
+        "File Size: {sizehr}",
+        "Size: {frame.width}x{frame.height}",
+        "Format: {format}",
+        "EXIF Date: {meta.Exif.Photo.DateTimeOriginal}",
+        "EXIF Camera: {meta.Exif.Image.Model}",
+        "EXIF Location: {meta.Exif.GPSInfo}"
+    },
+    topright    = {
+        "Image: {list.index} / {list.total}",
+        "Scale: {scale}"
+    },
+    bottomleft  = {},
+    bottomright = {}
+}
+
+swayimg.viewer.set_image_background(0x00000000)
+swayimg.viewer.set_image_chessboard(10, 0xAF333333, 0xA00A000A)
+swayimg.viewer.set_window_background(0x00000000)
+
+-- Mask Keybinds
+swayimg.gallery.on_key("A",      function() end)
+swayimg.gallery.on_key("S",      function() end)
+swayimg.gallery.on_key("Next",   function() end)
+swayimg.gallery.on_key("Prior",  function() end)
+swayimg.gallery.on_key("Delete", function() end)
+swayimg.gallery.on_key("Insert", function() end)
+
+swayimg.gallery.on_mouse("ScrollLeft",      function() end)
+swayimg.gallery.on_mouse("ScrollRight",     function() end)
+swayimg.gallery.on_mouse("Ctrl+ScrollUp",   function() end)
+swayimg.gallery.on_mouse("Ctrl+ScrollDown", function() end)
+
 swayimg.slideshow.on_key("Delete", function() end)
-swayimg.viewer.on_key("A",         function() end)
-swayimg.viewer.on_key("M",         function() end)
-swayimg.viewer.on_key("S",         function() end)
-swayimg.viewer.on_key("Delete",    function() end)
+
+swayimg.viewer.on_key("A",           function() end)
+swayimg.viewer.on_key("M",           function() end)
+swayimg.viewer.on_key("S",           function() end)
+swayimg.viewer.on_key("Next",        function() end)
+swayimg.viewer.on_key("Prior",       function() end)
+swayimg.viewer.on_key("Delete",      function() end)
+swayimg.viewer.on_key("Insert",      function() end)
+swayimg.viewer.on_key("Shift+M",     function() end)
+swayimg.viewer.on_key("Backspace",   function() end)
+swayimg.viewer.on_key("Shift+Next",  function() end)
+swayimg.viewer.on_key("Shift+Prior", function() end)
 
 swayimg.gallery.on_key("F",                function()
-    swayimg.toggle_fullscreen()
+    swayimg.fullscreen = not swayimg.fullscreen
 end)
 swayimg.gallery.on_key("I",                function()
-    swayimg.text.show()
+    swayimg.text.visible = not swayimg.text.visible
 end)
 swayimg.gallery.on_key("Q",                function()
     swayimg.exit()
 end)
 swayimg.gallery.on_key("R",                function()
-    swayimg.gallery.set_thumb_size(200);
+    swayimg.gallery.thumb_size = 200;
+end)
+swayimg.gallery.on_key("T",                function()
+    swayimg.text.visible = not swayimg.text.visible
 end)
 swayimg.gallery.on_key("Up",               function()
-    swayimg.gallery.switch_image("up")
+    swayimg.gallery.select("up")
 end)
 swayimg.gallery.on_key("End",              function()
-    swayimg.gallery.switch_image("last")
+    swayimg.gallery.select("last")
 end)
 swayimg.gallery.on_key("Down",             function()
-    swayimg.gallery.switch_image("down")
+    swayimg.gallery.select("down")
 end)
 swayimg.gallery.on_key("Home",             function()
-    swayimg.gallery.switch_image("first")
+    swayimg.gallery.select("first")
 end)
 swayimg.gallery.on_key("Left",             function()
-    swayimg.gallery.switch_image("left")
+    swayimg.gallery.select("left")
 end)
 swayimg.gallery.on_key("Plus",             function()
-    swayimg.gallery.set_thumb_size(swayimg.gallery.get_thumb_size() + 20);
+    swayimg.gallery.thumb_size = swayimg.gallery.thumb_size + 20;
 end)
 swayimg.gallery.on_key("Equal",            function()
-    swayimg.gallery.set_thumb_size(swayimg.gallery.get_thumb_size() + 20);
+    swayimg.gallery.thumb_size = swayimg.gallery.thumb_size + 20;
 end)
 swayimg.gallery.on_key("Minus",            function()
-    swayimg.gallery.set_thumb_size(swayimg.gallery.get_thumb_size() - 20);
+    local v = swayimg.gallery.thumb_size
+    if v > 20 then
+        swayimg.gallery.thumb_size = v - 20
+    else
+        swayimg.gallery.thumb_size = 0
+    end
 end)
 swayimg.gallery.on_key("Right",            function()
-    swayimg.gallery.switch_image("right")
+    swayimg.gallery.select("right")
 end)
 swayimg.gallery.on_key("Escape",           function()
-  swayimg.exit()
+    swayimg.exit()
 end)
 swayimg.gallery.on_key("Return",           function()
-    swayimg.set_mode("viewer")
+    swayimg.mode = "viewer"
 end)
 swayimg.gallery.on_key("Ctrl+C",           function()
-    os.execute("/usr/bin/wl-copy --trim-newline '"..swayimg.gallery.get_image().path.."'")
+    local v = swayimg.gallery.get_image()
+    if v then
+        os.execute("/usr/bin/wl-copy --trim-newline '"..v.path.."'")
+    end
 end)
 swayimg.gallery.on_key("Shift+C",          function()
-    os.execute("/usr/bin/swaymsg 'exec \"${HOME}/.local/bin/crop\" \""..swayimg.gallery.get_image().path.."\"'")
+    local v = swayimg.gallery.get_image()
+    if v then
+        os.execute("/usr/bin/swaymsg 'exec \"${HOME}/.local/bin/crop\" \""..v.path.."\"'")
+    end
+end)
+swayimg.gallery.on_key("Ctrl+Left",        function()
+    swayimg.gallery.select("left")
+end)
+swayimg.gallery.on_key("Ctrl+Right",       function()
+    swayimg.gallery.select("right")
 end)
 swayimg.gallery.on_key("Shift+Left",       function()
-    os.execute("/usr/bin/magick mogrify -rotate -90 '"..swayimg.gallery.get_image().path.."'")
+    local v = swayimg.gallery.get_image()
+    if v then
+        os.execute("/usr/bin/magick mogrify -rotate -90 '"..v.path.."'")
+        swayimg.gallery.reload()
+    end
 end)
 swayimg.gallery.on_key("Shift+Right",      function()
-    os.execute("/usr/bin/magick mogrify -rotate 90 '"..swayimg.gallery.get_image().path.."'")
+    local v = swayimg.gallery.get_image()
+    if v then
+        os.execute("/usr/bin/magick mogrify -rotate 90 '"..v.path.."'")
+        swayimg.gallery.reload()
+    end
 end)
 swayimg.gallery.on_key("Shift+Delete",     function()
-    local v = swayimg.gallery.get_image().path
-    os.execute("/usr/bin/rm '"..v.."'")
-    swayimg.text.set_status("File "..v.." removed")
+    local v = swayimg.gallery.get_image()
+    if v then
+        os.execute("/usr/bin/rm '"..v.path.."'")
+        swayimg.text.set_status("File "..v.path.." removed")
+    end
 end)
 swayimg.gallery.on_key("Shift+Underscore", function()
-    swayimg.gallery.set_thumb_size(swayimg.gallery.get_thumb_size() - 20);
+    local v = swayimg.gallery.thumb_size
+    if v > 20 then
+        swayimg.gallery.thumb_size = v - 20
+    else
+        swayimg.gallery.thumb_size = 0
+    end
 end)
 
 swayimg.gallery.on_mouse("ScrollUp",   function()
-    swayimg.gallery.switch_image("right")
+    swayimg.gallery.select("right")
 end)
 swayimg.gallery.on_mouse("ScrollDown", function()
-    swayimg.gallery.switch_image("left")
+    swayimg.gallery.select("left")
 end)
 
+swayimg.viewer.on_key("[",                function()
+    swayimg.viewer.rotate(270)
+end)
+swayimg.viewer.on_key("]",                function()
+    swayimg.viewer.rotate(90)
+end)
+swayimg.viewer.on_key(">",                function()
+    swayimg.viewer.flip_vertical()
+end)
+swayimg.viewer.on_key("<",                function()
+    swayimg.viewer.flip_horizontal()
+end)
 swayimg.viewer.on_key("E",                function()
-    swayimg.enable_exif_orientation(true)
+    swayimg.exif_orientation = true
     swayimg.viewer.reload()
 end)
 swayimg.viewer.on_key("F",                function()
-    swayimg.toggle_fullscreen()
+    swayimg.fullscreen = not swayimg.fullscreen
 end)
 swayimg.viewer.on_key("I",                function()
-    swayimg.text.show()
+    swayimg.text.visible = not swayimg.text.visible
 end)
 swayimg.viewer.on_key("Q",                function()
     swayimg.exit()
@@ -132,134 +321,129 @@ end)
 swayimg.viewer.on_key("R",                function()
     swayimg.viewer.reset()
 end)
+swayimg.viewer.on_key("T",                function()
+    swayimg.text.visible = not swayimg.text.visible
+end)
 swayimg.viewer.on_key("W",                function()
-    swayimg.enable_exif_orientation(false)
+    swayimg.exif_orientation = false
     swayimg.viewer.reload()
 end)
+swayimg.viewer.on_key("Up",               function()
+    swayimg.viewer.open("next")
+end)
+swayimg.viewer.on_key("Down",             function()
+    swayimg.viewer.open("prev")
+end)
 swayimg.viewer.on_key("Left",             function()
-    swayimg.viewer.prev_frame()
+    local v = swayimg.viewer.frame
+    if v > 0 then
+        swayimg.viewer.frame = v - 1
+    end
 end)
 swayimg.viewer.on_key("Plus",             function()
-    local v = swayimg.viewer.get_scale()
+    local v = swayimg.viewer.scale
     swayimg.viewer.set_abs_scale(v + v / 10);
 end)
 swayimg.viewer.on_key("Equal",            function()
-    local v = swayimg.viewer.get_scale()
+    local v = swayimg.viewer.scale
     swayimg.viewer.set_abs_scale(v + v / 10);
 end)
 swayimg.viewer.on_key("Minus",            function()
-    local v = swayimg.viewer.get_scale()
-    swayimg.viewer.set_abs_scale(v - v / 10);
+    local v = swayimg.viewer.scale
+    if v > 0 then
+        swayimg.viewer.set_abs_scale(v - v / 10);
+    end
 end)
 swayimg.viewer.on_key("Right",            function()
-    swayimg.viewer.next_frame()
+    swayimg.viewer.frame = swayimg.viewer.frame + 1
 end)
 swayimg.viewer.on_key("Escape",           function()
-  swayimg.exit()
+    swayimg.exit()
 end)
 swayimg.viewer.on_key("Return",           function()
-    swayimg.set_mode("gallery")
+    swayimg.mode = "gallery"
 end)
 swayimg.viewer.on_key("Ctrl+C",           function()
-    os.execute("/usr/bin/wl-copy --trim-newline '"..swayimg.viewer.get_image().path.."'")
+    local v = swayimg.viewer.get_image()
+    if v then
+        os.execute("/usr/bin/wl-copy --trim-newline '"..v.path.."'")
+    end
 end)
 swayimg.viewer.on_key("Shift+C",          function()
-    os.execute("/usr/bin/swaymsg 'exec \"${HOME}/.local/bin/crop\" \""..swayimg.viewer.get_image().path.."\"'")
+    local v = swayimg.viewer.get_image()
+    if v then
+        os.execute("/usr/bin/swaymsg 'exec \"${HOME}/.local/bin/crop\" \""..v.path.."\"'")
+    end
+end)
+swayimg.viewer.on_key("Ctrl+Left",        function()
+    swayimg.viewer.open("next")
+end)
+swayimg.viewer.on_key("Ctrl+Right",       function()
+    swayimg.viewer.open("prev")
 end)
 swayimg.viewer.on_key("Shift+Left",       function()
-    os.execute("/usr/bin/magick mogrify -rotate -90 '"..swayimg.viewer.get_image().path.."'")
+    local v = swayimg.viewer.get_image()
+    if v then
+        os.execute("/usr/bin/magick mogrify -rotate -90 '"..v.path.."'")
+        swayimg.viewer.reload()
+    end
 end)
 swayimg.viewer.on_key("BracketLeft",      function()
     swayimg.viewer.rotate(270)
 end)
 swayimg.viewer.on_key("Shift+Right",      function()
-    os.execute("/usr/bin/magick mogrify -rotate 90 '"..swayimg.viewer.get_image().path.."'")
+    local v = swayimg.viewer.get_image()
+    if v then
+        os.execute("/usr/bin/magick mogrify -rotate 90 '"..v.path.."'")
+        swayimg.viewer.reload()
+    end
 end)
 swayimg.viewer.on_key("BracketRight",     function()
     swayimg.viewer.rotate(90)
 end)
 swayimg.viewer.on_key("Shift+Delete",     function()
-    local v = swayimg.viewer.get_image().path
-    os.execute("/usr/bin/rm '"..v.."'")
-    swayimg.text.set_status("File "..v.." removed")
+    local v = swayimg.viewer.get_image()
+    if v then
+        os.execute("/usr/bin/rm '"..v.path.."'")
+        swayimg.text.status = "File "..v.path.." removed"
+    end
 end)
 swayimg.viewer.on_key("Shift+Underscore", function()
-    local v = swayimg.viewer.get_scale()
-    swayimg.viewer.set_abs_scale(v - v / 10);
+    local v = swayimg.viewer.scale
+    if v > 0 then
+        swayimg.viewer.set_abs_scale(v - v / 10);
+    end
 end)
 
+swayimg.viewer.on_mouse("ScrollUp",         function()
+  local v = swayimg.viewer.get_position()
+  swayimg.viewer.set_abs_position(v.x, v.y - 10)
+end)
+swayimg.viewer.on_mouse("ScrollDown",       function()
+  local v = swayimg.viewer.get_position()
+  swayimg.viewer.set_abs_position(v.x, v.y + 10)
+end)
+swayimg.viewer.on_mouse("ScrollLeft",       function()
+  local v = swayimg.viewer.get_position()
+  swayimg.viewer.set_abs_position(v.x - 10, v.y)
+end)
+swayimg.viewer.on_mouse("ScrollRight",      function()
+  local v = swayimg.viewer.get_position()
+  swayimg.viewer.set_abs_position(v.x + 10, v.y)
+end)
+swayimg.viewer.on_mouse("Ctrl+ScrollUp",    function()
+  local v = swayimg.viewer.scale
+  local i = swayimg.get_mouse_pos()
+  swayimg.viewer.set_abs_scale(v + v / 10, i.x, i.y)
+end)
 swayimg.viewer.on_mouse("Shift+ScrollUp",   function()
-  swayimg.viewer.switch_image("prev")
+    swayimg.viewer.open("prev")
+end)
+swayimg.viewer.on_mouse("Ctrl+ScrollDown",  function()
+  local v = swayimg.viewer.scale
+  local i = swayimg.get_mouse_pos()
+  swayimg.viewer.set_abs_scale(v - v / 10, i.x, i.y)
 end)
 swayimg.viewer.on_mouse("Shift+ScrollDown", function()
-  swayimg.viewer.switch_image("next")
+    swayimg.viewer.open("next")
 end)
-
-swayimg.enable_antialiasing(true)
-swayimg.enable_decoration(true)
-swayimg.enable_exif_orientation(true)
-swayimg.enable_overlay(true)
-swayimg.set_dnd_button("MouseRight")
-swayimg.set_mode("viewer")
-
-swayimg.gallery.enable_preload(true)
-swayimg.gallery.enable_pstore(false)
-swayimg.gallery.limit_cache(256)
-swayimg.gallery.set_aspect("fill")
-swayimg.gallery.set_border_color(0xA07D0BAB)
-swayimg.gallery.set_border_size(5)
-swayimg.gallery.set_padding_size(5)
-swayimg.gallery.set_selected_color(0xA07D0BAB)
-swayimg.gallery.set_selected_scale(1.20)
-swayimg.gallery.set_text("topleft", {"{name} ({sizehr})"})
-swayimg.gallery.set_text("topright", {"{list.index} / {list.total}"})
-swayimg.gallery.set_thumb_size(200)
-swayimg.gallery.set_unselected_color(0x00000000)
-swayimg.gallery.set_window_color(0x00000000)
-
-swayimg.imagelist.enable_adjacent(true)
-swayimg.imagelist.enable_fsmon(true)
-swayimg.imagelist.enable_reverse(false)
-swayimg.imagelist.enable_recursive(false)
-swayimg.imagelist.set_order("numeric")
-
-swayimg.text.set_background(0xAF0A000A)
-swayimg.text.set_font("SourceCodePro")
-swayimg.text.set_foreground(0xFFFFFFFF)
-swayimg.text.set_padding(5)
-swayimg.text.set_shadow(0xFF000000)
-swayimg.text.set_spacing(0)
-swayimg.text.set_size(16)
-swayimg.text.set_status_timeout(5)
-swayimg.text.set_timeout(15)
-
-swayimg.slideshow.limit_history(0)
-swayimg.slideshow.set_default_scale("fit")
-swayimg.slideshow.set_text("topleft", {"{name}"})
-swayimg.slideshow.set_timeout(0)
-swayimg.slideshow.set_window_background(0x00000000)
-
-swayimg.viewer.enable_centering(true)
-swayimg.viewer.enable_loop(false)
-swayimg.viewer.limit_history(0)
-swayimg.viewer.limit_preload(1)
-swayimg.viewer.set_default_position("center")
-swayimg.viewer.set_default_scale("optimal")
-swayimg.viewer.set_drag_button("MouseLeft")
-swayimg.viewer.set_image_chessboard(10, 0xAF333333, 0xA00A000A)
-swayimg.viewer.set_mark_color(0x00000000)
-swayimg.viewer.set_text("bottomleft", {})
-swayimg.viewer.set_text("topleft", {
-  "File: {name}",
-  "File Size: {sizehr}",
-  "Size: {frame.width}x{frame.height}",
-  "Format: {format}",
-  "EXIF Date: {meta.Exif.Photo.DateTimeOriginal}",
-  "EXIF Camera: {meta.Exif.Image.Model}",
-  "EXIF Location: {meta.Exif.GPSInfo}"
-})
-swayimg.viewer.set_text("topright", {
-  "Image: {list.index} / {list.total}",
-  "Scale: {scale}"
-})
-swayimg.viewer.set_window_background(0x00000000)

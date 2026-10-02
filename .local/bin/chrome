@@ -37,14 +37,14 @@
 args="$*"
 
 if [ $# -eq 0 ]; then
-    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium"
+    exec /usr/bin/ghr firewall-web /usr/bin/nice -n 12 /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium"
 fi
 
 if [ "$1" = "--all" ]; then
     shift
     rm -rf "${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp" 2> /dev/null
     mkdir -p "${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp"
-    exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium  --new-window --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp" --user-data-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp" $*
+    exec /usr/bin/ghr firewall-web /usr/bin/nice -n 12 /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium  --new-window --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp" --user-data-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium_temp" $*
 fi
 
-exec /usr/bin/ghr firewall-web /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium" $*
+exec /usr/bin/ghr firewall-web /usr/bin/nice -n 12 /usr/bin/env TZ=UTC XDG_CURRENT_DESKTOP=sway /usr/bin/chromium --disk-cache-dir="${XDG_RUNTIME_DIR}/temp/browsers/chromium" $*

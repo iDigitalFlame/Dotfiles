@@ -71,6 +71,7 @@
         "editor.semanticHighlighting.enabled": true
     },
     "accessibility.accessibleView.closeOnKeyPress": false,
+    "accessibility.dimUnfocused.enabled": false,
     "accessibility.hideAccessibleView": true,
     "accessibility.signals.chatRequestSent": {
         "announcement": "off",
@@ -199,12 +200,13 @@
     ],
     "black-formatter.showNotifications": "off",
     "breadcrumbs.enabled": false,
+    "breadcrumbs.icons": false,
     "cSpell.allowCompoundWords": true,
     "cSpell.diagnosticLevel": "Hint",
-    "cSpell.enableFiletypes": [
+    "cSpell.enabled": true,
+    "cSpell.enabledFiletypes": [
         "!css"
     ],
-    "cSpell.enabled": true,
     "cSpell.enabledNotifications": {
         "Lines too Long": false,
         "Maximum Word Length Exceeded": false
@@ -215,7 +217,6 @@
     ],
     "cSpell.language": "en",
     "cSpell.showCommandsInEditorContextMenu": false,
-    "cSpell.showStatus": false,
     "cSpell.suggestionMenuType": "quickFix",
     "cSpell.userWords": [
         "aarch",
@@ -375,16 +376,28 @@
         "zfill",
         "zstd"
     ],
+    "chat.agent.enabled": false,
+    "chat.agent.sandbox.enabled": "on",
+    "chat.allowAnonymousAccess": false,
     "chat.commandCenter.enabled": false,
     "chat.detectParticipant.enabled": false,
+    "chat.disableAIFeatures": true,
+    "chat.editMode.hidden": true,
+    "chat.extensionTools.enabled": false,
     "chat.implicitContext.enabled": {
         "editing-session": "never",
         "panel": "never"
     },
+    "chat.mcp.access": "none",
+    "chat.mcp.apps.enabled": false,
+    "chat.mcp.autostart": "never",
+    "chat.plugins.enabled": false,
     "chat.promptFiles": false,
     "chat.promptFilesLocations": {
         ".github/prompts": false
     },
+    "chat.sessionSync.enabled": false,
+    "chat.tips.enabled": false,
     "css.format.newlineBetweenRules": false,
     "css.format.newlineBetweenSelectors": false,
     "css.format.spaceAroundSelectorSeparator": true,
@@ -534,7 +547,10 @@
     "editor.stablePeek": false,
     "editor.stickyScroll.maxLineCount": 3,
     "editor.suggest.preview": true,
+    "editor.suggest.shareSuggestSelections": false,
     "editor.suggest.showFiles": false,
+    "editor.suggest.showSnippets": false,
+    "editor.suggest.showUsers": false,
     "editor.suggestFontSize": 0,
     "editor.suggestLineHeight": 0,
     "editor.suggestOnTriggerCharacters": true,
@@ -550,18 +566,103 @@
         "textMateRules": [
             {
                 "scope": [
-                    "support.type"
+                    "keyword.operator.new"
                 ],
                 "settings": {
-                    "foreground": "#7EFAFF"
+                    "fontStyle": "bold"
                 }
             },
             {
                 "scope": [
-                    "keyword"
+                    "storage.modifier.mut.rust"
                 ],
                 "settings": {
-                    "foreground": "#FF0A49"
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.type.class",
+                    "markup.heading.markdown",
+                    "entity.other.attribute-name",
+                    "entity.other.inherited-class",
+                    "invalid.deprecated.entity.other.attribute-name"
+                ],
+                "settings": {
+                    "foreground": "#00BFFF"
+                }
+            },
+            {
+                "scope": [
+                    "storage.type.cs"
+                ],
+                "settings": {
+                    "foreground": "#00BFFF"
+                }
+            },
+            {
+                "scope": [
+                    "string.regexp",
+                    "invalid.deprecated.media",
+                    "meta.function.parameters"
+                ],
+                "settings": {
+                    "foreground": "#00E673"
+                }
+            },
+            {
+                "scope": [
+                    "numbers",
+                    "constant.numeric"
+                ],
+                "settings": {
+                    "foreground": "#01E500"
+                }
+            },
+            {
+                "scope": [
+                    "functions"
+                ],
+                "settings": {
+                    "foreground": "#05DFD7"
+                }
+            },
+            {
+                "scope": [
+                    "types"
+                ],
+                "settings": {
+                    "foreground": "#39FF1E"
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.type"
+                ],
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#5EDFFF"
+                }
+            },
+            {
+                "scope": [
+                    "markup.underline.link.markdown",
+                    "punctuation.definition.markdown",
+                    "markup.fenced_code.block.markdown",
+                    "markup.inline.raw.string.markdown",
+                    "punctuation.definition.raw.markdown",
+                    "markup.underline.link.image.markdown"
+                ],
+                "settings": {
+                    "foreground": "#75ABE0"
+                }
+            },
+            {
+                "scope": [
+                    "support.type"
+                ],
+                "settings": {
+                    "foreground": "#7EFAFF"
                 }
             },
             {
@@ -575,47 +676,70 @@
             },
             {
                 "scope": [
-                    "punctuation"
+                    "string.json",
+                    "support.class",
+                    "keyword.type.cs",
+                    "support.constant",
+                    "support.function",
+                    "support.variable",
+                    "entity.name.function",
+                    "variable.other.jsdoc",
+                    "entity.name.namespace.c",
+                    "entity.name.namespace.cpp",
+                    "punctuation.support.type.property-name.end",
+                    "punctuation.support.type.property-name.begin"
                 ],
                 "settings": {
-                    "foreground": "#FFFFFF"
+                    "foreground": "#8BE9FD"
                 }
             },
             {
                 "scope": [
-                    "string.quoted.other",
-                    "string.quoted.single",
-                    "string.quoted.double"
+                    "variable.language",
+                    "punctuation.definition.entity",
+                    "string.unquoted.attribute-value.css",
+                    "support.constant.property-value.css",
+                    "support.constant.color.w3c-standard-color-name.css"
                 ],
                 "settings": {
-                    "foreground": "#F7FF14"
+                    "foreground": "#BD93F9"
                 }
             },
             {
                 "scope": [
-                    "variable.parameter"
+                    "string.template",
+                    "string.quoted.triple",
+                    "meta.toc-list.id.html",
+                    "meta.attribute-with-value.id",
+                    "punctuation.definition.string.end",
+                    "punctuation.definition.string.begin",
+                    "punctuation.definition.string.template.end",
+                    "punctuation.definition.string.template.begin"
                 ],
                 "settings": {
-                    "foreground": "#FFB86C"
+                    "foreground": "#C3E88D"
                 }
             },
             {
                 "scope": [
-                    "storage.modifier.mut.rust"
-                ],
-                "settings": {}
-            },
-            {
-                "scope": [
-                    "entity.name.type"
+                    "keywords"
                 ],
                 "settings": {
-                    "fontStyle": "bold",
-                    "foreground": "#5EDFFF"
+                    "foreground": "#C3FF18"
                 }
             },
             {
                 "scope": [
+                    "text.html.markdown",
+                    "meta.paragraph.markdown"
+                ],
+                "settings": {
+                    "foreground": "#D2D3D9"
+                }
+            },
+            {
+                "scope": [
+                    "support.type.primitive.rust",
                     "support.type.primitive.rust"
                 ],
                 "settings": {
@@ -625,10 +749,126 @@
             },
             {
                 "scope": [
+                    "punctuation.accessor",
+                    "punctuation.separator",
+                    "punctuation.terminator",
+                    "punctuation.separator.continuation"
+                ],
+                "settings": {
+                    "foreground": "#DDDDDD"
+                }
+            },
+            {
+                "scope": [
+                    "variable.scss",
+                    "variable.other.constant",
+                    "variable.other.interpolation.less"
+                ],
+                "settings": {
+                    "foreground": "#E1FFFF"
+                }
+            },
+            {
+                "scope": [
+                    "string.other.link.description.markdown"
+                ],
+                "settings": {
+                    "foreground": "#EEFA7A"
+                }
+            },
+            {
+                "scope": [
+                    "invalid",
+                    "invalid.illegal"
+                ],
+                "settings": {
+                    "foreground": "#F4433C"
+                }
+            },
+            {
+                "scope": [
+                    "strings",
+                    "string.quoted.other",
+                    "string.quoted.double",
+                    "string.quoted.single"
+                ],
+                "settings": {
+                    "foreground": "#F7FF14"
+                }
+            },
+            {
+                "scope": [
                     "meta.attribute.rust"
                 ],
                 "settings": {
                     "foreground": "#FEEBAD"
+                }
+            },
+            {
+                "scope": [
+                    "keyword"
+                ],
+                "settings": {
+                    "foreground": "#FF0A49"
+                }
+            },
+            {
+                "scope": [
+                    "storage",
+                    "entity.name.tag",
+                    "meta.tag.block.any",
+                    "variable.other.less",
+                    "meta.property-value.css",
+                    "punctuation.accessor.optional",
+                    "keyword.control.at-rule.import",
+                    "punctuation.definition.keyword",
+                    "punctuation.definition.variable",
+                    "punctuation.separator.key-value",
+                    "punctuation.definition.entity.css",
+                    "punctuation.definition.directive.c",
+                    "punctuation.definition.constant.css",
+                    "punctuation.definition.directive.cpp",
+                    "punctuation.definition.interpolation",
+                    "punctuation.definition.block.tag.jsdoc",
+                    "punctuation.definition.heading.markdown",
+                    "punctuation.definition.metadata.markdown",
+                    "entity.other.attribute-name.pseudo-element",
+                    "punctuation.definition.string.end.markdown",
+                    "punctuation.definition.string.begin.markdown",
+                    "punctuation.definition.template-expression.end",
+                    "punctuation.definition.template-expression.begin"
+                ],
+                "settings": {
+                    "foreground": "#FF69B4"
+                }
+            },
+            {
+                "scope": [
+                    "variable.parameter",
+                    "markup.bold.markdown",
+                    "meta.link.inline.markdown",
+                    "markup.list.unnumbered.markdown",
+                    "entity.name.variable.parameter.cs",
+                    "punctuation.definition.bold.markdown",
+                    "punctuation.definition.list.begin.markdown",
+                    "punctuation.definition.bracket.curly.end.jsdoc",
+                    "punctuation.definition.bracket.curly.begin.jsdoc"
+                ],
+                "settings": {
+                    "foreground": "#FFB86C"
+                }
+            },
+            {
+                "scope": [
+                    "comment",
+                    "comments",
+                    "variable",
+                    "variables",
+                    "punctuation",
+                    "punctuation.definition.comment"
+                ],
+                "settings": {
+                    "foreground": "#FFFFFF"
                 }
             }
         ],
@@ -639,6 +879,7 @@
     "editor.unicodeHighlight.nonBasicASCII": true,
     "editor.useTabStops": true,
     "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.wordBreak": "normal",
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "off",
     "editor.wordWrapColumn": 127,
@@ -656,7 +897,7 @@
     "explorer.openEditors.visible": 12,
     "explorer.sortOrder": "default",
     "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "extensions.experimental.issueQuickAccess": false,
     "extensions.ignoreRecommendations": true,
     "files.associations": {
@@ -718,6 +959,7 @@
         "W": "Warning"
     },
     "flake8.showNotifications": "onError",
+    "git.addAICoAuthor": "off",
     "git.autoRepositoryDetection": true,
     "git.autofetch": false,
     "git.autorefresh": false,
@@ -770,7 +1012,6 @@
         "gopls": "/home/dij/.local/bin/tools/gopls"
     },
     "go.buildFlags": [],
-    "go.buildOnSave": "package",
     "go.buildTags": "",
     "go.coverMode": "default",
     "go.coverOnSave": false,
@@ -824,7 +1065,6 @@
     "go.lintFlags": [],
     "go.lintOnSave": "package",
     "go.lintTool": "golint",
-    "go.logging.level": "error",
     "go.playground": {
         "openbrowser": false,
         "run": false,
@@ -990,7 +1230,7 @@
         "--trailing-comma",
         "--case-sensitive",
         "--use-parentheses",
-        "--honor-noqa",
+        "--honor-noqa"
     ],
     "isort.check": true,
     "isort.importStrategy": "fromEnvironment",
@@ -1009,27 +1249,39 @@
     },
     "isort.showNotifications": "off",
     "jake.autoDetect": "off",
-    "javascript.format.enable": true,
-    "javascript.format.insertSpaceAfterCommaDelimiter": true,
-    "javascript.format.insertSpaceAfterConstructor": true,
-    "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
-    "javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
-    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-    "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
-    "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
-    "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
-    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
-    "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
-    "javascript.format.semicolons": "insert",
-    "javascript.inlayHints.parameterNames.enabled": "all",
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "javascript.inlayHints.variableTypes.enabled": true,
-    "javascript.preferences.quoteStyle": "double",
-    "javascript.suggest.names": true,
-    "javascript.validate.enable": true,
+    "js/ts.check.npmIsInstalled": false,
+    "js/ts.disableAutomaticTypeAcquisition": true,
+    "js/ts.format.enable": true,
+    "js/ts.format.insertSpaceAfterCommaDelimiter": true,
+    "js/ts.format.insertSpaceAfterConstructor": true,
+    "js/ts.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+    "js/ts.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+    "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+    "js/ts.format.insertSpaceAfterSemicolonInForStatements": true,
+    "js/ts.format.insertSpaceAfterTypeAssertion": true,
+    "js/ts.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+    "js/ts.format.insertSpaceBeforeFunctionParenthesis": false,
+    "js/ts.format.placeOpenBraceOnNewLineForControlBlocks": false,
+    "js/ts.format.placeOpenBraceOnNewLineForFunctions": false,
+    "js/ts.format.semicolons": "insert",
     "js/ts.implicitProjectConfig.target": "ESNext",
+    "js/ts.inlayHints.enumMemberValues.enabled": true,
+    "js/ts.inlayHints.parameterNames.enabled": "all",
+    "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+    "js/ts.inlayHints.variableTypes.enabled": true,
+    "js/ts.locale": "en",
+    "js/ts.npm": "",
+    "js/ts.preferences.quoteStyle": "double",
+    "js/ts.suggest.completeFunctionCalls": true,
+    "js/ts.suggest.enabled": true,
+    "js/ts.suggest.names": true,
+    "js/ts.tsserver.enableTracing": false,
+    "js/ts.tsserver.log": "off",
+    "js/ts.tsserver.web.projectWideIntellisense.enabled": false,
+    "js/ts.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false,
+    "js/ts.validate.enable": true,
     "json.format.enable": true,
     "json.schemaDownload.enable": false,
     "json.schemas": [],
@@ -1153,7 +1405,6 @@
     "python.experiments.optOutFrom": [
         "pythonDiscoveryUsingWorkers",
         "pythonPromptNewToolsExt",
-        "pythonREPLSmartSend",
         "pythonSurveyNotification",
         "pythonTerminalEnvVarActivation",
         "pythonTestAdapter",
@@ -1161,7 +1412,6 @@
     ],
     "python.globalModuleInstallation": false,
     "python.languageServer": "Default",
-    "python.logging.level": "off",
     "python.missingPackage.severity": "Warning",
     "python.pythonPath": "python3",
     "python.terminal.activateEnvironment": false,
@@ -1209,13 +1459,13 @@
     "rust-analyzer.cargo.buildScripts.rebuildOnSave": true,
     "rust-analyzer.cargo.buildScripts.useRustcWrapper": true,
     "rust-analyzer.cargo.cfgs": [
-        "debug_assertions",
-        "miri"
+        "miri",
+        "debug_assertions"
     ],
     "rust-analyzer.cargo.noDefaultFeatures": true,
     "rust-analyzer.cargo.noDeps": false,
-    "rust-analyzer.cargo.target": "x86_64-pc-windows-gnu",
     "rust-analyzer.cargo.sysroot": "discover",
+    "rust-analyzer.cargo.target": "x86_64-pc-windows-gnu",
     "rust-analyzer.check.allTargets": false,
     "rust-analyzer.check.noDefaultFeatures": null,
     "rust-analyzer.check.workspace": true,
@@ -1228,24 +1478,24 @@
     "rust-analyzer.completion.callable.snippets": "fill_arguments",
     "rust-analyzer.completion.fullFunctionSignatures.enable": false,
     "rust-analyzer.completion.hideDeprecated": false,
+    "rust-analyzer.completion.limit": 100,
     "rust-analyzer.completion.postfix.enable": false,
     "rust-analyzer.completion.privateEditable.enable": false,
-    "rust-analyzer.completion.limit": 100,
-    "rust-analyzer.completion.termSearch.fuel": 1000,
     "rust-analyzer.completion.snippets.custom": {
-        "Some": {
-            "postfix": "some",
-            "body": "Some(${receiver})",
-            "description": "Wrap the expression in an `Option::Some`",
-            "scope": "expr"
-        },
         "Err": {
-            "postfix": "err",
             "body": "Err(${receiver})",
             "description": "Wrap the expression in a `Result::Err`",
+            "postfix": "err",
             "scope": "expr"
         },
+        "Some": {
+            "body": "Some(${receiver})",
+            "description": "Wrap the expression in an `Option::Some`",
+            "postfix": "some",
+            "scope": "expr"
+        }
     },
+    "rust-analyzer.completion.termSearch.fuel": 1000,
     "rust-analyzer.diagnostics.enable": true,
     "rust-analyzer.diagnostics.experimental.enable": false,
     "rust-analyzer.diagnostics.styleLints.enable": false,
@@ -1292,7 +1542,7 @@
     "rust-analyzer.inlayHints.closureStyle": "impl_fn",
     "rust-analyzer.inlayHints.discriminantHints.enable": "never",
     "rust-analyzer.inlayHints.expressionAdjustmentHints.disableReborrows": true,
-    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": false,
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "never",
     "rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe": false,
     "rust-analyzer.inlayHints.expressionAdjustmentHints.mode": "postfix",
     "rust-analyzer.inlayHints.genericParameterHints.const.enable": true,
@@ -1301,11 +1551,11 @@
     "rust-analyzer.inlayHints.implicitDrops.enable": false,
     "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": false,
     "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "never",
-    // ^ "skip_trivial" is nice, but it can mess up formatting.
+    // NOTE(dij): ^ "skip_trivial" is nice, but it can mess up formatting.
     "rust-analyzer.inlayHints.maxLength": 25,
     "rust-analyzer.inlayHints.parameterHints.enable": true,
     "rust-analyzer.inlayHints.rangeExclusiveHints.enable": false,
-    "rust-analyzer.inlayHints.reborrowHints.enable": false,
+    "rust-analyzer.inlayHints.reborrowHints.enable": "never",
     "rust-analyzer.inlayHints.renderColons": true,
     "rust-analyzer.inlayHints.typeHints.enable": true,
     "rust-analyzer.inlayHints.typeHints.hideClosureInitialization": false,
@@ -1335,8 +1585,8 @@
     "rust-analyzer.semanticHighlighting.punctuation.enable": true,
     "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
     "rust-analyzer.semanticHighlighting.strings.enable": false,
-    "rust-analyzer.signatureInfo.detail": "full",
     "rust-analyzer.server.path": "/home/dij/.local/bin/tools/rust-analyzer",
+    "rust-analyzer.signatureInfo.detail": "full",
     "rust-analyzer.workspace.symbol.search.excludeImports": false,
     "rust-analyzer.workspace.symbol.search.kind": "only_types",
     "rust-analyzer.workspace.symbol.search.limit": 128,
@@ -1413,6 +1663,7 @@
     "terminal.integrated.fontWeightBold": "bold",
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.hideOnStartup": "always",
+    "terminal.integrated.initialHint": false,
     "terminal.integrated.lineHeight": 1,
     "terminal.integrated.macOptionIsMeta": false,
     "terminal.integrated.profiles.linux": {
@@ -1425,7 +1676,7 @@
             "path": "/usr/bin/pwsh"
         },
         "zsh": {
-            "icon": "terminal-zsh",
+            "icon": "terminal",
             "path": "/usr/bin/zsh"
         }
     },
@@ -1434,11 +1685,20 @@
     "terminal.integrated.shellIntegration.history": 500,
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.suggest.cdPath": "off",
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.suggest.inlineSuggestion": "off",
+    "terminal.integrated.suggest.insertTrailingSpace": false,
     "terminal.integrated.suggest.quickSuggestions": {
         "arguments": "on",
-        "commands": "on",
+        "commands": "off",
         "unknown": "on"
     },
+    "terminal.integrated.suggest.runOnEnter": "never",
+    "terminal.integrated.suggest.selectionMode": "never",
+    "terminal.integrated.suggest.showStatusBar": false,
+    "terminal.integrated.suggest.suggestOnTriggerCharacters": false,
+    "terminal.integrated.suggest.windowsExecutableExtensions": {},
     "terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
     "terminal.integrated.tabs.description": "${task}${separator}${cwdFolder}",
     "terminal.integrated.tabs.enabled": true,
@@ -1492,7 +1752,7 @@
     },
     "todo-tree.highlights.defaultHighlight": {
         "fontWeight": "bold",
-        "foreground": "green",
+        "foreground": "#37D659",
         "gutterIcon": true,
         "textDecoration": "underline"
     },
@@ -1500,6 +1760,7 @@
     "todo-tree.highlights.foregroundColourScheme": [],
     "todo-tree.regex.regex": "((\\s|::)($TAGS)!?\\(.*)",
     "todo-tree.regex.regexCaseSensitive": false,
+    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
     "todo-tree.tree.autoRefresh": false,
     "todo-tree.tree.buttons.groupBySubTag": false,
     "todo-tree.tree.buttons.groupByTag": true,
@@ -1515,39 +1776,43 @@
     "todo-tree.tree.showBadges": false,
     "todo-tree.tree.showCountsInTree": true,
     "todo-tree.tree.sortTagsOnlyViewAlphabetically": false,
-    "typescript.check.npmIsInstalled": false,
-    "typescript.disableAutomaticTypeAcquisition": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-    "typescript.format.insertSpaceAfterTypeAssertion": true,
-    "typescript.format.semicolons": "insert",
-    "typescript.inlayHints.enumMemberValues.enabled": true,
-    "typescript.inlayHints.parameterNames.enabled": "all",
-    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.variableTypes.enabled": true,
-    "typescript.locale": "en",
-    "typescript.npm": "",
-    "typescript.preferences.quoteStyle": "double",
-    "typescript.suggest.completeFunctionCalls": true,
-    "typescript.tsserver.enableTracing": false,
-    "typescript.tsserver.log": "off",
-    "typescript.tsserver.web.projectWideIntellisense.enabled": false,
-    "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": false,
     "update.mode": "none",
     "update.showReleaseNotes": false,
+    "update.titleBar": true,
+    "window.autoDetectColorScheme": false,
     "window.autoDetectHighContrast": false,
     "window.closeWhenEmpty": false,
-    "window.commandCenter": false,
+    "window.confirmBeforeClose": "never",
+    "window.confirmSaveUntitledWorkspace": true,
+    "window.controlsStyle": "hidden",
+    "window.customMenuBarAltFocus": false,
+    "window.density.editorTabHeight": "default",
     "window.dialogStyle": "native",
+    "window.doubleClickIconToClose": false,
     "window.enableMenuBarMnemonics": false,
     "window.menuBarVisibility": "toggle",
+    "window.menuStyle": "inherit",
     "window.newWindowDimensions": "maximized",
+    "window.newWindowProfile": "Default",
     "window.openFilesInNewWindow": "off",
     "window.openFoldersInNewWindow": "default",
+    "window.openWithoutArgumentsInNewWindow": "off",
     "window.restoreFullscreen": false,
     "window.restoreWindows": "none",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "window.titleBarStyle": "native",
+    "window.titleSeparator": " - ",
     "window.zoomLevel": 0,
+    "window.zoomPerWindow": true,
+    "workbench.activityBar.autoHide": false,
+    "workbench.activityBar.compact": false,
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "workbench.activityBar.location": "default",
+    "workbench.browser.dataStorage": "global",
+    "workbench.browser.enableChatTools": false,
+    "workbench.browser.openLocalhostLinks": false,
+    "workbench.browser.pageZoom": "100%",
+    "workbench.browser.showInTitleBar": false,
     "workbench.cloudChanges.autoResume": "off",
     "workbench.cloudChanges.continueOn": "off",
     "workbench.colorCustomizations": {
@@ -1563,10 +1828,16 @@
         "dropdown.background": "#0A000A",
         "dropdown.listBackground": "#0A000A",
         "editor.background": "#0A000A",
+        "editor.findMatchHighlightBackground": "#4444440A",
         "editor.foldBackground": "#0A000A00",
         "editor.foreground": "#FFFFFF",
+        "editor.hoverHighlightBackground": "#4444440A",
         "editor.lineHighlightBackground": "#333742",
         "editor.selectionBackground": "#7D0BAB95",
+        "editor.selectionForeground": "#f0f0f0",
+        "editor.selectionHighlightBackground": "#4444440A",
+        "editor.wordHighlightBackground": "#4444440A",
+        "editor.wordHighlightStrongBackground": "#4444440A",
         "editorError.foreground": "#FF1F1F",
         "editorGroup.border": "#0A000A",
         "editorGroupHeader.noTabsBackground": "#0A000A",
@@ -1580,21 +1851,26 @@
         "editorPane.background": "#0A000A",
         "editorRuler.foreground": "#7A7A7A5A",
         "editorSuggestWidget.background": "#0A000A",
-        "editorSuggestWidget.selectedBackground": "#333742",
+        "editorSuggestWidget.selectedBackground": "#7D0BAB",
         "editorWarning.foreground": "#F7B02C",
         "editorWhitespace.foreground": "#7A7A7A",
         "editorWidget.background": "#0A000A",
         "extensionButton.prominentBackground": "#34DEF9",
         "extensionButton.prominentForeground": "#0A000A",
         "extensionButton.prominentHoverBackground": "#AC0FEB",
+        "focusBorder": "#00A1F1",
         "foreground": "#FFFFFF",
+        "gitDecoration.addedResourceForeground": "#00E673",
+        "gitDecoration.deletedResourceForeground": "#FF6347",
+        "gitDecoration.modifiedResourceForeground": "#8BE9FD",
         "input.background": "#0A000A",
-        "input.border": "#7D0BAB",
+        "input.border": "#7D0BABFA",
         "input.foreground": "#FFFFFF",
         "list.activeSelectionBackground": "#333742",
         "list.activeSelectionForeground": "#FFFFFF",
         "list.deemphasizedForeground": "#FFFFFF",
         "list.errorForeground": "#FF783A",
+        "list.focusAndSelectionOutline": "#333742",
         "list.focusBackground": "#0A000A",
         "list.focusForeground": "#FFFFFF",
         "list.highlightForeground": "#FFFFFF",
@@ -1605,8 +1881,9 @@
         "list.inactiveSelectionForeground": "#FFFFFF",
         "list.warningForeground": "#FFD666",
         "menu.background": "#0A000A",
-        "menu.selectionBackground": "#333742",
-        "menubar.selectionBackground": "#333742",
+        "menu.selectionBackground": "#7D0BAB",
+        "menubar.selectionBackground": "#7D0BAB",
+        "minimap.findMatchHighlight": "#00E6730A",
         "notifications.background": "#0A000A",
         "notifications.foreground": "#FFFFFF",
         "panel.background": "#0A000A",
@@ -1621,8 +1898,12 @@
         "scrollbarSlider.hoverBackground": "#7D0BAB",
         "settings.dropdownBackground": "#0A000A",
         "sideBar.background": "#0A000A",
+        "sideBar.border": "#0A000A00",
         "sideBarSectionHeader.background": "#0A000A",
+        "sideBarTitle.foreground": "#f0f0f0",
         "statusBar.background": "#7D0BAB",
+        "statusBar.border": "#0A000A00",
+        "statusBar.foreground": "#f0f0f0",
         "statusBar.noFolderBackground": "#7D0BAB",
         "statusBarItem.activeBackground": "#0A000A",
         "tab.activeBackground": "#7D0BAB",
@@ -1641,52 +1922,112 @@
         "tab.unfocusedInactiveForeground": "#FFFFFF",
         "terminal.background": "#0A000A",
         "terminal.foreground": "#FFFFFF",
-        "titleBar.activeBackground": "#0A000A"
+        "titleBar.activeBackground": "#0A000A",
+        "titleBar.inactiveBackground": "#202124",
+        "widget.border": "#AC0FEB"
     },
     "workbench.colorTheme": "Simple Dark",
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+    "workbench.commandPalette.experimental.suggestCommands": false,
     "workbench.commandPalette.history": 50,
     "workbench.commandPalette.preserveInput": false,
+    "workbench.commandPalette.showAskInChat": false,
+    "workbench.editor.alwaysShowEditorActions": false,
     "workbench.editor.autoLockGroups": {
         "mainThreadWebview-simpleBrowser.view": false
     },
+    "workbench.editor.centeredLayoutAutoResize": true,
+    "workbench.editor.centeredLayoutFixedWidth": false,
+    "workbench.editor.closeEmptyGroups": true,
     "workbench.editor.closeOnFileDelete": false,
+    "workbench.editor.customLabels.enabled": true,
+    "workbench.editor.decorations.badges": true,
     "workbench.editor.decorations.colors": true,
+    "workbench.editor.defaultBinaryEditor": "",
+    "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "expand",
     "workbench.editor.dragToOpenWindow": true,
+    "workbench.editor.editorActionsLocation": "default",
     "workbench.editor.empty.hint": "hidden",
     "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "workbench.editor.labelFormat": "default",
+    "workbench.editor.languageDetection": true,
+    "workbench.editor.limit.enabled": false,
+    "workbench.editor.limit.excludeDirty": true,
     "workbench.editor.mouseBackForwardToNavigate": false,
     "workbench.editor.openPositioning": "right",
+    "workbench.editor.openSideBySideDirection": "right",
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editor.pinnedTabsOnSeparateRow": false,
+    "workbench.editor.preventPinnedEditorClose": "keyboardAndMouse",
+    "workbench.editor.restoreEditors": true,
     "workbench.editor.restoreViewState": false,
     "workbench.editor.revealIfOpen": false,
+    "workbench.editor.scrollToSwitchTabs": false,
+    "workbench.editor.sharedViewState": false,
     "workbench.editor.showIcons": true,
+    "workbench.editor.showTabIndex": false,
     "workbench.editor.showTabs": "multiple",
+    "workbench.editor.splitInGroupLayout": "horizontal",
     "workbench.editor.splitOnDragAndDrop": false,
+    "workbench.editor.splitSizing": "auto",
+    "workbench.editor.tabActionCloseVisibility": true,
     "workbench.editor.tabActionLocation": "right",
+    "workbench.editor.tabActionUnpinVisibility": true,
     "workbench.editor.tabSizing": "fit",
+    "workbench.editor.titleScrollbarSizing": "default",
+    "workbench.editor.untitled.labelFormat": "name",
+    "workbench.editor.useModal": "off",
+    "workbench.editor.wrapTabs": false,
+    "workbench.editorLargeFileConfirmation": 2048,
     "workbench.enableExperiments": false,
+    "workbench.experimental.share.enabled": false,
+    "workbench.externalBrowser": "/usr/bin/false",
+    "workbench.externalUriOpeners": {},
     "workbench.iconTheme": "material-icon-theme",
     "workbench.layoutControl.enabled": false,
+    "workbench.layoutControl.type": "toggles",
+    "workbench.list.defaultFindMode": "highlight",
     "workbench.list.multiSelectModifier": "ctrlCmd",
     "workbench.list.openMode": "singleClick",
     "workbench.list.smoothScrolling": true,
+    "workbench.localHistory.enabled": true,
+    "workbench.localHistory.maxFileEntries": 100,
+    "workbench.localHistory.maxFileSize": 512,
     "workbench.navigationControl.enabled": false,
+    "workbench.notifications.position": "bottom-right",
+    "workbench.notifications.showInTitleBar": false,
+    "workbench.panel.defaultLocation": "bottom",
     "workbench.panel.opensMaximized": "never",
+    "workbench.panel.showLabels": true,
     "workbench.preferredDarkColorTheme": "Simple Dark",
     "workbench.preferredHighContrastColorTheme": "Simple Dark",
     "workbench.preferredHighContrastLightColorTheme": "Simple Dark",
     "workbench.preferredLightColorTheme": "Simple Dark",
+    "workbench.productIconTheme": "Default",
     "workbench.quickOpen.closeOnFocusLost": true,
+    "workbench.reduceMotion": "off",
+    "workbench.reduceTransparency": "off",
     "workbench.remoteIndicator.showExtensionRecommendations": false,
+    "workbench.secondarySideBar.showLabels": true,
+    "workbench.settings.alwaysShowAdvancedSettings": true,
     "workbench.settings.editor": "json",
     "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.settings.showAISearchToggle": false,
     "workbench.settings.useSplitJSON": false,
+    "workbench.shadows": false,
     "workbench.sideBar.location": "left",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
     "workbench.tips.enabled": false,
+    "workbench.tree.enableStickyScroll": true,
+    "workbench.tree.expandMode": "singleClick",
+    "workbench.tree.indent": 8,
+    "workbench.tree.renderIndentGuides": "always",
     "workbench.view.alwaysShowHeaderActions": false,
+    "workbench.view.showQuietly": {},
+    "workbench.welcomePage.experimentalOnboarding": false,
     "workbench.welcomePage.extraAnnouncements": false,
     "workbench.welcomePage.walkthroughs.openOnInstall": false,
     "zenMode.centerLayout": false,
@@ -1695,5 +2036,7 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideStatusBar": false,
     "zenMode.restore": false,
+    "zenMode.showTabs": "multiple",
     "zenMode.silentNotifications": false,
+    "window.commandCenter": false
 }
